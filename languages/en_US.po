@@ -1,0 +1,658 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: AdventistCorporate\n"
+"Language: en\n"
+
+#. adventist
+#: archive.php:4
+msgid "Posts from "
+msgstr "Posts from␣"
+
+#. adventist
+#: archive.php:13
+#: index.php:21
+msgid "Recent entries"
+msgstr "Recent entries"
+
+#. adventist
+#: archive.php:19
+msgid "Archive"
+msgstr "Archive"
+
+#. adventist
+#: footer.php:4
+msgid "-/img/logos/logo_footer.png"
+msgstr "-/img/logos/logo_footer.png"
+
+#. adventist
+#: footer.php:6
+msgid "Follow us on Twitter"
+msgstr "Follow us on Twitter"
+
+#. adventist
+#: footer.php:10
+msgid "Like us on Facebook"
+msgstr "Like us on Facebook"
+
+#. adventist
+#: footer.php:14
+msgid "Subscribe to our RSS feed"
+msgstr "Subscribe to our RSS feed"
+
+#. default
+#: functions.php:78
+msgid "Header Menu"
+msgstr "Header Menu"
+
+#. default
+#: functions.php:80
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+#. adventist
+#: functions.php:100
+msgid "Index Sidebar"
+msgstr "Index Sidebar"
+
+#. adventist
+#: functions.php:104
+msgid "Widgets in this area will be shown on the left side on the index."
+msgstr "Widgets in this area will be shown on the left side on the index."
+
+#. adventist
+#: functions.php:120
+msgid "Blog Sidebar"
+msgstr "Blog Sidebar"
+
+#. adventist
+#: functions.php:124
+msgid "Widgets in this area will be shown on blog pages."
+msgstr "Widgets in this area will be shown on blog pages."
+
+#. adventist
+#: functions.php:140
+msgid "Pages Sidebar"
+msgstr "Pages Sidebar"
+
+#. adventist
+#: functions.php:144
+msgid "Widgets in this area will be shown on pages."
+msgstr "Widgets in this area will be shown on pages."
+
+#. adventist
+#: functions.php:192
+#: functions.php:222
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:35
+msgid "Theme options"
+msgstr "Theme options"
+
+#. adventist
+#: functions.php:212
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:37
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:34
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:19
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:20
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:18
+#: lib/admin/controllers/views/slides_view/slides_view.php:18
+#: lib/admin/controllers/views/slides_view/slides_view.php:39
+msgid "Description"
+msgstr "Description"
+
+#. adventist
+#: functions.php:244
+msgid "None"
+msgstr "None"
+
+#. adventist
+#: functions.php:252
+msgid "Pastor selected"
+msgstr "Pastor selected"
+
+#. adventist
+#: header.php:39
+msgid "-/img/logos/logo.png"
+msgstr "-/img/logos/logo.png"
+
+#. adventist
+#: header.php:76
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:21
+msgid "Twitter"
+msgstr "Twitter"
+
+#. adventist
+#: header.php:80
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:31
+msgid "Facebook"
+msgstr "Facebook"
+
+#. adventist
+#: header.php:84
+msgid "RSS"
+msgstr "RSS"
+
+#. adventist
+#: index.php:4
+#: single.php:15
+msgid "Blog"
+msgstr "Blog"
+
+#. adventist
+#: index.php:14
+#: single.php:31
+#: templates/post-excerpt.php:4
+msgid "By"
+msgstr "By"
+
+#. adventist
+#: index.php:14
+#: single.php:31
+msgid "in"
+msgstr "in"
+
+#. adventist
+#: index.php:15
+#: templates/post-excerpt.php:5
+msgid "Read more"
+msgstr "Read more"
+
+#. adventist
+#: lib/admin/config.php:8
+msgid "Theme Options"
+msgstr "Theme Options"
+
+#. adventist
+#: lib/admin/config.php:9
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:7
+msgid "Theme Links"
+msgstr "Theme Links"
+
+#. adventist
+#: lib/admin/config.php:10
+msgid "Slideshow"
+msgstr "Slideshow"
+
+#. adventist
+#: lib/admin/config.php:11
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:12
+msgid "Staff Directory"
+msgstr "Staff Directory"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:41
+msgid "RSS (default setting is /feed)"
+msgstr "RSS (default setting is /feed)"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:53
+#: page-main.php:74
+msgid "Watch"
+msgstr "Watch"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:65
+msgid "Signup"
+msgstr "Signup"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:77
+#: page-main.php:78
+msgid "Subscribe"
+msgstr "Subscribe"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:89
+msgid "Beliefs"
+msgstr "Beliefs"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:101
+#: templates/home-callout.php:5
+msgid "Spirituality"
+msgstr "Spirituality"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:101
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:113
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:125
+msgid "link"
+msgstr "link"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:113
+#: templates/home-callout.php:6
+msgid "Vitality"
+msgstr "Vitality"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:125
+#: templates/home-callout.php:7
+msgid "Service"
+msgstr "Service"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:137
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:279
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:52
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:34
+msgid "Update"
+msgstr "Update"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:49
+msgid "Featured Category"
+msgstr "Featured Category"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:73
+msgid "Name (under logo)"
+msgstr "Name (under logo)"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:85
+msgid "Description (under logo)"
+msgstr "Description (under logo)"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:96
+msgid "Copyright"
+msgstr "Copyright"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:107
+msgid "Slideshow Status"
+msgstr "Slideshow Status"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:111
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:149
+msgid "Enabled"
+msgstr "Enabled"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:113
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:151
+msgid "Disabled"
+msgstr "Disabled"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:125
+msgid "Slideshow Display Options (if enabled)"
+msgstr "Slideshow Display Options (if enabled)"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:129
+msgid "Simple"
+msgstr "Simple"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:131
+msgid "Full width"
+msgstr "Full width"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:133
+msgid "With sidebar"
+msgstr "With sidebar"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:145
+msgid "My Whole Life / Beliefs on Homepage is"
+msgstr "My Whole Life / Beliefs on Homepage is"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:163
+msgid "My Whole Life / Beliefs on Homepage Position (if enabled)"
+msgstr "My Whole Life / Beliefs on Homepage Position (if enabled)"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:167
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:185
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:203
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:221
+msgid "Right"
+msgstr "Right"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:169
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:187
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:205
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:223
+msgid "Left"
+msgstr "Left"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:181
+msgid "Sidebar Position on Blog"
+msgstr "Sidebar Position on Blog"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:199
+msgid "Sidebar Position on Pages"
+msgstr "Sidebar Position on Pages"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:217
+msgid "Main Menu Location"
+msgstr "Main Menu Location"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:235
+msgid "Theme Language"
+msgstr "Theme Language"
+
+#. adventist
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:259
+msgid "Google Analytics Account (format 'UA-XXXXX-X')"
+msgstr "Google Analytics Account (format 'UA-XXXXX-X')"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:6
+msgid "Edit Staff Directory"
+msgstr "Edit Staff Directory"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:13
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:10
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:18
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:41
+msgid "Name"
+msgstr "Name"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:19
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:16
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:42
+msgid "Rank"
+msgstr "Rank"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:25
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:22
+msgid "Phone"
+msgstr "Phone"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:31
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:28
+msgid "Email"
+msgstr "Email"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:43
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:40
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:26
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:24
+msgid "Image"
+msgstr "Image"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:4
+msgid "New Staff Directory"
+msgstr "New Staff Directory"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:48
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:31
+msgid "Create"
+msgstr "Create"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:12
+#: lib/admin/controllers/views/slides_view/slides_view.php:12
+msgid "Add New"
+msgstr "Add New"
+
+#. adventist
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:29
+#: lib/admin/controllers/views/slides_view/slides_view.php:27
+msgid "Edit"
+msgstr "Edit"
+
+#. adventist
+#. mmb
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:31
+#: lib/admin/controllers/views/slides_view/slides_view.php:29
+#: lib/meta-box-class/my-meta-box-class.php:292
+#: lib/meta-box-class/my-meta-box-class.php:913
+msgid "Delete"
+msgstr "Delete"
+
+#. adventist
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:6
+msgid "Edit slide"
+msgstr "Edit slide"
+
+#. adventist
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:13
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:11
+#: lib/admin/controllers/views/slides_view/slides_view.php:17
+#: lib/admin/controllers/views/slides_view/slides_view.php:38
+msgid "Title"
+msgstr "Title"
+
+#. adventist
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:26
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:24
+msgid "Minimum image size: 739px x 457px"
+msgstr "Minimum image size: 739px x 457px"
+
+#. adventist
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:5
+msgid "New slide"
+msgstr "New slide"
+
+#. adventist
+#: lib/admin/controllers/views/slides_view/slides_view.php:12
+msgid "Slides"
+msgstr "Slides"
+
+#. adventist
+#: lib/customize.php:13
+msgid "Options"
+msgstr "Options"
+
+#. mmb
+#: lib/meta-box-class/my-meta-box-class.php:292
+msgid "Delete this image"
+msgstr "Delete this image"
+
+#. mmb
+#: lib/meta-box-class/my-meta-box-class.php:393
+msgid "Cannot delete file. Something's wrong."
+msgstr "Cannot delete file. Something's wrong."
+
+#. mmb
+#: lib/meta-box-class/my-meta-box-class.php:626
+#: lib/meta-box-class/my-meta-box-class.php:671
+msgid "Remove"
+msgstr "Remove"
+
+#. mmb
+#: lib/meta-box-class/my-meta-box-class.php:638
+msgid "Add"
+msgstr "Add"
+
+#. mmb
+#: lib/meta-box-class/my-meta-box-class.php:908
+msgid "Uploaded files"
+msgstr "Uploaded files"
+
+#. mmb
+#: lib/meta-box-class/my-meta-box-class.php:920
+msgid "Upload new files"
+msgstr "Upload new files"
+
+#. mmb
+#: lib/meta-box-class/my-meta-box-class.php:926
+msgid "Add more files"
+msgstr "Add more files"
+
+#. apc
+#: lib/meta-box-class/my-meta-box-class.php:979
+msgid "Select a color"
+msgstr "Select a color"
+
+#. default
+#: lib/update_theme.php:86
+msgid "An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+msgstr "An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+
+#. default
+#: lib/update_theme.php:91
+msgid "An unknown error occurred"
+msgstr "An unknown error occurred"
+
+#. adventist
+#: lib/widgets/big_menu_widget.php:5
+#: lib/widgets/big_menu_widget.php:6
+msgid "Adventist - Big Menu"
+msgstr "Adventist - Big Menu"
+
+#. adventist
+#: lib/widgets/sermons_widget.php:4
+#: lib/widgets/sermons_widget.php:5
+msgid "Adventist - Recent Sermons"
+msgstr "Adventist - Recent Sermons"
+
+#. adventist
+#: lib/widgets/sermons_widget.php:10
+msgid "Recent Sermons"
+msgstr "Recent Sermons"
+
+#. adventist
+#: lib/widgets/sermons_widget.php:17
+msgid "Title:"
+msgstr "Title:"
+
+#. adventist
+#: lib/widgets/sermons_widget.php:23
+msgid "Number posts:"
+msgstr "Number posts:"
+
+#. adventist
+#: lib/widgets/sermons_widget.php:29
+msgid "Category:"
+msgstr "Category:"
+
+#. adventist
+#: lib/widgets/sermons_widget.php:88
+msgid "View all sermons"
+msgstr "View all sermons"
+
+#. adventist
+#: lib/widgets/small_menu_widget.php:5
+#: lib/widgets/small_menu_widget.php:6
+msgid "Adventist - Small Menu"
+msgstr "Adventist - Small Menu"
+
+#. adventist
+#: page-main.php:34
+msgid "From the Blog"
+msgstr "From the Blog"
+
+#. adventist
+#: page-main.php:66
+msgid "View all blog entries"
+msgstr "View all blog entries"
+
+#. adventist
+#: page-main.php:74
+msgid "our weekly services live"
+msgstr "our weekly services live"
+
+#. adventist
+#: page-main.php:76
+msgid "Sign up"
+msgstr "Sign up"
+
+#. adventist
+#: page-main.php:76
+msgid "for our email newsletter"
+msgstr "for our email newsletter"
+
+#. adventist
+#: page-main.php:78
+msgid "to the Simple Truths Podcast"
+msgstr "to the Simple Truths Podcast"
+
+#. adventist
+#: single.php:56
+msgid "Leave a Reply"
+msgstr "Leave a Reply"
+
+#. adventist
+#: single.php:57
+msgid "Leave a Reply to %s"
+msgstr "Leave a Reply to %s"
+
+#. adventist
+#: single.php:58
+msgid "Cancel Reply"
+msgstr "Cancel Reply"
+
+#. adventist
+#: single.php:59
+msgid "Post Comment"
+msgstr "Post Comment"
+
+#. adventist
+#: templates/home-callout.php:3
+msgid "My Whole Life"
+msgstr "My Whole Life"
+
+#. adventist
+#: templates/home-callout.php:4
+msgid "I was born to reflect the image of a God who is powerful enough to create my universe, attentive enough to hear my prayers and loving enough to be defined by self-sacrifice. I find my greatest fulfillment on a journey toward purpose and wholeness."
+msgstr "I was born to reflect the image of a God who is powerful enough to create my universe, attentive enough to hear my prayers and loving enough to be defined by self-sacrifice. I find my greatest fulfillment on a journey toward purpose and wholeness."
+
+#. adventist
+#: templates/home-callout.php:5
+msgid "http://www.adventist.org/spirituality/"
+msgstr "http://www.adventist.org/spirituality/"
+
+#. adventist
+#: templates/home-callout.php:5
+msgid "My God loves without restraint..."
+msgstr "My God loves without restraint..."
+
+#. adventist
+#: templates/home-callout.php:6
+msgid "http://www.adventist.org/vitality/"
+msgstr "http://www.adventist.org/vitality/"
+
+#. adventist
+#: templates/home-callout.php:6
+msgid "My Life is a gift to be valued..."
+msgstr "My Life is a gift to be valued..."
+
+#. adventist
+#: templates/home-callout.php:7
+#: templates/home-callout.php:12
+msgid "http://www.adventist.org/service/"
+msgstr "http://www.adventist.org/service/"
+
+#. adventist
+#: templates/home-callout.php:7
+msgid "My World is a place where people find hope..."
+msgstr "My World is a place where people find hope..."
+
+#. adventist
+#: templates/home-callout.php:10
+msgid "Our Beliefs"
+msgstr "Our Beliefs"
+
+#. adventist
+#: templates/home-callout.php:11
+#, fuzzy
+msgid "Seventh-day Adventist beliefs are meant to permeate your whole life. Growing out of scriptures that paint a compelling portrait of God, you are invited to explore, experience and know the One who desires to make us whole."
+msgstr "Seventh-day Adventist beliefs are meant to permeate your whole life. Growing out of scriptures that paint a compelling portrait of God, you are invited to explore, experience and know the One who desires to make us whole."
+
+#. adventist
+#: templates/home-callout.php:12
+msgid "Learn More"
+msgstr "Learn More"
+

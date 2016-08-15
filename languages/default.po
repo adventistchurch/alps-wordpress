@@ -1,0 +1,545 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Adventist\n"
+"POT-Creation-Date: 2013-10-23 17:49+0200\n"
+"PO-Revision-Date: 2013-10-23 18:12+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\adventist7\\wp-content\\themes"
+"\\adventist\\\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive.php:4
+msgid "Posts from "
+msgstr ""
+
+#: archive.php:13 index.php:21
+msgid "Recent entries"
+msgstr ""
+
+#: archive.php:19
+msgid "Archive"
+msgstr ""
+
+#: footer.php:4
+msgid "-/img/logos/logo_footer.png"
+msgstr ""
+
+#: footer.php:6
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: footer.php:10
+msgid "Like us on Facebook"
+msgstr ""
+
+#: footer.php:14
+msgid "Subscribe to our RSS feed"
+msgstr ""
+
+#: functions.php:78
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:80
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:100
+msgid "Index Sidebar"
+msgstr ""
+
+#: functions.php:104
+msgid "Widgets in this area will be shown on the left side on the index."
+msgstr ""
+
+#: functions.php:120
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:124
+msgid "Widgets in this area will be shown on blog pages."
+msgstr ""
+
+#: functions.php:140
+msgid "Pages Sidebar"
+msgstr ""
+
+#: functions.php:144
+msgid "Widgets in this area will be shown on pages."
+msgstr ""
+
+#: functions.php:192 functions.php:222
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:35
+msgid "Theme options"
+msgstr ""
+
+#: functions.php:212
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:19
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:37
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:34
+#: lib/admin/controllers/views/slides_view/slides_view.php:18
+#: lib/admin/controllers/views/slides_view/slides_view.php:39
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:20
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:18
+msgid "Description"
+msgstr ""
+
+#: functions.php:244
+msgid "None"
+msgstr ""
+
+#: functions.php:252
+msgid "Pastor selected"
+msgstr ""
+
+#: header.php:39
+msgid "-/img/logos/logo.png"
+msgstr ""
+
+#: header.php:76
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:21
+msgid "Twitter"
+msgstr ""
+
+#: header.php:80
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:31
+msgid "Facebook"
+msgstr ""
+
+#: header.php:84
+msgid "RSS"
+msgstr ""
+
+#: index.php:4 single.php:15
+msgid "Blog"
+msgstr ""
+
+#: index.php:14 single.php:31 templates/post-excerpt.php:4
+msgid "By"
+msgstr ""
+
+#: index.php:14 single.php:31
+msgid "in"
+msgstr ""
+
+#: index.php:15 templates/post-excerpt.php:5
+msgid "Read more"
+msgstr ""
+
+#: page-main.php:34
+msgid "From the Blog"
+msgstr ""
+
+#: page-main.php:66
+msgid "View all blog entries"
+msgstr ""
+
+#: page-main.php:74
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:53
+msgid "Watch"
+msgstr ""
+
+#: page-main.php:74
+msgid "our weekly services live"
+msgstr ""
+
+#: page-main.php:76
+msgid "Sign up"
+msgstr ""
+
+#: page-main.php:76
+msgid "for our email newsletter"
+msgstr ""
+
+#: page-main.php:78
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:77
+msgid "Subscribe"
+msgstr ""
+
+#: page-main.php:78
+msgid "to the Simple Truths Podcast"
+msgstr ""
+
+#: single.php:56
+msgid "Leave a Reply"
+msgstr ""
+
+#: single.php:57
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: single.php:58
+msgid "Cancel Reply"
+msgstr ""
+
+#: single.php:59
+msgid "Post Comment"
+msgstr ""
+
+#: lib/customize.php:7
+msgid "Options"
+msgstr ""
+
+#: lib/update_theme.php:86
+msgid ""
+"An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?"
+"\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+msgstr ""
+
+#: lib/update_theme.php:91
+msgid "An unknown error occurred"
+msgstr ""
+
+#: lib/admin/config.php:8
+msgid "Theme Options"
+msgstr ""
+
+#: lib/admin/config.php:9
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:7
+msgid "Theme Links"
+msgstr ""
+
+#: lib/admin/config.php:10
+msgid "Slideshow"
+msgstr ""
+
+#: lib/admin/config.php:11
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:12
+msgid "Staff Directory"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:41
+msgid "RSS (default setting is /feed)"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:65
+msgid "Signup"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:89
+msgid "Beliefs"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:101
+#: templates/home-callout.php:5
+msgid "Spirituality"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:101
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:113
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:125
+msgid "link"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:113
+#: templates/home-callout.php:6
+msgid "Vitality"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:125
+#: templates/home-callout.php:7
+msgid "Service"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/options_edit_links_view.php:137
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:279
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:52
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:34
+msgid "Update"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:49
+msgid "Featured Category"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:73
+msgid "Name (under logo)"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:85
+msgid "Description (under logo)"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:96
+msgid "Copyright"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:107
+msgid "Slideshow Status"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:111
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:149
+msgid "Enabled"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:113
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:151
+msgid "Disabled"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:125
+msgid "Slideshow Display Options (if enabled)"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:129
+msgid "Simple"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:131
+msgid "Full width"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:133
+msgid "With sidebar"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:145
+msgid "My Whole Life / Beliefs on Homepage is"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:163
+msgid "My Whole Life / Beliefs on Homepage Position (if enabled)"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:167
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:185
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:203
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:221
+msgid "Right"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:169
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:187
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:205
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:223
+msgid "Left"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:181
+msgid "Sidebar Position on Blog"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:199
+msgid "Sidebar Position on Pages"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:217
+msgid "Main Menu Location"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:235
+msgid "Theme Language"
+msgstr ""
+
+#: lib/admin/controllers/views/panel_view/panel_edit_view.php:259
+msgid "Google Analytics Account (format 'UA-XXXXX-X')"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:12
+#: lib/admin/controllers/views/slides_view/slides_view.php:12
+msgid "Add New"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:18
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:41
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:13
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:10
+msgid "Name"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:29
+#: lib/admin/controllers/views/slides_view/slides_view.php:27
+msgid "Edit"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:31
+#: lib/admin/controllers/views/slides_view/slides_view.php:29
+#: lib/meta-box-class/my-meta-box-class.php:292
+#: lib/meta-box-class/my-meta-box-class.php:913
+msgid "Delete"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastors_view.php:42
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:19
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:16
+msgid "Rank"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:6
+msgid "Edit Staff Directory"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:25
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:22
+msgid "Phone"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:31
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:28
+msgid "Email"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastor_edit_view.php:43
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:40
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:26
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:24
+msgid "Image"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:4
+msgid "New Staff Directory"
+msgstr ""
+
+#: lib/admin/controllers/views/pastors_view/pastor_new_view.php:48
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:31
+msgid "Create"
+msgstr ""
+
+#: lib/admin/controllers/views/slides_view/slides_view.php:12
+msgid "Slides"
+msgstr ""
+
+#: lib/admin/controllers/views/slides_view/slides_view.php:17
+#: lib/admin/controllers/views/slides_view/slides_view.php:38
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:13
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:11
+msgid "Title"
+msgstr ""
+
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:6
+msgid "Edit slide"
+msgstr ""
+
+#: lib/admin/controllers/views/slides_view/slide_edit_view.php:26
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:24
+msgid "Minimum image size: 739px x 457px"
+msgstr ""
+
+#: lib/admin/controllers/views/slides_view/slide_new_view.php:5
+msgid "New slide"
+msgstr ""
+
+#: lib/meta-box-class/my-meta-box-class.php:292
+msgid "Delete this image"
+msgstr ""
+
+#: lib/meta-box-class/my-meta-box-class.php:393
+msgid "Cannot delete file. Something's wrong."
+msgstr ""
+
+#: lib/meta-box-class/my-meta-box-class.php:626
+#: lib/meta-box-class/my-meta-box-class.php:671
+msgid "Remove"
+msgstr ""
+
+#: lib/meta-box-class/my-meta-box-class.php:638
+msgid "Add"
+msgstr ""
+
+#: lib/meta-box-class/my-meta-box-class.php:908
+msgid "Uploaded files"
+msgstr ""
+
+#: lib/meta-box-class/my-meta-box-class.php:920
+msgid "Upload new files"
+msgstr ""
+
+#: lib/meta-box-class/my-meta-box-class.php:926
+msgid "Add more files"
+msgstr ""
+
+#: lib/meta-box-class/my-meta-box-class.php:979
+msgid "Select a color"
+msgstr ""
+
+#: lib/widgets/big_menu_widget.php:5 lib/widgets/big_menu_widget.php:6
+msgid "Adventist - Big Menu"
+msgstr ""
+
+#: lib/widgets/sermons_widget.php:4 lib/widgets/sermons_widget.php:5
+msgid "Adventist - Recent Sermons"
+msgstr ""
+
+#: lib/widgets/sermons_widget.php:10
+msgid "Recent Sermons"
+msgstr ""
+
+#: lib/widgets/sermons_widget.php:17
+msgid "Title:"
+msgstr ""
+
+#: lib/widgets/sermons_widget.php:23
+msgid "Number posts:"
+msgstr ""
+
+#: lib/widgets/sermons_widget.php:29
+msgid "Category:"
+msgstr ""
+
+#: lib/widgets/sermons_widget.php:88
+msgid "View all sermons"
+msgstr ""
+
+#: lib/widgets/small_menu_widget.php:5 lib/widgets/small_menu_widget.php:6
+msgid "Adventist - Small Menu"
+msgstr ""
+
+#: templates/home-callout.php:3
+msgid "My Whole Life"
+msgstr ""
+
+#: templates/home-callout.php:4
+msgid ""
+"I was born to reflect the image of a God who is powerful enough to create my "
+"universe, attentive enough to hear my prayers and loving enough to be "
+"defined by self-sacrifice. I find my greatest fulfillment on a journey "
+"toward purpose and wholeness."
+msgstr ""
+
+#: templates/home-callout.php:5
+msgid "http://www.adventist.org/spirituality/"
+msgstr ""
+
+#: templates/home-callout.php:5
+msgid "My God loves without restraint..."
+msgstr ""
+
+#: templates/home-callout.php:6
+msgid "http://www.adventist.org/vitality/"
+msgstr ""
+
+#: templates/home-callout.php:6
+msgid "My Life is a gift to be valued..."
+msgstr ""
+
+#: templates/home-callout.php:7 templates/home-callout.php:12
+msgid "http://www.adventist.org/service/"
+msgstr ""
+
+#: templates/home-callout.php:7
+msgid "My World is a place where people find hope..."
+msgstr ""
+
+#: templates/home-callout.php:10
+msgid "Our Beliefs"
+msgstr ""
+
+#: templates/home-callout.php:11
+msgid ""
+"Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget "
+"lacinia odio sem nec elit. Maecenas faucibus mollis interdum. Vivamus "
+"sagittis la cus vel augue laoreet rutrum faucibus dolor auctor."
+msgstr ""
+
+#: templates/home-callout.php:12
+msgid "Learn More"
+msgstr ""
