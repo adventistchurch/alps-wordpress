@@ -87,12 +87,52 @@ function display_sidebar() {
  * Theme assets
  */
 function assets() {
-  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
+  // Load fonts.
+  wp_enqueue_style('alps/fonts', '//fonts.googleapis.com/css?family=Merriweather:400,400i,700|Montserrat|Oswald');
+
+  // Load main ALPS styles.
+  wp_enqueue_style('alps/main_css', 'http://cdn.adventist.io/alps/2/latest/css/main.css');
+
+  // Load theme override css.
+  wp_enqueue_style('alps/theme_css', Assets\asset_path('styles/alps-theme.css'), false, null);
+
+  // Load ALPS header javascript.
+  wp_enqueue_script('alps/head_js', 'http://cdn.adventist.io/alps/2/latest/js/head-script.min.js', false, '2', false);
+
+  if (!is_admin()) {
+    wp_deregister_script('jquery');
+    // Load a copy of jQuery from the jquery CDN.
+    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', false, '2.2.4', true);
+  }
+
+  // Load ALPS footer javascript.
+  wp_enqueue_script('alps/foot_js', 'http://cdn.adventist.io/alps/2/latest/js/script.min.js', ['jquery'], '2', true);
+
+  // Load theme override javascript.
+  wp_enqueue_script('alps/theme_js', Assets\asset_path('scripts/alps-theme.js'), ['jquery'], null, true);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  // Remove unnecessary inline comment css.
+  global $wp_widget_factory;
+  remove_action('wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+
+  // Remove wp-embed script.
+  wp_deregister_script('wp-embed');
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+/**
+ * Remove wp generator from head.
+ */
+remove_action('wp_head', 'wp_generator');
+
+/**
+ * Remove emoji scripts.
+ */
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action('admin_print_styles', 'print_emoji_styles');

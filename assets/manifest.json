@@ -2,23 +2,15 @@
   "dependencies": {
     "main.js": {
       "files": [
-        "scripts/main.js"
+        "scripts/alps-theme.js"
       ],
       "main": true
     },
     "main.css": {
       "files": [
-        "styles/main.scss"
+        "styles/alps-theme.scss"
       ],
       "main": true
-    },
-    "customizer.js": {
-      "files": [
-        "scripts/customizer.js"
-      ]
-    },
-    "jquery.js": {
-      "bower": ["jquery"]
     }
   },
   "config": {
