@@ -1,16 +1,14 @@
 {
   "dependencies": {
-    "main.js": {
+    "alps-theme.js": {
       "files": [
         "scripts/alps-theme.js"
-      ],
-      "main": true
+      ]
     },
-    "main.css": {
+    "alps-theme.css": {
       "files": [
         "styles/alps-theme.scss"
-      ],
-      "main": true
+      ]
     }
   },
   "config": {

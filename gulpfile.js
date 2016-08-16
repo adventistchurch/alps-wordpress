@@ -34,15 +34,14 @@ var config = manifest.config || {};
 // `globs` - These ultimately end up in their respective `gulp.src`.
 // - `globs.js` - Array of asset-builder JS dependency objects. Example:
 //   ```
-//   {type: 'js', name: 'main.js', globs: []}
+//   {type: 'js', name: 'alps-theme.js', globs: []}
 //   ```
 // - `globs.css` - Array of asset-builder CSS dependency objects. Example:
 //   ```
-//   {type: 'css', name: 'main.css', globs: []}
+//   {type: 'css', name: 'alps-theme.css', globs: []}
 //   ```
 // - `globs.fonts` - Array of font path globs.
 // - `globs.images` - Array of image path globs.
-// - `globs.bower` - Array of all the main Bower files.
 var globs = manifest.globs;
 
 // `project` - paths to first-party assets.
@@ -74,7 +73,7 @@ var revManifest = path.dist + 'assets.json';
 // Example
 // ```
 // gulp.src(cssFiles)
-//   .pipe(cssTasks('main.css')
+//   .pipe(cssTasks('alps-theme.css')
 //   .pipe(gulp.dest(path.dist + 'styles'))
 // ```
 var cssTasks = function(filename) {
@@ -121,7 +120,7 @@ var cssTasks = function(filename) {
 // Example
 // ```
 // gulp.src(jsFiles)
-//   .pipe(jsTasks('main.js')
+//   .pipe(jsTasks('alps-theme.js')
 //   .pipe(gulp.dest(path.dist + 'scripts'))
 // ```
 var jsTasks = function(filename) {
@@ -163,7 +162,7 @@ var writeToManifest = function(directory) {
 // Run `gulp -T` for a task summary
 
 // ### Styles
-// `gulp styles` - Compiles, combines, and optimizes Bower CSS and project CSS.
+// `gulp styles` - Compiles, combines, and optimizes project CSS.
 // By default this task will only log a warning if a precompiler error is
 // raised. If the `--production` flag is set: this task will fail outright.
 gulp.task('styles', ['wiredep'], function() {
@@ -184,7 +183,7 @@ gulp.task('styles', ['wiredep'], function() {
 });
 
 // ### Scripts
-// `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
+// `gulp scripts` - Runs JSHint then compiles, combines, and optimizes JS
 // and project JS.
 gulp.task('scripts', ['jshint'], function() {
   var merged = merge();
@@ -225,7 +224,7 @@ gulp.task('images', function() {
 // `gulp jshint` - Lints configuration JSON and project JS.
 gulp.task('jshint', function() {
   return gulp.src([
-    'bower.json', 'gulpfile.js'
+    'gulpfile.js'
   ].concat(project.js))
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
@@ -255,7 +254,6 @@ gulp.task('watch', function() {
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
-  gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
 });
 
 // ### Build
@@ -269,7 +267,7 @@ gulp.task('build', function(callback) {
 });
 
 // ### Wiredep
-// `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See
+// `gulp wiredep` - Automatically inject Less and Sass dependencies. See
 // https://github.com/taptapship/wiredep
 gulp.task('wiredep', function() {
   var wiredep = require('wiredep').stream;
