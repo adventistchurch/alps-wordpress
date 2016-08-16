@@ -1,2 +1,3 @@
-# happycog
-Happy Cog portfolio website.
+# ALPS WordPress Theme
+
+Documentation to come...
