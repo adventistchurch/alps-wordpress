@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    $SPECIFIC FORMS
+\*------------------------------------*/
+
+/**
+ * Main contact form
+ */
+.wpcf7-form {
+  padding-bottom: $space-and-half;
+  fieldset {
+    margin-top: rem(30);
+  }
+  .wpcf7-not-valid {
+    border: 1px solid rgba($error, .5);
+  }
+}
+
+.wpcf7-not-valid-tip {
+  color: $error;
+  margin-top: rem(5);
+  display: block;
+  font-size: rem(14);
+  @include media('>medium') {
+    position: absolute;
+  }
+}
+.wpcf7-validation-errors,
+.wpcf7-mail-sent-ok {
+  border: 1px solid $gray-light;
+  padding: rem(15);
+  margin-top: $space;
+  background-color: $white;
+}
+.wpcf7-validation-errors {
+  color: $error;
+}
+.wpcf7-mail-sent-ok {
+  color: $valid;
+}
+.required {
+  color: rgba($error, .5);
+}
+
+legend {
+  @include font--primary--m;
+  padding-bottom: rem(5);
+}
+
+.field-container {
+  margin-bottom: $space;
+  @include media('>medium') {
+    margin-bottom: $space-double;
+  }
+}
+
+.form__intros {
+  .field-container {
+    @include media('>medium') {
+      float: left;
+      width: 49%;
+      overflow: hidden;
+      &:nth-child(even) {
+        float: right;
+        clear: right;
+      }
+      &:last-child {
+        clear: both;
+      }
+    }
+  }
+}
+
+.form__submit {
+  position: relative;
+  display: inline-block;
+  .ajax-loader {
+    margin-left: $space;
+  }
+}

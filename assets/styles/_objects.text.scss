@@ -1,0 +1,370 @@
+/*------------------------------------*\
+    $TEXT TYPES
+\*------------------------------------*/
+
+/**
+ * Kicker/Eyebrow
+ */
+.kicker {
+  display: inline-block;
+  color: $white;
+  font-weight: 600;
+  padding: rem(6) rem(10) rem(7);
+  background-color: rgba($gray-dark, .6);
+  transition: background-color .4s ease-out;
+}
+
+/**
+ * Citation
+ */
+.citation {
+  display: block;
+  font-style: normal;
+}
+
+/**
+ * No Wrapping
+ */
+.no-wrap {
+  white-space: nowrap;
+}
+
+/**
+ * Highlight Text
+ */
+.highlight,
+.subtitle em {
+  @include highlight;
+}
+
+/**
+ * Font Families
+ */
+.font--primary,
+.font--sans {
+  font-family: $serif;
+}
+.font--secondary,
+.font--serif {
+  font-family: $sans;
+}
+// When fonts are loaded.
+.wf-active {
+  .font--primary {
+    font-family: $font;
+  }
+  .font--secondary {
+    font-family: $font-secondary;
+  }
+}
+
+/**
+ * Type styles
+ */
+// XX-Large Type - primary
+@mixin font--primary--xxl() {
+  font-family: $font;
+  font-size: rem(40);
+  line-height: 1;
+  font-weight: 600;
+  @include media('>xsmall') {
+    font-size: rem(50);
+  }
+  @include media('>large') {
+    font-size: rem(70);
+  }
+}
+.font--primary--xxl {
+  @include font--primary--xxl;
+}
+
+// X-Large Type - primary
+@mixin font--primary--xl() {
+  font-family: $font;
+  font-size: rem(35);
+  line-height: 1.5;
+  font-weight: 600;
+  @include media('>large') {
+    font-size: rem(40);
+  }
+}
+.font--primary--xl {
+  @include font--primary--xl;
+}
+
+// Large Type - primary
+@mixin font--primary--l() {
+  font-family: $font;
+  font-size: rem(28);
+  line-height: 1.5;
+  font-weight: 400;
+  @include media('>large') {
+    font-size: rem(35);
+  }
+}
+.font--primary--l {
+  @include font--primary--l;
+}
+
+@mixin font--primary--l--bold() {
+  @include font--primary--l;
+  font-weight: 600;
+}
+.font--primary--l--bold {
+  @include font--primary--l--bold;
+}
+
+// Large Type - secondary
+@mixin font--secondary--l() {
+  font-family: $font-secondary;
+  font-size: rem(20);
+  line-height: 1.65;
+  font-weight: 400;
+  @include media('>medium') {
+    font-size: rem(22);
+  }
+  @include media('>large') {
+    font-size: rem(30);
+    line-height: 1.5;
+  }
+}
+.font--secondary--l {
+  @include font--secondary--l;
+}
+
+// Medium-Large
+@mixin font--secondary--ml() {
+  font-family: $font-secondary;
+  font-size: rem(20);
+  font-weight: 400;
+  line-height: 1.5;
+  @include media('>large') {
+    font-size: rem(22);
+  }
+}
+.font--secondary--ml {
+  @include font--secondary--ml;
+}
+
+// Medium Type - primary
+@mixin font--primary--m() {
+  font-family: $font;
+  font-size: rem(20);
+  line-height: 1.5;
+  font-weight: 600;
+  @include media('>large') {
+    font-size: rem(23);
+  }
+}
+.font--primary--m {
+  @include font--primary--m;
+}
+
+// Medium Type - secondary
+@mixin font--secondary--m() {
+  font-family: $font-secondary;
+  font-size: rem(16);
+  line-height: rem(22);
+  font-weight: 400;
+  line-height: 1.65;
+  @include media('>large') {
+    font-size: rem(18);
+  }
+}
+.font--secondary--m {
+  @include font--secondary--m;
+}
+
+@mixin font--primary--m--upper() {
+  font-family: $font;
+  font-size: rem(22);
+  line-height: rem(26);
+  font-weight: 500;
+  text-transform: uppercase;
+  @include media('>large') {
+    font-size: rem(26);
+    line-height: rem(30);
+  }
+}
+.font--primary--m--upper {
+  @include font--primary--m--upper;
+}
+
+@mixin font--primary--sm() {
+  font-family: $font;
+  font-size: rem(16);
+  line-height: 1;
+  font-weight: 500;
+  @include media('>large') {
+    font-size: rem(17);
+  }
+}
+.font--primary--sm {
+  @include font--primary--sm;
+}
+
+// Small Type - primary
+@mixin font--primary--s() {
+  font-family: $font;
+  font-size: rem(14);
+  line-height: rem(17);
+  font-weight: 500;
+  @include media('>large') {
+    font-size: rem(15);
+    line-height: rem(21);
+  }
+}
+.font--primary--s {
+  @include font--primary--s;
+}
+
+@mixin font--secondary--s() {
+  font-family: $font-secondary;
+  font-size: rem(14);
+  line-height: rem(17);
+  @include media('>large') {
+    font-size: rem(15);
+    line-height: rem(21);
+  }
+}
+.font--secondary--s {
+  @include font--secondary--s;
+}
+
+@mixin font--primary--s--upper() {
+  font-family: $font;
+  font-size: rem(13);
+  line-height: rem(16);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @include media('>large') {
+    font-size: rem(14);
+    line-height: rem(18);
+  }
+}
+.font--primary--s--upper {
+  @include font--primary--s--upper;
+}
+
+// X-Small Type - primary
+@mixin font--primary--xs() {
+  font-family: $font;
+  font-size: rem(13);
+  line-height: rem(17);
+}
+.font--primary--xs {
+  @include font--primary--xs;
+}
+
+@mixin font--primary--xs--upper() {
+  font-family: $font;
+  font-size: rem(10);
+  line-height: rem(14);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.font--primary--xs--upper {
+  @include font--primary--xs--upper;
+}
+
+/**
+ * Text Transforms
+ */
+.text-transform--upper {
+  text-transform: uppercase;
+}
+.text-transform--lower {
+  text-transform: lowercase;
+}
+
+/**
+ * Text Decorations
+ */
+.text-decoration--underline {
+  text-decoration: underline;
+}
+
+/**
+ * Passages of Text
+ */
+.text {
+  font-family: $serif;
+  .fonts-loaded & {
+    font-family: $font-secondary;
+  }
+  p, li {
+    @include font--primary--s;
+    font-weight: 400;
+  }
+  > p a,
+  > ul a,
+  > ol a,
+  > dl a {
+    @include a;
+  }
+  > h1 {
+    font-size: rem(36);
+    margin-bottom: $space-and-half;
+  }
+  > h3,
+  > h3,
+  > h4,
+  > h5 {
+    margin-bottom: $space-half;
+  }
+  > ul {
+    list-style: disc;
+    margin: 0 0 $space $space;
+    li {
+      margin-bottom: rem(10);
+    }
+    ul {
+      list-style: circle;
+      padding-top: rem(6);
+      margin-bottom: 0;
+      margin-left: $space;
+    }
+  }
+  > ol {
+    list-style: decimal;
+    margin: 0 0 $space $space;
+    li {
+      margin-bottom: rem(6);
+    }
+    ol {
+      list-style: lower-alpha;
+      padding-top: rem(6);
+      margin-bottom: 0;
+      margin-left: $space;
+    }
+  }
+  .pullquote {
+    p {
+      font-size: rem(28);
+      font-weight: 300;
+      font-style: normal;
+      font-family: $font;
+      @include mq($px900) {
+        font-size: rem(38);
+      }
+    }
+  }
+}
+
+/**
+ * Letter Spacing
+ */
+.ls {
+  letter-spacing: 1px;
+}
+
+/**
+ * Line Heights
+ */
+.lh--1 {
+  line-height: 1;
+}
+.lh--0 {
+  line-height: 0;
+}

@@ -1,0 +1,113 @@
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+
+.header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba($white, 0);
+  transition: all .6s;
+  &.active {
+    .logo__link {
+      .sl-words {
+        opacity: 0;
+      }
+    }
+  }
+  &:hover {
+    @include media('>medium') {
+      background-color: $white;
+    }
+  }
+}
+.header__inner {
+  padding: rem(10) 0;
+  position: relative;
+  z-index: 15;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   height: 0;
+  //   width: 100%;
+  //   background-color: darken($white, 3);
+  //   transition: height .15s ease-out;
+  // }
+}
+.logo__link {
+  width: rem(200);
+  height: rem(32);
+  position: relative;
+  z-index: 15;
+  display: block;
+  line-height: 0;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .3s $cubic-bezier;
+}
+.sl__text {
+  margin-left: 2px;
+}
+.sl__icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  svg {
+    width: 98%;
+  }
+}
+.sl-logo--primary,
+.sl-logo--secondary,
+.sl-words,
+.sl-icon {
+  transition: all .55s ease-in-out;
+}
+.sl-logo--primary {
+  fill: $black;
+}
+.sl-logo--secondary {
+  fill: $black;
+}
+
+
+/**
+ * Progress Bar
+ */
+.progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: rem(4);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background-color: $salmon;
+  color: $salmon;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0s ease-in;
+  .active & {
+    opacity: 1;
+    transition: opacity .25s ease-out .4s;
+  }
+}
+.progress::-webkit-progress-bar {
+  background-color: $salmon;
+}
+.progress::-webkit-progress-value {
+  background-color: $blue;
+}
+.progress::-moz-progress-bar {
+  background-color: $blue;
+}

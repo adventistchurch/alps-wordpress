@@ -1,0 +1,254 @@
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+
+/**
+ * Navigation Toggler
+ */
+.nav-toggler {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: rem(-5);
+  padding: rem(10) rem(8);
+  margin-right: rem(-8);
+  height: 100%;
+  width: rem(48);
+  z-index: 20;
+  overflow: hidden;
+  @include media('>medium') {
+    display: none;
+  }
+}
+.nav-toggler__inner {
+  width: calc(100% - 16px);
+  height: rem(20);
+  top: 50%;
+  left: rem(8);
+  margin-top: rem(-10);
+  position: absolute;
+  @include transform(rotate(0deg));
+  @include transition(.5s ease-in-out);
+  cursor: pointer;
+  display: block;
+}
+.nav-toggler__title {
+  text-transform: uppercase;
+  font-size: rem(10);
+  text-align: center;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: $black;
+  transition: all .25s ease-in-out;
+}
+// Hamburger Contents
+$slice-height: 4;
+.nt-span {
+  display: block;
+  position: absolute;
+  height: rem($slice-height);
+  width: 100%;
+  background-color: $black;
+  left: 0;
+  transition: all .25s ease-in-out .2s;
+}
+.nt-span--1 {
+  top: 0px;
+  width: 50%;
+}
+.nt-span--2,
+.nt-span--3 {
+  top: rem($slice-height * 2);
+  width: 75%;
+}
+.nt-span--4 {
+  top: rem($slice-height * 4);
+}
+.nav-toggler {
+  &:hover {
+    .nt-span--1,
+    .nt-span--2,
+    .nt-span--3 {
+      width: 100%;
+    }
+  }
+}
+// Active Hamburger
+.nav-toggler.main-nav-is-active {
+  top: rem(21);
+  transform: translate(0, -50%);
+  .nav-toggler__title {
+    color: $white;
+    font-weight: 500;
+  }
+  .nt-span {
+    background-color: $white;
+    width: 100%;
+  }
+  .nt-span--1 {
+    top: rem($slice-height * 2);
+    width: 0%;
+    left: 50%;
+  }
+  .nt-span--2 {
+    transform: rotate(45deg);
+  }
+  .nt-span--3 {
+    transform: rotate(-45deg);
+  }
+  .nt-span--4 {
+    top: rem($slice-height * 2);
+    width: 0%;
+    left: 50%;
+  }
+}
+
+
+/**
+ * Primary Nav
+ */
+.nav__primary {
+  justify-content: center;
+  align-items: center;
+  @include media('<=medium') {
+    background-color: $blue;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all .5s $cubic-bezier;
+  }
+  @include media('>medium') {
+    &:hover {
+      .menu-item a {
+        opacity: .5;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Active Nav
+.main-nav-is-active {
+  .sl-logo--primary,
+  .sl-logo--secondary {
+    fill: $white;
+  }
+  .nav__primary {
+    transform: translateX(0);
+  }
+  .menu-primary-menu-container {
+    .menu-item {
+      transform: translateY(0);
+      opacity: 1;
+      transition: all .6s $cubic-bezier;
+      &:nth-child(1) { transition-delay: .25s; }
+      &:nth-child(2) { transition-delay: .35s; }
+      &:nth-child(3) { transition-delay: .45s; }
+      &:nth-child(4) { transition-delay: .55s; }
+      &:nth-child(5) { transition-delay: .65s; }
+      &:nth-child(6) { transition-delay: .75s; }
+    }
+  }
+}
+
+.menu-primary-menu-container {
+  @include media('<=medium') {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(10px);
+    z-index: 100;
+  }
+  .menu-item {
+    @include media('<=medium') {
+      transform: translateY(20px);
+      transition: all .2s $cubic-bezier;
+      opacity: 0;
+      &:nth-child(1) { transition-delay: 0s; }
+      &:nth-child(2) { transition-delay: 0s; }
+      &:nth-child(3) { transition-delay: 0s; }
+      &:nth-child(4) { transition-delay: 0s; }
+      &:nth-child(5) { transition-delay: 0s; }
+      &:nth-child(6) { transition-delay: 0s; }
+    }
+    a {
+      display: block;
+      padding: rem(15);
+      color: $white;
+      transition: all .25s $cubic-bezier .1s;
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+      font-weight: 400;
+      opacity: 1;
+      font-size: rem(24);
+      font-family: $font;
+      @include media('>medium') {
+        color: $gray-dark;
+        font-size: rem(17);
+        padding: rem(10);
+        transition: all .9s $cubic-bezier;
+        text-shadow: .5px .5px 0 rgba($white, .5);
+      }
+      span:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 4px;
+        left: 0;
+        bottom: -10px;
+        background-color: $salmon;
+        transition: all .3s $cubic-bezier;
+        z-index: 0;
+      }
+      span {
+        position: relative;
+        z-index: 10;
+        display: block;
+      }
+    }
+    @include media('>medium') {
+      display: inline-block;
+      margin-bottom: 0;
+      margin-top: rem(6);
+    }
+  }
+  .current-menu-item a {
+    @include media('>medium') {
+      color: $black;
+    }
+    span:before {
+      width: 100%;
+      transition: all .3s $cubic-bezier;
+    }
+  }
+  .menu-item a:hover {
+    @include media('>medium') {
+      span:before {
+        width: 100%;
+        transition: all .3s $cubic-bezier;
+      }
+    }
+  }
+}
+
+.nav__primary {
+  @include media('>medium') {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}

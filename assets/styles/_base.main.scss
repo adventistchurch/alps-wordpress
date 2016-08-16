@@ -1,0 +1,26 @@
+/*------------------------------------*\
+    $SITE MAIN
+\*------------------------------------*/
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  background: $white;
+  font: 400 100%/1.3 $font;
+  -webkit-text-size-adjust: 100%;
+  //-webkit-font-smoothing: antialiased;
+  color: $body-color;
+	-moz-osx-font-smoothing: grayscale;
+}
+// When fonts are loaded.
+// .wf-active body {
+//   font-family: $font;
+// }
+
+.no-backgroundblendmode {
+  body {
+    background-color: $gray-light;
+  }
+}

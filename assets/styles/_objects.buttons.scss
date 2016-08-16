@@ -1,0 +1,78 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+.btn,
+button,
+input[type="submit"] {
+  display: inline-block;
+  text-align: center;
+  font-size: rem(18);
+  padding: rem(13) rem(18);
+  line-height: 1;
+  font-family: $font;
+  background-color: $salmon;
+  color: $white;
+  border: 5px solid $white;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  box-shadow: 0 0 0 1px rgba($black, .05);
+  transition: all .5s ease-out;
+  font-weight: 600;
+  &:focus,
+  &:hover {
+    background-color: darken($salmon, 10);
+    box-shadow: 0 0 0 1px rgba($black, .15);
+  }
+}
+
+/**
+ * Button Sizing
+ */
+.btn--xs {
+ padding: rem(6) rem(10) rem(4);
+ font-size: rem(14);
+}
+.btn--s {
+  padding: rem(12) rem(14) rem(11);
+  font-size: rem(16);
+}
+.btn--m {
+  padding: rem(17) rem(22) rem(16);
+  font-size: rem(18);
+}
+.btn--l {
+  padding: $pad $pad-double;
+  box-shadow: 0 0 0 rgba($black, 0);
+  transition: color .3s $cubic-bezier, background-color .3s $cubic-bezier, box-shadow .6s ease-out;
+  overflow-x: hidden;
+  background-color: $salmon;
+  span {
+    position: relative;
+    z-index: 10;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    transition: all .3s $cubic-bezier;
+    background-color: $white;
+    z-index: 5;
+  }
+  &:hover,
+  &:focus {
+    color: $salmon;
+    z-index: 10;
+    background-color: darken($salmon, 10);
+    box-shadow: 0 0 rem(20) rgba($black, .3);
+    transition: color .3s $cubic-bezier, background-color .3s $cubic-bezier, box-shadow .6s ease-out .3s;
+    &:after {
+      width: 100%;
+    }
+  }
+}

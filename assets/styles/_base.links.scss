@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+a {
+  text-decoration: none;
+  color: $gray-dark;
+  transition: all .6s ease-out;
+  &:hover {
+    text-decoration: none;
+    color: lighten($gray-dark, 10);
+  }
+  p {
+    color: $gray-dark;
+  }
+}
+.underline {
+  border-bottom: 1px solid $body-color;
+}
