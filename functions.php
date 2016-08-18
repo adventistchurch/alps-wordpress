@@ -26,3 +26,26 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+
+/**
+ * Custom menu output.
+ * @param  [type] $item_output [description]
+ * @param  [type] $item        [description]
+ * @param  [type] $depth       [description]
+ * @param  [type] $args        [description]
+ * @return [type]              [description]
+ */
+function alps_walker_nav_menu_start_el($item_output, $item, $depth, $args) {
+  $menu_locations = get_nav_menu_locations();
+  // Primary navigation customizations.
+  if (has_term($menu_locations['primary_navigation'], 'nav_menu', $item)) {
+    $item_output = preg_replace('/<a /', '<a class="primary-nav__link theme--primary-text-color" ', $item_output, 1);
+  }
+  // Secondary navigation customizations.
+  if (has_term($menu_locations['secondary_navigation'], 'nav_menu', $item)) {
+    $item_output = preg_replace('/<a /', '<a class="secondary-nav__link theme--secondary-text-color" ', $item_output, 1);
+  }
+  return $item_output;
+}
+add_filter('walker_nav_menu_start_el', 'alps_walker_nav_menu_start_el', 10, 4);
