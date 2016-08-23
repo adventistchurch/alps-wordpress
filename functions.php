@@ -30,21 +30,37 @@ unset($file, $filepath);
 
 /**
  * Custom menu output.
- * @param  [type] $item_output [description]
- * @param  [type] $item        [description]
- * @param  [type] $depth       [description]
- * @param  [type] $args        [description]
- * @return [type]              [description]
  */
 function alps_walker_nav_menu_start_el($item_output, $item, $depth, $args) {
   $menu_locations = get_nav_menu_locations();
+
   // Primary navigation customizations.
   if (has_term($menu_locations['primary_navigation'], 'nav_menu', $item)) {
     $item_output = preg_replace('/<a /', '<a class="primary-nav__link theme--primary-text-color" ', $item_output, 1);
+    // Add custom "active" class to active links.
+    if ($item->current == 1){
+      $item_output = preg_replace('/<a /', '<a class="primary-nav__link theme--secondary-text-color active" ', $item_output, 1);
+    }
+    // If the link is within a submenu, update classes.
+    if ($depth === 1){
+      $item_output = preg_replace('/<a /', '<a class="primary-nav__subnav__link theme--primary-text-color" ', $item_output, 1);
+    }
   }
   // Secondary navigation customizations.
   if (has_term($menu_locations['secondary_navigation'], 'nav_menu', $item)) {
     $item_output = preg_replace('/<a /', '<a class="secondary-nav__link theme--secondary-text-color" ', $item_output, 1);
+    // Add custom "active" class to active links.
+    if ($item->current == 1){
+      $item_output = preg_replace('/<a /', '<a class="secondary-nav__link theme--secondary-text-color active" ', $item_output, 1);
+    }
+    // Add "js-toggle-parent" class to first link item (should be language dropdown).
+    if ($item->menu_order == 1){
+      $item_output = preg_replace('/<a /', '<a class="secondary-nav__link theme--secondary-text-color js-toggle-parent" ', $item_output, 1);
+    }
+    // If the link is within a submenu, update classes.
+    if ($depth === 1){
+      $item_output = preg_replace('/<a /', '<a class="secondary-nav__subnav__link theme--secondary-background-hover-color--at-medium" ', $item_output, 1);
+    }
   }
   return $item_output;
 }
