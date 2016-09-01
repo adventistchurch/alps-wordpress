@@ -62,6 +62,10 @@ function alps_walker_nav_menu_start_el($item_output, $item, $depth, $args) {
       $item_output = preg_replace('/<a /', '<a class="secondary-nav__subnav__link theme--secondary-background-hover-color--at-medium" ', $item_output, 1);
     }
   }
+  // Footer navigation customizations.
+  if (has_term($menu_locations['footer_navigation'], 'nav_menu', $item)) {
+    $item_output = preg_replace('/<a /', '<a class="footer__nav-link font--secondary link--white" ', $item_output, 1);
+  }
   return $item_output;
 }
 add_filter('walker_nav_menu_start_el', 'alps_walker_nav_menu_start_el', 10, 4);
