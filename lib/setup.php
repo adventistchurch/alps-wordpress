@@ -92,6 +92,10 @@ function assets() {
   // Load fonts.
   wp_enqueue_style('alps/fonts', '//fonts.googleapis.com/css?family=Merriweather:400,400i,700|Montserrat|Oswald');
 
+  // Load Slick slider slides.
+  // TODO: Should this be conditional?
+  wp_enqueue_style('slick', '//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css');
+
   // Load main ALPS styles.
   wp_enqueue_style('alps/main_css', 'http://cdn.adventist.io/alps/2/latest/css/main.css');
 
@@ -138,3 +142,23 @@ remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action('admin_print_styles', 'print_emoji_styles');
+
+/**
+ * Custom image styles.
+ */
+// Featured crop.
+add_image_size('featured__hero--s', 500, 400, array('center', 'center'));
+add_image_size('featured__hero--m', 800, 500, array('center', 'center'));
+add_image_size('featured__hero--l', 1100, 500, array('center', 'center'));
+add_image_size('featured__hero--xl', 1600, 600, array('center', 'center'));
+
+// Horizontal crop.
+add_image_size('horiz--s', 500, 350, array('center', 'center'));
+add_image_size('horiz--m', 800, 600, array('center', 'center'));
+add_image_size('horiz--l', 1100, 800, array('center', 'center'));
+add_image_size('horiz--xl', 1600, 900, array('center', 'center'));
+
+// square crop.
+add_image_size('square--s', 400, 400, array('center', 'center'));
+add_image_size('square--m', 700, 700, array('center', 'center'));
+add_image_size('square--l', 900, 900, array('center', 'center'));
