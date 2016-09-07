@@ -1,4 +1,4 @@
-<?php if (have_rows('carousel_slides')):?>
+<?php if (have_rows('carousel_slides')): ?>
   <section class="hero-carousel">
     <div class="carousel rel">
       <div class="carousel__slides js-carousel__single-item">
@@ -20,10 +20,10 @@
               <!--[if IE 9]></video><![endif]-->
               <img itemprop="image" srcset="<?php echo $image['sizes']['featured__hero--s']; ?>" alt="<?php echo $title; ?>">
             </picture>
-            <?php if ($title); ?>
+            <?php if ($title): ?>
               <div class="carousel__item-text__wrap">
                 <div class="layout-container">
-                  <div class="carousel__item-text  spacing--half">
+                  <div class="carousel__item-text spacing--half">
                     <div>
                       <?php if ($title): ?>
                         <h2 class="carousel__item-heading font--tertiary--xl theme--primary-transparent-background-color"><?php echo $title; ?></h2>
