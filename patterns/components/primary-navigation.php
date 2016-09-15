@@ -9,6 +9,7 @@
 
   // Native WordPress menu classes to be replaced.
   $replace = array(
+    'menu-item ',
     'sub-menu',
     'current-menu-item',
     'menu-item-has-children'
@@ -16,6 +17,7 @@
 
   // Custom ALPS classes to replace.
   $replace_with = array(
+    'primary-nav__list-item ',
     'primary-nav__subnav',
     'active',
     'primary-nav--with-subnav js-hover'
