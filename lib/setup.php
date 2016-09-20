@@ -168,3 +168,9 @@ add_image_size('horiz__4x3--l', 1100, 825, array('center', 'center'));
 add_image_size('square--s', 400, 400, array('center', 'center'));
 add_image_size('square--m', 700, 700, array('center', 'center'));
 add_image_size('square--l', 900, 900, array('center', 'center'));
+
+// Flexible height
+add_image_size('flex-height--s', 350, 9999);
+add_image_size('flex-height--m', 700, 9999);
+add_image_size('flex-height--l', 800, 9999);
+add_image_size('flex-height--xl', 1100, 9999);

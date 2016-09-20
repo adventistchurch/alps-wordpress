@@ -4,7 +4,7 @@ use Roots\Sage\Wrapper;
 ?>
 
 <!doctype html>
-<html <?php language_attributes(); ?> class="theme--emperor">
+<html <?php language_attributes(); ?> class="theme--ming">
   <?php get_template_part('templates/head'); ?>
   <body <?php body_class("body theme--cool"); ?>>
     <!--[if lt IE 11]>
