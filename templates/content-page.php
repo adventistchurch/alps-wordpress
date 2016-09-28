@@ -107,13 +107,16 @@
           <?php if ($is_two_column): ?></div><?php endif; ?>
 
           <?php if (!$is_two_column): ?><hr class="w--100p"><?php endif; ?>
-            
+
         <?php
+          // End referenc block foreach.
               $i++;
             endforeach;
           wp_reset_postdata();
         endif; ?>
+
         <?php
+          // End promotional content loop.
             $c++;
           endwhile;
         endif; ?>
