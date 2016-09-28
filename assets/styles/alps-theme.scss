@@ -1,3 +1,13 @@
 /**
  * ALPS Theme Overrides
  */
+
+ /**
+  * Grid Uniform - For grids that should line up evenly (these grids should not
+  * use <hr>'s to separate individual grid items).
+  */
+ .grid--uniform {
+   > .gi {
+     border-bottom: 1px solid lighten(#000, 90);
+   }
+ }
