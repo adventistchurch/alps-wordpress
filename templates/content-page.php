@@ -39,6 +39,7 @@
 
       <?php if ($c == 0): ?>
         <?php if ($is_two_column): ?>
+          <hr>
           <div class="g g-2up--at-medium with-divider no-space--top grid--uniform">
         <?php else: ?>
           <div class="spacing--double pad--btm">
@@ -121,7 +122,7 @@
           endwhile; ?>
         </div>
       <?php endif; ?>
-      
+
     </div> <!-- /.shift-left--fluid -->
     <div class="shift-right--fluid bg--beige can-be--dark-dark">
       <?php include(locate_template('patterns/blocks/block-breakout.php')); ?>
