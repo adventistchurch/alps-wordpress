@@ -118,9 +118,10 @@
         <?php
           // End promotional content loop.
             $c++;
-          endwhile;
-        endif; ?>
-      </div>
+          endwhile; ?>
+        </div>
+      <?php endif; ?>
+      
     </div> <!-- /.shift-left--fluid -->
     <div class="shift-right--fluid bg--beige can-be--dark-dark">
       <?php include(locate_template('patterns/blocks/block-breakout.php')); ?>
