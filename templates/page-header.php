@@ -34,7 +34,7 @@
       <div class="shift-left--fluid">
         <!-- <span class="kicker white">Kicker</span> -->
         <h1 class="font--tertiary--xl white"><?php echo Titles\title(); ?></h1>
-        <?php print_r($post); ?>
+        <?php //print_r($post); ?>
       </div>
       <div class="shift-right--fluid"></div> <!-- /.shift-right--fluid -->
     </div>
