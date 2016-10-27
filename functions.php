@@ -29,6 +29,16 @@ unset($file, $filepath);
 
 
 /**
+ * Function to add classes to Prev & Next pagination links
+ */
+function posts_link_attributes() {
+  return 'class="pagination__page theme--secondary-background-color white"';
+}
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+
+/**
  * Custom menu output.
  */
 function alps_walker_nav_menu_start_el($item_output, $item, $depth, $args) {

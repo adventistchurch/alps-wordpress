@@ -1,12 +1,24 @@
 <?php
-    if ($GLOBALS['wp_query']->max_num_pages <= 1) return;
+    $args = array(
+      'mid_size' => 2,
+      'prev_next' => false,
+      'prev_text' => __('Next &rarr;', 'textdomain'),
+      'next_text' => __('&larr; Previous', 'textdomain'),
+    );
 
-    $args = wp_parse_args( $args, [
-        'mid_size'           => 2,
-        'prev_next'          => false,
-        'prev_text'          => __('&larr; Previous', 'textdomain'),
-        'next_text'          => __('Next &rarr;', 'textdomain'),
-    ]);
+    // Native WordPress menu classes to be replaced.
+    $replace = array(
+      'page-numbers ',
+      'current',
+      '<a class=',
+    );
+
+    // Custom ALPS classes to replace.
+    $replace_with = array(
+      'pagination__page white ',
+      'pagination__page--current bg--gray',
+      '<a class="pagination__page theme--secondary-background-color white "',
+    );
 
     $links     = paginate_links($args);
     $next_link = get_previous_posts_link($args['next_text']);
@@ -14,9 +26,9 @@
  ?>
 
 <nav class="pagination center-block align--center" role="navigation">
-  <span class="pagination__page pagination__prev theme--secondary-background-color white"><?php echo $prev_link; ?></span>
-  <div class="pagination__pages show-at--medium dib">
-    <span class="pagination__page theme--secondary-background-color white"><?php echo $links; ?></span>
-  </div>
-  <span class="pagination__page pagination__next theme--secondary-background-color white"><?php echo $next_link; ?></span>
+    <?php echo $next_link; ?>
+    <div class="pagination__pages show-at--medium dib">
+      <?php echo str_replace($replace, $replace_with, $links); ?>
+    </div>
+    <?php echo $prev_link; ?>
 </nav> <!-- /.pagination -->
