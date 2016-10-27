@@ -26,9 +26,9 @@
  ?>
 
 <nav class="pagination center-block align--center" role="navigation">
-    <?php echo $next_link; ?>
-    <div class="pagination__pages show-at--medium dib">
-      <?php echo str_replace($replace, $replace_with, $links); ?>
-    </div>
-    <?php echo $prev_link; ?>
+  <?php echo $next_link; ?>
+  <div class="pagination__pages show-at--medium dib">
+    <?php echo str_replace($replace, $replace_with, $links); ?>
+  </div>
+  <?php echo $prev_link; ?>
 </nav> <!-- /.pagination -->
