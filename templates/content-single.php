@@ -27,7 +27,7 @@
           <?php the_content(); ?>
         </div>
       </div>
-      <?php include(locate_template('templates/block-layout.php')); ?>
+      <?php include(locate_template('templates/block-layout-posts.php')); ?>
     </div> <!-- /.shift-left--fluid -->
     <div class="shift-right--fluid bg--beige can-be--dark-dark">
       <?php include(locate_template('patterns/components/aside.php')); ?>
