@@ -33,7 +33,13 @@
     <div class="flex-container cf">
       <div class="shift-left--fluid">
         <!-- <span class="kicker white">Kicker</span> -->
-        <h1 class="font--tertiary--xl white"><?php echo Titles\title(); ?></h1>
+        <h1 class="font--tertiary--xl white">
+          <?php if (get_field('display_title') && is_page_template('template-single.php')): ?>
+            <?php echo the_field('display_title'); ?>
+          <?php else: ?>
+            <?php echo Titles\title(); ?>
+          <?php endif; ?>
+        </h1>
         <?php //print_r($post); ?>
       </div>
       <div class="shift-right--fluid"></div> <!-- /.shift-right--fluid -->
