@@ -1,21 +1,24 @@
-<?php while(the_flexible_field("primary_structured_content")): ?>
+<?php
+	while(the_flexible_field("primary_structured_content")):
+		$grid_layout = get_sub_field('grid_layout');
+		if (($grid_layout) == '2up-70-30') {
+			$classes = 'g-2up--70-30--at-medium';
+		} elseif (($grid_layout) == '2up-50-50') {
+			$classes = 'g-2up--at-medium';
+		} elseif (($grid_layout) == '3up') {
+			$classes = 'g-3up--at-medium with-gutters';
+		} else {
+			$classes = '';
+		}
+
+		$image = get_sub_field('image');
+		$image_layout = get_sub_field('image_layout');
+		$thumbnail = $image['sizes']['flex-height--s'];
+		$alt = $image['alt'];
+?>
 
   <!-- Content Block: Grid -->
 	<?php if(get_row_layout() == "content_block_grid"): ?>
-    <?php
-      $grid_layout = get_sub_field('grid_layout');
-      if (($grid_layout) == '2up-70-30') {
-        $classes = 'g-2up--70-30--at-medium';
-      } elseif (($grid_layout) == '2up-50-50') {
-        $classes = 'g-2up--at-medium';
-      } elseif (($grid_layout) == '3up') {
-        $classes = 'g-3up--at-medium with-gutters';
-      } else {
-        $classes = '';
-      }
-    ?>
-
-    <!-- Columns -->
     <div class="g <?php echo $classes; ?> pad--primary spacing">
       <div class="gi right-gutter--l">
         <div class="text spacing">
@@ -39,31 +42,31 @@
 
   <!-- Content Block: Image -->
 	<?php if(get_row_layout() == "content_block_image"):?>
-    <?php
-      $image = get_sub_field('image');
-      $image_layout = get_sub_field('image_layout');
-      $thumbnail = $image['sizes']['flex-height--s'];
-      $alt = $image['alt'];
-    ?>
+		<!-- Full width media image -->
     <?php if (($image_layout) == 'full_width'): ?>
-      <div class="clearfix">Image Row</div>
+      <picture class="picture">
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+				<source srcset="<?php echo wp_get_attachment_image_src($image, "featured__hero--xl")[0]; ?>" media="(min-width: 1100px)">
+        <source srcset="<?php echo wp_get_attachment_image_src($image, "featured__hero--l")[0]; ?>" media="(min-width: 900px)">
+        <source srcset="<?php echo wp_get_attachment_image_src($image, "featured__hero--m")[0]; ?>" media="(min-width: 500px)">
+        <!--[if IE 9]></video><![endif]-->
+        <img itemprop="image" srcset="<?php echo wp_get_attachment_image_src($image, "featured__hero--s")[0]; ?>" alt="<?php echo $alt; ?>">
+      </picture>
+		<!-- Breakout media image -->
     <?php elseif (($image_layout)== 'breakout'): ?>
-      <!-- Breakout media image -->
-        <style>
-        .breakout-image { background-image: url(https://unsplash.it/500/800); }
-        @media (min-width: 500px) {
-          .breakout-image { background-image: url(https://unsplash.it/700/800); }
-        }
-        @media (min-width: 700px) {
-          .breakout-image { background-image: url(https://unsplash.it/1200/800); }
-        }
-        @media (min-width: 1200px) {
-          .breakout-image { background-image: url(https://unsplash.it/1500/900); }
-        }
-        </style>
-        <div class="breakout has-parallax breakout-image bg--cover" data-type="background" data-speed="8"></div>
+      <style>
+      .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--s")[0]; ?>); }
+      @media (min-width: 500px) {
+        .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--m")[0]; ?>); }
+      }
+      @media (min-width: 700px) {
+        .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--l")[0]; ?>); }
+      }
+      @media (min-width: 1200px) {
+        .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--xl")[0]; ?>); }
+      }
+      </style>
+      <div class="breakout has-parallax breakout-image breakout-image_<?php echo $image; ?> bg--cover" data-type="background" data-speed="8"></div>
     <?php endif; ?>
-
 	<?php endif; ?>
-
 <?php endwhile; ?>
