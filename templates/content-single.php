@@ -5,7 +5,7 @@
         <div class="text article__body longform__body spacing center-block">
           <?php the_content(); ?>
         </div>
-        <?php include(locate_template('templates/block-layout-posts.php')); ?>
+        <?php include(locate_template('templates/block-layout.php')); ?>
       </div> <!-- /.shift-left--fluid -->
     </div> <!-- /.flex-container -->
   </div> <!-- /.layout-container -->

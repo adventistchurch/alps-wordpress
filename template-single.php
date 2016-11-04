@@ -45,11 +45,7 @@
                   <?php if ($thumb_id): ?>
                     <figure class="figure">
                       <div class="img-wrap">
-                        <!--[if IE 9]><video style="display: none;"><![endif]-->
-                        <source srcset="<?php get_sub_field('grid_item_image_2')[sizes]['flex-height--l']; ?>" media="(min-width: 900px)">
-                        <source srcset="<?php get_sub_field('grid_item_image_2')[sizes]['flex-height--m']; ?>" media="(min-width: 500px)">
-                        <!--[if IE 9]></video><![endif]-->
-                        <img itemprop="image" srcset="<?php echo wp_get_attachment_image_src($thumb_id, "flex-height--s")[0]; ?>" alt="<?php echo $alt; ?>">
+                        <img itemprop="image" src="<?php echo wp_get_attachment_image_src($thumb_id, "horiz__4x3--s")[0]; ?>" alt="<?php echo $alt; ?>">
                       </div> <!-- /.img-wrap -->
                       <?php if ($caption): ?>
                         <figcaption class="figcaption"><p class="font--secondary--xs"><?php echo $caption; ?></p></figcaption>
@@ -69,11 +65,7 @@
                   <?php if ($thumb_id): ?>
                     <figure class="figure">
                       <div class="img-wrap">
-                        <!--[if IE 9]><video style="display: none;"><![endif]-->
-                        <source srcset="<?php get_sub_field('grid_item_image_2')[sizes]['flex-height--l']; ?>" media="(min-width: 900px)">
-                        <source srcset="<?php get_sub_field('grid_item_image_2')[sizes]['flex-height--m']; ?>" media="(min-width: 500px)">
-                        <!--[if IE 9]></video><![endif]-->
-                        <img itemprop="image" srcset="<?php echo wp_get_attachment_image_src($thumb_id, "flex-height--s")[0]; ?>" alt="<?php echo $alt; ?>">
+                        <img itemprop="image" src="<?php echo wp_get_attachment_image_src($thumb_id, "horiz__4x3--s")[0]; ?>" alt="<?php echo $alt; ?>">
                       </div> <!-- /.img-wrap -->
                       <?php if ($caption): ?>
                         <figcaption class="figcaption"><p class="font--secondary--xs"><?php echo $caption; ?></p></figcaption>
@@ -94,11 +86,7 @@
                     <?php if ($thumb_id): ?>
                       <figure class="figure">
                         <div class="img-wrap">
-                          <!--[if IE 9]><video style="display: none;"><![endif]-->
-                          <source srcset="<?php get_sub_field('grid_item_image_2')[sizes]['flex-height--l']; ?>" media="(min-width: 900px)">
-                          <source srcset="<?php get_sub_field('grid_item_image_2')[sizes]['flex-height--m']; ?>" media="(min-width: 500px)">
-                          <!--[if IE 9]></video><![endif]-->
-                          <img itemprop="image" srcset="<?php echo wp_get_attachment_image_src($thumb_id, "flex-height--s")[0]; ?>" alt="<?php echo $alt; ?>">
+                          <img itemprop="image" src="<?php echo wp_get_attachment_image_src($thumb_id, "horiz__4x3--s")[0]; ?>" alt="<?php echo $alt; ?>">
                         </div> <!-- /.img-wrap -->
                         <?php if ($caption): ?>
                           <figcaption class="figcaption"><p class="font--secondary--xs"><?php echo $caption; ?></p></figcaption>

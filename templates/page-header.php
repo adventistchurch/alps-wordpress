@@ -19,17 +19,26 @@
     }
   </style>
 <?php endif; ?>
-<header class="header__swath theme--primary-background-color blend-mode--multiply <?php if (isset($bg_image)): echo "header-swath--with-image"; endif; ?>">
+<header class="header__swath theme--primary-background-color blend-mode--multiply <?php if (isset($bg_image)): echo "header-swath--with-image"; endif; ?> <?php if(is_home() || is_category()): echo "header-swath--with-text"; endif; ?>">
   <div class="layout-container cf">
-    <?php /*
+    <?php if(is_home() || is_category()): ?>
     <div class="header__text">
       <div class="unify show-at--small">
-        <h2 class="font--secondary--l upper white">Section</h2>
-        <h3 class="font--secondary--m white--trans">Section subtitle</h3>
+        <?php if(get_field('header_title')): ?>
+          <h2 class="font--secondary--l upper white"><?php echo the_field('header_title'); ?></h2>
+        <?php endif; ?>
+        <?php if(get_field('header_subtitle')): ?>
+          <h3 class="font--secondary--m white--trans"><?php echo the_field('header_subtitle'); ?></h3>
+        <?php endif; ?>
       </div>
-      <div class="header__logo"><img src="http://placehold.it/80x80"></div>
+      <?php if(get_field('header_image')): ?>
+        <?php $image = get_field('header_image'); ?>
+        <div class="header__logo">
+          <img src="<?php echo $image[sizes]['thumbnail']; ?>" width="80" height="80">
+        </div>
+      <?php endif; ?>
     </div> <!-- /.header__text -->
-    */ ?>
+    <?php endif; ?>
     <div class="flex-container cf">
       <div class="shift-left--fluid">
         <!-- <span class="kicker white">Kicker</span> -->

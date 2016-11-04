@@ -11,6 +11,7 @@
 ?>
 
 <?php include(locate_template('patterns/blocks/block-breakout.php')); ?>
+<?php include(locate_template('patterns/blocks/block-aside-nav.php')); ?>
 
 <div class="column__secondary can-be--dark-dark">
   <aside class="aside spacing--double">
