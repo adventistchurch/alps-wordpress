@@ -23,40 +23,37 @@
         </h2>
         <hr>
       </div>
-      <div class="g g-2up--at-medium with-divider grid--uniform">
+      <div class="g g-3up--at-medium with-divider grid--uniform">
+        <?php
+          $news = array(
+            'cat' => array(14)
+          );
+          if (is_home()) {
+            query_posts($news);
+          }
+        ?>
         <?php while (have_posts()) : the_post(); ?>
           <div class="gi">
             <div class="spacing">
               <div class="pad">
-                <div class="media-block block spacing--quarter">
-                  <div class="media-block__inner spacing--quarter ">
-                    <a class="media-block__image-wrap block__image-wrap db" href="<?php the_permalink(); ?>">
-                      <?php
-                        // Featured image.
-                        $thumb_id = get_post_thumbnail_id();
-                        // Image alt
-                        $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-                      ?>
-                      <?php if ($thumb_id && get_field('hide_featured_image') != TRUE): ?>
-                        <div class="dib">
-                          <img src="<?php echo wp_get_attachment_image_src($thumb_id, "horiz__4x3--s")[0]; ?>" alt="<?php echo $alt; ?>" class="media-block__image block__image">
-                        </div>
-                      <?php endif; ?>
-                    </a> <!-- /.media-block__image-wrap -->
-                    <div class="media-block__content block__content ">
-                      <h3 class="media-block__title block__title "><a href="<?php the_permalink(); ?>" class="block__title-link theme--primary-text-color"><?php the_title(); ?></a></h3>
-                      <time class="block__date font--secondary--xs brown space-half--btm" datetime="<?= get_post_time('c', true); ?>"><?= get_the_date(); ?></time>
-                      <div class="spacing--half">
-                        <div class="text text--s pad-half--btm"><p class="media-block__description block__description"><span class="font--primary--xs"><?php the_excerpt(); ?></span></p></div>
-                        <p><a class="media-block__cta block__cta btn theme--secondary-background-color" href="<?php the_permalink(); ?>">Read More</a></p>
-                      </div> <!-- /.spacing -->
-                    </div> <!-- media-block__content -->
-                  </div> <!-- /.media-block__inner -->
-                </div> <!-- /.media-block -->
+                <?php
+                  $title = get_the_title();
+                  $body = wp_trim_words(get_the_content(), 15);
+                  $image = get_post_thumbnail_id();
+                  $kicker = '';
+                  $button_text = 'Read More';
+                  $date = get_the_date();
+                  $button_url = get_the_permalink();
+                  $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+                  $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
+                  $block_inner_class = 'block__row--small-to-large';
+                ?>
+                <?php include(locate_template('patterns/blocks/block-media.php')); ?>
               </div>
             </div>
           </div> <!-- /.gi -->
-        <?php endwhile; ?>
+        <?php endwhile; wp_reset_query(); ?>
+
       </div> <!-- /.2up--at-medium -->
       <?php the_posts_navigation(); ?>
     </div> <!-- /.shift-left--fluid -->

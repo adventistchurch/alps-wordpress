@@ -28,6 +28,19 @@ foreach ($sage_includes as $file) {
 unset($file, $filepath);
 
 /**
+ * Register sidebar navigation
+ */
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'tertiary_navigation' => __( 'Tertiary Navigation' ),
+      'sidebar_navigation' => __( 'Sidebar Navigation' )
+    )
+  );
+}
+add_action( 'init', 'register_my_menus' );
+
+/**
  * Hide content area on 'Single' page templates
  */
 add_action( 'admin_init', 'hide_editor' );
@@ -48,6 +61,26 @@ function posts_link_attributes() {
 }
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+/**
+ * Markup for Yoast breadcrumbs
+ */
+function ss_breadcrumb_single_link( $link_output, $link ) {
+    $element = 'li';
+    $link_output = '<' . $element . ' class="breadcrumbs__list-item font--secondary--xs upper dib" . typeof="v:Breadcrumb">';
+    if ( isset( $link['url'] ) && ( $i < ( count( $links ) - 1 ) || $paged ) ) {
+        $link_output .= '<a href="' . esc_url( $link['url'] ) . '" rel="v:url" property="v:title">' . esc_html( $link['text'] ) . '</a>';
+    } else {
+        if ( isset( $opt['breadcrumbs-boldlast'] ) && $opt['breadcrumbs-boldlast'] ) {
+            $link_output .= '<strong class="breadcrumb_last" property="v:title">' . esc_html( $link['text'] ) . '</strong>';
+        } else {
+            $link_output .= '<li class="breadcrumb_last" property="v:title">' . esc_html( $link['text'] ) . '</li>';
+        }
+    }
+    $link_output .= '</' . $element . '>';
+    return $link_output;
+}
+add_filter( 'wpseo_breadcrumb_single_link', 'ss_breadcrumb_single_link', 10, 2 );
 
 
 /**
