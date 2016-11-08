@@ -30,7 +30,7 @@ unset($file, $filepath);
 /**
  * Require plugins on theme install
  */
-require_once get_template_directory() . 'lib/plugin-activation.php';
+require_once get_template_directory() . '/lib/plugin-activation.php';
 add_action( 'tgmpa_register', 'adventist_register_required_plugins' );
 function adventist_register_required_plugins() {
 	$plugins = array(
@@ -48,6 +48,7 @@ function adventist_register_required_plugins() {
 			'slug'               => 'advanced-custom-fields-pro',
 			'source'             => get_template_directory() . '/lib/plugins/advanced-custom-fields-pro.zip',
 			'required'           => true,
+    ),
 		array(
 			'name'        => 'WordPress SEO by Yoast',
 			'slug'        => 'wordpress-seo',
@@ -56,7 +57,6 @@ function adventist_register_required_plugins() {
 			'is_callable' => 'wpseo_init',
 		),
 	);
-
 	$config = array(
 		'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
