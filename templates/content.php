@@ -1,4 +1,3 @@
-
 <div class="layout-container full--until-large">
   <div class="flex-container cf">
     <div class="shift-left--fluid column__primary bg--white no-pad--top no-pad--btm can-be--dark-light">
@@ -38,7 +37,7 @@
               <div class="pad">
                 <?php
                   $title = get_the_title();
-                  $body = wp_trim_words(get_the_content(), 15);
+                  $body = mb_strimwidth(get_the_content(), 0, 100, '...');
                   $image = get_post_thumbnail_id();
                   $kicker = '';
                   $button_text = 'Read More';

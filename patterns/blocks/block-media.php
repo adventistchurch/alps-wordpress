@@ -15,7 +15,15 @@
       <?php endif; ?>
       <div class="spacing--half">
         <div class="text text--s pad-half--btm">
-          <p class="media-block__description block__description"><span class="font--primary--xs"><?php echo strip_tags($body, '<a><strong><em><ul>'); ?></span></p>
+          <p class="media-block__description block__description">
+            <span class="font--primary--xs">
+              <?php if ($intro): ?>
+                <?php echo $intro; ?>
+              <?php else: ?>
+                <?php echo $body; ?>
+              <?php endif; ?>
+            </span>
+          </p>
         </div>
         <?php if ($button_url && $button_text): ?>
           <p><a class="media-block__cta block__cta btn theme--secondary-background-color" href="<?php echo $button_url; ?>"><?php echo $button_text; ?></a></p>

@@ -31,7 +31,9 @@
           <?php while (have_posts()) : the_post(); ?>
             <?php
               $title = get_the_title();
-              $body = wp_trim_words(get_the_content(), 15);
+              $intro = substr(get_field('intro'), 0, 100) . '...';
+              $content = strip_tags(get_the_content());
+              $body = substr($content, 0, 100) . '...';
               $image = get_post_thumbnail_id();
               $kicker = '';
               $button_text = 'Read More';
@@ -127,7 +129,9 @@
         foreach ($referenced_block as $post): setup_postdata($post);
           $thumb_id = get_post_thumbnail_id();
           $title = get_field('display_title');
-          $body = get_field('intro');
+          $intro = substr(get_field('intro'), 0, 100) . '...';
+          $content = strip_tags(get_the_content());
+          $body = substr($content, 0, 100) . '...';
           $kicker = ($post->post_type != 'post') ? get_the_title() : FALSE;
           $button_text = "Read more";
           $button_url = get_permalink();

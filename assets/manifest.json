@@ -2,8 +2,10 @@
   "dependencies": {
     "alps-theme.js": {
       "files": [
-        "scripts/alps-theme.js"
-      ]
+        "scripts/alps-theme.js",
+        "scripts/plugins.js"
+      ],
+      "main": true
     },
     "alps-theme.css": {
       "files": [
