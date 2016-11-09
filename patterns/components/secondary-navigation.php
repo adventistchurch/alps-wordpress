@@ -23,7 +23,6 @@
     'active',
     'secondary-nav--with-subnav js-hover'
   );
-
 ?>
 <?php if (has_nav_menu('secondary_navigation')): ?>
   <nav class="secondary-nav toggled-element" id="secondary-nav" role="navigation">
