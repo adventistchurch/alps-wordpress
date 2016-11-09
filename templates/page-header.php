@@ -25,7 +25,7 @@
   </style>
 <?php endif; ?>
 
-<header class="header__swath theme--primary-background-color blend-mode--multiply <?php if (isset($bg_image)): echo "header-swath--with-image"; endif; ?> <?php if(get_field('header_block_text') == true): echo "header-swath--with-text"; endif; ?>">
+<header class="header__swath theme--primary-background-color blend-mode--multiply <?php if (isset($bg_image)): echo "header-swath--with-image"; endif; ?> <?php if (get_field('header_block_text') == true): echo "header-swath--with-text"; endif; ?>">
   <div class="layout-container cf">
     <?php if (get_field('header_block_text') == true): ?>
       <div class="header__text">
@@ -57,7 +57,7 @@
         <h1 class="font--tertiary--xl white">
           <?php if (get_field('display_title') && is_page_template('template-single.php')): ?>
             <?php echo the_field('display_title'); ?>
-          <?php elseif(is_single()): ?>
+          <?php elseif (is_single()): ?>
             <?php echo $parent_cat->name; ?>
           <?php else: ?>
             <?php echo Titles\title(); ?>

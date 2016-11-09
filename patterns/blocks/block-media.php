@@ -19,7 +19,7 @@
             <span class="font--primary--xs">
               <?php if ($intro): ?>
                 <?php
-                  if(strlen($intro) > $excerpt_length):
+                  if (strlen($intro) > $excerpt_length):
                       echo trim(substr($intro, 0, $excerpt_length)) . '...';
                   else:
                       echo $intro;
@@ -27,7 +27,7 @@
                 ?>
               <?php else: ?>
                 <?php
-                  if(strlen($body) > $excerpt_length):
+                  if (strlen($body) > $excerpt_length):
                       echo trim(substr($body, 0, $excerpt_length)) . '...';
                   else:
                       echo $body;

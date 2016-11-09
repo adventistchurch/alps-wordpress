@@ -12,9 +12,9 @@
       <?php endif; ?>
       <div class="spacing--half">
         <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-          <?php if(is_home()): ?>
+          <?php if (is_home()): ?>
             All News
-          <?php elseif(is_category()): ?>
+          <?php elseif (is_category()): ?>
             <?php $categories = get_the_category(); ?>
             <?php if (!empty($categories)): ?>
                 All <?php echo esc_html($categories[0]->name); ?>
@@ -29,7 +29,7 @@
             'cat' => array(14)
           );
         ?>
-        <?php if(is_home()): query_posts($news); ?>
+        <?php if (is_home()): query_posts($news); ?>
           <?php while (have_posts()) : the_post(); ?>
             <div class="gi">
               <div class="spacing">

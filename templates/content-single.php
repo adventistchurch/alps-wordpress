@@ -1,6 +1,6 @@
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part('templates/page', 'header'); ?>
-  <?php if(in_category('news')): ?>
+  <?php if (in_category('news')): ?>
     <?php include(locate_template('patterns/components/news-navigation.php')); ?>
   <?php endif; ?>
   <?php
@@ -31,7 +31,7 @@
               <?php endif; ?>
 
               <!-- Share Tools -->
-              <?php if(in_category('news')): ?>
+              <?php if (in_category('news')): ?>
                 <?php include(locate_template('patterns/components/share-tools.php')); ?>
               <?php endif; ?>
 

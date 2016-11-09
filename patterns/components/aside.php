@@ -1,4 +1,4 @@
-<?php if(is_home() || in_category('news') || in_category('articles')): ?>
+<?php if (is_home() || in_category('news') || in_category('articles')): ?>
   <?php include(locate_template('patterns/blocks/block-aside-nav.php')); ?>
 <?php else: ?>
   <?php
@@ -17,7 +17,7 @@
 <div class="column__secondary can-be--dark-dark">
   <aside class="aside spacing--double">
     <div class="pad--secondary spacing--double">
-      <?php if(in_category('news')): ?>
+      <?php if (in_category('news')): ?>
         <!-- News -->
         <?php
           $news = array(

@@ -20,7 +20,7 @@
         <?php while(the_flexible_field("primary_structured_content")): ?>
 
           <!-- Content Block: Grid -->
-        	<?php if(get_row_layout() == "content_block_grid"):
+        	<?php if (get_row_layout() == "content_block_grid"):
             // Content Block: Grid variables
             $grid_layout = get_sub_field('grid_layout');
             if (($grid_layout) == '2up-70-30') {
@@ -100,7 +100,7 @@
           <?php endif; ?>
 
           <!-- Content Block: Image -->
-        	<?php if(get_row_layout() == "content_block_image"):
+        	<?php if (get_row_layout() == "content_block_image"):
             $image = get_sub_field('image');
             $image_layout = get_sub_field('image_layout');
             $alt = get_post_meta($image, '_wp_attachment_image_alt', true);

@@ -91,9 +91,9 @@ add_action( 'init', 'register_my_menus' );
 add_action( 'admin_init', 'hide_editor' );
 function hide_editor() {
   $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
-  if( !isset( $post_id ) ) return;
+  if ( !isset( $post_id ) ) return;
   $template_file = get_post_meta($post_id, '_wp_page_template', true);
-  if($template_file == 'template-single.php'){ // edit the template name
+  if ($template_file == 'template-single.php'){ // edit the template name
       remove_post_type_support('page', 'editor');
   }
 }
@@ -173,7 +173,7 @@ add_filter('walker_nav_menu_start_el', 'alps_walker_nav_menu_start_el', 10, 4);
 /**
  * ACF
  */
- if( function_exists('acf_add_local_field_group') ):
+ if ( function_exists('acf_add_local_field_group') ):
 
  acf_add_local_field_group(array (
    'key' => 'group_58051dd302385',
