@@ -1,5 +1,5 @@
 <div class="media-block block spacing--quarter">
-  <?php if ($kicker): ?>
+  <?php if (isset($kicker)): ?>
     <span class="kicker font--secondary--m upper theme--secondary-text-color db"><?php echo $kicker ?></span>
   <?php endif; ?>
   <div class="media-block__inner spacing--quarter <?php echo ($block_inner_class) ? $block_inner_class : 'block__row'; ?>">
@@ -20,7 +20,7 @@
               <?php if ($intro): ?>
                 <?php
                   if (strlen($intro) > $excerpt_length):
-                      echo trim(substr($intro, 0, $excerpt_length)) . '...';
+                      echo trim(substr($intro, 0, $excerpt_length)) . '&hellip;';
                   else:
                       echo $intro;
                   endif;
@@ -28,7 +28,7 @@
               <?php else: ?>
                 <?php
                   if (strlen($body) > $excerpt_length):
-                      echo trim(substr($body, 0, $excerpt_length)) . '...';
+                      echo trim(substr($body, 0, $excerpt_length)) . '&hellip;';
                   else:
                       echo $body;
                   endif;

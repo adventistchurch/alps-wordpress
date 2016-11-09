@@ -12,12 +12,10 @@
         <?php include(locate_template('patterns/components/breadcrumb.php')); ?>
         <div class="text article__body spacing">
 
-          <!-- Article Title -->
           <?php if (get_field('display_title')): ?>
             <h2 class="font--tertiary--l theme--primary-text-color"><?php the_field('display_title'); ?></h2>
           <?php endif; ?>
 
-          <!-- Featured Image/Video -->
           <?php if (get_field('video_url')): ?>
             <?php include(locate_template('patterns/components/featured-video.php')); ?>
           <?php else: ?>
@@ -28,7 +26,6 @@
             <?php endif; ?>
           <?php endif; ?>
 
-          <!-- Intro -->
           <?php if (get_field('intro')): ?>
             <h3><?php the_field('intro'); ?></h3>
           <?php endif; ?>

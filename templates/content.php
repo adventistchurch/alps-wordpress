@@ -40,7 +40,6 @@
                     $body = strip_tags(get_the_content());
                     $excerpt_length = 100;
                     $image = get_post_thumbnail_id();
-                    $kicker = '';
                     $button_text = 'Read More';
                     $date = get_the_date();
                     $button_url = get_the_permalink();

@@ -1,30 +1,30 @@
 <?php
-$big = 999999999;
-    $args = array(
-      'mid_size' => 2,
-      'prev_next' => false,
-      'prev_text' => __('Next &rarr;', 'textdomain'),
-      'next_text' => __('&larr; Previous', 'textdomain'),
-    );
+  $big = 999999999;
+  $args = array(
+    'mid_size' => 2,
+    'prev_next' => false,
+    'prev_text' => __('Next &rarr;', 'textdomain'),
+    'next_text' => __('&larr; Previous', 'textdomain'),
+  );
 
-    // Native WordPress menu classes to be replaced.
-    $replace = array(
-      'page-numbers ',
-      'current',
-      '<a class=',
-    );
+  // Native WordPress menu classes to be replaced.
+  $replace = array(
+    'page-numbers ',
+    'current',
+    '<a class=',
+  );
 
-    // Custom ALPS classes to replace.
-    $replace_with = array(
-      'pagination__page white ',
-      'pagination__page--current bg--gray',
-      '<a class="pagination__page theme--secondary-background-color white "',
-    );
+  // Custom ALPS classes to replace.
+  $replace_with = array(
+    'pagination__page white ',
+    'pagination__page--current bg--gray',
+    '<a class="pagination__page theme--secondary-background-color white "',
+  );
 
-    $links     = paginate_links($args);
-    $next_link = get_previous_posts_link($args['next_text']);
-    $prev_link = get_next_posts_link($args['prev_text']);
- ?>
+  $links = paginate_links($args);
+  $next_link = get_previous_posts_link($args['next_text']);
+  $prev_link = get_next_posts_link($args['prev_text']);
+?>
 
 <nav class="pagination center-block align--center" role="navigation">
   <?php echo $next_link; ?>

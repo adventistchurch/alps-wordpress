@@ -8,8 +8,11 @@
   );
   query_posts($args);
 ?>
-<!-- Remove '!' from below if statement if posts should be automatically added -->
-<?php if (!have_posts() && $page_parent > 0): ?>
+
+<?php
+  // Remove '!' from below if statement if posts should be automatically added
+  if (!have_posts() && $page_parent > 0):
+?>
 <div class="spacing text">
   <div class="g g-2up--at-medium with-divider">
     <?php while (have_posts()) : the_post(); ?>

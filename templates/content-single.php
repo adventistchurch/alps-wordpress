@@ -16,7 +16,7 @@
           <?php include(locate_template('patterns/components/breadcrumb.php')); ?>
           <div class="text article__body spacing">
             <header class="article__header article__flow spacing--quarter">
-              <!-- Article Title -->
+
               <h1 class="font--secondary--xl theme--secondary-text-color">
                 <?php if (get_field('display_title')): ?>
                   <?php the_field('display_title'); ?>
@@ -25,24 +25,20 @@
                 <?php endif; ?>
               </h1>
 
-              <!-- Article Subtitle -->
               <?php if (get_field('subtitle')): ?>
                 <h2 class="font--secondary--m"><?php the_field('subtitle'); ?></h2>
               <?php endif; ?>
 
-              <!-- Share Tools -->
               <?php if (in_category('news')): ?>
                 <?php include(locate_template('patterns/components/share-tools.php')); ?>
               <?php endif; ?>
 
-              <!-- Article Meta -->
               <div class="article__meta">
                 <span class="pub_date font--secondary--s gray can-be--white"><?php the_date(); ?></span> <span class="divider">|</span>
                 <span class="byline font--secondary--s gray can-be--white"><?php the_author(); ?></span>
               </div>
             </header>
 
-            <!-- Featured Image/Video -->
             <?php if (get_field('video_url')): ?>
               <?php include(locate_template('patterns/components/featured-video.php')); ?>
             <?php else: ?>
@@ -53,7 +49,6 @@
               <?php endif; ?>
             <?php endif; ?>
 
-            <!-- Intro -->
             <?php if (get_field('intro')): ?>
               <h3><?php the_field('intro'); ?></h3>
             <?php endif; ?>
