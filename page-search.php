@@ -13,14 +13,6 @@
                     <div class="field-container field-container--inline" style="display: block;">
                       <input name="q" class="term search__results__input font--secondary--s" type="search" data-l="0" value="" autocomplete="off">
                       <button class="search__submit font--secondary--s upper theme--secondary-background-color">Search</button>
-
-                      <div style="position: relative;">
-                        <ul class="secondary-nav__subnav__list theme--secondary-background-color searchSuggestions" role="menu" style="top: 0;">
-                          <li class="secondary-nav__subnav__list-item hide" role="presentation">
-                            <a class="secondary-nav__subnav__link theme--secondary-background-hover-color--at-medium" role="menuitem" tabindex="-1" href="#"></a>
-                          </li>
-                        </ul>
-                      </div>
                     </div>
                   </fieldset>
                 </form><!-- /.search-form -->
