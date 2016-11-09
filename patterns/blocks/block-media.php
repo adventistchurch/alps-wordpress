@@ -5,7 +5,7 @@
   <div class="media-block__inner spacing--quarter <?php echo ($block_inner_class) ? $block_inner_class : 'block__row'; ?>">
     <?php if ($thumbnail && $button_url): ?>
       <a class="media-block__image-wrap block__image-wrap db" href="<?php echo $button_url; ?>">
-        <div class="<?php if ($round_image): ?>round<?php endif; ?>  dib"><img class="media-block__image block__image" src="<?php echo $thumbnail; ?>" alt="<?php echo $alt; ?>" /></div>
+        <div class="<?php if ($round_image): ?>round<?php endif; ?> dib"><img class="media-block__image block__image" src="<?php echo $thumbnail; ?>" alt="<?php echo $alt; ?>" /></div>
       </a> <!-- /.media-block__image-wrap -->
     <?php endif; ?>
     <div class="media-block__content <?php if ($thumbnail): ?>block__content<?php endif; ?>">
@@ -18,9 +18,21 @@
           <p class="media-block__description block__description">
             <span class="font--primary--xs">
               <?php if ($intro): ?>
-                <?php echo $intro; ?>
+                <?php
+                  if(strlen($intro) > $excerpt_length):
+                      echo trim(substr($intro, 0, $excerpt_length)) . '...';
+                  else:
+                      echo $intro;
+                  endif;
+                ?>
               <?php else: ?>
-                <?php echo $body; ?>
+                <?php
+                  if(strlen($body) > $excerpt_length):
+                      echo trim(substr($body, 0, $excerpt_length)) . '...';
+                  else:
+                      echo $body;
+                  endif;
+                ?>
               <?php endif; ?>
             </span>
           </p>

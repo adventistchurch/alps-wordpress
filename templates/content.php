@@ -27,34 +27,34 @@
           $news = array(
             'cat' => array(14)
           );
-          if (is_home()) {
-            query_posts($news);
-          }
         ?>
-        <?php while (have_posts()) : the_post(); ?>
-          <div class="gi">
-            <div class="spacing">
-              <div class="pad">
-                <?php
-                  $title = get_the_title();
-                  $body = mb_strimwidth(get_the_content(), 0, 100, '...');
-                  $image = get_post_thumbnail_id();
-                  $kicker = '';
-                  $button_text = 'Read More';
-                  $date = get_the_date();
-                  $button_url = get_the_permalink();
-                  $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
-                  $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                  $block_inner_class = 'block__row--small-to-large';
-                ?>
-                <?php include(locate_template('patterns/blocks/block-media.php')); ?>
+        <?php if(is_home()): query_posts($news); ?>
+          <?php while (have_posts()) : the_post(); ?>
+            <div class="gi">
+              <div class="spacing">
+                <div class="pad">
+                  <?php
+                    $title = get_the_title();
+                    $intro = get_field('intro');
+                    $body = strip_tags(get_the_content());
+                    $excerpt_length = 100;
+                    $image = get_post_thumbnail_id();
+                    $kicker = '';
+                    $button_text = 'Read More';
+                    $date = get_the_date();
+                    $button_url = get_the_permalink();
+                    $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+                    $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
+                    $block_inner_class = 'block__row--small-to-large';
+                  ?>
+                  <?php include(locate_template('patterns/blocks/block-media.php')); ?>
+                </div>
               </div>
-            </div>
-          </div> <!-- /.gi -->
-        <?php endwhile; wp_reset_query(); ?>
-
+            </div> <!-- /.gi -->
+          <?php endwhile; ?>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
       </div> <!-- /.2up--at-medium -->
-      <?php the_posts_navigation(); ?>
     </div> <!-- /.shift-left--fluid -->
     <div class="shift-right--fluid bg--beige can-be--dark-dark">
       <?php include(locate_template('patterns/components/aside.php')); ?>

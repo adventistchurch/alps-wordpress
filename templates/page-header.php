@@ -48,7 +48,7 @@
         <span class="kicker white">
           <?php if (get_field('kicker') && !is_category() && !is_home()): ?>
             <?php echo the_field('kicker'); ?>
-          <?php elseif (is_page()): ?>
+          <?php elseif (is_page() && $post->post_parent != '0'): ?>
             <?php echo get_the_title($post->post_parent); ?>
           <?php elseif (is_single()): ?>
             <?php echo $child_cat->name; ?>

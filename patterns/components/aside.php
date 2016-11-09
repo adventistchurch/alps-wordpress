@@ -31,14 +31,15 @@
           <?php while (have_posts()) : the_post(); ?>
             <?php
               $title = get_the_title();
-              $intro = substr(get_field('intro'), 0, 100) . '...';
-              $content = strip_tags(get_the_content());
-              $body = substr($content, 0, 100) . '...';
+              $intro = get_field('intro');
+              $body = strip_tags(get_the_content());
+              $excerpt_length = 100;
               $image = get_post_thumbnail_id();
               $kicker = '';
               $button_text = 'Read More';
               $date = get_the_date();
               $button_url = get_the_permalink();
+              $round_image = '';
               $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
               $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
               $block_inner_class = 'block__row--small-to-large';
@@ -95,6 +96,7 @@
             $kicker = get_sub_field('kicker');
             $button_text = get_sub_field('button_text');
             $button_url = get_sub_field('button_url');
+            $round_image = '';
             $thumbnail = $image['sizes']['horiz__4x3--s'];
             $alt = $image['alt'];
             $block_inner_class = 'block__row--small-to-large';
@@ -128,13 +130,14 @@
 
         foreach ($referenced_block as $post): setup_postdata($post);
           $thumb_id = get_post_thumbnail_id();
-          $title = get_field('display_title');
-          $intro = substr(get_field('intro'), 0, 100) . '...';
-          $content = strip_tags(get_the_content());
-          $body = substr($content, 0, 100) . '...';
+          $title = get_the_title();
+          $intro = get_field('intro');
+          $body = strip_tags(get_the_content());
+          $excerpt_length = 100;
           $kicker = ($post->post_type != 'post') ? get_the_title() : FALSE;
           $button_text = "Read more";
           $button_url = get_permalink();
+          $round_image = '';
           $thumbnail = wp_get_attachment_image_src($thumb_id, "horiz__4x3--s")[0];
           $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
           $block_inner_class = 'block__row--small-to-large';
