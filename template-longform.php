@@ -10,7 +10,7 @@
 ?>
 
 <?php while (have_posts()) : the_post(); ?>
-  <header class="longform__header  longform__header--with-hero ">
+  <header class="longform__header  longform__header--with-hero">
     <div class="layout-container cf spacing">
       <div class="longform__header__text spacing--half">
         <h1 class="longform__heading font--tertiary--xl">
