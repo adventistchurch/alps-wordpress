@@ -13,7 +13,7 @@
     <div class="flex-container cf">
       <div class="shift-left--fluid column__primary bg--white can-be--dark-light no-pad--btm">
         <div class="pad--primary spacing">
-          <?php include(locate_template('patterns/components/breadcrumb.php')); ?>
+          <?php if (function_exists('wordpress_breadcrumbs')) wordpress_breadcrumbs(); ?>
           <div class="text article__body spacing">
             <header class="article__header article__flow spacing--quarter">
 
