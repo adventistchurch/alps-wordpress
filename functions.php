@@ -49,13 +49,6 @@ function adventist_register_required_plugins() {
       'source'             => get_template_directory() . '/lib/plugins/advanced-custom-fields-pro.zip',
       'required'           => true,
     ),
-    array(
-      'name'        => 'WordPress SEO by Yoast',
-      'slug'        => 'wordpress-seo',
-      'source'             => get_template_directory() . '/lib/plugins/wordpress-seo.zip',
-      'required'           => true,
-      'is_callable' => 'wpseo_init',
-    ),
   );
   $config = array(
     'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.
