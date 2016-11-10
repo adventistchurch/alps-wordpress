@@ -5,7 +5,9 @@
   <div class="media-block__inner spacing--quarter <?php echo ($block_inner_class) ? $block_inner_class : 'block__row'; ?>">
     <?php if ($thumbnail && $button_url): ?>
       <a class="media-block__image-wrap block__image-wrap db" href="<?php echo $button_url; ?>">
-        <div class="<?php if ($round_image): ?>round<?php endif; ?> dib"><img class="media-block__image block__image" src="<?php echo $thumbnail; ?>" alt="<?php echo $alt; ?>" /></div>
+        <div class="<?php if ($round_image): ?>round<?php endif; ?> dib">
+          <img class="media-block__image block__image" src="<?php if ($round_image): echo $thumbnail_round; else: echo $thumbnail; endif; ?>" alt="<?php echo $alt; ?>" />
+        </div>
       </a> <!-- /.media-block__image-wrap -->
     <?php endif; ?>
     <div class="media-block__content <?php if ($thumbnail): ?>block__content<?php endif; ?>">

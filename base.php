@@ -17,7 +17,7 @@ use Roots\Sage\Wrapper;
         do_action('get_header');
         get_template_part('templates/header');
       ?>
-      <main class="main can-be--dark-dark" role="main">
+      <main class="main can-be--dark-dark <?php if (is_page_template('template-longform.php')): echo 'bg--white article__longform'; endif; ?>" role="main">
         <?php include Wrapper\template_path(); ?>
       </main> <!-- /.main -->
       <?php

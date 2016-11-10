@@ -69,7 +69,7 @@
                 $button_url = get_the_permalink();
               ?>
               <div class="content__block">
-                <h3 class="theme--primary-text-color font--secondary--m"><?php echo $title; ?></h3>
+                <h3 class="theme--primary-text-color font--secondary--m"><a href="<?php echo $button_url; ?>"><?php echo $title; ?></a></h3>
                 <p><?php echo $body; ?>  <a href="<?php echo $button_url; ?>" class="font--secondary--s upper theme--secondary-text-color"><strong><?php echo $button_text; ?></strong></a> </p>
               </div>
               <hr>

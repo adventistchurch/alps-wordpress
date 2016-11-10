@@ -71,7 +71,7 @@ function wordpress_breadcrumbs() {
       $cat = $cat[0];
       echo '<li class="' . $li_class . '"><a class="' . $link_class . '" href="' . home_url( '/' ) . $cat->category_nicename . '">' . $cat->name . '</a></li>';
       echo $current_before;
-      the_title();
+      echo 'Article';
       echo $current_after;
     }
     elseif (is_page() && !$post->post_parent) {
@@ -178,15 +178,14 @@ add_action( 'init', 'register_my_menus' );
 /**
  * Hide content area on 'Single' page templates
  */
-add_action( 'admin_init', 'hide_editor' );
 function hide_editor() {
   $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
-  if ( !isset( $post_id ) ) return;
   $template_file = get_post_meta($post_id, '_wp_page_template', true);
-  if ($template_file == 'template-single.php'){ // edit the template name
-      remove_post_type_support('page', 'editor');
+  if ($template_file == 'template-single.php') { // edit the template name
+    remove_post_type_support('page', 'editor');
   }
 }
+add_action( 'admin_head', 'hide_editor' );
 
 /**
  * Function to add classes to Prev & Next pagination links

@@ -30,6 +30,7 @@
               $date = get_the_date();
               $button_url = get_the_permalink();
               $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+              $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
               $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
               $block_inner_class = 'block__row--small-to-large';
             ?>
@@ -78,7 +79,8 @@
     $button_url = get_sub_field('button_url');
     $left_border = get_sub_field('left_color_border');
     $left_border_class = "has-border--left-" . rand(0, 15);
-    $thumbnail = $image['sizes']['square--s'];
+    $thumbnail = $image['sizes']['horiz__4x3--s'];
+    $thumbnail_round = $image['sizes']['square--s'];
     $alt = $image['alt']; ?>
 
   <?php
@@ -119,7 +121,8 @@
       $kicker = get_field('kicker');
       $button_text = "Read More";
       $button_url = get_permalink();
-      $thumbnail = wp_get_attachment_image_src($thumb_id, "square--s")[0];
+      $thumbnail = wp_get_attachment_image_src($thumb_id, "horiz__4x3--s")[0];
+      $thumbnail_round = wp_get_attachment_image_src($thumb_id, "square--s")[0];
       $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
       $title  = the_title('','',false);
 
