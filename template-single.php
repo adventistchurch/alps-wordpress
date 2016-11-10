@@ -24,11 +24,14 @@
             $grid_layout = get_sub_field('grid_layout');
             if ($grid_layout == '2up-70-30') {
              $classes = 'g-2up--70-30--at-medium';
-            } elseif ($grid_layout == '2up-50-50') {
+            }
+            elseif ($grid_layout == '2up-50-50') {
              $classes = 'g-2up--at-medium';
-            } elseif ($grid_layout == '3up') {
+            }
+            elseif ($grid_layout == '3up') {
              $classes = 'g-3up--at-medium with-gutters';
-            } else {
+            }
+            else {
              $classes = '';
             }
           ?>
@@ -37,9 +40,9 @@
                 <div class="text spacing">
                   <?php the_sub_field('grid_item_body_1'); ?>
                   <?php
-                    $thumb_id = get_sub_field('grid_item_image_1')[id];
-                    $caption = get_sub_field('grid_item_image_1')[caption];
-                    $alt = get_sub_field('grid_item_image_1')[alt];
+                    $thumb_id = get_sub_field('grid_item_image_1')['id'];
+                    $caption = get_sub_field('grid_item_image_1')['caption'];
+                    $alt = get_sub_field('grid_item_image_1')['alt'];
                   ?>
                   <?php if ($thumb_id): ?>
                     <figure class="figure">
@@ -57,9 +60,9 @@
                 <div class="text spacing">
                   <?php the_sub_field('grid_item_body_2'); ?>
                   <?php
-                    $thumb_id = get_sub_field('grid_item_image_2')[id];
-                    $caption = get_sub_field('grid_item_image_2')[caption];
-                    $alt = get_sub_field('grid_item_image_2')[alt];
+                    $thumb_id = get_sub_field('grid_item_image_2')['id'];
+                    $caption = get_sub_field('grid_item_image_2')['caption'];
+                    $alt = get_sub_field('grid_item_image_2')['alt'];
                   ?>
                   <?php if ($thumb_id): ?>
                     <figure class="figure">
@@ -78,9 +81,9 @@
                   <div class="text spacing">
                     <?php the_sub_field('grid_item_body_3'); ?>
                     <?php
-                      $thumb_id = get_sub_field('grid_item_image_3')[id];
-                      $caption = get_sub_field('grid_item_image_3')[caption];
-                      $alt = get_sub_field('grid_item_image_3')[alt];
+                      $thumb_id = get_sub_field('grid_item_image_3')['id'];
+                      $caption = get_sub_field('grid_item_image_3')['caption'];
+                      $alt = get_sub_field('grid_item_image_3')['alt'];
                     ?>
                     <?php if ($thumb_id): ?>
                       <figure class="figure">

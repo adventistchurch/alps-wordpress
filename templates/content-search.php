@@ -21,7 +21,7 @@
           <div class="pad--primary no-pad--top no-pad--btm spacing--half text">
             <h3 class="brown font--tertiary--l theme--primary-text-color"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <p><?php the_excerpt(); ?></p>
-            <a href="<?php the_permalink(); ?>" class="btn font--secondary--s upper theme--secondary-background-color"><strong><?php the_title(); ?></strong></a>
+            <a href="<?php the_permalink(); ?>" class="btn font--secondary--s upper theme--secondary-background-color"><strong>Read More</strong></a>
           </div>
           <hr>
         <?php endwhile; ?>
