@@ -17,7 +17,7 @@
         <div class="text text--s pad-half--btm">
           <p class="media-block__description block__description">
             <span class="font--primary--xs">
-              <?php if ($intro): ?>
+              <?php if (isset($intro)): ?>
                 <?php
                   if (strlen($intro) > $excerpt_length):
                       echo trim(substr($intro, 0, $excerpt_length)) . '&hellip;';
