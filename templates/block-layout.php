@@ -1,3 +1,50 @@
+<!-- Loop of related posts to child page -->
+<?php
+  $page_title = $wp_query->post->post_title;
+  $page_parent = $wp_query->post->post_parent;
+  $args = array(
+    'category_name' => $page_title,
+    'posts_per_page' => 6
+  );
+  query_posts($args);
+?>
+
+<?php
+  // Remove '!' from below if statement if posts should be automatically added
+  if (!have_posts() && $page_parent > 0):
+?>
+<div class="spacing text">
+  <div class="g g-2up--at-medium with-divider">
+    <?php while (have_posts()) : the_post(); ?>
+      <div class="gi">
+        <div class="spacing">
+          <div class="pad">
+            <?php
+              $title = get_the_title();
+              $intro = get_field('intro');
+              $body = strip_tags(get_the_content());
+              $excerpt_length = 200;
+              $image = get_post_thumbnail_id();
+              $kicker = get_field('kicker');
+              $button_text = 'Read More';
+              $date = get_the_date();
+              $button_url = get_the_permalink();
+              $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+              $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
+              $block_inner_class = 'block__row--small-to-large';
+            ?>
+            <?php include(locate_template('patterns/blocks/block-media.php')); ?>
+          </div>
+          <hr>
+        </div>
+      </div>
+    <?php endwhile;  ?>
+  </div>
+  <div class="pad spacing"></div>
+</div>
+<?php endif; ?>
+<?php wp_reset_query(); ?>
+
 <?php
   // Looping though block types.
   if (have_rows('primary_promotional_content')):
@@ -23,6 +70,7 @@
   if ($layout === 'content_block_freeform'):
     $title = get_sub_field('title');
     $body = get_sub_field('body');
+    $excerpt_length = 200;
     $image = get_sub_field('image');
     $round_image = get_sub_field('make_the_image_round');
     $kicker = get_sub_field('kicker');
@@ -30,7 +78,7 @@
     $button_url = get_sub_field('button_url');
     $left_border = get_sub_field('left_color_border');
     $left_border_class = "has-border--left-" . rand(0, 15);
-    $thumbnail = $image['sizes']['flex-height--s'];
+    $thumbnail = $image['sizes']['square--s'];
     $alt = $image['alt']; ?>
 
   <?php
@@ -63,14 +111,18 @@
 
     foreach ($referenced_block as $post): setup_postdata($post);
       $thumb_id = get_post_thumbnail_id();
-      $round_image = get_field('make_the_image_round');
-      $title = get_field('display_title');
-      $body = get_field('intro');
-      $kicker = ($post->post_type != 'post') ? get_the_title() : FALSE;
-      $button_text = "Find out more";
+      $round_image = get_sub_field('make_the_image_round');
+      $title = get_the_title();
+      $intro = get_field('intro');
+      $body = strip_tags(get_the_content());
+      $excerpt_length = 200;
+      $kicker = get_field('kicker');
+      $button_text = "Read More";
       $button_url = get_permalink();
-      $thumbnail = wp_get_attachment_image_src($thumb_id, "flex-height--s")[0];
+      $thumbnail = wp_get_attachment_image_src($thumb_id, "square--s")[0];
       $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+      $title  = the_title('','',false);
+
       if (isset($post->post_date) && $post->post_type == 'post') {
         $date = get_the_date('M j, Y');
         $date_formatted = get_the_date('c');

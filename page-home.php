@@ -6,8 +6,10 @@
     <?php include(locate_template('patterns/components/hero-carousel__2-column.php')); ?>
   <?php elseif ($carousel_format == "large_format_inset"): ?>
     <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
-  <?php else: ?>
+  <?php elseif ($carousel_format == "standard_square_inset"): ?>
     <?php include(locate_template('patterns/components/hero-carousel__2-column.php')); ?>
+  <?php else: ?>
+    <?php get_template_part('templates/page', 'header'); ?>
   <?php endif; ?>
 
   <div class="layout-container full--until-large">
