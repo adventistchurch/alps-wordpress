@@ -1,8 +1,7 @@
 <?php
   use Roots\Sage\Titles;
+  global $post;
   $categories = get_the_category($post->ID);
-  $parent_cat = get_term_by('id', $categories[0]->cat_ID, 'category');
-  $child_cat = get_term_by('id', $categories[1]->cat_ID, 'category');
 ?>
 <?php
   if (!empty(get_field('header_background_image'))):
@@ -50,14 +49,13 @@
             <?php echo the_field('kicker'); ?>
           <?php elseif (is_page() && $post->post_parent != '0'): ?>
             <?php echo get_the_title($post->post_parent); ?>
-          <?php elseif (is_single()): ?>
-            <?php echo $child_cat->name; ?>
           <?php endif; ?>
         </span>
         <h1 class="font--tertiary--xl white">
           <?php if (get_field('display_title') && is_page_template('template-single.php')): ?>
             <?php echo the_field('display_title'); ?>
           <?php elseif (is_single()): ?>
+            <?php $parent_cat = get_term_by('id', $categories[0]->cat_ID, 'category'); ?>
             <?php echo $parent_cat->name; ?>
           <?php else: ?>
             <?php echo Titles\title(); ?>
