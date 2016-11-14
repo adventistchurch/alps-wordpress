@@ -126,7 +126,6 @@
       $thumbnail_round = wp_get_attachment_image_src($thumb_id, "square--s")[0];
       $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
       $title  = the_title('','',false);
-
       if (isset($post->post_date) && $post->post_type == 'post') {
         $date = get_the_date('M j, Y');
         $date_formatted = get_the_date('c');

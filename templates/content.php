@@ -1,6 +1,10 @@
 <div class="layout-container full--until-large">
   <div class="flex-container cf">
     <div class="shift-left--fluid column__primary bg--white no-pad--top no-pad--btm can-be--dark-light">
+      <?php $carousel_format = get_field('carousel_type');?>
+      <?php if ($carousel_format == "small_format_inset"): ?>
+        <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
+      <?php endif; ?>
       <?php if (!have_posts()) : ?>
         <div class="pad--primary no-pad--top no-pad--btm spacing--half text">
           <div class="alert alert-warning pad-double--top pad-half--btm">

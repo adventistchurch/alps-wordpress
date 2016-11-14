@@ -11,34 +11,37 @@
       </a> <!-- /.media-block__image-wrap -->
     <?php endif; ?>
     <div class="media-block__content <?php if ($thumbnail): ?>block__content<?php endif; ?>">
-      <h3 class="media-block__title block__title"><a href="<?php echo $button_url; ?>" class="block__title-link theme--primary-text-color"><?php echo $title; ?></a></h3>
+      <h3 class="media-block__title block__title <?php if (isset($title_size)): echo $title_size; endif; ?> "><a href="<?php echo $button_url; ?>" class="block__title-link theme--primary-text-color"><?php echo $title; ?></a></h3>
       <?php if (isset($date)): ?>
         <time class="block__date font--secondary--xs brown space-half--btm" datetime="<?php echo $date_formatted; ?>"><?php echo $date; ?></time>
       <?php endif; ?>
+
       <div class="spacing--half">
-        <div class="text text--s pad-half--btm">
-          <p class="media-block__description block__description">
-            <span class="font--primary--xs">
-              <?php if (!empty($intro)): ?>
-                <?php
-                  if (strlen($intro) > $excerpt_length):
-                      echo trim(substr($intro, 0, $excerpt_length)) . '&hellip;';
-                  else:
-                      echo $intro;
-                  endif;
-                ?>
-              <?php else: ?>
-                <?php
-                  if (strlen($body) > $excerpt_length):
-                      echo trim(substr($body, 0, $excerpt_length)) . '&hellip;';
-                  else:
-                      echo $body;
-                  endif;
-                ?>
-              <?php endif; ?>
-            </span>
-          </p>
-        </div>
+        <?php if ($intro || $body): ?>
+          <div class="text text--s pad-half--btm">
+            <p class="media-block__description block__description">
+              <span class="font--primary--xs">
+                <?php if (!empty($intro)): ?>
+                  <?php
+                    if (strlen($intro) > $excerpt_length):
+                        echo trim(substr($intro, 0, $excerpt_length)) . '&hellip;';
+                    else:
+                        echo $intro;
+                    endif;
+                  ?>
+                <?php elseif (!empty($body)): ?>
+                  <?php
+                    if (strlen($body) > $excerpt_length):
+                        echo trim(substr($body, 0, $excerpt_length)) . '&hellip;';
+                    else:
+                        echo $body;
+                    endif;
+                  ?>
+                <?php endif; ?>
+              </span>
+            </p>
+          </div>
+        <?php endif; ?>
         <?php if ($button_url && $button_text): ?>
           <p><a class="media-block__cta block__cta btn theme--secondary-background-color" href="<?php echo $button_url; ?>"><?php echo $button_text; ?></a></p>
         <?php endif; ?>
