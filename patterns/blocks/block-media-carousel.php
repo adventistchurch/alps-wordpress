@@ -10,7 +10,7 @@
       <time class="block__date font--secondary--xs brown space-half--btm" datetime="<?php echo $date_formatted; ?>"><?php echo $date; ?></time>
     <?php endif; ?>
     <div class="spacing--half">
-      <?php if ($intro || $body): ?>
+      <?php if (isset($intro) || isset($body)): ?>
         <div class="text pad-half--btm">
           <p class="carousel-block__description block__description">
             <span class="font--primary--xs">
