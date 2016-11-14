@@ -1,4 +1,3 @@
-
 <div class="layout-container full--until-large">
   <div class="flex-container cf">
     <div class="shift-left--fluid column__primary bg--white no-pad--top no-pad--btm can-be--dark-light">
@@ -43,7 +42,9 @@
                     $button_text = 'Read More';
                     $date = get_the_date();
                     $button_url = get_the_permalink();
+                    $round_image = get_sub_field('make_the_image_round');
                     $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+                    $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
                     $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
                     $block_inner_class = 'block__row--small-to-large';
                   ?>

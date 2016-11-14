@@ -1,4 +1,4 @@
-<?php if (is_home() || in_category('news') || in_category('articles')): ?>
+<?php if (is_home() || in_category('news') || in_category('articles') || is_page('recent-news')): ?>
   <?php include(locate_template('patterns/blocks/block-aside-nav.php')); ?>
 <?php else: ?>
   <?php
@@ -17,67 +17,6 @@
 <div class="column__secondary can-be--dark-dark">
   <aside class="aside spacing--double">
     <div class="pad--secondary spacing--double">
-      <?php if (in_category('news')): ?>
-        <!-- News -->
-        <?php
-          $news = array(
-            'cat' => array(14),
-            'posts_per_page' => 2,
-          );
-          query_posts($news);
-        ?>
-        <?php if (have_posts()) : ?>
-          <h3 class="font--tertiary--m theme--secondary-text-color">News</h3>
-          <?php while (have_posts()) : the_post(); ?>
-            <?php
-              $title = get_the_title();
-              $intro = get_field('intro');
-              $body = strip_tags(get_the_content());
-              $excerpt_length = 100;
-              $image = get_post_thumbnail_id();
-              $kicker = '';
-              $button_text = 'Read More';
-              $date = get_the_date();
-              $button_url = get_the_permalink();
-              $round_image = '';
-              $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
-              $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-              $block_inner_class = 'block__row--small-to-large';
-            ?>
-            <?php include(locate_template('patterns/blocks/block-media.php')); ?>
-          <?php endwhile; ?>
-        <?php endif; ?>
-        <?php wp_reset_query(); ?>
-
-        <!-- More News -->
-        <?php
-          $more_news = array(
-            'cat' => array(14),
-            'posts_per_page' => 2,
-            'offset' => 2
-          );
-          query_posts($more_news);
-        ?>
-        <?php if (have_posts()) : ?>
-          <div class="spacing">
-            <h3 class="font--tertiary--m theme--secondary-text-color">More News</h3>
-            <?php while (have_posts()) : the_post(); ?>
-              <?php
-                $title = get_the_title();
-                $body = wp_trim_words(get_the_content(), 12);
-                $button_text = 'Read More';
-                $button_url = get_the_permalink();
-              ?>
-              <div class="content__block">
-                <h3 class="theme--primary-text-color font--secondary--m"><a href="<?php echo $button_url; ?>"><?php echo $title; ?></a></h3>
-                <p><?php echo $body; ?>  <a href="<?php echo $button_url; ?>" class="font--secondary--s upper theme--secondary-text-color"><strong><?php echo $button_text; ?></strong></a> </p>
-              </div>
-              <hr>
-            <?php endwhile; ?>
-          </div>
-        <?php endif; ?>
-        <?php wp_reset_query(); ?>
-      <?php endif; ?>
 
       <?php if (!empty(get_field('column_title'))): ?><h3 class="font--tertiary--m theme--secondary-text-color"><?php the_field('column_title'); ?></h3><?php endif; ?>
 
@@ -156,6 +95,79 @@
     <?php
       // End promotional content loop.
       endwhile; ?>
+
+      <?php if (in_category('news') || is_page('recent-news')): ?>
+        <!-- News -->
+        <?php
+          $news = array(
+            'cat' => array(19),
+            'posts_per_page' => 3,
+          );
+          query_posts($news);
+        ?>
+        <?php if (have_posts()) : ?>
+          <h3 class="font--tertiary--m theme--secondary-text-color">Press Releases</h3>
+          <?php while (have_posts()) : the_post(); ?>
+            <?php
+              $title = get_the_title();
+              $intro = get_field('intro');
+              $body = strip_tags(get_the_content());
+              $excerpt_length = 100;
+              $image = '';
+              $kicker = get_sub_field('kicker');
+              $button_text = 'Read More';
+              $button_url = get_the_permalink();
+              $round_image = '';
+              $thumbnail = '';
+              $alt = '';
+              $block_inner_class = 'block__row--small-to-large';
+              if (isset($post->post_date) && $post->post_type == 'post') {
+                $date = get_the_date('M j, Y');
+                $date_formatted = get_the_date('c');
+              }
+            ?>
+            <?php include(locate_template('patterns/blocks/block-media.php')); ?>
+          <?php endwhile; ?>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
+
+        <!-- More News -->
+        <?php
+          $more_news = array(
+            'cat' => array(20),
+            'posts_per_page' => 2
+          );
+          query_posts($more_news);
+        ?>
+        <?php if (have_posts()) : ?>
+          <div class="spacing text"><hr class="Separator"></div>
+          <div class="spacing">
+            <h3 class="font--tertiary--m theme--secondary-text-color">Commentary</h3>
+            <?php while (have_posts()) : the_post(); ?>
+              <?php
+              $title = get_the_title();
+              $intro = get_field('intro');
+              $body = strip_tags(get_the_content());
+              $excerpt_length = 100;
+              $image = '';
+              $kicker = get_sub_field('kicker');
+              $button_text = 'Read More';
+              $button_url = get_the_permalink();
+              $round_image = '';
+              $thumbnail = '';
+              $alt = '';
+              $block_inner_class = 'block__row--small-to-large';
+              if (isset($post->post_date) && $post->post_type == 'post') {
+                $date = get_the_date('M j, Y');
+                $date_formatted = get_the_date('c');
+              }
+              ?>
+              <?php include(locate_template('patterns/blocks/block-media.php')); ?>
+            <?php endwhile; ?>
+          </div>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
+      <?php endif; ?>
     </div>
   </aside>
 </div>
