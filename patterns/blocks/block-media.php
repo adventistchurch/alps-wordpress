@@ -17,7 +17,7 @@
       <?php endif; ?>
 
       <div class="spacing--half">
-        <?php if ($intro || $body): ?>
+        <?php if (isset($intro) || isset($body)): ?>
           <div class="text text--s pad-half--btm">
             <p class="media-block__description block__description">
               <span class="font--primary--xs">
