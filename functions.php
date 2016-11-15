@@ -176,11 +176,6 @@ function register_my_menus() {
 add_action( 'init', 'register_my_menus' );
 
 /**
- * Hide content area on 'Single' page templates
- */
-
-
-/**
  * Function to add classes to Prev & Next pagination links
  */
 function posts_link_attributes() {
