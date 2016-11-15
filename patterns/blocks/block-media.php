@@ -24,17 +24,17 @@
                 <?php if (!empty($intro)): ?>
                   <?php
                     if (strlen($intro) > $excerpt_length):
-                        echo trim(substr($intro, 0, $excerpt_length)) . '&hellip;';
+                      echo trim(substr($intro, 0, $excerpt_length)) . '&hellip;';
                     else:
-                        echo $intro;
+                      echo $intro;
                     endif;
                   ?>
                 <?php elseif (!empty($body)): ?>
                   <?php
                     if (strlen($body) > $excerpt_length):
-                        echo trim(substr($body, 0, $excerpt_length)) . '&hellip;';
+                      echo trim(substr($body, 0, $excerpt_length)) . '&hellip;';
                     else:
-                        echo $body;
+                      echo $body;
                     endif;
                   ?>
                 <?php endif; ?>
