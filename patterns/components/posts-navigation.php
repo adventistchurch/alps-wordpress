@@ -12,6 +12,7 @@
     'page-numbers ',
     'current',
     '<a class=',
+    'pagination__page white dots'
   );
 
   // Custom ALPS classes to replace.
@@ -19,6 +20,7 @@
     'pagination__page white ',
     'pagination__page--current bg--gray',
     '<a class="pagination__page theme--secondary-background-color white "',
+    'pagination__divide'
   );
 
   $links = paginate_links($args);

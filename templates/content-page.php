@@ -9,8 +9,11 @@
   <div class="flex-container cf">
     <div class="shift-left--fluid column__primary bg--white can-be--dark-light no-pad--btm">
       <div class="pad--primary spacing">
+        <?php $carousel_format = get_field('carousel_type');?>
+        <?php if ($carousel_format == "small_format_inset"): ?>
+          <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
+        <?php endif; ?>
         <div class="text article__body spacing">
-
           <?php if (get_field('display_title')): ?>
             <h2 class="font--tertiary--l theme--primary-text-color"><?php the_field('display_title'); ?></h2>
           <?php endif; ?>

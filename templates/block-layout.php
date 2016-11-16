@@ -29,6 +29,7 @@
               $button_text = 'Read More';
               $date = get_the_date();
               $button_url = get_the_permalink();
+              $round_image = get_sub_field('make_the_image_round');
               $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
               $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
               $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
@@ -125,7 +126,6 @@
       $thumbnail_round = wp_get_attachment_image_src($thumb_id, "square--s")[0];
       $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
       $title  = the_title('','',false);
-
       if (isset($post->post_date) && $post->post_type == 'post') {
         $date = get_the_date('M j, Y');
         $date_formatted = get_the_date('c');

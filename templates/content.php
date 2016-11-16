@@ -1,7 +1,10 @@
-
 <div class="layout-container full--until-large">
   <div class="flex-container cf">
     <div class="shift-left--fluid column__primary bg--white no-pad--top no-pad--btm can-be--dark-light">
+      <?php $carousel_format = get_field('carousel_type');?>
+      <?php if ($carousel_format == "small_format_inset"): ?>
+        <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
+      <?php endif; ?>
       <?php if (!have_posts()) : ?>
         <div class="pad--primary no-pad--top no-pad--btm spacing--half text">
           <div class="alert alert-warning pad-double--top pad-half--btm">
@@ -43,7 +46,9 @@
                     $button_text = 'Read More';
                     $date = get_the_date();
                     $button_url = get_the_permalink();
+                    $round_image = get_sub_field('make_the_image_round');
                     $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+                    $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
                     $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
                     $block_inner_class = 'block__row--small-to-large';
                   ?>
