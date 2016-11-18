@@ -23,20 +23,28 @@
             // Content Block: Grid
             $grid_layout = get_sub_field('grid_layout');
             if ($grid_layout == '2up-70-30') {
-             $classes = 'g-2up--70-30--at-medium';
+             $grid_class = 'g-2up--70-30--at-medium';
+             $grid_item_class = 'right-gutter--l';
+            }
+            elseif ($grid_layout == '2up-30-70') {
+             $grid_class = 'g-2up--70-30--at-medium flip-columns';
+             $grid_item_class = 'left-gutter--l';
             }
             elseif ($grid_layout == '2up-50-50') {
-             $classes = 'g-2up--at-medium';
+             $grid_class = 'g-2up--at-medium';
+             $grid_item_class = 'right-gutter--l';
             }
             elseif ($grid_layout == '3up') {
-             $classes = 'g-3up--at-medium with-gutters';
+             $grid_class = 'g-3up--at-medium with-gutters';
+             $grid_item_class = 'right-gutter--l';
             }
             else {
-             $classes = '';
+             $grid_class = '';
+             $grid_item_class = 'right-gutter--l';
             }
           ?>
-            <div class="g <?php echo $classes; ?> pad--primary spacing">
-              <div class="gi right-gutter--l">
+            <div class="g <?php echo $grid_class; ?> pad--primary spacing">
+              <div class="gi <?php echo $grid_item_class; ?>">
                 <div class="text spacing">
                   <?php the_sub_field('grid_item_body_1'); ?>
                   <?php
