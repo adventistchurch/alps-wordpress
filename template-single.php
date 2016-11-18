@@ -110,7 +110,7 @@
 
             <?php
               //Full width media image
-              if (($image_layout) == 'full_width'):
+              if ($image_layout == 'full_width'):
             ?>
               <picture class="picture">
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
@@ -122,7 +122,7 @@
               </picture>
             <?php
               // Breakout media image
-              elseif (($image_layout)== 'breakout'):
+              elseif ($image_layout == 'breakout' || $image_layout == 'breakout_parallax'):
             ?>
               <style>
               .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--s")[0]; ?>); }
@@ -136,7 +136,7 @@
                 .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--xl")[0]; ?>); }
               }
               </style>
-              <div class="breakout has-parallax breakout-image breakout-image_<?php echo $image; ?> bg--cover" data-type="background" data-speed="8"></div>
+              <div class="breakout <?php if ($image_layout == 'breakout_parallax'): echo 'has-parallax'; endif; ?> breakout-image breakout-image_<?php echo $image; ?> bg--cover" data-type="background" <?php if ($image_layout == 'breakout_parallax'): echo 'data-speed="8"'; endif; ?>></div>
             <?php endif; ?>
           <?php endif; ?>
         <?php endwhile; ?>
