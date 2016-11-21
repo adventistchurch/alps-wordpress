@@ -1,7 +1,6 @@
 <?php
   $page_title = $wp_query->post->post_title;
   $page_parent = $wp_query->post->post_parent;
-  print_r($page_parent);
 ?>
 
 <!-- Loop of posts for child pages -->

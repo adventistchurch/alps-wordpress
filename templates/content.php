@@ -27,12 +27,7 @@
         <hr>
       </div>
       <div class="g g-3up--at-medium with-divider grid--uniform">
-        <?php
-          $news = array(
-            'cat' => array(14)
-          );
-        ?>
-        <?php if (is_home()): query_posts($news); ?>
+        <?php if (have_posts()): ?>
           <?php while (have_posts()) : the_post(); ?>
             <div class="gi">
               <div class="spacing">

@@ -48,6 +48,20 @@
             <?php echo the_field('kicker'); ?>
           <?php elseif (is_page() && $post->post_parent != '0'): ?>
             <?php echo get_the_title($post->post_parent); ?>
+          <?php elseif (is_single()): ?>
+            <?php
+              $categories = get_the_category();
+              $category= '';
+              foreach($categories as $childcat) {
+                $parentcat = $childcat->category_parent;
+                if($parentcat>0){
+                  $category = get_cat_name($parentcat);
+                  continue;
+                }
+              }
+              $category = (strlen($category)>0)? $category :  $categories[0]->cat_name;
+            ?>
+            <?php echo $category; ?>
           <?php endif; ?>
         </span>
         <h1 class="font--tertiary--xl white">
