@@ -54,7 +54,7 @@
               $category= '';
               foreach($categories as $childcat) {
                 $parentcat = $childcat->category_parent;
-                if($parentcat>0){
+                if ($parentcat>0){
                   $category = get_cat_name($parentcat);
                   continue;
                 }
