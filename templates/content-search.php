@@ -15,7 +15,6 @@
             <div class="alert alert-warning">
               <?php _e('Sorry, no results were found.', 'sage'); ?>
             </div>
-            <?php get_template_part('patterns/components/search-form'); ?>
           </div>
         <?php endif; ?>
         <div class="search__results spacing--one-and-half">
