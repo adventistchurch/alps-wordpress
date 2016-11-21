@@ -15,7 +15,7 @@
       <?php endif; ?>
       <div class="spacing--half">
         <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-          <?php if (is_home()): ?>
+          <?php if (is_home() && !is_front_page()): ?>
             All News
           <?php elseif (is_category()): ?>
             <?php $categories = get_the_category(); ?>

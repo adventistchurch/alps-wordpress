@@ -1,4 +1,4 @@
-<?php if (is_home() || in_category('news') || in_category('articles') || is_page('recent-news')): ?>
+<?php if (is_home() && !is_front_page() || in_category('news') || is_page('recent-news')): ?>
   <?php include(locate_template('patterns/blocks/block-aside-nav.php')); ?>
 <?php else: ?>
   <?php
