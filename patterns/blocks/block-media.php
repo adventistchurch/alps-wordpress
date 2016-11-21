@@ -1,6 +1,6 @@
 <div class="media-block block spacing--quarter">
-  <?php if (isset($kicker)): ?>
-    <span class="kicker font--secondary--m upper theme--secondary-text-color db"><?php echo $kicker ?></span>
+  <?php if (isset($kicker) && !empty($title)): ?>
+    <span class="kicker font--secondary--m upper theme--secondary-text-color db"><a href="<?php echo $button_url; ?>"><?php echo $kicker; ?></a></span>
   <?php endif; ?>
   <div class="media-block__inner spacing--quarter <?php echo ($block_inner_class) ? $block_inner_class : 'block__row'; ?>">
     <?php if ($thumbnail && $button_url): ?>
@@ -11,7 +11,7 @@
       </a> <!-- /.media-block__image-wrap -->
     <?php endif; ?>
     <div class="media-block__content <?php if ($thumbnail): ?>block__content<?php endif; ?>">
-      <h3 class="media-block__title block__title <?php if (isset($title_size)): echo $title_size; endif; ?> "><a href="<?php echo $button_url; ?>" class="block__title-link theme--primary-text-color"><?php echo $title; ?></a></h3>
+      <h3 class="media-block__title block__title <?php if (isset($title_size)): echo $title_size; endif; ?> "><a href="<?php echo $button_url; ?>" class="block__title-link theme--primary-text-color"><?php if (!empty($title)): echo $title; else: echo $kicker; endif; ?></a></h3>
       <?php if (isset($date)): ?>
         <time class="block__date font--secondary--xs brown space-half--btm" datetime="<?php echo $date_formatted; ?>"><?php echo $date; ?></time>
       <?php endif; ?>
