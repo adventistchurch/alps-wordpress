@@ -87,22 +87,18 @@
   <?php
     // Freeform headline block.
     if (empty($image)): ?>
-  <?php if ($is_two_column): ?><div class="gi"><?php endif; ?>
     <div class="spacing--zero no-space--top flex">
       <?php include(locate_template('patterns/blocks/block-headline.php')); ?>
-      <?php if (!$is_two_column): ?><hr class="w--100p"><?php endif; ?>
+      <hr class="w--100p">
     </div>
-  <?php if ($is_two_column): ?></div><?php endif; ?>
 
   <?php
     // Freeform media block.
     else: ?>
-  <?php if ($is_two_column): ?><div class="gi"><?php endif; ?>
-    <div class="<?php if ($is_two_column): echo 'pad'; endif; ?> pad--primary">
+    <div class="pad--primary">
       <?php include(locate_template('patterns/blocks/block-media.php')); ?>
     </div>
-    <?php if (!$is_two_column): ?><hr class="w--100p"><?php endif; ?>
-  <?php if ($is_two_column): ?></div><?php endif; ?>
+    <hr class="w--100p">
   <?php endif; ?>
 
 <?php
@@ -132,16 +128,13 @@
       }
     ?>
 
-    <?php if ($is_two_column): ?><div class="gi"><?php endif; ?>
-      <div class="<?php if ($is_two_column): echo 'pad'; endif; ?> pad--primary">
-        <?php include(locate_template('patterns/blocks/block-media.php')); ?>
-      </div>
-    <?php if ($is_two_column): ?></div><?php endif; ?>
-
-    <?php if (!$is_two_column): ?><hr class="w--100p"><?php endif; ?>
+    <div class="pad--primary">
+      <?php include(locate_template('patterns/blocks/block-media.php')); ?>
+    </div>
+    <hr class="w--100p">
 
   <?php
-    // End referenc block foreach.
+    // End reference block foreach.
         $i++;
       endforeach;
     wp_reset_postdata();
