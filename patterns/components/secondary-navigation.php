@@ -13,7 +13,8 @@
     'menu-item ',
     'sub-menu',
     'current-menu-item',
-    'menu-item-has-children'
+    'menu-item-has-children',
+    '<a'
   );
 
   // Custom ALPS classes to replace.
@@ -21,7 +22,8 @@
     'secondary-nav__list-item rel ',
     'secondary-nav__subnav__list',
     'active',
-    'secondary-nav--with-subnav js-hover'
+    'secondary-nav--with-subnav js-hover',
+    '<a class="secondary-nav__link theme--secondary-text-color" '
   );
 ?>
 <?php if (has_nav_menu('secondary_navigation')): ?>

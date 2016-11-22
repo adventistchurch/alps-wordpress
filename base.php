@@ -1,12 +1,15 @@
 <?php
-use Roots\Sage\Setup;
-use Roots\Sage\Wrapper;
+  use Roots\Sage\Setup;
+  use Roots\Sage\Wrapper;
+
+  $primary_theme_color = get_field('primary_theme_color', 'option');
+  $secondary_theme_color = get_field('secondary_theme_color', 'option');
 ?>
 
 <!doctype html>
-<html <?php language_attributes(); ?> class="theme--ming">
+<html <?php language_attributes(); ?> class="theme--<?php echo $primary_theme_color; ?>">
   <?php get_template_part('templates/head'); ?>
-  <body <?php body_class("body theme--cool"); ?>>
+  <body <?php body_class("body theme--$secondary_theme_color"); ?>>
     <!--[if lt IE 11]>
       <div class="alert alert-warning">
         <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>

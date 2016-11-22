@@ -10,11 +10,13 @@
   // Native WordPress menu classes to be replaced.
   $replace = array(
     'menu-item',
+    '<a'
   );
 
   // Custom ALPS classes to replace.
   $replace_with = array(
     'footer__nav-item inline-list__item',
+    '<a class="footer__nav-link font--secondary link--white" '
   );
 ?>
 <?php if (has_nav_menu('primary_navigation')): ?>

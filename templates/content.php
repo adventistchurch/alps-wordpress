@@ -15,7 +15,7 @@
       <?php endif; ?>
       <div class="spacing--half">
         <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-          <?php if (is_home()): ?>
+          <?php if (is_home() && !is_front_page()): ?>
             All News
           <?php elseif (is_category()): ?>
             <?php $categories = get_the_category(); ?>
@@ -27,12 +27,7 @@
         <hr>
       </div>
       <div class="g g-3up--at-medium with-divider grid--uniform">
-        <?php
-          $news = array(
-            'cat' => array(14)
-          );
-        ?>
-        <?php if (is_home()): query_posts($news); ?>
+        <?php if (have_posts()): ?>
           <?php while (have_posts()) : the_post(); ?>
             <div class="gi">
               <div class="spacing">

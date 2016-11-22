@@ -23,20 +23,28 @@
             // Content Block: Grid
             $grid_layout = get_sub_field('grid_layout');
             if ($grid_layout == '2up-70-30') {
-             $classes = 'g-2up--70-30--at-medium';
+             $grid_class = 'g-2up--70-30--at-medium';
+             $grid_item_class = 'right-gutter--l';
+            }
+            elseif ($grid_layout == '2up-30-70') {
+             $grid_class = 'g-2up--70-30--at-medium flip-columns';
+             $grid_item_class = 'left-gutter--l';
             }
             elseif ($grid_layout == '2up-50-50') {
-             $classes = 'g-2up--at-medium';
+             $grid_class = 'g-2up--at-medium';
+             $grid_item_class = 'right-gutter--l';
             }
             elseif ($grid_layout == '3up') {
-             $classes = 'g-3up--at-medium with-gutters';
+             $grid_class = 'g-3up--at-medium with-gutters';
+             $grid_item_class = 'right-gutter--l';
             }
             else {
-             $classes = '';
+             $grid_class = '';
+             $grid_item_class = 'right-gutter--l';
             }
           ?>
-            <div class="g <?php echo $classes; ?> pad--primary spacing">
-              <div class="gi right-gutter--l">
+            <div class="g <?php echo $grid_class; ?> pad--primary spacing">
+              <div class="gi <?php echo $grid_item_class; ?>">
                 <div class="text spacing">
                   <?php the_sub_field('grid_item_body_1'); ?>
                   <?php
@@ -110,7 +118,7 @@
 
             <?php
               //Full width media image
-              if (($image_layout) == 'full_width'):
+              if ($image_layout == 'full_width'):
             ?>
               <picture class="picture">
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
@@ -122,7 +130,7 @@
               </picture>
             <?php
               // Breakout media image
-              elseif (($image_layout)== 'breakout'):
+              elseif ($image_layout == 'breakout' || $image_layout == 'breakout_parallax'):
             ?>
               <style>
               .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--s")[0]; ?>); }
@@ -136,7 +144,7 @@
                 .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--xl")[0]; ?>); }
               }
               </style>
-              <div class="breakout has-parallax breakout-image breakout-image_<?php echo $image; ?> bg--cover" data-type="background" data-speed="8"></div>
+              <div class="breakout <?php if ($image_layout == 'breakout_parallax'): echo 'has-parallax'; endif; ?> breakout-image breakout-image_<?php echo $image; ?> bg--cover" data-type="background" <?php if ($image_layout == 'breakout_parallax'): echo 'data-speed="8"'; endif; ?>></div>
             <?php endif; ?>
           <?php endif; ?>
         <?php endwhile; ?>

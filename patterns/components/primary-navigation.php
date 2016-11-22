@@ -4,7 +4,7 @@
     'menu_class' => 'primary-nav__list',
     'container' => false,
     'depth' => 2,
-    'theme_location' => 'primary_navigation',
+    'theme_location' => 'primary_navigation'
   );
 
   // Native WordPress menu classes to be replaced.
@@ -12,7 +12,9 @@
     'menu-item ',
     'sub-menu',
     'current-menu-item',
-    'menu-item-has-children'
+    'current_page_item',
+    'menu-item-has-children',
+    '<a'
   );
 
   // Custom ALPS classes to replace.
@@ -20,7 +22,9 @@
     'primary-nav__list-item ',
     'primary-nav__subnav',
     'active',
-    'primary-nav--with-subnav js-hover'
+    'active',
+    'primary-nav--with-subnav js-hover',
+    '<a class="primary-nav__link theme--primary-text-color" '
   );
 ?>
 <?php if (has_nav_menu('primary_navigation')): ?>
