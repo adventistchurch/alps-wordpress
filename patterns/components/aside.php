@@ -17,8 +17,8 @@
 <div class="column__secondary can-be--dark-dark">
   <aside class="aside spacing--double">
     <div class="pad--secondary spacing--double">
-      <!-- News -->
       <?php
+        // News feed
         $news = array(
           'category_name' => 'news',
           'posts_per_page' => 3,

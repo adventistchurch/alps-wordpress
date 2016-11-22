@@ -3,8 +3,8 @@
   $page_parent = $wp_query->post->post_parent;
 ?>
 
-<!-- Loop of posts for child pages -->
 <?php
+  // Loop of posts for child pages
   $args = array(
     'category_name' => $page_title,
     'posts_per_page' => 6
@@ -46,8 +46,8 @@
 <?php endif; ?>
 <?php wp_reset_query(); ?>
 
-<!-- Loop of pages for top level pages -->
 <?php
+  // Loop of pages for top level pages
   $pages = get_pages(
     array(
       'child_of' => $post->ID,
