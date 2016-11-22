@@ -1,5 +1,5 @@
 <?php if (get_field('sb_url') && get_field('sb_title')): ?>
-  <div class="story-block block spacing--half pad" <?php if (get_field('sb_background_image')): ?>style="background-image: url(<?php echo get_field('sb_background_image')['sizes']['square--l']; ?>)"<?php endif; ?>>
+  <div class="story-block block spacing--half pad flex--end" <?php if (get_field('sb_background_image')): ?>style="background-image: url(<?php echo get_field('sb_background_image')['sizes']['square--l']; ?>)"<?php endif; ?>>
     <?php if (get_field('sb_thumbnail')): ?>
       <div class="story-block__image-wrap round">
         <img class="story-block__image" src="<?php echo get_field('sb_thumbnail')['sizes']['sb_thumbnail']; ?>" alt="<?php echo get_field('sb_thumbnail')['alt']; ?>" />

@@ -3,7 +3,7 @@
   <div class="layout-container full--until-large">
     <div class="flex-container cf">
       <div class="shift-left--fluid column__primary bg--white can-be--dark-light no-pad--btm">
-        <div class="spacing--double">
+        <div class="spacing--double flex h--100p">
           <div class="pad--primary spacing text">
             <h2 class="font--tertiary--l theme--primary-text-color"><?php if (get_field('display_title')): the_field('display_title'); else: the_title(); endif; ?></h2>
             <?php the_content(); ?>
