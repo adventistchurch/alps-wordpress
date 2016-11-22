@@ -3,7 +3,6 @@
 namespace Roots\Sage\Extras;
 
 use Roots\Sage\Setup;
-
 /**
  * Add <body> classes
  */
@@ -13,6 +12,11 @@ function body_class($classes) {
     if (!in_array(basename(get_permalink()), $classes)) {
       $classes[] = basename(get_permalink());
     }
+  }
+
+  // Add class if dark theme is true
+  if (get_field('dark_theme', 'option')) {
+    $classes[] = 'dark';
   }
 
   // Add class if sidebar is active

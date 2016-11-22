@@ -205,5 +205,12 @@ function ss_breadcrumb_single_link( $link_output, $link ) {
 add_filter( 'wpseo_breadcrumb_single_link', 'ss_breadcrumb_single_link', 10, 2 );
 
 /**
+ * Creates options page for ACF
+ */
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page();
+}
+
+/**
  * ACF
  */
