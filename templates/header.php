@@ -12,13 +12,13 @@
         $logo_text = get_field('logo_text', 'options');
       ?>
       <?php if ($logo_horizontal): ?>
-        <a href="<?= esc_url(home_url('/')); ?>" class="logo__link logo__link--horiz theme--primary-background-color show-until--large <?php if ($logo_text): echo 'logo--with-text'; endif; ?>">
+        <a href="<?php echo get_home_url(); ?>" class="logo__link logo__link--horiz theme--primary-background-color show-until--large <?php if ($logo_text): echo 'logo--with-text'; endif; ?>">
           <img src="<?php echo $logo_horizontal['url']; ?>" alt="<?php echo $logo_horizontal['url']; ?>">
           <?php if ($logo_text): ?><span class="logo__text"><img class="logo__text" src="<?php echo $logo_text['url']; ?>" alt="<?php echo $logo_text['alt']; ?>"></span><?php endif; ?>
         </a>
       <?php endif; ?>
       <?php if ($logo_square): ?>
-        <a href="/" class="logo__link logo__link--square theme--primary-background-color show-at--large <?php if ($logo_text): echo 'logo--with-text'; endif; ?>">
+        <a href="<?php echo get_home_url(); ?>" class="logo__link logo__link--square theme--primary-background-color show-at--large <?php if ($logo_text): echo 'logo--with-text'; endif; ?>">
           <img src="<?php echo $logo_square['url']; ?>" alt="<?php echo $logo_square['alt']; ?>">
           <?php if ($logo_text): ?><span class="logo__text"><img class="logo__text" src="<?php echo $logo_text['url']; ?>" alt="<?php echo $logo_text['alt']; ?>"></span><?php endif; ?>
         </a>
