@@ -1,8 +1,4 @@
 <header class="header can-be--dark-dark" role="banner" id="header">
-  <div class="header__top-hat show-at--large bg--black pad-half align--right">
-    <span class="icon icon__logo"><?php get_template_part('patterns/icons/icon-logo'); ?></span>
-    <p class="font--secondary--xs gray--med">This is an official website of the Seventh-day Adventist Church. <a class="link--white" href="http://adventist.org">Learn More about Adventists</a>.</p>
-  </div> <!-- /.header__top-hat -->
   <div class="header__inner">
     <?php get_template_part('patterns/components/navigation-toggle'); ?>
     <div class="header__unify-logo-nav">
