@@ -3,13 +3,12 @@
   use Roots\Sage\Wrapper;
 
   $primary_theme_color = get_field('primary_theme_color', 'option');
-  $secondary_theme_color = get_field('secondary_theme_color', 'option');
 ?>
 
 <!doctype html>
-<html <?php language_attributes(); ?> class="theme--<?php echo $primary_theme_color; ?>">
+<html <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
-  <body <?php body_class("body theme--$secondary_theme_color"); ?>>
+  <body <?php body_class("body"); ?>>
     <!--[if lt IE 11]>
       <div class="alert alert-warning">
         <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
