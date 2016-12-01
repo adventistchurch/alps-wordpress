@@ -17,6 +17,8 @@
         <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
           <?php if (is_home() && !is_front_page()): ?>
             All News
+          <?php elseif (is_home() && is_front_page()): ?>
+            All Posts
           <?php elseif (is_category()): ?>
             <?php $categories = get_the_category(); ?>
             <?php if (!empty($categories)): ?>
@@ -26,10 +28,10 @@
         </h2>
         <hr>
       </div>
-      <div class="g g-3up--at-medium with-divider grid--uniform">
+      <div class="with-divider grid--uniform">
         <?php if (have_posts()): ?>
           <?php while (have_posts()) : the_post(); ?>
-            <div class="gi">
+            <div class="">
               <div class="spacing">
                 <div class="pad">
                   <?php
@@ -45,7 +47,6 @@
                     $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
                     $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
                     $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                    $block_inner_class = 'block__row--small-to-large';
                   ?>
                   <?php include(locate_template('patterns/blocks/block-media.php')); ?>
                 </div>
@@ -56,8 +57,6 @@
         <?php wp_reset_query(); ?>
       </div> <!-- /.2up--at-medium -->
     </div> <!-- /.shift-left--fluid -->
-    <div class="shift-right--fluid bg--beige can-be--dark-dark">
-      <?php include(locate_template('patterns/components/aside.php')); ?>
-    </div> <!-- /.shift-right--fluid -->
+    <?php get_sidebar(); ?>
   </div> <!-- /.flex-container -->
 </div> <!-- /.layout-container -->

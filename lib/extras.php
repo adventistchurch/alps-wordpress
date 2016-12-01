@@ -3,6 +3,9 @@
 namespace Roots\Sage\Extras;
 
 use Roots\Sage\Setup;
+
+
+
 /**
  * Add <body> classes
  */
@@ -12,6 +15,21 @@ function body_class($classes) {
     if (!in_array(basename(get_permalink()), $classes)) {
       $classes[] = basename(get_permalink());
     }
+  }
+
+  // Add class if theme color is selected
+  $primary_theme_color = get_field('primary_theme_color', 'option');
+  if ($primary_theme_color) {
+    $classes[] = 'theme--' . $primary_theme_color;
+  } else {
+    $classes[] = 'theme--ming';
+  }
+
+  $secondary_theme_color = get_field('secondary_theme_color', 'option');
+  if ($secondary_theme_color) {
+    $classes[] = 'theme--' . $secondary_theme_color;
+  } else {
+    $classes[] = 'theme--warm';
   }
 
   // Add class if dark theme is true

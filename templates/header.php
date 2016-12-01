@@ -11,18 +11,26 @@
         $logo_horizontal = get_field('logo_horizontal', 'options');
         $logo_text = get_field('logo_text', 'options');
       ?>
-      <?php if ($logo_horizontal): ?>
-        <a href="<?php echo get_home_url(); ?>" class="logo__link logo__link--horiz theme--primary-background-color show-until--large <?php if ($logo_text): echo 'logo--with-text'; endif; ?>">
+      <a href="<?php echo get_home_url(); ?>" class="logo__link logo__link--horiz theme--primary-background-color show-until--large <?php if ($logo_text): echo 'logo--with-text'; endif; ?>">
+        <?php if ($logo_horizontal): ?>
           <img src="<?php echo $logo_horizontal['url']; ?>" alt="<?php echo $logo_horizontal['url']; ?>">
-          <?php if ($logo_text): ?><span class="logo__text"><img class="logo__text" src="<?php echo $logo_text['url']; ?>" alt="<?php echo $logo_text['alt']; ?>"></span><?php endif; ?>
-        </a>
-      <?php endif; ?>
-      <?php if ($logo_square): ?>
-        <a href="<?php echo get_home_url(); ?>" class="logo__link logo__link--square theme--primary-background-color show-at--large <?php if ($logo_text): echo 'logo--with-text'; endif; ?>">
+        <?php else: ?>
+          <img src="<?php bloginfo('template_directory'); ?>/dist/images/sda-logo--horiz.svg" alt="<?php bloginfo('name'); ?> - logo">
+        <?php endif; ?>
+        <?php if ($logo_text): ?>
+          <span class="logo__text"><img class="logo__text" src="<?php echo $logo_text['url']; ?>" alt="<?php echo $logo_text['alt']; ?>"></span>
+        <?php endif; ?>
+      </a>
+      <a href="<?php echo get_home_url(); ?>" class="logo__link logo__link--square theme--primary-background-color show-at--large <?php if ($logo_text): echo 'logo--with-text'; endif; ?>">
+        <?php if ($logo_square): ?>
           <img src="<?php echo $logo_square['url']; ?>" alt="<?php echo $logo_square['alt']; ?>">
-          <?php if ($logo_text): ?><span class="logo__text"><img class="logo__text" src="<?php echo $logo_text['url']; ?>" alt="<?php echo $logo_text['alt']; ?>"></span><?php endif; ?>
-        </a>
-      <?php endif; ?>
+        <?php else: ?>
+          <img src="<?php bloginfo('template_directory'); ?>/dist/images/sda-logo--square.svg" alt="<?php bloginfo('name'); ?> - logo">
+        <?php endif; ?>
+        <?php if ($logo_text): ?>
+          <span class="logo__text"><img class="logo__text" src="<?php echo $logo_text['url']; ?>" alt="<?php echo $logo_text['alt']; ?>"></span>
+        <?php endif; ?>
+      </a>
       <?php get_template_part('patterns/components/primary-navigation'); ?>
     </div> <!-- /.header__unify-logo-nav -->
     <div class="header__utility">
