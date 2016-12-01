@@ -2,17 +2,7 @@
   <?php if (is_front_page() && is_home() || !is_front_page() && is_home() || in_category('news') || is_page('recent-news')): ?>
     <?php include(locate_template('patterns/blocks/block-aside-nav.php')); ?>
   <?php else: ?>
-    <?php
-      // Beakout block.
-      $title = get_field('title');
-      $body = get_field('body');
-      $image = get_field('image');
-      $button_text = get_field('button_text');
-      $url = get_field('button_url');
-      $thumbnail = $image['sizes']['horiz__4x3--s'];
-      $alt = $image['alt'];
-    ?>
-    <?php include(locate_template('patterns/blocks/block-breakout.php')); ?>
+    <?php dynamic_sidebar('sidebar_breakout_block'); ?>
   <?php endif; ?>
 
   <div class="column__secondary can-be--dark-dark">
