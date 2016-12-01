@@ -20,6 +20,7 @@
       <div class="pad--secondary spacing--double">
         <?php if (is_active_sidebar('sidebar')): ?>
           <?php dynamic_sidebar('sidebar'); ?>
+          <hr>
         <?php endif; ?>
         <?php
           // News feed

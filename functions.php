@@ -34,10 +34,10 @@ function sidebar() {
   register_sidebar(array(
     'name' => 'Sidebar',
     'id' => 'sidebar',
-    'before_widget' => '<div id="%1$s" class="omc-footer-widget %2$s">',
+    'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<h4>',
-    'after_title' => '</h4>'
+    'before_title' => '<h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
+    'after_title' => '</h3>'
   ));
 }
 add_action( 'widgets_init', 'sidebar' );

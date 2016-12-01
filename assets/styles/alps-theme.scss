@@ -11,3 +11,65 @@
      border-bottom: 1px solid lighten(#000, 90);
    }
  }
+
+ .widget {
+   ul li {
+     margin-bottom: 10px;
+     a {
+       font-family: "Merriweather",Georgia,Times,"Times New Roman",serif;
+       font-size: .8125rem;
+       line-height: 1.0625rem;
+       color: #575a5c;
+       &:hover {
+         text-decoration: underline;
+       }
+     }
+   }
+   .search-form {
+     width: 100%;
+   }
+   .search-field {
+     display: block;
+     margin-bottom: 10px;
+   }
+   .calendar_wrap {
+     float: left;
+     width: 100%;
+     color: #575a5c;
+     margin-bottom: 80px;
+     caption {
+       text-transform: uppercase;
+       text-align: left;
+       font-size: 12px;
+       margin-top: 10px;
+       margin-bottom: 15px;
+     }
+     thead {
+       font-size: 10px;
+     }
+     thead th {
+       padding-bottom: 10px;
+     }
+     tbody td {
+       border: 1px solid #575a5c;
+       text-align: center;
+       padding:8px;
+     }
+     tbody td:hover {
+       background: #fff;
+     }
+     tbody .pad {
+       background: none;
+     }
+     tfoot #next {
+       font-size: 10px;
+       text-transform: uppercase;
+       text-align: right;
+     }
+     tfoot #prev {
+       font-size: 10px;
+       text-transform: uppercase;
+       padding-top: 10px;
+     }
+   }
+ }
