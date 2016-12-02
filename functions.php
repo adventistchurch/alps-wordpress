@@ -28,33 +28,6 @@ foreach ($sage_includes as $file) {
 unset($file, $filepath);
 
 /**
- * Sidebars
- */
-function sidebars() {
-  register_sidebar(
-    array(
-      'name' => 'Sidebar (Breakout Block)',
-      'id' => 'sidebar_breakout_block',
-      'before_widget' => '<div class="media-block block spacing--quarter bg--tan can-be--dark-dark block--breakout pad--secondary--for-breakouts">',
-      'after_widget' => '</div>',
-      'before_title' => '<h2 class="font--tertiary--m theme--primary-text-color pad--btm"><div class="icon icon--s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.22 99.29"><title>List Icon</title><path d="M34.68,54.8H65.57V44.87H34.68V54.8ZM77.58,0.36H22.42a11.06,11.06,0,0,0-11,11V88.61a11.06,11.06,0,0,0,11,11H77.58a11.06,11.06,0,0,0,11-11V11.39A11.06,11.06,0,0,0,77.58.36Zm0,88.26H22.42V11.39H77.58V88.61ZM65.44,23.35H34.56V33H65.44V23.35Zm0,43.3H34.56v9.65H65.44V66.66Z" transform="translate(-11.39 -0.36)" fill="#010101" class="theme--primary-fill-color"/></svg></div>',
-      'after_title' => '</h2>'
-    )
-  );
-  register_sidebar(
-    array(
-      'name' => 'Sidebar',
-      'id' => 'sidebar',
-      'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
-      'after_title' => '</h3>'
-    )
-  );
-}
-add_action( 'widgets_init', 'sidebars' );
-
-/**
  * Breadcrumbs
  */
 function wordpress_breadcrumbs() {
@@ -239,6 +212,130 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+/**
+ * Sidebars
+ */
+function sidebars() {
+  register_sidebar(
+    array(
+      'name' => 'Sidebar (Breakout Block)',
+      'id' => 'sidebar_breakout_block',
+      'before_widget' => '<div class="media-block block spacing--quarter bg--tan can-be--dark-dark block--breakout pad--secondary--for-breakouts">',
+      'after_widget' => '</div>',
+      'before_title' => '<h2 class="font--tertiary--m theme--primary-text-color pad--btm"><div class="icon icon--s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.22 99.29"><title>List Icon</title><path d="M34.68,54.8H65.57V44.87H34.68V54.8ZM77.58,0.36H22.42a11.06,11.06,0,0,0-11,11V88.61a11.06,11.06,0,0,0,11,11H77.58a11.06,11.06,0,0,0,11-11V11.39A11.06,11.06,0,0,0,77.58.36Zm0,88.26H22.42V11.39H77.58V88.61ZM65.44,23.35H34.56V33H65.44V23.35Zm0,43.3H34.56v9.65H65.44V66.66Z" transform="translate(-11.39 -0.36)" fill="#010101" class="theme--primary-fill-color"/></svg></div>',
+      'after_title' => '</h2>'
+    )
+  );
+  register_sidebar(
+    array(
+      'name' => 'Sidebar',
+      'id' => 'sidebar',
+      'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
+      'after_title' => '</h3>'
+    )
+  );
+}
+add_action( 'widgets_init', 'sidebars' );
+
+/**
+ * Create 'Text with Link' widget
+ */
+class text_link extends WP_Widget {
+  // Sets up the widgets name etc
+  public function __construct() {
+    $widget_ops = array(
+      'classname' => 'text_link',
+      'description' => 'Arbitrary text with link.',
+    );
+    parent::__construct( 'text_link', 'Text with Link', $widget_ops );
+  }
+
+  /**
+   * Outputs the content of the widget
+   *
+   * @param array $args
+   * @param array $instance
+   */
+  public function widget($args, $instance) {
+    if (!isset($args['widget_id'])) {
+      $args['widget_id'] = null;
+    }
+    extract($args);
+    $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance);
+    $text = apply_filters('widget_enhanced_text', $instance['text'], $instance);
+    $link_text = empty($instance['link_text']) ? '' : $instance['link_text'];
+    $url = empty($instance['url']) ? '' : $instance['url'];
+
+    echo $before_widget;
+    if ($title) {
+      echo $before_title . $title . $after_title;
+    }
+    if ($text) {
+      echo '<div class="text text--s pad-half--btm">' . $text . '</div>';
+    }
+    if ($url) {
+      echo '<p><a class="media-block__cta block__cta btn theme--secondary-background-color" href="' . $url . '">' . $link_text . '</a></p>';
+    }
+    echo $after_widget;
+  }
+
+  /**
+   * Outputs the options form on admin
+   *
+   * @param array $instance The widget options
+   */
+  public function form($instance) {
+    // outputs the options form on admin
+    $instance = wp_parse_args((array) $instance, array(
+      'title' => '',
+      'text' => '',
+      'link_text' => '',
+      'url' => ''
+    ));
+    $title = $instance['title'];
+    $text = format_to_edit($instance['text']);
+    $link_text = $instance['link_text'];
+    $url = $instance['url'];
+    ?>
+      <p>
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:'); ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e('Content:'); ?></label>
+        <textarea class="widefat monospace" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('link_text'); ?>"><?php _e('Link Text:'); ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id('link_text'); ?>" name="<?php echo $this->get_field_name('link_text'); ?>" type="text" value="<?php echo $link_text; ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('Url'); ?>:</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
+      </p>
+    <?php
+  }
+
+  /**
+   * Processing widget options on save
+   *
+   * @param array $new_instance The new options
+   * @param array $old_instance The previous options
+   */
+  public function update($new_instance, $old_instance) {
+    // processes widget options to be saved
+    foreach ($new_instance as $key => $value) {
+      $updated_instance[$key] = sanitize_text_field($value);
+    }
+    return $updated_instance;
+  }
+}
+add_action('widgets_init', function() {
+  register_widget('text_link');
+});
 
 /**
  * Creates options page for ACF
@@ -2239,103 +2336,3 @@ acf_add_local_field_group(array (
 ));
 
 endif;
-
-
-add_action('widgets_init', function() {
-  register_widget('text_link');
-});
-
-class text_link extends WP_Widget {
-
-  /**
-   * Sets up the widgets name etc
-   */
-  public function __construct() {
-    $widget_ops = array(
-      'classname' => 'text_link',
-      'description' => 'Arbitrary text with link.',
-    );
-    parent::__construct( 'text_link', 'Text with Link', $widget_ops );
-  }
-
-  /**
-   * Outputs the content of the widget
-   *
-   * @param array $args
-   * @param array $instance
-   */
-  public function widget($args, $instance) {
-    if (!isset($args['widget_id'])) {
-      $args['widget_id'] = null;
-    }
-    extract($args);
-    $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance);
-    $text = apply_filters('widget_enhanced_text', $instance['text'], $instance);
-    $link_text = empty($instance['link_text']) ? '' : $instance['link_text'];
-    $url = empty($instance['url']) ? '' : $instance['url'];
-
-    echo $before_widget;
-    if ($title) {
-      echo $before_title . $title . $after_title;
-    }
-    if ($text) {
-      echo '<div class="text text--s pad-half--btm">' . $text . '</div>';
-    }
-    if ($url) {
-      echo '<p><a class="media-block__cta block__cta btn theme--secondary-background-color" href="' . $url . '">' . $link_text . '</a></p>';
-    }
-    echo $after_widget;
-  }
-
-  /**
-   * Outputs the options form on admin
-   *
-   * @param array $instance The widget options
-   */
-  public function form($instance) {
-    // outputs the options form on admin
-    $instance = wp_parse_args((array) $instance, array(
-      'title' => '',
-      'text' => '',
-      'link_text' => '',
-      'url' => ''
-    ));
-    $title = $instance['title'];
-    $text = format_to_edit($instance['text']);
-    $link_text = $instance['link_text'];
-    $url = $instance['url'];
-    ?>
-      <p>
-        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:'); ?></label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-      </p>
-      <p>
-        <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e('Content:'); ?></label>
-        <textarea class="widefat monospace" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
-      </p>
-      <p>
-        <label for="<?php echo $this->get_field_id('link_text'); ?>"><?php _e('Link Text:'); ?></label>
-        <input class="widefat" id="<?php echo $this->get_field_id('link_text'); ?>" name="<?php echo $this->get_field_name('link_text'); ?>" type="text" value="<?php echo $link_text; ?>" />
-      </p>
-      <p>
-        <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('Url'); ?>:</label>
-        <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
-      </p>
-    <?php
-  }
-
-  /**
-   * Processing widget options on save
-   *
-   * @param array $new_instance The new options
-   * @param array $old_instance The previous options
-   */
-  public function update($new_instance, $old_instance) {
-    // processes widget options to be saved
-    foreach ($new_instance as $key => $value)
-    {
-      $updated_instance[$key] = sanitize_text_field($value);
-    }
-    return $updated_instance;
-  }
-}
