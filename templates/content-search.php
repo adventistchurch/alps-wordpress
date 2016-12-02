@@ -52,7 +52,7 @@
               </div>
               <hr>
             <?php endwhile; ?>
-            <?php get_template_part('patterns/components/posts-navigation'); ?>
+            <?php get_template_part('patterns/components/pagination'); ?>
           </div>
         </div> <!-- /.search__results -->
       </div>
