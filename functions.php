@@ -28,21 +28,6 @@ foreach ($sage_includes as $file) {
 unset($file, $filepath);
 
 /**
- * Sidebars
- */
-function sidebar() {
-  register_sidebar(array(
-    'name' => 'Sidebar',
-    'id' => 'sidebar',
-    'before_widget' => '<div id="%1$s" class="omc-footer-widget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h4>',
-    'after_title' => '</h4>'
-  ));
-}
-add_action( 'widgets_init', 'sidebar' );
-
-/**
  * Breadcrumbs
  */
 function wordpress_breadcrumbs() {
@@ -227,6 +212,258 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+/**
+ * Sidebars
+ */
+function sidebars() {
+  register_sidebar(
+    array(
+      'name' => 'Sidebar (Breakout Block)',
+      'id' => 'sidebar_breakout_block',
+      'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
+      'after_widget' => '</div>',
+      'before_title' => '<h2 class="font--tertiary--m theme--primary-text-color pad--btm">',
+      'after_title' => '</h2>'
+    )
+  );
+  register_sidebar(
+    array(
+      'name' => 'Sidebar',
+      'id' => 'sidebar',
+      'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
+      'after_title' => '</h3>'
+    )
+  );
+}
+add_action( 'widgets_init', 'sidebars' );
+
+/**
+ * Widget - 'Text with Link'
+ */
+class text_link extends WP_Widget {
+  // Sets up the widgets name etc
+  public function __construct() {
+    $widget_ops = array(
+      'classname' => 'text_link',
+      'description' => 'Arbitrary text with link.',
+    );
+    parent::__construct( 'text_link', 'Text with Link', $widget_ops );
+  }
+
+  // Outputs the content of the widget
+  public function widget($args, $instance) {
+    if (!isset($args['widget_id'])) {
+      $args['widget_id'] = null;
+    }
+    extract($args);
+    $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance);
+    $text = apply_filters('widget_enhanced_text', $instance['text'], $instance);
+    $link_text = empty($instance['link_text']) ? '' : $instance['link_text'];
+    $url = empty($instance['url']) ? '' : $instance['url'];
+
+    echo $before_widget;
+    if ($title) {
+      echo $before_title . '<div class="icon icon--s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.22 99.29"><title>List Icon</title><path d="M34.68,54.8H65.57V44.87H34.68V54.8ZM77.58,0.36H22.42a11.06,11.06,0,0,0-11,11V88.61a11.06,11.06,0,0,0,11,11H77.58a11.06,11.06,0,0,0,11-11V11.39A11.06,11.06,0,0,0,77.58.36Zm0,88.26H22.42V11.39H77.58V88.61ZM65.44,23.35H34.56V33H65.44V23.35Zm0,43.3H34.56v9.65H65.44V66.66Z" transform="translate(-11.39 -0.36)" fill="#010101" class="theme--primary-fill-color"/></svg></div>' . $title . $after_title;
+    }
+    if ($text) {
+      echo '<div class="text text--s pad-half--btm">' . $text . '</div>';
+    }
+    if ($url) {
+      echo '<p><a class="media-block__cta block__cta btn theme--secondary-background-color" href="' . $url . '">' . $link_text . '</a></p>';
+    }
+    echo $after_widget;
+  }
+
+  // Outputs the options form on admin
+  public function form($instance) {
+    $instance = wp_parse_args((array) $instance, array(
+      'title' => '',
+      'text' => '',
+      'link_text' => '',
+      'url' => ''
+    ));
+    $title = $instance['title'];
+    $text = format_to_edit($instance['text']);
+    $link_text = $instance['link_text'];
+    $url = $instance['url'];
+    ?>
+      <p>
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:'); ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e('Content:'); ?></label>
+        <textarea class="widefat monospace" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('link_text'); ?>"><?php _e('Link Text:'); ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id('link_text'); ?>" name="<?php echo $this->get_field_name('link_text'); ?>" type="text" value="<?php echo $link_text; ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('Url'); ?>:</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
+      </p>
+    <?php
+  }
+
+  // Processing widget options on save
+  public function update($new_instance, $old_instance) {
+    foreach ($new_instance as $key => $value) {
+      $updated_instance[$key] = sanitize_text_field($value);
+    }
+    return $updated_instance;
+  }
+}
+add_action('widgets_init', function() {
+  register_widget('text_link');
+});
+
+/**
+ * Widget - 'Social Links'
+ */
+class social extends WP_Widget {
+  // Sets up the widgets name etc
+  public function __construct() {
+    $widget_ops = array(
+      'classname' => 'social',
+      'description' => 'Social media links.',
+    );
+    parent::__construct('social', 'Social', $widget_ops);
+  }
+
+  // Outputs the content of the widget
+  public function widget($args, $instance) {
+    if (!isset($args['widget_id'])) {
+      $args['widget_id'] = null;
+    }
+    extract($args);
+    $before_list = '<ul class="aside-nav__list spacing--quarter">';
+    $after_list = '</ul>';
+    $before_link = '<li class="aside-nav__list-item rel">';
+    $after_link = '</a></li>';
+    $link_classes = 'aside-nav__link theme--primary-text-color font--primary--xs';
+    $add_hr = !empty($instance['add_hr']) ? true : false;
+    $facebook = empty($instance['facebook']) ? '' : $instance['facebook'];
+    $twitter = empty($instance['twitter']) ? '' : $instance['twitter'];
+    $flickr = empty($instance['flickr']) ? '' : $instance['flickr'];
+    $youtube = empty($instance['youtube']) ? '' : $instance['youtube'];
+    $vimeo = empty($instance['vimeo']) ? '' : $instance['vimeo'];
+    $email = empty($instance['email']) ? '' : $instance['email'];
+
+    if ($add_hr) {
+      echo '<hr class="theme--primary-transparent-background-color--30">';
+    }
+    echo $before_widget;
+    echo $before_list;
+    if ($facebook) {
+      echo $before_link;
+      echo '<a href="' . $facebook . '" class="' . $link_classes . '" target="_blank">';
+      echo '<span class="icon icon--s va--tbtm"><svg class="theme--primary-fill-color" xmlns="http://www.w3.org/2000/svg" viewBox="-491 493.4 16.6 16.5"><path d="M-475,508.4c0,0.5-0.4,1-1,1h-3.9v-6.1h1.9l0.3-2.2h-2.3v-1.8c0-0.6,0.3-1,1-1h1.5v-2 c0,0-0.7-0.1-1.6-0.1c-2.1,0-3.2,1.2-3.2,3v1.9h-1.9v2.2h1.9v6.1h-7.4c-0.5,0-1-0.4-1-1v-13.6c0-0.5,0.4-1,1-1h13.6c0.5,0,1,0.4,1,1 V508.4z"></path></svg></span>';
+      echo 'Facebook';
+      echo $after_link;
+    }
+    if ($twitter) {
+      echo $before_link;
+      echo '<a href="' . $twitter . '" class="' . $link_classes . '" target="_blank">';
+      echo '<span class="icon icon--s va--tbtm"><svg class="theme--primary-fill-color" xmlns="http://www.w3.org/2000/svg" viewBox="-491 493.2 16.6 13.8"><path d="M-474.5,495.2c-0.4,0.7-1,1.2-1.6,1.7v0.4c0,0.9-0.1,1.7-0.4,2.6c-0.2,0.9-0.6,1.7-1.1,2.5 c-0.5,0.8-1.1,1.5-1.8,2.1c-0.7,0.6-1.6,1.1-2.6,1.4c-1,0.4-2.1,0.5-3.2,0.5c-1.9,0-3.6-0.4-4.9-1.3c0.3,0,0.5,0.1,0.8,0.1 c1.4,0,2.7-0.5,4-1.5c-0.7,0-1.3-0.2-1.9-0.6c-0.5-0.4-0.9-0.9-1.1-1.6c0.2,0,0.4,0.1,0.6,0.1c0.3,0,0.6,0,0.9-0.1 c-0.7-0.1-1.3-0.5-1.8-1.1c-0.5-0.6-0.7-1.3-0.7-2v0c0.5,0.3,0.9,0.4,1.4,0.4c-1-0.6-1.4-1.5-1.4-2.7c0-0.5,0.1-1,0.4-1.6 c0.8,1,1.8,1.8,2.9,2.3c1.1,0.6,2.4,0.9,3.7,1c0-0.2-0.1-0.5-0.1-0.7c0-0.9,0.3-1.6,0.9-2.3c0.6-0.6,1.4-0.9,2.3-0.9 c0.9,0,1.7,0.3,2.4,1c0.7-0.1,1.4-0.4,2-0.8c-0.2,0.8-0.7,1.4-1.4,1.8C-475.7,495.7-475.1,495.5-474.5,495.2z"></path></svg></span>';
+      echo 'Twitter';
+      echo $after_link;
+    }
+    if ($flickr) {
+      echo $before_link;
+      echo '<a href="' . $flickr . '" class="' . $link_classes . '" target="_blank">';
+      echo '<span class="icon icon--s va--tbtm"><svg class="theme--primary-fill-color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.63 44.28"><path d="M21.9,72.61a22.14,22.14,0,0,1,0-44.28A22.14,22.14,0,0,1,21.9,72.61Zm56.19,0A22.14,22.14,0,1,1,99.81,50.48,21.93,21.93,0,0,1,78.09,72.61Z" transform="translate(-0.19 -28.33)"></path></svg></span>';
+      echo 'Flickr';
+      echo $after_link;
+    }
+    if ($youtube) {
+      echo $before_link;
+      echo '<a href="' . $youtube . '" class="' . $link_classes . '" target="_blank">';
+      echo '<span class="icon icon--s va--tbtm"><svg class="theme--primary-fill-color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97.45 68.54"><path d="M97.75,30.52s-1-6.72-3.87-9.67C90.17,17,86,16.94,84.11,16.72c-13.64-1-34.09-1-34.09-1h0s-20.46,0-34.09,1C14,16.94,9.83,17,6.12,20.84c-2.92,3-3.87,9.67-3.87,9.67a147.37,147.37,0,0,0-1,15.77v7.39a147.37,147.37,0,0,0,1,15.77s1,6.72,3.87,9.67C9.83,83,14.7,82.88,16.87,83.29c7.8,0.75,33.13,1,33.13,1s20.48,0,34.11-1C86,83,90.17,83,93.88,79.13c2.92-3,3.87-9.67,3.87-9.67a147.59,147.59,0,0,0,1-15.77V46.29A147.59,147.59,0,0,0,97.75,30.52ZM39.94,62.64V35.26L66.27,49Z" transform="translate(-1.28 -15.73)"></path></svg></span>';
+      echo 'Youtube';
+      echo $after_link;
+    }
+    if ($vimeo) {
+      echo $before_link;
+      echo '<a href="' . $vimeo . '" class="' . $link_classes . '" target="_blank">';
+      echo '<span class="icon icon--s va--tbtm"><svg class="theme--primary-fill-color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99 88"><path d="M99,27.12C93.48,58.87,62.57,85.75,53.27,91.89s-17.78-2.46-20.86-9C28.89,75.52,18.34,35.32,15.58,32S4.52,35.32,4.52,35.32l-4-5.37S17.34,9.46,30.15,6.9C43.74,4.18,43.72,28.15,47,41.46c3.16,12.87,5.29,20.24,8,20.24s8-7.18,13.82-18.18S68.6,22.77,57.29,29.68C61.81,2,104.54-4.62,99,27.12Z" transform="translate(-0.5 -6)"></path></svg></span>';
+      echo 'Vimeo';
+      echo $after_link;
+    }
+    if ($email) {
+      echo $before_link;
+      echo '<a href="mailto:' . $email . '" class="' . $link_classes . '" target="_blank">';
+      echo '<span class="icon icon--s va--tbtm"><svg class="theme--primary-fill-color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.3 79.87"><path d="M96.92,10.25L1.64,43.83c-1.53.54-1.87,1.86-.05,2.59l20.48,8.21h0l12.15,4.87L93.49,16a0.81,0.81,0,0,1,1.14,1.14L52.15,63h0l-2.44,2.72,3.23,1.74h0L79.82,82a2.75,2.75,0,0,0,4.06-1.81L99.56,12.58C100,10.73,98.77,9.6,96.92,10.25ZM34.1,88.65c0,1.33.75,1.7,1.79,0.76C37.24,88.18,51.26,75.6,51.26,75.6L34.1,66.72V88.65Z" transform="translate(-0.35 -10.07)"></path></svg></span>';
+      echo 'Email';
+      echo $after_link;
+    }
+    echo $after_list;
+    echo $after_widget;
+  }
+
+  // Outputs the options form on admin
+  public function form($instance) {
+    $instance = wp_parse_args((array) $instance, array(
+      'facebook' => '',
+      'twitter' => '',
+      'flickr' => '',
+      'youtube' => '',
+      'vimeo' => '',
+      'email' => '',
+    ));
+    $facebook = $instance['facebook'];
+    $twitter = $instance['twitter'];
+    $flickr = $instance['flickr'];
+    $youtube = $instance['youtube'];
+    $vimeo = $instance['vimeo'];
+    $email = $instance['email'];
+    ?>
+      <p>
+        <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook Url'); ?>:</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" value="<?php echo $facebook; ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter Url'); ?>:</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo $twitter; ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('flickr'); ?>"><?php _e('Flickr Url'); ?>:</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('flickr'); ?>" name="<?php echo $this->get_field_name('flickr'); ?>" type="text" value="<?php echo $flickr; ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('youtube'); ?>"><?php _e('Youtube Url'); ?>:</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('youtube'); ?>" name="<?php echo $this->get_field_name('youtube'); ?>" type="text" value="<?php echo $youtube; ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('vimeo'); ?>"><?php _e('Vimeo Url'); ?>:</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('vimeo'); ?>" name="<?php echo $this->get_field_name('vimeo'); ?>" type="text" value="<?php echo $vimeo; ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('email'); ?>"><?php _e('Email Address'); ?>:</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('email'); ?>" name="<?php echo $this->get_field_name('email'); ?>" type="text" value="<?php echo $email; ?>" />
+      </p>
+      <p>
+          <input type="checkbox" id="<?php echo $this->get_field_id('add_hr'); ?>" name="<?php echo $this->get_field_name('add_hr'); ?>" <?php checked(isset($instance['add_hr']) ? $instance['add_hr'] : 0); ?> />
+          <label for="<?php echo $this->get_field_id('add_hr'); ?>"><?php _e('Add a horizontal rule above the block'); ?></label>
+      </p>
+    <?php
+  }
+
+  // Processing widget options on save
+  public function update($new_instance, $old_instance) {
+    foreach ($new_instance as $key => $value) {
+      $updated_instance[$key] = sanitize_text_field($value);
+    }
+    $instance['add_hr'] = isset($new_instance['add_hr']);
+    return $updated_instance;
+  }
+}
+add_action('widgets_init', function() {
+  register_widget('social');
+});
 
 /**
  * Creates options page for ACF

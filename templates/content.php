@@ -56,6 +56,9 @@
         <?php endif; ?>
         <?php wp_reset_query(); ?>
       </div> <!-- /.2up--at-medium -->
+      <div class="space--btm">
+        <?php get_template_part('patterns/components/pagination'); ?>
+      </div>
     </div> <!-- /.shift-left--fluid -->
     <?php get_sidebar(); ?>
   </div> <!-- /.flex-container -->

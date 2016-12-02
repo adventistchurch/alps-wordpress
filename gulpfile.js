@@ -21,6 +21,7 @@ var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 
 // See https://github.com/austinpray/asset-builder
+var bourbon      = require('node-bourbon');
 var manifest = require('asset-builder')('./assets/manifest.json');
 
 // `path` - Paths to base asset directories. With trailing slashes.
@@ -91,7 +92,7 @@ var cssTasks = function(filename) {
       return gulpif('*.scss', sass({
         outputStyle: 'nested', // libsass doesn't support expanded yet
         precision: 10,
-        includePaths: ['.'],
+        includePaths: require('node-bourbon').with(['.']),
         errLogToConsole: !enabled.failStyleTask
       }));
     })
@@ -254,6 +255,10 @@ gulp.task('watch', function() {
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
+  gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
+  gulp.watch('**/*.php', function() {
+    browserSync.reload();
+  });
 });
 
 // ### Build
