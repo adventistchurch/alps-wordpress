@@ -1,8 +1,8 @@
 <div class="shift-right--fluid bg--beige can-be--dark-dark">
-  <?php if (is_front_page() && is_home() || !is_front_page() && is_home() || in_category('news') || is_page('recent-news')): ?>
-    <?php include(locate_template('patterns/blocks/block-aside-nav.php')); ?>
-  <?php else: ?>
-    <?php dynamic_sidebar('sidebar_breakout_block'); ?>
+  <?php if (is_active_sidebar('sidebar_breakout_block')): ?>
+    <div class="media-block block spacing bg--tan can-be--dark-dark block--breakout pad--secondary--for-breakouts">
+      <?php dynamic_sidebar('sidebar_breakout_block'); ?>
+    </div>
   <?php endif; ?>
 
   <div class="column__secondary can-be--dark-dark">
