@@ -8,7 +8,7 @@ if (post_password_required()) {
   <?php if (have_comments()) : ?>
     <h2 class="font--secondary--l"><?php printf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'sage'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>'); ?></h2>
 
-    <ol class="comment-list">
+    <ol class="comment-list spacing">
       <?php wp_list_comments(['style' => 'ol', 'short_ping' => true]); ?>
     </ol>
 
