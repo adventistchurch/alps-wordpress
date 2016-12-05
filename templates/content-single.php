@@ -55,6 +55,7 @@
 
             <?php the_content(); ?>
           </div>
+          <?php include(locate_template('templates/comments.php')); ?>
         </div>
         <?php include(locate_template('templates/block-layout.php')); ?>
       </div> <!-- /.shift-left--fluid -->
