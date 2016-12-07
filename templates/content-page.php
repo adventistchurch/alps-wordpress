@@ -4,7 +4,6 @@
   // Image alt
   $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
 ?>
-
 <div class="layout-container full--until-large">
   <div class="flex-container cf">
     <div class="shift-left--fluid column__primary bg--white can-be--dark-light no-pad--btm">
