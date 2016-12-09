@@ -1,12 +1,11 @@
 <?php
 /*
-Title: Theme Settings
-Order: 100
-Tab: Conditions
-Sub Tab: Advanced
-Setting: alps_theme_settings
+  Title: Theme Settings
+  Order: 100
+  Tab: Conditions
+  Sub Tab: Advanced
+  Setting: alps_theme_settings
 */
-
   piklist('field', array(
     'type' => 'file',
     'field' => 'logo_square',
@@ -17,7 +16,6 @@ Setting: alps_theme_settings
       'button' => 'Add Image'
     )
   ));
-
   piklist('field', array(
     'type' => 'file',
     'field' => 'logo_horizontal',
@@ -28,7 +26,6 @@ Setting: alps_theme_settings
       'button' => 'Add Image'
     )
   ));
-
   piklist('field', array(
     'type' => 'file',
     'field' => 'logo_text',
@@ -39,7 +36,6 @@ Setting: alps_theme_settings
       'button' => 'Add Image'
     )
   ));
-
   piklist('field', array(
     'type' => 'select',
     'field' => 'primary_theme_color',
@@ -55,7 +51,6 @@ Setting: alps_theme_settings
       'ming' => 'Ming'
     )
   ));
-
   piklist('field', array(
     'type' => 'select',
     'field' => 'secondary_theme_color',
@@ -66,7 +61,6 @@ Setting: alps_theme_settings
       'warm' => 'Warm',
     )
   ));
-
   piklist('field', array(
     'type' => 'checkbox',
     'field' => 'dark_theme',
@@ -75,5 +69,4 @@ Setting: alps_theme_settings
       'true' => 'Select if you would like the theme to be dark'
     )
   ));
-
 ?>

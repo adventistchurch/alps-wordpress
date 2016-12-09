@@ -1,7 +1,7 @@
 <?php
 /*
-Title: Text with Link
-Description: Arbitrary text with link.
+  Title: Text with Link
+  Description: Arbitrary text with link.
 */
 ?>
 <?php echo $before_widget; ?>
