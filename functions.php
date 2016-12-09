@@ -28,6 +28,27 @@ foreach ($sage_includes as $file) {
 unset($file, $filepath);
 
 /**
+ * Piklist Theme Settings
+ */
+add_filter('piklist_admin_pages', 'piklist_theme_setting_pages');
+function piklist_theme_setting_pages($pages) {
+   $pages[] = array(
+    'page_title' => __('Custom Settings')
+    ,'menu_title' => __('Settings', 'piklist')
+    ,'sub_menu' => 'themes.php' //Under Appearance menu
+    ,'capability' => 'manage_options'
+    ,'menu_slug' => 'custom_settings'
+    ,'setting' => 'alps_theme_settings'
+    ,'menu_icon' => plugins_url('piklist/parts/img/piklist-icon.png')
+    ,'page_icon' => plugins_url('piklist/parts/img/piklist-page-icon-32.png')
+    ,'single_line' => true
+    ,'default_tab' => 'Basic'
+    ,'save_text' => 'Save Theme Settings'
+  );
+  return $pages;
+}
+
+/**
  * Breadcrumbs
  */
 function wordpress_breadcrumbs() {
@@ -239,87 +260,6 @@ function sidebars() {
   );
 }
 add_action( 'widgets_init', 'sidebars' );
-
-/**
- * Widget - 'Text with Link'
- */
-class text_link extends WP_Widget {
-  // Sets up the widgets name etc
-  public function __construct() {
-    $widget_ops = array(
-      'classname' => 'text_link',
-      'description' => 'Arbitrary text with link.',
-    );
-    parent::__construct( 'text_link', 'Text with Link', $widget_ops );
-  }
-
-  // Outputs the content of the widget
-  public function widget($args, $instance) {
-    if (!isset($args['widget_id'])) {
-      $args['widget_id'] = null;
-    }
-    extract($args);
-    $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance);
-    $text = apply_filters('widget_enhanced_text', $instance['text'], $instance);
-    $link_text = empty($instance['link_text']) ? '' : $instance['link_text'];
-    $url = empty($instance['url']) ? '' : $instance['url'];
-
-    echo $before_widget;
-    if ($title) {
-      echo $before_title . '<div class="icon icon--s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.22 99.29"><title>List Icon</title><path d="M34.68,54.8H65.57V44.87H34.68V54.8ZM77.58,0.36H22.42a11.06,11.06,0,0,0-11,11V88.61a11.06,11.06,0,0,0,11,11H77.58a11.06,11.06,0,0,0,11-11V11.39A11.06,11.06,0,0,0,77.58.36Zm0,88.26H22.42V11.39H77.58V88.61ZM65.44,23.35H34.56V33H65.44V23.35Zm0,43.3H34.56v9.65H65.44V66.66Z" transform="translate(-11.39 -0.36)" fill="#010101" class="theme--primary-fill-color"/></svg></div>' . $title . $after_title;
-    }
-    if ($text) {
-      echo '<div class="text text--s pad-half--btm">' . $text . '</div>';
-    }
-    if ($url) {
-      echo '<p><a class="media-block__cta block__cta btn theme--secondary-background-color" href="' . $url . '">' . $link_text . '</a></p>';
-    }
-    echo $after_widget;
-  }
-
-  // Outputs the options form on admin
-  public function form($instance) {
-    $instance = wp_parse_args((array) $instance, array(
-      'title' => '',
-      'text' => '',
-      'link_text' => '',
-      'url' => ''
-    ));
-    $title = $instance['title'];
-    $text = format_to_edit($instance['text']);
-    $link_text = $instance['link_text'];
-    $url = $instance['url'];
-    ?>
-      <p>
-        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:'); ?></label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-      </p>
-      <p>
-        <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e('Content:'); ?></label>
-        <textarea class="widefat monospace" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
-      </p>
-      <p>
-        <label for="<?php echo $this->get_field_id('link_text'); ?>"><?php _e('Link Text:'); ?></label>
-        <input class="widefat" id="<?php echo $this->get_field_id('link_text'); ?>" name="<?php echo $this->get_field_name('link_text'); ?>" type="text" value="<?php echo $link_text; ?>" />
-      </p>
-      <p>
-        <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('Url'); ?>:</label>
-        <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
-      </p>
-    <?php
-  }
-
-  // Processing widget options on save
-  public function update($new_instance, $old_instance) {
-    foreach ($new_instance as $key => $value) {
-      $updated_instance[$key] = sanitize_text_field($value);
-    }
-    return $updated_instance;
-  }
-}
-add_action('widgets_init', function() {
-  register_widget('text_link');
-});
 
 /**
  * Widget - 'Social Links'
