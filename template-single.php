@@ -3,23 +3,20 @@
  * Template Name: Single Template
  */
 ?>
-
 <?php while (have_posts()) : the_post(); ?>
   <?php $carousel_format = get_field('carousel_type'); ?>
-  <?php if ($carousel_format == "large_format_2_col_4x3" || $carousel_format == "large_format_2_col_16x9"): ?>
+  <?php if ($carousel_format == 'large_format_2_col_4x3' || $carousel_format == 'large_format_2_col_16x9' || $carousel_format == 'standard_square_inset'): ?>
     <?php include(locate_template('patterns/components/hero-carousel__2-column.php')); ?>
-  <?php elseif ($carousel_format == "large_format_inset"): ?>
+  <?php elseif ($carousel_format == 'large_format_inset'): ?>
     <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
-  <?php elseif ($carousel_format == "standard_square_inset"): ?>
-    <?php include(locate_template('patterns/components/hero-carousel__2-column.php')); ?>
   <?php else: ?>
     <?php get_template_part('templates/page', 'header'); ?>
   <?php endif; ?>
     <div class="layout-container full--until-large">
       <div class="column__primary bg--white can-be--dark-light spacing--double">
-        <?php while (the_flexible_field("primary_structured_content")): ?>
+        <?php while (the_flexible_field('primary_structured_content')): ?>
 
-          <?php if (get_row_layout() == "content_block_grid"):
+          <?php if (get_row_layout() == 'content_block_grid'):
             // Content Block: Grid
             $grid_layout = get_sub_field('grid_layout');
             if ($grid_layout == '2up-70-30') {
@@ -55,7 +52,7 @@
                   <?php if ($thumb_id): ?>
                     <figure class="figure">
                       <div class="img-wrap">
-                        <img itemprop="image" src="<?php echo wp_get_attachment_image_src($thumb_id, "horiz__4x3--s")[0]; ?>" alt="<?php echo $alt; ?>">
+                        <img itemprop="image" src="<?php echo wp_get_attachment_image_src($thumb_id, 'horiz__4x3--s')[0]; ?>" alt="<?php echo $alt; ?>">
                       </div> <!-- /.img-wrap -->
                       <?php if ($caption): ?>
                         <figcaption class="figcaption"><p class="font--secondary--xs"><?php echo $caption; ?></p></figcaption>

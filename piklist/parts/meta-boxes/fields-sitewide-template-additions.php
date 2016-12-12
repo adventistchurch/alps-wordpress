@@ -6,7 +6,7 @@
   piklist('field', array(
     'type' => 'text',
     'field' => 'display_title',
-    'label' => 'Title',
+    'label' => 'Display Title',
     'description' => 'Set a page title different from the default title.',
     'columns' => 12
   ));
@@ -55,6 +55,45 @@
     'label' => 'Header Block Text',
     'choices' => array(
       'true' => 'Check if you would like to include a block of text in the header.'
+    )
+  ));
+  piklist('field', array(
+    'type' => 'text',
+    'field' => 'header_block_title',
+    'label' => 'Header Block Title',
+    'columns' => 6,
+    'conditions' => array(
+      array(
+        'field' => 'header_block_text',
+        'value' => 'true'
+      )
+    )
+  ));
+  piklist('field', array(
+    'type' => 'text',
+    'field' => 'header_block_subtitle',
+    'label' => 'Header Block Subtitle',
+    'columns' => 6,
+    'conditions' => array(
+      array(
+        'field' => 'header_block_text',
+        'value' => 'true'
+      )
+    )
+  ));
+  piklist('field', array(
+    'type' => 'file',
+    'field' => 'header_block_image',
+    'label' => 'Header Block Image',
+    'options' => array(
+      'modal_title' => 'Upload Image',
+      'button' => 'Add Image'
+    ),
+    'conditions' => array(
+      array(
+        'field' => 'header_block_text',
+        'value' => 'true'
+      )
     )
   ));
 ?>

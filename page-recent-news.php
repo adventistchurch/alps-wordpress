@@ -3,8 +3,8 @@
 <div class="layout-container full--until-large">
   <div class="flex-container cf">
     <div class="shift-left--fluid column__primary bg--white no-pad--top no-pad--btm can-be--dark-light">
-      <?php $carousel_format = get_field('carousel_type');?>
-      <?php if ($carousel_format == "small_format_inset"): ?>
+      <?php $carousel_type = get_post_meta($post->ID, 'carousel_type', true); ?>
+      <?php if ($carousel_type == 'small_format_inset'): ?>
         <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
       <?php endif; ?>
       <div class="g g-2up--at-medium with-divider">
@@ -35,14 +35,14 @@
               <div class="pad">
                 <?php
                   $title = get_the_title();
-                  $intro = get_field('intro');
+                  $intro = get_post_meta($post->ID, 'intro', true);;
                   $body = strip_tags(get_the_content());
                   $excerpt_length = 100;
                   $image = get_post_thumbnail_id();
                   $button_text = 'Read More';
                   $date = get_the_date();
                   $button_url = get_the_permalink();
-                  $round_image = get_sub_field('make_the_image_round');
+                  $round_image = get_post_meta($post->ID, 'make_the_image_round', true);
                   $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
                   $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
                   $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
