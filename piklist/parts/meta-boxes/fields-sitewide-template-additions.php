@@ -2,6 +2,7 @@
 /*
   Title: Sitewide: Template Additions
   Post Type: post, page
+  Order: 2
 */
   piklist('field', array(
     'type' => 'text',

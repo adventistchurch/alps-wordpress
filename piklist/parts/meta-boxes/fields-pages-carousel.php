@@ -2,6 +2,7 @@
 /*
   Title: Pages: Carousel
   Post Type: page
+  Order: 1
 */
   piklist('field', array(
     'type' => 'radio',

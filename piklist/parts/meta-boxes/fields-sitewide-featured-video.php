@@ -2,6 +2,8 @@
 /*
   Title: Sitewide: Featured Video
   Post Type: page, post
+  Order: 4
+  Context: side
 */
   piklist('field', array(
     'type' => 'text',

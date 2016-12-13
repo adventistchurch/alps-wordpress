@@ -2,6 +2,8 @@
 /*
   Title: Sitewide: Featured Image Settings
   Post Type: page, post
+  Order: 3
+  Context: side
 */
   piklist('field', array(
     'type' => 'checkbox',
