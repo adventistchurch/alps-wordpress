@@ -31,7 +31,8 @@
         'columns' => 6,
         'options' => array(
           'modal_title' => 'Upload Image',
-          'button' => 'Add Image'
+          'button' => 'Add Image',
+          'max' => 1
         ),
         'conditions' => array(
           array(
@@ -101,7 +102,8 @@
         'columns' => 12,
         'options' => array(
           'modal_title' => 'Upload Image',
-          'button' => 'Add Image'
+          'button' => 'Add Image',
+          'max' => 1
         ),
         'conditions' => array(
           array(
@@ -131,7 +133,8 @@
         'columns' => 12,
         'options' => array(
           'modal_title' => 'Upload Image',
-          'button' => 'Add Image'
+          'button' => 'Add Image',
+          'max' => 1
         ),
         'conditions' => array(
           array(
@@ -166,7 +169,8 @@
         'columns' => 12,
         'options' => array(
           'modal_title' => 'Upload Image',
-          'button' => 'Add Image'
+          'button' => 'Add Image',
+          'max' => 1
         ),
         'conditions' => array(
           array(

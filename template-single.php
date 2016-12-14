@@ -58,7 +58,7 @@
                   <?php echo $grid_body_1; ?>
                   <?php
                     $thumb_id = wp_get_attachment_image_url( $grid_image_1, 'horiz__4x3--s' );
-                    $caption = $grid_image_1;
+                    $caption = get_the_excerpt($grid_image_1);
                     $alt = get_post_meta( $grid_image_1, '_wp_attachment_image_alt', true );
                   ?>
                   <?php if ($thumb_id): ?>
@@ -78,7 +78,7 @@
                   <?php echo $grid_body_2; ?>
                   <?php
                     $thumb_id = wp_get_attachment_image_url( $grid_image_2, 'horiz__4x3--s' );
-                    $caption = get_post_meta( $grid_image_2, '_wp_attachment_image_alt', true );
+                    $caption = get_the_excerpt($grid_image_2);
                     $alt = get_post_meta( $grid_image_2, '_wp_attachment_image_alt', true );
                   ?>
                   <?php if ($thumb_id): ?>
@@ -99,7 +99,7 @@
                     <?php echo $grid_body_3; ?>
                     <?php
                       $thumb_id = wp_get_attachment_image_url( $grid_image_3, 'horiz__4x3--s' );
-                      $caption = get_post_meta( $grid_image_3, '_wp_attachment_image_alt', true );
+                      $caption = get_the_excerpt($grid_image_3);
                       $alt = get_post_meta( $grid_image_3, '_wp_attachment_image_alt', true );
                     ?>
                     <?php if ($thumb_id): ?>
