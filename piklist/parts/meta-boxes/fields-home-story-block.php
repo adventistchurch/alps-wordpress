@@ -59,6 +59,17 @@
     'type' => 'editor',
     'field' => 'sb_body',
     'label' => 'Body',
+    'options' => array( // Pass any option that is accepted by wp_editor()
+      'wpautop' => true,
+      'teeny' => false,
+      'dfw' => false,
+      'quicktags' => true,
+      'drag_drop_upload' => true,
+      'tinymce' => array(
+        'resize' => false,
+        'wp_autoresize_on' => true
+      )
+    )
   ));
   piklist('field', array(
     'type' => 'text',

@@ -87,6 +87,17 @@
         'field' => 'content_block_grid_body_1',
         'label' => 'Body (Column 1)',
         'columns' => 12,
+        'options' => array( // Pass any option that is accepted by wp_editor()
+          'wpautop' => true,
+          'teeny' => false,
+          'dfw' => false,
+          'quicktags' => true,
+          'drag_drop_upload' => true,
+          'tinymce' => array(
+            'resize' => false,
+            'wp_autoresize_on' => true
+          )
+        ),
         'conditions' => array(
           array(
             'reset' => 'false',
@@ -118,6 +129,17 @@
         'field' => 'content_block_grid_body_2',
         'label' => 'Body (Column 2)',
         'columns' => 12,
+        'options' => array( // Pass any option that is accepted by wp_editor()
+          'wpautop' => true,
+          'teeny' => false,
+          'dfw' => false,
+          'quicktags' => true,
+          'drag_drop_upload' => true,
+          'tinymce' => array(
+            'resize' => false,
+            'wp_autoresize_on' => true
+          )
+        ),
         'conditions' => array(
           array(
             'reset' => 'false',
@@ -149,6 +171,17 @@
         'field' => 'content_block_grid_body_3',
         'label' => 'Body (Column 3)',
         'columns' => 12,
+        'options' => array( // Pass any option that is accepted by wp_editor()
+          'wpautop' => true,
+          'teeny' => false,
+          'dfw' => false,
+          'quicktags' => true,
+          'drag_drop_upload' => true,
+          'tinymce' => array(
+            'resize' => false,
+            'wp_autoresize_on' => true
+          )
+        ),
         'conditions' => array(
           array(
             'reset' => 'false',
