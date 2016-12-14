@@ -2,18 +2,44 @@
 /**
  * Template Name: Single Template
  */
+ $blocks = get_post_meta($post->ID, 'primary_structured_content', true);
+ $block_layout = get_post_meta($post->ID, 'content_block_layout', true);
+ $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
 ?>
 <?php while (have_posts()) : the_post(); ?>
-  <?php $carousel_format = get_field('carousel_type'); ?>
-  <?php if ($carousel_format == 'large_format_2_col_4x3' || $carousel_format == 'large_format_2_col_16x9' || $carousel_format == 'standard_square_inset'): ?>
+  <?php if ($carousel_type == 'large_format_2_col_4x3' || $carousel_type == 'large_format_2_col_16x9' || $carousel_type == 'standard_square_inset'): ?>
     <?php include(locate_template('patterns/components/hero-carousel__2-column.php')); ?>
-  <?php elseif ($carousel_format == 'large_format_inset'): ?>
+  <?php elseif ($carousel_type == 'large_format_inset'): ?>
     <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
   <?php else: ?>
     <?php get_template_part('templates/page', 'header'); ?>
   <?php endif; ?>
     <div class="layout-container full--until-large">
       <div class="column__primary bg--white can-be--dark-light spacing--double">
+        <?php if ($block_layout): ?>
+          <?php foreach ($blocks as $block): ?>
+            <?php if ($block_layout == 'content_block_grid'): ?>
+              <?php
+                $grid_layout = get_post_meta($post->ID, 'content_block_grid_layout', true);
+                $grid_body_1 = get_post_meta($post->ID, 'content_block_grid_body_1', true);
+                $grid_image_1 = get_post_meta($post->ID, 'content_block_grid_file_1', true);
+                $grid_body_2 = get_post_meta($post->ID, 'content_block_grid_body_2', true);
+                $grid_image_2 = get_post_meta($post->ID, 'content_block_grid_file_2', true);
+                $grid_body_3 = get_post_meta($post->ID, 'content_block_grid_body_3', true);
+                $grid_image_3 = get_post_meta($post->ID, 'content_block_grid_file_3', true);
+              ?>
+            <?php endif; ?>
+
+            <?php if ($block_layout == 'content_block_image'): ?>
+              <?php
+                $image_layout = get_post_meta($block->ID, 'content_block_image_layout', true);
+                $image = get_post_meta($block->ID, 'content_block_image_file', true);
+              ?>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        <?php endif; ?>
+
+
         <?php while (the_flexible_field('primary_structured_content')): ?>
 
           <?php if (get_row_layout() == 'content_block_grid'):
