@@ -153,20 +153,13 @@ add_action( 'tgmpa_register', 'adventist_register_required_plugins' );
 function adventist_register_required_plugins() {
   $plugins = array(
     array(
-      'name'               => 'Advanced Custom Fields', // The plugin name.
-      'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
-      'source'             => get_template_directory() . '/lib/plugins/advanced-custom-fields.zip', // The plugin source.
+      'name'               => 'Piklist', // The plugin name.
+      'slug'               => 'piklist', // The plugin slug (typically the folder name).
+      'source'             => get_template_directory() . '/lib/plugins/piklist.zip', // The plugin source.
       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-      'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-      'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-    ),
-    array(
-      'name'               => 'Advanced Custom Fields Pro',
-      'slug'               => 'advanced-custom-fields-pro',
-      'source'             => get_template_directory() . '/lib/plugins/advanced-custom-fields-pro.zip',
-      'required'           => true,
-    ),
+    )
   );
   $config = array(
     'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.

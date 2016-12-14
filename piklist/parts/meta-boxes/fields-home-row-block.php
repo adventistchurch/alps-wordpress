@@ -2,7 +2,7 @@
 /*
   Title: Home: Row Block
   Post Type: page
-  Order: 2
+  Order: 6
   Template: template-home
 */
   piklist('field', array(

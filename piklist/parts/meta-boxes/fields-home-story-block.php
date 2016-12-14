@@ -2,7 +2,7 @@
 /*
   Title: Home: Story Block
   Post Type: page
-  Order: 1
+  Order: 5
   Template: template-home
 */
   piklist('field', array(
