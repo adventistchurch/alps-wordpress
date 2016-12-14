@@ -2,7 +2,6 @@
   $page_title = $wp_query->post->post_title;
   $page_parent = $wp_query->post->post_parent;
 ?>
-
 <?php
   // Loop of posts for child pages
   $args = array(
@@ -20,15 +19,15 @@
             <div class="pad">
               <?php
                 $title = get_the_title();
-                $intro = get_field('intro');
+                $intro = get_post_meta($post->ID, 'intro', true);
                 $body = strip_tags(get_the_content());
                 $excerpt_length = 200;
                 $image = get_post_thumbnail_id();
-                $kicker = get_field('kicker');
+                $kicker = get_post_meta($post->ID, 'kicker', true);
                 $button_text = 'Read More';
                 $date = get_the_date();
                 $button_url = get_the_permalink();
-                $round_image = get_sub_field('make_the_image_round');
+                $round_image = get_post_meta($post->ID, 'make_the_image_round', true);
                 $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
                 $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
                 $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
@@ -39,7 +38,7 @@
             <hr>
           </div>
         </div>
-      <?php endwhile;  ?>
+      <?php endwhile; ?>
     </div>
     <div class="pad spacing"></div>
   </div>
@@ -62,8 +61,8 @@
   <hr>
     <?php foreach ($pages as $page): ?>
       <?php
-        $title = get_field('display_title', $page->ID);
-        $intro = get_field('intro', $page->ID);
+        $title = get_post_meta($page->ID, 'display_title', true);
+        $intro = get_post_meta($page->ID, 'intro', true);
         $body = strip_tags($page->post_content);
         $excerpt_length = 200;
         $image = get_post_thumbnail_id($page->ID);
@@ -71,7 +70,7 @@
         $button_text = 'Read More';
         $date = '';
         $button_url = get_page_link($page->ID);
-        $round_image = TRUE;
+        $round_image = 'true';
         $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
         $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
         $alt = get_post_meta($image, '_wp_attachment_image_alt', true);

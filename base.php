@@ -1,8 +1,6 @@
 <?php
   use Roots\Sage\Setup;
   use Roots\Sage\Wrapper;
-
-  $primary_theme_color = get_field('primary_theme_color', 'option');
 ?>
 
 <!doctype html>

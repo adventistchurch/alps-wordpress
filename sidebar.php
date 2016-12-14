@@ -25,11 +25,10 @@
           <?php while (have_posts()) : the_post(); ?>
             <?php
               $title = get_the_title();
-              $intro = get_field('intro');
-              $image = get_field('image');
+              $intro = get_post_meta($post->ID, 'intro', true);
               $body = strip_tags(get_the_content());
               $excerpt_length = 100;
-              $kicker = get_sub_field('kicker');
+              $kicker = get_post_meta($post->ID, 'kicker', true);;
               $button_text = 'Read More';
               $button_url = get_the_permalink();
               $round_image = '';

@@ -1,10 +1,11 @@
-<?php $carousel_format = get_field('carousel_type');?>
-<?php if ($carousel_format == "large_format_2_col_4x3" || $carousel_format == "large_format_2_col_16x9"): ?>
+<?php
+  $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
+  $carousel_slides = get_post_meta($post->ID, 'carousel_slides', true);
+?>
+<?php if ($carousel_type == 'large_format_2_col_4x3' || $carousel_type == 'large_format_2_col_16x9' || $carousel_type == 'standard_square_inset' && $carousel_slides): ?>
   <?php include(locate_template('patterns/components/hero-carousel__2-column.php')); ?>
-<?php elseif ($carousel_format == "large_format_inset"): ?>
+<?php elseif ($carousel_type == 'large_format_inset' && $carousel_slides): ?>
   <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
-<?php elseif ($carousel_format == "standard_square_inset"): ?>
-  <?php include(locate_template('patterns/components/hero-carousel__2-column.php')); ?>
 <?php else: ?>
   <?php get_template_part('templates/page', 'header'); ?>
 <?php endif; ?>
