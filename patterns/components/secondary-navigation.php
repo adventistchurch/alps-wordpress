@@ -8,7 +8,6 @@
   );
 
   // Native WordPress menu classes to be replaced.
-  // Native WordPress menu classes to be replaced.
   $replace = array(
     'menu-item ',
     'sub-menu',

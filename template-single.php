@@ -130,16 +130,16 @@
               </picture>
             <?php elseif ($image_layout == 'breakout' || $image_layout == 'breakout_parallax'): ?>
               <style>
-              .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--s")[0]; ?>); }
-              @media (min-width: 500px) {
-                .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--m")[0]; ?>); }
-              }
-              @media (min-width: 700px) {
-                .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--l")[0]; ?>); }
-              }
-              @media (min-width: 1200px) {
-                .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--xl")[0]; ?>); }
-              }
+                .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--s")[0]; ?>); }
+                @media (min-width: 500px) {
+                  .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--m")[0]; ?>); }
+                }
+                @media (min-width: 700px) {
+                  .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--l")[0]; ?>); }
+                }
+                @media (min-width: 1200px) {
+                  .breakout-image_<?php echo $image; ?> { background-image: url(<?php echo wp_get_attachment_image_src($image, "featured__hero--xl")[0]; ?>); }
+                }
               </style>
               <div class="breakout <?php if ($image_layout == 'breakout_parallax'): echo 'has-parallax'; endif; ?> breakout-image breakout-image_<?php echo $image; ?> bg--cover" data-type="background" <?php if ($image_layout == 'breakout_parallax'): echo 'data-speed="8"'; endif; ?>></div>
             <?php endif; ?>

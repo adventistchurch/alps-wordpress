@@ -3,8 +3,6 @@
   Title: Social
   Description: Social media links.
 */
-?>
-<?php
   $before_list = '<ul class="aside-nav__list spacing--quarter">';
   $after_list = '</ul>';
   $before_link = '<li class="aside-nav__list-item rel">';

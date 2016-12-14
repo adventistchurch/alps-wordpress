@@ -2,7 +2,6 @@
   $page_title = $wp_query->post->post_title;
   $page_parent = $wp_query->post->post_parent;
 ?>
-
 <?php
   // Loop of posts for child pages
   $args = array(
@@ -39,7 +38,7 @@
             <hr>
           </div>
         </div>
-      <?php endwhile;  ?>
+      <?php endwhile; ?>
     </div>
     <div class="pad spacing"></div>
   </div>

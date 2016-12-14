@@ -3,7 +3,7 @@
  * Template Name: Long Form Template
  */
 
- // Featured image.
+ // Featured image
  $thumb_id = get_post_thumbnail_id();
  // Image alt
  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
@@ -14,7 +14,6 @@
  $intro = get_post_meta($post->ID, 'intro', true);
  $hide_featured_image = get_post_meta($post->ID,'hide_featured_image', true);
 ?>
-
 <?php while (have_posts()) : the_post(); ?>
   <header class="longform__header  longform__header--with-hero">
     <div class="layout-container cf spacing">

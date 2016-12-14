@@ -4,7 +4,7 @@
     <?php include(locate_template('patterns/components/news-navigation.php')); ?>
   <?php endif; ?>
   <?php
-    // Featured image.
+    // Featured image
     $thumb_id = get_post_thumbnail_id();
     // Image alt
     $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
