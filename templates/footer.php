@@ -29,14 +29,29 @@
           <?php endif; ?>
         </div> <!-- /.footer__unify-copyright-address -->
         <div class="footer__legal-links font--secondary--xs">
-          <?php if ($footer_trademark_url): ?>
-            <a class="hover link--brown-light space-half--left" href="<?php echo $footer_trademark_url; ?>">Trademark and Logo Usage</a>
-          <?php endif; ?>
-          <?php if ($footer_legal_url): ?>
-            <a class="hover link--brown-light space-half--left" href="<?php echo $footer_legal_url; ?>">Legal Notice</a>
-          <?php endif; ?>
-          <?php if ($footer_privacy_url): ?>
-            <a class="hover link--brown-light space-half--left" href="<?php echo $footer_privacy_url; ?>">Privacy Policy</a>
+          <?php
+            $menu_args = array(
+              'echo' => false,
+              'menu_class' => 'footer-nav__list',
+              'container' => false,
+              'depth' => 1,
+              'theme_location' => 'footer_navigation',
+            );
+
+            // Native WordPress menu classes to be replaced.
+            $replace = array(
+              'menu-item',
+              '<a'
+            );
+
+            // Custom ALPS classes to replace.
+            $replace_with = array(
+              'footer__nav-item inline-list__item',
+              '<a class="hover link--brown-light space-half--left" '
+            );
+          ?>
+          <?php if (has_nav_menu('footer_navigation')): ?>
+            <?php echo str_replace($replace, $replace_with, wp_nav_menu($menu_args)); ?>
           <?php endif; ?>
         </div>
       </div> <!-- /.layout-container -->

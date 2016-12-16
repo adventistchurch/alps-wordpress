@@ -83,28 +83,4 @@
     'columns' => 12,
     'value' => '12501 Old Columbia Pike, Silver Spring, MD 20904, USA 301-680-6000'
   ));
-  piklist('field', array(
-    'type' => 'text',
-    'field' => 'footer_trademark_url',
-    'label' => 'Footer Trademark & Logo Usage URL',
-    'columns' => 12,
-    'description' => 'Enter the URL to the trademark and logo usage information.',
-    'value' => 'https://www.adventist.org/en/copyright/trademark-and-logo-usage/'
-  ));
-  piklist('field', array(
-    'type' => 'text',
-    'field' => 'footer_legal_url',
-    'label' => 'Footer Legal Notices URL',
-    'columns' => 12,
-    'description' => 'Enter the URL to the legal notices information.',
-    'value' => 'https://www.adventist.org/en/copyright/legal-notice/'
-  ));
-  piklist('field', array(
-    'type' => 'text',
-    'field' => 'footer_privacy_url',
-    'label' => 'Footer Privacy Policy URL',
-    'columns' => 12,
-    'description' => 'Enter the URL to the privacy policy information.',
-    'value' => 'http://privacy.adventist.org/en/'
-  ));
 ?>
