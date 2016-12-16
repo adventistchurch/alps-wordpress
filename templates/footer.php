@@ -1,3 +1,11 @@
+<?php
+  $theme_options = get_option('alps_theme_settings');
+  $footer_copyright = $theme_options['footer_copyright'];
+  $footer_address = $theme_options['footer_address'];
+  $footer_trademark_url = $theme_options['footer_trademark_url'];
+  $footer_legal_url = $theme_options['footer_legal_url'];
+  $footer_privacy_url = $theme_options['footer_privacy_url'];
+?>
 <footer class="footer" role="contentinfo">
   <div class="footer__inner cf bg--medium-brown white can-be--dark-dark">
     <div class="layout-container">
@@ -13,10 +21,24 @@
     <div class="footer__legal bg--brown  can-be--dark-light">
       <div class="footer__legal__inner layout-container spacing--quarter--until-large">
         <div class="footer__unify-copyright-address spacing--quarter--until-large">
-          <p class="footer__copyright font--secondary--xs brown--light no-space--btm">Copyright &copy; <?php echo date('Y'); ?>, General Conference of Seventh-day Adventists</p>
-          <address class="footer__address font--secondary--xs brown--light">12501 Old Columbia Pike, Silver Spring, MD 20904, USA 301-680-6000</address>
+          <?php if ($footer_copyright): ?>
+            <p class="footer__copyright font--secondary--xs brown--light no-space--btm"><?php echo $footer_copyright; ?></p>
+          <?php endif; ?>
+          <?php if ($footer_address): ?>
+            <address class="footer__address font--secondary--xs brown--light"><?php echo $footer_address; ?></address>
+          <?php endif; ?>
         </div> <!-- /.footer__unify-copyright-address -->
-        <div class="footer__legal-links font--secondary--xs"><a class="hover link--brown-light space-half--right" href="http://adventist.org/terms">Trademark and Logo Usage</a> <a class="hover link--brown-light" href="http://adventist.org/legal-notice">Legal Notice</a></div>
+        <div class="footer__legal-links font--secondary--xs">
+          <?php if ($footer_trademark_url): ?>
+            <a class="hover link--brown-light space-half--left" href="<?php echo $footer_trademark_url; ?>">Trademark and Logo Usage</a>
+          <?php endif; ?>
+          <?php if ($footer_legal_url): ?>
+            <a class="hover link--brown-light space-half--left" href="<?php echo $footer_legal_url; ?>">Legal Notice</a>
+          <?php endif; ?>
+          <?php if ($footer_privacy_url): ?>
+            <a class="hover link--brown-light space-half--left" href="<?php echo $footer_privacy_url; ?>">Privacy Policy</a>
+          <?php endif; ?>
+        </div>
       </div> <!-- /.layout-container -->
     </div> <!-- /.legal -->
   </div> <!-- /.footer__inner -->
