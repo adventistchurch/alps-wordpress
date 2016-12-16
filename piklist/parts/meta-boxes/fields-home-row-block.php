@@ -86,7 +86,7 @@
     'field' => 'grid_two_columns',
     'label' => 'Two Columns',
     'choices' => array(
-      'true' => 'To display the block in two columns, check this box.'
+      '0' => 'To display the block in two columns, check this box.'
     )
   ));
 ?>

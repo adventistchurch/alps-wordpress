@@ -40,7 +40,7 @@
             <?php include(locate_template('patterns/blocks/block-media.php')); ?>
           </div>
         </div>
-      <?php elseif (empty($image) && $two_columns != 'true'): ?>
+      <?php elseif (empty($image) && $two_columns != '0'): ?>
         <div class="spacing--zero no-space--top flex">
           <?php include(locate_template('patterns/blocks/block-headline.php')); ?>
           <hr class="w--100p">

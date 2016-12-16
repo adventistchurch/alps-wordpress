@@ -49,7 +49,7 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  */
 function widgets_init() {
   register_sidebar([
-    'name'          => __('Primary', 'sage'),
+    'name'          => __('Primary (Home Template)', 'sage'),
     'id'            => 'widget_area_primary',
     'before_widget' => '<section id="%2$s" class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
