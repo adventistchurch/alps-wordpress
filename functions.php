@@ -26,7 +26,41 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+function get_sidebar_widget_options($sidebar_id, $widget_type)
+{
+    // Grab the list of sidebars and their widgets
+    $sidebars = wp_get_sidebars_widgets();
+    // Just grab the widgets for our sidebar
+    $widgets = $sidebars[$sidebar_id];
 
+    // Get the ID of our widget in this sidebar
+    $widget_id = 0;
+    foreach ( $widgets as $widget_details )
+    {
+        // $widget_details is of the format $widget_type-$id - we just want the id part
+        if ( preg_match("/^{$widget_type}\-(?P<id>\d+)$/", $widget_details, $matches) )
+        {
+            $widget_id = $matches['id'];
+            break;
+        }
+    }
+
+    // If we didn't find the given widget in the given sidebar, throw an error
+    if ( !$widget_id )
+        throw new Exception("Widget not found in sidebar");
+
+    // Grab the options of each instance of our $widget_type from the DB
+    $options = get_option('widget_' . $widget_type);
+
+    // Ensure there are settings to return
+    if ( !isset($options[$widget_id]) )
+        throw new Exception("Widget has no saved options");
+
+    // Grab the settings
+    $widget_options = $options[$widget_id];
+
+    return $widget_options;
+}
 /**
  * Piklist Theme Settings
  */
@@ -206,30 +240,3 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
-
-/**
- * Sidebars
- */
-function sidebars() {
-  register_sidebar(
-    array(
-      'name' => 'Sidebar (Breakout Block)',
-      'id' => 'sidebar_breakout_block',
-      'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h2 class="font--tertiary--m theme--primary-text-color pad--btm">',
-      'after_title' => '</h2>'
-    )
-  );
-  register_sidebar(
-    array(
-      'name' => 'Sidebar',
-      'id' => 'sidebar',
-      'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
-      'after_title' => '</h3>'
-    )
-  );
-}
-add_action( 'widgets_init', 'sidebars' );
