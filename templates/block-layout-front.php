@@ -1,10 +1,10 @@
 <?php
   $blocks = get_post_meta($post->ID, 'content_block_freeform', true);
   $two_columns = get_post_meta($post->ID, 'grid_two_columns', true);
-  $block_inner_class = ($two_columns) ? "block__row--small-to-medium" : "";
+  $block_inner_class = ($two_columns == 'true') ? "block__row--small-to-medium" : "";
   if ($two_columns == 'true') {
     echo '<hr>';
-    echo '<div class="g g-2up--at-medium with-divider no-space--top grid--uniform">';
+    echo '<div class="g g-2up--at-medium with-divider grid--uniform">';
   } else {
     echo '<div class="spacing--double pad--btm">';
     echo '<hr>';
@@ -40,7 +40,7 @@
             <?php include(locate_template('patterns/blocks/block-media.php')); ?>
           </div>
         </div>
-      <?php elseif (empty($image) && $two_columns != '0'): ?>
+      <?php elseif (empty($image) && $two_columns != 'true'): ?>
         <div class="spacing--zero no-space--top flex">
           <?php include(locate_template('patterns/blocks/block-headline.php')); ?>
           <hr class="w--100p">

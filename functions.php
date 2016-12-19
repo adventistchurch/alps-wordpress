@@ -26,41 +26,16 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
-function get_sidebar_widget_options($sidebar_id, $widget_type)
-{
-    // Grab the list of sidebars and their widgets
-    $sidebars = wp_get_sidebars_widgets();
-    // Just grab the widgets for our sidebar
-    $widgets = $sidebars[$sidebar_id];
 
-    // Get the ID of our widget in this sidebar
-    $widget_id = 0;
-    foreach ( $widgets as $widget_details )
-    {
-        // $widget_details is of the format $widget_type-$id - we just want the id part
-        if ( preg_match("/^{$widget_type}\-(?P<id>\d+)$/", $widget_details, $matches) )
-        {
-            $widget_id = $matches['id'];
-            break;
-        }
-    }
-
-    // If we didn't find the given widget in the given sidebar, throw an error
-    if ( !$widget_id )
-        throw new Exception("Widget not found in sidebar");
-
-    // Grab the options of each instance of our $widget_type from the DB
-    $options = get_option('widget_' . $widget_type);
-
-    // Ensure there are settings to return
-    if ( !isset($options[$widget_id]) )
-        throw new Exception("Widget has no saved options");
-
-    // Grab the settings
-    $widget_options = $options[$widget_id];
-
-    return $widget_options;
+/**
+ * Fix for Piklist fields not saving
+ */
+function my_custom_init() {
+  remove_post_type_support( 'post', 'custom-fields' );
+  remove_post_type_support( 'page', 'custom-fields' );
 }
+add_action( 'init', 'my_custom_init' );
+
 /**
  * Piklist Theme Settings
  */
