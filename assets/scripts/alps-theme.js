@@ -20,6 +20,7 @@
       init: function() {
         // Add classes to submenu items in the primary navigation.
         $('.primary-nav__subnav').find('li').addClass('primary-nav__subnav__list-item');
+        $('.theme-widget-social').removeClass('text');
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

@@ -2,9 +2,6 @@
   $theme_options = get_option('alps_theme_settings');
   $footer_copyright = $theme_options['footer_copyright'];
   $footer_address = $theme_options['footer_address'];
-  $footer_trademark_url = $theme_options['footer_trademark_url'];
-  $footer_legal_url = $theme_options['footer_legal_url'];
-  $footer_privacy_url = $theme_options['footer_privacy_url'];
 ?>
 <footer class="footer" role="contentinfo">
   <div class="footer__inner cf bg--medium-brown white can-be--dark-dark">

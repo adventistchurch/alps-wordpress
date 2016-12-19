@@ -70,19 +70,19 @@ function widgets_init() {
   register_sidebar([
     'name' => 'Sidebar (Breakout Block)',
     'id' => 'sidebar_breakout_block',
-    'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
+    'before_widget' => '<div id="%2$s" class="media-block block widget sidebar__widget %2$s text spacing">',
     'after_widget' => '</div>',
-    'before_title' => '<h2 class="font--tertiary--m theme--primary-text-color pad--btm">',
-    'after_title' => '</h2>'
+    'before_title' => '<div class="widget-title"><h2 class="font--tertiary--m theme--primary-text-color pad--btm">',
+    'after_title' => '</h2></div>'
   ]);
 
   register_sidebar([
     'name' => 'Sidebar',
     'id' => 'sidebar',
-    'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
+    'before_widget' => '<div id="%2$s" class="media-block block widget sidebar__widget %2$s text spacing">',
     'after_widget' => '</div>',
-    'before_title' => '<h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
-    'after_title' => '</h3>'
+    'before_title' => '<div class="widget-title"><h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
+    'after_title' => '</h3></div>'
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
