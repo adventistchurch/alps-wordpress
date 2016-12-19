@@ -18,7 +18,7 @@
   $add_hr = !empty($settings['horizontal_rule']) ? true : false;
 
   if ($add_hr == 'true') {
-    echo '<hr class="theme--primary-transparent-background-color--30">';
+    echo '<hr>';
   }
   echo $before_widget;
   echo $before_list;

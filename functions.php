@@ -28,6 +28,15 @@ foreach ($sage_includes as $file) {
 unset($file, $filepath);
 
 /**
+ * Fix for Piklist fields not saving
+ */
+function my_custom_init() {
+  remove_post_type_support( 'post', 'custom-fields' );
+  remove_post_type_support( 'page', 'custom-fields' );
+}
+add_action( 'init', 'my_custom_init' );
+
+/**
  * Piklist Theme Settings
  */
 add_filter('piklist_admin_pages', 'piklist_theme_setting_pages');
@@ -206,30 +215,3 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
-
-/**
- * Sidebars
- */
-function sidebars() {
-  register_sidebar(
-    array(
-      'name' => 'Sidebar (Breakout Block)',
-      'id' => 'sidebar_breakout_block',
-      'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h2 class="font--tertiary--m theme--primary-text-color pad--btm">',
-      'after_title' => '</h2>'
-    )
-  );
-  register_sidebar(
-    array(
-      'name' => 'Sidebar',
-      'id' => 'sidebar',
-      'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
-      'after_title' => '</h3>'
-    )
-  );
-}
-add_action( 'widgets_init', 'sidebars' );

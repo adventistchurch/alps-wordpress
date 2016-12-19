@@ -21,7 +21,8 @@ function setup() {
   register_nav_menus([
     'primary_navigation' => __('Primary Navigation', 'sage'),
     'secondary_navigation' => __('Secondary Navigation', 'sage'),
-    'footer_navigation' => __('Footer Navigation', 'sage')
+    'footer_secondary_navigation' => __('Secondary Footer Navigation', 'sage'),
+    'footer_navigation' => __('Primary Footer Navigation', 'sage')
   ]);
 
   // Enable post thumbnails
@@ -49,9 +50,9 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  */
 function widgets_init() {
   register_sidebar([
-    'name'          => __('Primary', 'sage'),
-    'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'name'          => __('Primary (Home Template)', 'sage'),
+    'id'            => 'widget_area_primary',
+    'before_widget' => '<section id="%2$s" class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
@@ -59,11 +60,29 @@ function widgets_init() {
 
   register_sidebar([
     'name'          => __('Footer', 'sage'),
-    'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'id'            => 'widget_area_footer',
+    'before_widget' => '<section id="%2$s" class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
+  ]);
+
+  register_sidebar([
+    'name' => 'Sidebar (Breakout Block)',
+    'id' => 'sidebar_breakout_block',
+    'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="font--tertiary--m theme--primary-text-color pad--btm">',
+    'after_title' => '</h2>'
+  ]);
+
+  register_sidebar([
+    'name' => 'Sidebar',
+    'id' => 'sidebar',
+    'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
+    'after_title' => '</h3>'
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');

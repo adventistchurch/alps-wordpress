@@ -4,7 +4,7 @@
     'menu_class' => 'footer-nav__list',
     'container' => false,
     'depth' => 1,
-    'theme_location' => 'footer_navigation',
+    'theme_location' => 'footer_secondary_navigation',
   );
 
   // Native WordPress menu classes to be replaced.
@@ -19,7 +19,7 @@
     '<a class="footer__nav-link font--secondary link--white" '
   );
 ?>
-<?php if (has_nav_menu('primary_navigation')): ?>
+<?php if (has_nav_menu('footer_secondary_navigation')): ?>
   <nav class="footer__nav">
     <?php echo str_replace($replace, $replace_with, wp_nav_menu($menu_args)); ?>
   </nav>

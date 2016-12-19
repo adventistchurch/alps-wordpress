@@ -1,10 +1,10 @@
 <?php
   $blocks = get_post_meta($post->ID, 'content_block_freeform', true);
   $two_columns = get_post_meta($post->ID, 'grid_two_columns', true);
-  $block_inner_class = ($two_columns) ? "block__row--small-to-medium" : "";
+  $block_inner_class = ($two_columns == 'true') ? "block__row--small-to-medium" : "";
   if ($two_columns == 'true') {
     echo '<hr>';
-    echo '<div class="g g-2up--at-medium with-divider no-space--top grid--uniform">';
+    echo '<div class="g g-2up--at-medium with-divider grid--uniform">';
   } else {
     echo '<div class="spacing--double pad--btm">';
     echo '<hr>';
