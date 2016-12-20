@@ -1,6 +1,7 @@
 <?php
   $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
   $carousel_slides = get_post_meta($post->ID, 'carousel_slides', true);
+  $align_right = get_post_meta($post->ID, 'carousel_text_align_right', true);
 ?>
 <section class="hero-carousel">
   <div class="carousel rel">
@@ -26,7 +27,7 @@
           <?php if ($title): ?>
             <div class="carousel__item-text__wrap">
               <div class="layout-container">
-                <div class="carousel__item-text spacing--half">
+                <div class="carousel__item-text<?php if ($align_right == 'true'): echo ' carousel__item--right'; endif; ?> spacing--half">
                   <div>
                     <?php if ($title): ?>
                       <h2 class="carousel__item-heading font--tertiary--xl theme--primary-transparent-background-color"><?php echo $title; ?></h2>
