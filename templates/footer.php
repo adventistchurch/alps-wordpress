@@ -6,7 +6,8 @@
 <footer class="footer" role="contentinfo">
   <div class="footer__inner cf bg--medium-brown white can-be--dark-dark">
     <div class="layout-container">
-      <div class="footer__unify-nav-desc spacing--until-large">
+
+      <div class="footer__unify-nav-desc spacing--until-large" <?php if (!has_nav_menu('footer_secondary_navigation')): echo 'style="flex-direction: row;"'; endif; ?>>
         <?php get_template_part('patterns/components/footer-navigation'); ?>
         <div class="footer__desc">
           <span class="icon footer__logo"><?php get_template_part('patterns/icons/icon-logo'); ?></span>
