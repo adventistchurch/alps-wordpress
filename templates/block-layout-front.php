@@ -1,7 +1,19 @@
 <?php
-  $blocks = get_post_meta($post->ID, 'content_block_freeform', true);
+  $content_block = get_post_meta($post->ID, 'content_block', true);
   $two_columns = get_post_meta($post->ID, 'grid_two_columns', true);
   $block_inner_class = ($two_columns == 'true') ? "block__row--small-to-medium" : "";
+  if ($content_block == 'freeform') {
+    $blocks = get_post_meta($post->ID, 'content_block_freeform', true);
+  }
+  if ($content_block == 'relationship') {
+    $blocks = get_posts(array(
+      'post_type' => 'post',
+      'posts_per_page' => -1,
+      'post_belongs' => $post->ID,
+      'post_status' => 'publish',
+      'suppress_filters' => false
+    ));
+  }
   if ($two_columns == 'true') {
     echo '<hr>';
     echo '<div class="g g-2up--at-medium with-divider grid--uniform">';
@@ -12,21 +24,41 @@
 ?>
   <?php foreach ($blocks as $block): ?>
     <?php
-      $kicker = $block['content_block_freeform_kicker'];
-      $title = $block['content_block_freeform_title'];
-      $image = $block['content_block_freeform_image'][0];
-      $excerpt_length = 200;
-      $body = $block['content_block_freeform_body'];
-      $button_text = $block['content_block_freeform_button_text'];
-      $button_url = $block['content_block_freeform_button_url'];
-      $left_border = $block['content_block_freeform_colorpicker'];
-      $left_border_class = 'has-border--left-' . rand(0, 15);
-      $thumbnail = wp_get_attachment_image_url( $image, 'horiz__4x3--s' );
-      $thumbnail_round = wp_get_attachment_image_url( $image, 'square--s' );
-      $alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
-      $round_image = $block['content_block_freeform_round'];
-      if ($round_image == 'true') {
-        $block_inner_class = 'block__row';
+      if ($content_block == 'freeform') {
+        $kicker = $block['content_block_freeform_kicker'];
+        $title = $block['content_block_freeform_title'];
+        $image = $block['content_block_freeform_image'][0];
+        $excerpt_length = 200;
+        $body = $block['content_block_freeform_body'];
+        $button_text = $block['content_block_freeform_button_text'];
+        $button_url = $block['content_block_freeform_button_url'];
+        $left_border = $block['content_block_freeform_colorpicker'];
+        $left_border_class = 'has-border--left-' . rand(0, 15);
+        $thumbnail = wp_get_attachment_image_url( $image, 'horiz__4x3--s' );
+        $thumbnail_round = wp_get_attachment_image_url( $image, 'square--s' );
+        $alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
+        $round_image = $block['content_block_freeform_round'];
+        if ($round_image == 'true') {
+          $block_inner_class = 'block__row';
+        }
+      }
+      if ($content_block == 'relationship') {
+        $kicker = $block->kicker;
+        $title = $block->post_title;
+        $image = get_post_thumbnail_id($block->ID);
+        $excerpt_length = 200;
+        $body = strip_tags($block->post_content);
+        $button_text = 'Read More';
+        $button_url = $block->guid;
+        $thumbnail = wp_get_attachment_image_url( $image, 'horiz__4x3--s' );
+        $thumbnail_round = wp_get_attachment_image_url( $image, 'square--s' );
+        $left_border = '';
+        $left_border_class = '';
+        $alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
+        $round_image = 'false';
+        if ($round_image == 'true') {
+          $block_inner_class = 'block__row';
+        }
       }
     ?>
     <?php if ($title): ?>

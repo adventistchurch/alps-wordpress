@@ -6,11 +6,30 @@
   Template: template-home
 */
   piklist('field', array(
+    'type' => 'radio',
+    'field' => 'content_block',
+    'label' => 'Content Block',
+    'description' => 'Choose the type of content you would like to appear in the primary content column.',
+    'columns' => 12,
+    'value' => 'false',
+    'choices' => array(
+      'false' => 'None',
+      'freeform' => 'Content Block Freeform',
+      'relationship' => 'Content Block Relationship'
+    )
+  ));
+
+  piklist('field', array(
     'type' => 'group',
     'label' => 'Content Block Freeform',
     'field' => 'content_block_freeform',
-    'description' => 'Choose the type of content you would like to appear in the primary content column.',
     'add_more' => true,
+    'conditions' => array(
+      array(
+        'field' => 'content_block',
+        'value' => 'freeform'
+      )
+    ),
     'fields' => array(
       array(
         'type' => 'text',
@@ -89,4 +108,38 @@
       'true' => 'To display the block in two columns, check this box.'
     )
   ));
+  piklist( 'field', array(
+    'type' => 'select',
+    'field' => 'content_block_relationship',
+    'label' => 'Content Block Relationship',
+    'columns' => 12,
+    'attributes' => array(
+        'class' => 'css class',
+        'multiple' => 'multiple'
+    ),
+    'choices' => piklist(
+      get_posts(
+        array(
+          'post_type' => 'post',
+          'numberposts' => -1,
+          'orderby' => 'title',
+          'order' => 'ASC'
+        )
+      ),
+      array(
+        'ID',
+        'post_title'
+      )
+    ),
+    'conditions' => array(
+      array(
+        'field' => 'content_block',
+        'value' => 'relationship'
+      )
+    ),
+    'relate' => array(
+      'scope' => 'post'
+    )
+  )
+);
 ?>
