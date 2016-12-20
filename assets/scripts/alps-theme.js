@@ -19,7 +19,10 @@
     'common': {
       init: function() {
         // Add classes to submenu items in the primary navigation.
-        $('.primary-nav__subnav').find('li').addClass('primary-nav__subnav__list-item');
+        $('.primary-nav__subnav > li').addClass('primary-nav__subnav__list-item');
+        $('.primary-nav__subnav > li > a').removeClass('primary-nav__link').addClass('primary-nav__subnav__link theme--primary-text-color');
+        $('.primary-nav__list > li.active > a, .primary-nav__subnav > li.active > a').removeClass('theme--primary-text-color').addClass('theme--secondary-text-color');
+
         $('.theme-widget-social').removeClass('text');
       },
       finalize: function() {
