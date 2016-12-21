@@ -19,4 +19,16 @@
       'true' => 'Check this box to format the feed for the sidebar.'
     )
   ));
+  piklist('field', array(
+    'type' => 'text',
+    'field' => 'news_widget_btn_text',
+    'label' => 'More Button Text',
+    'columns' => 6
+  ));
+  piklist('field', array(
+    'type' => 'text',
+    'field' => 'news_widget_btn_link',
+    'label' => 'More Button Link',
+    'columns' => 6
+  ));
 ?>
