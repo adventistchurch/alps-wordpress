@@ -11,6 +11,7 @@
   }
 ?>
 <section class="hero-carousel layout-container hero-carousel--2-column">
+
   <div class="carousel rel <?php echo $carousel_nav_class; ?>">
     <div class="carousel__slides js-carousel__single-item">
       <?php
@@ -23,7 +24,8 @@
         $link_url = $slide['carousel_link_url'];
       ?>
         <div class="carousel__item carousel__slide cf spacing rel">
-          <div class="shift-left--fluid">
+          <div class="flex-container">
+            <div class="shift-left--fluid">
             <picture class="picture">
               <!--[if IE 9]><video style="display: none;"><![endif]-->
               <source srcset="<?php echo wp_get_attachment_image_url( $image, $carousel_image_size . '--m' ); ?>" media="(min-width: 600px)">
@@ -51,6 +53,8 @@
               </div> <!-- /.spacing--half -->
             </div> <!-- /.shift-right--fluid -->
           <?php endif; ?>
+          </div>
+
         </div> <!-- /.carousel__item -->
       <?php endforeach; wp_reset_postdata(); ?>
     </div> <!-- /.carousel__slides -->
