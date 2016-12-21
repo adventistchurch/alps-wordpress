@@ -70,19 +70,19 @@ function widgets_init() {
   register_sidebar([
     'name' => 'Sidebar (Breakout Block)',
     'id' => 'sidebar_breakout_block',
-    'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
+    'before_widget' => '<div id="%2$s" class="media-block block widget sidebar__widget %2$s text spacing">',
     'after_widget' => '</div>',
-    'before_title' => '<h2 class="font--tertiary--m theme--primary-text-color pad--btm">',
-    'after_title' => '</h2>'
+    'before_title' => '<div class="widget-title"><h2 class="font--tertiary--m theme--primary-text-color pad--btm">',
+    'after_title' => '</h2></div>'
   ]);
 
   register_sidebar([
     'name' => 'Sidebar',
     'id' => 'sidebar',
-    'before_widget' => '<div id="%2$s" class="widget sidebar__widget %2$s">',
+    'before_widget' => '<div id="%2$s" class="media-block block widget sidebar__widget %2$s text spacing">',
     'after_widget' => '</div>',
-    'before_title' => '<h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
-    'after_title' => '</h3>'
+    'before_title' => '<div class="widget-title"><h3 class="font--tertiary--m theme--secondary-text-color space--btm">',
+    'after_title' => '</h3></div>'
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
@@ -116,22 +116,22 @@ function assets() {
   wp_enqueue_style('slick', '//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css');
 
   // Load main ALPS styles.
-  wp_enqueue_style('alps/main_css', 'http://cdn.adventist.io/alps/2/latest/css/main.css');
+  wp_enqueue_style('alps/main_css', '//cdn.adventist.io/alps/2/latest/css/main.css');
 
   // Load theme override css.
   wp_enqueue_style('alps/theme_css', Assets\asset_path('styles/alps-theme.css'), false, null);
 
   // Load ALPS header javascript.
-  wp_enqueue_script('alps/head_js', 'http://cdn.adventist.io/alps/2/latest/js/head-script.min.js', false, '2', false);
+  wp_enqueue_script('alps/head_js', '//cdn.adventist.io/alps/2/latest/js/head-script.min.js', false, '2', false);
 
   if (!is_admin()) {
     wp_deregister_script('jquery');
     // Load a copy of jQuery from the jquery CDN.
-    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', false, '2.2.4', true);
+    wp_enqueue_script('jquery', '//code.jquery.com/jquery-2.2.4.min.js', false, '2.2.4', true);
   }
 
   // Load ALPS footer javascript.
-  wp_enqueue_script('alps/foot_js', 'http://cdn.adventist.io/alps/2/latest/js/script.min.js', ['jquery'], '2', true);
+  wp_enqueue_script('alps/foot_js', '//cdn.adventist.io/alps/2/latest/js/script.min.js', ['jquery'], '2', true);
 
   // Load theme override javascript.
   wp_enqueue_script('alps/theme_js', Assets\asset_path('scripts/alps-theme.js'), ['jquery'], null, true);

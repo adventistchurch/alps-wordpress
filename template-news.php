@@ -1,3 +1,8 @@
+<?php
+/**
+ * Template Name: News Template
+ */
+ ?>
 <?php get_template_part('templates/page', 'header-carousel'); ?>
 <?php include(locate_template('patterns/components/news-navigation.php')); ?>
 <div class="layout-container full--until-large">
@@ -65,8 +70,8 @@
               <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
                 ANN Video
               </h2>
-              <hr>
             </div>
+            <hr>
             <?php
               // Featured Video
               $videos = array(
@@ -92,7 +97,7 @@
                   $button_text = '';
                   $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
                   $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                  $block_inner_class = 'block__row--small-to-large';
+                  $block_inner_class = 'block';
                   if (isset($post->post_date) && $post->post_type == 'post') {
                     $date = get_the_date('M j, Y');
                     $date_formatted = get_the_date('c');
@@ -132,7 +137,7 @@
                       $button_text = '';
                       $thumbnail = wp_get_attachment_image_src($image, "horiz__16x9--s")[0];
                       $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                      $block_inner_class = 'block__row--small-to-large';
+                      $block_inner_class = 'block';
                       if (isset($post->post_date) && $post->post_type == 'post') {
                         $date = get_the_date('M j, Y');
                         $date_formatted = get_the_date('c');
@@ -170,7 +175,7 @@
                       <?php
                         $id = get_the_id();
                         $title = get_the_title();
-                        $intro = get_field('intro');
+                        $intro = get_post_meta($post->ID, 'intro', true);
                         $body = strip_tags(get_the_content());
                         $excerpt_length = 100;
                         $image = get_post_thumbnail_id();
@@ -179,7 +184,7 @@
                         $button_url = get_the_permalink();
                         $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
                         $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                        $block_inner_class = 'block__row--small-to-large';
+                        $block_inner_class = 'block';
                         if (isset($post->post_date) && $post->post_type == 'post') {
                           $date = get_the_date('M j, Y');
                           $date_formatted = get_the_date('c');
@@ -196,8 +201,6 @@
         </div><!-- /.gi -->
       </div><!-- /.g -->
     </div> <!-- /.shift-left--fluid -->
-    <div class="shift-right--fluid bg--beige can-be--dark-dark">
-      <?php include(locate_template('patterns/components/aside.php')); ?>
-    </div> <!-- /.shift-right--fluid -->
+    <?php get_sidebar(); ?>
   </div> <!-- /.flex-container -->
 </div> <!-- /.layout-container -->

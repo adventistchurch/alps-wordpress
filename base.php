@@ -4,8 +4,10 @@
 ?>
 
 <!doctype html>
+
 <html <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
+  
   <body <?php body_class("body"); ?>>
     <!--[if lt IE 11]>
       <div class="alert alert-warning">

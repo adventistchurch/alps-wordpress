@@ -16,14 +16,14 @@
   ));
   piklist('field', array(
     'type' => 'text',
-    'field' => 'url_text',
-    'label' => 'Url Text',
+    'field' => 'url',
+    'label' => 'Url',
     'columns' => 6
   ));
   piklist('field', array(
     'type' => 'text',
-    'field' => 'url',
-    'label' => 'Url',
+    'field' => 'url_text',
+    'label' => 'Url Text',
     'columns' => 6
   ));
 ?>

@@ -2,14 +2,18 @@
   $theme_options = get_option('alps_theme_settings');
   $footer_copyright = $theme_options['footer_copyright'];
   $footer_address = $theme_options['footer_address'];
-  $footer_trademark_url = $theme_options['footer_trademark_url'];
-  $footer_legal_url = $theme_options['footer_legal_url'];
-  $footer_privacy_url = $theme_options['footer_privacy_url'];
+  $footer_address_street = $theme_options['footer_address']['footer_address_street'];
+  $footer_address_city = $theme_options['footer_address']['footer_address_city'];
+  $footer_address_state = $theme_options['footer_address']['footer_address_state'];
+  $footer_address_zip = $theme_options['footer_address']['footer_address_zip'];
+  $footer_address_country = $theme_options['footer_address']['footer_address_country'];
+  $footer_phone = $theme_options['footer_address']['footer_phone'];
 ?>
 <footer class="footer" role="contentinfo">
   <div class="footer__inner cf bg--medium-brown white can-be--dark-dark">
     <div class="layout-container">
-      <div class="footer__unify-nav-desc spacing--until-large">
+
+      <div class="footer__unify-nav-desc spacing--until-large" <?php if (!has_nav_menu('footer_secondary_navigation')): echo 'style="flex-direction: row;"'; endif; ?>>
         <?php get_template_part('patterns/components/footer-navigation'); ?>
         <div class="footer__desc">
           <span class="icon footer__logo"><?php get_template_part('patterns/icons/icon-logo'); ?></span>
@@ -22,10 +26,18 @@
       <div class="footer__legal__inner layout-container spacing--quarter--until-large">
         <div class="footer__unify-copyright-address spacing--quarter--until-large">
           <?php if ($footer_copyright): ?>
-            <p class="footer__copyright font--secondary--xs brown--light no-space--btm"><?php echo $footer_copyright; ?></p>
+            <p class="footer__copyright font--secondary--xs brown--light no-space--btm">
+              <?php echo $footer_copyright; ?>
+            </p>
           <?php endif; ?>
           <?php if ($footer_address): ?>
-            <address class="footer__address font--secondary--xs brown--light"><?php echo $footer_address; ?></address>
+            <address class="footer__address font--secondary--xs brown--light" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="streetAddress"><?php echo $footer_address_street; ?></span>
+              <span itemprop="addressLocality"><?php echo ' ' . $footer_address_city; ?></span>,
+              <span itemprop="addressRegion"><?php echo ' ' . $footer_address_state; ?></span>
+              <?php echo ' ' . $footer_address_zip; ?><?php echo ', ' . $footer_address_country; ?>
+              <span itemprop="telephone"><?php echo ' ' . $footer_phone; ?></span>
+            </address>
           <?php endif; ?>
         </div> <!-- /.footer__unify-copyright-address -->
         <div class="footer__legal-links font--secondary--xs">

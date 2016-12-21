@@ -86,4 +86,20 @@
       )
     )
   ));
+
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'carousel_text_align_right',
+    'label' => 'Text Align Right',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'To align the text to the right, check this box.'
+    ),
+    'conditions' => array(
+      array(
+        'field' => 'carousel_type',
+        'value' => 'large_format_inset'
+      )
+    )
+  ));
 ?>

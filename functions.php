@@ -58,6 +58,28 @@ function piklist_theme_setting_pages($pages) {
 }
 
 /**
+ * Reformat text widget
+ */ 
+add_action( 'widgets_init', 'register_my_widgets' );
+function register_my_widgets() {
+  register_widget( 'My_Text_Widget' );
+}
+
+class My_Text_Widget extends WP_Widget_Text {
+function widget( $args, $instance ) {
+  extract($args);
+  $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+  $text = apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance );
+  echo $before_widget;
+  if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } ?>
+    <div class="text spacing">
+      <?php echo !empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?>
+    </div>
+    <?php echo $after_widget;
+  }
+}
+
+/**
  * Breadcrumbs
  */
 function wordpress_breadcrumbs() {

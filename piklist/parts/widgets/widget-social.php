@@ -3,8 +3,8 @@
   Title: Social
   Description: Social media links.
 */
-  $before_list = '<ul class="aside-nav__list spacing--quarter">';
-  $after_list = '</ul>';
+  $before_list = '<div class="widget-content"><ul class="aside-nav__list spacing--quarter">';
+  $after_list = '</ul></div>';
   $before_link = '<li class="aside-nav__list-item rel">';
   $after_link = '</a></li>';
   $link_classes = 'aside-nav__link theme--primary-text-color font--primary--xs';

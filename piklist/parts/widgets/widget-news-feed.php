@@ -7,13 +7,15 @@
 <?php
   $news_sidebar = empty($settings['news_sidebar']) ? '' : $settings['news_sidebar'];
   $widget_title = empty($settings['news_feed_title']) ? 'News' : $settings['news_feed_title'];
-  $post_count = empty($settings['news_widget_post_count']) ? '3' : $settings['news_widget_post_count'];
+  $post_count = empty($settings['news_widget_post_count']) ? '-1' : $settings['news_widget_post_count'];
+  $btn_text = empty($settings['news_widget_btn_text']) ? '' : $settings['news_widget_btn_text'];
+  $btn_link = empty($settings['news_widget_btn_link']) ? '' : $settings['news_widget_btn_link'];
   // News feed
-  $news = array(
+  $args = array(
     'category_name' => 'news',
     'posts_per_page' => $post_count,
   );
-  $the_query = new WP_Query($news);
+  $the_query = new WP_Query($args);
 ?>
 
 <?php if ($the_query->have_posts()): ?>
@@ -57,4 +59,8 @@
     <?php echo $after_block; ?>
   <?php endwhile; ?>
   <?php wp_reset_query(); ?>
+  <?php if ($btn_link): ?>
+    <hr/>
+    <a class="center-block btn theme--secondary-background-color space space--top space-half--btm"  style="display:table;" href="<?php echo $btn_link; ?>"><?php echo $btn_text; ?></a>
+  <?php endif; ?>
 <?php endif; ?>

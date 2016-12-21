@@ -77,10 +77,52 @@
     'value' => 'Copyright © 2016, General Conference of Seventh-day Adventists'
   ));
   piklist('field', array(
-    'type' => 'text',
+    'type' => 'group',
     'field' => 'footer_address',
     'label' => 'Footer Address',
-    'columns' => 12,
-    'value' => '12501 Old Columbia Pike, Silver Spring, MD 20904, USA 301-680-6000'
+    'fields' => array(
+      array(
+        'type' => 'text',
+        'field' => 'footer_address_street',
+        'label' => 'Street Address',
+        'columns' => 12,
+        'value' => '12501 Old Columbia Pike'
+      ),
+      array(
+        'type' => 'text',
+        'field' => 'footer_address_city',
+        'label' => 'City',
+        'columns' => 4,
+        'value' => 'Silver Spring'
+      ),
+      array(
+        'type' => 'text',
+        'field' => 'footer_address_state',
+        'label' => 'State',
+        'columns' => 4,
+        'value' => 'MD'
+      ),
+      array(
+        'type' => 'text',
+        'field' => 'footer_address_zip',
+        'label' => 'Zipcode',
+        'columns' => 4,
+        'value' => '20904'
+      ),
+      array(
+        'type' => 'text',
+        'field' => 'footer_address_country',
+        'label' => 'Country',
+        'columns' => 6,
+        'value' => 'USA'
+      ),
+      array(
+        'type' => 'text',
+        'field' => 'footer_phone',
+        'label' => 'Phone Number',
+        'columns' => 6,
+        'value' => '301-680-6000'
+      )
+    )
   ));
 ?>
