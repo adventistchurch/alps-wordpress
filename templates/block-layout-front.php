@@ -1,26 +1,28 @@
 <?php
   $content_block = get_post_meta($post->ID, 'content_block', true);
-  $two_columns = get_post_meta($post->ID, 'grid_two_columns', true);
-  $block_inner_class = ($two_columns == 'true') ? "block__row--small-to-medium" : "";
-  if ($content_block == 'freeform') {
-    $blocks = get_post_meta($post->ID, 'content_block_freeform', true);
-  }
-  if ($content_block == 'relationship') {
-    $blocks = get_posts(array(
-      'post_type' => 'post',
-      'posts_per_page' => -1,
-      'post_belongs' => $post->ID,
-      'post_status' => 'publish',
-      'suppress_filters' => false
-    ));
-  }
-  if ($two_columns == 'true') {
-    echo '<hr>';
-    echo '<div class="g g-2up--at-medium with-divider grid--uniform">';
-  } else {
-    echo '<div class="spacing--double pad--btm">';
-    echo '<hr>';
-  }
+  if ($content_block != "false") {
+
+    $two_columns = get_post_meta($post->ID, 'grid_two_columns', true);
+    $block_inner_class = ($two_columns == 'true') ? "block__row--small-to-medium" : "";
+    if ($content_block == 'freeform') {
+      $blocks = get_post_meta($post->ID, 'content_block_freeform', true);
+    }
+    if ($content_block == 'relationship') {
+      $blocks = get_posts(array(
+        'post_type' => 'post',
+        'posts_per_page' => -1,
+        'post_belongs' => $post->ID,
+        'post_status' => 'publish',
+        'suppress_filters' => false
+      ));
+    }
+    if ($two_columns == 'true') {
+      echo '<hr>';
+      echo '<div class="g g-2up--at-medium with-divider grid--uniform">';
+    } else {
+      echo '<div class="spacing--double pad--btm">';
+      echo '<hr>';
+    }
 ?>
   <?php foreach ($blocks as $block): ?>
     <?php
@@ -86,3 +88,6 @@
     <?php endif; ?>
   <?php endforeach; ?>
 </div>
+<?php
+  } # Close Content Block
+ ?>
