@@ -1,6 +1,6 @@
 <?php
   $content_block = get_post_meta($post->ID, 'content_block', true);
-  if ($content_block != "false") {
+  if (!$content_block) {
 
     $two_columns = get_post_meta($post->ID, 'grid_two_columns', true);
     $block_inner_class = ($two_columns == 'true') ? "block__row--small-to-medium" : "";
