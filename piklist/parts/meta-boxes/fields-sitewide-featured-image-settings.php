@@ -1,6 +1,6 @@
 <?php
 /*
-  Title: Sitewide: Featured Image Settings
+  Title: Featured Image Settings
   Post Type: page, post
   Order: 3
   Context: side
