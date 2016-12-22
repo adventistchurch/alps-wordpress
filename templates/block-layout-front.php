@@ -3,6 +3,7 @@
   <?php
     $two_columns = get_post_meta($post->ID, 'grid_two_columns', true);
     $block_inner_class = ($two_columns == 'true') ? 'block__row--small-to-medium' : '';
+
     if ($content_block == 'freeform') {
       $blocks = get_post_meta($post->ID, 'content_block_freeform', true);
     }

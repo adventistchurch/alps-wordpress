@@ -11,6 +11,7 @@
   }
 ?>
 <section class="hero-carousel layout-container hero-carousel--2-column">
+
   <div class="carousel rel <?php echo $carousel_nav_class; ?>">
     <div class="carousel__slides js-carousel__single-item">
       <?php
