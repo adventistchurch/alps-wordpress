@@ -43,7 +43,7 @@
       $intro = get_post_meta($post->ID, 'intro', true);
       $body = strip_tags(get_the_content());
       $kicker = get_post_meta($post->ID, 'kicker', true);;
-      $button_text = 'Read More';
+      $button_text = translate('Read More');
       $button_url = get_the_permalink();
       $round_image = '';
       $thumb_id = get_post_thumbnail_id();
