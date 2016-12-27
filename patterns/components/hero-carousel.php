@@ -1,7 +1,11 @@
 <?php
   $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
   $carousel_slides = get_post_meta($post->ID, 'carousel_slides', true);
-  $align_right = get_post_meta($post->ID, 'carousel_text_align_right', true);
+  if ($carousel_type == 'small_format_inset') {
+    $image_size = 'horiz__16x9';
+  } else {
+    $image_size = 'featured__hero';
+  }
 ?>
 <section class="hero-carousel">
   <div class="carousel rel">
@@ -14,16 +18,20 @@
         $description = $slide['carousel_description'];
         $link_text = $slide['carousel_link_text'];
         $link_url = $slide['carousel_link_url'];
+        $align_right = $slide['carousel_text_align_right'];
       ?>
         <div class="carousel__item rel">
           <picture class="picture">
             <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source srcset="<?php echo wp_get_attachment_image_url( $image, 'featured__hero--xl' ); ?>" media="(min-width: 1100px)">
-            <source srcset="<?php echo wp_get_attachment_image_url( $image, 'featured__hero--l' ); ?>" media="(min-width: 800px)">
-            <source srcset="<?php echo wp_get_attachment_image_url( $image, 'featured__hero--m' ); ?>" media="(min-width: 500px)">
+            <?php if ($carousel_type == 'large_format_inset'): ?>
+              <source srcset="<?php echo wp_get_attachment_image_url( $image, $image_size . '--xl' ); ?>" media="(min-width: 1100px)">
+            <?php endif; ?>
+            <source srcset="<?php echo wp_get_attachment_image_url( $image, $image_size . '--l' ); ?>" media="(min-width: 800px)">
+            <source srcset="<?php echo wp_get_attachment_image_url( $image, $image_size . '--m' ); ?>" media="(min-width: 500px)">
             <!--[if IE 9]></video><![endif]-->
-            <img itemprop="image" srcset="<?php echo wp_get_attachment_image_url( $image, 'featured__hero--s' ); ?>" alt="<?php echo $title; ?>">
+            <img itemprop="image" srcset="<?php echo wp_get_attachment_image_url( $image, $image_size . '--s' ); ?>" alt="<?php echo $title; ?>">
           </picture>
+
           <?php if ($title): ?>
             <div class="carousel__item-text__wrap">
               <div class="layout-container">

@@ -1,6 +1,6 @@
 <?php
 /*
-  Title: Sitewide: Featured Video
+  Title: Featured Video
   Post Type: page, post
   Order: 4
   Context: side

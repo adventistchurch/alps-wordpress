@@ -13,7 +13,6 @@
       'large_format_inset' => 'Large format with text overlay',
       'large_format_2_col_4x3' => 'Two column large format with 4:3 image ratio',
       'large_format_2_col_16x9' => 'Two column large format with 16:9 image ratio',
-      'standard_square_inset' => 'Standard square format with text overlay',
       'small_format_inset' => 'Small format with text overlay featured in primary content',
       'false' => 'None'
     )
@@ -26,14 +25,10 @@
     'add_more' => true,
     'conditions' => array(
       array(
+        'reset' => 'false',
         'field' => 'carousel_type',
-        'value' => array(
-          'large_format_inset',
-          'large_format_2_col_4x3',
-          'large_format_2_col_16x9',
-          'standard_square_inset',
-          'small_format_inset'
-        )
+        'compare' => '!=',
+        'value' => 'false'
       )
     ),
     'fields' => array(
@@ -83,23 +78,17 @@
         'field' => 'carousel_link_text',
         'label' => 'Link Text (Optional)',
         'columns' => 6
+      ),
+      array(
+        'type' => 'checkbox',
+        'field' => 'carousel_text_align_right',
+        'label' => 'Text Align Right',
+        'columns' => 12,
+        'choices' => array(
+          'true' => 'To align the text to the right on the full width carousel, check this box.'
+        )
       )
     )
   ));
 
-  piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'carousel_text_align_right',
-    'label' => 'Text Align Right',
-    'columns' => 12,
-    'choices' => array(
-      'true' => 'To align the text to the right, check this box.'
-    ),
-    'conditions' => array(
-      array(
-        'field' => 'carousel_type',
-        'value' => 'large_format_inset'
-      )
-    )
-  ));
 ?>

@@ -1,6 +1,6 @@
 <?php
 /*
-  Title: Sitewide: Template Additions
+  Title: Page/Post: Template Additions
   Post Type: post, page
   Order: 2
 */

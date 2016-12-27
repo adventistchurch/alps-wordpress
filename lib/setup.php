@@ -41,7 +41,7 @@ function setup() {
 
   // Use main stylesheet for visual editor
   // To add custom styles edit /assets/styles/layouts/_tinymce.scss
-  add_editor_style(Assets\asset_path('styles/main.css'));
+  add_editor_style(Assets\asset_path('styles/alps-theme.css'));
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
@@ -130,6 +130,9 @@ function assets() {
     wp_enqueue_script('jquery', '//code.jquery.com/jquery-2.2.4.min.js', false, '2.2.4', true);
   }
 
+  // Create <picture> tag.
+  wp_add_inline_script('picturefill', 'document.createElement("picture");');
+
   // Load ALPS footer javascript.
   wp_enqueue_script('alps/foot_js', '//cdn.adventist.io/alps/2/latest/js/script.min.js', ['jquery'], '2', true);
 
@@ -175,13 +178,13 @@ add_image_size('featured__hero--xl', 1600, 600, array('center', 'center'));
 add_image_size('horiz__16x9--s', 500, 280, array('center', 'center'));
 add_image_size('horiz__16x9--m', 800, 450, array('center', 'center'));
 add_image_size('horiz__16x9--l', 1100, 620, array('center', 'center'));
-//add_image_size('horiz__16x9--xl', 1600, 900, array('center', 'center'));
+add_image_size('horiz__16x9--xl', 1600, 900, array('center', 'center'));
 
 // 4:3 crop.
 add_image_size('horiz__4x3--s', 500, 375, array('center', 'center'));
 add_image_size('horiz__4x3--m', 800, 600, array('center', 'center'));
 add_image_size('horiz__4x3--l', 1100, 825, array('center', 'center'));
-//add_image_size('horiz__4x3--xl', 1600, 1200, array('center', 'center'));
+add_image_size('horiz__4x3--xl', 1600, 1200, array('center', 'center'));
 
 // square crop.
 add_image_size('square--s', 400, 400, array('center', 'center'));
