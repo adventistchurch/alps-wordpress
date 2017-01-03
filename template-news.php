@@ -44,7 +44,7 @@
                   $body = strip_tags(get_the_content());
                   $excerpt_length = 100;
                   $image = get_post_thumbnail_id();
-                  $button_text = 'Read More';
+                  $button_text = translate('Read More');
                   $date = get_the_date();
                   $button_url = get_the_permalink();
                   $round_image = get_post_meta($post->ID, 'make_the_image_round', true);
@@ -179,7 +179,7 @@
                         $body = strip_tags(get_the_content());
                         $excerpt_length = 100;
                         $image = get_post_thumbnail_id();
-                        $button_text = 'Read More';
+                        $button_text = translate('Read More');
                         $date = get_the_date();
                         $button_url = get_the_permalink();
                         $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];

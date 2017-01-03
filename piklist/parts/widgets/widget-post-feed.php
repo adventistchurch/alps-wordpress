@@ -1,18 +1,26 @@
 <?php
 /*
-  Title: News Feed
-  Description: Feed of posts in the category `News`
+  Title: Post Feed
+  Description: Feed of posts in the selected category
 */
 ?>
 <?php
-  $news_sidebar = empty($settings['news_sidebar']) ? '' : $settings['news_sidebar'];
-  $widget_title = empty($settings['news_feed_title']) ? 'News' : $settings['news_feed_title'];
-  $post_count = empty($settings['news_widget_post_count']) ? '-1' : $settings['news_widget_post_count'];
-  $btn_text = empty($settings['news_widget_btn_text']) ? '' : $settings['news_widget_btn_text'];
-  $btn_link = empty($settings['news_widget_btn_link']) ? '' : $settings['news_widget_btn_link'];
-  // News feed
+  $feed_category = empty($settings['feed_category_list']) ? 'news' : $settings['feed_category_list'];
+  function get_cat_slug($cat_id) {
+    $cat_id = (int) $cat_id;
+    $category = get_category($cat_id);
+    return $category->slug;
+  }
+  $category = get_cat_slug($feed_category[0]);
+  $for_sidebar = empty($settings['for_sidebar']) ? '' : $settings['for_sidebar'];
+  $widget_title = empty($settings['feed_title']) ? 'News' : $settings['feed_title'];
+  $post_count = empty($settings['feed_widget_post_count']) ? '-1' : $settings['feed_widget_post_count'];
+  $btn_text = empty($settings['feed_widget_btn_text']) ? '' : $settings['feed_widget_btn_text'];
+  $btn_link = empty($settings['feed_widget_btn_link']) ? '' : $settings['feed_widget_btn_link'];
+
+  // Post Feed args
   $args = array(
-    'category_name' => 'news',
+    'category_name' => $category,
     'posts_per_page' => $post_count,
   );
   $the_query = new WP_Query($args);
@@ -20,7 +28,7 @@
 
 <?php if ($the_query->have_posts()): ?>
   <?php
-    if ($news_sidebar != 'true') {
+    if ($for_sidebar != 'true') {
       $block_inner_class = 'block__row';
       $excerpt_length = 200;
       $hr = '<hr class="w--100p">';
@@ -42,8 +50,8 @@
       $title = get_the_title();
       $intro = get_post_meta($post->ID, 'intro', true);
       $body = strip_tags(get_the_content());
-      $kicker = get_post_meta($post->ID, 'kicker', true);;
-      $button_text = 'Read More';
+      $kicker = get_post_meta($post->ID, 'kicker', true);
+      $button_text = translate('Read More');
       $button_url = get_the_permalink();
       $round_image = '';
       $thumb_id = get_post_thumbnail_id();
