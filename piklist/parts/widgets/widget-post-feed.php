@@ -27,6 +27,7 @@
 ?>
 
 <?php if ($the_query->have_posts()): ?>
+  <?php echo $before_widget; ?>
   <?php
     if ($for_sidebar != 'true') {
       $block_inner_class = 'block__row';
@@ -71,4 +72,5 @@
     <hr/>
     <a class="center-block btn theme--secondary-background-color space space--top space-half--btm"  style="display:table;" href="<?php echo $btn_link; ?>"><?php echo $btn_text; ?></a>
   <?php endif; ?>
+  <?php echo $after_widget; ?>
 <?php endif; ?>
