@@ -32,45 +32,45 @@ For more installation notes, refer to the [Install gulp](#install-gulp) section 
 
 ## Theme installation via WordPress Admin Panel
 
-  1. In your WordPress admin panel, navigate to Appearance->Themes
-  2. Click Add New
-  3. Click Upload Theme
-  4. Upload the zip file that you downloaded.
+1. In your WordPress admin panel, navigate to Appearance->Themes
+2. Click Add New
+3. Click Upload Theme
+4. Upload the zip file that you downloaded.
 
 ## Theme settings
 
 Set front and posts page
-	1.	In your WordPress admin panel, navigate to Settings->Reading
-	2.	Set `Front page displays` to a static page
-	3.	Select a page from each dropdown
-	4.	Save Changes
+1.	In your WordPress admin panel, navigate to Settings->Reading
+2.	Set `Front page displays` to a static page
+3.	Select a page from each dropdown
+4.	Save Changes
 
 Set page template
-	1.	In your WordPress admin panel, navigate to Pages
-	2.	Edit page
-	3.	In the sidebar, navigate to `Page Attributes`
-	4.	Select Template from the dropdown
+1.	In your WordPress admin panel, navigate to Pages
+2.	Edit page
+3.	In the sidebar, navigate to `Page Attributes`
+4.	Select Template from the dropdown
 
 Add widgets to sidebar
-	1.	In your WordPress admin panel, navigate to Appearance->Widgets
-	2.	Drag widget to widget area
-	⁃	Primary Top appears on `Home Template` above the main content
-	⁃	Primary Main appears on `Home Template` within the content
-	⁃	Primary Bottom appears on `Home Template` below the main content
-	⁃	Sidebar (Breakout Block) appears at the top in the right rail
-	⁃	Sidebar appears in the right rail
+1.	In your WordPress admin panel, navigate to Appearance->Widgets
+2.	Drag widget to widget area
+* Primary Top appears on `Home Template` above the main content
+* Primary Main appears on `Home Template` within the content
+* Primary Bottom appears on `Home Template` below the main content
+* Sidebar (Breakout Block) appears at the top in the right rail
+* Sidebar appears in the right rail
 
 Add menus
-	1.	In your WordPress admin panel, navigate to Appearance->Menus
-	2.	Create a menu
-	3.	Add links
-	4.	Go to `Manage Locations` tab
-	5.	Select location for the menu to appear
-  	* Primary Navigation: The main navigation for the page
-  	* Secondary Navigation: Appears above the main navigation
-  	* Secondary Footer Navigation: Appears above the main footer navigation
-  	* Primary Footer Navigation: The main footer navigation at the bottom of the page
-  	* Tertiary Navigation: Appears below the page header on the News Template
+1.	In your WordPress admin panel, navigate to Appearance->Menus
+2.	Create a menu
+3.	Add links
+4.	Go to `Manage Locations` tab
+5.	Select location for the menu to appear
+* Primary Navigation: The main navigation for the page
+* Secondary Navigation: Appears above the main navigation
+* Secondary Footer Navigation: Appears above the main footer navigation
+* Primary Footer Navigation: The main footer navigation at the bottom of the page
+* Tertiary Navigation: Appears below the page header on the News Template
 
 ## Theme development
 
