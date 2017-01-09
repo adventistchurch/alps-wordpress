@@ -1,6 +1,6 @@
 <?php
 /*
-  Title: Pages: Carousel
+  Title: Carousel
   Post Type: page
   Order: 1
 */
