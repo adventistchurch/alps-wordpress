@@ -1,6 +1,6 @@
 <?php
 /*
-  Title: Page/Post: Template Additions
+  Title: Template Additions
   Post Type: post, page
   Order: 2
 */

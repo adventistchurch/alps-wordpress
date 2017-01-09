@@ -1,6 +1,6 @@
 <?php
 /*
-  Title: Pages: Primary Structured Content
+  Title: Primary Structured Content
   Post Type: page
   Order: 1
   Template: template-single

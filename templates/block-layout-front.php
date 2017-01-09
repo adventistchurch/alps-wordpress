@@ -50,6 +50,7 @@
           $image = get_post_thumbnail_id($block->ID);
           $excerpt_length = 200;
           $body = strip_tags($block->post_content);
+          $body = strip_shortcodes($body);
           $button_text = translate('Read More');
           $button_url = $block->guid;
           $thumbnail = wp_get_attachment_image_url( $image, 'horiz__4x3--s' );

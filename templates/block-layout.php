@@ -21,6 +21,7 @@
                 $title = get_the_title();
                 $intro = get_post_meta($post->ID, 'intro', true);
                 $body = strip_tags(get_the_content());
+                $body = strip_shortcodes($body);
                 $excerpt_length = 200;
                 $image = get_post_thumbnail_id();
                 $kicker = get_post_meta($post->ID, 'kicker', true);
@@ -64,6 +65,7 @@
         $title = get_post_meta($page->ID, 'display_title', true);
         $intro = get_post_meta($page->ID, 'intro', true);
         $body = strip_tags($page->post_content);
+        $body = strip_shortcodes($body);
         $excerpt_length = 200;
         $image = get_post_thumbnail_id($page->ID);
         $kicker = $page->post_title;

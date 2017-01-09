@@ -50,14 +50,29 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  */
 function widgets_init() {
   register_sidebar([
-    'name'          => __('Primary (Home Template)', 'sage'),
+    'name'          => __('Primary Top (Home Template)', 'sage'),
+    'id'            => 'widget_area_primary_top',
+    'before_widget' => '<section id="%2$s" class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+  register_sidebar([
+    'name'          => __('Primary Main (Home Template)', 'sage'),
     'id'            => 'widget_area_primary',
     'before_widget' => '<section id="%2$s" class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
   ]);
-
+  register_sidebar([
+    'name'          => __('Primary Bottom (Home Template)', 'sage'),
+    'id'            => 'widget_area_primary_bottom',
+    'before_widget' => '<section id="%2$s" class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
   register_sidebar([
     'name'          => __('Footer', 'sage'),
     'id'            => 'widget_area_footer',
@@ -66,7 +81,6 @@ function widgets_init() {
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
   ]);
-
   register_sidebar([
     'name' => 'Sidebar (Breakout Block)',
     'id' => 'sidebar_breakout_block',
