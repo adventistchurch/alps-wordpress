@@ -38,6 +38,7 @@
                     $title = get_the_title();
                     $intro = get_post_meta($post->ID, 'intro', true);
                     $body = strip_tags(get_the_content());
+                    $body = strip_shortcodes($body);
                     $excerpt_length = 100;
                     $image = get_post_thumbnail_id();
                     $button_text = translate('Read More');

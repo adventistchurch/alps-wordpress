@@ -6,12 +6,6 @@
 ?>
 <?php
   $feed_category = empty($settings['feed_category_list']) ? 'news' : $settings['feed_category_list'];
-  function get_cat_slug($cat_id) {
-    $cat_id = (int) $cat_id;
-    $category = get_category($cat_id);
-    return $category->slug;
-  }
-  $category = get_cat_slug($feed_category[0]);
   $for_sidebar = empty($settings['for_sidebar']) ? '' : $settings['for_sidebar'];
   $widget_title = empty($settings['feed_title']) ? 'News' : $settings['feed_title'];
   $post_count = empty($settings['feed_widget_post_count']) ? '-1' : $settings['feed_widget_post_count'];
@@ -20,14 +14,13 @@
 
   // Post Feed args
   $args = array(
-    'category_name' => $category,
+    'cat' => $feed_category,
     'posts_per_page' => $post_count,
   );
   $the_query = new WP_Query($args);
 ?>
 
 <?php if ($the_query->have_posts()): ?>
-  <?php echo $before_widget; ?>
   <?php
     if ($for_sidebar != 'true') {
       $block_inner_class = 'block__row';
@@ -51,6 +44,7 @@
       $title = get_the_title();
       $intro = get_post_meta($post->ID, 'intro', true);
       $body = strip_tags(get_the_content());
+      $body = strip_shortcodes($body);
       $kicker = get_post_meta($post->ID, 'kicker', true);
       $button_text = translate('Read More');
       $button_url = get_the_permalink();
@@ -72,5 +66,4 @@
     <hr/>
     <a class="center-block btn theme--secondary-background-color space space--top space-half--btm"  style="display:table;" href="<?php echo $btn_link; ?>"><?php echo $btn_text; ?></a>
   <?php endif; ?>
-  <?php echo $after_widget; ?>
 <?php endif; ?>

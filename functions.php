@@ -59,7 +59,7 @@ function piklist_theme_setting_pages($pages) {
 
 /**
  * Reformat text widget
- */ 
+ */
 add_action( 'widgets_init', 'register_my_widgets' );
 function register_my_widgets() {
   register_widget( 'My_Text_Widget' );
