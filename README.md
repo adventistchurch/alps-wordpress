@@ -54,11 +54,11 @@ Set page template
 Add widgets to sidebar
 1. In your WordPress admin panel, navigate to *Appearance->Widgets*
 2. Drag widget to widget area
-* **Primary Top** appears on *Home Template* above the main content
-* **Primary Main** appears on *Home Template* within the content
-* **Primary Bottom** appears on *Home Template* below the main content
-* **Sidebar (Breakout Block)** appears at the top in the right rail
-* **Sidebar** appears in the right rail
+    * **Primary Top**: Appears on *Home Template* above the main content
+    * **Primary Main**: Appears on *Home Template* within the content
+    * **Primary Bottom**: Appears on *Home Template* below the main content
+    * **Sidebar (Breakout Block)**: Appears at the top in the right rail
+    * **Sidebar**: Appears in the right rail
 
 Add menus
 1. In your WordPress admin panel, navigate to *Appearance->Menus*
@@ -66,11 +66,11 @@ Add menus
 3. Add links
 4. Go to *Manage Locations* tab
 5. Select location for the menu to appear
-* **Primary Navigation**: The main navigation for the page
-* **Secondary Navigation**: Appears above the main navigation
-* **Secondary Footer Navigation**: Appears above the main footer navigation
-* **Primary Footer Navigation**: The main footer navigation at the bottom of the page
-* **Tertiary Navigation**: Appears below the page header on the *News Template*
+    * **Primary Navigation**: The main navigation for the page
+    * **Secondary Navigation**: Appears above the main navigation
+    * **Secondary Footer Navigation**: Appears above the main footer navigation
+    * **Primary Footer Navigation**: The main footer navigation at the bottom of the page
+    * **Tertiary Navigation**: Appears below the page header on the *News Template*
 
 ## Theme development
 
