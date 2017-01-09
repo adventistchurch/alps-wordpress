@@ -213,8 +213,7 @@ function adventist_register_required_plugins() {
 function register_my_menus() {
   register_nav_menus(
     array(
-      'tertiary_navigation' => __( 'Tertiary Navigation' ),
-      'sidebar_navigation' => __( 'Sidebar Navigation' )
+      'tertiary_navigation' => __( 'Tertiary Navigation' )
     )
   );
 }
