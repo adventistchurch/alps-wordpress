@@ -17,7 +17,7 @@
           <div class="spacing">
             <div class="spacing--half">
               <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-                Recent news
+                <?php echo translate('Recent'); ?> <?php the_title(); ?>
               </h2>
             </div>
             <hr>

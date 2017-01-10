@@ -15,16 +15,7 @@
       <?php endif; ?>
       <div class="spacing--half">
         <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-          <?php if (is_home() && !is_front_page()): ?>
-            <?php translate('All News'); ?>
-          <?php elseif (is_home() && is_front_page()): ?>
-            <?php translate('All Posts'); ?>
-          <?php elseif (is_category()): ?>
-            <?php $categories = get_the_category(); ?>
-            <?php if (!empty($categories)): ?>
-                <?php translate('All'); ?> <?php echo esc_html($categories[0]->name); ?>
-            <?php endif; ?>
-          <?php endif; ?>
+          <?php echo translate('All Posts'); ?>
         </h2>
         <hr>
       </div>
