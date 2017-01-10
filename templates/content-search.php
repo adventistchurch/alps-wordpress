@@ -26,7 +26,7 @@
                 $terms = get_terms(
                   'category', array(
                   'parent'   => 0,
-                  'hide_empty' => true // Optional
+                  'hide_empty' => false // Optional
                   )
                 );
               ?>
@@ -34,8 +34,7 @@
                 <ul class="bullet-list spacing--quarter theme--primary-text-color">
                   <?php foreach ($terms as $term): ?>
                     <li class="font--primary--s">
-                      <a href="<?php echo home_url( '/' ); ?>?s=search+<?php echo get_search_query(); ?><?php echo esc_html('&cat=' . $term->name); ?>" title="<?php echo esc_attr($term->name); ?>"><?php echo esc_html($term->name); ?></a>&nbsp;
-                      (<?php echo count($terms); ?>)
+                      <a href="<?php echo home_url( '/' ); ?>?s=<?php echo get_search_query(); ?><?php echo esc_html('&cat=' . $term->term_id); ?>" title="<?php echo esc_attr($term->name); ?>"><?php echo esc_html($term->name); ?></a>
                     </li>
                   <?php endforeach; ?>
                 </ul>

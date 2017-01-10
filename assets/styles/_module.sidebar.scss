@@ -1,6 +1,23 @@
 /*------------------------------------*\
     $SIDEBAR
 \*------------------------------------*/
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+}
+.comment__form {
+  .comment-reply-title {
+    margin-bottom: $space;
+  }
+}
+.comment__avatar {
+  margin-right: $space-half;
+  img {
+    max-width: rem(32);
+  }
+}
+
 .widget {
   font-family: $font;
   font-size: rem(14);
