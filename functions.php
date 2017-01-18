@@ -28,6 +28,56 @@ foreach ($sage_includes as $file) {
 unset($file, $filepath);
 
 /**
+ * Comments formatting
+ */
+function alps_comments($comment, $args, $depth) {
+  if ('div' === $args['style']) {
+    $tag = 'div';
+    $add_below = 'comment';
+  } else {
+    $tag = 'li';
+    $add_below = 'div-comment';
+  }
+  ?>
+  <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+    <?php if ('div' != $args['style']): ?>
+        <div id="div-comment-<?php comment_ID() ?>" class="comment--inner">
+    <?php endif; ?>
+    <div class="comment__avatar round">
+      <?php if ($args['avatar_size'] != 0) echo get_avatar($comment, $args['avatar_size']); ?>
+    </div>
+    <div class="comment__body">
+      <div class="comment__meta">
+        <span class="byline font--secondary--s gray can-be--white theme--secondary-text-color"><?php printf( __('%s'), get_comment_author_link()); ?></span>
+        <span class="divider">|</span>
+        <span class="pub_date font--secondary--s gray can-be--white"><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')) . ' ago'; ?></span> <span class="font--secondary--s theme--primary-text-color"><?php edit_comment_link( __('(Edit)'), '  ', ''); ?></span>
+      </div>
+      <p class="comment__content"><?php comment_text(); ?></p>
+      <?php if ($comment->comment_approved == '0'): ?>
+        <p><em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em><p>
+      <?php endif; ?>
+      <div class="comment__reply">
+        <span class="font--secondary--s theme--primary-text-color">
+          <?php
+            comment_reply_link(
+              array_merge(
+                $args, array(
+                  'add_below' => $add_below,
+                  'depth' => $depth,
+                  'max_depth' => $args['max_depth']
+                )
+              )
+            );
+          ?>
+        </span>
+      </div>
+    </div>
+  <?php if ('div' != $args['style']): ?>
+    </div>
+  <?php endif; ?>
+<?php }
+
+/**
  * Fix for Piklist fields not saving
  */
 function my_custom_init() {

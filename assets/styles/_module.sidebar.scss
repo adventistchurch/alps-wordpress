@@ -2,20 +2,42 @@
     $SIDEBAR
 \*------------------------------------*/
 
-.comment {
+.comment-list {
+  > li {
+    border-top: 1px solid $gray-light;
+    margin-top: $space;
+    padding-top: $space;
+
+    .comment-respond,
+    .children li {
+      margin-top: $space;
+      margin-left: rem(50);
+      padding-left: $space-half;
+      border-left: 1px solid $gray-light;
+    }
+  }
+}
+
+.comment--inner {
   display: flex;
   align-items: flex-start;
 }
+
 .comment__form {
   .comment-reply-title {
     margin-bottom: $space;
   }
 }
+.comment__form-title {
+  small {
+
+  }
+}
 .comment__avatar {
   margin-right: $space-half;
-  img {
-    max-width: rem(32);
-  }
+  display: flex;
+  min-width: rem(50);
+  min-height: rem(50);
 }
 
 .widget {
