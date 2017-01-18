@@ -8,6 +8,7 @@
   $footer_address_zip = $theme_options['footer_address']['footer_address_zip'];
   $footer_address_country = $theme_options['footer_address']['footer_address_country'];
   $footer_phone = $theme_options['footer_address']['footer_phone'];
+  $footer_description = $theme_options['footer_description'];
 ?>
 <footer class="footer" role="contentinfo">
   <div class="footer__inner cf bg--medium-brown white can-be--dark-dark">
@@ -15,10 +16,12 @@
 
       <div class="footer__unify-nav-desc spacing--until-large" <?php if (!has_nav_menu('footer_secondary_navigation')): echo 'style="flex-direction: row;"'; endif; ?>>
         <?php get_template_part('patterns/components/footer-navigation'); ?>
-        <div class="footer__desc">
-          <span class="icon footer__logo"><?php get_template_part('patterns/icons/icon-logo'); ?></span>
-          <p class="footer__desc-text brown--light font--secondary"><a class="link--white" href="http://adventist.org">Adventist.org</a> is the Official website of the Seventh-day Adventist world church &bull; <a href="http://adventist.org/regions" class="link--white">View Regions</a></p>
-        </div> <!-- /.footer_desc -->
+        <?php if ($footer_description): ?>
+          <div class="footer__desc">
+            <span class="icon footer__logo"><?php get_template_part('patterns/icons/icon-logo'); ?></span>
+            <p class="footer__desc-text brown--light font--secondary"><?php echo $footer_description; ?></p>
+          </div> <!-- /.footer_desc -->
+        <?php endif; ?>
       </div> <!-- /.footer__unify-nav-desc -->
     </div> <!-- /.layout-container -->
 

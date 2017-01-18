@@ -18,6 +18,9 @@
     // All pages
     'common': {
       init: function() {
+        // Add class to footer description links
+        $('.footer__desc-text a').addClass('link--white');
+
         // Add classes to submenu items in the primary navigation.
         $('.primary-nav__subnav > li').addClass('primary-nav__subnav__list-item');
         $('.primary-nav__subnav > li > a').removeClass('primary-nav__link').addClass('primary-nav__subnav__link theme--primary-text-color');
