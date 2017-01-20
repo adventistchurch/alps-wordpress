@@ -130,7 +130,7 @@ function assets() {
   wp_enqueue_style('slick', '//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css');
 
   // Load main ALPS styles.
-  wp_enqueue_style('alps/main_css', '//cdn.adventist.io/alps/2/latest/css/main.css');
+  wp_enqueue_style('alps/main_css', '//alps.adventist.io/cdn/2/latest/css/main.css');
 
   // Load theme override css.
   wp_enqueue_style('alps/theme_css', Assets\asset_path('styles/alps-theme.css'), false, null);

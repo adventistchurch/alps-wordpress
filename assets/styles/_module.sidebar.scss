@@ -2,50 +2,6 @@
     $SIDEBAR
 \*------------------------------------*/
 
-.comment-list {
-  > li {
-    border-top: 1px solid $gray-light;
-    margin-top: $space;
-    padding-top: $space;
-
-    .comment-respond,
-    .children li {
-      margin-top: $space;
-      margin-left: rem(50);
-      padding-left: $space-half;
-      border-left: 1px solid $gray-light;
-    }
-  }
-}
-.comment-form {
-  .comment-reply-title {
-    margin-bottom: $space;
-  }
-  label {
-    display: none;
-  }
-}
-.comment--inner {
-  display: flex;
-  align-items: flex-start;
-}
-.comment__meta {
-  margin-bottom: rem(5);
-  .divider {
-    margin-left: rem(5);
-    margin-right: rem(5);
-  }
-}
-.comment__edit-link {
-  margin-left: rem(5);
-}
-.comment__avatar {
-  margin-right: $space-half;
-  display: flex;
-  min-width: rem(50);
-  min-height: rem(50);
-}
-
 .widget {
   font-family: $font;
   font-size: rem(14);

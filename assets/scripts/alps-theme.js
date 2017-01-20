@@ -22,6 +22,8 @@
         $('.footer__desc-text a').addClass('link--white');
 
         // Add classes to submenu items in the primary navigation.
+        $('.article-nav__subnav > li').removeClass('article-nav__list-item dropdown__item').addClass('article-nav__subnav__list-item');
+        $('.article-nav__subnav > li > a').removeClass('article-nav__link dropdown__item-link white').addClass('article-nav__subnav__link');
         $('.primary-nav__subnav > li').addClass('primary-nav__subnav__list-item');
         $('.primary-nav__subnav > li > a').removeClass('primary-nav__link').addClass('primary-nav__subnav__link theme--primary-text-color');
         $('.primary-nav__list > li.active > a, .primary-nav__subnav > li.active > a').removeClass('theme--primary-text-color').addClass('theme--secondary-text-color');
