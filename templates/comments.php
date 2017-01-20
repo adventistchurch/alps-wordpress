@@ -20,8 +20,11 @@ if (post_password_required()) {
   	<?php
   		comment_form(
         array(
-    			'title_reply_before' => '<h3 class="comment__form-title font--tertiary--m theme--secondary-text-color space--btm">',
+    			'title_reply_before' => '<h3 class="comment__form-title font--tertiary--m theme--primary-text-color space--btm">',
     			'title_reply_after'  => '</h3>',
+          'logged_in_as' => '',
+          'title_reply' => 'Leave a Comment',
+          'label_submit' => 'Submit'
     		)
       );
   	?>

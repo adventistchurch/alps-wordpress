@@ -46,11 +46,11 @@ function alps_comments($comment, $args, $depth) {
     <div class="comment__avatar round">
       <?php if ($args['avatar_size'] != 0) echo get_avatar($comment, $args['avatar_size']); ?>
     </div>
-    <div class="comment__body">
+    <div class="comment__body spacing--quarter">
       <div class="comment__meta">
         <span class="byline font--secondary--s gray can-be--white theme--secondary-text-color"><?php printf( __('%s'), get_comment_author_link()); ?></span>
         <span class="divider">|</span>
-        <span class="pub_date font--secondary--s gray can-be--white"><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')) . ' ago'; ?></span> <span class="font--secondary--s theme--primary-text-color"><?php edit_comment_link( __('(Edit)'), '  ', ''); ?></span>
+        <span class="pub_date font--secondary--s gray can-be--white"><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')) . ' ago'; ?></span><span class="comment__edit-link font--secondary--s theme--primary-text-color"><?php edit_comment_link( __('(Edit)'), '  ', ''); ?></span>
       </div>
       <p class="comment__content"><?php comment_text(); ?></p>
       <?php if ($comment->comment_approved == '0'): ?>
