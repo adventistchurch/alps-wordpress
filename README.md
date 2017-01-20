@@ -52,16 +52,21 @@ Set page template
 2. Edit page
 3. In the sidebar, navigate to *Page Attributes**
 4. Select Template from the dropdown
+* **Primary Navigation**: The main navigation for the page
+* **Secondary Navigation**: Appears above the main navigation
+* **Secondary Footer Navigation**: Appears above the main footer navigation
+* **Primary Footer Navigation**: The main footer navigation at the bottom of the page
+* **Tertiary Navigation**: Appears below the page header on the *News Template*
 
 Add widgets to sidebar
 
 1. In your WordPress admin panel, navigate to *Appearance->Widgets*
 2. Drag widget to widget area
-  * **Primary Top**: Appears on *Home Template* above the main content
-  * **Primary Main**: Appears on *Home Template* within the content
-  * **Primary Bottom**: Appears on *Home Template* below the main content
-  * **Sidebar (Breakout Block)**: Appears at the top in the right rail
-  * **Sidebar**: Appears in the right rail
+  * **Default Template**: Default template for all pages
+  * **Home Template**: Includes story block and freeform/relationship post fields (http://alps.adventist.io/public/?p=templates-home)
+  * **News Template**: Landing page of posts in the category *news* (http://alps.adventist.io/public/?p=organisms-news-content)
+  * **Longform Template**: (http://alps.adventist.io/public/?p=templates-longform)
+  * **Single Template**: (http://alps.adventist.io/public/?p=templates-single-page)
 
 Add menus
 
