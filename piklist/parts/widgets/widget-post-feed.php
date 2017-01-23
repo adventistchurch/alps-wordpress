@@ -42,10 +42,10 @@
   <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
     <?php
       $title = get_the_title();
-      $intro = get_post_meta($post->ID, 'intro', true);
+      $intro = get_post_meta(get_the_ID(), 'intro', true);
       $body = strip_tags(get_the_content());
       $body = strip_shortcodes($body);
-      $kicker = get_post_meta($post->ID, 'kicker', true);
+      $kicker = get_post_meta(get_the_ID(), 'kicker', true);
       $button_text = translate('Read More');
       $button_url = get_the_permalink();
       $round_image = '';
