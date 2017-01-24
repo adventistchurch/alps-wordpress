@@ -6,7 +6,7 @@
  $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
  $carousel_slides = get_post_meta($post->ID, 'carousel_slides', true);
 ?>
-<?php while (have_posts()) : the_post(); ?>
+<?php while (have_posts()): the_post(); ?>
   <?php if ($carousel_type == 'large_format_2_col_4x3' && $carousel_slides || $carousel_type == 'large_format_2_col_16x9' && $carousel_slides): ?>
     <?php include(locate_template('patterns/components/hero-carousel__2-column.php')); ?>
   <?php elseif ($carousel_type == 'large_format_inset' && $carousel_slides): ?>
@@ -20,13 +20,12 @@
           <?php
             $block_layout = $block['content_block_layout'];
             $grid_layout = $block['content_block_grid_layout'];
-            $image_layout = $block['content_block_image_layout'];
             $image = $block['content_block_image_file'][0];
-            $grid_body_1 = $block['content_block_grid_body_1'];
+            $grid_body_1 = wpautop($block['content_block_grid_body_1']);
             $grid_image_1 = $block['content_block_grid_file_1'][0];
-            $grid_body_2 = $block['content_block_grid_body_2'];
+            $grid_body_2 = wpautop($block['content_block_grid_body_2']);
             $grid_image_2 = $block['content_block_grid_file_2'][0];
-            $grid_body_3 = $block['content_block_grid_body_3'];
+            $grid_body_3 = wpautop($block['content_block_grid_body_3']);
             $grid_image_3 = $block['content_block_grid_file_3'][0];
           ?>
 
@@ -120,6 +119,7 @@
           <?php endif; ?>
 
           <?php if ($block_layout == 'content_block_image'): ?>
+            <?php $image_layout = $block['content_block_image_layout']; ?>
             <?php if ($image_layout == 'full_width'): ?>
               <picture class="picture">
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
