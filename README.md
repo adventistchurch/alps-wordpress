@@ -2,34 +2,6 @@
 
 ALPS specific documentation to come. ALPS theme is based off of the WordPress starter theme, [Sage](https://roots.io/sage/).
 
-# [Sage](https://roots.io/sage/)
-
-Sage is a WordPress starter theme based on HTML5 Boilerplate, gulp, and Sass, that will help you make better themes.
-
-* Source: [https://github.com/roots/sage](https://github.com/roots/sage)
-* Homepage: [https://roots.io/sage/](https://roots.io/sage/)
-* Documentation: [https://roots.io/sage/docs/](https://roots.io/sage/docs/)
-
-## Requirements
-
-| Prerequisite    | How to check | How to install
-| --------------- | ------------ | ------------- |
-| PHP >= 5.4.x    | `php -v`     | [php.net](http://php.net/manual/en/install.php) |
-| Node.js 0.12.x  | `node -v`    | [nodejs.org](http://nodejs.org/) |
-| gulp >= 3.8.10  | `gulp -v`    | `npm install -g gulp` |
-
-For more installation notes, refer to the [Install gulp](#install-gulp) section in this document.
-
-## Features
-
-* [gulp](http://gulpjs.com/) build script that compiles both Sass and Less, checks for JavaScript errors, optimizes images, and concatenates and minifies files
-* [BrowserSync](http://www.browsersync.io/) for keeping multiple browsers and devices synchronized while testing, along with injecting updated CSS and JS into your browser while you're developing
-* [asset-builder](https://github.com/austinpray/asset-builder) for the JSON file based asset pipeline
-* [Theme wrapper](https://roots.io/sage/docs/theme-wrapper/)
-* ARIA roles and microformats
-* Posts use the [hNews](http://microformats.org/wiki/hnews) microformat
-* [Multilingual ready](https://roots.io/wpml/) and over 30 available [community translations](https://github.com/roots/sage-translations)
-
 ## Theme installation via WordPress Admin Panel
 
 1. In your WordPress admin panel, navigate to Appearance->Themes
@@ -39,14 +11,14 @@ For more installation notes, refer to the [Install gulp](#install-gulp) section 
 
 ## Theme settings
 
-Set front and posts page
+###Set front and posts page
 
 1. In your WordPress admin panel, navigate to *Settings->Reading*
 2. Set *Front page displays* to a static page
 3. Select a page from each dropdown
 4. Save Changes
 
-Set page template
+###Set page template
 
 1. In your WordPress admin panel, navigate to *Pages*
 2. Edit page
@@ -58,7 +30,7 @@ Set page template
 * **Primary Footer Navigation**: The main footer navigation at the bottom of the page
 * **Tertiary Navigation**: Appears below the page header on the *News Template*
 
-Add widgets to sidebar
+###Add widgets to sidebar
 
 1. In your WordPress admin panel, navigate to *Appearance->Widgets*
 2. Drag widget to widget area
@@ -68,7 +40,7 @@ Add widgets to sidebar
   * **Longform Template**: (http://alps.adventist.io/public/?p=templates-longform)
   * **Single Template**: (http://alps.adventist.io/public/?p=templates-single-page)
 
-Add menus
+###Add menus
 
 1. In your WordPress admin panel, navigate to *Appearance->Menus*
 2. Create a menu
@@ -84,6 +56,14 @@ Add menus
 ## Theme development
 
 Sage uses [gulp](http://gulpjs.com/) as its build system.
+
+### [Sage](https://roots.io/sage/)
+
+Sage is a WordPress starter theme based on HTML5 Boilerplate, gulp, and Sass, that will help you make better themes.
+
+* Source: [https://github.com/roots/sage](https://github.com/roots/sage)
+* Homepage: [https://roots.io/sage/](https://roots.io/sage/)
+* Documentation: [https://roots.io/sage/docs/](https://roots.io/sage/docs/)
 
 ### Install gulp
 
@@ -118,6 +98,28 @@ For example, if your local development URL is `http://alps-wp.dev` you would upd
 ## Documentation
 
 Sage documentation is available at [https://roots.io/sage/docs/](https://roots.io/sage/docs/).
+
+
+## Requirements
+
+| Prerequisite    | How to check | How to install
+| --------------- | ------------ | ------------- |
+| PHP >= 5.4.x    | `php -v`     | [php.net](http://php.net/manual/en/install.php) |
+| Node.js 0.12.x  | `node -v`    | [nodejs.org](http://nodejs.org/) |
+| gulp >= 3.8.10  | `gulp -v`    | `npm install -g gulp` |
+
+For more installation notes, refer to the [Install gulp](#install-gulp) section in this document.
+
+## Features
+
+* [gulp](http://gulpjs.com/) build script that compiles both Sass and Less, checks for JavaScript errors, optimizes images, and concatenates and minifies files
+* [BrowserSync](http://www.browsersync.io/) for keeping multiple browsers and devices synchronized while testing, along with injecting updated CSS and JS into your browser while you're developing
+* [asset-builder](https://github.com/austinpray/asset-builder) for the JSON file based asset pipeline
+* [Theme wrapper](https://roots.io/sage/docs/theme-wrapper/)
+* ARIA roles and microformats
+* Posts use the [hNews](http://microformats.org/wiki/hnews) microformat
+* [Multilingual ready](https://roots.io/wpml/) and over 30 available [community translations](https://github.com/roots/sage-translations)
+
 
 ## Contributing
 
