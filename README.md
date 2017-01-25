@@ -2,12 +2,14 @@
 
 ALPS specific documentation to come. ALPS theme is based off of the WordPress starter theme, [Sage](https://roots.io/sage/).
 
+
 ## Theme installation via WordPress Admin Panel
 
 1. In your WordPress admin panel, navigate to Appearance->Themes
 2. Click Add New
 3. Click Upload Theme
 4. Upload the zip file that you downloaded.
+
 
 ## Theme settings
 
@@ -53,6 +55,7 @@ ALPS specific documentation to come. ALPS theme is based off of the WordPress st
   * **Primary Footer Navigation**: The main footer navigation at the bottom of the page
   * **Tertiary Navigation**: Appears below the page header on the *News Template*
 
+
 ## Theme development
 
 Sage uses [gulp](http://gulpjs.com/) as its build system.
@@ -95,6 +98,7 @@ For example, if your local development URL is `http://alps-wp.dev` you would upd
 ...
 ```
 
+
 ## Documentation
 
 Sage documentation is available at [https://roots.io/sage/docs/](https://roots.io/sage/docs/).
@@ -110,6 +114,7 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 
 For more installation notes, refer to the [Install gulp](#install-gulp) section in this document.
 
+
 ## Features
 
 * [gulp](http://gulpjs.com/) build script that compiles both Sass and Less, checks for JavaScript errors, optimizes images, and concatenates and minifies files
@@ -124,6 +129,7 @@ For more installation notes, refer to the [Install gulp](#install-gulp) section 
 ## Contributing
 
 Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
+
 
 ## Community
 
