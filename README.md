@@ -1,6 +1,4 @@
-# ALPS WordPress Theme
-
-ALPS specific documentation to come. ALPS theme is based off of the WordPress starter theme, [Sage](https://roots.io/sage/).
+# ALPS WordPress Theme Setup
 
 
 ## Theme installation via WordPress Admin Panel
@@ -56,7 +54,8 @@ ALPS specific documentation to come. ALPS theme is based off of the WordPress st
   * **Tertiary Navigation**: Appears below the page header on the *News Template*
 
 
-## Theme development
+
+# ALPS WordPress Theme Development
 
 Sage uses [gulp](http://gulpjs.com/) as its build system.
 
@@ -68,7 +67,7 @@ Sage is a WordPress starter theme based on HTML5 Boilerplate, gulp, and Sass, th
 * Homepage: [https://roots.io/sage/](https://roots.io/sage/)
 * Documentation: [https://roots.io/sage/docs/](https://roots.io/sage/docs/)
 
-### Install gulp
+## Install gulp
 
 Building the theme requires [node.js](http://nodejs.org/download/). We recommend you update to the latest version of npm: `npm install -g npm@latest`.
 
@@ -79,13 +78,13 @@ From the command line:
 
 You now have all the necessary dependencies to run the build process.
 
-### Available gulp commands
+## Available gulp commands
 
 * `gulp` — Compile and optimize the files in your assets directory
 * `gulp watch` — Compile assets when file changes are made
 * `gulp --production` — Compile assets for production (no source maps).
 
-### Using BrowserSync
+## Using BrowserSync
 
 To use BrowserSync during `gulp watch` you need to update `devUrl` at the bottom of `assets/manifest.json` to reflect your local development hostname.
 
