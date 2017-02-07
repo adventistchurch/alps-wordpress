@@ -287,5 +287,8 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+/**
+ * Provides automatic updates for the WordPress theme and plugins (http://wp-updates.com/)
+ */
 require_once('wp-updates-theme.php');
-new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()));
+new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
