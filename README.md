@@ -24,21 +24,21 @@
 2. Edit page
 3. In the sidebar, navigate to *Page Attributes**
 4. Select Template from the dropdown
-* **Primary Navigation**: The main navigation for the page
-* **Secondary Navigation**: Appears above the main navigation
-* **Secondary Footer Navigation**: Appears above the main footer navigation
-* **Primary Footer Navigation**: The main footer navigation at the bottom of the page
-* **Tertiary Navigation**: Appears below the page header on the *News Template*
+  * **Default Template**: Default template for all pages
+  * **Home Template**: Includes story block and freeform/relationship post fields (http://alps.adventist.io/public/?p=templates-home)
+  * **News Template**: Landing page of posts in the category *news* (http://alps.adventist.io/public/?p=organisms-news-content)
+  * **Longform Template**: Provides a large, single column page that focuses on the content. (http://alps.adventist.io/public/?p=templates-longform)
+  * **Single Template**: Provides a single column width page with the ablity to add rows with columns in varying widths (100, 70/30, 50/50, 30/70, images, and paralax images areas.) (http://alps.adventist.io/public/?p=templates-single-page)
 
 ###Add widgets to sidebar
 
 1. In your WordPress admin panel, navigate to *Appearance->Widgets*
 2. Drag widget to widget area
-  * **Default Template**: Default template for all pages
-  * **Home Template**: Includes story block and freeform/relationship post fields (http://alps.adventist.io/public/?p=templates-home)
-  * **News Template**: Landing page of posts in the category *news* (http://alps.adventist.io/public/?p=organisms-news-content)
-  * **Longform Template**: (http://alps.adventist.io/public/?p=templates-longform)
-  * **Single Template**: (http://alps.adventist.io/public/?p=templates-single-page)
+  * **Primary Top** / **Primary Main** / **Primary Bottom** (Home Template): These areas allow you to put content at the top and bottom of the main content areas on the home template.
+  * **Footer**: The area at the bottom of the page.
+  * **Sidebar (Breakout Block)**: This area is located at the top of the sidebar, and is pulled out from the sidebar area a bit.
+  * **Sidebar**: This is the main aside on the page.
+
 
 ###Add menus
 
