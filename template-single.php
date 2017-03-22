@@ -31,29 +31,33 @@
 
           <?php if ($block_layout == 'content_block_grid'): ?>
             <?php
-              if ($grid_layout == '2up-70-30') {
+              if ($grid_layout == '1up') {
+               $grid_class = 'g-1up';
+               $grid_item_class = '';
+              }
+              elseif ($grid_layout == '2up-70-30') {
                $grid_class = 'g-2up--70-30--at-medium';
-               $grid_item_class = 'right-gutter--l';
+               $grid_item_class = ' right-gutter--l';
               }
               elseif ($grid_layout == '2up-30-70') {
                $grid_class = 'g-2up--70-30--at-medium flip-columns';
-               $grid_item_class = 'left-gutter--l';
+               $grid_item_class = ' left-gutter--l';
               }
               elseif ($grid_layout == '2up-50-50') {
                $grid_class = 'g-2up--at-medium';
-               $grid_item_class = 'right-gutter--l';
+               $grid_item_class = ' right-gutter--l';
               }
               elseif ($grid_layout == '3up') {
                $grid_class = 'g-3up--at-medium with-gutters';
-               $grid_item_class = 'right-gutter--l';
+               $grid_item_class = ' right-gutter--l';
               }
               else {
                $grid_class = '';
-               $grid_item_class = 'right-gutter--l';
+               $grid_item_class = ' right-gutter--l';
               }
             ?>
             <div class="g <?php echo $grid_class; ?> pad--primary spacing">
-              <div class="gi <?php echo $grid_item_class; ?>">
+              <div class="gi<?php echo $grid_item_class; ?>">
                 <div class="text spacing">
                   <?php echo $grid_body_1; ?>
                   <?php
@@ -61,7 +65,23 @@
                     $caption = get_the_excerpt($grid_image_1);
                     $alt = get_post_meta( $grid_image_1, '_wp_attachment_image_alt', true );
                   ?>
-                  <?php if ($thumb_id): ?>
+                  <?php if ($grid_layout == '1up' && $thumb_id): ?>
+                    <figure class="figure">
+                      <div class="img-wrap">
+                        <picture class="picture">
+                          <!--[if IE 9]><video style="display: none;"><![endif]-->
+                          <source srcset="<?php echo wp_get_attachment_image_src($grid_image_1, "featured__hero--xl")[0]; ?>" media="(min-width: 1100px)">
+                          <source srcset="<?php echo wp_get_attachment_image_src($grid_image_1, "featured__hero--l")[0]; ?>" media="(min-width: 900px)">
+                          <source srcset="<?php echo wp_get_attachment_image_src($grid_image_1, "featured__hero--m")[0]; ?>" media="(min-width: 500px)">
+                          <!--[if IE 9]></video><![endif]-->
+                          <img itemprop="image" srcset="<?php echo wp_get_attachment_image_src($grid_image_1, "featured__hero--s")[0]; ?>" alt="<?php echo get_post_meta( $image, '_wp_attachment_image_alt', true ); ?>">
+                        </picture>
+                      </div> <!-- /.img-wrap -->
+                      <?php if ($caption): ?>
+                        <figcaption class="figcaption"><p class="font--secondary--xs"><?php echo $caption; ?></p></figcaption>
+                      <?php endif; ?>
+                    </figure>
+                  <?php elseif ($thumb_id): ?>
                     <figure class="figure">
                       <div class="img-wrap">
                         <img itemprop="image" src="<?php echo $thumb_id; ?>" alt="<?php echo $alt; ?>">
