@@ -11,3 +11,14 @@
     border-bottom: 1px solid lighten(#000, 90);
   }
 }
+
+// IE 11 fixes
+.logo__link {
+  img {
+    max-height: 135px;
+    width: auto;
+  }
+}
+.overflow--hidden {
+  overflow: hidden;
+}
