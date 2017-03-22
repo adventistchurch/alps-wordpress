@@ -68,6 +68,7 @@
         'label' => 'Grid Layout',
         'value' => '2up-70-30',
         'choices' => array(
+          '1up' => '1 Column',
           '2up-70-30' => '2 Columns (70/30)',
           '2up-30-70' => '2 Columns (30/70)',
           '2up-50-50' => '2 Columns (50/50)',
@@ -119,13 +120,13 @@
         'conditions' => array(
           array(
             'reset' => 'false',
-            'field' => 'primary_structured_content:grid_block_1',
-            'value' => 'content_body_1'
+            'field' => 'primary_structured_content:content_block_layout',
+            'value' => 'content_block_grid'
           ),
           array(
             'reset' => 'false',
-            'field' => 'primary_structured_content:content_block_layout',
-            'value' => 'content_block_grid'
+            'field' => 'primary_structured_content:grid_block_1',
+            'value' => 'content_body_1'
           )
         )
       ),
@@ -142,13 +143,13 @@
         'conditions' => array(
           array(
             'reset' => 'false',
-            'field' => 'primary_structured_content:grid_block_1',
-            'value' => 'content_image_1'
+            'field' => 'primary_structured_content:content_block_layout',
+            'value' => 'content_block_grid'
           ),
           array(
             'reset' => 'false',
-            'field' => 'primary_structured_content:content_block_layout',
-            'value' => 'content_block_grid'
+            'field' => 'primary_structured_content:grid_block_1',
+            'value' => 'content_image_1'
           )
         )
       ),
@@ -168,6 +169,12 @@
             'reset' => 'false',
             'field' => 'primary_structured_content:content_block_layout',
             'value' => 'content_block_grid'
+          ),
+          array(
+            'reset' => 'false',
+            'field' => 'primary_structured_content:content_block_grid_layout',
+            'value' => '1up',
+            'compare' => '!='
           )
         )
       ),
@@ -197,6 +204,12 @@
             'reset' => 'false',
             'field' => 'primary_structured_content:content_block_layout',
             'value' => 'content_block_grid'
+          ),
+          array(
+            'reset' => 'false',
+            'field' => 'primary_structured_content:content_block_grid_layout',
+            'value' => '1up',
+            'compare' => '!='
           )
         )
       ),
@@ -220,6 +233,12 @@
             'reset' => 'false',
             'field' => 'primary_structured_content:content_block_layout',
             'value' => 'content_block_grid'
+          ),
+          array(
+            'reset' => 'false',
+            'field' => 'primary_structured_content:content_block_grid_layout',
+            'value' => '1up',
+            'compare' => '!='
           )
         )
       ),
