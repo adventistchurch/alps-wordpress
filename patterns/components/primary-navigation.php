@@ -17,7 +17,8 @@
     'current-menu-ancestor',
     'menu-item-has-children',
     'primary-nav__list-item__link',
-    '<a'
+    '<a',
+    '<ul class="primary-nav__subnav">'
   );
 
   // Custom ALPS classes to replace.
@@ -30,7 +31,8 @@
     'active',
     'primary-nav--with-subnav js-hover',
     'primary-nav__link theme--primary-text-color',
-    '<a class="primary-nav__link theme--primary-text-color"'
+    '<a class="primary-nav__link theme--primary-text-color"',
+    '<div class="primary-nav__subnav__arrow va--middle js-toggle-parent"><span class="arrow--down"></span></div><ul class="primary-nav__subnav">'
   );
 ?>
 <?php if (has_nav_menu('primary_navigation')): ?>
