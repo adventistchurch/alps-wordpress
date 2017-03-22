@@ -20,7 +20,7 @@
       echo '<hr>';
       echo '<div class="g g-2up--at-medium with-divider grid--uniform">';
     } else {
-      echo '<div class="spacing--double pad--btm">';
+      echo '<div class="spacing--double pad--btm overflow--hidden">';
       echo '<hr>';
     }
   ?>

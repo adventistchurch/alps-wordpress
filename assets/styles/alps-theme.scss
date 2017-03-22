@@ -78,7 +78,6 @@
  @import "tools.mixins";
  @import "tools.include-media";
 
-
 /*------------------------------------*\
     $LAYOUT
 \*------------------------------------*/
@@ -89,3 +88,4 @@
     $PAGE STRUCTURE
 \*------------------------------------*/
 @import "module.sidebar";
+@import "module.main";
