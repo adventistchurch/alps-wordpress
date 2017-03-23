@@ -1,5 +1,11 @@
 ## Change Log ##
 
+### v2.0.2 ###
+A new bug fix release featuring 3 fixes:
+
+ - [#86](https://github.com/adventistchurch/alps-wordpress/issues/86) Display Errors in Internet Explorer 11 - bug
+ - [#85](https://github.com/adventistchurch/alps-wordpress/issues/85) Single Page 100% grid layout - enhancement
+ - [#84](https://github.com/adventistchurch/alps-wordpress/issues/84) Menu sub-items for mobile devices - bug
 
 ### v2.0.1 ###
 - Fix to a minor error that caused Content Block freeform images to not display if you didn't include a URL in the block. [#81](https://github.com/adventistchurch/alps-wordpress/issues/81)
