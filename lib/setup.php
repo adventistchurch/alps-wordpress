@@ -74,14 +74,6 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Footer', 'sage'),
-    'id'            => 'widget_area_footer',
-    'before_widget' => '<section id="%2$s" class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ]);
-  register_sidebar([
     'name' => 'Sidebar (Breakout Block)',
     'id' => 'sidebar_breakout_block',
     'before_widget' => '<div id="%2$s" class="media-block block widget sidebar__widget %2$s text spacing">',
