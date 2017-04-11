@@ -8,7 +8,7 @@
   <div class="layout-container full--until-large">
     <div class="flex-container cf">
       <div class="shift-left--fluid column__primary bg--white can-be--dark-light no-pad--btm">
-        <div class="spacing--double h--100p">
+        <div class="spacing--double flex h--100p">
           <?php if (is_active_sidebar('widget_area_primary_top')): ?>
               <div class="pad--primary spacing text">
               <?php dynamic_sidebar('widget_area_primary_top'); ?>
