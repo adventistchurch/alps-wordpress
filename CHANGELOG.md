@@ -1,5 +1,10 @@
 ## Change Log ##
 
+### v2.0.3 ###
+A new bug fix release featuring 1 fix:
+ - [#90](https://github.com/adventistchurch/alps-wordpress/issues/90)  Inline images not keeping the right aspect ratio 
+ - [#93](https://github.com/adventistchurch/alps-wordpress/issues/93)  Reversed template change. After further testing, we found that the bug was affecting all ALPS installations. We moved the FIXES to ALPS.
+
 ### v2.0.2 ###
 A new bug fix release featuring 3 fixes:
 
