@@ -1,3 +1,15 @@
 /*------------------------------------*\
     $MAIN
 \*------------------------------------*/
+
+.carousel__item-text > div {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.carousel__item--right > div {
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+}
