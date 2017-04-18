@@ -15,6 +15,8 @@
     $intro = get_post_meta($post->ID, 'intro', true);
     $video_url = get_post_meta($post->ID, 'video_url', true);
     $hide_featured_image = get_post_meta($post->ID,'hide_featured_image', true);
+    $theme_options = get_option('alps_theme_settings');
+    $hide_author = $theme_options['hide_author'];
   ?>
   <div class="layout-container full--until-large">
     <div class="flex-container cf">
@@ -37,8 +39,11 @@
                 <?php include(locate_template('patterns/components/share-tools.php')); ?>
               <?php endif; ?>
               <div class="article__meta">
-                <span class="pub_date font--secondary--s gray can-be--white"><?php the_date(); ?></span> <span class="divider">|</span>
-                <span class="byline font--secondary--s gray can-be--white"><?php the_author(); ?></span>
+                <span class="pub_date font--secondary--s gray can-be--white"><?php the_date(); ?></span>
+                <?php if ($hide_author == ''): ?>
+                  <span class="divider">|</span>
+                  <span class="byline font--secondary--s gray can-be--white"><?php the_author(); ?></span>
+                <?php endif; ?>
               </div>
             </header>
             <?php if ($video_url): ?>

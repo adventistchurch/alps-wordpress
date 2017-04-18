@@ -18,7 +18,14 @@
     </div> <!-- /.share-tools -->
   </div>
   <div class="article__meta">
-    <span class="pub_date font--secondary--s gray can-be--white"><?php the_date(); ?></span> <span class="divider">|</span>
-    <span class="byline font--secondary--s gray can-be--white"><?php the_author(); ?></span>
+    <span class="pub_date font--secondary--s gray can-be--white"><?php the_date(); ?></span>
+    <?php
+      $theme_options = get_option('alps_theme_settings');
+      $hide_author = $theme_options['hide_author'];
+      if ($hide_author == ''):
+    ?>
+      <span class="divider">|</span>
+      <span class="byline font--secondary--s gray can-be--white"><?php the_author(); ?></span>
+    <?php endif; ?>
   </div>
 </header>

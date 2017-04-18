@@ -70,6 +70,14 @@
     )
   ));
   piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'hide_author',
+    'label' => 'Hide Author',
+    'choices' => array(
+      'true' => 'Select if you would like hide the page/post author'
+    )
+  ));
+  piklist('field', array(
     'type' => 'editor',
     'field' => 'footer_description',
     'label' => 'Footer Description',
