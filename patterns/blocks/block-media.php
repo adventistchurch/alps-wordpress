@@ -42,7 +42,7 @@
                 <?php if (!empty($intro)): ?>
                   <?php
                     if (strlen($intro) > $excerpt_length):
-                      echo trim(substr($intro, 0, $excerpt_length)) . '&hellip;';
+                      echo trim(mb_substr($intro, 0, $excerpt_length)) . '&hellip;';
                     else:
                       echo $intro;
                     endif;
@@ -50,7 +50,7 @@
                 <?php elseif (!empty($body)): ?>
                   <?php
                     if (strlen($body) > $excerpt_length):
-                      echo trim(substr($body, 0, $excerpt_length)) . '&hellip;';
+                      echo trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
                     else:
                       echo $body;
                     endif;
