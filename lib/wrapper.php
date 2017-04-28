@@ -35,7 +35,7 @@ class SageWrapping {
     $this->templates = [$template];
 
     if (self::$base) {
-      $str = substr($template, 0, -4);
+      $str = mb_substr($template, 0, -4);
       array_unshift($this->templates, sprintf($str . '-%s.php', self::$base));
     }
   }
