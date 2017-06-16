@@ -12,6 +12,6 @@
     }
   },
   "config": {
-    "devUrl": "http://alps.dev"
+    "devUrl": "http://alps-wp.dev"
   }
 }
