@@ -1,5 +1,17 @@
 ## Change Log ##
 
+### v2.0.4 ###
+This is a bug squasher release, as well as a couple new features.
+
+#### Features ####
+
+- [#105](https://github.com/adventistchurch/alps-wordpress/issues/105) Fixing submenu items that weren't showing on narrow screens.
+- [#104](https://github.com/adventistchurch/alps-wordpress/pull/104) Adding a new template called `Simple Full-Width` that removes the sidebars from the page.
+
+#### Bugs ####
+- [#158](https://github.com/adventistchurch/alps-wordpress/pull/95) Fix right-aligned text in the slider module.
+- [#96](https://github.com/adventistchurch/alps-wordpress/pull/96) Option to hide the author on blog posts.
+
 ### v2.0.3 ###
 A new bug fix release featuring 2 fixes:
  - [#90](https://github.com/adventistchurch/alps-wordpress/issues/90)  Inline images not keeping the right aspect ratio 
