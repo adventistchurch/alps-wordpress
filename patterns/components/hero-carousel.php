@@ -36,7 +36,7 @@
             <div class="carousel__item-text__wrap">
               <div class="layout-container">
                 <div class="carousel__item-text<?php if ($align_right == 'true'): echo ' carousel__item--right'; endif; ?> spacing--half">
-                  <div>
+                  <div class="carousel__item-text--inner">
                     <?php if ($title): ?>
                       <h2 class="carousel__item-heading font--tertiary--xl theme--primary-transparent-background-color"><?php echo $title; ?></h2>
                     <?php endif; ?>
