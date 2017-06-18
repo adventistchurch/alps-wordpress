@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Single Simple Template
+ * Template Name: Simple Full-Width Template
  */
 ?>
 <?php while (have_posts()) : the_post(); ?>
@@ -17,7 +17,6 @@
             <div class="with-divider grid--uniform">
             </div>
           <?php endif; ?>
-          <?php include(locate_template('templates/block-layout-front.php')); ?>
           <?php include(locate_template('patterns/blocks/block-story.php')); ?>
           <?php if (is_active_sidebar('widget_area_primary_bottom')): ?>
             <div class="pad--primary spacing text">
