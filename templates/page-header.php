@@ -1,13 +1,23 @@
 <?php
   use Roots\Sage\Titles;
   global $post;
-  $display_title = get_post_meta($post->ID, 'display_title', true);
-  $kicker = get_post_meta($post->ID, 'kicker', true);
-  $header_block_text = get_post_meta($post->ID, 'header_block_text', true);
-  $header_block_title = get_post_meta($post->ID, 'header_block_title', true);
-  $header_block_subtitle = get_post_meta($post->ID, 'header_block_subtitle', true);
-  $header_block_image = get_post_meta($post->ID,'header_block_image', true);
-  $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
+  $display_title = '';
+  $kicker = '';
+  $header_block_text = '';
+  $header_block_title = '';
+  $header_block_subtitle = '';
+  $header_block_image = '';
+  $header_background_image = '';
+  if (is_page() || is_single()) {
+    $display_title = get_post_meta($post->ID, 'display_title', true);
+    $kicker = get_post_meta($post->ID, 'kicker', true);
+    $header_block_text = get_post_meta($post->ID, 'header_block_text', true);
+    $header_block_title = get_post_meta($post->ID, 'header_block_title', true);
+    $header_block_subtitle = get_post_meta($post->ID, 'header_block_subtitle', true);
+    $header_block_image = get_post_meta($post->ID,'header_block_image', true);
+    $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
+  }
+
 ?>
 <?php
   if (!empty($header_background_image)):

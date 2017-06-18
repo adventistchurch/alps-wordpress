@@ -1,7 +1,12 @@
+<?php
+  $carousel_type = '';
+  if (is_page() || is_single()) {
+    $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
+  }
+?>
 <div class="layout-container full--until-large">
   <div class="flex-container cf">
     <div class="shift-left--fluid column__primary bg--white no-pad--top no-pad--btm can-be--dark-light">
-      <?php $carousel_type = get_post_meta($post->ID, 'carousel_type', true); ?>
       <?php if ($carousel_type == 'small_format_inset'): ?>
         <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
       <?php endif; ?>
