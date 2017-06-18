@@ -41,7 +41,7 @@
                       <h2 class="carousel__item-heading font--tertiary--xl theme--primary-transparent-background-color"><?php echo $title; ?></h2>
                     <?php endif; ?>
                     <?php if ($subtitle): ?>
-                      <br><h3 class="carousel__item-subtitle font--secondary--m theme--primary-transparent-background-color"><?php echo $subtitle; ?></h3>
+                      <h3 class="carousel__item-subtitle font--secondary--m theme--primary-transparent-background-color"><?php echo $subtitle; ?></h3>
                     <?php endif; ?>
                     <?php if ($description): ?>
                       <div class="carousel__item-dek pad-half--btm theme--primary-transparent-background-color">
