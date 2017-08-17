@@ -1,5 +1,9 @@
 ## Change Log ##
 
+### v2.0.5 ###
+Fixing issues with creating child themes and the primary menus.
+- [#113](https://github.com/adventistchurch/alps-wordpress/issues/113) Child theme support.
+
 ### v2.0.4 ###
 This is a bug squasher release, as well as a couple new features.
 
@@ -14,7 +18,7 @@ This is a bug squasher release, as well as a couple new features.
 
 ### v2.0.3 ###
 A new bug fix release featuring 2 fixes:
- - [#90](https://github.com/adventistchurch/alps-wordpress/issues/90)  Inline images not keeping the right aspect ratio 
+ - [#90](https://github.com/adventistchurch/alps-wordpress/issues/90)  Inline images not keeping the right aspect ratio
  - [#93](https://github.com/adventistchurch/alps-wordpress/issues/93)  Reversed template change. After further testing, we found that the bug was affecting all ALPS installations. We moved the FIXES to ALPS.
 
 ### v2.0.2 ###
