@@ -32,30 +32,28 @@
             <img itemprop="image" srcset="<?php echo wp_get_attachment_image_url( $image, $image_size . '--s' ); ?>" alt="<?php echo $title; ?>">
           </picture>
 
-          <?php if ($title): ?>
-            <div class="carousel__item-text__wrap">
-              <div class="layout-container">
-                <div class="carousel__item-text<?php if ($align_right == 'true'): echo ' carousel__item--right'; endif; ?> spacing--half">
-                  <div class="carousel__item-text--inner">
-                    <?php if ($title): ?>
-                      <h2 class="carousel__item-heading font--tertiary--xl theme--primary-transparent-background-color"><?php echo $title; ?></h2>
-                    <?php endif; ?>
-                    <?php if ($subtitle): ?>
-                      <h3 class="carousel__item-subtitle font--secondary--m theme--primary-transparent-background-color"><?php echo $subtitle; ?></h3>
-                    <?php endif; ?>
-                    <?php if ($description): ?>
-                      <div class="carousel__item-dek pad-half--btm theme--primary-transparent-background-color">
-                        <p><?php echo $description; ?></p>
-                      </div> <!-- /.carousel__item-dek -->
-                    <?php endif; ?>
-                  </div>
-                  <?php if ($link_url && $link_text): ?>
-                    <a href="<?php echo $link_url; ?>" class="carousel__item-cta btn theme--secondary-background-color"><?php echo $link_text; ?></a>
+          <div class="carousel__item-text__wrap">
+            <div class="layout-container">
+              <div class="carousel__item-text<?php if ($align_right == 'true'): echo ' carousel__item--right'; endif; ?> spacing--half">
+                <div class="carousel__item-text--inner">
+                  <?php if ($title): ?>
+                    <h2 class="carousel__item-heading font--tertiary--xl theme--primary-transparent-background-color"><?php echo $title; ?></h2>
                   <?php endif; ?>
-                </div> <!-- /.carousel__item-text -->
-              </div>
+                  <?php if ($subtitle): ?>
+                    <h3 class="carousel__item-subtitle font--secondary--m theme--primary-transparent-background-color"><?php echo $subtitle; ?></h3>
+                  <?php endif; ?>
+                  <?php if ($description): ?>
+                    <div class="carousel__item-dek pad-half--btm theme--primary-transparent-background-color">
+                      <p><?php echo $description; ?></p>
+                    </div> <!-- /.carousel__item-dek -->
+                  <?php endif; ?>
+                </div>
+                <?php if ($link_url && $link_text): ?>
+                  <a href="<?php echo $link_url; ?>" class="carousel__item-cta btn theme--secondary-background-color"><?php echo $link_text; ?></a>
+                <?php endif; ?>
+              </div> <!-- /.carousel__item-text -->
             </div>
-          <?php endif; ?>
+          </div>
         </div> <!-- /.carousel__item -->
       <?php endforeach; wp_reset_postdata(); ?>
     </div> <!-- /.carousel__slides -->
