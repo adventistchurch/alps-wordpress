@@ -40,27 +40,3 @@
     </div>
   </div> <!-- /.layout-container -->
 </nav>
-
-<!--
-<ul class="article-nav__list dropdown__options theme--secondary-background-color">
-  <li class="article-nav__list-item dropdown__item article-nav--with-subnav js-hover is-active" data-prefix="hover">
-    <a class="article-nav__link dropdown__item-link white " href="">News</a>
-    <div class="article-nav__subnav__arrow va--middle js-toggle-parent is-active"><span class="arrow--down"></span></div>
-    <ul class="article-nav__subnav theme--secondary-background-color">
-      <li class="article-nav__subnav__list-item"><a class="article-nav__subnav__link " href="">Life Hope Centers</a></li>
-      <li class="article-nav__subnav__list-item"><a class="article-nav__subnav__link " href="">Global Mission</a></li>
-      <li class="article-nav__subnav__list-item"><a class="article-nav__subnav__link " href="">Mission Spotlight</a></li>
-      <li class="article-nav__subnav__list-item"><a class="article-nav__subnav__link " href="">Church Mission Offerings</a></li>
-    </ul>
-  </li>
-  <li class="article-nav__list-item dropdown__item ">
-    <a class="article-nav__link dropdown__item-link white " href="">ANN Videos</a>
-  </li>
-  <li class="article-nav__list-item dropdown__item ">
-    <a class="article-nav__link dropdown__item-link white " href="">Photos</a>
-  </li>
-  <li class="article-nav__list-item dropdown__item ">
-    <a class="article-nav__link dropdown__item-link white " href="">Church Business Meetings</a>
-  </li>
-</ul>
--->
