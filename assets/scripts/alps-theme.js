@@ -24,6 +24,7 @@
         // Add classes to submenu items in the primary navigation.
         $('.article-nav__subnav > li').removeClass('article-nav__list-item dropdown__item').addClass('article-nav__subnav__list-item');
         $('.article-nav__subnav > li > a').removeClass('article-nav__link dropdown__item-link white').addClass('article-nav__subnav__link');
+        $('.dropdown__label + .article-nav__subnav__arrow').remove();
         $('.primary-nav__subnav').parent().addClass('primary-nav--with-subnav js-hover');
         $('.primary-nav__subnav__link.active').parent().parent().parent().find('.primary-nav__link').addClass('theme--secondary-text-color');
         $('.theme-widget-social').removeClass('text');
