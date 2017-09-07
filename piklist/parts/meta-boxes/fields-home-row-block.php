@@ -143,6 +143,5 @@
     'relate' => array(
       'scope' => 'post'
     )
-  )
-);
+  ));
 ?>

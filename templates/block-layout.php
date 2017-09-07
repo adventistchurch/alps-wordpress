@@ -46,19 +46,41 @@
   </div>
 <?php endif; ?>
 <?php wp_reset_query(); ?>
-
 <?php
-  // Loop of pages for top level pages
-  $pages = get_pages(
-    array(
-      'child_of' => $post->ID,
+  $related = get_post_meta($post->ID, 'related', true);
+  if ($related == 'related_all') {
+    // Loop of pages for child and grandchild pages
+    $pages = get_pages(
+      array(
+        'child_of' => $post->ID,
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'sort_column' => 'menu_order'
+      )
+    );
+  } elseif ($related == 'related_custom') {
+    // Loop of selected pages
+    $pages = get_posts(array(
       'post_type' => 'page',
-    	'post_status' => 'publish',
-      'sort_column' => 'menu_order'
-    )
-  );
+      'posts_per_page' => -1,
+      'post_belongs' => $post->ID,
+      'post_status' => 'publish',
+      'suppress_filters' => false
+    ));
+  } else {
+    // Loop of pages for top level pages
+    $pages = get_pages(
+      array(
+        'hierarchical' => 0,
+        'parent' => $post->ID,
+        'post_type' => 'page',
+      	'post_status' => 'publish',
+        'sort_column' => 'menu_order'
+      )
+    );
+  }
 ?>
-<?php if ($page_parent == 0): ?>
+<?php if ($page_parent == 0 || is_page_template('template-landing-page.php')): ?>
   <div class="spacing--double">
   <hr>
     <?php foreach ($pages as $page): ?>
