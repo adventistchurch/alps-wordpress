@@ -279,7 +279,7 @@ add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 
 /**
- * All SVG's through WP media uploader
+ * Allow SVG's through WP media uploader
  */
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
