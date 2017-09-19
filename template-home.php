@@ -15,7 +15,11 @@
             </div>
           <?php endif; ?>
           <div class="pad--primary spacing text">
-            <h2 class="font--tertiary--l theme--primary-text-color"><?php if (get_post_meta($post->ID, 'display_title', true)): get_post_meta($post->ID, 'display_title', true); else: the_title(); endif; ?></h2>
+            <?php if (get_post_meta($post->ID, 'display_title', true)): ?>
+              <h2 class="font--tertiary--l theme--primary-text-color">
+                <?php echo get_post_meta($post->ID, 'display_title', true); ?>
+              </h2>
+            <?php endif; ?>
             <?php the_content(); ?>
           </div>
           <?php if (is_active_sidebar('widget_area_primary')): ?>

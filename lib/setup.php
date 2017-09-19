@@ -122,13 +122,13 @@ function assets() {
   wp_enqueue_style('slick', '//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css');
 
   // Load main ALPS styles.
-  wp_enqueue_style('alps/main_css', '//cdn.adventist.io/alps/2/latest/css/main.css');
+  wp_enqueue_style('alps/main_css', '//cdn.adventist.org/alps/2/latest/css/main.css');
 
   // Load theme override css.
   wp_enqueue_style('alps/theme_css', Assets\asset_path('styles/alps-theme.css'), false, null);
 
   // Load ALPS header javascript.
-  wp_enqueue_script('alps/head_js', '//cdn.adventist.io/alps/2/latest/js/head-script.min.js', false, '2', false);
+  wp_enqueue_script('alps/head_js', '//cdn.adventist.org/alps/2/latest/js/head-script.min.js', false, '2', false);
 
   if (!is_admin()) {
     wp_deregister_script('jquery');
@@ -140,7 +140,7 @@ function assets() {
   wp_add_inline_script('picturefill', 'document.createElement("picture");');
 
   // Load ALPS footer javascript.
-  wp_enqueue_script('alps/foot_js', '//cdn.adventist.io/alps/2/latest/js/script.min.js', ['jquery'], '2', true);
+  wp_enqueue_script('alps/foot_js', '//cdn.adventist.org/alps/2/latest/js/script.min.js', ['jquery'], '2', true);
 
   // Load theme override javascript.
   wp_enqueue_script('alps/theme_js', Assets\asset_path('scripts/alps-theme.js'), ['jquery'], null, true);

@@ -9,7 +9,10 @@
     }
     if ($content_block == 'relationship') {
       $blocks = get_posts(array(
-        'post_type' => 'post',
+        'post_type' => array(
+          'post',
+          'page'
+        ),
         'posts_per_page' => -1,
         'post_belongs' => $post->ID,
         'post_status' => 'publish',
@@ -49,6 +52,7 @@
           $title = $block->post_title;
           $image = get_post_thumbnail_id($block->ID);
           $excerpt_length = 200;
+          $intro = get_post_meta($block->ID, 'intro', true);
           $body = strip_tags($block->post_content);
           $body = strip_shortcodes($body);
           $button_text = translate('Read More');

@@ -23,12 +23,11 @@
       $theme_options = get_option('alps_theme_settings');
       $hide_author_global = $theme_options['hide_author_global'];
       $hide_author_post = get_post_meta($post->ID, 'hide_author_post', true);
-      if ($hide_author_global == ''):
     ?>
-      <?php if ($hide_author_post == ''): ?>
-        <span class="divider">|</span>
-        <span class="byline font--secondary--s gray can-be--white"><?php the_author(); ?></span>
-      <?php endif; ?>
+    <?php if ($hide_author_global == true || $hide_author_post == true): ?>
+    <?php else: ?>
+      <span class="divider">|</span>
+      <span class="byline font--secondary--s gray can-be--white"><?php the_author(); ?></span>
     <?php endif; ?>
   </div>
 </header>

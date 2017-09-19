@@ -120,7 +120,10 @@
     'choices' => piklist(
       get_posts(
         array(
-          'post_type' => 'post',
+          'post_type' => array(
+            'post',
+            'page',
+          ),
           'numberposts' => -1,
           'orderby' => 'title',
           'order' => 'ASC'
@@ -140,6 +143,5 @@
     'relate' => array(
       'scope' => 'post'
     )
-  )
-);
+  ));
 ?>

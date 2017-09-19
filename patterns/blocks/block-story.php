@@ -10,7 +10,7 @@
   $cta = get_post_meta($post->ID, 'sb_cta', true);
 ?>
 <?php if ($url && $title): ?>
-  <div class="story-block block spacing--half pad flex--end" <?php if ($background_image): ?>style="background-image: url(<?php echo wp_get_attachment_image_url( $background_image, 'square--l' ); ?>)"<?php endif; ?>>
+  <div class="story-block block spacing--half pad flex--end bg--cover" <?php if ($background_image): ?>style="background-image: url(<?php echo wp_get_attachment_image_url( $background_image, 'square--l' ); ?>)"<?php endif; ?>>
     <?php if ($thumbnail): ?>
       <div class="story-block__image-wrap round">
         <img class="story-block__image" src="<?php echo wp_get_attachment_image_url( $thumbnail, 'square--s' ); ?>" alt="<?php get_post_meta( $thumbnail, '_wp_attachment_metadata', true ); ?>" />

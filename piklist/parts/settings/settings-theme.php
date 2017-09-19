@@ -8,8 +8,8 @@
 */
   piklist('field', array(
     'type' => 'file',
-    'field' => 'logo_square',
-    'label' => 'Logo Square',
+    'field' => 'logo_desktop',
+    'label' => 'Logo Desktop',
     'description' => 'Upload the default logo that will be used at the large breakpoints',
     'options' => array(
       'modal_title' => 'Upload Image',
@@ -17,9 +17,17 @@
     )
   ));
   piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'logo_desktop_wide',
+    'label' => 'Logo Desktop (Wide)',
+    'choices' => array(
+      'wide' => 'Select if the default logo orientation is wide rather than square.'
+    )
+  ));
+  piklist('field', array(
     'type' => 'file',
-    'field' => 'logo_horizontal',
-    'label' => 'Logo Horizontal',
+    'field' => 'logo_mobile',
+    'label' => 'Logo Mobile',
     'description' => 'Upload the horizontal format of the logo that will be used at the small breakpoints',
     'options' => array(
       'modal_title' => 'Upload Image',
