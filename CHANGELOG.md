@@ -1,5 +1,20 @@
 ## Change Log ##
 
+### v2.0.6 ###
+
+- [#102](https://github.com/adventistchurch/alps-wordpress/issues/102) Home Template Row Block: The Row Block item on the home template now allows users to select either pages or posts to be highlighted on the homepage.
+- [#126](https://github.com/adventistchurch/alps-wordpress/issues/126) Updated the default logo to use the new versions.
+- [#112](https://github.com/adventistchurch/alps-wordpress/issues/112) Support for Wide Logo: Site editors can now use the wide version of the church logo.
+- [#127](https://github.com/adventistchurch/alps-wordpress/issues/127) Updates to the CDN URL: Uses the updated CDN url: https://cdn.adventist.org.
+- [#128](https://github.com/adventistchurch/alps-wordpress/issues/128) Page title is now optional to include on the home template.
+- [#119](https://github.com/adventistchurch/alps-wordpress/issues/119) Carousel Slide Title: The "title" item is no longer required on slides.
+- [#121](https://github.com/adventistchurch/alps-wordpress/issues/121) Fix for Tertiary Navigation. Fixed errors on page with hide author
+- [#124](https://github.com/adventistchurch/alps-wordpress/issues/124) Favicon Support: The theme now includes a  favicon file to match the theme colors.
+- [#129](https://github.com/adventistchurch/alps-wordpress/issues/129) Subcontent on Landing Pages: Using the new "Landing Page" template, a user can limit the links to the sub-posts at the bottom of the page.
+
+
+
+
 ### v2.0.5 ###
 Fixing issues with creating child themes and the primary menus.
 - [#113](https://github.com/adventistchurch/alps-wordpress/issues/113) Child theme support.
