@@ -28,6 +28,16 @@
         $('.primary-nav__subnav').parent().addClass('primary-nav--with-subnav js-hover');
         $('.primary-nav__subnav__link.active').parent().parent().parent().find('.primary-nav__link').addClass('theme--secondary-text-color');
         $('.theme-widget-social').removeClass('text');
+        $('<div class="primary-nav__subnav__arrow secondary-nav__subnav__arrow va--middle js-toggle-parent"><span class="arrow--down"></span></div>').insertAfter('.secondary-nav--with-subnav > .secondary-nav__link');
+        $('.secondary-nav__link:empty').parent().hide();
+        
+        // Toggle parent class
+        $(document).on('click', '.secondary-nav__subnav__arrow', function(e) {
+          e.preventDefault();
+          var $this = $(this);
+          $this.toggleClass('is-active');
+          $this.parent().toggleClass('is-active');
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
