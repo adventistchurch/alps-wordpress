@@ -22,17 +22,17 @@
         $('.footer__desc-text a').addClass('link--white');
 
         // Add classes to submenu items in the primary navigation.
+        $('.current_page_parent, .current_page_item').children('a').removeClass('theme--primary-text-color').addClass('theme--secondary-text-color active');
+        $('.primary-nav__subnav').children('li').removeClass('primary-nav__list-item').addClass('primary-nav__subnav__list-item');
+        $('.primary-nav__subnav').children().children('a').removeClass('primary-nav__link').addClass('primary-nav__subnav__link');
+        $('<div class="primary-nav__subnav__arrow nav__subnav__arrow va--middle js-toggle-parent"><span class="arrow--down"></span></div>').insertAfter('.primary-nav--with-subnav > .primary-nav__link, .secondary-nav--with-subnav > .secondary-nav__link');
         $('.article-nav__subnav > li').removeClass('article-nav__list-item dropdown__item').addClass('article-nav__subnav__list-item');
         $('.article-nav__subnav > li > a').removeClass('article-nav__link dropdown__item-link white').addClass('article-nav__subnav__link');
-        $('.dropdown__label + .article-nav__subnav__arrow').remove();
-        $('.primary-nav__subnav').parent().addClass('primary-nav--with-subnav js-hover');
-        $('.primary-nav__subnav__link.active').parent().parent().parent().find('.primary-nav__link').addClass('theme--secondary-text-color');
+        $('.dropdown__label + .article-nav__subnav__arrow').remove();]
         $('.theme-widget-social').removeClass('text');
-        $('<div class="primary-nav__subnav__arrow secondary-nav__subnav__arrow va--middle js-toggle-parent"><span class="arrow--down"></span></div>').insertAfter('.secondary-nav--with-subnav > .secondary-nav__link');
-        $('.secondary-nav__link:empty').parent().hide();
-        
+
         // Toggle parent class
-        $(document).on('click', '.secondary-nav__subnav__arrow', function(e) {
+        $(document).on('click', '.nav__subnav__arrow', function(e) {
           e.preventDefault();
           var $this = $(this);
           $this.toggleClass('is-active');
