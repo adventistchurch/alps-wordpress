@@ -1,7 +1,9 @@
 /*------------------------------------*\
     $SIDEBAR
 \*------------------------------------*/
-
+.widget:empty {
+  display: none;
+}
 .widget {
   font-family: $font;
   font-size: rem(14);
