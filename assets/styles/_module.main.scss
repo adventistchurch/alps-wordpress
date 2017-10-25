@@ -97,6 +97,40 @@
   max-width: none !important;
 }
 
+.woocommerce {
+  fieldset {
+    margin-top: $space;
+  }
+  input.woocommerce-Button.button {
+    border-radius: 0;
+    padding: $pad !important;
+    margin-top: $space;
+    float: left;
+  }
+  form .form-row label.inline {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: $pad;
+    padding-left: $pad;
+  }
+  .u-columns {
+    margin-top: $space;
+
+    .u-column1,
+    .u-column2 {
+      width: 100%;
+      margin-top: $space;
+    }
+  }
+}
+
+.woocommerce-MyAccount-navigation {
+  li {
+    margin-bottom: $space;
+  }
+}
+
 /**
  * Tribe Events
  */
