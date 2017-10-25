@@ -28,8 +28,12 @@
         $('<div class="primary-nav__subnav__arrow nav__subnav__arrow va--middle js-toggle-parent"><span class="arrow--down"></span></div>').insertAfter('.primary-nav--with-subnav > .primary-nav__link, .secondary-nav--with-subnav > .secondary-nav__link');
         $('.article-nav__subnav > li').removeClass('article-nav__list-item dropdown__item').addClass('article-nav__subnav__list-item');
         $('.article-nav__subnav > li > a').removeClass('article-nav__link dropdown__item-link white').addClass('article-nav__subnav__link');
-        $('.dropdown__label + .article-nav__subnav__arrow').remove();]
+        $('.dropdown__label + .article-nav__subnav__arrow').remove();
         $('.theme-widget-social').removeClass('text');
+
+        $('.widget').filter(function() {
+          return $.trim($(this).text()) === '' && $(this).children().length == 0
+        }).remove()
 
         // Toggle parent class
         $(document).on('click', '.nav__subnav__arrow', function(e) {
