@@ -20,10 +20,10 @@
           array(
             'type' => 'checkbox',
             'field' => 'logo_desktop_wide' . $language_code,
-            'label' => 'Logo Wide Desktop' . $language_label,
+            'label' => 'Logo Wide / Desktop' . $language_label,
             'columns' => 12,
             'choices' => array(
-              'wide' => 'Select if the default logo orientation is wide rather than square.'
+              'wide' => 'Select if the default logo orientation is wide, or desktop, rather than square.'
             )
           ),
           array(
@@ -70,10 +70,10 @@
         array(
           'type' => 'checkbox',
           'field' => 'logo_desktop_wide',
-          'label' => 'Logo Wide Desktop',
+          'label' => 'Logo Wide / Desktop',
           'columns' => 12,
           'choices' => array(
-            'wide' => 'Select if the default logo orientation is wide rather than square.'
+            'wide' => 'Select if the default logo orientation is wide, or desktop, rather than square.'
           )
         ),
         array(
@@ -176,7 +176,7 @@
     'field' => 'footer_copyright',
     'label' => 'Footer Copyright',
     'columns' => 12,
-    'value' => 'Copyright © 2016, General Conference of Seventh-day Adventists'
+    'value' => 'Copyright © 2017, General Conference of Seventh-day Adventists'
   ));
   piklist('field', array(
     'type' => 'group',
