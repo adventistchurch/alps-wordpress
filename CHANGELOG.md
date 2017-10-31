@@ -1,7 +1,8 @@
 ## Change Log ##
 
 ### v2.1.0 ###
-This release is a culmination of many smaller releases that add much better internationalization support to ALPS for Wordpress. Together with the [WPML plugin](https://wpml.org/), ALPS for Wordpress is now fully compatable in any langauge you need.
+This release is a culmination of many smaller releases that add much better internationalization support to ALPS for Wordpress. Together with the [WPML plugin](https://wpml.org/), ALPS for Wordpress is now fully compatible in any language you need.
+
 - [#145](https://github.com/adventistchurch/alps-wordpress/pull/145) This release give you full internationalziation support for logos, allowing any language configured in [WPML](https://wpml.org/) to have it's own custom language version of the logo.
 - [#148](https://github.com/adventistchurch/alps-wordpress/pull/148) Fixes to remove exstra space when there is no body content on the homepage template.
 
