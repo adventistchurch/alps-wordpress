@@ -1,6 +1,4 @@
 ## Change Log ##
-- [#148](https://github.com/adventistchurch/alps-wordpress/pull/148): Fixes to remove extra space on the home page when there is no body content.
-
 
 ### v2.1.0 ###
 This release is a culmination of many smaller releases that add much better internationalization support to ALPS for Wordpress. Together with the [WPML plugin](https://wpml.org/), ALPS for Wordpress is now fully compatable in any langauge you need.
