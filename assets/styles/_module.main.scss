@@ -2,6 +2,10 @@
     $MAIN
 \*------------------------------------*/
 
+figcaption a {
+  display: inline-block;
+}
+
 .secondary-nav--with-subnav {
   &.is-active {
     .arrow--down {
