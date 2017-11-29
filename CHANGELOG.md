@@ -1,5 +1,9 @@
 ## Change Log ##
 
+### v2.1.1 ###
+- [#153](https://github.com/adventistchurch/alps-wordpress/issues/153) Bug: Fix to a bug that prevented the color settings from sticking.
+- [#151](https://github.com/adventistchurch/alps-wordpress/issues/151) Feature: Override of the caption shortcode to use ALPS markup.
+
 ### v2.1.0 ###
 This release is a culmination of many smaller releases that add much better internationalization support to ALPS for Wordpress. Together with the [WPML plugin](https://wpml.org/), ALPS for Wordpress is now fully compatible in any language you need.
 
