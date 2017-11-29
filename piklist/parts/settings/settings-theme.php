@@ -65,7 +65,7 @@
   } else {
     piklist('field', array(
       'type' => 'group',
-      'label' => 'Logo' . $language_label,
+      'label' => 'Logo',
       'fields' => array(
         array(
           'type' => 'checkbox',
@@ -115,7 +115,6 @@
 
   piklist('field', array(
     'type' => 'group',
-    'field' => 'theme_colors',
     'label' => 'Theme Colors',
     'fields' => array(
       array(
