@@ -78,6 +78,30 @@ function alps_comments($comment, $args, $depth) {
 <?php }
 
 /**
+ * Allowing links in captions
+ */
+function custom_img_caption_shortcode( $a , $attr, $content = null) {
+  extract(shortcode_atts(array(
+    'id'    => '',
+    'align' => 'alignnone',
+    'width' => '',
+    'caption' => ''
+  ), $attr));
+
+  if ( 1 > (int) $width || empty($caption) )
+    return $content;
+
+  $caption = html_entity_decode( $caption );  //Here's our new line to decode the html tags
+
+  if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+
+  return '<figure ' . $id . 'class="figure wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px">'
+  . do_shortcode( $content ) . '<figcaption class="figcaption"><p class="font--secondary--xs">' . $caption . '</p></figcaption></figure>';
+}
+//Add the filter to override the standard shortcode
+add_filter( 'img_caption_shortcode', 'custom_img_caption_shortcode', 10, 3 );
+
+/**
  * Fix for Piklist fields not saving
  */
 function my_custom_init() {
