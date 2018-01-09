@@ -264,7 +264,13 @@ function adventist_register_required_plugins() {
       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-    )
+    ),
+    // WordPress SEO
+		array(
+			'name'     => 'WordPress SEO by Yoast',
+			'slug'     => 'wordpress-seo',
+			'required' => false,
+		)
   );
   $config = array(
     'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.
