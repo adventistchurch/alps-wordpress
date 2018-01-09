@@ -18,6 +18,41 @@
     $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
   }
 
+  if (is_single()) {
+    // SHOW YOAST PRIMARY CATEGORY, OR FIRST CATEGORY
+    $category = get_the_category();
+    // If post has a category assigned.
+    if ($category) {
+      $kicker = '';
+      $display_title = '';
+      if (class_exists('WPSEO_Primary_Term')) {
+        // Show the post's 'Primary' category, if this Yoast feature is available, & one is set
+        $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
+        $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+        $term = get_term($wpseo_primary_term);
+        if (is_wp_error($term)) {
+          // Default to first category (not Yoast) if an error is returned
+          $kicker = '';
+          $display_title = $category[0]->name;
+        } else {
+          // Yoast Primary category
+          if ($term->parent != 0) {
+            $term_parent = get_term($term->parent, 'category')->name;
+            $kicker = $term_parent;
+            $display_title = $term->name;
+          } else {
+            $kicker = '';
+            $display_title = $term->name;
+          }
+        }
+      }
+      else {
+        // Default, display the first category in WP's list of assigned categories
+        $kicker = '';
+        $display_title = $category[0]->name;
+      }
+    }
+  }
 ?>
 <?php
   if (!empty($header_background_image)):
@@ -63,29 +98,11 @@
             <?php echo $kicker; ?>
           <?php elseif (is_page() && $post->post_parent != '0'): ?>
             <?php echo get_the_title($post->post_parent); ?>
-          <?php elseif (is_single()): ?>
-            <?php
-              $categories = get_the_category();
-              $category= '';
-              foreach($categories as $childcat) {
-                $parentcat = $childcat->category_parent;
-                if ($parentcat>0){
-                  $category = get_cat_name($parentcat);
-                  continue;
-                }
-              }
-              $category = (strlen($category)>0)? $category :  $categories[0]->cat_name;
-            ?>
-            <?php echo $category; ?>
           <?php endif; ?>
         </span>
         <h1 class="font--tertiary--xl white">
-          <?php if ($display_title && is_page_template('template-single.php')): ?>
+          <?php if ($display_title && is_page_template('template-single.php') || is_single()): ?>
             <?php echo $display_title; ?>
-          <?php elseif (is_single()): ?>
-            <?php $categories = get_the_category($post->ID); ?>
-            <?php $parent_cat = get_term_by('id', $categories[0]->cat_ID, 'category'); ?>
-            <?php echo $parent_cat->name; ?>
           <?php else: ?>
             <?php echo Titles\title(); ?>
           <?php endif; ?>

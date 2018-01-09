@@ -89,11 +89,11 @@ You now have all the necessary dependencies to run the build process.
 
 To use BrowserSync during `gulp watch` you need to update `devUrl` at the bottom of `assets/manifest.json` to reflect your local development hostname.
 
-For example, if your local development URL is `http://alps-wp.dev` you would update the file to read:
+For example, if your local development URL is `http://alps-wp.test` you would update the file to read:
 ```json
 ...
   "config": {
-    "devUrl": "http://alps-wp.dev"
+    "devUrl": "http://alps-wp.test"
   }
 ...
 ```
