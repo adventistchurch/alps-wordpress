@@ -15,6 +15,7 @@
     $intro = get_post_meta($post->ID, 'intro', true);
     $video_url = get_post_meta($post->ID, 'video_url', true);
     $hide_featured_image = get_post_meta($post->ID,'hide_featured_image', true);
+    $caption = get_the_excerpt($thumb_id);
   ?>
   <div class="layout-container full--until-large">
     <div class="flex-container cf">
@@ -54,9 +55,16 @@
               <?php include(locate_template('patterns/components/featured-video.php')); ?>
             <?php else: ?>
               <?php if ($thumb_id && $hide_featured_image != 'true'): ?>
-                <div class="article__hero">
-                  <img src="<?php echo wp_get_attachment_image_src($thumb_id, "featured__hero--m")[0]; ?>" alt="<?php echo $alt; ?>" class="article__hero-img">
-                </div>
+                <figure class="figure">
+                  <div class="article__hero img-wrap">
+                    <img src="<?php echo wp_get_attachment_image_src($thumb_id, "featured__hero--m")[0]; ?>" alt="<?php echo $alt; ?>" class="article__hero-img">
+                  </div>
+                  <?php if ($caption): ?>
+                    <figcaption class="figcaption">
+                      <p class="font--secondary--xs"><?php echo $caption; ?></p>
+                    </figcaption>
+                  <?php endif; ?>
+                </figure>
               <?php endif; ?>
             <?php endif; ?>
             <?php if ($intro): ?>
