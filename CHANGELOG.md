@@ -1,5 +1,9 @@
 ## Change Log ##
 
+### v2.1.2 ### 
+- [#157](https://github.com/adventistchurch/alps-wordpress/issues/157) Bug: The featured image wasn't showing the caption. When the caption is added, it will show up using the figcaption on the post.
+- [#155](https://github.com/adventistchurch/alps-wordpress/issues/155) Feature: When selecting multiple catagories you can now set a primary catagory using the Yoast SEO plugin (optional).
+
 ### v2.1.1 ###
 - [#153](https://github.com/adventistchurch/alps-wordpress/issues/153) Bug: Fix to a bug that prevented the color settings from sticking.
 - [#151](https://github.com/adventistchurch/alps-wordpress/issues/151) Feature: Override of the caption shortcode to use ALPS markup.
