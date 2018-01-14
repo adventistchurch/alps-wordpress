@@ -6,6 +6,18 @@ figcaption a {
   display: inline-block;
 }
 
+.round img {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    max-width: rem(200);
+  }
+}
+
+.carousel__item-dek {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    max-width: 100%;
+  }
+}
+
 .secondary-nav--with-subnav {
   &.is-active {
     .arrow--down {
