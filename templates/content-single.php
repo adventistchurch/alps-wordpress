@@ -15,7 +15,7 @@
     $intro = get_post_meta($post->ID, 'intro', true);
     $video_url = get_post_meta($post->ID, 'video_url', true);
     $hide_featured_image = get_post_meta($post->ID,'hide_featured_image', true);
-    $caption = get_the_excerpt($thumb_id);
+    $caption = get_the_post_thumbnail_caption();
   ?>
   <div class="layout-container full--until-large">
     <div class="flex-container cf">
