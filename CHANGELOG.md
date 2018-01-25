@@ -1,7 +1,10 @@
 ## Change Log ##
 
-### v2.1.3 ### 
+### v2.1.4 ### 
 - [#161](https://github.com/adventistchurch/alps-wordpress/issues/161) Bug: This fixes and issue where the featured image was showing the first paragraph of the body field when the caption is missing.
+
+### v2.1.3 ### 
+- [#159](https://github.com/adventistchurch/alps-wordpress/issues/159) A fix for image and description sizing in IE11.
 
 ### v2.1.2 ### 
 - [#157](https://github.com/adventistchurch/alps-wordpress/issues/157) Bug: The featured image wasn't showing the caption. When the caption is added, it will show up using the figcaption on the post.
