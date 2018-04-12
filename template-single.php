@@ -20,13 +20,13 @@
           <?php
             $block_layout = $block['content_block_layout'];
             $grid_layout = $block['content_block_grid_layout'];
-            $image = $block['content_block_image_file'][0];
+            $image = $block['content_block_image_file'];
             $grid_body_1 = wpautop($block['content_block_grid_body_1']);
-            $grid_image_1 = $block['content_block_grid_file_1'][0];
+            $grid_image_1 = $block['content_block_grid_file_1'];
             $grid_body_2 = wpautop($block['content_block_grid_body_2']);
-            $grid_image_2 = $block['content_block_grid_file_2'][0];
+            $grid_image_2 = $block['content_block_grid_file_2'];
             $grid_body_3 = wpautop($block['content_block_grid_body_3']);
-            $grid_image_3 = $block['content_block_grid_file_3'][0];
+            $grid_image_3 = $block['content_block_grid_file_3'];
           ?>
 
           <?php if ($block_layout == 'content_block_grid'): ?>

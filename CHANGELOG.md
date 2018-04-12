@@ -1,5 +1,9 @@
 ## Change Log ##
 
+### v2.1.5 ### 
+- [#164](https://github.com/adventistchurch/alps-wordpress/issues/164) Bug: Fixes an issue with a newer version of Piklist that caused uploaded pictures to not show.
+- Feature: Added a .pot file for more internationalization options. If you would like to submit a .po file, we would be happy to include it for out of the box support for your language.
+
 ### v2.1.4 ### 
 - [#161](https://github.com/adventistchurch/alps-wordpress/issues/161) Bug: This fixes and issue where the featured image was showing the first paragraph of the body field when the caption is missing.
 
