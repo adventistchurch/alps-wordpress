@@ -2,7 +2,14 @@
 /**
  * Template Name: News Template
  */
- ?>
+  $theme_options = get_option('alps_theme_settings');
+  $categories = $theme_options['category'];
+  $category_ids = array();
+  foreach ($categories as $category){
+    $category_ids[] = $category;
+  }
+  $category_ids = implode(',', $category_ids);
+?>
 <?php get_template_part('templates/page', 'header-carousel'); ?>
 <?php include(locate_template('patterns/components/news-navigation.php')); ?>
 <div class="layout-container full--until-large">
@@ -24,8 +31,7 @@
             <?php
               // Recent News
               $news = array(
-                'cat' => array(14),
-                'category__not_in' => array(19,20),
+                'cat' => array($category_ids),
                 'posts_per_page' => 4,
                 'tax_query' => array( array(
                   'taxonomy' => 'post_format',
@@ -76,7 +82,7 @@
             <?php
               // Featured Video
               $videos = array(
-                'cat' => array(14),
+                'cat' => array($category_ids),
                 'posts_per_page' => 1,
                 'tax_query' => array( array(
                   'taxonomy' => 'post_format',
@@ -113,7 +119,7 @@
               <?php
                 // Videos
                 $videos = array(
-                  'cat' => array(14),
+                  'cat' => array($category_ids),
                   'posts_per_page' => 6,
                   'offset' => 1,
                   'tax_query' => array( array(
@@ -161,7 +167,7 @@
                     <?php
                       // Photos
                       $gallery = array(
-                        'cat' => array(14),
+                        'cat' => array($category_ids),
                         'posts_per_page' => 3,
                         'tax_query' => array( array(
                           'taxonomy' => 'post_format',

@@ -226,4 +226,18 @@
       )
     )
   ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'category',
+    'label' => 'News Template Categories',
+    'choices' => piklist(
+      get_terms('category', array(
+        'hide_empty' => true
+      )),
+      array(
+        'term_id',
+        'name'
+      )
+    )
+  ));
 ?>

@@ -1,5 +1,8 @@
 ## Change Log ##
 
+### v2.1.6 ###
+- [#166](https://github.com/adventistchurch/alps-wordpress/issues/166) Feature: Add a method for selecting a category (or group of categories) on the appearance settings page that decides which categories of posts show on the News template page.
+
 ### v2.1.5 ### 
 - [#164](https://github.com/adventistchurch/alps-wordpress/issues/164) Bug: Fixes an issue with a newer version of Piklist that caused uploaded pictures to not show.
 - Feature: Added a .pot file for more internationalization options. If you would like to submit a .po file, we would be happy to include it for out of the box support for your language.
