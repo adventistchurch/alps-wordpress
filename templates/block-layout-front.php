@@ -32,7 +32,7 @@
         if ($content_block == 'freeform') {
           $kicker = $block['content_block_freeform_kicker'];
           $title = $block['content_block_freeform_title'];
-          $image = $block['content_block_freeform_image'];
+          $image = $block['content_block_freeform_image'][0];
           $excerpt_length = 200;
           $body = $block['content_block_freeform_body'];
           $button_text = $block['content_block_freeform_button_text'];

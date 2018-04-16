@@ -3,14 +3,14 @@
   $current_language = apply_filters('wpml_current_language', NULL);
   if ($current_language) {
     $logo_desktop_wide = $theme_options['logo_desktop_wide_' . $current_language];
-    $logo_desktop = $theme_options['logo_desktop_' . $current_language];
-    $logo_mobile = $theme_options['logo_mobile_' . $current_language];
-    $logo_text = $theme_options['logo_text_' . $current_language];
+    $logo_desktop = $theme_options['logo_desktop_' . $current_language][0];
+    $logo_mobile = $theme_options['logo_mobile_' . $current_language][0];
+    $logo_text = $theme_options['logo_text_' . $current_language][0];
   } else {
     $logo_desktop_wide = $theme_options['logo_desktop_wide'];
-    $logo_desktop = $theme_options['logo_desktop'];
-    $logo_mobile = $theme_options['logo_mobile'];
-    $logo_text = $theme_options['logo_text'];
+    $logo_desktop = $theme_options['logo_desktop'][0];
+    $logo_mobile = $theme_options['logo_mobile'][0];
+    $logo_text = $theme_options['logo_text'][0];
   }
 ?>
 <header class="header <?php if ($logo_desktop_wide == 'wide'): echo 'header__wide-logo '; endif; ?>can-be--dark-dark" role="banner" id="header">
