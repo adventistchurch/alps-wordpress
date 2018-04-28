@@ -16,7 +16,7 @@
     <div class="carousel__slides js-carousel__single-item">
       <?php
         foreach ($carousel_slides as $slide): setup_postdata($slide);
-        $image = $slide['carousel_image'][0];
+        $image = $slide['carousel_image'];
         $title = $slide['carousel_title'];
         $subtitle = $slide['carousel_subtitle'];
         $description = $slide['carousel_description'];
