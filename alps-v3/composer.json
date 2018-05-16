@@ -1,0 +1,58 @@
+{
+  "name": "roots/sage",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "description": "WordPress starter theme with a modern development workflow",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    {
+      "name": "Ben Word",
+      "email": "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    },
+    {
+      "name": "Scott Walkinshaw",
+      "email": "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/sage/issues",
+    "forum": "https://discourse.roots.io/"
+  },
+  "autoload": {
+    "psr-4": {
+      "Roots\\Sage\\": "app/lib/Sage/"
+    }
+  },
+  "require": {
+    "php": ">=5.6.4",
+    "composer/installers": "~1.0",
+    "illuminate/view": "~5.4.0",
+    "illuminate/config": "~5.4.0",
+    "soberwp/controller": "dev-master",
+    "league/flysystem": "^1.0",
+    "league/flysystem-aws-s3-v3": "^1.0",
+    "league/flysystem-rackspace": "^1.0",
+    "symfony/console": "^3.3",
+    "symfony/process": "^3.3",
+    "symfony/var-dumper": "^3.3"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^2.8.0"
+  },
+  "scripts": {
+    "test": [
+      "phpcs"
+    ],
+    "post-create-project-cmd": [
+        "Roots\\Sage\\PostCreateProject::updateHeaders",
+        "Roots\\Sage\\PostCreateProject::selectFramework",
+        "Roots\\Sage\\PostCreateProject::addFontAwesome",
+        "Roots\\Sage\\PostCreateProject::buildOptions"
+    ]
+  }
+}
