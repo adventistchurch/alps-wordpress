@@ -55,7 +55,7 @@
           $intro = get_post_meta($block->ID, 'intro', true);
           $body = strip_tags($block->post_content);
           $body = strip_shortcodes($body);
-          $button_text = translate('Read More');
+          $button_text = __('Read More');
           $button_url = $block->guid;
           $thumbnail = wp_get_attachment_image_url( $image, 'horiz__4x3--s' );
           $thumbnail_round = wp_get_attachment_image_url( $image, 'square--s' );
