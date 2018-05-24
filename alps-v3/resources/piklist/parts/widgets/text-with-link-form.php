@@ -1,13 +1,13 @@
 <?php
   piklist('field', array(
     'type' => 'text',
-    'field' => 'title',
+    'field' => 'text_link_title',
     'label' => 'Title',
     'columns' => 12
   ));
   piklist('field', array(
     'type' => 'textarea',
-    'field' => 'content',
+    'field' => 'text_link_content',
     'label' => 'Content',
     'attributes' => array(
       'rows' => 10,
@@ -16,13 +16,13 @@
   ));
   piklist('field', array(
     'type' => 'text',
-    'field' => 'url',
+    'field' => 'text_link_url',
     'label' => 'Url',
     'columns' => 6
   ));
   piklist('field', array(
     'type' => 'text',
-    'field' => 'url_text',
+    'field' => 'text_link_url_text',
     'label' => 'Url Text',
     'columns' => 6
   ));
