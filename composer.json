@@ -1,0 +1,43 @@
+{
+  "name": "adventistchurch/alps-wordpress",
+  "description": "ALPS WordPress theme development.",
+  "type": "project",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "",
+      "role": ""
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "composer/installers": "^1.2",
+    "drupal-composer/preserve-paths": "0.1.*",
+    "johnpbloch/wordpress-core-installer": "^1.0",
+    "johnpbloch/wordpress-core": "~4.9",
+    "wpackagist-plugin/piklist":"0.11.2"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "preserve-paths": [
+      "web/wp-config.php",
+      "web/wp-content/uploads",
+      "web/wp-content/themes/alps-v2",
+      "web/wp-content/themes/alps-v3"
+    ],
+    "wordpress-install-dir": "web"
+  }
+}
