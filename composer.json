@@ -25,7 +25,7 @@
     "drupal-composer/preserve-paths": "0.1.*",
     "johnpbloch/wordpress-core-installer": "^1.0",
     "johnpbloch/wordpress-core": "~4.9",
-    "wpackagist-plugin/piklist":"0.11.2"
+    "wpackagist-plugin/piklist": "0.11.2"
   },
   "extra": {
     "installer-paths": {
