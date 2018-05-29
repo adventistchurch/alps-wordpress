@@ -2,7 +2,7 @@
   @if (isset($thumb_id))
     <img class="c-block__image" src="{{ wp_get_attachment_image_src($thumb_id, "featured__hero--m")[0] }}" />
   @endif
-  <h3 class="u-theme--color--darker @if (isset($title_class)){{ $title_class }}@endif">
+  <h3 class="u-theme--color--darker @if (isset($block_title_class)){{ $block_title_class }}@endif">
     @if (isset($url))
       <a href="{{ $url }}" class="c-block__title-link u-theme--link-hover--dark">
     @endif
@@ -11,8 +11,8 @@
       </a>
     @endif
   </h3>
-  <p class="c-block__body text">
-    @if (!empty($excerpt))
+  @if (!empty($excerpt))
+    <p class="c-block__body text">
       @php
         if (strlen($excerpt) > $excerpt_length) {
           echo trim(mb_substr($excerpt, 0, $excerpt_length)) . '&hellip;';
@@ -20,7 +20,9 @@
           echo $excerpt;
         }
       @endphp
-    @elseif (!empty($body))
+    </p>
+  @elseif (!empty($body))
+    <p class="c-block__body text">
       @php
         if (strlen($body) > $excerpt_length) {
           echo trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
@@ -28,8 +30,8 @@
           echo $body;
         }
       @endphp
-    @endif
-  </p>
+    </p>
+  @endif
   @if (isset($category))
     <span class="c-block__meta u-theme--color--dark u-font--secondary--xs">{{ $category }}</span>
   @endif

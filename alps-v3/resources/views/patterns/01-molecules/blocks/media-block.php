@@ -38,8 +38,8 @@
             <?php endif; ?>
           </h3>
         <?php endif; ?>
-        <p class="c-media-block__description c-block__description">
-          <?php if (!empty($excerpt)): ?>
+        <?php if (!empty($excerpt)): ?>
+          <p class="c-media-block__description c-block__description">
             <?php
               if (strlen($excerpt) > $excerpt_length) {
                 echo trim(mb_substr($excerpt, 0, $excerpt_length)) . '&hellip;';
@@ -47,7 +47,9 @@
                 echo $excerpt;
               }
             ?>
-          <?php elseif (!empty($body)): ?>
+          </p>
+        <?php elseif (!empty($body)): ?>
+          <p class="c-media-block__description c-block__description">
             <?php
               if (strlen($body) > $excerpt_length) {
                 echo trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
@@ -55,8 +57,8 @@
                 echo $body;
               }
             ?>
-          <?php endif; ?>
-        </p>
+          </p>
+        <?php endif; ?>
       </div>
       <div class="c-media-block__meta c-block__meta <?php if (isset($block_meta_class)): ?><?php echo $block_meta_class ?><?php endif; ?>">
         <?php if (isset($category)): ?>

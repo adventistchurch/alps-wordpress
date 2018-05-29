@@ -83,9 +83,9 @@ add_action('after_setup_theme', function () {
  */
 add_action('widgets_init', function () {
     $config = [
-        'before_widget' => '<section class="widget %1$s %2$s">',
+        'before_widget' => '<section class="c-widget c-%1$s c-%2$s u-spacing u-background-color--gray--light u-padding u-theme--border-color--darker u-border--left can-be--dark-dark">',
         'after_widget'  => '</section>',
-        'before_title'  => '<h3>',
+        'before_title'  => '<h3 class="c-block__heading-title u-theme--color--darker">',
         'after_title'   => '</h3>'
     ];
     register_sidebar([

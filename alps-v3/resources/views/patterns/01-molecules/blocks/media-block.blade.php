@@ -38,8 +38,8 @@
             @endif
           </h3>
         @endif
-        <p class="c-media-block__description c-block__description">
-          @if (!empty($excerpt))
+        @if (!empty($excerpt))
+          <p class="c-media-block__description c-block__description">
             @php
               if (strlen($excerpt) > $excerpt_length) {
                 echo trim(mb_substr($excerpt, 0, $excerpt_length)) . '&hellip;';
@@ -47,7 +47,9 @@
                 echo $excerpt;
               }
             @endphp
-          @elseif (!empty($body))
+          </p>
+        @elseif (!empty($body))
+          <p class="c-media-block__description c-block__description">
             @php
               if (strlen($body) > $excerpt_length) {
                 echo trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
@@ -55,8 +57,8 @@
                 echo $body;
               }
             @endphp
-          @endif
-        </p>
+          </p>
+        @endif
       </div>
       <div class="c-media-block__meta c-block__meta @if (isset($block_meta_class)){{ $block_meta_class }}@endif">
         @if (isset($category))
