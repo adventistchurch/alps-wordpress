@@ -11,3 +11,17 @@ alps-v3/node_modules
 alps-v3/npm-debug.log
 alps-v3/vendor
 alps-v3/yarn-error.log
+
+web
+vendor
+
+!web/
+web/*
+!web/wp-content/
+web/wp-content/*
+!web/wp-content/themes/
+web/wp-content/themes/*
+!web/wp-content/themes/alps-v2/
+!web/wp-content/themes/alps-v3/
+
+.DS_Store
