@@ -1,0 +1,14 @@
+/* ------------------------------------ *\
+    $WORDPRESS STYLES
+\* ------------------------------------ */
+
+.search-submit {
+  margin-top: 10px;
+}
+
+ul > .c-widget > * + * {
+  margin-top: 10px;
+}
+
+
+/*# sourceMappingURL=main.css.map*/

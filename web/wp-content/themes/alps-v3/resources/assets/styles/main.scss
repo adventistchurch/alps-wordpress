@@ -5,3 +5,30 @@
 .search-submit {
   margin-top: 10px;
 }
+
+.c-widget ul {
+  & > * + * {
+    margin-top: 10px;
+  }
+}
+
+.wp-caption-text {
+  color: #717171; // $c-gray
+  font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.35;
+
+  @media (min-width: 900px) {
+    font-size: 15px;
+  }
+}
+
+figure {
+  max-width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
