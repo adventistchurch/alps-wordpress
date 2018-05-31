@@ -65,7 +65,7 @@
           <span class="c-block__category u-text-transform--upper"><?php echo $category ?></span>
         <?php endif; ?>
         <?php if (isset($date)): ?>
-          <time class="c-block__date u-text-transform--upper" datetime="<?php echo $datetime ?>"><?php echo $date ?></time>
+          <time class="c-block__date u-text-transform--upper"><?php echo $date ?></time>
         <?php endif; ?>
       </div>
       <?php if (isset($cta)): ?>

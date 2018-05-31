@@ -65,7 +65,7 @@
           <span class="c-block__category u-text-transform--upper">{{ $category }}</span>
         @endif
         @if (isset($date))
-          <time class="c-block__date u-text-transform--upper" datetime="{{ $datetime }}">{{ $date }}</time>
+          <time class="c-block__date u-text-transform--upper">{{ $date }}</time>
         @endif
       </div>
       @if (isset($cta))

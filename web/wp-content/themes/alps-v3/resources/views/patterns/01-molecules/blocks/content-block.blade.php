@@ -32,8 +32,15 @@
       @endphp
     </p>
   @endif
-  @if (isset($category))
-    <span class="c-block__meta u-theme--color--dark u-font--secondary--xs">{{ $category }}</span>
+  @if (isset($category) || isset($date))
+    <span class="c-block__meta u-theme--color--dark u-font--secondary--xs">
+      @if (isset($category))
+        <span class="c-block__category u-text-transform--upper">{{ $category }}</span>
+      @endif
+      @if (isset($date))
+        <time class="c-block__date u-text-transform--upper">{{ $date }}</time>
+      @endif
+    </span>
   @endif
   @if (isset($expand_body))
     <div class="c-block__content">

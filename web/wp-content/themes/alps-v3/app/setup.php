@@ -179,8 +179,8 @@ add_image_size('horiz__16x9--l', 1100, 620, array('center', 'center'));
 
 // 4:3 crop.
 add_image_size('horiz__4x3--s', 500, 375, array('center', 'center'));
-add_image_size('horiz__4x3--m', 800, 600, array('center', 'center'));
-add_image_size('horiz__4x3--l', 1100, 825, array('center', 'center'));
+add_image_size('horiz__4x3--m', 700, 600, array('center', 'center'));
+add_image_size('horiz__4x3--l', 900, 700, array('center', 'center'));
 //add_image_size('horiz__4x3--xl', 1600, 1200, array('center', 'center'));
 
 // Flexible height

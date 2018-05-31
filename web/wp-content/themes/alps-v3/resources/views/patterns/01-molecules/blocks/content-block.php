@@ -32,8 +32,15 @@
       ?>
     </p>
   <?php endif; ?>
-  <?php if (isset($category)): ?>
-    <span class="c-block__meta u-theme--color--dark u-font--secondary--xs"><?php echo $category; ?></span>
+  <?php if (isset($category) || isset($date)): ?>
+    <span class="c-block__meta u-theme--color--dark u-font--secondary--xs">
+      <?php if (isset($category)): ?>
+        <span class="c-block__category u-text-transform--upper"><?php echo $category ?></span>
+      <?php endif; ?>
+      <?php if (isset($date)): ?>
+        <time class="c-block__date u-text-transform--upper"><?php echo $date ?></time>
+      <?php endif; ?>
+    </span>
   <?php endif; ?>
   <?php if (isset($expand_body)): ?>
     <div class="c-block__content">
@@ -44,7 +51,7 @@
     <a href="" class="o-button o-button--outline o-button--expand js-toggle-parent"></a>
   <?php else: ?>
     <?php if (isset($cta)): ?>
-      <a href="<?php echo $link; ?>" class="c-block__button o-button o-button--outline"><?php echo $cta; ?><span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
+      <a href="<?php echo $link; ?>" class="c-block__button o-button o-button--outline"><?php echo $cta; ?><span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><?php include(locate_template('patterns/00-atoms/icons/icon-arrow-long-right.blade.php')); ?></span></a>
     <?php endif; ?>
   <?php endif; ?>
 </div>
