@@ -1,4 +1,4 @@
-# ALSP Wordpress Themes
+# ALPS Wordpress Themes
 
 ## Getting Started
 ### Install Composer
