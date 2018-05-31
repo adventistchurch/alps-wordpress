@@ -35,22 +35,28 @@
         @php
           $id = get_the_ID();
           $title = get_the_title($id);
-          $thumb_id = get_post_thumbnail_id($id);
-          $thumb_size = 'horiz__4x3';
           $link = get_permalink($id);
           $date = date('F j, Y', strtotime(get_the_date()));
-          $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-          $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
           $category = $category;
-
-          $block_class = "c-block--reversed c-media-block--reversed l-grid--7-col";
-          $block_group_class = "u-flex--justify-start";
-          $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
-          $block_content_class = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--1-col u-border--left u-theme--border-color--darker--left u-color--gray u-spacing--half";
-          $block_title_class = "u-theme--color--dark u-font--primary--s";
-          $block_meta_class = "u-theme--color--base u-font--secondary--xs";
+          if (get_post_thumbnail_id($id)) {
+            $thumb_id = get_post_thumbnail_id($id);
+            $thumb_size = 'horiz__4x3';
+            $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+            $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+            $block_class = "c-block--reversed c-media-block--reversed l-grid--7-col";
+            $block_title_class = "u-theme--color--dark u-font--primary--s";
+            $block_meta_class = "u-theme--color--base u-font--secondary--xs";
+            $block_group_class = "u-flex--justify-start";
+            $block_content_class = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--1-col u-border--left u-theme--border-color--darker--left u-color--gray u-spacing--half";
+            $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
+            include(locate_template('patterns/01-molecules/blocks/media-block.php'));
+          } else {
+            $thumb_id = NULL;
+            $block_class = "c-block__text u-theme--border-color--darker u-border--left u-padding--bottom u-spacing--half";
+            $block_title_class = "u-theme--color--darker u-font--primary--s";
+            include(locate_template('patterns/01-molecules/blocks/content-block.php'));
+          }
         @endphp
-        @include('patterns.01-molecules.blocks.media-block')
       @endwhile
       @php(wp_reset_query())
     </div>

@@ -65,13 +65,11 @@
     </style>
   @endif
   <div class="c-page-header__simple--inner u-padding">
-    <span class="o-kicker u-color--white">
-      @if ($kicker && !is_category() && !is_home())
-        {{ $kicker }}
-      @elseif (is_page() && $post->post_parent != '0')
-        {{ get_the_title($post->post_parent) }}
-      @endif
-    </span>
+    @if ($kicker && !is_category() && !is_home())
+      <span class="o-kicker u-color--white">{{ $kicker }}</span>
+    @elseif (is_page() && $post->post_parent != '0')
+      <span class="o-kicker u-color--white">{{ get_the_title($post->post_parent) }}</span>
+    @endif
     <h1 class="u-font--primary--xxl u-color--white">
       @if ($display_title)
         {{ $display_title }}

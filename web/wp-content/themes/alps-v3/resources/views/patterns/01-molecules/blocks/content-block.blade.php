@@ -3,11 +3,11 @@
     <img class="c-block__image" src="{{ wp_get_attachment_image_src($thumb_id, "featured__hero--m")[0] }}" />
   @endif
   <h3 class="u-theme--color--darker @if (isset($block_title_class)){{ $block_title_class }}@endif">
-    @if (isset($url))
-      <a href="{{ $url }}" class="c-block__title-link u-theme--link-hover--dark">
+    @if (isset($link))
+      <a href="{{ $link }}" class="c-block__title-link u-theme--link-hover--dark">
     @endif
     <strong>{{ $title }}</strong>
-    @if (isset($url))
+    @if (isset($link))
       </a>
     @endif
   </h3>
@@ -35,16 +35,16 @@
   @if (isset($category))
     <span class="c-block__meta u-theme--color--dark u-font--secondary--xs">{{ $category }}</span>
   @endif
-  @if (isset($body))
+  @if (isset($expand_body))
     <div class="c-block__content">
-      <p>{{ $body }}</p>
+      <p>{{ $expand_body }}</p>
     </div>
   @endif
   @if (isset($expand))
     <a href="" class="o-button o-button--outline o-button--expand js-toggle-parent"></a>
   @else
     @if (isset($cta))
-      <a href="{{ $url }}" class="c-block__button o-button o-button--outline">{{ $cta }}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
+      <a href="{{ $link }}" class="c-block__button o-button o-button--outline">{{ $cta }}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
     @endif
   @endif
 </div>

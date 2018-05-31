@@ -20,7 +20,7 @@
             'field' => 'logo' . $language_code,
             'label' => 'Logo' . $language_label,
             'description' => 'Upload the default ' . $language_name . 'logo',
-            'columns' => 4,
+            'columns' => 12,
             'options' => array(
               'modal_title' => 'Upload Image',
               'button' => 'Add Image'
@@ -39,7 +39,7 @@
           'field' => 'logo',
           'label' => 'Logo',
           'description' => 'Upload the default logo',
-          'columns' => 4,
+          'columns' => 12,
           'options' => array(
             'modal_title' => 'Upload Image',
             'button' => 'Add Image'
@@ -57,8 +57,8 @@
         'type' => 'file',
         'field' => 'sabbath_icon',
         'label' => 'Sabbath Icon',
-        'description' => 'Upload an icon for the sabbath column',
-        'columns' => 4,
+        'description' => 'Upload an icon for the sabbath column.',
+        'columns' => 12,
         'options' => array(
           'modal_title' => 'Upload Image',
           'button' => 'Add Image'
@@ -68,8 +68,8 @@
         'type' => 'file',
         'field' => 'sabbath_background',
         'label' => 'Sabbath Background Image',
-        'description' => 'Upload an image for the background of the sabbath column',
-        'columns' => 4,
+        'description' => 'Upload an image for the background of the sabbath column.',
+        'columns' => 12,
         'options' => array(
           'modal_title' => 'Upload Image',
           'button' => 'Add Image'
@@ -78,10 +78,28 @@
       array(
         'type' => 'checkbox',
         'field' => 'sabbath_scroll',
-        'label' => 'Sabbath icon hide till scroll',
+        'label' => 'Hide sabbath icon till scroll',
         'columns' => 4,
         'choices' => array(
-          'true' => 'Select to hide the sabbath icon till you scroll'
+          'true' => 'Select to hide the sabbath icon till you scroll.'
+        )
+      ),
+      array(
+        'type' => 'checkbox',
+        'field' => 'sabbath_hide',
+        'label' => 'Hide the sabbath column',
+        'columns' => 4,
+        'choices' => array(
+          'true' => 'Select to hide the sabbath column.'
+        )
+      ),
+      array(
+        'type' => 'checkbox',
+        'field' => 'sabbath_hide_small',
+        'label' => 'Hide the sabbath column only on small screens',
+        'columns' => 4,
+        'choices' => array(
+          'true' => 'Select to hide the sabbath column on small screens.'
         )
       ),
     )
@@ -135,14 +153,6 @@
           'true' => 'Select if you would like show the grid lines'
         )
       ),
-    )
-  ));
-  piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'hide_author_global',
-    'label' => 'Hide Author',
-    'choices' => array(
-      'true' => 'Select if you would like hide the post author'
     )
   ));
   piklist('field', array(
@@ -208,6 +218,17 @@
     )
   ));
   piklist('field', array(
+    'type' => 'file',
+    'field' => 'footer_logo_icon',
+    'label' => 'Footer Logo Icon',
+    'description' => 'Upload a logo icon for the footer. *Only displays if the sabbath column is hidden.',
+    'columns' => 12,
+    'options' => array(
+      'modal_title' => 'Upload Image',
+      'button' => 'Add Image'
+    )
+  ));
+  piklist('field', array(
     'type' => 'checkbox',
     'field' => 'category',
     'label' => 'News Template Categories',
@@ -219,6 +240,14 @@
         'term_id',
         'name'
       )
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'hide_author_global',
+    'label' => 'Hide Author',
+    'choices' => array(
+      'true' => 'Select if you would like hide the post author'
     )
   ));
 ?>

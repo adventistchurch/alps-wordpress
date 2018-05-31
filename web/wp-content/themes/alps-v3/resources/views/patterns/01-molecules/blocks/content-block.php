@@ -3,11 +3,11 @@
     <img class="c-block__image" src="<?php echo wp_get_attachment_image_src($thumb_id, "featured__hero--m")[0]; ?>" />
   <?php endif; ?>
   <h3 class="u-theme--color--darker <?php if (isset($block_title_class)): ?><?php echo $block_title_class; ?><?php endif; ?>">
-    <?php if (isset($url)): ?>
-      <a href="<?php echo $url; ?>" class="c-block__title-link u-theme--link-hover--dark">
+    <?php if (isset($link)): ?>
+      <a href="<?php echo $link; ?>" class="c-block__title-link u-theme--link-hover--dark">
     <?php endif; ?>
     <strong><?php echo $title; ?></strong>
-    <?php if (isset($url)): ?>
+    <?php if (isset($link)): ?>
       </a>
     <?php endif; ?>
   </h3>
@@ -35,16 +35,16 @@
   <?php if (isset($category)): ?>
     <span class="c-block__meta u-theme--color--dark u-font--secondary--xs"><?php echo $category; ?></span>
   <?php endif; ?>
-  <?php if (isset($body)): ?>
+  <?php if (isset($expand_body)): ?>
     <div class="c-block__content">
-      <p><?php echo $body; ?></p>
+      <p><?php echo $expand_body; ?></p>
     </div>
   <?php endif; ?>
   <?php if (isset($expand)): ?>
     <a href="" class="o-button o-button--outline o-button--expand js-toggle-parent"></a>
   <?php else: ?>
     <?php if (isset($cta)): ?>
-      <a href="<?php echo $url; ?>" class="c-block__button o-button o-button--outline"><?php echo $cta; ?><span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
+      <a href="<?php echo $link; ?>" class="c-block__button o-button o-button--outline"><?php echo $cta; ?><span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
     <?php endif; ?>
   <?php endif; ?>
 </div>

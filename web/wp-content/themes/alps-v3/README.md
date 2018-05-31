@@ -122,3 +122,20 @@ Keep track of development and community news.
 * Read and subscribe to the [Roots Blog](https://roots.io/blog/)
 * Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
 * Listen to the [Roots Radio podcast](https://roots.io/podcast/)
+
+## Settings
+
+**Secondary Navigation Icons**
+To add icons to the secondary nav, enter the icon name in the title field. Below are the values for the existing icons.
+
+Icon Title Values:
+* contact
+* sitemap
+* press
+* find-a-church
+* language
+* search
+* share
+
+**Breadcrumbs**
+To show the breadcrumbs, activate the `Yoast` plugin. The breadcrumbs can then be toggled on/off under `SEO`>`Search Appearance`>`Breadcrumbs`
