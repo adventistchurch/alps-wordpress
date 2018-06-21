@@ -92,6 +92,10 @@ add_action('widgets_init', function () {
         'name'          => __('Primary', 'sage'),
         'id'            => 'sidebar-primary'
     ] + $config);
+    register_sidebar([
+        'name'          => __('Posts', 'sage'),
+        'id'            => 'sidebar-posts'
+    ] + $config);
 });
 
 /**

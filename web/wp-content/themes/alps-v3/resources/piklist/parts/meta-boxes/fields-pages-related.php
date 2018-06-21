@@ -14,7 +14,8 @@
     'choices' => array(
       'related_top_level' => 'Show first level child pages only',
       'related_all' => 'Show child and grandchild pages',
-      'related_custom' => 'Show custom pages'
+      'related_custom' => 'Show custom pages',
+      'false' => 'None'
     )
   ));
   piklist( 'field', array(
@@ -33,8 +34,7 @@
           'post_type' => 'page',
           'numberposts' => -1,
           'orderby' => 'title',
-          'order' => 'ASC',
-          'meta_box_cb' => false
+          'order' => 'ASC'
         )
       ),
       array(
@@ -48,9 +48,6 @@
         'field' => 'related',
         'value' => 'related_custom'
       )
-    ),
-    'relate' => array(
-      'scope' => 'post'
     )
   ));
 ?>

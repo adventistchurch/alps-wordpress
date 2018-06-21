@@ -8,7 +8,7 @@
     $article_offset = '';
   }
 @endphp
-@if (get_post_meta($post->ID, 'hero_type') && is_page())
+@if (get_post_meta($post->ID, 'hero_type'))
   @include('patterns.02-organisms.sections.page-hero')
 @else
   @include('patterns.02-organisms.sections.page-header')

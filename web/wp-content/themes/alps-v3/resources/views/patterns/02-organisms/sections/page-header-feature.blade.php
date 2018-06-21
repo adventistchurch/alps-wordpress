@@ -1,15 +1,19 @@
 @php
   use Roots\Sage\Titles;
   global $post;
-  $id = $post->ID;
   $kicker = get_post_meta($post->ID, 'kicker', true);
-  $date = date('F j, Y', strtotime(get_the_date()));
+
+  if (!is_home()) {
+    $id = $post->ID;
+  }
+
+  $date = date('F j, Y', strtotime(get_the_date('', $id)));
 
   $display_title = get_post_meta($post->ID, 'display_title', true);
   if (!empty($display_title)) {
     $title = $display_title;
   } else {
-    $title = App\title();
+    $title = get_the_title($id);
   }
 
   $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
@@ -52,10 +56,12 @@
     $image_break_m = "500";
     $image_break_l = "900";
     $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-    $block_class = "c-block__inline c-media-block__inine c-block--reversed c-media-block--reversed l-grid--7-col";
-    $block_img_class = "l-grid-item u-padding--zero--sides";
-    $block_content_class = "l-grid-item u-border-left--black--at-large u-theme--border-color--darker--left u-theme--color--lighter u-theme--background-color--darker u-padding--top u-padding--bottom";
-    $block_title_class = "u-color--white u-font--primary u-font-weight--bold";
+    if (!is_home()) {
+      $block_class = "c-block__inline c-media-block__inine c-block--reversed c-media-block--reversed l-grid--7-col";
+      $block_img_class = "l-grid-item u-padding--zero--sides";
+      $block_content_class = "l-grid-item u-border-left--black--at-large u-theme--border-color--darker--left u-theme--color--lighter u-theme--background-color--darker u-padding--top u-padding--bottom";
+      $block_title_class = "u-color--white u-font--primary u-font-weight--bold";
+    }
   } else {
     $block_class = "c-block__inline c-media-block__inine l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7 u-theme--background-color--darker can-be--dark-dark u-padding--top u-padding--bottom";
     $block_img_class = false;

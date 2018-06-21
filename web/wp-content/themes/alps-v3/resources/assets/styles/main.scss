@@ -2,6 +2,14 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.c-page-header a {
+  color: white !important;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .c-hero {
   .c-block__image {
     min-height: 250px;
