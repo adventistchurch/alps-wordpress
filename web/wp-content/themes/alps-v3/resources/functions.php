@@ -182,3 +182,31 @@ function piklist_theme_setting_pages($pages) {
   );
   return $pages;
 }
+
+// Remove colors and text styles from Gutenberg
+add_theme_support( 'disable-custom-colors' );
+add_theme_support( 'editor-color-palette');
+add_theme_support( 'editor-text-styles');
+add_theme_support( 'wp-block-styles' );
+
+// Only allow the following blocks in Gutenberg
+add_filter( 'allowed_block_types', function() {
+	return [
+    'core/paragraph',
+    'core/heading',
+    'core/image',
+    'core/video',
+    'core/vimeo',
+    'core/block',
+    'core/spacer',
+    'gutenberg-blocks/latest-posts',
+    'gutenberg-blocks/content-block',
+    'gutenberg-blocks/content-show-more',
+    'gutenberg-blocks/content-expand',
+    'gutenberg-blocks/highlighted-paragraph',
+    'gutenberg-blocks/blockquote',
+    'gutenberg-blocks/image-2up',
+    'gutenberg-blocks/image-breakout',
+    'gutenberg-blocks/gallery',
+  ];
+} );

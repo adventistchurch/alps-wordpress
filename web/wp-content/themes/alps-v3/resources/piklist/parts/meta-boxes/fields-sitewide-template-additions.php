@@ -2,7 +2,7 @@
 /*
   Title: Template Additions
   Post Type: post, page
-  Order: 2
+  Order: 1
 */
   piklist('field', array(
     'type' => 'text',
@@ -26,6 +26,16 @@
     'options' => array(
       'modal_title' => 'Upload Image',
       'button' => 'Add Image'
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'hide_sidebar',
+    'label' => 'Hide the sidebar',
+    'description' => 'Hides the sidebar on the page/post if it is active.',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Hide the content sidebar'
     )
   ));
 ?>

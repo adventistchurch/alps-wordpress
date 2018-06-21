@@ -186,7 +186,7 @@ add_image_size('horiz__4x3--l', 900, 700, array('center', 'center'));
 // Flexible height
 add_image_size('flex-height--s', 350, 9999);
 add_image_size('flex-height--m', 700, 9999);
-add_image_size('flex-height--l', 800, 9999);
+add_image_size('flex-height--l', 900, 9999);
 add_image_size('flex-height--xl', 1100, 9999);
 
 // Square crop.

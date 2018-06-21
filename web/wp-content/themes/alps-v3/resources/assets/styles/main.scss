@@ -2,6 +2,18 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.c-hero {
+  .c-block__image {
+    min-height: 250px;
+    display: block;
+  }
+
+  .c-block__title-link:hover {
+    color: white !important;
+    text-decoration: underline;
+  }
+}
+
 .alm-btn-wrap .alm-load-more-btn {
   margin-top: 40px;
 }
@@ -103,24 +115,29 @@
   }
 }
 
-// Article Body
-.wp-caption-text {
-  color: #717171; // $c-gray
-  font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
-  font-size: 13px;
-  font-style: italic;
-  line-height: 1.35;
+// // Article Body
+// .wp-caption-text {
+//   color: #717171; // $c-gray
+//   font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
+//   font-size: 13px;
+//   font-style: italic;
+//   line-height: 1.35;
+//
+//   @media (min-width: 900px) {
+//     font-size: 15px;
+//   }
+// }
+//
+// figure {
+//   max-width: 100%;
+//
+//   img {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
 
-  @media (min-width: 900px) {
-    font-size: 15px;
-  }
-}
-
-figure {
-  max-width: 100%;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
+// Gutenberg block overrides
+.wp-block-table {
+  border: 0;
 }

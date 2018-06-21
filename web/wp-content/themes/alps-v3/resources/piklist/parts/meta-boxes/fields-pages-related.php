@@ -3,7 +3,6 @@
   Title: Related Pages
   Post Type: page
   Order: 6
-  Template: template-landing-page
 */
   piklist('field', array(
     'type' => 'radio',
@@ -25,8 +24,8 @@
     'description' => 'Select the related pages to display.',
     'columns' => 12,
     'attributes' => array(
-        'class' => 'css class',
-        'multiple' => 'multiple'
+      'class' => 'css class',
+      'multiple' => 'multiple'
     ),
     'choices' => piklist(
       get_posts(
@@ -34,7 +33,8 @@
           'post_type' => 'page',
           'numberposts' => -1,
           'orderby' => 'title',
-          'order' => 'ASC'
+          'order' => 'ASC',
+          'meta_box_cb' => false
         )
       ),
       array(
@@ -44,6 +44,7 @@
     ),
     'conditions' => array(
       array(
+        'reset' => false,
         'field' => 'related',
         'value' => 'related_custom'
       )
