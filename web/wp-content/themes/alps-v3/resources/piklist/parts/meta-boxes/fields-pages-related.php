@@ -3,6 +3,7 @@
   Title: Related Pages
   Post Type: page
   Order: 6
+  Hide for Template: views/template-posts.blade
 */
   piklist('field', array(
     'type' => 'radio',

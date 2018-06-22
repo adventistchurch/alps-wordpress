@@ -1,7 +1,10 @@
 @php
   use Roots\Sage\Titles;
-  global $post;
+  if (!is_home()) {
+    global $post;
+  }
   $display_title = get_post_meta($post->ID, 'display_title', true);
+  $title = get_the_title($post->ID);
   $kicker = get_post_meta($post->ID, 'kicker', true);
   $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
   if (!empty($header_background_image)) {
@@ -36,7 +39,7 @@
       @if (!empty($display_title))
         {{ $display_title }}
       @else
-        {!! App\title() !!}
+        {{ $title }}
       @endif
     </h1>
   </div>

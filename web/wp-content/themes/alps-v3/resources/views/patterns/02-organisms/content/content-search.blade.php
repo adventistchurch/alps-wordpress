@@ -1,4 +1,10 @@
-@include('patterns.02-organisms.sections.page-header')
+<header class="c-page-header c-page-header__simple u-theme--background-color--dark">
+  <div class="c-page-header__simple--inner u-padding">
+    <h1 class="u-font--primary--xxl u-color--white">
+      Search
+    </h1>
+  </div>
+</header> <!-- /.c-page-header-->
 <section class="l-grid l-grid--7-col u-shift--left--1-col--at-large l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
   <div class="c-article l-grid-item l-grid-item--l--4-col u-padding--zero--sides">
     <article class="c-article__body u-padding--right">
@@ -11,9 +17,9 @@
               $excerpt = get_the_excerpt($id);
               $excerpt_length = 300;
               $body = get_the_content($id);
-              $url = get_permalink($id);
-              $cta = "Learn More";
-              $block_class = "u-spacing";
+              $link = get_permalink($id);
+              $cta = "Read More";
+              $block_class = "u-theme--border-color--darker u-border--left u-spacing";
             @endphp
             @include('patterns.01-molecules.blocks.content-block')
           @endwhile
