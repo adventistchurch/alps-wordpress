@@ -38,7 +38,7 @@
     @if (is_active_sidebar('sidebar-posts') && get_post_meta($post->ID, 'hide_sidebar', true) != 'true')
       <div class="c-sidebar l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col u-padding--zero--sides">
         <div class="u-spacing--double u-padding--right">
-          {{ dynamic_sidebar('sidebar-posts') }}
+          @php(dynamic_sidebar('sidebar-posts'))
         </div>
       </div> <!-- /.c-sidebar -->
     @endif

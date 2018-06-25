@@ -8,11 +8,7 @@
     $article_offset = '';
   }
 @endphp
-@if (get_post_meta($post->ID, 'hero_type'))
-  @include('patterns.02-organisms.sections.page-hero')
-@else
-  @include('patterns.02-organisms.sections.page-header')
-@endif
+@include('patterns.02-organisms.sections.page-header-hero')
 <section class="l-grid l-grid--7-col {{ $section_offset }} l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
   <article class="c-article l-grid-item l-grid-item--l--4-col {{ $article_offset }}">
     <div class="c-article__body">
@@ -26,7 +22,7 @@
   @if (is_active_sidebar('sidebar-primary') && get_post_meta($post->ID, 'hide_sidebar', true) != 'true')
     <div class="c-sidebar l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col u-padding--zero--sides">
       <div class="u-spacing--double u-padding--right">
-        {{ dynamic_sidebar('sidebar-primary') }}
+        @php(dynamic_sidebar('sidebar-primary'))
       </div>
     </div> <!-- /.c-sidebar -->
   @endif

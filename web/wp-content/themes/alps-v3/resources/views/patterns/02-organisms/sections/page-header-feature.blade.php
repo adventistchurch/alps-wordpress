@@ -2,10 +2,16 @@
   use Roots\Sage\Titles;
   global $post;
 
-  if (!is_home()) {
+  if (is_page_template("views/template-posts.blade.php")) {
+    $id = get_post_meta($post->ID, 'hero_featured_post', true);
+    $link = get_the_permalink($id);
+  } else {
     $id = $post->ID;
+    $link = NULL;
   }
+
   $kicker = get_post_meta($id, 'kicker', true);
+  $block_type = get_post_format($id);
   $date = date('F j, Y', strtotime(get_the_date('', $id)));
 
   $display_title = get_post_meta($id, 'display_title', true);
@@ -24,7 +30,7 @@
     $thumb_id = NULL;
   }
 
-  if (has_excerpt()) {
+  if (has_excerpt($id)) {
     $excerpt = get_the_excerpt($id);
     $excerpt_length = 200;
   }
@@ -36,13 +42,13 @@
       $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
       $term = get_term($wpseo_primary_term);
       if (is_wp_error($term)) {
-        $category = $category[0]->slug;
+        $category = $category[0]->name;
       } else {
-        $category = $term->slug;
+        $category = $term->name;
       }
     }
     else {
-      $category = $category[0]->slug;
+      $category = $category[0]->name;
     }
   }
 
@@ -55,10 +61,17 @@
     $image_break_m = "500";
     $image_break_l = "900";
     $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-    $block_class = "c-block__inline c-media-block__inine c-block--reversed c-media-block--reversed l-grid--7-col";
-    $block_img_class = "l-grid-item u-padding--zero--sides";
-    $block_content_class = "l-grid-item u-border-left--black--at-large u-theme--border-color--darker--left u-theme--color--lighter u-theme--background-color--darker u-padding--top u-padding--bottom";
-    $block_title_class = "u-color--white u-font--primary u-font-weight--bold";
+    if (is_page_template("views/template-posts.blade.php")) {
+      $block_class = "c-block__inline c-media-block__inine c-block--reversed c-media-block--reversed l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7";
+      $block_img_class = "l-grid-item l-grid-item--m--3-col l-grid-item--l--4-col u-padding--zero--sides";
+      $block_content_class = "l-grid-item l-grid-item--m--3-col l-grid-item--l--2-col u-theme--border-color--darker--left u-theme--color--lighter u-theme--background-color--darker can-be--dark-dark u-padding--top u-padding--bottom u-flex--align-end";
+      $block_title_class = "u-color--white u-font--primary--l";
+    } else {
+      $block_class = "c-block__inline c-media-block__inine c-block--reversed c-media-block--reversed l-grid--7-col";
+      $block_img_class = "l-grid-item u-padding--zero--sides";
+      $block_content_class = "l-grid-item u-border-left--black--at-large u-theme--border-color--darker--left u-theme--color--lighter u-theme--background-color--darker u-padding--top u-padding--bottom";
+      $block_title_class = "u-color--white u-font--primary u-font-weight--bold";
+    }
   } else {
     $block_class = "c-block__inline c-media-block__inine l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7 u-theme--background-color--darker can-be--dark-dark u-padding--top u-padding--bottom";
     $block_img_class = false;
@@ -71,3 +84,4 @@
     @include('patterns.01-molecules.blocks.media-block')
   </div>
 </header> <!-- /.c-page-header -->
+@php(wp_reset_postdata())

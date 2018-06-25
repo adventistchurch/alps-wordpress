@@ -3,9 +3,21 @@
   if (!is_home()) {
     global $post;
   }
-  $display_title = get_post_meta($post->ID, 'display_title', true);
-  $title = get_the_title($post->ID);
-  $kicker = get_post_meta($post->ID, 'kicker', true);
+
+
+  if (is_home()) {
+    $display_title = 'Recent Posts';
+    $title = NULL;
+  } else if (is_archive()) {
+    $kicker = 'Category';
+    $display_title = '';
+    $title = single_cat_title( '', false );
+  } else {
+    $kicker = get_post_meta($post->ID, 'kicker', true);
+    $display_title = get_post_meta($post->ID, 'display_title', true);
+    $title = get_the_title($post->ID);
+  }
+
   $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
   if (!empty($header_background_image)) {
     $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
