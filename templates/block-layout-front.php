@@ -45,7 +45,7 @@
           $image = get_post_thumbnail_id($id);
           $excerpt_length = 200;
           $intro = get_post_meta($id, 'intro', true);
-          $body = strip_tags($block->post_content);
+          $body = strip_tags();
           $body = strip_shortcodes($body);
           $button_text = translate('Read More');
           $button_url = get_the_permalink($id);
