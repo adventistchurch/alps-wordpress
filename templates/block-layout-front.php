@@ -8,16 +8,7 @@
       $blocks = get_post_meta($post->ID, 'content_block_freeform', true);
     }
     if ($content_block == 'relationship') {
-      $blocks = get_posts(array(
-        'post_type' => array(
-          'post',
-          'page'
-        ),
-        'posts_per_page' => -1,
-        'post_belongs' => $post->ID,
-        'post_status' => 'publish',
-        'suppress_filters' => false
-      ));
+      $blocks = get_post_meta($post->ID, 'content_block_relationship');
     }
     if ($two_columns == 'true') {
       echo '<hr>';
@@ -48,15 +39,16 @@
           }
         }
         if ($content_block == 'relationship') {
-          $kicker = $block->kicker;
-          $title = $block->post_title;
-          $image = get_post_thumbnail_id($block->ID);
+          $id = $block;
+          $kicker = get_post_meta($id, 'kicker', true);
+          $title = get_the_title($id);
+          $image = get_post_thumbnail_id($id);
           $excerpt_length = 200;
-          $intro = get_post_meta($block->ID, 'intro', true);
-          $body = strip_tags($block->post_content);
+          $intro = get_post_meta($id, 'intro', true);
+          $body = strip_tags(get_the_content($id));
           $body = strip_shortcodes($body);
           $button_text = translate('Read More');
-          $button_url = $block->guid;
+          $button_url = get_the_permalink($id);
           $thumbnail = wp_get_attachment_image_url( $image, 'horiz__4x3--s' );
           $thumbnail_round = wp_get_attachment_image_url( $image, 'square--s' );
           $left_border = '';

@@ -139,9 +139,6 @@
         'field' => 'content_block',
         'value' => 'relationship'
       )
-    ),
-    'relate' => array(
-      'scope' => 'post'
     )
   ));
 ?>
