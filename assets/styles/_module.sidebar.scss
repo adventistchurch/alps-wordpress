@@ -1,0 +1,63 @@
+/*------------------------------------*\
+    $SIDEBAR
+\*------------------------------------*/
+.widget:empty {
+  display: none;
+}
+.widget {
+  font-family: $font;
+  font-size: rem(14);
+  color: $body-color;
+  ul li {
+    margin-bottom: $space-half;
+  }
+}
+.widget_search {
+  .search-form {
+    width: 100%;
+  }
+  .search-field {
+    display: block;
+    margin-bottom: $space-half;
+  }
+}
+.widget_calendar {
+  table {
+    float: left;
+    width: 100%;
+    color: $body-color;
+    margin-bottom: rem(80);
+    caption {
+      text-transform: uppercase;
+      text-align: left;
+      margin-top: $space-half;
+      margin-bottom: $space-half;
+    }
+    thead {
+      font-size: rem(10);
+      th {
+        padding-bottom: $pad-quarter;
+      }
+    }
+    tbody td {
+      border: 1px solid $body-color;
+      text-align: center;
+      padding: $pad-quarter;
+      &:hover {
+        background: $white;
+      }
+      &.pad {
+        background: none;
+      }
+    }
+    tfoot {
+      #next, #prev {
+        text-transform: uppercase;
+        padding-top: $pad-quarter;
+      }
+      td.pad {
+        padding: $pad-quarter;
+      }
+    }
+  }
+}

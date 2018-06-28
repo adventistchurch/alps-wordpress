@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "alps-theme.js": {
+      "files": [
+        "scripts/alps-theme.js"
+      ]
+    },
+    "alps-theme.css": {
+      "files": [
+        "styles/alps-theme.scss"
+      ]
+    }
+  },
+  "config": {
+    "devUrl": "http://alps-wp.test"
+  }
+}

@@ -1,5 +1,6 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+<<<<<<< HEAD
 
 alps-v2/bower_components
 alps-v2/node_modules
@@ -32,4 +33,10 @@ web/wp-content/plugins/gutenberg-blocks/*
 web/wp-content/plugins/gutenberg-blocks/node_modules/*
 
 *
+=======
+bower_components
+node_modules
+npm-debug.log
+vendor
+>>>>>>> d3edc1b5a4a5776e8b555792b2c50a8eb4e135d1
 .DS_Store
