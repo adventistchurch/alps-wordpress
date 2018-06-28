@@ -231,7 +231,7 @@
   piklist('field', array(
     'type' => 'checkbox',
     'field' => 'category',
-    'label' => 'News Template Categories',
+    'label' => 'Blog Category',
     'choices' => piklist(
       get_terms('category', array(
         'hide_empty' => true
@@ -240,14 +240,6 @@
         'term_id',
         'name'
       )
-    )
-  ));
-  piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'hide_author_global',
-    'label' => 'Hide Author',
-    'choices' => array(
-      'true' => 'Select if you would like hide the post author'
     )
   ));
 ?>

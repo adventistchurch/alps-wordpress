@@ -91,7 +91,7 @@ import './editor.scss';
           </a>
         </h3>;
         var button =
-        <a href={ `${ attributes.link }` } className="c-block__button o-button o-button--outline">Learn More<span className="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z"></path></svg></span></a>;
+        <a href={ `${ attributes.link }` } className="c-block__button o-button o-button--outline">Read More<span className="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z"></path></svg></span></a>;
       } else {
         var title =
         <h3 className="u-theme--color--darker u-font--secondary--m u-text-transform--upper">

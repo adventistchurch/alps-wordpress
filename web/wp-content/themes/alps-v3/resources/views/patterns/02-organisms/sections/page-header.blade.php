@@ -4,7 +4,6 @@
     global $post;
   }
 
-
   if (is_home()) {
     $display_title = 'Recent Posts';
     $title = NULL;

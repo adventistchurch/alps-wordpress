@@ -11,7 +11,7 @@
     'label' => 'Related Pages Format',
     'description' => 'Select the format of the related pages.',
     'columns' => 12,
-    'value' => 'related_top_level',
+    'value' => 'false',
     'choices' => array(
       'related_top_level' => 'Show first level child pages only',
       'related_all' => 'Show child and grandchild pages',
