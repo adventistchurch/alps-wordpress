@@ -13,6 +13,10 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type":"composer",
+      "url":"https://composer.deliciousbrains.com/F11D9E0FF9E868E9A0637728A79A71E0"
     }
   ],
   "minimum-stability": "dev",
@@ -22,9 +26,11 @@
   },
   "require": {
     "composer/installers": "^1.2",
+    "deliciousbrains-plugin/wp-migrate-db-pro": "^1.8",
+    "deliciousbrains-plugin/wp-migrate-db-pro-media-files": "^1.4",
     "drupal-composer/preserve-paths": "0.1.*",
-    "johnpbloch/wordpress-core-installer": "^1.0",
     "johnpbloch/wordpress-core": "~4.9",
+    "johnpbloch/wordpress-core-installer": "^1.0",
     "wpackagist-plugin/piklist": "0.11.2"
   },
   "extra": {

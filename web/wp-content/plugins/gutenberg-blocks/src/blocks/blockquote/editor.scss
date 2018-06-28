@@ -1,0 +1,11 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-gutenberg-blocks-blockquote {
+  border-left: 3px solid black;
+  padding-left: $pad;
+}

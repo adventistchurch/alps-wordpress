@@ -20,17 +20,18 @@
   );
   $the_query = new WP_Query($args);
 ?>
-<?php if ($the_query->have_posts()): ?>
-  <div class="c-block-wrap u-spacing">
-    <div class="c-block__heading u-theme--border-color--darker">
-      <h3 class="c-block__heading-title u-theme--color--darker">
-        <?php echo $title; ?>
-      </h3>
-      <?php if($url): ?>
-        <a href="<?php echo $url; ?>" class="c-block__heading-link u-theme--color--base u-theme--link-hover--dark">See All</a>
-      <?php endif; ?>
-    </div>
-    <div class="c-block-wrap__content u-spacing">
+
+<div class="c-block-wrap u-spacing">
+  <div class="c-block__heading u-theme--border-color--darker">
+    <h3 class="c-block__heading-title u-theme--color--darker">
+      <?php echo $title; ?>
+    </h3>
+    <?php if($url): ?>
+      <a href="<?php echo $url; ?>" class="c-block__heading-link u-theme--color--base u-theme--link-hover--dark">See All</a>
+    <?php endif; ?>
+  </div>
+  <div class="c-block-wrap__content u-spacing">
+    <?php if ($the_query->have_posts()): ?>
       <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
         <?php
           $id = get_the_ID();
@@ -43,13 +44,13 @@
               $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
               $term = get_term($wpseo_primary_term);
               if (is_wp_error($term)) {
-                $category = $category[0]->slug;
+                $category = $category[0]->name;
               } else {
-                $category = $term->slug;
+                $category = $term->name;
               }
             }
             else {
-              $category = $category[0]->slug;
+              $category = $category[0]->name;
             }
           }
           if ($featured == true) {
@@ -74,6 +75,8 @@
         ?>
       <?php endwhile; ?>
       <?php wp_reset_query(); ?>
-    </div>
+    <?php else: ?>
+      There are no posts at this time.
+    <?php endif; ?>
   </div>
-<?php endif; ?>
+</div>

@@ -123,6 +123,20 @@ Keep track of development and community news.
 * Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
 * Listen to the [Roots Radio podcast](https://roots.io/podcast/)
 
+## Gutenberg
+
+**Resources:**
+* https://github.com/ahmadawais/create-guten-block#getting-started
+* https://deliciousbrains.com/custom-gutenberg-block/
+* https://wordpress.org/gutenberg/handbook/
+
+**Creating a block**
+* Run `npm install -g create-guten-block` to install Create Guten Block globally
+* Navigate to `/plugins` folder in the terminal
+* Run `npx create-guten-block my-block` to create a block, then navigation to the plugin block folder `cd my-block`
+* Run `npm start`
+
+
 ## Settings
 
 **Secondary Navigation Icons**

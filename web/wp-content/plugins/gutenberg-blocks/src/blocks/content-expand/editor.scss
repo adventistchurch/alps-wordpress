@@ -1,0 +1,24 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-gutenberg-blocks-content-expand {
+  background: $c-gray--light;
+  color: $c-black;
+  padding: $pad;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  .editor-rich-text:first-child {
+    padding-right: $pad/2;
+  }
+
+  .editor-rich-text:last-child {
+    flex: 100%;
+    flex-grow: 2;
+  }
+}

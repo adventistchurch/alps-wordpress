@@ -7,13 +7,13 @@
       $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
       $term = get_term($wpseo_primary_term);
       if (is_wp_error($term)) {
-        $category = $category[0]->slug;
+        $category = $category[0]->name;
       } else {
-        $category = $term->slug;
+        $category = $term->name;
       }
     }
     else {
-      $category = $category[0]->slug;
+      $category = $category[0]->name;
     }
   }
   $args = array(
@@ -24,12 +24,13 @@
   );
   $related = new WP_Query($args);
 @endphp
-@if ($related->have_posts())
-  <div class="c-related-posts u-spacing">
-    <div class="c-block__heading u-theme--border-color--darker">
-      <h3 class="c-block__heading-title u-theme--color--darker">Related Stories</h3>
-    </div>
-    <div class="c-related-posts__blocks u-spacing">
+
+<div class="c-related-posts u-spacing">
+  <div class="c-block__heading u-theme--border-color--darker">
+    <h3 class="c-block__heading-title u-theme--color--darker">Related Stories</h3>
+  </div>
+  <div class="c-related-posts__blocks u-spacing">
+    @if ($related->have_posts())
       @while ($related->have_posts())
         @php($related->the_post())
         @php
@@ -58,6 +59,8 @@
         @endphp
       @endwhile
       @php(wp_reset_postdata())
-    </div>
+    @else
+      There are no related stories at this time.
+    @endif
   </div>
-@endif
+</div>

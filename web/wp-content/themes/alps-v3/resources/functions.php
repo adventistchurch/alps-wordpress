@@ -110,6 +110,8 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
+
 /**
  * Provides automatic updates for the WordPress theme and plugins (http://wp-updates.com/)
  */
@@ -182,3 +184,76 @@ function piklist_theme_setting_pages($pages) {
   );
   return $pages;
 }
+
+/**
+ * Add a custom parameter to the Piklist comment block.
+ */
+add_filter('piklist_part_data', 'my_custom_comment_block', 10, 2);
+function my_custom_comment_block($data, $folder) {
+
+  // If not a Meta-box section than bail
+  if ($folder!= 'meta-boxes') {
+    return $data;
+  }
+
+  // Allow Piklist to read our custom comment block attribute: "Hide for Template", and set it to hide_for_template
+  $data['hide_for_template'] = 'Hide for Template';
+  return $data;
+}
+
+/**
+ * Assign meta-box access to user role, “no-role”, if the page template is selected
+ */
+add_filter('piklist_part_process_callback', 'my_hide_for_template', 10, 2);
+function my_hide_for_template($part, $type) {
+  global $post;
+
+  // If not a meta box than bail
+  if ($type != 'meta-boxes') {
+    return $part;
+  }
+
+  // Check if any page template is set in the comment block
+  if (!empty($part['data']['hide_for_template'])) {
+
+    // Get the active page template
+    $active_template = pathinfo(get_page_template_slug($post->ID), PATHINFO_FILENAME);
+    $active_template = empty($active_template) ? 'default' : $active_template;
+
+    // Does the active page template match what we want to hide?
+    if (strpos($part['data']['hide_for_template'], $active_template) !== false) {
+
+      // Change meta-box access to user role: no-role
+      $part['data']['role'] = 'no-role';
+    }
+  }
+  return $part;
+}
+
+// Remove colors and text styles from Gutenberg
+add_theme_support( 'disable-custom-colors' );
+add_theme_support( 'editor-color-palette');
+add_theme_support( 'editor-text-styles');
+add_theme_support( 'wp-block-styles' );
+
+// Only allow the following blocks in Gutenberg
+add_filter( 'allowed_block_types', function() {
+	return [
+    'core/paragraph',
+    'core/heading',
+    'core/image',
+    'core/video',
+    'core/vimeo',
+    'core/block',
+    'core/spacer',
+    'gutenberg-blocks/latest-posts',
+    'gutenberg-blocks/content-block',
+    'gutenberg-blocks/content-show-more',
+    'gutenberg-blocks/content-expand',
+    'gutenberg-blocks/highlighted-paragraph',
+    'gutenberg-blocks/blockquote',
+    'gutenberg-blocks/image-2up',
+    'gutenberg-blocks/image-breakout',
+    'gutenberg-blocks/gallery',
+  ];
+} );

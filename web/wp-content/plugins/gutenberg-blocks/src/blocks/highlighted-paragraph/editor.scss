@@ -1,0 +1,12 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-gutenberg-blocks-highlighted-paragraph {
+  background: $c-gray--light;
+  color: $c-black;
+  padding: $pad;
+}

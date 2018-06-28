@@ -1,0 +1,526 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-gutenberg-blocks-content-block {
+  border-left: 1px solid black;
+  padding-left: 1.25rem; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-gutenberg-blocks-content-expand {
+  background: #f5f5f5;
+  color: #000000;
+  padding: 1.25rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-align: baseline;
+      align-items: baseline; }
+  .wp-block-gutenberg-blocks-content-expand .editor-rich-text:first-child {
+    padding-right: 0.625rem; }
+  .wp-block-gutenberg-blocks-content-expand .editor-rich-text:last-child {
+    -ms-flex: 100%;
+        flex: 100%;
+    -ms-flex-positive: 2;
+        flex-grow: 2; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-gutenberg-blocks-content-show-more {
+  clear: both;
+  background-color: #f5f5f5;
+  padding: 1.25rem; }
+  .wp-block-gutenberg-blocks-content-show-more .o-image {
+    width: 30%;
+    float: left;
+    margin-right: 1.25rem;
+    z-index: 999;
+    position: relative;
+    min-height: 150px; }
+  .wp-block-gutenberg-blocks-content-show-more .o-paragraph {
+    margin-top: 1.25rem; }
+  .wp-block-gutenberg-blocks-content-show-more .editor-rich-text {
+    overflow: hidden; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-gutenberg-blocks-highlighted-paragraph {
+  background: #f5f5f5;
+  color: #000000;
+  padding: 1.25rem; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-gutenberg-blocks-blockquote {
+  border-left: 3px solid black;
+  padding-left: 1.25rem; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+.gutenberg .wp-block-latest-posts {
+  padding-left: 2.5em; }
+  .gutenberg .wp-block-latest-posts.is-grid {
+    padding-left: 0; }

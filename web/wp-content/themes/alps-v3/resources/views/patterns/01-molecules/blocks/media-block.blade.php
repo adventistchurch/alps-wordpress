@@ -1,22 +1,49 @@
 <div class="c-media-block c-block @if (isset($block_class)){{ $block_class }}@endif">
   @if (isset($image) or isset($picture))
-    <div class="c-media-block__image c-block__image @if (isset($block_img_class)){{ $block_img_class }}@endif @if (isset($block_type)) c-block__icon c-block__icon--{{ $block_type }}@endif">
+    <div class="c-media-block__image c-block__image @if (isset($block_img_class)){{ $block_img_class }}@endif @if (isset($block_type)) c-block__icon c-block__icon--{{ $block_type }}@endif @if (isset($background_image)){{ 'u-background--cover c-media-block__background-image c-background-image--' . $thumb_id }}@endif">
       <div class="c-block__image-wrap @if (isset($block_img_wrap_class)){{ $block_img_wrap_class }}@endif">
-        @if (isset($picture))
-          <picture class="picture">
-            <!--[if IE 9]><video style="display: none;"><![endif]-->
-            @if (isset($image_break_xl))
-              <source srcset="{{ $image_xl }}" media="(min-width: {{ $image_break_xl }}px)">
-            @endif
+        @if (isset($background_image))
+          <style type="text/css">
+            .c-background-image--{{ $thumb_id }} {
+              background-image: url({{ $image_s }});
+            }
+            @media (min-width: {{ $image_break_m . 'px'}}) {
+              .c-background-image--{{ $thumb_id }} {
+                background-image: url({{ $image_m }});
+              }
+            }
             @if (isset($image_break_l))
-              <source srcset="{{ $image_l }}" media="(min-width: {{ $image_break_l }}px)">
+              @media (min-width: {{ $image_break_l . 'px' }}) {
+                .c-background-image--{{ $thumb_id }} {
+                  background-image: url({{ $image_l }});
+                }
+              }
             @endif
-            <source srcset="{{ $image_m }}" media="(min-width: {{ $image_break_m }}px)">
-            <!--[if IE 9]></video><![endif]-->
-            <img itemprop="image" srcset="{{ $image_s }}" alt="{{ $alt }}">
-          </picture>
-        @elseif (isset($image))
-          <img src="{{ $image }}" itemprop="image" alt="{{ $alt }}" />
+            @if (isset($image_break_xl))
+              @media (min-width: {{ $image_break_xl . 'px' }}) {
+                .c-background-image--{{ $thumb_id }} {
+                  background-image: url({{ $image_xl }});
+                }
+              }
+            @endif
+          </style>
+        @else
+          @if (isset($picture))
+            <picture class="picture">
+              <!--[if IE 9]><video style="display: none;"><![endif]-->
+              @if (isset($image_break_xl))
+                <source srcset="{{ $image_xl }}" media="(min-width: {{ $image_break_xl }}px)">
+              @endif
+              @if (isset($image_break_l))
+                <source srcset="{{ $image_l }}" media="(min-width: {{ $image_break_l }}px)">
+              @endif
+              <source srcset="{{ $image_m }}" media="(min-width: {{ $image_break_m }}px)">
+              <!--[if IE 9]></video><![endif]-->
+              <img itemprop="image" srcset="{{ $image_s }}" alt="{{ $alt }}">
+            </picture>
+          @elseif (isset($image))
+            <img src="{{ $image }}" itemprop="image" alt="{{ $alt }}" />
+          @endif
         @endif
       </div>
     </div> <!-- c-media-block__image -->
@@ -32,7 +59,7 @@
             @if (isset($link))
               <a href="{{ $link }}" class="c-block__title-link u-theme--link-hover--dark">
             @endif
-            {{ $title }}
+            @if (isset($eyebrow))<em class="u-theme--color--lighter">{{ $eyebrow . ' ' }}</em>@endif{{ $title }}
             @if (isset($link))
               </a>
             @endif
@@ -69,7 +96,7 @@
         @endif
       </div>
       @if (isset($cta))
-        <a href="{{ $link }}" class="c-block__button o-button o-button--outline">{{ $cta }}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">{% include '@atoms/icons/icon-arrow-long-right.twig')</span></a>
+        <a href="{{ $link }}" class="c-block__button o-button o-button--outline">{{ $cta }}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
       @endif
     </div>
   </div> <!-- c-media-block__content -->

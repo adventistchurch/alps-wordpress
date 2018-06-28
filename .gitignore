@@ -24,4 +24,10 @@ web/wp-content/themes/*
 !web/wp-content/themes/alps-v2/
 !web/wp-content/themes/alps-v3/
 
+!web/wp-content/plugins/
+web/wp-content/plugins/*
+!web/wp-content/plugins/gutenberg-blocks/
+!web/wp-content/plugins/gutenberg-blocks/*
+web/wp-content/plugins/gutenberg-blocks/node_modules
+
 .DS_Store

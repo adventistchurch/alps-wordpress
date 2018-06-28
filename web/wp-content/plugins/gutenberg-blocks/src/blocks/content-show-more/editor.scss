@@ -1,0 +1,29 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-gutenberg-blocks-content-show-more {
+  clear: both;
+  background-color: $c-gray--light;
+  padding: $pad;
+
+  .o-image {
+    width: 30%;
+    float: left;
+    margin-right: $space;
+    z-index: 999;
+    position: relative;
+    min-height: 150px;
+  }
+
+  .o-paragraph {
+    margin-top: $space;
+  }
+
+  .editor-rich-text {
+    overflow: hidden;
+  }
+}

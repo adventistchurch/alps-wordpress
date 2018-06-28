@@ -3,7 +3,7 @@
   Title: Related Pages
   Post Type: page
   Order: 6
-  Template: template-landing-page
+  Hide for Template: views/template-posts.blade
 */
   piklist('field', array(
     'type' => 'radio',
@@ -11,11 +11,12 @@
     'label' => 'Related Pages Format',
     'description' => 'Select the format of the related pages.',
     'columns' => 12,
-    'value' => 'related_top_level',
+    'value' => 'false',
     'choices' => array(
       'related_top_level' => 'Show first level child pages only',
       'related_all' => 'Show child and grandchild pages',
-      'related_custom' => 'Show custom pages'
+      'related_custom' => 'Show custom pages',
+      'false' => 'None'
     )
   ));
   piklist( 'field', array(
@@ -25,8 +26,8 @@
     'description' => 'Select the related pages to display.',
     'columns' => 12,
     'attributes' => array(
-        'class' => 'css class',
-        'multiple' => 'multiple'
+      'class' => 'css class',
+      'multiple' => 'multiple'
     ),
     'choices' => piklist(
       get_posts(
@@ -44,12 +45,10 @@
     ),
     'conditions' => array(
       array(
+        'reset' => false,
         'field' => 'related',
         'value' => 'related_custom'
       )
-    ),
-    'relate' => array(
-      'scope' => 'post'
     )
   ));
 ?>
