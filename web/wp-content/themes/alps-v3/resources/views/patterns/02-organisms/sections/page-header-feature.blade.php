@@ -84,4 +84,3 @@
     @include('patterns.01-molecules.blocks.media-block')
   </div>
 </header> <!-- /.c-page-header -->
-@php(wp_reset_postdata())

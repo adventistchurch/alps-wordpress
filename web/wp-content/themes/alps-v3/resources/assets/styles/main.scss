@@ -90,22 +90,27 @@
   }
 }
 
-.c-block__breakout {
-  margin-right: -15px;
-
+.c-sidebar .c-block__breakout {
   @media (max-width: 900px) {
-    margin-top: 30px;
+    margin-top: 0;
   }
 
   @media (min-width: 900px) {
     margin-right: -20px;
   }
+
+  @media (min-width: 1300px) {
+    margin-top: -40px;
+  }
+
+  margin-right: -15px;
+  margin-top: -80px;
 }
 
 // Breadcrumbs
 .c-breadcrumbs {
   a {
-    border: 0;
+    border: 0 !important;
     color: #717171; // $c-gray
 
     &::after {

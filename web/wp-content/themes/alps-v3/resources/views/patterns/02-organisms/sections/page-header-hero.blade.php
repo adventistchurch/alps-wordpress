@@ -4,25 +4,25 @@
     $hero = false;
   } else {
     $hero = true;
-  }
-  if ($hero_type == "full") {
-    $hero_image[] = get_post_meta($post->ID, 'hero_image', true)[0];
-    $block_class = "c-block__full c-media-block__full has-scroll";
-    $block_group_class = "u-flex--justify-center u-overlay--dark";
-    $block_content_class = "l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7 u-color--white";
-    $block_title_class = "l-grid-item--5-col l-grid-item--m--2-col u-font--primary--xl u-flex--justify-center";
-  } elseif ($hero_type == "column") {
-    $hero_image = get_post_meta($post->ID, 'hero_image', true);
-    $block_class = "c-block__column c-media-block__column";
-    $block_group_class = "u-flex--justify-center u-overlay--dark";
-    $block_content_class = "u-color--white";
-    $block_title_class = "u-font--primary--xl u-flex--justify-center";
-  } else {
-    $hero_image[] = get_post_meta($post->ID, 'hero_image', true)[0];
-    $block_class = "c-block__inset c-media-block__inset";
-    $block_content_class = "l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7 u-theme--background-color--darker u-color--white";
-    $block_title_class = "l-grid-item l-grid-item--l--4-col l-grid-item--xl--3-col u-font--primary--xl";
-    $block_meta_class = "l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col";
+    if ($hero_type == "full") {
+      $hero_image[] = get_post_meta($post->ID, 'hero_image', true)[0];
+      $block_class = "c-block__full c-media-block__full has-scroll";
+      $block_group_class = "u-flex--justify-center u-overlay--dark";
+      $block_content_class = "l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7 u-color--white";
+      $block_title_class = "l-grid-item--5-col l-grid-item--m--2-col u-font--primary--xl u-flex--justify-center";
+    } elseif ($hero_type == "column") {
+      $hero_image = get_post_meta($post->ID, 'hero_image', true);
+      $block_class = "c-block__column c-media-block__column";
+      $block_group_class = "u-flex--justify-center u-overlay--dark";
+      $block_content_class = "u-color--white";
+      $block_title_class = "u-font--primary--xl u-flex--justify-center";
+    } else {
+      $hero_image[] = get_post_meta($post->ID, 'hero_image', true)[0];
+      $block_class = "c-block__inset c-media-block__inset";
+      $block_content_class = "l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7 u-theme--background-color--darker u-color--white";
+      $block_title_class = "l-grid-item l-grid-item--l--4-col l-grid-item--xl--3-col u-font--primary--xl";
+      $block_meta_class = "l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col";
+    }
   }
 @endphp
 @if ($hero)
