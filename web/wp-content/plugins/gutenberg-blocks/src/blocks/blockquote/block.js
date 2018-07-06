@@ -17,6 +17,7 @@ import './editor.scss';
     title: __('Blockquote'),
     icon: 'format-quote',
     category: 'common',
+    html: false,
 
     attributes: {
       body: {

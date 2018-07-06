@@ -84,6 +84,7 @@
           'true' => 'Select to hide the sabbath icon till you scroll.'
         )
       ),
+
       array(
         'type' => 'checkbox',
         'field' => 'sabbath_hide',
@@ -94,12 +95,23 @@
         )
       ),
       array(
-        'type' => 'checkbox',
-        'field' => 'sabbath_hide_small',
-        'label' => 'Hide the sabbath column only on small screens',
+        'type' => 'radio',
+        'field' => 'sabbath_hide_screens',
+        'label' => 'Hide the sabbath column at certain screen widths',
         'columns' => 4,
+        'value' => 'hide-sabbath--all',
+        'conditions' => array(
+          array(
+            'reset' => false,
+            'field' => 'sabbath_hide',
+            'value' => 'true'
+          )
+        ),
         'choices' => array(
-          'true' => 'Select to hide the sabbath column on small screens.'
+          'hide-sabbath--all' => 'Hide the sabbath column for all screen widths.',
+          'hide-sabbath--until-small' => 'Hide the sabbath column at small screens.',
+          'hide-sabbath--until-medium' => 'Hide the sabbath column at medium screens.',
+          'hide-sabbath--until-large' => 'Hide the sabbath column at large screens.'
         )
       ),
     )
@@ -226,20 +238,6 @@
     'options' => array(
       'modal_title' => 'Upload Image',
       'button' => 'Add Image'
-    )
-  ));
-  piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'category',
-    'label' => 'Blog Category',
-    'choices' => piklist(
-      get_terms('category', array(
-        'hide_empty' => true
-      )),
-      array(
-        'term_id',
-        'name'
-      )
     )
   ));
 ?>

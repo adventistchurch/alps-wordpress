@@ -17,6 +17,7 @@ import './editor.scss';
     title: __('Image (2up)'),
     icon: 'format-gallery',
     category: 'common',
+    html: false,
 
     attributes: {
       body: {

@@ -239,13 +239,13 @@ add_theme_support( 'wp-block-styles' );
 // Only allow the following blocks in Gutenberg
 add_filter( 'allowed_block_types', function() {
 	return [
-    'core/paragraph',
     'core/heading',
     'core/image',
     'core/video',
     'core/vimeo',
     'core/block',
     'core/spacer',
+    'gutenberg-blocks/paragraph',
     'gutenberg-blocks/latest-posts',
     'gutenberg-blocks/content-block',
     'gutenberg-blocks/content-show-more',
@@ -255,5 +255,6 @@ add_filter( 'allowed_block_types', function() {
     'gutenberg-blocks/image-2up',
     'gutenberg-blocks/image-breakout',
     'gutenberg-blocks/gallery',
+    'gutenberg-blocks/accordion',
   ];
 } );

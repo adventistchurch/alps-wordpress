@@ -22,10 +22,16 @@
   }
 }
 
+// Ajax load more button
 .alm-btn-wrap .alm-load-more-btn {
   margin-top: 40px;
 }
 
+.alm-load-more-btn.done {
+  opacity: 0.5;
+}
+
+// Comments
 .c-comments {
   display: none;
   margin-top: 20px;
@@ -128,27 +134,43 @@
   }
 }
 
+// Search and filter
+.searchandfilter {
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type='submit'] {
+    margin-top: 20px;
+  }
+}
+
+.search-form input[type='submit'] {
+  margin-top: 20px;
+}
+
 // // Article Body
-// .wp-caption-text {
-//   color: #717171; // $c-gray
-//   font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
-//   font-size: 13px;
-//   font-style: italic;
-//   line-height: 1.35;
-//
-//   @media (min-width: 900px) {
-//     font-size: 15px;
-//   }
-// }
-//
-// figure {
-//   max-width: 100%;
-//
-//   img {
-//     width: 100%;
-//     height: auto;
-//   }
-// }
+.wp-caption-text {
+  color: #717171; // $c-gray
+  font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.35;
+
+  @media (min-width: 900px) {
+    font-size: 15px;
+  }
+}
+
+figure {
+  max-width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 // Gutenberg block overrides
 .wp-block-table {

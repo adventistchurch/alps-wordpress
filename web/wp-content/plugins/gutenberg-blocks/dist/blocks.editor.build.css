@@ -472,6 +472,31 @@ video,
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
+.wp-block-gutenberg-blocks-gallery {
+  list-style-type: none !important; }
+  .wp-block-gutenberg-blocks-gallery .blocks-gallery-item .editor-rich-text {
+    position: relative; }
+  .wp-block-gutenberg-blocks-gallery .blocks-gallery-item .is-selected {
+    border: 3px solid #000000;
+    outline: none;
+    outline-offset: 0; }
+    .wp-block-gutenberg-blocks-gallery .blocks-gallery-item .is-selected .editor-rich-text {
+      width: 100%;
+      left: 0;
+      margin-top: 0; }
+  .wp-block-gutenberg-blocks-gallery li {
+    border: 1px solid #f5f5f5;
+    margin: 0.625rem 0; }
+  .wp-block-gutenberg-blocks-gallery figure {
+    margin: 0;
+    padding: 0; }
+  .wp-block-gutenberg-blocks-gallery img {
+    margin: 0 auto;
+    padding: 0.625rem;
+    display: block; }
+  .wp-block-gutenberg-blocks-gallery figcaption {
+    background-color: #f5f5f5;
+    padding: 0.625rem; }
 /**
  * #.# Common SCSS
  *
@@ -524,3 +549,153 @@ video,
   padding-left: 2.5em; }
   .gutenberg .wp-block-latest-posts.is-grid {
     padding-left: 0; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-gutenberg-blocks-accordion {
+  background-color: #f5f5f5;
+  border-left: 1px solid black;
+  padding: 0.625rem 2.5rem;
+  position: relative; }
+  .wp-block-gutenberg-blocks-accordion::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 3px 3px 0px;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-gutenberg-blocks-accordion {
+  background-color: #f5f5f5;
+  border-left: 1px solid black;
+  padding: 0.625rem 2.5rem;
+  position: relative; }
+  .wp-block-gutenberg-blocks-accordion::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 3px 3px 0px;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }

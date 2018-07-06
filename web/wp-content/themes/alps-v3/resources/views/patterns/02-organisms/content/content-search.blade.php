@@ -1,10 +1,32 @@
-<header class="c-page-header c-page-header__simple u-theme--background-color--dark">
-  <div class="c-page-header__simple--inner u-padding">
-    <h1 class="u-font--primary--xxl u-color--white">
-      Search
-    </h1>
-  </div>
-</header> <!-- /.c-page-header-->
+<div class="c-page-header__search u-background-color--gray--light can-be--dark-dark u-padding--double--top u-padding--double--bottom">
+  <form action="/" role="search" method="get">
+    <div class="l-grid l-grid--7-col u-shift--left--1-col--at-large u-spacing--until-medium">
+      <div class="l-grid-item l-grid-item--m--3-col">
+        <input type="search" value="{{ the_search_query() }}" name="s" class="u-font--secondary--s u-theme--color--darker o-input__search" value="Search..." />
+      </div>
+      <div class="l-grid-item l-grid-item--m--3-col">
+        <div class="u-flex">
+          <button type="submit" class="c-filter__button o-button u-space--right"><span class="u-icon u-icon--xs u-path-fill--white">@include('patterns.00-atoms.icons.icon-search')</span>Search</button> <!-- /.search-form__submit -->
+          @if (shortcode_exists('searchandfilter'))
+            <span class="c-filter__toggle js-toggle o-button o-button--simple" data-toggled="c-filter" data-prefix="c-filter"><span class="u-icon u-icon--xs">@include('patterns.00-atoms.icons.icon-settings')</span></span>
+          @endif
+        </div>
+      </div>
+    </div>
+  </form>
+  @if (shortcode_exists('searchandfilter'))
+    <div class="c-filter">
+      <div class="c-filter__form u-padding--top">
+        <div class="l-grid l-grid--7-col u-shift--left--1-col--at-large">
+          <div class="c-filter__form-item u-spacing--half l-grid-item">
+            <h3 class="u-font--secondary--s u-font-weight--bold u-text-transform--upper u-color--gray can-be--lighter">Settings</h3>
+            @php echo do_shortcode( '[searchandfilter taxonomies="category" types="radio" class="c-filter__form-group" submit_label="Search Again" hide_empty="0"]' ); @endphp
+          </div>
+        </div>
+      </div>
+    </div><!-- ./c-filter -->
+  @endif
+</div> <!-- /.c-page-header__search -->
 <section class="l-grid l-grid--7-col u-shift--left--1-col--at-large l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
   <div class="c-article l-grid-item l-grid-item--l--4-col u-padding--zero--sides">
     <article class="c-article__body u-padding--right">

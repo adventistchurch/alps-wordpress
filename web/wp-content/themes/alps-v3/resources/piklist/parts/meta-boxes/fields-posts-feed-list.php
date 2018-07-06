@@ -125,4 +125,18 @@
       )
     )
   ));
+  piklist( 'field', array(
+    'type' => 'number',
+    'field' => 'post_feed_list_offset',
+    'label' => 'Post Offset',
+    'description' => 'Enter the number of posts you would like to offset.',
+    'columns' => 2,
+    'conditions' => array(
+      array(
+        'reset' => false,
+        'field' => 'post_feed_list',
+        'value' => 'post_feed_list_category'
+      )
+    )
+  ));
 ?>

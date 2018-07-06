@@ -9,5 +9,9 @@
   },
   "dependencies": {
     "cgb-scripts": "1.9.7"
+  },
+  "devDependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.10"
   }
 }

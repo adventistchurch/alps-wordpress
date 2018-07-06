@@ -17,6 +17,7 @@ import './editor.scss';
     icon: 'editor-expand',
     description: 'Content block that has a toggle button to show more.',
     category: 'common',
+    html: false,
 
     attributes: {
       title: {

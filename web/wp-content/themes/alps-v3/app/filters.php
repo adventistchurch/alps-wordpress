@@ -22,13 +22,17 @@ add_filter('body_class', function (array $classes) {
 
     // Add class if sabbath column is hidden
     $hide_sabbath = get_option('alps_theme_settings')['sabbath_hide'];
-    if ($hide_sabbath) {
-      $classes[] = 'hide-sabbath';
-    }
-
-    $hide_sabbath_small = get_option('alps_theme_settings')['sabbath_hide_small'];
-    if ($hide_sabbath_small) {
-      $classes[] = 'hide-sabbath--small';
+    if ($hide_sabbath == 'true') {
+      $hide_sabbath_screens = get_option('alps_theme_settings')['sabbath_hide_screens'][0];
+      if ($hide_sabbath_screens == 'hide-sabbath--until-small') {
+        $classes[] = 'hide-sabbath--until-small';
+      } else if ($hide_sabbath_screens == 'hide-sabbath--until-medium') {
+        $classes[] = 'hide-sabbath--until-medium';
+      } else if ($hide_sabbath_screens == 'hide-sabbath--until-large') {
+        $classes[] = 'hide-sabbath--until-large';
+      } else {
+        $classes[] = 'hide-sabbath--all';
+      }
     }
 
     /** Add page slug if it doesn't exist */

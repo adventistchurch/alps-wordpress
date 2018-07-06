@@ -19,6 +19,7 @@ import './editor.scss';
     description: 'Content block that highlights a row to text.',
     icon: 'welcome-write-blog',
     category: 'common',
+    html: false,
 
     attributes: {
       title: {

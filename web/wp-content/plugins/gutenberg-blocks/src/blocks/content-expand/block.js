@@ -16,6 +16,7 @@ import './editor.scss';
     icon: 'arrow-down-alt',
     description: 'Content block that expands the content on click.',
     category: 'common',
+    html: false,
 
     attributes: {
       kicker: {
