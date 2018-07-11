@@ -2,6 +2,8 @@
  * External dependencies
  */
 const { filter, every } = lodash;
+import './style.scss';
+import { default as edit, defaultColumnsNumber } from './edit';
 
 /**
  * WordPress dependencies
@@ -12,64 +14,54 @@ const el = wp.element.createElement;
 const { registerBlockType } = wp.blocks;
 const RichText = wp.editor.RichText;
 const editorMediaUpload = wp.editor.editorMediaUpload;
-
-/**
- * Internal dependencies
- */
-import './style.scss';
-import { default as edit, defaultColumnsNumber } from './edit';
-
-const blockAttributes = {
-  title: {
-    type: 'array',
-    source: 'children',
-    selector: '.o-title',
-  },
-  images: {
-    type: 'array',
-    default: [],
-    source: 'query',
-    selector: '.wp-block-gutenberg-blocks-gallery .c-gallery-block__image',
-    query: {
-      url: {
-        source: 'attribute',
-        selector: 'img',
-        attribute: 'src',
-      },
-      link: {
-        source: 'attribute',
-        selector: 'img',
-        attribute: 'data-link',
-      },
-      alt: {
-        source: 'attribute',
-        selector: 'img',
-        attribute: 'alt',
-        default: '',
-      },
-      id: {
-        source: 'attribute',
-        selector: 'img',
-        attribute: 'data-id',
-      },
-      caption: {
-        type: 'array',
-        source: 'children',
-        selector: '.c-gallery-block__caption',
-      },
-    },
-  },
-};
-
 const name = 'core/gallery';
 
 registerBlockType( 'gutenberg-blocks/gallery', {
-  title: __( 'Gallery' ),
-  description: __( 'Display multiple images in an elegantly organized tiled layout.' ),
+  title: __('Gallery'),
+  description: __('Display a gallery images in a container that expands on click.'),
   icon: 'format-gallery',
   category: 'common',
-  keywords: [ __( 'images' ), __( 'photos' ) ],
-  attributes: blockAttributes,
+  attributes: {
+    title: {
+      type: 'array',
+      source: 'children',
+      selector: '.o-title',
+    },
+    images: {
+      type: 'array',
+      default: [],
+      source: 'query',
+      selector: '.wp-block-gutenberg-blocks-gallery .c-gallery-block__image',
+      query: {
+        url: {
+          source: 'attribute',
+          selector: 'img',
+          attribute: 'src',
+        },
+        link: {
+          source: 'attribute',
+          selector: 'img',
+          attribute: 'data-link',
+        },
+        alt: {
+          source: 'attribute',
+          selector: 'img',
+          attribute: 'alt',
+          default: '',
+        },
+        id: {
+          source: 'attribute',
+          selector: 'img',
+          attribute: 'data-id',
+        },
+        caption: {
+          type: 'array',
+          source: 'children',
+          selector: '.c-gallery-block__caption',
+        },
+      },
+    },
+  },
 
   edit,
 
@@ -85,7 +77,7 @@ registerBlockType( 'gutenberg-blocks/gallery', {
               </h2>
               <button className="c-gallery-block__toggle js-toggle o-button o-button--outline o-button--toggle o-button--small" data-toggled="this" data-prefix="this"><span class="u-icon u-icon--xs u-path-fill--white"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>o-icon__plus</title><path d="M10,4H6V0H4V4H0V6H4v4H6V6h4Z" fill="#9b9b9b"/></svg></span></button>
             </div>
-            <div className="c-gallery-block__thumb u-background--cover" style={ { backgroundImage: `url('');` } }>
+            <div className="c-gallery-block__thumb u-background--cover" style={ { backgroundImage: `url('${ images.map( ( image, index ) => image.url )[0] }');` } }>
             </div>
           </div>
 

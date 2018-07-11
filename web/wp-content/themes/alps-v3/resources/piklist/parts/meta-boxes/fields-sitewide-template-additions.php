@@ -38,4 +38,14 @@
       'true' => 'Hide the content sidebar'
     )
   ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'hide_featured_image',
+    'label' => 'Hide the Feature Image',
+    'description' => 'Hides the featured image on the page/post header.',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Hide the featured image'
+    )
+  ));
 ?>

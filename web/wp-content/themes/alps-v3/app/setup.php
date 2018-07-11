@@ -195,6 +195,7 @@ add_image_size('flex-height--m', 700, 9999);
 add_image_size('flex-height--l', 900, 9999);
 add_image_size('flex-height--xl', 1100, 9999);
 
+
 // Square crop.
 // add_image_size('square--s', 500, 500, array('center', 'center'));
 // add_image_size('square--m', 650, 650, array('center', 'center'));

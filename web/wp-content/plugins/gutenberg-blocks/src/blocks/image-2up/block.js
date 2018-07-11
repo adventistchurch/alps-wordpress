@@ -4,6 +4,7 @@
 
 import './style.scss';
 import './editor.scss';
+import { default as edit, defaultColumnsNumber } from './edit';
 
 ( function( blocks, components, i18n, element ) {
   var __ = wp.i18n.__;
@@ -15,90 +16,74 @@ import './editor.scss';
 
   registerBlockType( 'gutenberg-blocks/image-2up', {
     title: __('Image (2up)'),
+    description: 'Two images organized in a two column layout.',
     icon: 'format-gallery',
     category: 'common',
-    html: false,
-
     attributes: {
-      body: {
+      images: {
         type: 'array',
-        source: 'children',
-        selector: 'p',
-      },
-      citation: {
-        type: 'array',
-        source: 'children',
-        selector: 'cite',
-      },
-      applyStyles: {
-        type: 'string',
-        default: '',
-      },
-    },
-
-    edit: function( props ) {
-      var attributes = props.attributes;
-
-      function updateStyles() {
-        if (attributes.applyStyles) {
-          props.setAttributes( { applyStyles: '' } );
-        } else {
-          props.setAttributes( { applyStyles: 'o-pullquote--extended' } );
-        }
-      }
-
-      return [
-        el(
-          InspectorControls, {
-            key: 'inspector'
+        default: [],
+        source: 'query',
+        selector: '.wp-block-gutenberg-blocks-image-2up .l-grid-item--m--3-col',
+        query: {
+          url: {
+            source: 'attribute',
+            selector: 'img',
+            attribute: 'src',
           },
-          el(
-            ToggleControl, {
-              label: 'Extend Quote',
-              help: 'Extends the quote outside the page content.',
-              checked: attributes.applyStyles,
-              onChange: updateStyles
-            }
-          ),
-        ),
-        el ( 'div', {
-          className: props.className,
+          link: {
+            source: 'attribute',
+            selector: 'img',
+            attribute: 'data-link',
+          },
+          alt: {
+            source: 'attribute',
+            selector: 'img',
+            attribute: 'alt',
+            default: '',
+          },
+          id: {
+            source: 'attribute',
+            selector: 'img',
+            attribute: 'data-id',
+          },
+          caption: {
+            type: 'array',
+            source: 'children',
+            selector: '.o-caption',
+          },
         },
-          el ( 'blockquote', {},
-            el( RichText, {
-              tagName: 'p',
-              placeholder: 'Write a quote...',
-              keepPlaceholderOnFocus: true,
-              isSelected: false,
-              value: attributes.body,
-              onChange: function( newBody ) {
-                props.setAttributes( { body: newBody } );
-              }
-            } ),
-            el( RichText, {
-              tagName: 'cite',
-              placeholder: 'Citation',
-              keepPlaceholderOnFocus: true,
-              isSelected: false,
-              value: attributes.citation,
-              onChange: function( newCitation ) {
-                props.setAttributes( { citation: newCitation } );
-              }
-            } ),
-          ),
-        )
-      ];
+      },
     },
 
-    save: function( props ) {
-      var attributes = props.attributes;
+    edit,
+
+    save( { attributes } ) {
+      const { images } = attributes;
 
       return (
-        <div className={ attributes.applyStyles }>
-          <blockquote className="pullquote u-theme--border-color--darker--left u-theme--color--darker u-padding--right">
-            <p>{ attributes.body }</p>
-            <cite className="o-citation u-theme--color--base">{ attributes.citation }</cite>
-          </blockquote>
+        <div>
+          <section class="l-grid l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7">
+            { images.map( ( image ) => {
+              const img = <picture className="picture">
+                <img className={ 'wp-image-' + image.id + ' size-large'} itemprop="image" src={ image.url } alt={ image.alt } data-id={ image.id } />
+              </picture>;
+              return (
+                <div className="l-grid-item--m--3-col u-padding--zero--left">
+                  <figure key={ image.id || image.url } className="o-figure">
+                    <div className="o-figure__image">
+                      { img }
+                    </div>
+                    <div className="o-figure__caption">
+                      <figcaption className="o-figcaption">
+                        <p className="o-caption u-color--gray u-font--secondary--s">{ image.caption }</p>
+                      </figcaption>
+                    </div>
+                  </figure>
+                </div>
+              );
+            } ) }
+          </section>
         </div>
       );
     }

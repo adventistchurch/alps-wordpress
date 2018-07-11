@@ -52,7 +52,9 @@
     }
   }
 
-  if ($thumb_id) {
+  $hide_featured_image = get_post_meta($id, 'hide_featured_image', true);
+
+  if ($thumb_id && $hide_featured_image != 'true') {
     $picture = true;
     $thumb_size = 'horiz__4x3';
     $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];

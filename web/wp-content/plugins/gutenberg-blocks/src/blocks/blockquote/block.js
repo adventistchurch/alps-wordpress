@@ -61,7 +61,7 @@ import './editor.scss';
             }
           ),
         ),
-        el ( 'div', {
+        el ( 'blockquote', {
           className: props.className,
         },
           el ( 'blockquote', {},
@@ -94,12 +94,10 @@ import './editor.scss';
       var attributes = props.attributes;
 
       return (
-        <div className={ attributes.applyStyles }>
-          <blockquote className="pullquote u-theme--border-color--darker--left u-theme--color--darker u-padding--right">
-            <p>{ attributes.body }</p>
-            <cite className="o-citation u-theme--color--base">{ attributes.citation }</cite>
-          </blockquote>
-        </div>
+        <blockquote className={ 'pullquote u-theme--border-color--darker--left u-theme--color--darker u-padding--right ' + attributes.applyStyles }>
+          <p>{ attributes.body }</p>
+          <cite className="o-citation u-theme--color--base">{ attributes.citation }</cite>
+        </blockquote>
       );
     }
 

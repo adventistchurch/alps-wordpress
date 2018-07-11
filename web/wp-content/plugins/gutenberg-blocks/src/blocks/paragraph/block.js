@@ -62,6 +62,7 @@ import './editor.scss';
 
       return el( RichText.Content, {
         className: props.className,
+        tagName: 'p',
         style: { textAlign: attributes.alignment },
         value: attributes.body
       } );
