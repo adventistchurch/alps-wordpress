@@ -1,11 +1,584 @@
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}.wp-block-gutenberg-blocks-content-block{margin-top:2.5rem !important}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}.wp-block-gutenberg-blocks-image-breakout{margin-left:0}@media (min-width: 700px){.wp-block-gutenberg-blocks-image-breakout{margin-left:calc(100vw/7 * -1)}}@media (min-width: 900px){.wp-block-gutenberg-blocks-image-breakout{margin-left:0}}@media (min-width: 1300px){.wp-block-gutenberg-blocks-image-breakout{margin-left:calc(100vw/7 * -1)}}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}.wp-block-gutenberg-blocks-image-2up{margin-left:0}@media (min-width: 700px){.wp-block-gutenberg-blocks-image-2up{margin-left:calc(100vw/7 * -1)}}@media (min-width: 900px){.wp-block-gutenberg-blocks-image-2up{margin-left:0}}@media (min-width: 1300px){.wp-block-gutenberg-blocks-image-2up{margin-left:calc(100vw/7 * -1)}}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}.wp-block-latest-posts.alignleft{margin-right:2em}.wp-block-latest-posts.alignright{margin-left:2em}.wp-block-latest-posts.is-grid{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none}.wp-block-latest-posts.is-grid li{margin:0 16px 16px 0;width:100%}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}.wp-block-gutenberg-blocks-accordion+.wp-block-gutenberg-blocks-accordion{margin-top:1.25rem !important}
-.gutenberg-editor-page .o-kicker{font-style:italic;font-weight:bold;color:#717171}.gutenberg-editor-page .o-heading--l{font-size:110%;font-weight:bold}.gutenberg-editor-page .o-field__body{border:1px solid #ccd0d4;padding:1.25rem;margin-bottom:1.25rem}.gutenberg-editor-page .components-base-control__label{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:bold;margin-top:1.25rem}.wp-block-video figcaption,.wp-block-embed figcaption,.wp-block-image figcaption{text-align:left;font-style:italic;color:#717171;font-size:15px;margin:0}video,.wp-block-video,.wp-block-embed-vimeo{width:100%}.wp-block-spacer{margin:0 !important}p.is-small-text{font-size:14px}p.is-regular-text{font-size:16px}p.is-large-text{font-size:36px}p.is-larger-text{font-size:48px}p.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;line-height:0.68;font-weight:100;margin:.05em .1em 0 0;text-transform:uppercase;font-style:normal}p.has-background{padding:20px 30px}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-gutenberg-blocks-content-block {
+  margin-top: 2.5rem !important; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-gutenberg-blocks-image-breakout {
+  margin-left: 0; }
+  @media (min-width: 700px) {
+    .wp-block-gutenberg-blocks-image-breakout {
+      margin-left: calc(100vw/7 * -1); } }
+  @media (min-width: 900px) {
+    .wp-block-gutenberg-blocks-image-breakout {
+      margin-left: 0; } }
+  @media (min-width: 1300px) {
+    .wp-block-gutenberg-blocks-image-breakout {
+      margin-left: calc(100vw/7 * -1); } }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-gutenberg-blocks-image-2up {
+  margin-left: 0; }
+  @media (min-width: 700px) {
+    .wp-block-gutenberg-blocks-image-2up {
+      margin-left: calc(100vw/7 * -1); } }
+  @media (min-width: 900px) {
+    .wp-block-gutenberg-blocks-image-2up {
+      margin-left: 0; } }
+  @media (min-width: 1300px) {
+    .wp-block-gutenberg-blocks-image-2up {
+      margin-left: calc(100vw/7 * -1); } }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-gutenberg-blocks-accordion + .wp-block-gutenberg-blocks-accordion {
+  margin-top: 1.25rem !important; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Neutral Colors
+ */
+/**
+ * Default Spacing/Padding
+ */
+.gutenberg-editor-page .o-kicker {
+  font-style: italic;
+  font-weight: bold;
+  color: #717171; }
+
+.gutenberg-editor-page .o-heading--l {
+  font-size: 110%;
+  font-weight: bold; }
+
+.gutenberg-editor-page .o-field__body {
+  border: 1px solid #ccd0d4;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem; }
+
+.gutenberg-editor-page .components-base-control__label {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: bold;
+  margin-top: 1.25rem; }
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: #717171;
+  font-size: 15px;
+  margin: 0; }
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%; }
+
+.wp-block-spacer {
+  margin: 0 !important; }
+
+p.is-small-text {
+  font-size: 14px; }
+
+p.is-regular-text {
+  font-size: 16px; }
+
+p.is-large-text {
+  font-size: 36px; }
+
+p.is-larger-text {
+  font-size: 48px; }
+
+p.has-drop-cap:not(:focus):first-letter {
+  float: left;
+  font-size: 8.4em;
+  line-height: 0.68;
+  font-weight: 100;
+  margin: .05em .1em 0 0;
+  text-transform: uppercase;
+  font-style: normal; }
+
+p.has-background {
+  padding: 20px 30px; }

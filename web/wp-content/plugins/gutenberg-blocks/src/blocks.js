@@ -16,6 +16,5 @@ import './blocks/blockquote/block.js';
 import './blocks/image-breakout/block.js';
 import './blocks/image-2up/block.js';
 import './blocks/gallery/block.js';
-import './blocks/latest-posts/block.js';
 import './blocks/accordion/block.js';
 import './blocks/paragraph/block.js';

@@ -246,7 +246,6 @@ add_filter( 'allowed_block_types', function() {
     'core/block',
     'core/spacer',
     'gutenberg-blocks/paragraph',
-    'gutenberg-blocks/latest-posts',
     'gutenberg-blocks/content-block',
     'gutenberg-blocks/content-show-more',
     'gutenberg-blocks/content-expand',
