@@ -10,8 +10,8 @@ import './editor.scss';
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
   var RichText = wp.editor.RichText;
-	var InspectorControls = wp.editor.InspectorControls;
-	var ToggleControl = wp.components.ToggleControl;
+  var InspectorControls = wp.editor.InspectorControls;
+  var ToggleControl = wp.components.ToggleControl;
 
   registerBlockType( 'gutenberg-blocks/blockquote', {
     title: __('Blockquote'),

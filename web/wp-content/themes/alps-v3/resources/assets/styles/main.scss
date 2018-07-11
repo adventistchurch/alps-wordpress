@@ -2,6 +2,7 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+// Page Header
 .c-page-header a {
   color: white !important;
 
@@ -10,6 +11,7 @@
   }
 }
 
+// Hero
 .c-hero {
   .c-block__image {
     min-height: 250px;
@@ -67,6 +69,7 @@
   }
 }
 
+// Article
 .c-article__footer {
   a {
     cursor: pointer;
@@ -79,10 +82,6 @@
   & > * + * {
     margin-top: 10px;
   }
-}
-
-.search-submit {
-  margin-top: 10px;
 }
 
 // Breakout Block
@@ -150,7 +149,7 @@
   margin-top: 20px;
 }
 
-// // Article Body
+// Article Body
 .wp-caption-text {
   color: #717171; // $c-gray
   font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
@@ -163,16 +162,16 @@
   }
 }
 
-// figure {
-//   max-width: 100%;
-//
-//   img {
-//     width: 100%;
-//     height: auto;
-//   }
-// }
-
 // Gutenberg block overrides
 .wp-block-table {
   border: 0;
+}
+
+// Misc
+.search-submit {
+  margin-top: 10px;
+}
+
+figure {
+  max-width: 100%;
 }

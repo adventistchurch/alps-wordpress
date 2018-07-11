@@ -23,16 +23,16 @@ import './editor.scss';
 
     attributes: {
       url: {
-    		type: 'string',
-    	},
-    	caption: {
-    		type: 'array',
-    		source: 'children',
-    		selector: 'p',
-    	},
-    	id: {
-    		type: 'number',
-    	},
+        type: 'string',
+      },
+      caption: {
+        type: 'array',
+        source: 'children',
+        selector: 'p',
+      },
+      id: {
+        type: 'number',
+      },
     },
 
     edit: function( props ) {

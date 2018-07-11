@@ -1,10 +1,6 @@
 /* ------------------------------------ *    $WORDPRESS STYLES
 \* ------------------------------------ */
 
-figcaption {
-  margin: 0;
-}
-
 .c-page-header a {
   color: white !important;
 }
@@ -72,10 +68,6 @@ figcaption {
 }
 
 .c-widget ul > * + * {
-  margin-top: 10px;
-}
-
-.search-submit {
   margin-top: 10px;
 }
 
@@ -166,6 +158,14 @@ figcaption {
 
 .wp-block-table {
   border: 0;
+}
+
+.search-submit {
+  margin-top: 10px;
+}
+
+figure {
+  max-width: 100%;
 }
 
 
