@@ -426,6 +426,7 @@ video,
  * which makes it higher in priority.
  */
 .wp-block-gutenberg-blocks-image-2up {
+  margin: 0;
   list-style-type: none !important;
   display: -ms-flexbox;
   display: flex; }

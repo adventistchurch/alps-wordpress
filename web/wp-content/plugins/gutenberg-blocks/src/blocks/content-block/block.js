@@ -67,7 +67,7 @@ import './editor.scss';
             } ),
             el( TextControl, {
               type: 'url',
-							label: __( 'Link Url' ),
+              label: __( 'Link Url' ),
               value: attributes.link,
               placeholder: 'http://',
               keepPlaceholderOnFocus: true,
