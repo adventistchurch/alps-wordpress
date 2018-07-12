@@ -31,7 +31,7 @@ if (post_password_required()) {
     @php
       comment_form(
         array(
-          'title_reply_before' => '<h3 class="comment-reply-title u-theme--color--darker">',
+          'title_reply_before' => '<h3 class="u-font--secondary--m comment-reply-title u-theme--color--darker">',
           'title_reply_after'  => '</h3>',
           'logged_in_as' => '',
           'title_reply' => 'Leave a Comment',
