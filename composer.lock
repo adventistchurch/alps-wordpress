@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6573c95b890e6cd55d2116f0d5276527",
+    "content-hash": "62da33062fb197e44962de5204e39a67",
     "packages": [
         {
             "name": "composer/installers",
@@ -210,23 +210,23 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.9.6",
+            "version": "4.9.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "6ff81eb3d93d326b78a8bc0f120e72c161ec58c8"
+                "reference": "1116e10f71f8fb811856df212af652c427bc6bd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/6ff81eb3d93d326b78a8bc0f120e72c161ec58c8",
-                "reference": "6ff81eb3d93d326b78a8bc0f120e72c161ec58c8",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/1116e10f71f8fb811856df212af652c427bc6bd1",
+                "reference": "1116e10f71f8fb811856df212af652c427bc6bd1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "4.9.6"
+                "wordpress/core-implementation": "4.9.7"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -246,7 +246,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-05-17T20:02:55+00:00"
+            "time": "2018-07-05T18:12:13+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -319,15 +319,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "3.1.1",
+            "version": "3.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/3.1.1"
+                "reference": "tags/3.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.2.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -339,15 +339,15 @@
         },
         {
             "name": "wpackagist-plugin/piklist",
-            "version": "0.11.2",
+            "version": "0.11.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/piklist/",
-                "reference": "tags/0.11.2"
+                "reference": "tags/0.11.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/piklist.0.11.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/piklist.0.11.4.zip",
                 "reference": null,
                 "shasum": null
             },
