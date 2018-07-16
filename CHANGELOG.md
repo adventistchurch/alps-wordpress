@@ -1,5 +1,7 @@
 ## Change Log ##
 
+### v2.1.9 ###
+- Bug: Fixing a version error bug.
 
 ### v2.1.8 ###
 - [#177](https://github.com/adventistchurch/alps-wordpress/issues/177) Bug: This Fixes an issue introduced with some changes to the Piklist extension. It fixes the ability to edit the home-row-blocks on the home template. 
