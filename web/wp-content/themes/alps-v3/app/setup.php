@@ -2,18 +2,22 @@
 
 namespace App;
 
-use Illuminate\Contracts\Container\Container as ContainerContract;
+use Roots\Sage\Container;
 use Roots\Sage\Assets\JsonManifest;
-use Roots\Sage\Config;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
 /**
  * Theme assets
  */
+
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+
+    if (is_single() && comments_open() && get_option('thread_comments')) {
+      wp_enqueue_script('comment-reply');
+    }
 
     if (!is_admin()) {
       // Load a copy of jQuery from the jquery CDN.
@@ -27,6 +31,7 @@ add_action('wp_enqueue_scripts', function () {
 /**
  * Theme setup
  */
+
 add_action('after_setup_theme', function () {
     /**
      * Enable features from Soil when plugin is activated
@@ -49,10 +54,10 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
-        'secondary_navigation' => __('Secondary Navigation', 'sage'),
-        'footer_primary_navigation' => __('Footer Primary Navigation', 'sage'),
-        'footer_secondary_navigation' => __('Footer Secondary Navigation', 'sage')
+      'primary_navigation' => __('Primary Navigation', 'sage'),
+      'secondary_navigation' => __('Secondary Navigation', 'sage'),
+      'footer_primary_navigation' => __('Footer Primary Navigation', 'sage'),
+      'footer_secondary_navigation' => __('Footer Secondary Navigation', 'sage')
     ]);
 
     /**
@@ -113,29 +118,6 @@ add_action('the_post', function ($post) {
  */
 add_action('after_setup_theme', function () {
     /**
-     * Sage config
-     */
-    $paths = [
-        'dir.stylesheet' => get_stylesheet_directory(),
-        'dir.template'   => get_template_directory(),
-        'dir.upload'     => wp_upload_dir()['basedir'],
-        'uri.stylesheet' => get_stylesheet_directory_uri(),
-        'uri.template'   => get_template_directory_uri(),
-    ];
-    $viewPaths = collect(preg_replace('%[\/]?(resources/views)?[\/.]*?$%', '', [STYLESHEETPATH, TEMPLATEPATH]))
-        ->flatMap(function ($path) {
-            return ["{$path}/resources/views", $path];
-        })->unique()->toArray();
-
-    config([
-        'assets.manifest' => "{$paths['dir.stylesheet']}/../dist/assets.json",
-        'assets.uri'      => "{$paths['uri.stylesheet']}/dist",
-        'view.compiled'   => "{$paths['dir.upload']}/cache/compiled",
-        'view.namespaces' => ['App' => WP_CONTENT_DIR],
-        'view.paths'      => $viewPaths,
-    ] + $paths);
-
-    /**
      * Add JsonManifest to Sage container
      */
     sage()->singleton('sage.assets', function () {
@@ -145,32 +127,26 @@ add_action('after_setup_theme', function () {
     /**
      * Add Blade to Sage container
      */
-    sage()->singleton('sage.blade', function (ContainerContract $app) {
+    sage()->singleton('sage.blade', function (Container $app) {
         $cachePath = config('view.compiled');
         if (!file_exists($cachePath)) {
             wp_mkdir_p($cachePath);
         }
         (new BladeProvider($app))->register();
-        return new Blade($app['view'], $app);
+        return new Blade($app['view']);
     });
 
     /**
      * Create @asset() Blade directive
      */
     sage('blade')->compiler()->directive('asset', function ($asset) {
-        return "<?= App\\asset_path({$asset}); ?>";
+        return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
 
 /**
- * Init config
- */
-sage()->bindIf('config', Config::class, true);
-
-/**
  * Custom image styles.
  */
-
 // Featured crop.
 add_image_size('featured__hero--s', 500, 400, array('center', 'center'));
 add_image_size('featured__hero--m', 800, 500, array('center', 'center'));
@@ -194,8 +170,3 @@ add_image_size('flex-height--s', 350, 9999);
 add_image_size('flex-height--m', 700, 9999);
 add_image_size('flex-height--l', 900, 9999);
 add_image_size('flex-height--xl', 1100, 9999);
-
-
-// Square crop.
-// add_image_size('square--s', 500, 500, array('center', 'center'));
-// add_image_size('square--m', 650, 650, array('center', 'center'));
