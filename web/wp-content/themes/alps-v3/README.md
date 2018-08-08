@@ -5,22 +5,15 @@
 
 Sage is a WordPress starter theme with a modern development workflow.
 
-**Sage 9 is in active development and is currently in beta. The `master` branch tracks Sage 9 development. If you want a stable version, use the [latest Sage 8 release](https://github.com/roots/sage/releases/latest).**
-
 ## Features
 
 * Sass for stylesheets
-* ES6 for JavaScript
+* Modern JavaScript
 * [Webpack](https://webpack.github.io/) for compiling assets, optimizing images, and concatenating and minifying files
 * [Browsersync](http://www.browsersync.io/) for synchronized browser testing
-* [Laravel Blade](https://laravel.com/docs/5.3/blade) as a templating engine
+* [Blade](https://laravel.com/docs/5.5/blade) as a templating engine
 * [Controller](https://github.com/soberwp/controller) for passing data to Blade templates
-* CSS framework options:
-  * [Bootstrap 4](http://getbootstrap.com/)
-  * [Foundation](http://foundation.zurb.com/)
-  * [Tachyons](http://tachyons.io/)
-  * None (blank slate)
-* Font Awesome (optional)
+* CSS framework (optional): [Bootstrap 4](https://getbootstrap.com/), [Bulma](https://bulma.io/), [Foundation](https://foundation.zurb.com/), [Tachyons](http://tachyons.io/)
 
 See a working example at [roots-example-project.com](https://roots-example-project.com/).
 
@@ -29,7 +22,7 @@ See a working example at [roots-example-project.com](https://roots-example-proje
 Make sure all dependencies have been installed before moving on:
 
 * [WordPress](https://wordpress.org/) >= 4.7
-* [PHP](http://php.net/manual/en/install.php) >= 5.6.4
+* [PHP](https://secure.php.net/manual/en/install.php) >= 7.1.3 (with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled)
 * [Composer](https://getcomposer.org/download/)
 * [Node.js](http://nodejs.org/) >= 6.9.x
 * [Yarn](https://yarnpkg.com/en/docs/install)
@@ -40,22 +33,23 @@ Install Sage using Composer from your WordPress themes directory (replace `your-
 
 ```shell
 # @ app/themes/ or wp-content/themes/
+$ composer create-project roots/sage your-theme-name
+```
+
+To install the latest development version of Sage, add `dev-master` to the end of the command:
+
+```shell
 $ composer create-project roots/sage your-theme-name dev-master
 ```
 
-During theme installation you will have the options to:
-
-* Update theme headers (theme name, description, author, etc.)
-* Select a CSS framework (Bootstrap, Foundation, Tachyons, none)
-* Add Font Awesome
-* Configure Browsersync (path to theme, local development URL)
+During theme installation you will have options to update `style.css` theme headers, select a CSS framework, and configure Browsersync.
 
 ## Theme structure
 
 ```shell
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
-│   ├── lib/Sage/         # → Blade implementation, asset manifest
+│   ├── controllers/      # → Controller files
 │   ├── admin.php         # → Theme customizer setup
 │   ├── filters.php       # → Theme filters
 │   ├── helpers.php       # → Helper functions
@@ -73,7 +67,6 @@ themes/your-theme-name/   # → Root of your Sage based theme
 │   │   ├── images/       # → Theme images
 │   │   ├── scripts/      # → Theme JS
 │   │   └── styles/       # → Theme stylesheets
-│   ├── controllers/      # → Controller files
 │   ├── functions.php     # → Composer autoloader, theme includes
 │   ├── index.php         # → Never manually edit
 │   ├── screenshot.png    # → Theme screenshot for WP admin
@@ -97,21 +90,24 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 
 ### Build commands
 
-* `yarn run start` — Compile assets when file changes are made, start Browsersync session
-* `yarn run build` — Compile and optimize the files in your assets directory
-* `yarn run build:production` — Compile assets for production
+* `yarn start` — Compile assets when file changes are made, start Browsersync session
+* `yarn build` — Compile and optimize the files in your assets directory
+* `yarn build:production` — Compile assets for production
 
 ## Documentation
 
-Sage 8 documentation is available at [https://roots.io/sage/docs/](https://roots.io/sage/docs/).
-
-Sage 9 documentation is currently in progress and can be viewed at [https://github.com/roots/docs/tree/sage-9/sage](https://github.com/roots/docs/tree/sage-9/sage).
-
-Controller documentation is available at [https://github.com/soberwp/controller#usage](https://github.com/soberwp/controller#usage).
+* [Sage documentation](https://roots.io/sage/docs/)
+* [Controller documentation](https://github.com/soberwp/controller#usage)
 
 ## Contributing
 
 Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
+
+## Gold sponsors
+
+Help support our open-source development efforts by [contributing to Sage on OpenCollective](https://opencollective.com/sage).
+
+<a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="200" height="150"></a> <a href="https://k-m.com/"><img src="https://roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a>
 
 ## Community
 
@@ -122,34 +118,3 @@ Keep track of development and community news.
 * Read and subscribe to the [Roots Blog](https://roots.io/blog/)
 * Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
 * Listen to the [Roots Radio podcast](https://roots.io/podcast/)
-
-## Gutenberg
-
-**Resources:**
-* https://github.com/ahmadawais/create-guten-block#getting-started
-* https://deliciousbrains.com/custom-gutenberg-block/
-* https://wordpress.org/gutenberg/handbook/
-
-**Creating a block**
-* Run `npm install -g create-guten-block` to install Create Guten Block globally
-* Navigate to `/plugins` folder in the terminal
-* Run `npx create-guten-block my-block` to create a block, then navigation to the plugin block folder `cd my-block`
-* Run `npm start`
-
-
-## Settings
-
-**Secondary Navigation Icons**
-To add icons to the secondary nav, enter the icon name in the title field. Below are the values for the existing icons.
-
-Icon Title Values:
-* contact
-* sitemap
-* press
-* find-a-church
-* language
-* search
-* share
-
-**Breadcrumbs**
-To show the breadcrumbs, activate the `Yoast` plugin. The breadcrumbs can then be toggled on/off under `SEO`>`Search Appearance`>`Breadcrumbs`

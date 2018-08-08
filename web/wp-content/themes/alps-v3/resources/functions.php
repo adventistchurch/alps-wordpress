@@ -4,6 +4,9 @@
  * Do not edit anything in this file unless you know what you're doing
  */
 
+use Roots\Sage\Config;
+use Roots\Sage\Container;
+
 /**
  * Helper function for prettying up errors
  * @param string $message
@@ -20,8 +23,8 @@ $sage_error = function ($message, $subtitle = '', $title = '') {
 /**
  * Ensure compatible version of PHP is used
  */
-if (version_compare('5.6.4', phpversion(), '>=')) {
-    $sage_error(__('You must be using PHP 5.6.4 or greater.', 'sage'), __('Invalid PHP version', 'sage'));
+if (version_compare('7.1', phpversion(), '>=')) {
+    $sage_error(__('You must be using PHP 7.1 or greater.', 'sage'), __('Invalid PHP version', 'sage'));
 }
 
 /**
@@ -43,14 +46,6 @@ if (!class_exists('Roots\\Sage\\Container')) {
     }
     require_once $composer;
 }
-
-/**
- * Load ajax script
- */
-function enqueue_ajax_load_more() {
-   wp_enqueue_script('ajax-load-more'); // Already registered, just needs to be enqueued
-}
-add_action('wp_enqueue_scripts', 'enqueue_ajax_load_more');
 
 /**
  * Sage required files
@@ -82,24 +77,19 @@ array_map(function ($file) use ($sage_error) {
  * ├── STYLESHEETPATH         -> /srv/www/example.com/current/web/app/themes/sage/resources/views
  * └── TEMPLATEPATH           -> /srv/www/example.com/current/web/app/themes/sage/resources
  */
-if (is_customize_preview() && isset($_GET['theme'])) {
-    $sage_error(__('Theme must be activated prior to using the customizer.', 'sage'));
-}
-$sage_views = basename(dirname(__DIR__)).'/'.basename(__DIR__).'/views';
-add_filter('stylesheet', function () use ($sage_views) {
-    return dirname($sage_views);
-});
-add_filter('stylesheet_directory_uri', function ($uri) {
-    return dirname($uri);
-});
-if ($sage_views !== get_option('stylesheet')) {
-    update_option('stylesheet', $sage_views);
-    if (php_sapi_name() === 'cli') {
-        return;
-    }
-    wp_redirect($_SERVER['REQUEST_URI']);
-    exit();
-}
+array_map(
+    'add_filter',
+    ['theme_file_path', 'theme_file_uri', 'parent_theme_file_path', 'parent_theme_file_uri'],
+    array_fill(0, 4, 'dirname')
+);
+Container::getInstance()
+    ->bindIf('config', function () {
+        return new Config([
+            'assets' => require dirname(__DIR__).'/config/assets.php',
+            'theme' => require dirname(__DIR__).'/config/theme.php',
+            'view' => require dirname(__DIR__).'/config/view.php',
+        ]);
+    }, true);
 
 /**
  * Allow SVG's through WP media uploader
@@ -110,6 +100,9 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+/**
+ * Add post formats
+ */
 add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
 
 /**
@@ -117,43 +110,43 @@ add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
  */
 // require_once('wp-updates-theme.php');
 // new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
+//require_once get_template_directory() . '/app/plugin-activation.php';
 
 /**
  * Require plugins on theme install
  */
-// require_once get_template_directory() . '/lib/plugin-activation.php';
-// add_action( 'tgmpa_register', 'adventist_register_required_plugins' );
-// function adventist_register_required_plugins() {
-//   $plugins = array(
-//     array(
-//       'name'               => 'Piklist', // The plugin name.
-//       'slug'               => 'piklist', // The plugin slug (typically the folder name).
-//       'source'             => get_template_directory() . '/lib/plugins/piklist.zip', // The plugin source.
-//       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-//       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-//       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-//     ),
-//     // WordPress SEO
-// 		array(
-// 			'name'     => 'WordPress SEO by Yoast',
-// 			'slug'     => 'wordpress-seo',
-// 			'required' => false,
-// 		)
-//   );
-//   $config = array(
-//     'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.
-//     'default_path' => '',                      // Default absolute path to bundled plugins.
-//     'menu'         => 'tgmpa-install-plugins', // Menu slug.
-//     'parent_slug'  => 'themes.php',            // Parent menu slug.
-//     'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
-//     'has_notices'  => true,                    // Show admin notices or not.
-//     'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-//     'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-//     'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-//     'message'      => '',                      // Message to output right before the plugins table.
-//   );
-//   tgmpa( $plugins, $config );
-// }
+add_action( 'tgmpa_register', 'adventist_register_required_plugins' );
+function adventist_register_required_plugins() {
+  $plugins = array(
+    array(
+      'name'               => 'Piklist', // The plugin name.
+      'slug'               => 'piklist', // The plugin slug (typically the folder name).
+      'source'             => get_template_directory() . '/lib/plugins/piklist.zip', // The plugin source.
+      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+    ),
+    // WordPress SEO
+		array(
+			'name'     => 'WordPress SEO by Yoast',
+			'slug'     => 'wordpress-seo',
+			'required' => false,
+		)
+  );
+  $config = array(
+    'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+    'default_path' => '',                      // Default absolute path to bundled plugins.
+    'menu'         => 'tgmpa-install-plugins', // Menu slug.
+    'parent_slug'  => 'themes.php',            // Parent menu slug.
+    'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+    'has_notices'  => true,                    // Show admin notices or not.
+    'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+    'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+    'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+    'message'      => '',                      // Message to output right before the plugins table.
+  );
+  tgmpa( $plugins, $config );
+}
 
 /**
  * Fix for Piklist fields not saving

@@ -1,3 +1,42 @@
+### 9.0.1: April 30th, 2018
+* Update to Bootstrap 4.1.1 ([#2065](https://github.com/roots/sage/pull/2065))
+* Auto-detect `proxyUrl` scheme ([#2062](https://github.com/roots/sage/pull/2062))
+* Bump to Laravel 5.6 ([#2061](https://github.com/roots/sage/pull/2061))
+* Update to Bootstrap 4.1.0 ([#2056](https://github.com/roots/sage/pull/2056))
+* Change inline `@php` directive to full form ([#2042](https://github.com/roots/sage/pull/2042))
+* PHP 7.1.3+ is now required ([#2037](https://github.com/roots/sage/pull/2037))
+
+### 9.0.0: February 7th, 2018
+* Update to Bootstrap 4 ([#2015](https://github.com/roots/sage/pull/2015))
+* Allow `no-console` development ([#2008](https://github.com/roots/sage/pull/2008))
+* Move variables and Bootstrap lines to autoload ([#1993](https://github.com/roots/sage/pull/1993))
+* Update controller examples ([#1986](https://github.com/roots/sage/pull/1986))
+* Update to Bootstrap 4 Beta 2 ([#1981](https://github.com/roots/sage/pull/1981))
+* Add friendly-errors-webpack-plugin ([#1961](https://github.com/roots/sage/pull/1961))
+* Update to Controller 9.0.0-beta.4 ([#1959](https://github.com/roots/sage/pull/1959))
+* Change default Controller path to `app/controllers/` ([#1954](https://github.com/roots/sage/pull/1954))
+* Fix `lint:styles` task with cmd.exe ([#1955](https://github.com/roots/sage/pull/1955))
+* Ensure template filenames are without path and extension ([#1941](https://github.com/roots/sage/pull/1941))
+* Moved `title()` helper to `app.php` controller ([#1912](https://github.com/roots/sage/pull/1912))
+* Fix `lint:styles` script not matching files in deep subdirectories ([#1951](https://github.com/roots/sage/pull/1951))
+* Fix for plugins that don't enqueue their scripts properly ([#1949](https://github.com/roots/sage/pull/1949))
+* Fix Popper for Bootstrap 4 ([#1946](https://github.com/roots/sage/pull/1946))
+
+### 9.0.0-beta.4: August 11th, 2017
+* Update to Bootstrap 4.0.0-beta ([#1943](https://github.com/roots/sage/pull/1943))
+* PHP 7+ is now required ([#1935](https://github.com/roots/sage/pull/1935))
+* Update dependencies, support `config-local.json`, implement autoload system for styles/scripts, use `roots/sage-installer`, use `roots/sage-lib` ([#1919](https://github.com/roots/sage/pull/1919))
+* Add soberwp/controller ([#1903](https://github.com/roots/sage/pull/1903))
+* Change syntax of template call to match other files in views ([#1908](https://github.com/roots/sage/pull/1908))
+* Add Tachyons as a CSS framework option ([#1867](https://github.com/roots/sage/pull/1867))
+* Remove post format reference in template call ([#1904](https://github.com/roots/sage/pull/1904))
+* Update inline documentation to reflect correct theme file locations ([#1890](https://github.com/roots/sage/pull/1890))
+* Optimize CSS Assets safe = true ([#1901](https://github.com/roots/sage/pull/1901))
+* Update Autoprefixer and standardize browserlist location ([#1899](https://github.com/roots/sage/pull/1899))
+* Do not redirect for WP-CLI ([#1891](https://github.com/roots/sage/pull/1891))
+* Illuminate: container make with parameters ([#1888](https://github.com/roots/sage/pull/1888))
+* Add Stylelint for linting stylesheets ([#1885](https://github.com/roots/sage/pull/1885))
+
 ### 9.0.0-beta.3: April 21st, 2017
 * Move required theme files to `sage/resources` ([#1877](https://github.com/roots/sage/pull/1877))
 * Move `src/` to `app/` ([#1868](https://github.com/roots/sage/pull/1868))

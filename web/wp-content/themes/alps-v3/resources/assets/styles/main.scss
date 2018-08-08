@@ -2,6 +2,63 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+// Breakout Block
+.c-sidebar .c-block__breakout {
+  @media (max-width: 900px) {
+    margin-top: 0;
+  }
+
+  @media (min-width: 900px) {
+    margin-right: -20px;
+  }
+
+  @media (min-width: 1300px) {
+    margin-top: -40px;
+  }
+
+  margin-right: -15px;
+  margin-top: -80px;
+}
+
+.body.hide-sabbath .c-sidebar .c-block__breakout {
+  @media (min-width: 700px) {
+    margin-top: -30px;
+  }
+
+  @media (min-width: 900px) {
+    margin-top: -40px;
+  }
+}
+
+// Breadcrumbs
+.c-breadcrumbs {
+  a {
+    border: 0 !important;
+    color: #717171; // $c-gray
+
+    &::after {
+      content: "\203A";
+      display: inline-block;
+      padding: 0 1px 0 6px;
+      font-size: 20px;
+    }
+  }
+
+  span {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #717171; // $c-gray
+  }
+}
+
+// Article
+.c-article__footer {
+  a {
+    cursor: pointer;
+    border: 0;
+  }
+}
+
 // Page Header
 .c-page-header a {
   color: white !important;
@@ -74,67 +131,10 @@
   }
 }
 
-// Article
-.c-article__footer {
-  a {
-    cursor: pointer;
-    border: 0;
-  }
-}
-
 // Widgets
 .c-widget ul {
   & > * + * {
     margin-top: 10px;
-  }
-}
-
-// Breakout Block
-.body.hide-sabbath .c-sidebar .c-block__breakout {
-  @media (min-width: 700px) {
-    margin-top: -30px;
-  }
-
-  @media (min-width: 900px) {
-    margin-top: -40px;
-  }
-}
-
-.c-sidebar .c-block__breakout {
-  @media (max-width: 900px) {
-    margin-top: 0;
-  }
-
-  @media (min-width: 900px) {
-    margin-right: -20px;
-  }
-
-  @media (min-width: 1300px) {
-    margin-top: -40px;
-  }
-
-  margin-right: -15px;
-  margin-top: -80px;
-}
-
-// Breadcrumbs
-.c-breadcrumbs {
-  a {
-    border: 0 !important;
-    color: #717171; // $c-gray
-
-    &::after {
-      content: "\203A";
-      display: inline-block;
-      padding: 0 1px 0 6px;
-      font-size: 20px;
-    }
-  }
-
-  span {
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #717171; // $c-gray
   }
 }
 
