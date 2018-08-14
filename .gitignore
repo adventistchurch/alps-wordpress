@@ -6,14 +6,11 @@ alps-v2/node_modules
 alps-v2/npm-debug.log
 alps-v2/vendor
 
-alps-v3/bower_components
 alps-v3/node_modules
 alps-v3/npm-debug.log
-alps-v3/vendor
 alps-v3/yarn-error.log
 
 web
-vendor
 
 !web/
 web/*
