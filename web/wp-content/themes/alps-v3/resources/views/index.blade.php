@@ -15,8 +15,9 @@
       <div class="c-article__body">
         <div class="text u-spacing--double">
           @if (have_posts())
-            @while (have_posts()) @php(the_post())
+            @while (have_posts())
               @php
+                the_post();
                 $id = get_the_ID();
                 $title = get_the_title($id);
                 $excerpt = get_the_excerpt($id);
@@ -28,9 +29,9 @@
               @endphp
               @include('patterns.01-molecules.blocks.content-block')
             @endwhile
-            @php(wp_reset_query())
+            {!! wp_reset_query() !!}
             @if (shortcode_exists('ajax_load_more'))
-              @php echo do_shortcode('[ajax_load_more container_type="div" css_classes="u-spacing--double" post_type="post" category="'. get_the_category()[0]->slug .'" scroll="false" transition_container="false" button_label="Load More" posts_per_page="10" offset="10"]'); @endphp
+              {!! do_shortcode('[ajax_load_more container_type="div" css_classes="u-spacing--double" post_type="post" category="'. get_the_category()[0]->slug .'" scroll="false" transition_container="false" button_label="Load More" posts_per_page="10" offset="10"]') !!}
             @endif
           @else
             <p>Sorry, there are no posts at this time.</p>
@@ -41,7 +42,7 @@
     @if (is_active_sidebar('sidebar-posts') && get_post_meta('hide_sidebar', true) != 'true')
       <div class="c-sidebar l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col u-padding--zero--sides">
         <div class="u-spacing--double u-padding--right">
-          @php(dynamic_sidebar('sidebar-primary'))
+          @php dynamic_sidebar('sidebar-primary') @endphp
         </div>
       </div> <!-- /.c-sidebar -->
     @endif

@@ -50,4 +50,4 @@
     @endforeach
   </div>
 @endif
-@php(wp_reset_query())
+{!! wp_reset_query() !!}

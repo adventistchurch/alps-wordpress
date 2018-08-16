@@ -12,6 +12,6 @@
         <span class="u-icon u-icon--xs u-path-fill--white u-space--half--right">@include('patterns.00-atoms.icons.icon-legal')</span><font>{{ $nav['title'] }}</font>
       </a>
     @endforeach
-    @php(wp_reset_postdata())
+    {!! wp_reset_postdata() !!}
   </nav> <!-- /.c-footer__secondary-nav -->
 @endif

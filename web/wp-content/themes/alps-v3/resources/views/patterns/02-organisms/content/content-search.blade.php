@@ -20,7 +20,7 @@
         <div class="l-grid l-grid--7-col u-shift--left--1-col--at-large">
           <div class="c-filter__form-item u-spacing--half l-grid-item">
             <h3 class="u-font--secondary--s u-font-weight--bold u-text-transform--upper u-color--gray can-be--lighter">Settings</h3>
-            @php echo do_shortcode( '[searchandfilter taxonomies="category" types="radio" class="c-filter__form-group" submit_label="Search Again" hide_empty="0"]' ); @endphp
+            {!! do_shortcode('[searchandfilter taxonomies="category" types="radio" class="c-filter__form-group" submit_label="Search Again" hide_empty="0"]') !!}
           </div>
         </div>
       </div>
@@ -32,8 +32,9 @@
     <article class="c-article__body u-padding--right">
       <div class="c-search-results u-spacing--double text">
         @if (have_posts())
-          @while (have_posts()) @php(the_post())
+          @while (have_posts())
             @php
+              the_post();
               $id = get_the_ID();
               $title = get_the_title($id);
               $excerpt = get_the_excerpt($id);
@@ -46,7 +47,7 @@
             @include('patterns.01-molecules.blocks.content-block')
           @endwhile
           @if (shortcode_exists('ajax_load_more'))
-            @php echo do_shortcode('[ajax_load_more container_type="div" css_classes="u-spacing--double" post_type="post, page" scroll="false" transition_container="false" button_label="Load More" posts_per_page="10" offset="10"]'); @endphp
+            {!! do_shortcode('[ajax_load_more container_type="div" css_classes="u-spacing--double" post_type="post, page" scroll="false" transition_container="false" button_label="Load More" posts_per_page="10" offset="10"]') !!}
           @endif
         @else
           <p>{{ __('Sorry, no results were found.', 'sage') }}</p>

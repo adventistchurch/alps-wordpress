@@ -9,7 +9,7 @@
   </header> <!-- /.c-page-header-->
   <section class="l-grid l-grid--7-col u-shift--left--1-col--at-large l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
     <div class="c-article l-grid-item l-grid-item--l--4-col u-padding--zero--sides">
-      <article @php(post_class('c-article__body'))>
+      <article @php post_class('c-article__body') @endphp>
         <div class="text u-spacing--double">
           <p>{{ __('Sorry, no results were found.', 'sage') }}</p>
           <a href="/" class="o-button">Go to homepage</a>

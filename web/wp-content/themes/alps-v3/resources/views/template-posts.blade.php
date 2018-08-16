@@ -31,7 +31,8 @@
 @endphp
 @extends('layouts.app')
 @section('content')
-  @while(have_posts()) @php(the_post())
+  @while(have_posts())
+    {!! the_post() !!}
     @php
       $post->ID = get_queried_object_id();
       if (is_active_sidebar('sidebar-posts') && get_post_meta($post->ID, 'hide_sidebar', true) != 'true') {
@@ -52,7 +53,7 @@
       <article class="c-article l-grid-item l-grid-item--l--4-col u-padding--zero--sides u-spacing--double">
         @if (get_the_content())
           <div class="text u-spacing">
-            @php(the_content())
+            @php the_content() @endphp
           </div>
         @endif
         @if ($post_feed_list != 'post_feed_list_false')
@@ -84,8 +85,9 @@
                 ));
               @endphp
               <div class="c-block-wrap__content u-spacing--double">
-                @while ($posts->have_posts()) @php($posts->the_post())
+                @while ($posts->have_posts())
                   @php
+                    $posts->the_post();
                     $picture = NULL;
                     $id = get_the_ID();
                     $title = get_the_title($id);
@@ -131,8 +133,8 @@
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
                 @endwhile
-                @php(wp_reset_query())
-                @php(wp_reset_postdata())
+                {!! wp_reset_query() !!}
+                {!! wp_reset_postdata() !!}
               </div>
             @elseif ($post_feed_list == 'post_feed_list_custom')
               @php
@@ -186,7 +188,7 @@
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
                 @endforeach
-                @php(wp_reset_postdata())
+                {!! wp_reset_postdata() !!}
               </div>
             @endif
             @if ($post_feed_list_link)
@@ -198,7 +200,7 @@
       @if (is_active_sidebar('sidebar-posts') && get_post_meta($post->ID, 'hide_sidebar', true) != 'true')
         <div class="c-sidebar l-grid-item l-grid-item--l--2-col u-padding--zero--sides">
           <div class="u-spacing--double u-padding--right">
-            @php(dynamic_sidebar('sidebar-posts'))
+            @php dynamic_sidebar('sidebar-post') @endphp
           </div>
         </div> <!-- /.c-sidebar -->
       @endif
@@ -266,13 +268,13 @@
                   $block_meta_class = "u-theme--color--base";
                 @endphp
                 @include('patterns.01-molecules.blocks.media-block')
-                @php(wp_reset_postdata())
+                {!! wp_reset_postdata() !!}
               </div>
             @endif
           </div>
         </div>
       </section>
-      @php($posts = $post_feed_full_category)
+      @php $posts = $post_feed_full_category; @endphp
       @if ($posts)
         <section class="c-section l-section__block-row l-section__block-row--6-col l-grid l-grid--7-col">
           <div class="l-grid-item u-padding--zero--sides u-flex">
@@ -287,8 +289,9 @@
                 'offset' => $post_feed_full_offset
               ));
             @endphp
-            @while ($posts->have_posts()) @php($posts->the_post())
+            @while ($posts->have_posts())
               @php
+                $posts->the_post();
                 $picture = NULL;
                 $id = get_the_ID();
                 $title = get_the_title($id);
@@ -336,8 +339,8 @@
               @endphp
               @include('patterns.01-molecules.blocks.media-block')
             @endwhile
-            @php(wp_reset_query())
-            @php(wp_reset_postdata())
+            {!! wp_reset_query() !!}
+            {!! wp_reset_postdata() !!}
           </div>
         </section>
       @endif
@@ -373,8 +376,9 @@
             @endphp
             @if ($archive_posts->have_posts())
               <div class="c-block-wrap__content u-spacing--double">
-                @while ($archive_posts->have_posts()) @php($archive_posts->the_post())
+                @while ($archive_posts->have_posts())
                   @php
+                    $archive_posts->the_post();
                     $picture = NULL;
                     $id = get_the_ID();
                     $title = get_the_title($id);
@@ -421,8 +425,8 @@
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
                 @endwhile
-                @php(wp_reset_query())
-                @php(wp_reset_postdata())
+                {!! wp_reset_query() !!}
+                {!! wp_reset_postdata() !!}
               </div>
             @endif
             @if ($post_feed_archive_link)

@@ -32,13 +32,15 @@
   <div class="c-related-posts__blocks u-spacing">
     @if ($related->have_posts())
       @while ($related->have_posts())
-        @php($related->the_post())
         @php
+          $related->the_post();
           $title = get_the_title();
           $link = get_permalink();
           $date = date('F j, Y', strtotime(get_the_date()));
           $category = $category;
-          if (get_post_thumbnail_id()) {
+        @endphp
+        @if (get_post_thumbnail_id())
+          @php
             $thumb_id = get_post_thumbnail_id();
             $thumb_size = 'horiz__4x3';
             $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
@@ -49,16 +51,19 @@
             $block_group_class = "u-flex--justify-start";
             $block_content_class = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--1-col u-border--left u-theme--border-color--darker--left u-color--gray u-spacing--half";
             $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
-            include(locate_template('patterns/01-molecules/blocks/media-block.php'));
-          } else {
+          @endphp
+          @include('patterns.01-molecules.blocks.media-block')
+          {!! locate_template('patterns/01-molecules/blocks/media-block.php') !!}
+        @else
+          @php
             $thumb_id = NULL;
             $block_class = "c-block__text u-theme--border-color--darker u-border--left u-padding--bottom u-spacing--half";
             $block_title_class = "u-theme--color--darker u-font--primary--s";
-            include(locate_template('patterns/01-molecules/blocks/content-block.php'));
-          }
-        @endphp
+          @endphp
+          @include('patterns.01-molecules.blocks.content-block')
+        @endif
       @endwhile
-      @php(wp_reset_postdata())
+      {!! wp_reset_postdata() !!}
     @else
       There are no related stories at this time.
     @endif

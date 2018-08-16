@@ -10,6 +10,6 @@
     @foreach ($footer_primary_nav as $nav)
       <a href="{{ $nav['url'] }}" class="c-footer__primary-nav__link u-theme--link-hover--light u-link--white"><strong>{{ $nav['title'] }}</strong></a>
     @endforeach
-    @php(wp_reset_postdata())
+    {!! wp_reset_postdata() !!}
   </nav> <!-- /.c-footer__primary-nav -->
 @endif

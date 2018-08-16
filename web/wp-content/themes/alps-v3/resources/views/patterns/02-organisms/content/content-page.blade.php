@@ -14,7 +14,7 @@
     <div class="c-article__body">
       <div class="text u-spacing">
         @include('patterns.01-molecules.navigation.breadcrumbs')
-        @php(the_content())
+        @php the_content() @endphp
         @include('patterns.02-organisms.sections.related-pages')
       </div>
     </div>
@@ -22,7 +22,7 @@
   @if (is_active_sidebar('sidebar-primary') && get_post_meta($post->ID, 'hide_sidebar', true) != 'true')
     <div class="c-sidebar l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col u-padding--zero--sides">
       <div class="u-spacing--double u-padding--right">
-        @php(dynamic_sidebar('sidebar-primary'))
+        @php dynamic_sidebar('sidebar-primary') @endphp
       </div>
     </div> <!-- /.c-sidebar -->
   @endif

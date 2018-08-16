@@ -32,7 +32,7 @@
           @endphp
         @endif
         @if (!$nav['menu_item_parent'])
-          @php($parent_id = $nav['ID'])
+          @php $parent_id = $nav['ID']; @endphp
           <li class="c-secondary-nav__list-item has-subnav @if ($nav['classes']){{ $nav['classes']}}@endif">
             <a href="{{ $nav['url'] }}" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
               @if ($nav['attr_title'])<span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-' . $nav['attr_title'] )</span>@endif
@@ -41,7 +41,7 @@
         @endif
         @if ($parent_id == $nav['menu_item_parent'])
           @if (!$submenu)
-            @php($submenu = true)
+            @php $submenu = true; @endphp
             <ul class="c-secondary-nav__subnav c-subnav">
           @endif
             <li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
@@ -49,16 +49,16 @@
             </li>
             @if ($parent != $parent_id && $submenu)
               </ul> <!-- /.c-secondary-nav__subnav -->
-              @php($submenu = false)
+              @php $submenu = false; @endphp
             @endif
         @endif
         @if ($parent != $parent_id)
           </li>
-          @php($submenu = false)
+          @php $submenu = false; @endphp
         @endif
-        @php($count++)
+        @php $count++; @endphp
       @endforeach
-      @php(wp_reset_postdata())
+      {!! wp_reset_postdata() !!}
       <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
         <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
           <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>Search

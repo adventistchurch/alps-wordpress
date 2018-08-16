@@ -2,6 +2,11 @@
   use Roots\Sage\Titles;
   if (!is_home()) {
     global $post;
+
+    $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
+    if (!empty($header_background_image)) {
+      $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
+    }
   }
 
   if (is_home()) {
@@ -15,11 +20,6 @@
     $kicker = get_post_meta($post->ID, 'kicker', true);
     $display_title = get_post_meta($post->ID, 'display_title', true);
     $title = get_the_title($post->ID);
-  }
-
-  $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
-  if (!empty($header_background_image)) {
-    $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
   }
 @endphp
 <header class="c-page-header c-page-header__simple u-theme--background-color--dark @if(isset($page_header_class)){{ $page_header_class }}@endif">

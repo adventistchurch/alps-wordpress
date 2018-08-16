@@ -9,9 +9,7 @@
       $submenu = false;
     @endphp
     <ul class="c-primary-nav__list c-priority-nav__list">
-      @php
-        $primary_nav = json_decode(json_encode($primary_nav), true);
-      @endphp
+      @php $primary_nav = json_decode(json_encode($primary_nav), true); @endphp
       @foreach ($primary_nav as $nav)
         @if (isset($primary_nav[$count + 1]))
           @php
@@ -19,13 +17,13 @@
           @endphp
         @endif
         @if (!$nav['menu_item_parent'])
-          @php($parent_id = $nav['ID'])
+          @php $parent_id = $nav['ID']; @endphp
           <li class="c-primary-nav__list-item has-subnav">
             <a href="{{ $nav['url'] }}" class="c-primary-nav__link u-font--primary-nav u-color--gray--dark u-theme--link-hover--base u-theme--border-color--base">{{ $nav['title'] }}</a>
         @endif
         @if ($parent_id == $nav['menu_item_parent'])
           @if (!$submenu)
-            @php($submenu = true)
+            @php $submenu = true; @endphp
             <span class="c-subnav__arrow o-arrow--down u-path-fill--gray"></span>
             <ul class="c-primary-nav__subnav c-subnav">
           @endif
@@ -34,16 +32,16 @@
             </li>
             @if ($parent != $parent_id && $submenu)
               </ul> <!-- /.c-primary-nav__subnav -->
-              @php($submenu = false)
+              @php $submenu = false; @endphp
             @endif
         @endif
         @if ($parent != $parent_id)
           </li>
-          @php($submenu = false)
+          @php $submenu = false; @endphp
         @endif
-        @php($count++)
+        @php $count++; @endphp
       @endforeach
-      @php(wp_reset_postdata())
+      {!! wp_reset_postdata() !!}
     </ul> <!-- /.c-primary-nav__list -->
   </nav> <!-- /.c-primary-nav -->
 @endif
