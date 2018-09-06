@@ -20,7 +20,11 @@
     </div>
     <div class="c-header__logo c-logo">
       <a href="{{ get_home_url() }}" class="c-logo__link {{ $header_logo_class }}">
-        <img class="style-svg" src="{{ wp_get_attachment_url($logo) }}" alt="{{ get_post_meta($logo, '_wp_attachment_image_alt', true) }}">
+        @if ($logo)
+          <img class="style-svg" src="{{ wp_get_attachment_url($logo) }}" alt="{{ get_post_meta($logo, '_wp_attachment_image_alt', true) }}">
+        @else
+          <img class="style-svg" src="{{ get_bloginfo('template_directory') . './../dist/images/logo.svg' }}" alt="Seventh Day Adventist Church">
+        @endif
       </a>
     </div> <!-- /.c-header__logo -->
     <div class="c-header__nav-primary">
