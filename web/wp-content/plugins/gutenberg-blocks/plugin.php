@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Gutenberg Blocks
+ * Plugin Name: ALPS Gutenberg Blocks
  * Plugin URI: https://github.com/ahmadawais/create-guten-block/
  * Description: Creates custom blocks in Gutenberg specific to the ALPS v3 theme. This Gutenberg plugin was created via create-guten-block.
  * Author: mrahmadawais, maedahbatool
