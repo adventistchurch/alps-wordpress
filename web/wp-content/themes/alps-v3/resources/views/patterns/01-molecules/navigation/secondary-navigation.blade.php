@@ -1,5 +1,5 @@
-@if (has_nav_menu('secondary_navigation'))
-  <nav class="c-secondary-nav" role="navigation">
+<nav class="c-secondary-nav" role="navigation">
+  @if (has_nav_menu('secondary_navigation'))
     @php
       $menu_name = 'secondary_navigation';
       $menu_locations = get_nav_menu_locations();
@@ -59,16 +59,16 @@
         @php $count++; @endphp
       @endforeach
       {!! wp_reset_postdata() !!}
-      <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
-        <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-          <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>Search
-        </a>
-      </li>
-      <li class="c-secondary-nav__list-item c-secondary-nav__list-item__menu c-secondary-nav__list-item__toggle js-toggle-menu is-priority">
-        <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-          <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>Menu
-        </a>
-      </li>
-    </ul> <!-- /.c-secondary-nav__list -->
-  </nav> <!-- /.c-secondary-nav -->
-@endif
+    @endif
+    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
+      <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
+        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>Search
+      </a>
+    </li>
+    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__menu c-secondary-nav__list-item__toggle js-toggle-menu is-priority">
+      <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
+        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>Menu
+      </a>
+    </li>
+  </ul> <!-- /.c-secondary-nav__list -->
+</nav> <!-- /.c-secondary-nav -->
