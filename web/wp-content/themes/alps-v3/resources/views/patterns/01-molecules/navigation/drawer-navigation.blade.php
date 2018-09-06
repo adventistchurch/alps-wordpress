@@ -40,8 +40,8 @@
           <p>{{ $global_branding_statement }}</p>
         @endif
       </div>
-      @if (has_nav_menu('drawer_secondary_navigation'))
-        <div class="c-drawer__about-right u-spacing--half">
+      <div class="c-drawer__about-right u-spacing--half">
+        @if (has_nav_menu('drawer_secondary_navigation'))
           <h3 class="u-font--secondary--s u-text-transform--upper"><strong>Learn More:</strong></h3>
           @php
             $menu_name = 'drawer_secondary_navigation';
@@ -56,8 +56,8 @@
             @endforeach
           </p>
           {!! wp_reset_postdata() !!}
-        </div>
-      @endif
+        @endif
+      </div>
     </div> <!-- .c-drawer__about -->
   </div> <!-- .c-drawer__container -->
 </div> <!-- .c-drawer-->
