@@ -175,11 +175,27 @@
     'value' => '<a href="//www.adventist.org/en/">Adventist.org</a> is the Official website of the Seventh-day Adventist world church &bull; <a href="//www.adventist.org/en/world-church/">View Regions</a>'
   ));
   piklist('field', array(
-    'type' => 'text',
+    'type' => 'textarea',
+    'field' => 'site_branding_statement',
+    'label' => 'Site Branding Statement',
+    'description' => 'Found in the navigation drawer',
+    'columns' => 12,
+    'value' => 'Tell the world is an offical media production of the Seventh-day Adventist world church.'
+  ));
+  piklist('field', array(
+    'type' => 'textarea',
+    'field' => 'global_branding_statement',
+    'label' => 'Global Branding Statement',
+    'description' => 'Found in the navigation drawer',
+    'columns' => 12,
+    'value' => 'Seventh-day Adventists are devoted to helping people understand the Bible to find freedom, healing and hope.'
+  ));
+  piklist('field', array(
+    'type' => 'textarea',
     'field' => 'footer_copyright',
     'label' => 'Footer Copyright',
     'columns' => 12,
-    'value' => 'Copyright © 2017, General Conference of Seventh-day Adventists'
+    'value' => 'General Conference of Seventh-day Adventists'
   ));
   piklist('field', array(
     'type' => 'group',

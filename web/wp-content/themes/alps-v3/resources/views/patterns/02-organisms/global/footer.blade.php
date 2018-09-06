@@ -29,7 +29,7 @@
       </div> <!-- /.c-footer__logo -->
     @endif
     <div class="l-grid-item l-grid-item--m--3-col c-footer__legal">
-      <p class="c-footer__copyright">{{ $footer_copyright }}</p>
+      <p class="c-footer__copyright">© {{ date('Y') }}{{ ', ' . $footer_copyright }}</p>
       <address class="c-footer__address" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
         <span itemprop="streetAddress">{{ $footer_address_street }}</span>,
         <span itemprop="addressPostCode"> {{ $footer_address_zip }}</span>
