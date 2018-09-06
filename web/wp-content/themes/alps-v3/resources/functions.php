@@ -101,16 +101,9 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 /**
- * Add post formats
- */
-add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
-
-/**
  * Provides automatic updates for the WordPress theme and plugins (http://wp-updates.com/)
  */
-// require_once('wp-updates-theme.php');
-// new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
-//require_once get_template_directory() . '/app/plugin-activation.php';
+require_once __DIR__.'/../app/plugin-activation.php';
 
 /**
  * Require plugins on theme install
@@ -118,10 +111,20 @@ add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
 add_action( 'tgmpa_register', 'adventist_register_required_plugins' );
 function adventist_register_required_plugins() {
   $plugins = array(
+    // Piklist
     array(
       'name'               => 'Piklist', // The plugin name.
       'slug'               => 'piklist', // The plugin slug (typically the folder name).
-      'source'             => get_template_directory() . '/lib/plugins/piklist.zip', // The plugin source.
+      'source'             => __DIR__.'/../app/plugins/piklist.zip', // The plugin source.
+      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+    ),
+    // Gutenberg Blocks
+    array(
+      'name'               => 'ALPS Gutenberg Blocks', // The plugin name.
+      'slug'               => 'gutenberg-blocks', // The plugin slug (typically the folder name).
+      'source'             => __DIR__.'/../app/plugins/gutenberg-blocks.zip', // The plugin source.
       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
@@ -131,10 +134,24 @@ function adventist_register_required_plugins() {
       'name'     => 'WordPress SEO by Yoast',
       'slug'     => 'wordpress-seo',
       'required' => false,
+    ),
+    // Gutenberg
+    array(
+      'name'     => 'Gutenberg',
+      'slug'     => 'gutenberg',
+      'required' => true,
+      'force_activation'   => true,
+    ),
+    // SVG Support
+    array(
+      'name'     => 'SVG Support',
+      'slug'     => 'svg-support',
+      'required' => true,
+      'force_activation'   => true,
     )
   );
   $config = array(
-    'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+    'id'           => 'adventist',             // Unique ID for hashing notices for multiple instances of TGMPA.
     'default_path' => '',                      // Default absolute path to bundled plugins.
     'menu'         => 'tgmpa-install-plugins', // Menu slug.
     'parent_slug'  => 'themes.php',            // Parent menu slug.
@@ -222,34 +239,6 @@ function my_hide_for_template($part, $type) {
   }
   return $part;
 }
-
-// Remove colors and text styles from Gutenberg
-add_theme_support( 'disable-custom-colors' );
-add_theme_support( 'editor-color-palette');
-add_theme_support( 'editor-text-styles');
-add_theme_support( 'wp-block-styles' );
-
-// Only allow the following blocks in Gutenberg
-add_filter( 'allowed_block_types', function() {
-  return [
-    'core/heading',
-    'core/image',
-    'core/video',
-    'core/vimeo',
-    'core/block',
-    'core/spacer',
-    'gutenberg-blocks/accordion',
-    'gutenberg-blocks/blockquote',
-    'gutenberg-blocks/content-block',
-    'gutenberg-blocks/content-show-more',
-    'gutenberg-blocks/content-expand',
-    'gutenberg-blocks/gallery',
-    'gutenberg-blocks/highlighted-paragraph',
-    'gutenberg-blocks/image-2up',
-    'gutenberg-blocks/image-breakout',
-    'gutenberg-blocks/paragraph',
-  ];
-} );
 
 /**
  * Menu Autocreation
@@ -346,8 +335,8 @@ function auto_nav_creation_footer() {
 add_action('load-nav-menus.php', 'auto_nav_creation_footer');
 
 // Drawer Navigation
-function auto_nav_creation_drawer() {
-  $name = 'Drawer Secondary Navigation';
+function auto_nav_creation_tertiary() {
+  $name = 'Tertiary Navigation';
   $menu_exists = wp_get_nav_menu_object($name);
 
   // If it doesn't exist, let's create it.
@@ -380,8 +369,40 @@ function auto_nav_creation_drawer() {
 
     // Set menu location
     $locations = get_theme_mod('nav_menu_locations');
-    $locations['drawer_secondary_navigation'] = $menu->term_id;
+    $locations['tertiary_navigation'] = $menu->term_id;
     set_theme_mod( 'nav_menu_locations', $locations );
   }
 }
-add_action('load-nav-menus.php', 'auto_nav_creation_drawer');
+add_action('load-nav-menus.php', 'auto_nav_creation_tertiary');
+
+/**
+ * ALPS Gutenberg Blocks
+ */
+
+// Remove colors and text styles from Gutenberg
+add_theme_support( 'disable-custom-colors' );
+add_theme_support( 'editor-color-palette');
+add_theme_support( 'editor-text-styles');
+add_theme_support( 'wp-block-styles' );
+
+// Only allow the following blocks in Gutenberg
+add_filter( 'allowed_block_types', function() {
+  return [
+    'core/heading',
+    'core/image',
+    'core/video',
+    'core/vimeo',
+    'core/block',
+    'core/spacer',
+    'gutenberg-blocks/accordion',
+    'gutenberg-blocks/blockquote',
+    'gutenberg-blocks/content-block',
+    'gutenberg-blocks/content-show-more',
+    'gutenberg-blocks/content-expand',
+    'gutenberg-blocks/gallery',
+    'gutenberg-blocks/highlighted-paragraph',
+    'gutenberg-blocks/image-2up',
+    'gutenberg-blocks/image-breakout',
+    'gutenberg-blocks/paragraph',
+  ];
+} );
