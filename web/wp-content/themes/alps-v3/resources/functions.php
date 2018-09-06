@@ -127,11 +127,11 @@ function adventist_register_required_plugins() {
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
     ),
     // WordPress SEO
-		array(
-			'name'     => 'WordPress SEO by Yoast',
-			'slug'     => 'wordpress-seo',
-			'required' => false,
-		)
+    array(
+      'name'     => 'WordPress SEO by Yoast',
+      'slug'     => 'wordpress-seo',
+      'required' => false,
+    )
   );
   $config = array(
     'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.
@@ -231,7 +231,7 @@ add_theme_support( 'wp-block-styles' );
 
 // Only allow the following blocks in Gutenberg
 add_filter( 'allowed_block_types', function() {
-	return [
+  return [
     'core/heading',
     'core/image',
     'core/video',
@@ -250,3 +250,138 @@ add_filter( 'allowed_block_types', function() {
     'gutenberg-blocks/paragraph',
   ];
 } );
+
+/**
+ * Menu Autocreation
+ */
+
+// Primary Secondary Navigation
+function auto_nav_creation_primary() {
+  $name = 'Primary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['primary_navigation'] = $menu->term_id;
+    set_theme_mod( 'nav_menu_locations', $locations );
+  }
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_primary');
+
+// Secondary Navigation
+function auto_nav_creation_secondary() {
+  $name = 'Secondary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['secondary_navigation'] = $menu->term_id;
+    set_theme_mod( 'nav_menu_locations', $locations );
+  }
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_secondary');
+
+// Footer Primary Navigation
+function auto_nav_creation_social() {
+  $name = 'Social Media Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['footer_primary_navigation'] = $menu->term_id;
+    set_theme_mod( 'nav_menu_locations', $locations );
+  }
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_social');
+
+// Footer Secondary Navigation
+function auto_nav_creation_footer() {
+  $name = 'Footer Secondary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set up default menu items
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Trademark and Logo Usage'),
+      'menu-item-classes' => '',
+      'menu-item-url' => 'https://www.adventist.org/en/copyright/trademark-and-logo-usage/',
+      'menu-item-status' => 'publish'
+    ));
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Legal Notice'),
+      'menu-item-url' => 'https://www.adventist.org/en/copyright/legal-notice/',
+      'menu-item-status' => 'publish'
+    ));
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Privacy Policy'),
+      'menu-item-url' => 'http://privacy.adventist.org/en/',
+      'menu-item-status' => 'publish'
+    ));
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['footer_secondary_navigation'] = $menu->term_id;
+    set_theme_mod( 'nav_menu_locations', $locations );
+  }
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_footer');
+
+// Drawer Navigation
+function auto_nav_creation_drawer() {
+  $name = 'Drawer Secondary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set up default menu items
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Adventist.org'),
+      'menu-item-classes' => '',
+      'menu-item-url' => 'https://www.adventist.org/en/',
+      'menu-item-status' => 'publish'
+    ));
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('ADRA'),
+      'menu-item-url' => 'https://adra.org/',
+      'menu-item-status' => 'publish'
+    ));
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Adventist World Radio'),
+      'menu-item-url' => 'https://www.awr.org/',
+      'menu-item-status' => 'publish'
+    ));
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Hope Channel'),
+      'menu-item-url' => 'https://www.hopetv.org/',
+      'menu-item-status' => 'publish'
+    ));
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['drawer_secondary_navigation'] = $menu->term_id;
+    set_theme_mod( 'nav_menu_locations', $locations );
+  }
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_drawer');

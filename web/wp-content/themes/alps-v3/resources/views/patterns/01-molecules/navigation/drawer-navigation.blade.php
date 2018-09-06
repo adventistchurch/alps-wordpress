@@ -40,39 +40,6 @@
           <p>{{ $global_branding_statement }}</p>
         @endif
       </div>
-      @php
-        $menu_name = 'Drawer Secondary Navigation';
-        $menu_exists = wp_get_nav_menu_object($menu_name);
-      @endphp
-      @if (!$menu_exists)
-        @php
-          // If it doesn't exist, let's create it.
-          $menu_id = wp_create_nav_menu($menu_name);
-
-          // Set up default menu items
-          wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' =>  __('Adventist.org'),
-            'menu-item-classes' => '',
-            'menu-item-url' => 'https://www.adventist.org/en/',
-            'menu-item-status' => 'publish'
-          ));
-          wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' =>  __('ADRA'),
-            'menu-item-url' => 'https://adra.org/',
-            'menu-item-status' => 'publish'
-          ));
-          wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' =>  __('Adventist World Radio'),
-            'menu-item-url' => 'https://www.awr.org/',
-            'menu-item-status' => 'publish'
-          ));
-          wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' =>  __('Hope Channel'),
-            'menu-item-url' => 'https://www.hopetv.org/',
-            'menu-item-status' => 'publish'
-          ));
-        @endphp
-      @endif
       @if (has_nav_menu('drawer_secondary_navigation'))
         <div class="c-drawer__about-right u-spacing--half">
           <h3 class="u-font--secondary--s u-text-transform--upper"><strong>Learn More:</strong></h3>
