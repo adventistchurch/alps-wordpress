@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0c26a96bc70533fc507a17e6b27bc03",
+    "content-hash": "4bb3ccd5ec32a0ad94d5b977beff8a56",
     "packages": [
         {
             "name": "composer/installers",
@@ -296,26 +296,6 @@
                 "wordpress"
             ],
             "time": "2018-01-29T14:49:29+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/ajax-load-more",
-            "version": "3.5.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ajax-load-more/",
-                "reference": "tags/3.5.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ajax-load-more.3.5.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ajax-load-more/"
         },
         {
             "name": "wpackagist-plugin/gutenberg",

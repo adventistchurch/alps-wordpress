@@ -303,28 +303,6 @@
         ]
     },
     {
-        "name": "wpackagist-plugin/ajax-load-more",
-        "version": "3.5.1",
-        "version_normalized": "3.5.1.0",
-        "source": {
-            "type": "svn",
-            "url": "https://plugins.svn.wordpress.org/ajax-load-more/",
-            "reference": "tags/3.5.1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://downloads.wordpress.org/plugin/ajax-load-more.3.5.1.zip",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "composer/installers": "~1.0"
-        },
-        "type": "wordpress-plugin",
-        "installation-source": "dist",
-        "homepage": "https://wordpress.org/plugins/ajax-load-more/"
-    },
-    {
         "name": "wpackagist-plugin/gutenberg",
         "version": "3.7.0",
         "version_normalized": "3.7.0.0",
