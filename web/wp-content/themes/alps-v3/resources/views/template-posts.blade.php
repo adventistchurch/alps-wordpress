@@ -29,7 +29,6 @@
   $post_feed_archive_category = get_post_meta($post->ID, 'post_feed_archive_category_array');
   $post_feed_archive_count = get_post_meta($post->ID, 'post_feed_archive_count', true);
   $post_feed_archive_offset = get_post_meta($post->ID, 'post_feed_archive_offset', true);
-  $post_feed_archive_round = get_post_meta($post->ID, 'post_feed_archive_round_image', true);
 @endphp
 @extends('layouts.app')
 @section('content')
@@ -135,6 +134,7 @@
                       $image_break_m = "500";
                       $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                     }
+                    $block_group_class = "u-flex--justify-start";
                     $block_class = "c-block__stacked--until-small u-spacing--until-small l-grid--7-col l-grid-wrap l-large-break";
                     $block_img_class = "l-grid-item l-grid-item--s--2-col l-grid-item--l--1-col u-padding--zero--sides";
                     $block_content_class = "l-grid-item l-grid-item--s--4-col l-grid-item--l--3-col u-flex--justify-start u-padding--left";
@@ -428,15 +428,7 @@
                     } else {
                       $thumb_id = NULL;
                     }
-                    if ($thumb_id && $post_feed_archive_round == 'true') {
-                      $block_img_wrap_class = "u-round u-space--left";
-                      $picture = true;
-                      $thumb_size = 'thumbnail';
-                      $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
-                      $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-                      $image_break_m = "500";
-                      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-                    } else if ($thumb_id) {
+                    if ($thumb_id) {
                       $picture = true;
                       $thumb_size = 'horiz__4x3';
                       $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
