@@ -57,6 +57,29 @@
     )
   ));
   piklist( 'field', array(
+    'type' => 'checkbox',
+    'field' => 'post_feed_list_round_image',
+    'label' => 'Round Image Thumbnail',
+    'description' => 'Check to make the image thumbnail round.',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Check to make the image thumbnail round.'
+    ),
+    'conditions' => array(
+      'relation' => 'or',
+      array(
+        'reset' => false,
+        'field' => 'post_feed_list',
+        'value' => 'post_feed_list_custom'
+      ),
+      array(
+        'reset' => false,
+        'field' => 'post_feed_list',
+        'value' => 'post_feed_list_category'
+      )
+    )
+  ));
+  piklist( 'field', array(
     'type' => 'select',
     'field' => 'post_feed_list_custom_array',
     'label' => 'Posts',

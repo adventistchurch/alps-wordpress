@@ -11,6 +11,7 @@
   $post_feed_list_category = get_post_meta($post->ID, 'post_feed_list_category_array', true);
   $post_feed_list_count = get_post_meta($post->ID, 'post_feed_list_count', true);
   $post_feed_list_offset = get_post_meta($post->ID, 'post_feed_list_offset', true);
+  $post_feed_list_round = get_post_meta($post->ID, 'post_feed_list_round_image', true);
 
   // Full Width
   $post_feed_full = get_post_meta($post->ID, 'post_feed_full', true);
@@ -28,6 +29,7 @@
   $post_feed_archive_category = get_post_meta($post->ID, 'post_feed_archive_category_array');
   $post_feed_archive_count = get_post_meta($post->ID, 'post_feed_archive_count', true);
   $post_feed_archive_offset = get_post_meta($post->ID, 'post_feed_archive_offset', true);
+  $post_feed_archive_round = get_post_meta($post->ID, 'post_feed_archive_round_image', true);
 @endphp
 @extends('layouts.app')
 @section('content')
@@ -117,7 +119,15 @@
                     } else {
                       $thumb_id = NULL;
                     }
-                    if ($thumb_id) {
+                    if ($thumb_id && $post_feed_list_round == 'true') {
+                      $block_img_wrap_class = "u-round u-space--left";
+                      $picture = true;
+                      $thumb_size = 'thumbnail';
+                      $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
+                      $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                      $image_break_m = "500";
+                      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                    } else if ($thumb_id) {
                       $picture = true;
                       $thumb_size = 'horiz__4x3';
                       $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
@@ -172,7 +182,15 @@
                     } else {
                       $thumb_id = NULL;
                     }
-                    if ($thumb_id) {
+                    if ($thumb_id && $post_feed_list_round == 'true') {
+                      $block_img_wrap_class = "u-round u-space--left";
+                      $picture = true;
+                      $thumb_size = 'thumbnail';
+                      $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
+                      $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                      $image_break_m = "500";
+                      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                    } else if ($thumb_id) {
                       $picture = true;
                       $thumb_size = 'horiz__4x3';
                       $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
@@ -262,6 +280,7 @@
                     $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                   }
                   $block_class = "c-block__inline c-media-block__inine c-block--reversed c-media-block--reversed l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7";
+                  $block_img_wrap_class = NULL;
                   $block_img_class = "l-grid-item l-grid-item--s--3-col u-padding--zero--sides";
                   $block_content_class = "l-grid-item l-grid-item--s--3-col u-border-left--black--at-large u-theme--border-color--darker--left u-color--gray u-background-color--gray--light can-be--dark-dark u-padding--top u-padding--bottom u-flex--justify-between";
                   $block_title_class = "u-theme--color--dark u-font--primary--l";
@@ -332,6 +351,7 @@
                 }
                 $block_type = get_post_format($id);
                 $block_class = "c-block__stacked c-media-block__stacked l-grid-wrap l-grid--7-col l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col";
+                $block_img_wrap_class = NULL;
                 $block_img_class = "l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col u-padding--zero--sides u-space--right";
                 $block_content_class = "l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col u-border--left";
                 $block_title_class = "u-theme--color--dark u-font--primary--s";
@@ -408,7 +428,15 @@
                     } else {
                       $thumb_id = NULL;
                     }
-                    if ($thumb_id) {
+                    if ($thumb_id && $post_feed_archive_round == 'true') {
+                      $block_img_wrap_class = "u-round u-space--left";
+                      $picture = true;
+                      $thumb_size = 'thumbnail';
+                      $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
+                      $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                      $image_break_m = "500";
+                      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                    } else if ($thumb_id) {
                       $picture = true;
                       $thumb_size = 'horiz__4x3';
                       $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];

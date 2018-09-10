@@ -171,3 +171,6 @@ add_image_size('flex-height--s', 350, 9999);
 add_image_size('flex-height--m', 700, 9999);
 add_image_size('flex-height--l', 900, 9999);
 add_image_size('flex-height--xl', 1100, 9999);
+
+// Square
+add_image_size('thumbnail--s', 200, 200, array('center', 'center'));
