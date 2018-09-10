@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c90b18644fba778f05c9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a1ac82739adfe27e6b80"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -722,7 +722,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(22)(__webpack_require__.s = 22);
+/******/ 	return hotCreateRequire(21)(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2325,8 +2325,7 @@ module.exports = function(hash, moduleMap, options) {
 /* 18 */,
 /* 19 */,
 /* 20 */,
-/* 21 */,
-/* 22 */
+/* 21 */
 /*!***************************************************************************!*\
   !*** multi ./build/util/../helpers/hmr-client.js ./scripts/customizer.js ***!
   \***************************************************************************/
@@ -2335,11 +2334,11 @@ module.exports = function(hash, moduleMap, options) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/kelseycahill/Sites/ALPS/ALPS Wordpress V3/web/wp-content/themes/alps-v3/resources/assets/build/util/../helpers/hmr-client.js */1);
-module.exports = __webpack_require__(/*! ./scripts/customizer.js */23);
+module.exports = __webpack_require__(/*! ./scripts/customizer.js */22);
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /*!*******************************!*\
   !*** ./scripts/customizer.js ***!
   \*******************************/
@@ -2349,7 +2348,7 @@ module.exports = __webpack_require__(/*! ./scripts/customizer.js */23);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(/*! jquery */ 24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(/*! jquery */ 23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 
 
@@ -2359,7 +2358,7 @@ wp.customize('blogname', function (value) {
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /*!*************************!*\
   !*** external "jQuery" ***!
   \*************************/
