@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4bb3ccd5ec32a0ad94d5b977beff8a56",
+    "content-hash": "dd54f50159b22588be952eee2e4d90e1",
     "packages": [
         {
             "name": "composer/installers",
@@ -296,6 +296,52 @@
                 "wordpress"
             ],
             "time": "2018-01-29T14:49:29+00:00"
+        },
+        {
+            "name": "viper007bond/regenerate-thumbnails",
+            "version": "v3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Viper007Bond/regenerate-thumbnails.git",
+                "reference": "cbe04433f12c5ed38f24b2ff3c93ae79f7e51ffb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Viper007Bond/regenerate-thumbnails/zipball/cbe04433f12c5ed38f24b2ff3c93ae79f7e51ffb",
+                "reference": "cbe04433f12c5ed38f24b2ff3c93ae79f7e51ffb",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.2.4"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+                "phpunit/phpunit": "^6.5",
+                "poststatus/wptest": "dev-master",
+                "sirbrillig/phpcs-variable-analysis": "^2.0",
+                "wimg/php-compatibility": "^8.1",
+                "wp-coding-standards/wpcs": "^0.14.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Mills (Viper007Bond)",
+                    "homepage": "https://alex.blog/"
+                }
+            ],
+            "description": "Regenerate the thumbnails for one or more of your image uploads. Useful when changing their sizes or your theme.",
+            "homepage": "https://alex.blog/wordpress-plugins/regenerate-thumbnails/",
+            "keywords": [
+                "Thumbnails",
+                "plugin",
+                "wordpress"
+            ],
+            "time": "2018-01-28T22:20:12+00:00"
         },
         {
             "name": "wpackagist-plugin/gutenberg",

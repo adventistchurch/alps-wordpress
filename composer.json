@@ -31,6 +31,7 @@
     "drupal-composer/preserve-paths": "0.1.*",
     "johnpbloch/wordpress-core": "~4.9",
     "johnpbloch/wordpress-core-installer": "^1.0",
+    "viper007bond/regenerate-thumbnails": "^3.0",
     "wpackagist-plugin/gutenberg": "3.7.0",
     "wpackagist-plugin/piklist": "0.11.4",
     "wpackagist-plugin/svg-support": "2.3.15",
