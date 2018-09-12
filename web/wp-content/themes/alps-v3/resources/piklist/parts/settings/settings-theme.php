@@ -188,7 +188,7 @@
     'label' => 'Global Branding Statement',
     'description' => 'Found in the navigation drawer',
     'columns' => 12,
-    'value' => 'Seventh-day Adventists are devoted to helping people understand the Bible to find freedom, healing and hope.'
+    'value' => 'Seventh-day Adventists are devoted to helping people understand the Bible to find freedom, healing, and hope in Jesus.'
   ));
   piklist('field', array(
     'type' => 'textarea',
