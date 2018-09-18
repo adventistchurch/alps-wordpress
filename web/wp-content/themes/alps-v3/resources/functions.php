@@ -335,8 +335,8 @@ function auto_nav_creation_footer() {
 add_action('load-nav-menus.php', 'auto_nav_creation_footer');
 
 // Drawer Navigation
-function auto_nav_creation_tertiary() {
-  $name = 'Tertiary Navigation';
+function auto_nav_creation_learn_more() {
+  $name = 'Learn More Navigation';
   $menu_exists = wp_get_nav_menu_object($name);
 
   // If it doesn't exist, let's create it.
@@ -369,11 +369,11 @@ function auto_nav_creation_tertiary() {
 
     // Set menu location
     $locations = get_theme_mod('nav_menu_locations');
-    $locations['tertiary_navigation'] = $menu->term_id;
+    $locations['learn_more_navigation'] = $menu->term_id;
     set_theme_mod( 'nav_menu_locations', $locations );
   }
 }
-add_action('load-nav-menus.php', 'auto_nav_creation_tertiary');
+add_action('load-nav-menus.php', 'auto_nav_creation_learn_more');
 
 /**
  * ALPS Gutenberg Blocks

@@ -40,11 +40,11 @@
           <p>{{ $global_branding_statement }}</p>
         @endif
       </div>
-      @if (has_nav_menu('tertiary_navigation'))
+      @if (has_nav_menu('learn_more_navigation'))
         <div class="c-drawer__about-right u-spacing--half">
           <h3 class="u-font--secondary--s u-text-transform--upper"><strong>Learn More:</strong></h3>
           @php
-            $menu_slug = 'tertiary_navigation';
+            $menu_slug = 'learn_more_navigation';
             $menu_locations = get_nav_menu_locations();
             $menu = wp_get_nav_menu_object($menu_locations[$menu_slug]);
             $tertiary_nav = wp_get_nav_menu_items($menu->term_id);
