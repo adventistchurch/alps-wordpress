@@ -123,8 +123,8 @@ function adventist_register_required_plugins() {
     // Gutenberg Blocks
     array(
       'name'               => 'ALPS Gutenberg Blocks', // The plugin name.
-      'slug'               => 'gutenberg-blocks', // The plugin slug (typically the folder name).
-      'source'             => __DIR__.'/../app/plugins/gutenberg-blocks.zip', // The plugin source.
+      'slug'               => 'alps-gutenberg-blocks', // The plugin slug (typically the folder name).
+      'source'             => __DIR__.'/../app/plugins/alps-gutenberg-blocks.zip', // The plugin source.
       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
@@ -394,15 +394,15 @@ add_filter( 'allowed_block_types', function() {
     'core/vimeo',
     'core/block',
     'core/spacer',
-    'gutenberg-blocks/accordion',
-    'gutenberg-blocks/blockquote',
-    'gutenberg-blocks/content-block',
-    'gutenberg-blocks/content-show-more',
-    'gutenberg-blocks/content-expand',
-    'gutenberg-blocks/gallery',
-    'gutenberg-blocks/highlighted-paragraph',
-    'gutenberg-blocks/image-2up',
-    'gutenberg-blocks/image-breakout',
-    'gutenberg-blocks/paragraph',
+    'alps-gutenberg-blocks/accordion',
+    'alps-gutenberg-blocks/blockquote',
+    'alps-gutenberg-blocks/content-block',
+    'alps-gutenberg-blocks/content-show-more',
+    'alps-gutenberg-blocks/content-expand',
+    'alps-gutenberg-blocks/gallery',
+    'alps-gutenberg-blocks/highlighted-paragraph',
+    'alps-gutenberg-blocks/image-2up',
+    'alps-gutenberg-blocks/image-breakout',
+    'alps-gutenberg-blocks/paragraph',
   ];
 } );
