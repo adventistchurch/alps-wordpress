@@ -7,7 +7,8 @@
     "theme",
     "foundation",
     "bootstrap",
-    "tachyons"
+    "tachyons",
+    "tailwindcss"
   ],
   "license": "MIT",
   "authors": [

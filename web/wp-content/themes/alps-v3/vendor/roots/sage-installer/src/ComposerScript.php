@@ -20,7 +20,7 @@ class ComposerScript
 
     public static function postCreateProject(Event $event)
     {
-        $sage = dirname(__DIR__).'/bin/sage';
+        $sage = escapeshellarg(dirname(__DIR__).'/bin/sage');
         (new static($event))
             ->validate()
             ->run(new Process(sprintf('php %s %s', $sage, 'meta')))

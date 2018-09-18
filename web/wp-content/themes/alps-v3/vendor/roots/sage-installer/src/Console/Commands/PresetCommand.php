@@ -10,6 +10,7 @@ use Roots\Sage\Installer\Presets\Foundation;
 use Roots\Sage\Installer\Presets\None;
 use Roots\Sage\Installer\Presets\Preset;
 use Roots\Sage\Installer\Presets\Tachyons;
+use Roots\Sage\Installer\Presets\Tailwind;
 use Roots\Sage\Installer\Transformations\Presets;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -66,9 +67,9 @@ class PresetCommand extends Command
         $this->info('Done.');
         $this->comment('Please run `yarn && yarn build` to compile your fresh scaffolding.');
         $this->comment('');
-        $this->comment('Help support our open-source development efforts by contributing to Sage on OpenCollective:');
-        $this->comment('https://opencollective.com/sage');
-        $this->comment('Join us on the Roots Community Slack when you become a supporter!');
+        $this->comment('Help support our open-source development efforts by contributing to Sage via Patreon:');
+        $this->comment('https://www.patreon.com/rootsdev');
+        $this->comment('Join us on the Roots Slack when you become a supporter!');
     }
 
     protected function framework()
@@ -106,7 +107,8 @@ class PresetCommand extends Command
             new Bootstrap($this->root),
             new Bulma($this->root),
             new Foundation($this->root),
-            new Tachyons($this->root)
+            new Tachyons($this->root),
+            new Tailwind($this->root),
         ];
     }
 }

@@ -7,7 +7,7 @@ class Tachyons extends Preset
     /** {@inheritdoc} */
     protected function updatePackagesArray(array $packages)
     {
-        $packages['dependencies']['tachyons-sass'] = '~4.8';
+        $packages['dependencies']['tachyons-sass'] = '~4.9';
         return $packages;
     }
 }

@@ -16,6 +16,7 @@ use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Application as SymfonyApplication;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
+use Symfony\Component\Console\Exception\CommandNotFoundException;
 use Illuminate\Contracts\Console\Application as ApplicationContract;
 
 class Application extends SymfonyApplication implements ApplicationContract
@@ -165,11 +166,17 @@ class Application extends SymfonyApplication implements ApplicationContract
      * @param  array  $parameters
      * @param  \Symfony\Component\Console\Output\OutputInterface|null  $outputBuffer
      * @return int
+     *
+     * @throws \Symfony\Component\Console\Exception\CommandNotFoundException
      */
     public function call($command, array $parameters = [], $outputBuffer = null)
     {
         if (is_subclass_of($command, SymfonyCommand::class)) {
             $command = $this->laravel->make($command)->getName();
+        }
+
+        if (! $this->has($command)) {
+            throw new CommandNotFoundException(sprintf('The command "%s" does not exist.', $command));
         }
 
         array_unshift($parameters, $command);
@@ -252,7 +259,7 @@ class Application extends SymfonyApplication implements ApplicationContract
     }
 
     /**
-     * Get the default input definitions for the applications.
+     * Get the default input definition for the application.
      *
      * This is used to add the --env option to every available command.
      *

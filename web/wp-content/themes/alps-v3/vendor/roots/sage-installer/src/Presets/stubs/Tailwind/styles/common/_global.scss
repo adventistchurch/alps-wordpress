@@ -1,0 +1,22 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-2 leading-tight;
+}
+
+p {
+  @apply mb-3 leading-normal;
+}
+
+a {
+  @apply text-primary no-underline border-b border-transparent;
+
+  transition: 0.2s ease;
+
+  &:hover {
+    @apply border-primary;
+  }
+}

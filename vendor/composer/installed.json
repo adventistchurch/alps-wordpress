@@ -1,17 +1,17 @@
 [
     {
         "name": "composer/installers",
-        "version": "v1.5.0",
-        "version_normalized": "1.5.0.0",
+        "version": "v1.6.0",
+        "version_normalized": "1.6.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/composer/installers.git",
-            "reference": "049797d727261bf27f2690430d935067710049c2"
+            "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
-            "reference": "049797d727261bf27f2690430d935067710049c2",
+            "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+            "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
             "shasum": ""
         },
         "require": {
@@ -25,7 +25,7 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "^4.8.36"
         },
-        "time": "2017-12-29T09:13:20+00:00",
+        "time": "2018-08-27T06:10:37+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "Composer\\Installers\\Plugin",
@@ -123,11 +123,11 @@
     },
     {
         "name": "deliciousbrains-plugin/wp-migrate-db-pro",
-        "version": "1.8.1",
-        "version_normalized": "1.8.1.0",
+        "version": "1.8.3",
+        "version_normalized": "1.8.3.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-migrate-db-pro&version=1.8.1&composer_key=F11D9E0FF9E868E9A0637728A79A71E0",
+            "url": "https://api.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-migrate-db-pro&version=1.8.3&composer_key=F11D9E0FF9E868E9A0637728A79A71E0",
             "reference": null,
             "shasum": null
         },
@@ -139,11 +139,11 @@
     },
     {
         "name": "deliciousbrains-plugin/wp-migrate-db-pro-media-files",
-        "version": "1.4.9",
-        "version_normalized": "1.4.9.0",
+        "version": "1.4.10",
+        "version_normalized": "1.4.10.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-migrate-db-pro-media-files&version=1.4.9&composer_key=F11D9E0FF9E868E9A0637728A79A71E0",
+            "url": "https://api.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-migrate-db-pro-media-files&version=1.4.10&composer_key=F11D9E0FF9E868E9A0637728A79A71E0",
             "reference": null,
             "shasum": null
         },
@@ -352,16 +352,16 @@
     },
     {
         "name": "wpackagist-plugin/gutenberg",
-        "version": "3.7.0",
-        "version_normalized": "3.7.0.0",
+        "version": "3.8.0",
+        "version_normalized": "3.8.0.0",
         "source": {
             "type": "svn",
             "url": "https://plugins.svn.wordpress.org/gutenberg/",
-            "reference": "tags/3.7.0"
+            "reference": "tags/3.8.0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://downloads.wordpress.org/plugin/gutenberg.3.7.0.zip",
+            "url": "https://downloads.wordpress.org/plugin/gutenberg.3.8.0.zip",
             "reference": null,
             "shasum": null
         },
@@ -578,17 +578,17 @@
     },
     {
         "name": "yoast/wordpress-seo",
-        "version": "8.1.2",
-        "version_normalized": "8.1.2.0",
+        "version": "8.2",
+        "version_normalized": "8.2.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Yoast/wordpress-seo.git",
-            "reference": "8ed6a660735485203b8287083a3145661a47410d"
+            "reference": "04afd59ba324f4646758a61ea34287289dfcc43c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Yoast/wordpress-seo/zipball/8ed6a660735485203b8287083a3145661a47410d",
-            "reference": "8ed6a660735485203b8287083a3145661a47410d",
+            "url": "https://api.github.com/repos/Yoast/wordpress-seo/zipball/04afd59ba324f4646758a61ea34287289dfcc43c",
+            "reference": "04afd59ba324f4646758a61ea34287289dfcc43c",
             "shasum": ""
         },
         "require": {
@@ -603,7 +603,7 @@
             "yoast/php-development-environment": "^1.0",
             "yoast/yoastcs": "~0.4.3"
         },
-        "time": "2018-09-05T13:12:52+00:00",
+        "time": "2018-09-11T08:22:21+00:00",
         "type": "wordpress-plugin",
         "installation-source": "dist",
         "autoload": {

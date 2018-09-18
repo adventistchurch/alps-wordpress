@@ -2,8 +2,6 @@
 
 namespace Illuminate\Support\Facades;
 
-use Psr\Log\LoggerInterface;
-
 /**
  * @method static void emergency(string $message, array $context = [])
  * @method static void alert(string $message, array $context = [])
@@ -14,6 +12,8 @@ use Psr\Log\LoggerInterface;
  * @method static void info(string $message, array $context = [])
  * @method static void debug(string $message, array $context = [])
  * @method static void log($level, string $message, array $context = [])
+ * @method static mixed channel(string $channel = null)
+ * @method static \Psr\Log\LoggerInterface stack(array $channels, string $channel = null)
  *
  * @see \Illuminate\Log\Logger
  */
@@ -26,6 +26,6 @@ class Log extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return LoggerInterface::class;
+        return 'log';
     }
 }
