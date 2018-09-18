@@ -27,7 +27,7 @@
     <div class="c-drawer__logo">
       <a href="/">
         <span class="u-icon u-icon--l u-path-fill--white">
-          @include('patterns.00-atoms.icons.icon-logo')
+          @include('patterns.00-atoms.logos.alps-icon-logo')
         </span>
       </a>
     </div> <!-- .c-drawer__logo -->

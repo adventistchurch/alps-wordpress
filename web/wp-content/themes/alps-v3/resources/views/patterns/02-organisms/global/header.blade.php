@@ -23,7 +23,9 @@
         @if ($logo)
           <img class="style-svg" src="{{ wp_get_attachment_url($logo) }}" alt="{{ get_post_meta($logo, '_wp_attachment_image_alt', true) }}">
         @else
-          <img class="style-svg" src="{{ get_bloginfo('template_directory') . './../dist/images/logo.svg' }}" alt="Seventh Day Adventist Church">
+          <span class="u-theme--path-fill--base">
+            @include('patterns.00-atoms.logos.alps-logo')
+          </span>
         @endif
       </a>
     </div> <!-- /.c-header__logo -->
