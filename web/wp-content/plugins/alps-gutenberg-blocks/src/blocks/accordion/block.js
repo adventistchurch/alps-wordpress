@@ -13,7 +13,7 @@ import './editor.scss';
   var BlockControls = wp.editor.BlockControls;
   var AlignmentToolbar = wp.editor.AlignmentToolbar;
 
-  registerBlockType( 'gutenberg-blocks/accordion', {
+  registerBlockType( 'alps-gutenberg-blocks/accordion', {
     title: __('Accordion'),
     icon: 'welcome-add-page',
     description: 'Add heading and basic text.',

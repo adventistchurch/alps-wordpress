@@ -16,7 +16,7 @@ const RichText = wp.editor.RichText;
 const editorMediaUpload = wp.editor.editorMediaUpload;
 const name = 'core/gallery';
 
-registerBlockType( 'gutenberg-blocks/gallery', {
+registerBlockType( 'alps-gutenberg-blocks/gallery', {
   title: __('Gallery'),
   description: __('Display a gallery images in a container that expands on click.'),
   icon: 'format-gallery',

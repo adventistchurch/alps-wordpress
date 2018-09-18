@@ -15,7 +15,7 @@ import './editor.scss';
   var BlockControls = wp.editor.BlockControls;
   var MediaUpload = wp.editor.MediaUpload;
 
-  registerBlockType( 'gutenberg-blocks/image-breakout', {
+  registerBlockType( 'alps-gutenberg-blocks/image-breakout', {
     title: __('Image (Breakout)'),
     icon: 'format-image',
     description: 'Image that expands the width of the page.',

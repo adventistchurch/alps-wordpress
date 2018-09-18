@@ -14,7 +14,7 @@ import { default as edit, defaultColumnsNumber } from './edit';
 	var InspectorControls = wp.editor.InspectorControls;
 	var ToggleControl = wp.components.ToggleControl;
 
-  registerBlockType( 'gutenberg-blocks/image-2up', {
+  registerBlockType( 'alps-gutenberg-blocks/image-2up', {
     title: __('Image (2up)'),
     description: 'Two images organized in a two column layout.',
     icon: 'format-gallery',

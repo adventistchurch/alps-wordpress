@@ -11,7 +11,7 @@ import './editor.scss';
   var registerBlockType = wp.blocks.registerBlockType;
   var RichText = wp.editor.RichText
 
-  registerBlockType( 'gutenberg-blocks/highlighted-paragraph', {
+  registerBlockType( 'alps-gutenberg-blocks/highlighted-paragraph', {
     title: __('Highlighted Paragraph'),
     icon: 'media-text',
     description: 'Highlight a block of text.',

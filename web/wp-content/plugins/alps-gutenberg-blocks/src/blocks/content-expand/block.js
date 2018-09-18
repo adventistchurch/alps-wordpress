@@ -11,7 +11,7 @@ import './editor.scss';
   var registerBlockType = wp.blocks.registerBlockType;
   var RichText = wp.editor.RichText;
 
-  registerBlockType( 'gutenberg-blocks/content-expand', {
+  registerBlockType( 'alps-gutenberg-blocks/content-expand', {
     title: __('Content Expand'),
     icon: 'arrow-down-alt',
     description: 'Content block that expands the content on click.',

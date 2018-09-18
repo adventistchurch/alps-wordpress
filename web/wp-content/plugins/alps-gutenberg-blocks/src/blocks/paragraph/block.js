@@ -13,7 +13,7 @@ import './editor.scss';
   var BlockControls = wp.editor.BlockControls;
   var AlignmentToolbar = wp.editor.AlignmentToolbar;
 
-  registerBlockType( 'gutenberg-blocks/paragraph', {
+  registerBlockType( 'alps-gutenberg-blocks/paragraph', {
     title: __('Paragraph'),
     icon: 'editor-paragraph',
     description: 'Add some basic text.',

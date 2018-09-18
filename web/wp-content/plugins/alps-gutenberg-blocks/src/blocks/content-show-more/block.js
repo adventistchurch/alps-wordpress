@@ -12,7 +12,7 @@ import './editor.scss';
   var RichText = wp.editor.RichText;
   var MediaUpload = wp.editor.MediaUpload;
 
-  registerBlockType( 'gutenberg-blocks/content-show-more', {
+  registerBlockType( 'alps-gutenberg-blocks/content-show-more', {
     title: __('Content Show More'),
     icon: 'editor-expand',
     description: 'Content block that has a toggle button to show more.',

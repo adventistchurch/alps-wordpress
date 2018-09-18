@@ -14,7 +14,7 @@ import './editor.scss';
   var BlockControls = wp.editor.BlockControls;
   var AlignmentToolbar = wp.editor.AlignmentToolbar;
 
-  registerBlockType( 'gutenberg-blocks/content-block', {
+  registerBlockType( 'alps-gutenberg-blocks/content-block', {
     title: __('Content Block'),
     description: 'Content block that highlights a row to text.',
     icon: 'welcome-write-blog',

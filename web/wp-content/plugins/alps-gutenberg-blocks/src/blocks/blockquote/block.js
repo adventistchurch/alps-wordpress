@@ -13,7 +13,7 @@ import './editor.scss';
   var InspectorControls = wp.editor.InspectorControls;
   var ToggleControl = wp.components.ToggleControl;
 
-  registerBlockType( 'gutenberg-blocks/blockquote', {
+  registerBlockType( 'alps-gutenberg-blocks/blockquote', {
     title: __('Blockquote'),
     icon: 'format-quote',
     category: 'common',
@@ -23,12 +23,12 @@ import './editor.scss';
       body: {
         type: 'array',
         source: 'children',
-        selector: 'p',
+        selector: '.o-paragraph',
       },
       citation: {
         type: 'array',
         source: 'children',
-        selector: 'cite',
+        selector: '.o-citation',
       },
       applyStyles: {
         type: 'string',
@@ -95,7 +95,7 @@ import './editor.scss';
 
       return (
         <blockquote className={ 'pullquote u-theme--border-color--darker--left u-theme--color--darker u-padding--right ' + attributes.applyStyles }>
-          <p>{ attributes.body }</p>
+          <p className="o-paragraph">{ attributes.body }</p>
           <cite className="o-citation u-theme--color--base">{ attributes.citation }</cite>
         </blockquote>
       );
