@@ -390,8 +390,6 @@ add_filter( 'allowed_block_types', function() {
   return [
     'core/heading',
     'core/image',
-    'core/video',
-    'core/vimeo',
     'core/block',
     'core/spacer',
     'alps-gutenberg-blocks/accordion',
