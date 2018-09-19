@@ -3,9 +3,15 @@
   if (!is_home()) {
     global $post;
 
-    $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
-    if (!empty($header_background_image)) {
+    if (get_post_meta($post->ID, 'header_background_image', true)) {
+      $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
       $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
+    } elseif (get_post_thumbnail_id($post->ID)) {
+      $header_background_image = get_post_thumbnail_id($post->ID);
+      $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
+    } else {
+      $header_background_image = "";
+      $page_header_class = NULL;
     }
   }
 
