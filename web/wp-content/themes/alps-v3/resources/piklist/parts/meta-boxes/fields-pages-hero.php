@@ -119,7 +119,7 @@
       array(
         'type' => 'limit',
         'options' => array(
-          'min' => 3,
+          'min' => 1,
           'max' => 3
         )
       )
