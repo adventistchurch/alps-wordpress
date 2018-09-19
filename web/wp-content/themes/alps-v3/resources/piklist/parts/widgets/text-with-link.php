@@ -1,7 +1,7 @@
 <?php
   /*
     Title: Text with Link
-    Description: Arbitrary text with link.
+    Description:*IMPORTNAT: This block needs to be placed first in the sidebar to display correctly.
   */
 ?>
 <div class="c-block__breakout u-padding u-padding--double--bottom u-padding--double--top u-spacing u-theme--background-color--darker">
