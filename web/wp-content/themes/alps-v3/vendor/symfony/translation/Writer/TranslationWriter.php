@@ -11,10 +11,10 @@
 
 namespace Symfony\Component\Translation\Writer;
 
-use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\Dumper\DumperInterface;
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 use Symfony\Component\Translation\Exception\RuntimeException;
+use Symfony\Component\Translation\MessageCatalogue;
 
 /**
  * TranslationWriter writes translation messages.
@@ -38,10 +38,13 @@ class TranslationWriter implements TranslationWriterInterface
 
     /**
      * Disables dumper backup.
+     *
+     * @deprecated since Symfony 4.1
      */
     public function disableBackup()
     {
-        // to be deprecated in 4.1
+        @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.1.', __METHOD__), E_USER_DEPRECATED);
+
         foreach ($this->dumpers as $dumper) {
             if (method_exists($dumper, 'setBackup')) {
                 $dumper->setBackup(false);

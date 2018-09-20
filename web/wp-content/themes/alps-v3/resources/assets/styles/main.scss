@@ -2,6 +2,10 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.c-block__full.l-grid-wrap.l-grid-wrap--6-of-7 {
+  width: inherit;
+}
+
 // Breakout Block
 .c-sidebar .c-block__breakout {
   @media (max-width: 900px) {
@@ -34,7 +38,9 @@
 .c-breadcrumbs {
   a {
     border: 0 !important;
-    color: #717171; // $c-gray
+    color: #717171;
+
+    // $c-gray
 
     &::after {
       content: "\203A";
@@ -47,7 +53,9 @@
   span {
     font-weight: 600;
     text-transform: uppercase;
-    color: #717171; // $c-gray
+
+    // $c-gray
+    color: #717171;
   }
 }
 
@@ -157,7 +165,9 @@
 
 // Article Body
 .wp-caption-text {
-  color: #717171; // $c-gray
+  color: #717171;
+
+  // $c-gray
   font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
   font-size: 13px;
   font-style: italic;

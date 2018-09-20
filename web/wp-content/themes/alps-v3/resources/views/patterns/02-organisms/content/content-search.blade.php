@@ -29,7 +29,7 @@
 </div> <!-- /.c-page-header__search -->
 <section class="l-grid l-grid--7-col u-shift--left--1-col--at-large l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
   <div class="c-article l-grid-item l-grid-item--l--4-col u-padding--zero--sides">
-    <article class="c-article__body u-padding--right">
+    <article @php post_class("c-article__body u-padding--right")@endphp>
       <div class="c-search-results u-spacing--double text">
         @if (have_posts())
           @while (have_posts())

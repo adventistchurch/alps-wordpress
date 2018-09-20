@@ -145,7 +145,7 @@ class Event
     /**
      * Create a new event instance.
      *
-     * @param  \Illuminate\Console\Scheduling\Mutex  $mutex
+     * @param  \Illuminate\Console\Scheduling\EventMutex  $mutex
      * @param  string  $command
      * @return void
      */
@@ -339,6 +339,18 @@ class Event
     }
 
     /**
+     * Ensure that the output is stored on disk in a log file.
+     *
+     * @return $this
+     */
+    public function storeOutput()
+    {
+        $this->ensureOutputIsBeingCaptured();
+
+        return $this;
+    }
+
+    /**
      * Send the output of the command to a given location.
      *
      * @param  string  $location
@@ -402,8 +414,20 @@ class Event
      * Ensure that output is being captured for email.
      *
      * @return void
+     *
+     * @deprecated See ensureOutputIsBeingCaptured.
      */
     protected function ensureOutputIsBeingCapturedForEmail()
+    {
+        $this->ensureOutputIsBeingCaptured();
+    }
+
+    /**
+     * Ensure that the command output is being captured.
+     *
+     * @return void
+     */
+    protected function ensureOutputIsBeingCaptured()
     {
         if (is_null($this->output) || $this->output == $this->getDefaultOutput()) {
             $this->sendOutputTo(storage_path('logs/schedule-'.sha1($this->mutexName()).'.log'));
@@ -459,6 +483,18 @@ class Event
     }
 
     /**
+     * Register a callback to ping a given URL before the job runs if the given condition is true.
+     *
+     * @param  bool  $value
+     * @param  string  $url
+     * @return $this
+     */
+    public function pingBeforeIf($value, $url)
+    {
+        return $value ? $this->pingBefore($url) : $this;
+    }
+
+    /**
      * Register a callback to ping a given URL after the job runs.
      *
      * @param  string  $url
@@ -469,6 +505,18 @@ class Event
         return $this->then(function () use ($url) {
             (new HttpClient)->get($url);
         });
+    }
+
+    /**
+     * Register a callback to ping a given URL after the job runs if the given condition is true.
+     *
+     * @param  bool  $value
+     * @param  string  $url
+     * @return $this
+     */
+    public function thenPingIf($value, $url)
+    {
+        return $value ? $this->thenPing($url) : $this;
     }
 
     /**
@@ -669,7 +717,7 @@ class Event
     {
         return Carbon::instance(CronExpression::factory(
             $this->getExpression()
-        )->getNextRunDate($currentTime, $nth, $allowCurrentDate));
+        )->getNextRunDate($currentTime, $nth, $allowCurrentDate, $this->timezone));
     }
 
     /**

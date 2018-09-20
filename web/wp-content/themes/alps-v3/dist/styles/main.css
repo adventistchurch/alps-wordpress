@@ -2,6 +2,10 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.c-block__full.l-grid-wrap.l-grid-wrap--6-of-7 {
+  width: inherit;
+}
+
 .c-sidebar .c-block__breakout {
   margin-right: -15px;
   margin-top: -80px;

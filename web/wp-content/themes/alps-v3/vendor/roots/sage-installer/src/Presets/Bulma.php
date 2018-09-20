@@ -7,7 +7,7 @@ class Bulma extends Preset
     /** {@inheritdoc} */
     protected function updatePackagesArray(array $packages)
     {
-        $packages['dependencies']['bulma'] = '^0.5.0';
+        $packages['dependencies']['bulma'] = '^0.7.1';
         return $packages;
     }
 }

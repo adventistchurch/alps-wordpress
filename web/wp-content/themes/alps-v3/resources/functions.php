@@ -123,8 +123,8 @@ function adventist_register_required_plugins() {
     // Gutenberg Blocks
     array(
       'name'               => 'ALPS Gutenberg Blocks', // The plugin name.
-      'slug'               => 'gutenberg-blocks', // The plugin slug (typically the folder name).
-      'source'             => __DIR__.'/../app/plugins/gutenberg-blocks.zip', // The plugin source.
+      'slug'               => 'alps-gutenberg-blocks', // The plugin slug (typically the folder name).
+      'source'             => __DIR__.'/../app/plugins/alps-gutenberg-blocks.zip', // The plugin source.
       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
@@ -335,8 +335,8 @@ function auto_nav_creation_footer() {
 add_action('load-nav-menus.php', 'auto_nav_creation_footer');
 
 // Drawer Navigation
-function auto_nav_creation_tertiary() {
-  $name = 'Tertiary Navigation';
+function auto_nav_creation_learn_more() {
+  $name = 'Learn More Navigation';
   $menu_exists = wp_get_nav_menu_object($name);
 
   // If it doesn't exist, let's create it.
@@ -369,11 +369,11 @@ function auto_nav_creation_tertiary() {
 
     // Set menu location
     $locations = get_theme_mod('nav_menu_locations');
-    $locations['tertiary_navigation'] = $menu->term_id;
+    $locations['learn_more_navigation'] = $menu->term_id;
     set_theme_mod( 'nav_menu_locations', $locations );
   }
 }
-add_action('load-nav-menus.php', 'auto_nav_creation_tertiary');
+add_action('load-nav-menus.php', 'auto_nav_creation_learn_more');
 
 /**
  * ALPS Gutenberg Blocks
@@ -390,19 +390,17 @@ add_filter( 'allowed_block_types', function() {
   return [
     'core/heading',
     'core/image',
-    'core/video',
-    'core/vimeo',
     'core/block',
     'core/spacer',
-    'gutenberg-blocks/accordion',
-    'gutenberg-blocks/blockquote',
-    'gutenberg-blocks/content-block',
-    'gutenberg-blocks/content-show-more',
-    'gutenberg-blocks/content-expand',
-    'gutenberg-blocks/gallery',
-    'gutenberg-blocks/highlighted-paragraph',
-    'gutenberg-blocks/image-2up',
-    'gutenberg-blocks/image-breakout',
-    'gutenberg-blocks/paragraph',
+    'alps-gutenberg-blocks/accordion',
+    'alps-gutenberg-blocks/blockquote',
+    'alps-gutenberg-blocks/content-block',
+    'alps-gutenberg-blocks/content-show-more',
+    'alps-gutenberg-blocks/content-expand',
+    'alps-gutenberg-blocks/gallery',
+    'alps-gutenberg-blocks/highlighted-paragraph',
+    'alps-gutenberg-blocks/image-2up',
+    'alps-gutenberg-blocks/image-breakout',
+    'alps-gutenberg-blocks/paragraph',
   ];
 } );
