@@ -9,7 +9,7 @@
   }
 @endphp
 @include('patterns.02-organisms.sections.page-header-hero')
-<section class="l-grid l-grid--7-col {{ $section_offset }} l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
+<section id="top" class="l-main__content l-grid l-grid--7-col {{ $section_offset }} l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
   <article @php post_class("c-article l-grid-item l-grid-item--l--4-col $article_offset") @endphp>
     <div class="c-article__body">
       <div class="text u-spacing">
