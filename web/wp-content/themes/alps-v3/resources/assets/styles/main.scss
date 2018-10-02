@@ -2,6 +2,17 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+// Widgets
+.c-widget {
+  ul {
+    margin-left: 20px;
+
+    li {
+      padding-left: 20px;
+    }
+  }
+}
+
 .c-block__full.l-grid-wrap.l-grid-wrap--6-of-7 {
   width: inherit;
 }
