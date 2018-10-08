@@ -9,10 +9,10 @@
               <div class="search__options pad--primary no-pad--btm spacing--half">
                 <form class="solrForm search__results__form" action="<?php echo home_url( '/' ); ?>" role="search" method="get" accept-charset="utf-8">
                   <fieldset>
-                    <legend class="is-vishidden"><?php echo __("Search"); ?></legend>
+                    <legend class="is-vishidden"><?php _e('Search', 'sage'); ?></legend>
                     <div class="field-container field-container--inline" style="display: block;">
                       <input name="q" class="term search__results__input font--secondary--s" type="search" data-l="0" value="" autocomplete="off">
-                      <button class="search__submit font--secondary--s upper theme--secondary-background-color"><?php echo __("Search"); ?></button>
+                      <button class="search__submit font--secondary--s upper theme--secondary-background-color"><?php _e('Search', 'sage'); ?></button>
                     </div>
                   </fieldset>
                 </form><!-- /.search-form -->

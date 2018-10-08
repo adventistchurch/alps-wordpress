@@ -25,7 +25,7 @@
                 $excerpt_length = 200;
                 $image = get_post_thumbnail_id();
                 $kicker = get_post_meta($post->ID, 'kicker', true);
-                $button_text = __('Read More');
+                $button_text = __('Read More', 'sage');
                 $button_url = get_the_permalink();
                 $round_image = get_post_meta($post->ID, 'make_the_image_round', true);
                 $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
@@ -92,7 +92,7 @@
         $excerpt_length = 200;
         $image = get_post_thumbnail_id($page->ID);
         $kicker = $page->post_title;
-        $button_text = __('Read More');
+        $button_text = __('Read More', 'sage');
         $date = '';
         $button_url = get_page_link($page->ID);
         $round_image = 'true';

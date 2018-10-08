@@ -24,7 +24,7 @@
           <div class="spacing">
             <div class="spacing--half">
               <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-                <?php echo __('Recent'); ?> <?php the_title(); ?>
+                <?php _e('Recent', 'sage'); ?> <?php the_title(); ?>
               </h2>
             </div>
             <hr>
@@ -51,7 +51,7 @@
                   $body = strip_shortcodes($body);
                   $excerpt_length = 100;
                   $image = get_post_thumbnail_id();
-                  $button_text = __('Read More');
+                  $button_text = __('Read More', 'sage');
                   $date = get_the_date();
                   $button_url = get_the_permalink();
                   $round_image = get_post_meta($post->ID, 'make_the_image_round', true);
@@ -75,7 +75,7 @@
           <div class="spacing">
             <div class="spacing--half">
               <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-                <?php echo __("ANN Video"); ?>
+                <?php _e('ANN Video', 'sage'); ?>
               </h2>
             </div>
             <hr>
@@ -159,7 +159,7 @@
             <hr />
             <div class="carousel-block block spacing--quarter">
               <h2 class="font--tertiary--m theme--primary-text-color pad pad-half--btm">
-              <?php echo __("Photos"); ?>
+              <?php _e('Photos', 'sage'); ?>
               </h2>
               <div class="carousel-block__carousel carousel-nav--4-3">
                 <div class="carousel rel ">
@@ -187,7 +187,7 @@
                         $body = strip_shortcodes($body);
                         $excerpt_length = 100;
                         $image = get_post_thumbnail_id();
-                        $button_text = __('Read More');
+                        $button_text = __('Read More', 'sage');
                         $date = get_the_date();
                         $button_url = get_the_permalink();
                         $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];

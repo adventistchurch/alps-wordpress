@@ -10,7 +10,7 @@ if (post_password_required()) {
 				$comments_number = get_comments_number();
 				if (1 === $comments_number) {
 					/* translators: %s: post title */
-					printf( _x('One thought on &ldquo;%s&rdquo;', 'comments title', 'twentysixteen'), get_the_title());
+					printf( _x('One thought on &ldquo;%s&rdquo;', 'comments title', 'sage'), get_the_title());
 				}
 				else {
 					printf(
@@ -43,7 +43,7 @@ if (post_password_required()) {
 		<?php the_comments_navigation(); ?>
 	<?php endif; // Check for have_comments(). ?>
 	<?php if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')): ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'twentysixteen' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'sage' ); ?></p>
 	<?php endif; ?>
 	<?php
 		comment_form(
