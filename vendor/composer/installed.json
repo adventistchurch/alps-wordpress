@@ -123,11 +123,11 @@
     },
     {
         "name": "deliciousbrains-plugin/wp-migrate-db-pro",
-        "version": "1.8.3",
-        "version_normalized": "1.8.3.0",
+        "version": "1.8.6",
+        "version_normalized": "1.8.6.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-migrate-db-pro&version=1.8.3&composer_key=F11D9E0FF9E868E9A0637728A79A71E0",
+            "url": "https://api.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-migrate-db-pro&version=1.8.6&composer_key=F11D9E0FF9E868E9A0637728A79A71E0",
             "reference": null,
             "shasum": null
         },
@@ -352,16 +352,16 @@
     },
     {
         "name": "wpackagist-plugin/gutenberg",
-        "version": "3.8.0",
-        "version_normalized": "3.8.0.0",
+        "version": "3.9.0",
+        "version_normalized": "3.9.0.0",
         "source": {
             "type": "svn",
             "url": "https://plugins.svn.wordpress.org/gutenberg/",
-            "reference": "tags/3.8.0"
+            "reference": "tags/3.9.0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://downloads.wordpress.org/plugin/gutenberg.3.8.0.zip",
+            "url": "https://downloads.wordpress.org/plugin/gutenberg.3.9.0.zip",
             "reference": null,
             "shasum": null
         },
@@ -578,17 +578,17 @@
     },
     {
         "name": "yoast/wordpress-seo",
-        "version": "8.2",
-        "version_normalized": "8.2.0.0",
+        "version": "8.4",
+        "version_normalized": "8.4.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/Yoast/wordpress-seo.git",
-            "reference": "04afd59ba324f4646758a61ea34287289dfcc43c"
+            "url": "https://github.com/Yoast-dist/wordpress-seo.git",
+            "reference": "14ad6f3730b0cd5cd7e76c55a3c6a0ee6242e42c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Yoast/wordpress-seo/zipball/04afd59ba324f4646758a61ea34287289dfcc43c",
-            "reference": "04afd59ba324f4646758a61ea34287289dfcc43c",
+            "url": "https://api.github.com/repos/Yoast-dist/wordpress-seo/zipball/14ad6f3730b0cd5cd7e76c55a3c6a0ee6242e42c",
+            "reference": "14ad6f3730b0cd5cd7e76c55a3c6a0ee6242e42c",
             "shasum": ""
         },
         "require": {
@@ -603,7 +603,7 @@
             "yoast/php-development-environment": "^1.0",
             "yoast/yoastcs": "~0.4.3"
         },
-        "time": "2018-09-11T08:22:21+00:00",
+        "time": "2018-10-09T08:21:07+00:00",
         "type": "wordpress-plugin",
         "installation-source": "dist",
         "autoload": {
