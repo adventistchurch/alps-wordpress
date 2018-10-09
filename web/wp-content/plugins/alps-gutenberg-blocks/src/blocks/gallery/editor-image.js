@@ -2,6 +2,7 @@
  * External Dependencies
  */
 const classnames = require('classnames');
+//const keycodes = require('keycodes');
 
 /**
  * WordPress Dependencies
@@ -9,14 +10,13 @@ const classnames = require('classnames');
 const { Component } = wp.element;
 const { IconButton, Spinner } = wp.components;
 const { __ } = wp.i18n;
-const { keycodes } = wp.utils;
+const { BACKSPACE, DELETE } = wp.keycodes;
 const { withSelect } = wp.data;
 const { RichText } = wp.editor;
 
 /**
  * Module constants
  */
-const { BACKSPACE, DELETE } = keycodes;
 
 class GalleryImage extends Component {
   constructor() {

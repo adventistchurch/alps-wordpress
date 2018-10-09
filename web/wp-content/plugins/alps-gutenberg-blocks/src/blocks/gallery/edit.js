@@ -34,7 +34,7 @@ const {
  * Internal dependencies
  */
 import './editor.scss';
-import GalleryImage from './gallery-image';
+import GalleryImage from './editor-image';
 
 const MAX_COLUMNS = 8;
 const linkOptions = [

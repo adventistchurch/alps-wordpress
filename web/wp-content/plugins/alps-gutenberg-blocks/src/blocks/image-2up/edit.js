@@ -1,11 +1,11 @@
 /**
  * External Dependencies
  */
-const { filter, pick } = lodash;
 
 /**
  * WordPress dependencies
  */
+const { filter, pick } = lodash;
 
 const { Component, Fragment } = wp.element;
 const { __ } = wp.i18n;
@@ -34,7 +34,7 @@ const {
  * Internal dependencies
  */
 import './editor.scss';
-import GalleryImage from './editor-image';
+import TwoUpImage from './editor-image';
 
 const MAX_COLUMNS = 2;
 const linkOptions = [
@@ -47,7 +47,7 @@ export function defaultColumnsNumber( attributes ) {
   return Math.min( 3, attributes.images.length );
 }
 
-class GalleryEdit extends Component {
+class TwoUpEdit extends Component {
   constructor() {
     super( ...arguments );
 
@@ -201,7 +201,7 @@ class GalleryEdit extends Component {
           { dropZone }
           { images.map( ( img, index ) => (
             <li className="blocks-gallery-item" key={ img.id || img.url }>
-              <GalleryImage
+              <TwoUpImage
                 url={ img.url }
                 alt={ img.alt }
                 id={ img.id }
@@ -233,4 +233,4 @@ class GalleryEdit extends Component {
   }
 }
 
-export default withNotices( GalleryEdit );
+export default withNotices( TwoUpEdit );
