@@ -2,19 +2,16 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
-// Widgets
-.c-widget {
-  ul {
-    margin-left: 20px;
-
-    li {
-      padding-left: 20px;
-    }
-  }
-}
-
 .c-block__full.l-grid-wrap.l-grid-wrap--6-of-7 {
   width: inherit;
+}
+
+// Widgets
+.c-widget {
+  li {
+    padding-bottom: 5px;
+    padding-left: 20px;
+  }
 }
 
 // Breakout Block
