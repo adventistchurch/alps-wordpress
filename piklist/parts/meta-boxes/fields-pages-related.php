@@ -18,7 +18,7 @@
       'related_custom' => 'Show custom pages'
     )
   ));
-  piklist( 'field', array(
+  piklist('field', array(
     'type' => 'select',
     'field' => 'related_custom_value',
     'label' => 'Related Pages',
@@ -50,6 +50,15 @@
     ),
     'relate' => array(
       'scope' => 'post'
+    )
+  ));
+
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'make_the_image_round',
+    'label' => 'Round Image',
+    'choices' => array(
+      'true' => 'Check to make the images round.'
     )
   ));
 ?>
