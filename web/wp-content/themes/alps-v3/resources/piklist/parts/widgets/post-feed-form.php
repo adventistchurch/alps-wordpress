@@ -52,4 +52,11 @@
       'true' => 'Check to show the image and description for each post.'
     )
   ));
-?>
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'post_feed_layout',
+    'label' => 'Grid Layout',
+    'choices' => array(
+      'true' => 'Check to show the image and description in a grid layout.'
+    )
+  ));
