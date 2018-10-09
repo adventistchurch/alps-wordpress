@@ -1,5 +1,12 @@
 ## Change Log ##
 
+### v2.1.9 ###
+- Bug: Fixing a version error bug.
+
+### v2.1.8 ###
+- [#177](https://github.com/adventistchurch/alps-wordpress/issues/177) Bug: This Fixes an issue introduced with some changes to the Piklist extension. It fixes the ability to edit the home-row-blocks on the home template. 
+
+
 ### v2.1.7 ###
 - Bug: This change reverses a fix made in `v2.1.5`. The Piklist module, in versions `0.9.9.14` and `0.9.9.15` removed the ablity to include multiple images. With no sign of a fix in 2 weeks from Piklist, we fixed the them. Then a day after we rolled out our fix, Piklist rolled out a new update, `0.9.9.16` with a fix, breaking our fix. This release brings the theme back to correct working conditions. Please accept our apologies for this mixup.
 

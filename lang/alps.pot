@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ALPS\n"
-"POT-Creation-Date: 2018-04-12 12:01-0400\n"
+"POT-Creation-Date: 2018-05-21 19:34+0200\n"
 "PO-Revision-Date: 2018-04-12 11:35-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -570,6 +570,14 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
+#: page-search.php:12 page-search.php:15
+msgid "Search"
+msgstr ""
+
+#: patterns/components/news-header.php:11 patterns/components/share-tools.php:4
+msgid "Share"
+msgstr ""
+
 #: patterns/components/pagination.php:6
 msgid "Next &rarr;"
 msgstr ""
@@ -578,8 +586,23 @@ msgstr ""
 msgid "&larr; Previous"
 msgstr ""
 
-#: template-news.php:72
-msgid "ANN Videos"
+#: piklist/parts/widgets/widget-post-feed.php:49 template-news.php:54
+#: template-news.php:190 templates/block-layout-front.php:58
+#: templates/block-layout.php:28 templates/block-layout.php:95
+#: templates/content-search.php:29 templates/content.php:40
+msgid "Read More"
+msgstr ""
+
+#: template-news.php:27
+msgid "Recent"
+msgstr ""
+
+#: template-news.php:78
+msgid "ANN Video"
+msgstr ""
+
+#: template-news.php:162
+msgid "Photos"
 msgstr ""
 
 #: templates/comments.php:9
@@ -594,28 +617,10 @@ msgstr[1] ""
 msgid "Sorry, no results were found."
 msgstr ""
 
+#: templates/content.php:23
+msgid "All Posts"
+msgstr ""
+
 #: templates/entry-meta.php:2
 msgid "By"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "ALPS"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "http://www.adventist.io"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"ALPS is the Adventist Living Pattern Library theme based off of the Sage "
-"WordPress theme."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Seventh-day Adventist Church and Southleft"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://www.adventist.io/themes"
 msgstr ""
