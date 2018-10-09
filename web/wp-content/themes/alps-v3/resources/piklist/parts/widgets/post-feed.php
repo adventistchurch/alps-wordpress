@@ -56,7 +56,6 @@
           if ($featured == true) {
               $date = date('F j, Y', strtotime(get_the_date()));
               $excerpt = get_the_excerpt($id);
-
               $body = get_the_content($id);
               $thumb_id = get_post_thumbnail_id($id);
               $thumb_size = 'horiz__4x3';
