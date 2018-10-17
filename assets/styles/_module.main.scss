@@ -2,6 +2,11 @@
     $MAIN
 \*------------------------------------*/
 
+.text,
+.ovh {
+  max-width: 100%;
+}
+
 figcaption a {
   display: inline-block;
 }
@@ -23,6 +28,7 @@ figcaption a {
     .arrow--down {
       transform: rotate(180deg);
     }
+
     .secondary-nav__subnav__list {
       background-color: $gray-light;
 
@@ -42,11 +48,11 @@ figcaption a {
     position: absolute;
     right: rem(10);
     top: calc(50%);
-    transform: translate(0,-50%);
+    transform: translate(0, -50%);
     right: rem(-1);
     display: none;
 
-    @include media('>medium') {
+    @include media(">medium") {
       display: block;
     }
   }
@@ -62,17 +68,19 @@ figcaption a {
     z-index: 20;
     display: none;
 
-    @include media('>medium') {
+    @include media(">medium") {
       height: rem(5);
     }
 
-    @include media('>large') {
+
+    @include media(">large") {
       bottom: rem(1);
     }
   }
 
-  @include media('>medium') {
+  @include media(">medium") {
     padding: rem(5) rem(10);
+
     .secondary-nav__subnav__list {
       .secondary-nav__list-item {
         padding: rem(5);
@@ -80,7 +88,7 @@ figcaption a {
     }
 
     &.this-is-active {
-      box-shadow: 0 0 2px rgba($black, .3);
+      box-shadow: 0 0 2px rgba($black, 0.3);
       background-color: $white;
       z-index: 15;
 
@@ -99,6 +107,7 @@ figcaption a {
       }
     }
   }
+
 
   .wpml-ls-flag {
     top: rem(2);

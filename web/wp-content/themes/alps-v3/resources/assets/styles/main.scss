@@ -1,0 +1,151 @@
+/* ------------------------------------ *\
+    $WORDPRESS STYLES
+\* ------------------------------------ */
+
+.c-page-header a {
+  color: white !important;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.c-hero {
+  .c-block__image {
+    min-height: 250px;
+    display: block;
+  }
+
+  .c-block__title-link:hover {
+    color: white !important;
+    text-decoration: underline;
+  }
+}
+
+.alm-btn-wrap .alm-load-more-btn {
+  margin-top: 40px;
+}
+
+.c-comments {
+  display: none;
+  margin-top: 20px;
+
+  &.this-is-active {
+    display: block;
+  }
+
+  h2,
+  h3 {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  form {
+    p {
+      font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
+    }
+  }
+
+  .comment-form-cookies-consent {
+    display: flex;
+
+    input[type=checkbox] {
+      width: 20px;
+      margin-top: 2px;
+    }
+  }
+
+  .comment-form-comment {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.c-article__footer {
+  a {
+    cursor: pointer;
+    border: 0;
+  }
+}
+
+// Widgets
+.c-widget ul {
+  & > * + * {
+    margin-top: 10px;
+  }
+}
+
+.search-submit {
+  margin-top: 10px;
+}
+
+// Breakout Block
+.body.hide-sabbath .c-sidebar .c-block__breakout {
+  @media (min-width: 700px) {
+    margin-top: -30px;
+  }
+
+  @media (min-width: 900px) {
+    margin-top: -40px;
+  }
+}
+
+.c-block__breakout {
+  margin-right: -15px;
+
+  @media (max-width: 900px) {
+    margin-top: 30px;
+  }
+
+  @media (min-width: 900px) {
+    margin-right: -20px;
+  }
+}
+
+// Breadcrumbs
+.c-breadcrumbs {
+  a {
+    border: 0;
+    color: #717171; // $c-gray
+
+    &::after {
+      content: "\203A";
+      display: inline-block;
+      padding: 0 1px 0 6px;
+      font-size: 20px;
+    }
+  }
+
+  span {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #717171; // $c-gray
+  }
+}
+
+// // Article Body
+// .wp-caption-text {
+//   color: #717171; // $c-gray
+//   font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
+//   font-size: 13px;
+//   font-style: italic;
+//   line-height: 1.35;
+//
+//   @media (min-width: 900px) {
+//     font-size: 15px;
+//   }
+// }
+//
+// figure {
+//   max-width: 100%;
+//
+//   img {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
+
+// Gutenberg block overrides
+.wp-block-table {
+  border: 0;
+}

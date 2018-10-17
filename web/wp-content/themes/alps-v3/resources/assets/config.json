@@ -1,0 +1,15 @@
+{
+  "entry": {
+    "main": [
+      "./styles/main.scss",
+      "./scripts/main.js"
+    ]
+  },
+  "publicPath": "/wp-content/themes/alps-v3",
+  "devUrl": "http://alps-wp.test",
+  "proxyUrl": "http://localhost:3000",
+  "cacheBusting": "[name]_[hash:8]",
+  "watch": [
+    "{app,resources/views}/**/*.php"
+  ]
+}
