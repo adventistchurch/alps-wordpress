@@ -57,6 +57,6 @@
     'field' => 'post_feed_layout',
     'label' => 'Grid Layout',
     'choices' => array(
-      'true' => 'Check to show the image and description in a grid layout.'
+      'true' => 'Check to show the image and description side-by-side.'
     )
   ));
