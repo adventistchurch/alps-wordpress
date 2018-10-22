@@ -7,10 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInitd34a7bc0078a9e64dc81c2e48f8b9f32
 {
     public static $prefixLengthsPsr4 = array (
-        'd' => 
-        array (
-            'derhasi\\Composer\\' => 17,
-        ),
         'C' => 
         array (
             'Composer\\Installers\\' => 20,
@@ -18,10 +14,6 @@ class ComposerStaticInitd34a7bc0078a9e64dc81c2e48f8b9f32
     );
 
     public static $prefixDirsPsr4 = array (
-        'derhasi\\Composer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/drupal-composer/preserve-paths/src',
-        ),
         'Composer\\Installers\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
