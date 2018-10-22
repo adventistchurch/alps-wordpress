@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f98a43519fc65e91acaea55a2960a79a",
+    "content-hash": "6071840f096e4d9a49d91ec14d9c04f1",
     "packages": [
         {
             "name": "composer/installers",
@@ -128,10 +128,10 @@
         },
         {
             "name": "deliciousbrains-plugin/wp-migrate-db-pro",
-            "version": "1.8.3",
+            "version": "1.8.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-migrate-db-pro&version=1.8.3&composer_key=F11D9E0FF9E868E9A0637728A79A71E0",
+                "url": "https://api.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-migrate-db-pro&version=1.8.6&composer_key=F11D9E0FF9E868E9A0637728A79A71E0",
                 "reference": null,
                 "shasum": null
             },
@@ -153,60 +153,6 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin"
-        },
-        {
-            "name": "drupal-composer/preserve-paths",
-            "version": "0.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal-composer/preserve-paths.git",
-                "reference": "d557250928235fe23e11c86329bd7cef05397648"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/preserve-paths/zipball/d557250928235fe23e11c86329bd7cef05397648",
-                "reference": "d557250928235fe23e11c86329bd7cef05397648",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "require-dev": {
-                "composer/composer": "1.*",
-                "derhasi/tempdirectory": "0.1.*",
-                "escapestudios/symfony2-coding-standard": "2.*",
-                "phpunit/phpunit": "4.*",
-                "squizlabs/php_codesniffer": "2.*"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "derhasi\\Composer\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "derhasi\\Composer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Johannes Haseitl",
-                    "email": "johannes@undpaul.de",
-                    "homepage": "http://www.undpaul.de"
-                }
-            ],
-            "description": "Composer plugin for preserving custom paths and supporting nested packages",
-            "homepage": "https://github.com/derhasi/composer-preserve-paths",
-            "keywords": [
-                "composer-plugin",
-                "custom path",
-                "installer",
-                "nested package"
-            ],
-            "time": "2017-02-03T11:32:31+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
@@ -557,16 +503,16 @@
         },
         {
             "name": "yoast/wordpress-seo",
-            "version": "8.2",
+            "version": "8.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Yoast/wordpress-seo.git",
-                "reference": "04afd59ba324f4646758a61ea34287289dfcc43c"
+                "url": "https://github.com/Yoast-dist/wordpress-seo.git",
+                "reference": "14ad6f3730b0cd5cd7e76c55a3c6a0ee6242e42c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Yoast/wordpress-seo/zipball/04afd59ba324f4646758a61ea34287289dfcc43c",
-                "reference": "04afd59ba324f4646758a61ea34287289dfcc43c",
+                "url": "https://api.github.com/repos/Yoast-dist/wordpress-seo/zipball/14ad6f3730b0cd5cd7e76c55a3c6a0ee6242e42c",
+                "reference": "14ad6f3730b0cd5cd7e76c55a3c6a0ee6242e42c",
                 "shasum": ""
             },
             "require": {
@@ -608,7 +554,7 @@
                 "seo",
                 "wordpress"
             ],
-            "time": "2018-09-11T08:22:21+00:00"
+            "time": "2018-10-09T08:21:07+00:00"
         }
     ],
     "packages-dev": [],
