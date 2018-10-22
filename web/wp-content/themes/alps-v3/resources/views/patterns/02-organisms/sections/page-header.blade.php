@@ -56,7 +56,7 @@
       @if (!empty($display_title))
         {{ $display_title }}
       @else
-        {{ $title }}
+        {!! $title !!}
       @endif
     </h1>
   </div>

@@ -6,7 +6,7 @@
     @if (isset($link))
       <a href="{{ $link }}" class="c-block__title-link u-theme--link-hover--dark">
     @endif
-    <strong>{{ $title }}</strong>
+    <strong>{!! $title !!}</strong>
     @if (isset($link))
       </a>
     @endif

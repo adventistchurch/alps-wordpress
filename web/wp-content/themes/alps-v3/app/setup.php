@@ -88,11 +88,19 @@ add_action('widgets_init', function () {
         'after_title'   => '</h3>'
     ];
     register_sidebar([
-        'name'          => __('Primary', 'sage'),
-        'id'            => 'sidebar-primary'
+        'name'          => __('Page Top', 'sage'),
+        'id'            => 'section-page-top'
     ] + $config);
     register_sidebar([
-        'name'          => __('Posts', 'sage'),
+        'name'          => __('Page Bottom', 'sage'),
+        'id'            => 'section-page-bottom'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Page Sidebar', 'sage'),
+        'id'            => 'sidebar-page'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Posts Sidebar', 'sage'),
         'id'            => 'sidebar-posts'
     ] + $config);
 });

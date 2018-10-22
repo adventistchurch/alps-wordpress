@@ -59,7 +59,8 @@
             @if (isset($link))
               <a href="{{ $link }}" class="c-block__title-link u-theme--link-hover--dark">
             @endif
-            @if (isset($eyebrow))<em class="u-theme--color--lighter">{{ $eyebrow . ' ' }}</em>@endif{{ $title }}
+            @if (isset($eyebrow))<em class="u-theme--color--lighter">{{ $eyebrow . ' ' }}</em>@endif
+              {!! $title !!}
             @if (isset($link))
               </a>
             @endif

@@ -296,16 +296,16 @@
     },
     {
         "name": "wpackagist-plugin/gutenberg",
-        "version": "3.8.0",
-        "version_normalized": "3.8.0.0",
+        "version": "3.9.0",
+        "version_normalized": "3.9.0.0",
         "source": {
             "type": "svn",
             "url": "https://plugins.svn.wordpress.org/gutenberg/",
-            "reference": "tags/3.8.0"
+            "reference": "tags/3.9.0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://downloads.wordpress.org/plugin/gutenberg.3.8.0.zip",
+            "url": "https://downloads.wordpress.org/plugin/gutenberg.3.9.0.zip",
             "reference": null,
             "shasum": null
         },
