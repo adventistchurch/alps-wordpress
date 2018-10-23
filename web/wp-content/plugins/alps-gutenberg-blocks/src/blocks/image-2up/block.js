@@ -58,8 +58,10 @@ import { default as edit, defaultColumnsNumber } from './edit';
 
     edit,
 
-    save( { attributes } ) {
-      const { images } = attributes;
+    save: function( props ) {
+      var attributes = props.attributes;
+      var images = attributes.images;
+      //const { images } = attributes;
 
       return (
         <div>
