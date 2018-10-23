@@ -499,17 +499,6 @@ video,
  *
  * CSS for both Frontend+Backend.
  */
-.wp-block-gutenberg-blocks-image-2up {
-  margin-left: 0; }
-  @media (min-width: 700px) {
-    .wp-block-gutenberg-blocks-image-2up {
-      margin-left: calc(100vw/7 * -1); } }
-  @media (min-width: 900px) {
-    .wp-block-gutenberg-blocks-image-2up {
-      margin-left: 0; } }
-  @media (min-width: 1300px) {
-    .wp-block-gutenberg-blocks-image-2up {
-      margin-left: calc(100vw/7 * -1); } }
 /**
  * #.# Common SCSS
  *

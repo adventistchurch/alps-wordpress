@@ -63,7 +63,7 @@ import { default as edit, defaultColumnsNumber } from './edit';
 
       return (
         <div>
-          <section className="l-grid l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7">
+          <section className="l-grid l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7 u-shift--left--1-col--standard">
             { images.map( ( image ) => {
               const img = <picture className="picture">
                 <img className={ 'wp-image-' + image.id + ' size-large'} itemprop="image" src={ image.url } alt={ image.alt } data-id={ image.id } />
