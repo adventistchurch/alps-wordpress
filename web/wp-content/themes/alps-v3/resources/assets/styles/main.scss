@@ -199,19 +199,3 @@
 figure {
   max-width: 100%;
 }
-
-.u-shift--left--1-col--at-medium {
-  @media (min-width: 700px) {
-    margin-left: calc((100vw / 7) * -1);
-  }
-}
-
-.u-shift--left--1-col--standard {
-  @media (min-width: 700px) and (max-width: 900px) {
-    margin-left: calc((100vw / 7) * -1);
-  }
-
-  @media (min-width: 1300px) {
-    margin-left: calc((100vw / 7) * -1);
-  }
-}
