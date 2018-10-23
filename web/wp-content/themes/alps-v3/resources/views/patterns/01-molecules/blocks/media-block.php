@@ -60,14 +60,16 @@
           </p>
         <?php endif; ?>
       </div>
-      <div class="c-media-block__meta c-block__meta <?php if (isset($block_meta_class)): ?><?php echo $block_meta_class ?><?php endif; ?>">
-        <?php if (isset($category)): ?>
-          <span class="c-block__category u-text-transform--upper"><?php echo $category ?></span>
-        <?php endif; ?>
-        <?php if (isset($date)): ?>
-          <time class="c-block__date u-text-transform--upper"><?php echo $date ?></time>
-        <?php endif; ?>
-      </div>
+      <?php if (isset($category) || isset($date)): ?>
+        <div class="c-media-block__meta c-block__meta <?php if (isset($block_meta_class)): ?><?php echo $block_meta_class ?><?php endif; ?>">
+          <?php if (isset($category)): ?>
+            <span class="c-block__category u-text-transform--upper"><?php echo $category ?></span>
+          <?php endif; ?>
+          <?php if (isset($date)): ?>
+            <time class="c-block__date u-text-transform--upper"><?php echo $date ?></time>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
       <?php if (isset($cta)): ?>
         <a href="<?php echo $link ?>" class="c-block__button o-button o-button--outline"><?php echo $cta ?><span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><?php include(locate_template('patterns/00-atoms/icons/icon-arrow-long-right.blade.php')); ?></span></a>
       <?php endif; ?>

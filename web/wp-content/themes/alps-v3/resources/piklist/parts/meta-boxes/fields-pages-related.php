@@ -19,6 +19,56 @@
       'false' => 'None'
     )
   ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'related_layout',
+    'label' => 'Related Pages Layout',
+    'description' => 'Check the layout options for the related pages.',
+    'columns' => 12,
+    'choices' => array(
+      'grid' => 'Display the related pages side-by-side.',
+      'image' => 'Show the feature image for the related pages.',
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'related_image_round',
+    'label' => 'Related Pages Round Image',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Select to make the featured image round.',
+    ),
+    'conditions' => array(
+      array(
+        'reset' => false,
+        'field' => 'related_layout',
+        'value' => 'image'
+      ),
+      array(
+        'reset' => false,
+        'field' => 'related_layout',
+        'value' => 'grid',
+        'compare' => '!='
+      )
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'related_grid_3up',
+    'description' => '*The sidebar must be hidden for the pages to display 3up.',
+    'label' => 'Related Pages Grid',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Select to display the related pages 3up at the largest breakpoint.',
+    ),
+    'conditions' => array(
+      array(
+        'reset' => false,
+        'field' => 'related_layout',
+        'value' => 'grid'
+      )
+    )
+  ));
   piklist( 'field', array(
     'type' => 'select',
     'field' => 'related_custom_value',
