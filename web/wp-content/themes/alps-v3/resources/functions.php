@@ -387,6 +387,14 @@ function auto_nav_creation_learn_more()
 add_action('load-nav-menus.php', 'auto_nav_creation_learn_more');
 
 /**
+ * On theme switch settings
+ */
+function alps_setup_options () {
+  update_option( 'theme_switch_menu_locations', get_theme_mod( 'nav_menu_locations'));
+}
+add_action('after_switch_theme', 'alps_setup_options');
+
+/**
  * ALPS Gutenberg Blocks
  */
 
