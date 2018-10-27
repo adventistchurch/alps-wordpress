@@ -3,7 +3,7 @@
  */
 const { filter, every } = lodash;
 import './style.scss';
-import { default as edit, defaultColumnsNumber } from './edit';
+import Edit, { defaultColumnsNumber } from './edit';
 
 /**
  * WordPress dependencies
@@ -31,7 +31,7 @@ registerBlockType( 'alps-gutenberg-blocks/gallery', {
       type: 'array',
       default: [],
       source: 'query',
-      selector: '.wp-block-gutenberg-blocks-gallery .c-gallery-block__image',
+      selector: '.wp-block-alps-gutenberg-blocks-gallery .c-gallery-block__image',
       query: {
         url: {
           source: 'attribute',
@@ -63,9 +63,11 @@ registerBlockType( 'alps-gutenberg-blocks/gallery', {
     },
   },
 
-  edit,
+  edit: function( props ) {
+  	return <Edit {...props} />
+  },
 
-  save( { attributes } ) {
+  save: function( { attributes } ) {
     const { images } = attributes;
     return (
       <div className="c-gallery-block__image">
@@ -82,17 +84,14 @@ registerBlockType( 'alps-gutenberg-blocks/gallery', {
           </div>
 
           <div className="c-gallery-block__body">
-            { images.map( ( image ) => {
-              const img = <img src={ image.url } alt={ image.alt } data-id={ image.id } />;
-              return (
-                <div key={ image.id || image.url } className="c-gallery-block__image">
-                  { img }
-                  <div className="c-gallery-block__caption u-font--secondary--s u-color--gray u-padding u-padding--double--bottom">
-                    { image.caption }
-                  </div>
+            { images.map( ( image ) =>
+              <div key={ image.id || image.url } className="c-gallery-block__image">
+                <img src={ image.url } alt={ image.alt } data-id={ image.id } />
+                <div className="c-gallery-block__caption u-font--secondary--s u-color--gray u-padding u-padding--double--bottom">
+                  { image.caption }
                 </div>
-              );
-            } ) }
+              </div>
+            ) }
           </div>
         </div>
       </div>
