@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3cc293ab450366d70604e9c63e39b39e",
+    "content-hash": "1db10b1d01aca5067dfefad3572009fd",
     "packages": [
         {
             "name": "composer/installers",
@@ -291,15 +291,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "4.0.0",
+            "version": "4.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/4.0.0"
+                "reference": "tags/4.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.4.0.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.4.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -503,16 +503,16 @@
         },
         {
             "name": "yoast/wordpress-seo",
-            "version": "8.4",
+            "version": "9.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Yoast-dist/wordpress-seo.git",
-                "reference": "14ad6f3730b0cd5cd7e76c55a3c6a0ee6242e42c"
+                "reference": "cef2d10f22d287c64fa6f63f8a9f1112f523dd31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Yoast-dist/wordpress-seo/zipball/14ad6f3730b0cd5cd7e76c55a3c6a0ee6242e42c",
-                "reference": "14ad6f3730b0cd5cd7e76c55a3c6a0ee6242e42c",
+                "url": "https://api.github.com/repos/Yoast-dist/wordpress-seo/zipball/cef2d10f22d287c64fa6f63f8a9f1112f523dd31",
+                "reference": "cef2d10f22d287c64fa6f63f8a9f1112f523dd31",
                 "shasum": ""
             },
             "require": {
@@ -523,6 +523,7 @@
                 "yoast/license-manager": "1.6.0"
             },
             "require-dev": {
+                "phpcompatibility/phpcompatibility-wp": "1.0.0",
                 "roave/security-advisories": "dev-master",
                 "yoast/php-development-environment": "^1.0",
                 "yoast/yoastcs": "~0.4.3"
@@ -554,7 +555,7 @@
                 "seo",
                 "wordpress"
             ],
-            "time": "2018-10-09T08:21:07+00:00"
+            "time": "2018-10-24T14:16:04+00:00"
         }
     ],
     "packages-dev": [],

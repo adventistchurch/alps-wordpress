@@ -10,6 +10,8 @@ alps-v3/node_modules
 alps-v3/npm-debug.log
 alps-v3/yarn-error.log
 
+vendor
+
 web
 
 !web/
