@@ -21,42 +21,18 @@
   ));
   piklist('field', array(
     'type' => 'checkbox',
-    'field' => 'related_layout',
-    'label' => 'Related Pages Layout',
-    'description' => 'Check the layout options for the related pages.',
+    'field' => 'related_grid',
+    'label' => 'Related Pages Grid',
     'columns' => 12,
     'choices' => array(
-      'grid' => 'Display the related pages side-by-side.',
-      'image' => 'Show the feature image for the related pages.',
-    )
-  ));
-  piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'related_image_round',
-    'label' => 'Related Pages Round Image',
-    'columns' => 12,
-    'choices' => array(
-      'true' => 'Select to make the featured image round.',
-    ),
-    'conditions' => array(
-      array(
-        'reset' => false,
-        'field' => 'related_layout',
-        'value' => 'image'
-      ),
-      array(
-        'reset' => false,
-        'field' => 'related_layout',
-        'value' => 'grid',
-        'compare' => '!='
-      )
+      'true' => 'Select to display the related pages side-by-side.',
     )
   ));
   piklist('field', array(
     'type' => 'checkbox',
     'field' => 'related_grid_3up',
     'description' => '*The sidebar must be hidden for the pages to display 3up.',
-    'label' => 'Related Pages Grid',
+    'label' => 'Related Pages Grid (3up)',
     'columns' => 12,
     'choices' => array(
       'true' => 'Select to display the related pages 3up at the largest breakpoint.',
@@ -64,8 +40,34 @@
     'conditions' => array(
       array(
         'reset' => false,
-        'field' => 'related_layout',
-        'value' => 'grid'
+        'field' => 'related_grid',
+        'value' => 'true'
+      )
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'related_image',
+    'label' => 'Related Pages Image',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Select to display the feature image for the related pages.',
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'related_image_round',
+    'label' => 'Related Pages Round Image',
+    'description' => '*Does not work for images displays side-by-side.',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Select to make the featured image round.',
+    ),
+    'conditions' => array(
+      array(
+        'reset' => false,
+        'field' => 'related_image',
+        'value' => 'true'
       )
     )
   ));
