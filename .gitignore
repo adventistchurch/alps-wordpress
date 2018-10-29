@@ -9,9 +9,9 @@ alps-v2/vendor
 alps-v3/node_modules
 alps-v3/npm-debug.log
 alps-v3/yarn-error.log
+alps-v3/vendor
 
 vendor
-
 web
 
 !web/
@@ -28,5 +28,6 @@ web/wp-content/plugins/*
 !web/wp-content/plugins/alps-gutenberg-blocks/
 !web/wp-content/plugins/alps-gutenberg-blocks/*
 web/wp-content/plugins/alps-gutenberg-blocks/node_modules
+
 
 .DS_Store
