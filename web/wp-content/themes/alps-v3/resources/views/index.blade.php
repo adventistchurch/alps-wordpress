@@ -7,8 +7,8 @@
     $posts_grid = $theme_options['posts_grid'];
     $post_grid_3up = $theme_options['posts_grid_3up'];
     $posts_image = $theme_options['posts_image'];
-    $posts_image_round = $theme_options['post_image_round'];
-    if (is_active_sidebar('sidebar-posts') && $hide_sidebar != 'true') {
+    $posts_image_round = $theme_options['posts_image_round'];
+    if (is_active_sidebar('sidebar-page') && $hide_sidebar != 'true') {
       $section_offset = 'u-shift--left--1-col--at-xxlarge';
       $article_offset = 'l-grid-item--xl--3-col';
     } else {
@@ -17,11 +17,11 @@
     }
   @endphp
   @include('patterns.02-organisms.sections.page-header')
-  <section class="l-grid l-grid--7-col {{ $section_offset }} l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
-    <article class="c-article l-grid-item l-grid-item--l--4-col {{ $article_offset }}">
+  <section id="top" class="l-main__content l-grid l-grid--7-col {{ $section_offset }} l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
+    <article @php post_class("c-article l-grid-item l-grid-item--l--4-col $article_offset") @endphp>
       <div class="c-article__body">
         @if (have_posts())
-          <div class="u-spacing--double u-space--double--top">
+          <div class="text u-spacing--double u-space--double--top">
             @php
               if ($posts_grid == "true") {
                 if ($hide_sidebar == 'true') {
@@ -113,7 +113,7 @@
             {!! do_shortcode('[ajax_load_more container_type="div" css_classes="u-spacing--double" post_type="post" category="'. get_the_category()[0]->slug .'" scroll="false" transition_container="false" button_label="Load More" posts_per_page="10" offset="10"]') !!}
           @endif
         @else
-          <p>Sorry, there are no posts at this time.</p>
+          <p class="u-padding--left">Sorry, there are no posts at this time.</p>
         @endif
       </div>
     </article>

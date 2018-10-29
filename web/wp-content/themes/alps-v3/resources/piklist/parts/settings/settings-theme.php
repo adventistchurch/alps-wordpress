@@ -299,7 +299,7 @@
     'label' => 'Home/Category Posts Feed Image',
     'columns' => 12,
     'choices' => array(
-      'true' => 'Select to display the feature image for the postss.',
+      'true' => 'Select to display the feature image for the posts.',
     )
   ));
   piklist('field', array(
