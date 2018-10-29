@@ -67,8 +67,7 @@
           $block_class = "u-spacing";
           $block_title_class = "u-theme--color--darker u-font--primary--m";
           $block_meta_class = "hide";
-          $thumb_id = get_post_thumbnail_id($id);
-          if ($thumb_id) {
+          if (get_post_thumbnail_id($id)) {
             $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
             if ($related_layout == "grid") {
               $excerpt_length = 150;
