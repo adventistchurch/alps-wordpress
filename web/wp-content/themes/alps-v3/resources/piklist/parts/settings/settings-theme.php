@@ -256,4 +256,67 @@
       'button' => 'Add Image'
     )
   ));
+
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'index_hide_sidebar',
+    'label' => 'Hide the sidebar',
+    'description' => 'Hides the sidebar on the home/category page if it is active.',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Hide the content sidebar'
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'posts_grid',
+    'label' => 'Home/Category Posts Feed Grid',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Select to display the posts side-by-side.',
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'posts_grid_3up',
+    'description' => '*The sidebar must be hidden for the pages to display 3up.',
+    'label' => 'Home/Category Posts Feed Grid (3up)',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Select to display the posts 3up at the largest breakpoint.',
+    ),
+    'conditions' => array(
+      array(
+        'reset' => false,
+        'field' => 'posts_grid',
+        'value' => 'true'
+      )
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'posts_image',
+    'label' => 'Home/Category Posts Feed Image',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Select to display the feature image for the postss.',
+    )
+  ));
+  piklist('field', array(
+    'type' => 'checkbox',
+    'field' => 'posts_image_round',
+    'label' => 'Home/Category Posts Feed Round Image',
+    'description' => '*Does not work for images displays side-by-side.',
+    'columns' => 12,
+    'choices' => array(
+      'true' => 'Select to make the featured image round.',
+    ),
+    'conditions' => array(
+      array(
+        'reset' => false,
+        'field' => 'posts_image',
+        'value' => 'true'
+      )
+    )
+  ));
 ?>
