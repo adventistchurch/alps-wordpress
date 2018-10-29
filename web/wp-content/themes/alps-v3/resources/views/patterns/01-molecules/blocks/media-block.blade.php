@@ -59,7 +59,8 @@
             @if (isset($link))
               <a href="{{ $link }}" class="c-block__title-link u-theme--link-hover--dark">
             @endif
-            @if (isset($eyebrow))<em class="u-theme--color--lighter">{{ $eyebrow . ' ' }}</em>@endif{{ $title }}
+            @if (isset($eyebrow))<em class="u-theme--color--lighter">{{ $eyebrow . ' ' }}</em>@endif
+              {!! $title !!}
             @if (isset($link))
               </a>
             @endif
@@ -87,14 +88,16 @@
           </p>
         @endif
       </div>
-      <div class="c-media-block__meta c-block__meta @if (isset($block_meta_class)){{ $block_meta_class }}@endif">
-        @if (isset($category))
-          <span class="c-block__category u-text-transform--upper">{{ $category }}</span>
-        @endif
-        @if (isset($date))
-          <time class="c-block__date u-text-transform--upper">{{ $date }}</time>
-        @endif
-      </div>
+      @if (isset($category) or isset($date))
+        <div class="c-media-block__meta c-block__meta @if (isset($block_meta_class)){{ $block_meta_class }}@endif">
+          @if (isset($category))
+            <span class="c-block__category u-text-transform--upper">{{ $category }}</span>
+          @endif
+          @if (isset($date))
+            <time class="c-block__date u-text-transform--upper">{{ $date }}</time>
+          @endif
+        </div>
+      @endif
       @if (isset($cta))
         <a href="{{ $link }}" class="c-block__button o-button o-button--outline">{{ $cta }}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
       @endif

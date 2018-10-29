@@ -42,7 +42,7 @@
   }
 @endphp
 @if ($hero)
-  <header class="c-hero c-page-header c-page-header__feature @if($hero_type == "column"){{ 'c-page-header__3-col' }}@endif">
+  <header class="c-hero c-page-header c-page-header__feature @if($hero_type == "column"){{ 'c-page-header__3-col' }}@endif @if(get_post_meta($post->ID, 'hero_scroll_hint', true) == 'true'){{ $scroll_class }}@endif">
     <div class="c-page-header__content">
       @foreach ($hero_image as $image)
         @php
@@ -91,6 +91,9 @@
         @include('patterns.01-molecules.blocks.media-block')
       @endforeach
     </div>
+    @if (get_post_meta($post->ID, 'hero_scroll_hint', true) == 'true')
+      <a href="#top" class="c-page-header__scroll"></a>
+    @endif
   </header> <!-- /.c-page-header -->
 @else
   @include('patterns.02-organisms.sections.page-header')

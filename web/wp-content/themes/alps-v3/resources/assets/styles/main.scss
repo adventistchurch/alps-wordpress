@@ -2,8 +2,20 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.u-space--right--negative {
+  margin-right: -20px !important;
+}
+
 .c-block__full.l-grid-wrap.l-grid-wrap--6-of-7 {
   width: inherit;
+}
+
+// Widgets
+.c-widget {
+  li {
+    padding-bottom: 5px;
+    padding-left: 20px;
+  }
 }
 
 // Breakout Block
@@ -72,19 +84,6 @@
   color: white !important;
 
   &:hover {
-    text-decoration: underline;
-  }
-}
-
-// Hero
-.c-hero {
-  .c-block__image {
-    min-height: 250px;
-    display: block;
-  }
-
-  .c-block__title-link:hover {
-    color: white !important;
     text-decoration: underline;
   }
 }
@@ -181,6 +180,15 @@
 // Gutenberg block overrides
 .wp-block-table {
   border: 0;
+}
+
+.wp-block-embed {
+  width: 100%;
+}
+
+.wp-embed-aspect-16-9 .wp-block-embed__wrapper::before,
+.wp-block-embed .wp-block-embed__wrapper::before {
+  padding: 0 !important;
 }
 
 // Misc

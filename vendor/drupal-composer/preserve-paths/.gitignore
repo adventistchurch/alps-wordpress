@@ -1,3 +1,0 @@
-# Ignore composer specific folders
-/vendor
-/composer.lock

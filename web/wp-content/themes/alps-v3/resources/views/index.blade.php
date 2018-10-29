@@ -42,7 +42,7 @@
     @if (is_active_sidebar('sidebar-posts') && get_post_meta('hide_sidebar', true) != 'true')
       <div class="c-sidebar l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col u-padding--zero--sides">
         <div class="u-spacing--double u-padding--right">
-          @php dynamic_sidebar('sidebar-primary') @endphp
+          @php dynamic_sidebar('sidebar-page') @endphp
         </div>
       </div> <!-- /.c-sidebar -->
     @endif
