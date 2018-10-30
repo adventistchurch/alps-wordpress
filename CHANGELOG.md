@@ -1,5 +1,9 @@
 ## Change Log ##
 
+### v2.2.0 ###
+- [#133](https://github.com/adventistchurch/alps-wordpress/issues/133) Changing the way thumbnails on child pages are handled to give the option of either a circle or a rectangle/square.
+- [#220](https://github.com/adventistchurch/alps-wordpress/issues/220) Fixing some IE11 errors.
+
 ### v2.1.9 ###
 - Bug: Fixing a version error bug.
 
