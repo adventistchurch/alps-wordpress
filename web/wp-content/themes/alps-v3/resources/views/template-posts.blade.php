@@ -51,7 +51,7 @@
       @endif
     </div>
     <section class="c-section l-grid l-grid--7-col l-grid-wrap--6-of-7 u-spacing--double--until-large">
-      <article class="c-article l-grid-item l-grid-item--l--4-col u-padding--zero--sides u-spacing--double">
+      <article class="c-article l-grid-item l-grid-item--l--4-col u-padding--zero--sides">
         @if (get_the_content())
           <div class="text u-spacing">
             @php the_content() @endphp

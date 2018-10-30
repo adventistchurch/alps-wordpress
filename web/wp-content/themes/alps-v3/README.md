@@ -118,3 +118,8 @@ Keep track of development and community news.
 * Read and subscribe to the [Roots Blog](https://roots.io/blog/)
 * Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
 * Listen to the [Roots Radio podcast](https://roots.io/podcast/)
+
+## Troubleshooting
+
+Cache Error `vendor/illuminate/view/Engines/PhpEngine.php on line 43`:
+* Fix by changing the folder permissions of `wp-content` and `uploads` to `777`.

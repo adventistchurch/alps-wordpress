@@ -1,5 +1,7 @@
 @php
   $theme_options = get_option('alps_theme_settings');
+  $site_branding_statement = '';
+  $global_branding_statement = '';
   $site_branding_statement = $theme_options['site_branding_statement'];
   $global_branding_statement = $theme_options['global_branding_statement'];
 @endphp
