@@ -3,7 +3,6 @@
   @php
     $theme_options = get_option('alps_theme_settings');
     $hide_sidebar = $theme_options['index_hide_sidebar'];
-    $posts = $theme_options['related'];
     $posts_grid = $theme_options['posts_grid'];
     $post_grid_3up = $theme_options['posts_grid_3up'];
     $posts_image = $theme_options['posts_image'];
@@ -51,7 +50,7 @@
                   $cta = "Read More";
                   $category = NULL;
                   $date = NULL;
-                  $block_class = "u-spacing";
+                  $block_class = "u-spacing--half";
                   $block_title_class = "u-theme--color--darker u-font--primary--m";
                   $block_meta_class = "hide";
                   if ($posts_image == "true") {

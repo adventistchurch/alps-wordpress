@@ -42,7 +42,7 @@
               $body = get_the_content($id);
               $link = get_permalink($id);
               $cta = "Read More";
-              $block_class = "u-theme--border-color--darker u-border--left u-spacing";
+              $block_class = "u-theme--border-color--darker u-border--left u-spacing--half";
             @endphp
             @include('patterns.01-molecules.blocks.content-block')
           @endwhile
