@@ -24,7 +24,7 @@
           <div class="spacing">
             <div class="spacing--half">
               <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-                <?php echo __('Recent'); ?> <?php the_title(); ?>
+                <?php _e('Recent'); ?> <?php the_title(); ?>
               </h2>
             </div>
             <hr>
@@ -75,7 +75,7 @@
           <div class="spacing">
             <div class="spacing--half">
               <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-                <?php echo __("ANN Video"); ?>
+                <?php _e("ANN Video"); ?>
               </h2>
             </div>
             <hr>
@@ -159,7 +159,7 @@
             <hr />
             <div class="carousel-block block spacing--quarter">
               <h2 class="font--tertiary--m theme--primary-text-color pad pad-half--btm">
-              <?php echo __("Photos"); ?>
+              <?php _e("Photos"); ?>
               </h2>
               <div class="carousel-block__carousel carousel-nav--4-3">
                 <div class="carousel rel ">

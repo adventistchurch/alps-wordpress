@@ -175,7 +175,7 @@ function wordpress_breadcrumbs() {
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) {
         echo (get_category_parents($parentCat, TRUE, ''));
-        echo $current_before . 'Archive by category &#39;';
+        echo $current_before . __('Archive by category &#39;', 'sage');
         single_cat_title();
         echo '&#39;' . $current_after;
       }
@@ -197,7 +197,7 @@ function wordpress_breadcrumbs() {
       $cat = $cat[0];
       echo '<li class="' . $li_class . '"><a class="' . $link_class . '" href="' . home_url( '/' ) . $cat->category_nicename . '">' . $cat->name . '</a></li>';
       echo $current_before;
-      echo 'Article';
+      _e('Article', 'sage');
       echo $current_after;
     }
     elseif (is_page() && !$post->post_parent) {
@@ -222,25 +222,25 @@ function wordpress_breadcrumbs() {
       }
     }
     elseif (is_search()) {
-      echo $current_before . 'Search results for &#39;' . get_search_query() . '&#39;' . $current_after;
+      echo $current_before . __('Search results for &#39;' , 'sage'). get_search_query() . '&#39;' . $current_after;
     }
     elseif (is_tag()) {
-      echo $current_before . 'Posts tagged &#39;';
+      echo $current_before . __('Posts tagged &#39;', 'sage');
       single_tag_title();
       echo '&#39;' . $current_after;
     }
     elseif (is_author()) {
       global $author;
       $userdata = get_userdata($author);
-      echo $current_before . 'Articles posted by ' . $userdata->display_name . $current_after;
+      echo $current_before . __('Articles posted by ', 'sage') . $userdata->display_name . $current_after;
     }
     elseif (is_404()) {
-      echo $current_before . 'Error 404' . $current_after;
+      echo $current_before . __('Error 404', 'sage') . $current_after;
     }
     if (get_query_var('paged')) {
       if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
         echo ' (';
-        echo __('Page') . ' ' . get_query_var('paged');
+        _e('Page', 'sage') . ' ' . get_query_var('paged');
       }
       if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
         echo ')';
