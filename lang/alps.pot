@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ALPS\n"
-"POT-Creation-Date: 2018-10-08 20:22+0200\n"
+"POT-Creation-Date: 2018-10-31 20:06+0100\n"
 "PO-Revision-Date: 2018-04-12 11:35-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -561,31 +561,31 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: lib/setup.php:22
+#: lib/setup.php:23
 msgid "Primary Navigation"
 msgstr ""
 
-#: lib/setup.php:23
+#: lib/setup.php:24
 msgid "Secondary Navigation"
 msgstr ""
 
-#: lib/setup.php:24
+#: lib/setup.php:25
 msgid "Secondary Footer Navigation"
 msgstr ""
 
-#: lib/setup.php:25
+#: lib/setup.php:26
 msgid "Primary Footer Navigation"
 msgstr ""
 
-#: lib/setup.php:53
+#: lib/setup.php:55
 msgid "Primary Top (Home Template)"
 msgstr ""
 
-#: lib/setup.php:61
+#: lib/setup.php:63
 msgid "Primary Main (Home Template)"
 msgstr ""
 
-#: lib/setup.php:69
+#: lib/setup.php:71
 msgid "Primary Bottom (Home Template)"
 msgstr ""
 
