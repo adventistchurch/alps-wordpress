@@ -27,9 +27,9 @@
                 $kicker = get_post_meta($post->ID, 'kicker', true);
                 $button_text = __('Read More', 'sage');
                 $button_url = get_the_permalink();
-                $round_image = get_post_meta($post->ID, 'make_the_image_round', true);
+                $round_image = 'false';
                 $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
-                $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
+                $thumbnail_round = wp_get_attachment_image_src($image, "square--xs")[0];
                 $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
                 $block_inner_class = 'block__row--small-to-large';
                 $date = get_the_date('M j, Y');
@@ -49,8 +49,8 @@
 <?php
   $related = get_post_meta($post->ID, 'related', true);
   if ($related == 'related_all') {
-    // Loop of pages for child and grandchild pages
-    $pages = get_pages(
+      // Loop of pages for child and grandchild pages
+      $pages = get_pages(
       array(
         'child_of' => $post->ID,
         'post_type' => 'page',
@@ -59,8 +59,8 @@
       )
     );
   } elseif ($related == 'related_custom') {
-    // Loop of selected pages
-    $pages = get_posts(array(
+      // Loop of selected pages
+      $pages = get_posts(array(
       'post_type' => 'page',
       'posts_per_page' => -1,
       'post_belongs' => $post->ID,
@@ -68,13 +68,13 @@
       'suppress_filters' => false
     ));
   } else {
-    // Loop of pages for top level pages
-    $pages = get_pages(
+      // Loop of pages for top level pages
+      $pages = get_pages(
       array(
         'hierarchical' => 0,
         'parent' => $post->ID,
         'post_type' => 'page',
-      	'post_status' => 'publish',
+          'post_status' => 'publish',
         'sort_column' => 'menu_order'
       )
     );
@@ -95,9 +95,9 @@
         $button_text = __('Read More', 'sage');
         $date = '';
         $button_url = get_page_link($page->ID);
-        $round_image = 'true';
+        $round_image = get_post_meta($page->post_parent, 'make_the_image_round', true);
         $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
-        $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
+        $thumbnail_round = wp_get_attachment_image_src($image, "square--xs")[0];
         $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
         $block_inner_class = 'block__row';
         $date = '';

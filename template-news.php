@@ -54,7 +54,7 @@
                   $button_text = __('Read More', 'sage');
                   $date = get_the_date();
                   $button_url = get_the_permalink();
-                  $round_image = get_post_meta($post->ID, 'make_the_image_round', true);
+                  $round_image = 'false';
                   $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
                   $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
                   $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
