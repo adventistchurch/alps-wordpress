@@ -197,7 +197,7 @@ function wordpress_breadcrumbs() {
       $cat = $cat[0];
       echo '<li class="' . $li_class . '"><a class="' . $link_class . '" href="' . home_url( '/' ) . $cat->category_nicename . '">' . $cat->name . '</a></li>';
       echo $current_before;
-      echo __('Article', 'sage');
+      _e('Article', 'sage');
       echo $current_after;
     }
     elseif (is_page() && !$post->post_parent) {
