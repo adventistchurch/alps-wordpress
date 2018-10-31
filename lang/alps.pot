@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ALPS\n"
-"POT-Creation-Date: 2018-10-31 20:06+0100\n"
+"POT-Creation-Date: 2018-10-31 20:48+0100\n"
 "PO-Revision-Date: 2018-04-12 11:35-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -81,7 +81,7 @@ msgid "Home"
 msgstr ""
 
 #: functions.php:178
-msgid "Archive by category"
+msgid "Archive by category &#39;"
 msgstr ""
 
 #: functions.php:200
@@ -89,11 +89,11 @@ msgid "Article"
 msgstr ""
 
 #: functions.php:225
-msgid "Search results for"
+msgid "Search results for &#39;"
 msgstr ""
 
 #: functions.php:228
-msgid "Posts tagged"
+msgid "Posts tagged &#39;"
 msgstr ""
 
 #: functions.php:235

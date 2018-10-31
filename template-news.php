@@ -75,7 +75,7 @@
           <div class="spacing">
             <div class="spacing--half">
               <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-                <?php _e('ANN Video', 'sage'); ?>
+                <?php _e("ANN Video", "sage"); ?>
               </h2>
             </div>
             <hr>
@@ -159,7 +159,7 @@
             <hr />
             <div class="carousel-block block spacing--quarter">
               <h2 class="font--tertiary--m theme--primary-text-color pad pad-half--btm">
-              <?php _e('Photos', 'sage'); ?>
+              <?php _e("Photos", "sage"); ?>
               </h2>
               <div class="carousel-block__carousel carousel-nav--4-3">
                 <div class="carousel rel ">

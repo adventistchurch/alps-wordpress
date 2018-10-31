@@ -175,7 +175,7 @@ function wordpress_breadcrumbs() {
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) {
         echo (get_category_parents($parentCat, TRUE, ''));
-        echo $current_before . __('Archive by category', 'sage') . ' &#39;';
+        echo $current_before . __('Archive by category &#39;', 'sage');
         single_cat_title();
         echo '&#39;' . $current_after;
       }
@@ -222,10 +222,10 @@ function wordpress_breadcrumbs() {
       }
     }
     elseif (is_search()) {
-      echo $current_before . __('Search results for', 'sage') . ' &#39;' . get_search_query() . '&#39;' . $current_after;
+      echo $current_before . __('Search results for &#39;' , 'sage'). get_search_query() . '&#39;' . $current_after;
     }
     elseif (is_tag()) {
-      echo $current_before . __('Posts tagged', 'sage') . ' &#39;';
+      echo $current_before . __('Posts tagged &#39;', 'sage');
       single_tag_title();
       echo '&#39;' . $current_after;
     }
@@ -240,7 +240,7 @@ function wordpress_breadcrumbs() {
     if (get_query_var('paged')) {
       if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
         echo ' (';
-        echo __('Page', 'sage') . ' ' . get_query_var('paged');
+        _e('Page', 'sage') . ' ' . get_query_var('paged');
       }
       if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
         echo ')';
