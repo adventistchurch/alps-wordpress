@@ -3,12 +3,11 @@
   @php
     $theme_options = get_option('alps_theme_settings');
     $hide_sidebar = $theme_options['index_hide_sidebar'];
-    $posts = $theme_options['related'];
     $posts_grid = $theme_options['posts_grid'];
     $post_grid_3up = $theme_options['posts_grid_3up'];
     $posts_image = $theme_options['posts_image'];
     $posts_image_round = $theme_options['posts_image_round'];
-    if (is_active_sidebar('sidebar-page') && $hide_sidebar != 'true') {
+    if (is_active_sidebar('sidebar-posts') && $hide_sidebar != 'true') {
       $section_offset = 'u-shift--left--1-col--at-xxlarge';
       $article_offset = 'l-grid-item--xl--3-col';
     } else {
@@ -24,7 +23,7 @@
           <div class="text u-spacing--double u-space--double--top">
             @php
               if ($posts_grid == "true") {
-                if ($hide_sidebar == 'true') {
+                if (!is_active_sidebar('sidebar-posts') || $hide_sidebar == 'true') {
                   if ($post_grid_3up == 'true') {
                     $grid_class = "l-grid-item--6-col u-shift--right--1-col--at-large u-shift--left--1-col--at-medium u-no-gutters";
                     $grid_item_class = "l-grid-item--s--3-col l-grid-item--l--2-col";
@@ -81,7 +80,7 @@
                       $thumb_id = get_post_thumbnail_id($id);
                       $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
                       $block_group_class = "u-flex--justify-start";
-                      if ($hide_sidebar == 'true') {
+                      if (!is_active_sidebar('sidebar-posts') || $hide_sidebar == 'true') {
                         $block_class = "c-media-block__row c-block__row l-grid--7-col l-grid-wrap";
                         $block_img_class = "l-grid-item l-grid-item--2-col l-grid-item--m--1-col u-padding--zero--sides";
                         $block_content_class = "l-grid-item l-grid-item--4-col l-grid-item--m--3-col";
@@ -120,7 +119,7 @@
     @if (is_active_sidebar('sidebar-posts') && $hide_sidebar != 'true')
       <div class="c-sidebar l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col u-padding--zero--sides">
         <div class="u-spacing--double u-padding--right">
-          @php dynamic_sidebar('sidebar-page') @endphp
+          @php dynamic_sidebar('sidebar-posts') @endphp
         </div>
       </div> <!-- /.c-sidebar -->
     @endif

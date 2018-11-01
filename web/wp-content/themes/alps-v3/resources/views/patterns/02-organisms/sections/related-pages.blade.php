@@ -33,7 +33,7 @@
   <div class="u-spacing--double u-space--double--top">
     @php
       if ($related_grid == "true") {
-        if (get_post_meta($post->ID, 'hide_sidebar', true) == 'true') {
+        if (!is_active_sidebar('sidebar-page') || get_post_meta($post->ID, 'hide_sidebar', true) == 'true') {
           if (get_post_meta($post->ID, 'related_grid_3up', true) == 'true') {
             $grid_class = "l-grid-item--6-col u-shift--right--1-col--at-large u-shift--left--1-col--at-medium u-no-gutters";
             $grid_item_class = "l-grid-item--s--3-col l-grid-item--l--2-col";
@@ -95,7 +95,7 @@
               $thumb_id = get_post_thumbnail_id($id);
               $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
               $block_group_class = "u-flex--justify-start";
-              if (get_post_meta($post->ID, 'hide_sidebar', true) == 'true') {
+              if (!is_active_sidebar('sidebar-page') || get_post_meta($post->ID, 'hide_sidebar', true) == 'true') {
                 $block_class = "c-media-block__row c-block__row l-grid--7-col l-grid-wrap";
                 $block_img_class = "l-grid-item l-grid-item--2-col l-grid-item--m--1-col u-padding--zero--sides";
                 $block_content_class = "l-grid-item l-grid-item--4-col l-grid-item--m--3-col";
