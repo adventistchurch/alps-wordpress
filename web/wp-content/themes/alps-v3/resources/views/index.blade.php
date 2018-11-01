@@ -50,7 +50,7 @@
                   $cta = "Read More";
                   $category = NULL;
                   $date = NULL;
-                  $block_class = "u-spacing";
+                  $block_class = "u-spacing--half";
                   $block_title_class = "u-theme--color--darker u-font--primary--m";
                   $block_meta_class = "hide";
                   if ($posts_image == "true") {
