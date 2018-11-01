@@ -3,8 +3,8 @@
   $args = array(
     'mid_size' => 2,
     'prev_next' => false,
-    'prev_text' => __('Next &rarr;', 'textdomain'),
-    'next_text' => __('&larr; Previous', 'textdomain'),
+    'prev_text' => __('Next &rarr;', 'sage'),
+    'next_text' => __('&larr; Previous', 'sage'),
   );
 
   // Native WordPress menu classes to be replaced.

@@ -20,7 +20,7 @@
       <?php endif; ?>
       <div class="spacing--half">
         <h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">
-          <?php _e('All Posts'); ?>
+          <?php _e('All Posts', 'sage'); ?>
         </h2>
         <hr>
       </div>
@@ -37,7 +37,7 @@
                     $body = strip_shortcodes($body);
                     $excerpt_length = 100;
                     $image = get_post_thumbnail_id();
-                    $button_text = __('Read More');
+                    $button_text = __('Read More', 'sage');
                     $date = get_the_date();
                     $button_url = get_the_permalink();
                     $round_image = 'false';

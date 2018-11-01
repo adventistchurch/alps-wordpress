@@ -47,7 +47,7 @@
           $intro = get_post_meta($id, 'intro', true);
           $body = strip_tags(get_the_content($id));
           $body = strip_shortcodes($body);
-          $button_text = __('Read More');
+          $button_text = __('Read More', 'sage');
           $button_url = get_the_permalink($id);
           $thumbnail = wp_get_attachment_image_url( $image, 'horiz__4x3--s' );
           $thumbnail_round = wp_get_attachment_image_url( $image, 'square--s' );

@@ -46,7 +46,7 @@
       $body = strip_tags(get_the_content());
       $body = strip_shortcodes($body);
       $kicker = get_post_meta(get_the_ID(), 'kicker', true);
-      $button_text = __('Read More');
+      $button_text = __('Read More', 'sage');
       $button_url = get_the_permalink();
       $round_image = '';
       $thumb_id = get_post_thumbnail_id();

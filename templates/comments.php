@@ -14,7 +14,7 @@ if (post_password_required()) {
 		<?php the_comments_navigation(); ?>
 	<?php endif; ?>
 	<?php if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')):?>
-		<p class="no-comments"><?php _e( 'Comments are closed.'); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'sage'); ?></p>
 	<?php endif; ?>
   <div class="comment__form spacing--half">
   	<?php
@@ -23,8 +23,8 @@ if (post_password_required()) {
     			'title_reply_before' => '<h3 class="comment-reply-title font--tertiary--m theme--primary-text-color">',
     			'title_reply_after'  => '</h3>',
           'logged_in_as' => '',
-          'title_reply' => 'Leave a Comment',
-          'label_submit' => 'Submit',
+          'title_reply' => __('Leave a Comment', 'sage'),
+          'label_submit' => __('Submit', 'sage'),
           'class_form' => 'spacing--half'
     		)
       );
