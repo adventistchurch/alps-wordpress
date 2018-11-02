@@ -10,6 +10,11 @@
   $footer_address_country = $theme_options['footer_address_country'];
   $footer_address_phone = $theme_options['footer_phone'];
 @endphp
+@if (is_active_sidebar('footer-region'))
+  <div class="c-footer-widgets u-spacing">
+    @php dynamic_sidebar('footer-region') @endphp
+  </div>
+@endif
 <footer class="c-footer u-theme--background-color--primary u-theme--background-color--darker" role="contentinfo">
   <div class="c-footer--inner u-color--white l-grid l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7">
     <div class="l-grid-item l-grid-item--m--3-col c-footer__description">

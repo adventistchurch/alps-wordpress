@@ -85,6 +85,10 @@
   text-decoration: underline;
 }
 
+.c-footer-widgets {
+  margin-right: 20px;
+}
+
 .alm-btn-wrap .alm-load-more-btn {
   margin-top: 40px;
   border-radius: 50px !important;
