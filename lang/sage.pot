@@ -1,0 +1,722 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: ALPS\n"
+"POT-Creation-Date: 2018-11-01 06:55-0400\n"
+"PO-Revision-Date: 2018-11-01 06:37-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: base.php:14
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
+"browsehappy.com/\">upgrade your browser</a> to improve your experience."
+msgstr ""
+
+#. translators: %s: post title
+#: comments.php:13
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:19
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:46 templates/comments.php:17
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:23
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: functions.php:51
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: functions.php:53
+msgid " ago"
+msgstr ""
+
+#: functions.php:53
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:57
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:119
+msgid "ALPS Custom Settings"
+msgstr ""
+
+#: functions.php:120
+msgid "Settings"
+msgstr ""
+
+#: functions.php:160
+msgid "Home"
+msgstr ""
+
+#: functions.php:178
+msgid "Archive by category &#39;"
+msgstr ""
+
+#: functions.php:200
+msgid "Article"
+msgstr ""
+
+#: functions.php:225
+msgid "Search results for &#39;"
+msgstr ""
+
+#: functions.php:228
+msgid "Posts tagged &#39;"
+msgstr ""
+
+#: functions.php:235
+msgid "Articles posted by "
+msgstr ""
+
+#: functions.php:238
+msgid "Error 404"
+msgstr ""
+
+#: functions.php:243
+msgid "Page"
+msgstr ""
+
+#: functions.php:296
+msgid "Tertiary Navigation"
+msgstr ""
+
+#: lib/extras.php:54
+msgid "Continued"
+msgstr ""
+
+#: lib/plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr ""
+
+#: lib/plugin-activation.php:335
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: lib/plugin-activation.php:337
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: lib/plugin-activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: lib/plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: lib/plugin-activation.php:343
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: lib/plugin-activation.php:349
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: lib/plugin-activation.php:355
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: lib/plugin-activation.php:361
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: lib/plugin-activation.php:367
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: lib/plugin-activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugin-activation.php:378
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugin-activation.php:383
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugin-activation.php:388
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: lib/plugin-activation.php:393 lib/plugin-activation.php:920
+#: lib/plugin-activation.php:2626 lib/plugin-activation.php:3673
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: lib/plugin-activation.php:394 lib/plugin-activation.php:3252
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: lib/plugin-activation.php:395 lib/plugin-activation.php:3045
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: lib/plugin-activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/plugin-activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: lib/plugin-activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: lib/plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: lib/plugin-activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: lib/plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: lib/plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: lib/plugin-activation.php:608
+msgid "Update Required"
+msgstr ""
+
+#: lib/plugin-activation.php:725
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: lib/plugin-activation.php:1027
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: lib/plugin-activation.php:1027 lib/plugin-activation.php:1030
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: lib/plugin-activation.php:1030
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: lib/plugin-activation.php:1214 lib/plugin-activation.php:3041
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: lib/plugin-activation.php:2075
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: lib/plugin-activation.php:2366
+msgid "Required"
+msgstr ""
+
+#: lib/plugin-activation.php:2369
+msgid "Recommended"
+msgstr ""
+
+#: lib/plugin-activation.php:2385
+msgid "WordPress Repository"
+msgstr ""
+
+#: lib/plugin-activation.php:2388
+msgid "External Source"
+msgstr ""
+
+#: lib/plugin-activation.php:2391
+msgid "Pre-Packaged"
+msgstr ""
+
+#: lib/plugin-activation.php:2408
+msgid "Not Installed"
+msgstr ""
+
+#: lib/plugin-activation.php:2412
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: lib/plugin-activation.php:2414
+msgid "Active"
+msgstr ""
+
+#: lib/plugin-activation.php:2420
+msgid "Required Update not Available"
+msgstr ""
+
+#: lib/plugin-activation.php:2423
+msgid "Requires Update"
+msgstr ""
+
+#: lib/plugin-activation.php:2426
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: lib/plugin-activation.php:2435
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: lib/plugin-activation.php:2481
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: lib/plugin-activation.php:2485
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: lib/plugin-activation.php:2489
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: lib/plugin-activation.php:2493
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugin-activation.php:2575
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: lib/plugin-activation.php:2583
+msgid "Installed version:"
+msgstr ""
+
+#: lib/plugin-activation.php:2591
+msgid "Minimum required version:"
+msgstr ""
+
+#: lib/plugin-activation.php:2603
+msgid "Available version:"
+msgstr ""
+
+#: lib/plugin-activation.php:2626
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: lib/plugin-activation.php:2640
+msgid "Plugin"
+msgstr ""
+
+#: lib/plugin-activation.php:2641
+msgid "Source"
+msgstr ""
+
+#: lib/plugin-activation.php:2642
+msgid "Type"
+msgstr ""
+
+#: lib/plugin-activation.php:2646
+msgid "Version"
+msgstr ""
+
+#: lib/plugin-activation.php:2647
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: lib/plugin-activation.php:2696
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: lib/plugin-activation.php:2701
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: lib/plugin-activation.php:2707
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: lib/plugin-activation.php:2777
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: lib/plugin-activation.php:2810
+msgid "Install"
+msgstr ""
+
+#: lib/plugin-activation.php:2816
+msgid "Update"
+msgstr ""
+
+#: lib/plugin-activation.php:2819
+msgid "Activate"
+msgstr ""
+
+#: lib/plugin-activation.php:2850
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: lib/plugin-activation.php:2852
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: lib/plugin-activation.php:2893
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: lib/plugin-activation.php:2895
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: lib/plugin-activation.php:3001
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: lib/plugin-activation.php:3027
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: lib/plugin-activation.php:3251
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: lib/plugin-activation.php:3591
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: lib/plugin-activation.php:3594
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/plugin-activation.php:3596
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: lib/plugin-activation.php:3600
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/plugin-activation.php:3602
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: lib/plugin-activation.php:3602 lib/plugin-activation.php:3610
+msgid "Show Details"
+msgstr ""
+
+#: lib/plugin-activation.php:3602 lib/plugin-activation.php:3610
+msgid "Hide Details"
+msgstr ""
+
+#: lib/plugin-activation.php:3603
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: lib/plugin-activation.php:3605
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/plugin-activation.php:3608
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/plugin-activation.php:3610
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: lib/plugin-activation.php:3611
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: lib/plugin-activation.php:3613
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/setup.php:23
+msgid "Primary Navigation"
+msgstr ""
+
+#: lib/setup.php:24
+msgid "Secondary Navigation"
+msgstr ""
+
+#: lib/setup.php:25
+msgid "Secondary Footer Navigation"
+msgstr ""
+
+#: lib/setup.php:26
+msgid "Primary Footer Navigation"
+msgstr ""
+
+#: lib/setup.php:55
+msgid "Primary Top (Home Template)"
+msgstr ""
+
+#: lib/setup.php:63
+msgid "Primary Main (Home Template)"
+msgstr ""
+
+#: lib/setup.php:71
+msgid "Primary Bottom (Home Template)"
+msgstr ""
+
+#: lib/titles.php:13
+msgid "Latest Posts"
+msgstr ""
+
+#: lib/titles.php:18
+#, php-format
+msgid "Search Results for %s"
+msgstr ""
+
+#: lib/titles.php:20
+msgid "Not Found"
+msgstr ""
+
+#: page-search.php:12 page-search.php:15
+#: patterns/components/search-form-header.php:3
+#: patterns/components/search-form-page.php:3
+#: patterns/components/search-form-page.php:6
+#: patterns/components/search-form.php:3
+msgid "Search"
+msgstr ""
+
+#: patterns/components/news-header.php:11 patterns/components/share-tools.php:4
+msgid "Share"
+msgstr ""
+
+#: patterns/components/pagination.php:6
+msgid "Next &rarr;"
+msgstr ""
+
+#: patterns/components/pagination.php:7
+msgid "&larr; Previous"
+msgstr ""
+
+#: patterns/components/search-form-header.php:4
+#: patterns/components/search-form.php:4
+msgid "Search&hellip;"
+msgstr ""
+
+#: patterns/components/search-form-header.php:6
+#: patterns/components/search-form.php:6 templates/comments.php:27
+msgid "Submit"
+msgstr ""
+
+#: piklist/parts/widgets/widget-post-feed.php:49 template-news.php:54
+#: template-news.php:190 templates/block-layout-front.php:50
+#: templates/block-layout.php:28 templates/block-layout.php:95
+#: templates/content-search.php:29 templates/content.php:40
+msgid "Read More"
+msgstr ""
+
+#: template-news.php:27
+msgid "Recent"
+msgstr ""
+
+#: template-news.php:78
+msgid "ANN Video"
+msgstr ""
+
+#: template-news.php:162
+msgid "Photos"
+msgstr ""
+
+#: templates/comments.php:9
+#, php-format
+msgctxt "comments"
+msgid "One comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/comments.php:26
+msgid "Leave a Comment"
+msgstr ""
+
+#: templates/content-search.php:15 templates/content.php:16
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: templates/content.php:23
+msgid "All Posts"
+msgstr ""
+
+#: templates/entry-meta.php:2
+msgid "By"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "ALPS"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.adventist.io"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"ALPS is the Adventist Living Pattern Library theme based off of the Sage "
+"WordPress theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Seventh-day Adventist Church and Southleft"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.adventist.io/themes"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Long Form Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Landing Page Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "News Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Simple Full-Width Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Single Template"
+msgstr ""
