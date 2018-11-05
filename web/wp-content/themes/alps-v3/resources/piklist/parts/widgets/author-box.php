@@ -8,16 +8,19 @@
 <div class="c-block c-block__text has-image u-theme--border-color--darker u-border--left c-block__text-expand u-spacing u-background-color--gray--light u-padding u-clear-fix can-be--dark-dark">
 
     <?php if (function_exists('get_avatar_url')): ?>
-        <img class="c-block__image" itemprop="image" src="<?php echo get_avatar_url( get_the_author_meta( 'email' ), array("size"=>400)); ?>">
+    <img class="c-block__image" itemprop="image" src="<?php echo get_avatar_url(get_the_author_meta('email'), array("
+        size"=>400)); ?>">
     <?php endif; ?>
 
     <h4 class="c-media-block__kicker c-block__kicker u-space--zero--top ">
         <?php echo $settings['text_link_title']; ?>
     </h4>
     <h3 class="u-theme--color--darker u-font--primary--m vcard author" itemprop="url" rel="author">
-        <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="c-block__title-link u-theme--link-hover--dark fn" itemprop="name">
+        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="c-block__title-link u-theme--link-hover--dark fn"
+            itemprop="name">
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <strong><?php the_author_meta( 'display_name' ); ?></strong>
+                <strong>
+                    <?php the_author_meta('display_name'); ?></strong>
             </span>
         </a>
     </h3>
