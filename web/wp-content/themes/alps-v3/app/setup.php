@@ -107,6 +107,10 @@ add_action('widgets_init', function () {
         'name'          => __('Footer Region', 'sage'),
         'id'            => 'footer-region'
     ] + $config);
+    register_sidebar([
+        'name'          => __('Posts Footer Region', 'sage'),
+        'id'            => 'footer-region-post'
+    ] + $config);
 });
 
 /**
