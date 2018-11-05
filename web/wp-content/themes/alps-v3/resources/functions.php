@@ -107,6 +107,11 @@ add_filter('upload_mimes', 'cc_mime_types');
 require_once __DIR__.'/../app/plugin-activation.php';
 
 /**
+ * WPUpdates Theme Updater Class
+ */
+require_once('wp-updates-theme.php'); new WPUpdatesThemeUpdater_2426( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
+
+/**
  * Require plugins on theme install
  */
 add_action('tgmpa_register', 'adventist_register_required_plugins');
