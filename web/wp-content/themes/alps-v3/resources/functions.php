@@ -94,10 +94,9 @@ Container::getInstance()
 /**
  * Allow SVG's through WP media uploader
  */
-function cc_mime_types($mimes)
-{
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
@@ -115,8 +114,7 @@ require_once('wp-updates-theme.php'); new WPUpdatesThemeUpdater_2426( 'http://wp
  * Require plugins on theme install
  */
 add_action('tgmpa_register', 'adventist_register_required_plugins');
-function adventist_register_required_plugins()
-{
+function adventist_register_required_plugins() {
     $plugins = array(
     // Piklist
     array(
@@ -157,7 +155,7 @@ function adventist_register_required_plugins()
       'force_activation'   => true,
     )
   );
-    $config = array(
+  $config = array(
     'id'           => 'adventist',             // Unique ID for hashing notices for multiple instances of TGMPA.
     'default_path' => '',                      // Default absolute path to bundled plugins.
     'menu'         => 'tgmpa-install-plugins', // Menu slug.
@@ -186,7 +184,7 @@ add_action('init', 'my_custom_init');
  */
 add_filter('piklist_admin_pages', 'piklist_theme_setting_pages');
 function piklist_theme_setting_pages($pages) {
-    $pages[] = array(
+  $pages[] = array(
     'page_title' => __('ALPS Custom Settings')
     ,'menu_title' => __('Settings', 'piklist')
     ,'sub_menu' => 'themes.php' //Under Appearance menu
@@ -395,9 +393,13 @@ add_action('load-nav-menus.php', 'auto_nav_creation_learn_more');
  */
 function alps_setup_options () {
   $run_menu_maker_once = get_option('menu_check');
-  if ( ! $run_menu_maker_once ){
+  if ( !$run_menu_maker_once ) {
     auto_nav_creation_learn_more();
-  }  
+    auto_nav_creation_primary();
+    auto_nav_creation_secondary();
+    auto_nav_creation_footer();
+    auto_nav_creation_social();
+  }
 }
 add_action('after_switch_theme', 'alps_setup_options');
 

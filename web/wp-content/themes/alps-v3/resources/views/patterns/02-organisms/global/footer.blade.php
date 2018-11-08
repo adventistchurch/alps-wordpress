@@ -34,14 +34,14 @@
       </div> <!-- /.c-footer__logo -->
     @endif
     <div class="l-grid-item l-grid-item--m--3-col c-footer__legal">
-      <p class="c-footer__copyright">© {{ date('Y') }}{{ ', ' . $footer_copyright }}</p>
+      <p class="c-footer__copyright">© {{ date('Y') }}@if ($footer_address_street){{ ', ' . $footer_copyright }}@endif</p>
       <address class="c-footer__address" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-        <span itemprop="streetAddress">{{ $footer_address_street }}</span>,
-        <span itemprop="addressPostCode"> {{ $footer_address_zip }}</span>
-        <span itemprop="addressLocality"> {{ $footer_address_city }}</span>,
-        <span itemprop="addressRegion"> {{ $footer_address_state }}</span>
+        @if ($footer_address_street)<span itemprop="streetAddress">{{ $footer_address_street }}</span>@endif
+        @if ($footer_address_zip)<span itemprop="addressPostCode">{{ ', ' .  $footer_address_zip }}</span>@endif
+        @if ($footer_address_city)<span itemprop="addressLocality">{{ ' ' .  $footer_address_city }}</span>@endif
+        @if ($footer_address_state)<span itemprop="addressRegion">{{ ', ' .  $footer_address_state }}</span>@endif
         {{ $footer_address_country }}
-        <a itemprop="telephone" href="tel:{{ $footer_address_phone }}" class="c-footer__phone u-link--white u-theme--link-hover--light">{{ $footer_address_phone }}</a>
+        @if ($footer_address_phone)<a itemprop="telephone" href="tel:{{ $footer_address_phone }}" class="c-footer__phone u-link--white u-theme--link-hover--light">{{ $footer_address_phone }}</a>@endif
       </address>
     </div> <!-- /.c-footer__legal -->
   </div> <!-- /.c-footer--inner -->
