@@ -400,8 +400,22 @@ function alps_setup_options () {
     auto_nav_creation_footer();
     auto_nav_creation_social();
   }
+  add_action('admin_notices', 'my_update_notice');
 }
 add_action('after_switch_theme', 'alps_setup_options');
+
+
+/**
+ * Save settings notice
+ */
+function my_update_notice() {
+  ?>
+    <div class="notice-warning notice is-dismissible">
+      <p><?php _e( 'On theme activation, go to Appearance > Settings and save the settings to display the footer default information.', 'my_plugin_textdomain' ); ?></p>
+    </div>
+  <?php
+}
+
 
 /**
  * ALPS Gutenberg Blocks
