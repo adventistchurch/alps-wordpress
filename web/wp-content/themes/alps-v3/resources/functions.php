@@ -169,16 +169,15 @@ function adventist_register_required_plugins()
     'is_automatic' => false,                   // Automatically activate plugins after installation or not.
     'message'      => '',                      // Message to output right before the plugins table.
   );
-    tgmpa($plugins, $config);
+  tgmpa($plugins, $config);
 }
 
 /**
  * Fix for Piklist fields not saving
  */
-function my_custom_init()
-{
-    remove_post_type_support('post', 'custom-fields');
-    remove_post_type_support('page', 'custom-fields');
+function my_custom_init() {
+  remove_post_type_support('post', 'custom-fields');
+  remove_post_type_support('page', 'custom-fields');
 }
 add_action('init', 'my_custom_init');
 
@@ -186,8 +185,7 @@ add_action('init', 'my_custom_init');
  * Piklist Theme Settings
  */
 add_filter('piklist_admin_pages', 'piklist_theme_setting_pages');
-function piklist_theme_setting_pages($pages)
-{
+function piklist_theme_setting_pages($pages) {
     $pages[] = array(
     'page_title' => __('ALPS Custom Settings')
     ,'menu_title' => __('Settings', 'piklist')
@@ -201,54 +199,52 @@ function piklist_theme_setting_pages($pages)
     ,'default_tab' => 'Basic'
     ,'save_text' => 'Save ALPS Theme Settings'
   );
-    return $pages;
+  return $pages;
 }
 
 /**
  * Add a custom parameter to the Piklist comment block.
  */
 add_filter('piklist_part_data', 'my_custom_comment_block', 10, 2);
-function my_custom_comment_block($data, $folder)
-{
+function my_custom_comment_block($data, $folder) {
 
   // If not a Meta-box section than bail
-    if ($folder!= 'meta-boxes') {
-        return $data;
-    }
+  if ($folder!= 'meta-boxes') {
+      return $data;
+  }
 
-    // Allow Piklist to read our custom comment block attribute: "Hide for Template", and set it to hide_for_template
-    $data['hide_for_template'] = 'Hide for Template';
-    return $data;
+  // Allow Piklist to read our custom comment block attribute: "Hide for Template", and set it to hide_for_template
+  $data['hide_for_template'] = 'Hide for Template';
+  return $data;
 }
 
 /**
  * Assign meta-box access to user role, “no-role”, if the page template is selected
  */
 add_filter('piklist_part_process_callback', 'my_hide_for_template', 10, 2);
-function my_hide_for_template($part, $type)
-{
-    global $post;
+function my_hide_for_template($part, $type) {
+  global $post;
 
-    // If not a meta box than bail
-    if ($type != 'meta-boxes') {
-        return $part;
-    }
+  // If not a meta box than bail
+  if ($type != 'meta-boxes') {
+    return $part;
+  }
 
-    // Check if any page template is set in the comment block
-    if (!empty($part['data']['hide_for_template'])) {
+  // Check if any page template is set in the comment block
+  if (!empty($part['data']['hide_for_template'])) {
 
     // Get the active page template
-        $active_template = pathinfo(get_page_template_slug($post->ID), PATHINFO_FILENAME);
-        $active_template = empty($active_template) ? 'default' : $active_template;
+    $active_template = pathinfo(get_page_template_slug($post->ID), PATHINFO_FILENAME);
+    $active_template = empty($active_template) ? 'default' : $active_template;
 
-        // Does the active page template match what we want to hide?
-        if (strpos($part['data']['hide_for_template'], $active_template) !== false) {
+    // Does the active page template match what we want to hide?
+    if (strpos($part['data']['hide_for_template'], $active_template) !== false) {
 
       // Change meta-box access to user role: no-role
-            $part['data']['role'] = 'no-role';
-        }
+      $part['data']['role'] = 'no-role';
     }
-    return $part;
+  }
+  return $part;
 }
 
 /**
@@ -256,138 +252,141 @@ function my_hide_for_template($part, $type)
  */
 
 // Primary Secondary Navigation
-function auto_nav_creation_primary()
-{
-    $name = 'Primary Navigation';
-    $menu_exists = wp_get_nav_menu_object($name);
+function auto_nav_creation_primary() {
+  $name = 'Primary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
 
-    // If it doesn't exist, let's create it.
-    if (!$menu_exists) {
-        $menu_id = wp_create_nav_menu($name);
-        $menu = get_term_by('name', $name, 'nav_menu');
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
 
-        // Set menu location
-        $locations = get_theme_mod('nav_menu_locations');
-        $locations['primary_navigation'] = $menu->term_id;
-        set_theme_mod('nav_menu_locations', $locations);
-    }
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['primary_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
 }
 add_action('load-nav-menus.php', 'auto_nav_creation_primary');
 
 // Secondary Navigation
-function auto_nav_creation_secondary()
-{
-    $name = 'Secondary Navigation';
-    $menu_exists = wp_get_nav_menu_object($name);
+function auto_nav_creation_secondary() {
+  $name = 'Secondary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
 
-    // If it doesn't exist, let's create it.
-    if (!$menu_exists) {
-        $menu_id = wp_create_nav_menu($name);
-        $menu = get_term_by('name', $name, 'nav_menu');
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
 
-        // Set menu location
-        $locations = get_theme_mod('nav_menu_locations');
-        $locations['secondary_navigation'] = $menu->term_id;
-        set_theme_mod('nav_menu_locations', $locations);
-    }
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['secondary_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+
+  update_option( 'menu_check', true );
 }
 add_action('load-nav-menus.php', 'auto_nav_creation_secondary');
 
 // Footer Primary Navigation
-function auto_nav_creation_social()
-{
-    $name = 'Social Media Navigation';
-    $menu_exists = wp_get_nav_menu_object($name);
+function auto_nav_creation_social() {
+  $name = 'Social Media Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
 
-    // If it doesn't exist, let's create it.
-    if (!$menu_exists) {
-        $menu_id = wp_create_nav_menu($name);
-        $menu = get_term_by('name', $name, 'nav_menu');
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
 
-        // Set menu location
-        $locations = get_theme_mod('nav_menu_locations');
-        $locations['footer_primary_navigation'] = $menu->term_id;
-        set_theme_mod('nav_menu_locations', $locations);
-    }
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['footer_primary_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+
+  update_option( 'menu_check', true );
 }
 add_action('load-nav-menus.php', 'auto_nav_creation_social');
 
 // Footer Secondary Navigation
-function auto_nav_creation_footer()
-{
-    $name = 'Footer Secondary Navigation';
-    $menu_exists = wp_get_nav_menu_object($name);
+function auto_nav_creation_footer() {
+  $name = 'Footer Secondary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
 
-    // If it doesn't exist, let's create it.
-    if (!$menu_exists) {
-        $menu_id = wp_create_nav_menu($name);
-        $menu = get_term_by('name', $name, 'nav_menu');
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
 
-        // Set up default menu items
-        wp_update_nav_menu_item($menu->term_id, 0, array(
+    // Set up default menu items
+    wp_update_nav_menu_item($menu->term_id, 0, array(
       'menu-item-title' =>  __('Trademark and Logo Usage'),
       'menu-item-classes' => '',
       'menu-item-url' => 'https://www.adventist.org/en/copyright/trademark-and-logo-usage/',
       'menu-item-status' => 'publish'
     ));
-        wp_update_nav_menu_item($menu->term_id, 0, array(
+    wp_update_nav_menu_item($menu->term_id, 0, array(
       'menu-item-title' =>  __('Legal Notice'),
       'menu-item-url' => 'https://www.adventist.org/en/copyright/legal-notice/',
       'menu-item-status' => 'publish'
     ));
-        wp_update_nav_menu_item($menu->term_id, 0, array(
+    wp_update_nav_menu_item($menu->term_id, 0, array(
       'menu-item-title' =>  __('Privacy Policy'),
       'menu-item-url' => 'http://privacy.adventist.org/en/',
       'menu-item-status' => 'publish'
     ));
 
-        // Set menu location
-        $locations = get_theme_mod('nav_menu_locations');
-        $locations['footer_secondary_navigation'] = $menu->term_id;
-        set_theme_mod('nav_menu_locations', $locations);
-    }
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['footer_secondary_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+
+  update_option( 'menu_check', true );
 }
 add_action('load-nav-menus.php', 'auto_nav_creation_footer');
 
 // Drawer Navigation
-function auto_nav_creation_learn_more()
-{
-    $name = 'Learn More Navigation';
-    $menu_exists = wp_get_nav_menu_object($name);
+function auto_nav_creation_learn_more() {
+  $name = 'Learn More Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
 
-    // If it doesn't exist, let's create it.
-    if (!$menu_exists) {
-        $menu_id = wp_create_nav_menu($name);
-        $menu = get_term_by('name', $name, 'nav_menu');
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
 
-        // Set up default menu items
-        wp_update_nav_menu_item($menu->term_id, 0, array(
+    // Set up default menu items
+    wp_update_nav_menu_item($menu->term_id, 0, array(
       'menu-item-title' =>  __('Adventist.org'),
       'menu-item-classes' => '',
       'menu-item-url' => 'https://www.adventist.org/en/',
       'menu-item-status' => 'publish'
     ));
-        wp_update_nav_menu_item($menu->term_id, 0, array(
+    wp_update_nav_menu_item($menu->term_id, 0, array(
       'menu-item-title' =>  __('ADRA'),
       'menu-item-url' => 'https://adra.org/',
       'menu-item-status' => 'publish'
     ));
-        wp_update_nav_menu_item($menu->term_id, 0, array(
+    wp_update_nav_menu_item($menu->term_id, 0, array(
       'menu-item-title' =>  __('Adventist World Radio'),
       'menu-item-url' => 'https://www.awr.org/',
       'menu-item-status' => 'publish'
     ));
-        wp_update_nav_menu_item($menu->term_id, 0, array(
+    wp_update_nav_menu_item($menu->term_id, 0, array(
       'menu-item-title' =>  __('Hope Channel'),
       'menu-item-url' => 'https://www.hopetv.org/',
       'menu-item-status' => 'publish'
     ));
 
-        // Set menu location
-        $locations = get_theme_mod('nav_menu_locations');
-        $locations['learn_more_navigation'] = $menu->term_id;
-        set_theme_mod('nav_menu_locations', $locations);
-    }
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['learn_more_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+
+  update_option( 'menu_check', true );
 }
 add_action('load-nav-menus.php', 'auto_nav_creation_learn_more');
 
@@ -395,7 +394,10 @@ add_action('load-nav-menus.php', 'auto_nav_creation_learn_more');
  * On theme switch settings
  */
 function alps_setup_options () {
-  update_option( 'theme_switch_menu_locations', get_theme_mod( 'nav_menu_locations'));
+  $run_menu_maker_once = get_option('menu_check');
+  if ( ! $run_menu_maker_once ){
+    auto_nav_creation_learn_more();
+  }  
 }
 add_action('after_switch_theme', 'alps_setup_options');
 
@@ -411,7 +413,7 @@ add_theme_support('wp-block-styles');
 
 // Only allow the following blocks in Gutenberg
 add_filter('allowed_block_types', function () {
-    return [
+  return [
     'core/heading',
     'core/image',
     'core/block',
