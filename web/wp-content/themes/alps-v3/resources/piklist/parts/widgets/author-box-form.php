@@ -6,5 +6,4 @@
     'value' => 'About the Author',
     'columns' => 12
   ));
-
 ?>

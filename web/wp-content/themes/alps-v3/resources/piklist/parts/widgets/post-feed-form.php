@@ -60,3 +60,4 @@
       'true' => 'Check to show the image and description side-by-side.'
     )
   ));
+?>
