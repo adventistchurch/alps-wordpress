@@ -1,0 +1,11 @@
+.banner .nav {
+  @apply list-reset flex flex-wrap;
+}
+
+.banner .nav a {
+  @apply inline-block px-4 py-2 border-none;
+
+  &:hover {
+    color: darken(#525ddc, 30%);
+  }
+}

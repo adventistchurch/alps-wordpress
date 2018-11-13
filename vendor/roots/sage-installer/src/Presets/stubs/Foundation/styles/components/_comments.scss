@@ -1,0 +1,12 @@
+.comment-list {
+  @extend .no-bullet;
+}
+
+.comment-list ol {
+  list-style: none;
+}
+
+.comment-form input[type="submit"] {
+  @extend .button;
+  @extend .secondary;
+}

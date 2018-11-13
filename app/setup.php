@@ -72,7 +72,7 @@ add_action('after_setup_theme', function () {
 
     /**
      * Use main stylesheet for visual editor
-     * @see resources/assets/styles/layouts/_tinymce.scss
+     * @see assets/styles/layouts/_tinymce.scss
      */
     add_editor_style(asset_path('styles/main.css'));
 }, 20);

@@ -1,0 +1,58 @@
+/**
+ * WordPress Generated Classes
+ * @see http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+ */
+
+/** Media alignment */
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.aligncenter {
+  display: block;
+  height: auto;
+
+  @include -zf-breakpoint-value(auto, $grid-padding-gutters) {
+    margin: (rem-calc($-zf-bp-value) / 2) auto;
+  }
+}
+
+.alignleft,
+.alignright {
+  height: auto;
+
+  @include -zf-breakpoint-value(auto, $grid-padding-gutters) {
+    margin-bottom: (rem-calc($-zf-bp-value) / 2);
+  }
+}
+
+@include breakpoint(medium) {
+  .alignleft {
+    float: left;
+
+    @include -zf-breakpoint-value(medium, $grid-padding-gutters) {
+      margin-right: (rem-calc($-zf-bp-value) / 2);
+    }
+  }
+
+  .alignright {
+    float: right;
+
+    @include -zf-breakpoint-value(medium, $grid-padding-gutters) {
+      margin-left: (rem-calc($-zf-bp-value) / 2);
+    }
+  }
+}
+
+/** Captions */
+// TODO: .wp-caption {}
+// TODO: .wp-caption img {}
+// TODO: .wp-caption-text {}
+
+/** Text meant only for screen readers */
+.screen-reader-text {
+  @extend .show-on-focus;
+}
