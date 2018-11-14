@@ -1,0 +1,14 @@
+{
+  "3.0.3-alpha" : {
+    "description" : "Testing the changelog update.",
+  },
+  "3.0.2-alpha" : {
+    "description" : "Testing the kKernl deployment",
+  },
+  "3.0.1-alpha" : {
+    "description" : "Adding the Kernl file.",
+  },
+  "3.0.0-alpha" : {
+    "description" : "Initial commit and testing.",
+  }
+}
