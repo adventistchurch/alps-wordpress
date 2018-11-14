@@ -320,5 +320,15 @@ add_filter('upload_mimes', 'cc_mime_types');
 /**
  * Provides automatic updates for the WordPress theme and plugins (http://wp-updates.com/)
  */
-require_once('wp-updates-theme.php');
-new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
+// require_once('wp-updates-theme.php');
+// new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
+
+/**
+ *Provides automatic updates for the WordPress theme and plugins from Kernl (https://kernl.us/)
+ */
+require 'theme_update_check.php';
+$MyUpdateChecker = new ThemeUpdateChecker(
+  'alps-v3',
+  'https://kernl.us/api/v1/theme-updates/5bec1a493b303805f808f647/'
+);
+// $MyUpdateChecker->license = "aKernlLicenseKey";  <---- Optional!
