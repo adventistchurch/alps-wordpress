@@ -101,11 +101,6 @@ add_filter('upload_mimes', 'cc_mime_types');
 require_once __DIR__.'/app/plugin-activation.php';
 
 /**
- * WPUpdates Theme Updater Class
- */
-require_once('wp-updates-theme.php'); new WPUpdatesThemeUpdater_2426( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
-
-/**
  * Require plugins on theme install
  */
 add_action('tgmpa_register', 'adventist_register_required_plugins');
@@ -442,3 +437,20 @@ add_filter('allowed_block_types', function () {
     'alps-gutenberg-blocks/paragraph',
   ];
 });
+
+
+/**
+ * Provides automatic updates for the WordPress theme and plugins (http://wp-updates.com/)
+ */
+// require_once('wp-updates-theme.php');
+// new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
+
+/**
+ *Provides automatic updates for the WordPress theme and plugins from Kernl (https://kernl.us/)
+ */
+require 'theme_update_check.php';
+$MyUpdateChecker = new ThemeUpdateChecker(
+  'alps-v3',
+  'https://kernl.us/api/v1/theme-updates/5be537a15ecd012001496112/'
+);
+// $MyUpdateChecker->license = "aKernlLicenseKey";  <---- Optional!
