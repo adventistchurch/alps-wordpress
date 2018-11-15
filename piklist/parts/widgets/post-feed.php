@@ -221,7 +221,7 @@
       <?php endwhile; ?>
       <?php wp_reset_query(); ?>
     <?php else: ?>
-      There are no posts at this time.
+        <?php _e("There are no posts at this time.", "sage"); ?>
     <?php endif; ?>
   </div>
 </div>

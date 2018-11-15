@@ -3,7 +3,7 @@
   <header class="c-page-header c-page-header__simple u-theme--background-color--dark">
     <div class="c-page-header__simple--inner u-padding">
       <h1 class="u-font--primary--xxl u-color--white">
-        Page not found
+        {{ _e("Page not found", "sage") }}
       </h1>
     </div>
   </header> <!-- /.c-page-header-->
@@ -12,7 +12,7 @@
       <article @php post_class("c-article__body") @endphp>
         <div class="text u-spacing--double">
           <p>{{ __('Sorry, no results were found.', 'sage') }}</p>
-          <a href="/" class="o-button">Go to homepage</a>
+          <a href="/" class="o-button">{{ _e("Go to homepage", "sage") }}</a>
         </div>
       </article>
     </div>
