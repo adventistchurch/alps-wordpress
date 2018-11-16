@@ -1,4 +1,7 @@
 {
+  "3.0.5-alpha" : {
+    "description" : "Updating the version number to ensure Kernl is working."
+  },
   "3.0.4-alpha" : {
     "description" : "Fixing errors in this file."
   },
@@ -6,7 +9,7 @@
     "description" : "Testing the changelog update."
   },
   "3.0.2-alpha" : {
-    "description" : "Testing the kKernl deployment"
+    "description" : "Testing the Kernl deployment"
   },
   "3.0.1-alpha" : {
     "description" : "Adding the Kernl file."
