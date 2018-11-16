@@ -110,7 +110,7 @@ function adventist_register_required_plugins() {
     array(
       'name'               => 'Piklist', // The plugin name.
       'slug'               => 'piklist', // The plugin slug (typically the folder name).
-      'source'             => __DIR__.'/app/plugins/piklist.zip', // The plugin source.
+      'source'             => 'https://github.com/piklist/piklist/archive/develop.zip', // The plugin source.
       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
@@ -119,7 +119,7 @@ function adventist_register_required_plugins() {
     array(
       'name'               => 'ALPS Gutenberg Blocks', // The plugin name.
       'slug'               => 'alps-gutenberg-blocks', // The plugin slug (typically the folder name).
-      'source'             => __DIR__.'/app/plugins/alps-gutenberg-blocks.zip', // The plugin source.
+      'source'             => 'https://github.com/adventistchurch/alps-gutenberg-blocks/archive/master.zip', // The plugin source.
       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
