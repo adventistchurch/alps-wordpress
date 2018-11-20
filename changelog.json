@@ -1,4 +1,7 @@
 {
+  "3.0.8-alpha" : {
+    "description" : "Version number increment"
+  },
   "3.0.7-alpha" : {
     "description" : "Removing the old wp-updates-theme.php and adding the Kernl theme update code."
   },
