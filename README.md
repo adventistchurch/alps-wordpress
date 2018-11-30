@@ -3,36 +3,36 @@
 
 ## Theme installation via WordPress Admin Panel
 
-1. In your WordPress admin panel, navigate to Appearance->Themes
-2. Click Add New
-3. Click Upload Theme
+1. In your WordPress admin panel, navigate to `Appearance->Themes`
+2. Click **Add New**
+3. Click **Upload Theme**
 4. Upload the zip file that you downloaded.
 
 
 ## Theme settings
 
-###Set front and posts page
+### Set front and posts page
 
-1. In your WordPress admin panel, navigate to *Settings->Reading*
-2. Set *Front page displays* to a static page
+1. In your WordPress admin panel, navigate to `Settings->Reading`
+2. Set **Front page displays** to a static page
 3. Select a page from each dropdown
 4. Save Changes
 
-###Set page template
+### Set page template
 
-1. In your WordPress admin panel, navigate to *Pages*
+1. In your WordPress admin panel, navigate to `Pages`
 2. Edit page
-3. In the sidebar, navigate to *Page Attributes**
+3. In the sidebar, navigate to **Page Attributes**
 4. Select Template from the dropdown
   * **Default Template**: Default template for all pages
   * **Home Template**: Includes story block and freeform/relationship post fields (http://alps.adventist.io/public/?p=templates-home)
   * **News Template**: Landing page of posts in the category *news* (http://alps.adventist.io/public/?p=organisms-news-content)
-  * **Longform Template**: Provides a large, single column page that focuses on the content. (http://alps.adventist.io/public/?p=templates-longform)
+  * **Long form Template**: Provides a large, single column page that focuses on the content. (http://alps.adventist.io/public/?p=templates-longform)
   * **Single Template**: Provides a single column width page with the ablity to add rows with columns in varying widths (100, 70/30, 50/50, 30/70, images, and paralax images areas.) (http://alps.adventist.io/public/?p=templates-single-page)
 
-###Add widgets to sidebar
+### Add widgets to sidebar
 
-1. In your WordPress admin panel, navigate to *Appearance->Widgets*
+1. In your WordPress admin panel, navigate to `Appearance->Widgets`
 2. Drag widget to widget area
   * **Primary Top** / **Primary Main** / **Primary Bottom** (Home Template): These areas allow you to put content at the top and bottom of the main content areas on the home template.
   * **Footer**: The area at the bottom of the page.
@@ -40,12 +40,12 @@
   * **Sidebar**: This is the main aside on the page.
 
 
-###Add menus
+### Add menus
 
-1. In your WordPress admin panel, navigate to *Appearance->Menus*
+1. In your WordPress admin panel, navigate to `Appearance->Menus`
 2. Create a menu
 3. Add links
-4. Go to *Manage Locations* tab
+4. Go to **Manage Locations** tab
 5. Select location for the menu to appear
   * **Primary Navigation**: The main navigation for the page
   * **Secondary Navigation**: Appears above the main navigation
