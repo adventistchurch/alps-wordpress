@@ -3,7 +3,18 @@
   $related_grid = get_post_meta($post->ID, 'related_grid', true);
   $related_image = get_post_meta($post->ID, 'related_image', true);
   $related_image_round = get_post_meta($post->ID, 'related_image_round', true);
-  if ($related == 'related_all') {
+  if ($related == 'related_top_level')  {
+    // Loop of pages for top level pages
+    $pages = get_pages(
+      array(
+        'hierarchical' => 0,
+        'parent' => $post->ID,
+        'post_type' => 'page',
+      	'post_status' => 'publish',
+        'sort_column' => 'menu_order'
+      )
+    );
+  } elseif ($related == 'related_all') {
     // Loop of pages for child and grandchild pages
     $pages = get_pages(
       array(
@@ -17,16 +28,7 @@
     // Loop of selected pages
     $pages = get_post_meta($post->ID, 'related_custom_value');
   } else {
-    // Loop of pages for top level pages
-    $pages = get_pages(
-      array(
-        'hierarchical' => 0,
-        'parent' => $post->ID,
-        'post_type' => 'page',
-      	'post_status' => 'publish',
-        'sort_column' => 'menu_order'
-      )
-    );
+    $pages = false;
   }
 @endphp
 @if ($pages)
