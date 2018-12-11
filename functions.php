@@ -435,6 +435,7 @@ add_filter('allowed_block_types', function () {
     'alps-gutenberg-blocks/image-2up',
     'alps-gutenberg-blocks/image-breakout',
     'alps-gutenberg-blocks/paragraph',
+    'alps-gutenberg-blocks/button',
   ];
 });
 
