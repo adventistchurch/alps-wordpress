@@ -2,6 +2,11 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.c-post-navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
 .u-round {
   display: grid;
 }
