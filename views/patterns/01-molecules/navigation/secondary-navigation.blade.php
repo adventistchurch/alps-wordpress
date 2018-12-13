@@ -7,6 +7,7 @@
       $secondary_nav = wp_get_nav_menu_items( $menu->term_id);
       $count = 0;
       $submenu = false;
+      $parent = false;
     @endphp
     <ul class="c-secondary-nav__list">
       @php
