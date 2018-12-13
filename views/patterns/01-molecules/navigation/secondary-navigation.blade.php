@@ -15,10 +15,10 @@
       @endphp
       @if (!empty($languages))
         <li class="c-secondary-nav__list-item c-secondary-nav__list-item__language c-secondary-nav__list-item__toggle is-priority">
-          <select class="u-font--secondary-nav u-color--gray">
+          <select class="u-font--secondary-nav u-color--gray" onChange="top.location.href=this.options[this.selectedIndex].value;">
           <option value="language">Language</option>
           @foreach ($languages as $language)
-            <option value="{{ $language['code'] }}">{{ $language['translated_name'] }}</option>
+            <option value="{{ '?lang=' . $language['code'] }}">{{ $language['translated_name'] }}</option>
           @endforeach
           </select>
         </li>

@@ -112,7 +112,7 @@
             {!! do_shortcode('[ajax_load_more container_type="div" css_classes="u-spacing--double" post_type="post" category="'. get_the_category()[0]->slug .'" scroll="false" transition_container="false" button_label="Load More" posts_per_page="10" offset="10"]') !!}
           @endif
         @else
-          <p class="u-padding--left">Sorry, there are no posts at this time.</p>
+          <p class="u-padding--left">{{ __('Sorry, no results were found.', 'sage') }}</p>
         @endif
       </div>
     </article>
