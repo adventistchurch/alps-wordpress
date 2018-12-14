@@ -44,7 +44,6 @@
       </div>
       @if (has_nav_menu('learn_more_navigation'))
         <div class="c-drawer__about-right u-spacing--half">
-          <h3 class="u-font--secondary--s u-text-transform--upper"><strong>Learn More:</strong></h3>
           @php
             $menu_slug = 'learn_more_navigation';
             $menu_locations = get_nav_menu_locations();
@@ -52,6 +51,7 @@
             $tertiary_nav = wp_get_nav_menu_items($menu->term_id);
             $tertiary_nav = json_decode(json_encode($tertiary_nav), true);
           @endphp
+          <h3 class="u-font--secondary--s u-text-transform--upper"><strong>{{ $menu->name }}:</strong></h3>
           <p class="u-spacing--half">
             @foreach ($tertiary_nav as $nav)
               <a href="{{ $nav['url'] }}" target="_blank" class="u-link--white">{{ $nav['title'] }}</a>
