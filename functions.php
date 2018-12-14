@@ -425,6 +425,7 @@ add_filter('allowed_block_types', function () {
     'core/block',
     'core/embed',
     'core/spacer',
+    'core/button',
     'alps-gutenberg-blocks/accordion',
     'alps-gutenberg-blocks/blockquote',
     'alps-gutenberg-blocks/content-block',
