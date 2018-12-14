@@ -105,7 +105,7 @@ require_once __DIR__.'/app/plugin-activation.php';
  */
 add_action('tgmpa_register', 'adventist_register_required_plugins');
 function adventist_register_required_plugins() {
-    if (get_bloginfo('version') >= '5.0.1') {
+    if (get_bloginfo('version') >= '5.0.0') {
       $plugin_name = 'Classic Editor';
       $plugin_slug = 'classic-editor';
       $plugin_required = false;
