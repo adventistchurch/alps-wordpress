@@ -111,9 +111,7 @@
           @if (shortcode_exists('ajax_load_more'))
             {!! do_shortcode('[ajax_load_more container_type="div" css_classes="u-spacing--double" post_type="post" category="'. get_the_category()[0]->slug .'" scroll="false" transition_container="false" button_label="Load More" posts_per_page="10" offset="10"]') !!}
           @else
-            <div class="c-post-navigation u-space--double--top">
-              <?php posts_nav_link(' ','&laquo; Next Posts','Previous Posts &raquo;'); ?>
-            </div>
+            @php pagination_nav() @endphp
           @endif
         @else
           <p class="u-padding--left">Sorry, there are no posts at this time.</p>
