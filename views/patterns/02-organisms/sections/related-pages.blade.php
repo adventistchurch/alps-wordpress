@@ -59,11 +59,11 @@
           } else {
             $id = $page->ID;
           }
-          $title = get_the_title($id);
-          $excerpt = get_the_excerpt($id);
+          $title = $page->post_title;
+          $excerpt = $page->post_content;
           $excerpt_length = 400;
-          $body = get_the_content($id);
-          $link = get_permalink($id);
+          $body = false;
+          $link = $page->guid;
           $category = NULL;
           $date = NULL;
           $cta = "Read More";
