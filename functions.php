@@ -337,7 +337,7 @@ add_action('load-nav-menus.php', 'auto_nav_creation_footer');
 
 // Drawer Navigation
 function auto_nav_creation_learn_more() {
-  $name = 'Learn More Navigation';
+  $name = 'Learn More';
   $menu_exists = wp_get_nav_menu_object($name);
 
   // If it doesn't exist, let's create it.
@@ -425,6 +425,7 @@ add_filter('allowed_block_types', function () {
     'core/block',
     'core/embed',
     'core/spacer',
+    'core/button',
     'alps-gutenberg-blocks/accordion',
     'alps-gutenberg-blocks/blockquote',
     'alps-gutenberg-blocks/content-block',
