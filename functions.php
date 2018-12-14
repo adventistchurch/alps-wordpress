@@ -108,8 +108,8 @@ function adventist_register_required_plugins() {
     if (get_bloginfo('version') >= '5.0.0') {
       $plugin_name = 'Classic Editor';
       $plugin_slug = 'classic-editor';
-      $plugin_required = false;
-      $plugin_activation = false;
+      $plugin_required = true;
+      $plugin_activation = true;
     } else {
       $plugin_name = 'Gutenberg';
       $plugin_slug = 'gutenberg';
