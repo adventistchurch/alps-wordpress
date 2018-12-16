@@ -448,3 +448,75 @@ $MyUpdateChecker = new ThemeUpdateChecker(
   'https://kernl.us/api/v1/theme-updates/5be537a15ecd012001496112/'
 );
 // $MyUpdateChecker->license = "aKernlLicenseKey";  <---- Optional!
+
+/**
+ * Pagination
+ */
+function pagination_nav() {
+  if (is_singular())
+    return;
+
+  global $wp_query;
+
+  /** Stop execution if there's only 1 page */
+  if ($wp_query->max_num_pages <= 1)
+    return;
+
+  $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
+  $max = intval($wp_query->max_num_pages);
+
+  /** Add current page to the array */
+  if ($paged >= 1)
+    $links[] = $paged;
+
+  /** Add the pages around the current page to the array */
+  if ($paged >= 3) {
+    $links[] = $paged - 1;
+    $links[] = $paged - 2;
+  }
+
+  if (($paged + 2) <= $max ) {
+    $links[] = $paged + 2;
+    $links[] = $paged + 1;
+  }
+
+  echo '<nav class="pagination u-center-block u-text-align--center u-space--double--top">' . "\n";
+
+  /** Previous Post Link */
+  if (get_previous_posts_link())
+    printf('%s' . "\n", get_previous_posts_link('<span class="u-icon u-icon--m u-theme--path-fill--dark u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>o-arrow__bracket--right</title><path d="M3.25,6.41l3.5,3.5L8.16,8.5,4.66,5l3.5-3.5L6.75.09l-3.5,3.5L1.84,5Z" fill="#9b9b9b"></path></svg>
+</span>'));
+
+  /** Link to first page, plus ellipses if necessary */
+  if (!in_array(1, $links)) {
+    $class = 1 == $paged ? ' class="pagination__page--current u-theme--color--base"' : '';
+
+    printf('<span%s><a class="pagination__page u-padding--quarter u-theme--color--darker u-font-weight--bold" href="%s">%s</a></span>' . "\n", $class, esc_url(get_pagenum_link(1)), '1');
+
+    if (!in_array(2, $links))
+      echo '<span class="pagination__divide">…</span>';
+  }
+
+  /** Link to current page, plus 2 pages in either direction if necessary */
+  sort($links);
+  foreach ((array) $links as $link) {
+    $class = $paged == $link ? ' class="pagination__page--current u-theme--color--base"' : '';
+    printf('<span%s><a class="pagination__page u-padding--quarter u-theme--color--darker u-font-weight--bold" href="%s">%s</a></span>' . "\n", $class, esc_url(get_pagenum_link($link)), $link);
+  }
+
+  /** Link to last page, plus ellipses if necessary */
+  if (!in_array($max, $links)) {
+    if (!in_array($max - 1, $links))
+      echo '<span class="pagination__divide">…</span>' . "\n";
+
+    $class = $paged == $max ? ' class="pagination__page--current u-theme--color--base"' : '';
+    printf('<span%s><a class="pagination__page u-padding--quarter u-theme--color--darker u-font-weight--bold" href="%s">%s</a></span>' . "\n", $class, esc_url(get_pagenum_link($max)), $max);
+  }
+
+  /** Next Post Link */
+  if (get_next_posts_link())
+    printf('%s' . "\n", get_next_posts_link('<span class="u-icon u-icon--m u-theme--path-fill--dark u-space--half--right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>Artboard 1</title><path d="M6.75,3.59,3.25.09,1.84,1.5,5.34,5,1.84,8.5,3.25,9.91l3.5-3.5L8.16,5Z" fill="#9b9b9b"></path></svg>
+</span>'));
+
+  echo '</nav>' . "\n";
+}
