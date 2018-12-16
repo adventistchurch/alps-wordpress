@@ -1,11 +1,67 @@
-# [Sage](https://roots.io/sage/)
+# ALPS WordPress Theme Setup
+
+## Theme installation via WordPress Admin Panel
+
+1. In your WordPress admin panel, navigate to `Appearance->Themes`
+2. Click **Add New**
+3. Click **Upload Theme**
+4. Upload the zip file that you downloaded.
+
+## Theme settings
+
+### Set front and posts page
+
+1. In your WordPress admin panel, navigate to `Settings->Reading`
+2. Set **Front page displays** to a static page
+3. Select a page from each dropdown
+4. Save Changes
+
+### Set page template
+
+1. In your WordPress admin panel, navigate to `Pages`
+2. Edit page
+3. In the sidebar, navigate to **Page Attributes**
+4. Select Template from the dropdown
+  * **Default Template**: Default template for all pages
+  * **Posts Template**: Landing page of posts in the category *news* (https://alps.adventist.io/v3/?p=pages-news)
+
+### Add widgets to sidebar
+
+1. In your WordPress admin panel, navigate to `Appearance->Widgets`
+2. Drag widget to widget area
+  * **Page Top**: A region at the top of a Page content type.
+  * **Page Bottom**: A region at the bottom of a Page content type.
+  * **Page Sidebar**: A region at the side of a Page content type.
+  * **Post Sidebar**: A region at the side of a Post content type.
+  * **Post Footer Region**: A region at the bottom of a Post content type.
+  * **Footer Region**: A region at the bottom of any content type.
+
+### Add menus
+
+1. In your WordPress admin panel, navigate to `Appearance->Menus`
+2. Create a menu
+3. Add links
+4. Go to **Manage Locations** tab
+5. Select location for the menu to appear
+  * **Primary Navigation**: The main navigation for the page
+  * **Secondary Navigation**: Appears above the main navigation
+  * **Secondary Footer Navigation**: Appears above the main footer navigation
+  * **Primary Footer Navigation**: The main footer navigation at the bottom of the page
+  * **Tertiary Navigation**: Appears below the page header on the *News Template*
+
+
+# ALPS WordPress Theme Development
+
+ALPS is developed using Sage, from roots.io.
+
+## [Sage](https://roots.io/sage/)
 [![Packagist](https://img.shields.io/packagist/vpre/roots/sage.svg?style=flat-square)](https://packagist.org/packages/roots/sage)
 [![devDependency Status](https://img.shields.io/david/dev/roots/sage.svg?style=flat-square)](https://david-dm.org/roots/sage#info=devDependencies)
 [![Build Status](https://img.shields.io/travis/roots/sage.svg?style=flat-square)](https://travis-ci.org/roots/sage)
 
 Sage is a WordPress starter theme with a modern development workflow.
 
-## Features
+### Features
 
 * Sass for stylesheets
 * Modern JavaScript
@@ -17,7 +73,7 @@ Sage is a WordPress starter theme with a modern development workflow.
 
 See a working example at [roots-example-project.com](https://roots-example-project.com/).
 
-## Requirements
+### Requirements
 
 Make sure all dependencies have been installed before moving on:
 
@@ -27,7 +83,7 @@ Make sure all dependencies have been installed before moving on:
 * [Node.js](http://nodejs.org/) >= 6.9.x
 * [Yarn](https://yarnpkg.com/en/docs/install)
 
-## Theme installation
+### Theme installation
 
 Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
@@ -44,7 +100,7 @@ $ composer create-project roots/sage your-theme-name dev-master
 
 During theme installation you will have options to update `style.css` theme headers, select a CSS framework, and configure Browsersync.
 
-## Theme structure
+### Theme structure
 
 ```shell
 themes/your-theme-name/   # → Root of your Sage based theme
@@ -77,39 +133,39 @@ themes/your-theme-name/   # → Root of your Sage based theme
 └── vendor/               # → Composer packages (never edit)
 ```
 
-## Theme setup
+### Theme setup
 
 Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
 
-## Theme development
+### Theme development
 
 * Run `yarn` from the theme directory to install dependencies
 * Update `resources/assets/config.json` settings:
   * `devUrl` should reflect your local development hostname
   * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/sage` for non-[Bedrock](https://roots.io/bedrock/) installs)
 
-### Build commands
+#### Build commands
 
 * `yarn start` — Compile assets when file changes are made, start Browsersync session
 * `yarn build` — Compile and optimize the files in your assets directory
 * `yarn build:production` — Compile assets for production
 
-## Documentation
+### Documentation
 
 * [Sage documentation](https://roots.io/sage/docs/)
 * [Controller documentation](https://github.com/soberwp/controller#usage)
 
-## Contributing
+### Contributing
 
 Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
 
-## Gold sponsors
+### Gold sponsors
 
 Help support our open-source development efforts by [contributing to Sage on OpenCollective](https://opencollective.com/sage).
 
 <a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="200" height="150"></a> <a href="https://k-m.com/"><img src="https://roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a>
 
-## Community
+### Community
 
 Keep track of development and community news.
 
@@ -119,7 +175,7 @@ Keep track of development and community news.
 * Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
 * Listen to the [Roots Radio podcast](https://roots.io/podcast/)
 
-## Troubleshooting
+### Troubleshooting
 
 Cache Error `vendor/illuminate/view/Engines/PhpEngine.php on line 43`:
 * Fix by changing the folder permissions of `wp-content` and `uploads` to `777`.
