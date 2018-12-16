@@ -105,6 +105,17 @@ require_once __DIR__.'/app/plugin-activation.php';
  */
 add_action('tgmpa_register', 'adventist_register_required_plugins');
 function adventist_register_required_plugins() {
+    if (get_bloginfo('version') >= '5.0.0') {
+      $plugin_name = 'Classic Editor';
+      $plugin_slug = 'classic-editor';
+      $plugin_required = true;
+      $plugin_activation = true;
+    } else {
+      $plugin_name = 'Gutenberg';
+      $plugin_slug = 'gutenberg';
+      $plugin_required = true;
+      $plugin_activation = true;
+    }
     $plugins = array(
     // Piklist
     array(
@@ -130,20 +141,19 @@ function adventist_register_required_plugins() {
       'slug'     => 'wordpress-seo',
       'required' => false,
     ),
-    // Gutenberg
-    array(
-      'name'     => 'Gutenberg',
-      'slug'     => 'gutenberg',
-      'required' => true,
-      'force_activation'   => true,
-    ),
     // SVG Support
     array(
       'name'     => 'SVG Support',
       'slug'     => 'svg-support',
       'required' => true,
       'force_activation'   => true,
-    )
+    ),
+    array(
+      'name'     => $plugin_name,
+      'slug'     => $plugin_slug,
+      'required' => $plugin_required,
+      'force_activation'   => $plugin_activation,
+    ),
   );
   $config = array(
     'id'           => 'adventist',             // Unique ID for hashing notices for multiple instances of TGMPA.
