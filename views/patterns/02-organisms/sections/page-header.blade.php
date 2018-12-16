@@ -16,10 +16,10 @@
   }
 
   if (is_home()) {
-    $display_title = _e("Recent Posts", "sage");
+    $display_title = _e("Recent Posts", "alps");
     $title = NULL;
   } else if (is_archive()) {
-    $kicker = _e("Category", "sage") }};
+    $kicker = _e("Category", "alps") }};
     $display_title = '';
     $title = single_cat_title( '', false );
   } else {

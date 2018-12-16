@@ -7,7 +7,7 @@ if (post_password_required()) {
   <div class="c-comments--inner u-padding">
     @if (have_comments())
       <h2 class="u-theme--color--darker">
-        {!! sprintf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'sage'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>') !!}
+        {!! sprintf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'alps'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>') !!}
       </h2>
       <ol class="comment-list">
         {!! wp_list_comments(['style' => 'ol', 'short_ping' => true]) !!}
@@ -16,17 +16,17 @@ if (post_password_required()) {
         <nav>
           <ul class="pager">
             @if (get_previous_comments_link())
-              <li class="previous">{!! previous_comments_link(_e('&larr; Older comments', 'sage')) !!}</li>
+              <li class="previous">{!! previous_comments_link(_e('&larr; Older comments', 'alps')) !!}</li>
             @endif
             @if (get_next_comments_link())
-              <li class="next">{!! next_comments_link(_e('Newer comments &rarr;', 'sage')) !!}</li>
+              <li class="next">{!! next_comments_link(_e('Newer comments &rarr;', 'alps')) !!}</li>
             @endif
           </ul>
         </nav>
       @endif
     @endif
     @if (!comments_open() && get_comments_number() != '0' && post_type_supports(get_post_type(), 'comments'))
-      <p>{{ _e('Sorry, no results were found.', 'sage') }}</p>
+      <p>{{ _e('Sorry, no results were found.', 'alps') }}</p>
     @endif
     @php
       comment_form(
@@ -34,7 +34,7 @@ if (post_password_required()) {
           'title_reply_before' => '<h3 class="u-font--secondary--m comment-reply-title u-theme--color--darker">',
           'title_reply_after'  => '</h3>',
           'logged_in_as' => '',
-          'title_reply' => _e("Leave a Comment", "sage"),
+          'title_reply' => _e("Leave a Comment", "alps"),
           'label_submit' => _e('Submit', "sage"),
           'class_form' => 'u-spacing'
         )

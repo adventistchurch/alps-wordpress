@@ -47,11 +47,11 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-      'primary_navigation' => __('Primary Navigation', 'sage'),
-      'secondary_navigation' => __('Secondary Navigation', 'sage'),
-      'learn_more_navigation' => __('Learn More', 'sage'),
-      'footer_primary_navigation' => __('Footer Primary Navigation', 'sage'),
-      'footer_secondary_navigation' => __('Footer Secondary Navigation', 'sage')
+      'primary_navigation' => __('Primary Navigation', 'alps'),
+      'secondary_navigation' => __('Secondary Navigation', 'alps'),
+      'learn_more_navigation' => __('Learn More', 'alps'),
+      'footer_primary_navigation' => __('Footer Primary Navigation', 'alps'),
+      'footer_secondary_navigation' => __('Footer Secondary Navigation', 'alps')
     ]);
 
     /**
@@ -90,27 +90,27 @@ add_action('widgets_init', function () {
         'after_title'   => '</h3>'
     ];
     register_sidebar([
-        'name'          => __('Page Top', 'sage'),
+        'name'          => __('Page Top', 'alps'),
         'id'            => 'section-page-top'
     ] + $config);
     register_sidebar([
-        'name'          => __('Page Bottom', 'sage'),
+        'name'          => __('Page Bottom', 'alps'),
         'id'            => 'section-page-bottom'
     ] + $config);
     register_sidebar([
-        'name'          => __('Page Sidebar', 'sage'),
+        'name'          => __('Page Sidebar', 'alps'),
         'id'            => 'sidebar-page'
     ] + $config);
     register_sidebar([
-        'name'          => __('Post Sidebar', 'sage'),
+        'name'          => __('Post Sidebar', 'alps'),
         'id'            => 'sidebar-posts'
     ] + $config);
     register_sidebar([
-        'name'          => __('Post Footer Region', 'sage'),
+        'name'          => __('Post Footer Region', 'alps'),
         'id'            => 'footer-region-post'
     ] + $config);
     register_sidebar([
-        'name'          => __('Footer Region', 'sage'),
+        'name'          => __('Footer Region', 'alps'),
         'id'            => 'footer-region'
     ] + $config);
 
