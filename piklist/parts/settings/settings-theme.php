@@ -180,7 +180,7 @@
     'label' => 'Site Branding Statement',
     'description' => 'Found in the navigation drawer',
     'columns' => 12,
-    'value' => 'Tell the world is an offical media production of the Seventh-day Adventist world church.'
+    'value' => '[Site Name] is a website of the Seventh-day Adventist church in [Region Name].'
   ));
   piklist('field', array(
     'type' => 'textarea',

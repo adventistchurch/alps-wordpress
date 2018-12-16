@@ -1,0 +1,29 @@
+{
+  "3.0.8-alpha" : {
+    "description" : "Version number increment"
+  },
+  "3.0.7-alpha" : {
+    "description" : "Removing the old wp-updates-theme.php and adding the Kernl theme update code."
+  },
+  "3.0.6-alpha" : {
+    "description" : "Fixing the version number."
+  },
+  "3.0.5-alpha" : {
+    "description" : "Updating the version number to ensure Kernl is working."
+  },
+  "3.0.4-alpha" : {
+    "description" : "Fixing errors in this file."
+  },
+  "3.0.3-alpha" : {
+    "description" : "Testing the changelog update."
+  },
+  "3.0.2-alpha" : {
+    "description" : "Testing the Kernl deployment"
+  },
+  "3.0.1-alpha" : {
+    "description" : "Adding the Kernl file."
+  },
+  "3.0.0-alpha" : {
+    "description" : "Initial commit and testing."
+  }
+}

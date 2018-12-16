@@ -1,6 +1,7 @@
 {
   "entry": {
     "main": [
+      "./scripts/main.js",
       "./styles/main.scss"
     ],
     "customizer": [
