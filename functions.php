@@ -176,7 +176,7 @@ add_filter('piklist_admin_pages', 'piklist_theme_setting_pages');
 function piklist_theme_setting_pages($pages) {
   $pages[] = array(
     'page_title' => __('ALPS Custom Settings')
-    ,'menu_title' => __('Settings', 'piklist')
+    ,'menu_title' => __('ALPS Custom Settings', 'piklist')
     ,'sub_menu' => 'themes.php' //Under Appearance menu
     ,'capability' => 'manage_options'
     ,'menu_slug' => 'custom_settings'
