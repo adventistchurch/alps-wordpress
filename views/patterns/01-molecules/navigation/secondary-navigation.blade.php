@@ -15,7 +15,7 @@
       @if (!empty($languages))
         <li class="c-secondary-nav__list-item c-secondary-nav__list-item__language c-secondary-nav__list-item__toggle is-priority">
           <select class="u-font--secondary-nav u-color--gray">
-          <option value="language">Language</option>
+          <option value="language">{{ _e("Language", "sage") }}</option>
           @foreach ($languages as $language)
             <option value="{{ $language['code'] }}">{{ $language['translated_name'] }}</option>
           @endforeach
@@ -62,12 +62,12 @@
     @endif
     <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
       <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>Search
+        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>{{_e("Search", "sage") }}
       </a>
     </li>
     <li class="c-secondary-nav__list-item c-secondary-nav__list-item__menu c-secondary-nav__list-item__toggle js-toggle-menu is-priority">
       <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>Menu
+        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>{{ _e("Menu", "sage") }}
       </a>
     </li>
   </ul> <!-- /.c-secondary-nav__list -->

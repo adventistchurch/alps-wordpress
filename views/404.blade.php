@@ -11,7 +11,7 @@
     <div class="c-article l-grid-item l-grid-item--l--4-col u-padding--zero--sides">
       <article @php post_class("c-article__body") @endphp>
         <div class="text u-spacing--double">
-          <p>{{ __('Sorry, no results were found.', 'sage') }}</p>
+          <p>{{ _e('Sorry, no results were found.', 'sage') }}</p>
           <a href="/" class="o-button">{{ _e("Go to homepage", "sage") }}</a>
         </div>
       </article>

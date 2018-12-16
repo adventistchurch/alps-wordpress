@@ -16,10 +16,10 @@
   }
 
   if (is_home()) {
-    $display_title = 'Recent Posts';
+    $display_title = _e("Recent Posts", "sage");
     $title = NULL;
   } else if (is_archive()) {
-    $kicker = 'Category';
+    $kicker = _e("Category", "sage") }};
     $display_title = '';
     $title = single_cat_title( '', false );
   } else {

@@ -102,11 +102,11 @@ add_action('widgets_init', function () {
         'id'            => 'sidebar-page'
     ] + $config);
     register_sidebar([
-        'name'          => __('Posts Sidebar', 'sage'),
+        'name'          => __('Post Sidebar', 'sage'),
         'id'            => 'sidebar-posts'
     ] + $config);
     register_sidebar([
-        'name'          => __('Posts Footer Region', 'sage'),
+        'name'          => __('Post Footer Region', 'sage'),
         'id'            => 'footer-region-post'
     ] + $config);
     register_sidebar([

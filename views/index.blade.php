@@ -47,7 +47,7 @@
                   $excerpt_length = 300;
                   $body = get_the_content($id);
                   $link = get_permalink($id);
-                  $cta = "Read More";
+                  $cta = _e("Read More", "sage");
                   $category = NULL;
                   $date = NULL;
                   $block_class = "u-spacing--half";
@@ -114,7 +114,7 @@
             @php pagination_nav() @endphp
           @endif
         @else
-          <p class="u-padding--left">Sorry, there are no posts at this time.</p>
+          <p class="u-padding--left">{{ _e("Sorry, there are no posts at this time.", "sage") }}</p>
         @endif
       </div>
     </article>

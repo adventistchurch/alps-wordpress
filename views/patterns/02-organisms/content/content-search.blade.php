@@ -6,7 +6,7 @@
       </div>
       <div class="l-grid-item l-grid-item--m--3-col">
         <div class="u-flex">
-          <button type="submit" class="c-filter__button o-button u-space--right"><span class="u-icon u-icon--xs u-path-fill--white">@include('patterns.00-atoms.icons.icon-search')</span>Search</button> <!-- /.search-form__submit -->
+          <button type="submit" class="c-filter__button o-button u-space--right"><span class="u-icon u-icon--xs u-path-fill--white">@include('patterns.00-atoms.icons.icon-search')</span>{{ _e("Search", "sage") }}</button> <!-- /.search-form__submit -->
           @if (shortcode_exists('searchandfilter'))
             <span class="c-filter__toggle js-toggle o-button o-button--simple" data-toggled="c-filter" data-prefix="c-filter"><span class="u-icon u-icon--xs">@include('patterns.00-atoms.icons.icon-settings')</span></span>
           @endif
@@ -19,7 +19,7 @@
       <div class="c-filter__form u-padding--top">
         <div class="l-grid l-grid--7-col u-shift--left--1-col--at-large">
           <div class="c-filter__form-item u-spacing--half l-grid-item">
-            <h3 class="u-font--secondary--s u-font-weight--bold u-text-transform--upper u-color--gray can-be--lighter">Settings</h3>
+            <h3 class="u-font--secondary--s u-font-weight--bold u-text-transform--upper u-color--gray can-be--lighter">{{ _e("Settings", "sage") }}</h3>
             {!! do_shortcode('[searchandfilter taxonomies="category" types="radio" class="c-filter__form-group" submit_label="Search Again" hide_empty="0"]') !!}
           </div>
         </div>
@@ -41,7 +41,7 @@
               $excerpt_length = 300;
               $body = get_the_content($id);
               $link = get_permalink($id);
-              $cta = "Read More";
+              $cta = _e("Read More", "sage");
               $block_class = "u-theme--border-color--darker u-border--left u-spacing--half";
             @endphp
             @include('patterns.01-molecules.blocks.content-block')
@@ -50,7 +50,7 @@
             {!! do_shortcode('[ajax_load_more container_type="div" css_classes="u-spacing--double" post_type="post, page" scroll="false" transition_container="false" button_label="Load More" posts_per_page="10" offset="10"]') !!}
           @endif
         @else
-          <p>{{ __('Sorry, no results were found.', 'sage') }}</p>
+          <p>{{ _e('Sorry, no results were found.', 'sage') }}</p>
           {!! get_search_form(false) !!}
         @endif
       </div>

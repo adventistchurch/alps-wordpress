@@ -16,17 +16,17 @@ if (post_password_required()) {
         <nav>
           <ul class="pager">
             @if (get_previous_comments_link())
-              <li class="previous">{!! previous_comments_link(__('&larr; Older comments', 'sage')) !!}</li>
+              <li class="previous">{!! previous_comments_link(_e('&larr; Older comments', 'sage')) !!}</li>
             @endif
             @if (get_next_comments_link())
-              <li class="next">{!! next_comments_link(__('Newer comments &rarr;', 'sage')) !!}</li>
+              <li class="next">{!! next_comments_link(_e('Newer comments &rarr;', 'sage')) !!}</li>
             @endif
           </ul>
         </nav>
       @endif
     @endif
     @if (!comments_open() && get_comments_number() != '0' && post_type_supports(get_post_type(), 'comments'))
-      <p>{{ __('Sorry, no results were found.', 'sage') }}</p>
+      <p>{{ _e('Sorry, no results were found.', 'sage') }}</p>
     @endif
     @php
       comment_form(
@@ -34,8 +34,8 @@ if (post_password_required()) {
           'title_reply_before' => '<h3 class="u-font--secondary--m comment-reply-title u-theme--color--darker">',
           'title_reply_after'  => '</h3>',
           'logged_in_as' => '',
-          'title_reply' => 'Leave a Comment',
-          'label_submit' => 'Submit',
+          'title_reply' => _e("Leave a Comment", "sage"),
+          'label_submit' => _e('Submit', "sage"),
           'class_form' => 'u-spacing'
         )
       );

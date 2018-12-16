@@ -450,7 +450,7 @@
               </div>
             @endif
             @if ($post_feed_archive_link)
-              <a href="{{ $post_feed_archive_link }}" class="o-button o-button--outline o-button--with-arrow u-space--left">{{ __('See All', 'sage') }}<span class="u-icon u-icon--arrow--long u-theme--path-fill--base u-space--half--right">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
+              <a href="{{ $post_feed_archive_link }}" class="o-button o-button--outline o-button--with-arrow u-space--left">{{ _e('See All', 'sage') }}<span class="u-icon u-icon--arrow--long u-theme--path-fill--base u-space--half--right">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
             @endif
           </div>
         </div>
