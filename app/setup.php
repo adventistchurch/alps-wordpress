@@ -26,7 +26,7 @@ add_action('wp_enqueue_scripts', function () {
  */
 
 add_action('after_setup_theme', function () {
-    load_theme_textdomain('alps-v3', get_template_directory() . '/lang');
+    load_theme_textdomain('alps', get_template_directory() . '/lang');
 
     /**
      * Enable features from Soil when plugin is activated
