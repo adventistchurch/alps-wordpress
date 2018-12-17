@@ -114,7 +114,7 @@
             @php pagination_nav() @endphp
           @endif
         @else
-          <p class="u-padding--left">Sorry, there are no posts at this time.</p>
+          <p class="u-padding--left">{{ __('Sorry, no results were found.', 'sage') }}</p>
         @endif
       </div>
     </article>

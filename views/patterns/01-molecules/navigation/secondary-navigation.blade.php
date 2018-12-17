@@ -7,6 +7,7 @@
       $secondary_nav = wp_get_nav_menu_items( $menu->term_id);
       $count = 0;
       $submenu = false;
+      $parent = false;
     @endphp
     <ul class="c-secondary-nav__list">
       @php
@@ -14,10 +15,10 @@
       @endphp
       @if (!empty($languages))
         <li class="c-secondary-nav__list-item c-secondary-nav__list-item__language c-secondary-nav__list-item__toggle is-priority">
-          <select class="u-font--secondary-nav u-color--gray">
+          <select class="u-font--secondary-nav u-color--gray" onChange="top.location.href=this.options[this.selectedIndex].value;">
           <option value="language">Language</option>
           @foreach ($languages as $language)
-            <option value="{{ $language['code'] }}">{{ $language['translated_name'] }}</option>
+            <option value="{{ '?lang=' . $language['code'] }}">{{ $language['translated_name'] }}</option>
           @endforeach
           </select>
         </li>
@@ -35,7 +36,6 @@
           @php $parent_id = $nav['ID']; @endphp
           <li class="c-secondary-nav__list-item has-subnav @if ($nav['classes']){{ $nav['classes']}}@endif">
             <a href="{{ $nav['url'] }}" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-              @if ($nav['attr_title'])<span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-' . $nav['attr_title'] )</span>@endif
               {{ $nav['title'] }}
             </a>
         @endif

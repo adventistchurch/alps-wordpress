@@ -2,7 +2,7 @@
   $theme_options = get_option('alps_theme_settings');
   $current_language = apply_filters('wpml_current_language', NULL);
   if ($current_language) {
-    $logo = $theme_options['logo' . $current_language][0];
+    $logo = $theme_options['logo_' . $current_language][0];
   } else {
     $logo = $theme_options['logo'][0];
   }
