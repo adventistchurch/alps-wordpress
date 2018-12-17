@@ -411,7 +411,7 @@ add_action('after_switch_theme', 'alps_setup_options');
 function my_update_notice() {
   ?>
     <div class="notice-warning notice is-dismissible">
-      <p><?php _e( 'On theme activation, go to Appearance > Settings and save the settings to display the footer default information.', 'sage' ); ?></p>
+      <p><?php _e( 'On theme activation, go to Appearance > Settings and save the settings to display the footer default information.', 'alps' ); ?></p>
     </div>
   <?php
 }
