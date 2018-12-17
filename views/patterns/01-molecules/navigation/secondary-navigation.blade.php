@@ -36,7 +36,6 @@
           @php $parent_id = $nav['ID']; @endphp
           <li class="c-secondary-nav__list-item has-subnav @if ($nav['classes']){{ $nav['classes']}}@endif">
             <a href="{{ $nav['url'] }}" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-              @if ($nav['attr_title'])<span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-' . $nav['attr_title'] )</span>@endif
               {{ $nav['title'] }}
             </a>
         @endif
