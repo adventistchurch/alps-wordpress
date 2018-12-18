@@ -14,7 +14,7 @@ use Roots\Sage\Container;
  * @param string $title
  */
 $sage_error = function ($message, $subtitle = '', $title = '') {
-    $title = $title ?: __('Sage &rsaquo; Error', 'sage');
+    $title = $title ?: __('Sage &rsaquo; Error', 'alps');
     $footer = '<a href="https://roots.io/sage/docs/">roots.io/sage/docs/</a>';
     $message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
     wp_die($message, $title);
@@ -24,14 +24,14 @@ $sage_error = function ($message, $subtitle = '', $title = '') {
  * Ensure compatible version of PHP is used
  */
 if (version_compare('7.1', phpversion(), '>=')) {
-    $sage_error(__('You must be using PHP 7.1 or greater.', 'sage'), __('Invalid PHP version', 'sage'));
+    $sage_error(__('You must be using PHP 7.1 or greater.', 'alps'), __('Invalid PHP version', 'alps'));
 }
 
 /**
  * Ensure compatible version of WordPress is used
  */
 if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
-    $sage_error(__('You must be using WordPress 4.7.0 or greater.', 'sage'), __('Invalid WordPress version', 'sage'));
+    $sage_error(__('You must be using WordPress 4.7.0 or greater.', 'alps'), __('Invalid WordPress version', 'alps'));
 }
 
 /**
@@ -40,8 +40,8 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
 if (!class_exists('Roots\\Sage\\Container')) {
     if (!file_exists($composer = __DIR__.'/vendor/autoload.php')) {
         $sage_error(
-            __('You must run <code>composer install</code> from the Sage directory.', 'sage'),
-            __('Autoloader not found.', 'sage')
+            __('You must run <code>composer install</code> from the Sage directory.', 'alps'),
+            __('Autoloader not found.', 'alps')
         );
     }
     require_once $composer;
@@ -56,7 +56,7 @@ if (!class_exists('Roots\\Sage\\Container')) {
 array_map(function ($file) use ($sage_error) {
     $file = "./app/{$file}.php";
     if (!locate_template($file, true, true)) {
-        $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
+        $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'alps'), $file), 'File not found');
     }
 }, ['helpers', 'setup', 'filters', 'admin']);
 
@@ -186,7 +186,7 @@ add_filter('piklist_admin_pages', 'piklist_theme_setting_pages');
 function piklist_theme_setting_pages($pages) {
   $pages[] = array(
     'page_title' => __('ALPS Custom Settings')
-    ,'menu_title' => __('ALPS Custom Settings', 'piklist')
+    ,'menu_title' => __('ALPS Custom Settings', 'alps')
     ,'sub_menu' => 'themes.php' //Under Appearance menu
     ,'capability' => 'manage_options'
     ,'menu_slug' => 'custom_settings'
@@ -195,7 +195,7 @@ function piklist_theme_setting_pages($pages) {
     ,'page_icon' => plugins_url('piklist/parts/img/piklist-page-icon-32.png')
     ,'single_line' => true
     ,'default_tab' => 'Basic'
-    ,'save_text' => 'Save ALPS Theme Settings'
+    ,'save_text' => __('Save ALPS Theme Settings', 'alps')
   );
   return $pages;
 }
@@ -411,7 +411,7 @@ add_action('after_switch_theme', 'alps_setup_options');
 function my_update_notice() {
   ?>
     <div class="notice-warning notice is-dismissible">
-      <p><?php _e( 'On theme activation, go to Appearance > Settings and save the settings to display the footer default information.', 'my_plugin_textdomain' ); ?></p>
+      <p><?php _e( 'On theme activation, go to Appearance > Settings and save the settings to display the footer default information.', 'alps' ); ?></p>
     </div>
   <?php
 }
@@ -461,7 +461,6 @@ $MyUpdateChecker = new ThemeUpdateChecker(
   'alps-v3',
   'https://kernl.us/api/v1/theme-updates/5be537a15ecd012001496112/'
 );
-// $MyUpdateChecker->license = "aKernlLicenseKey";  <---- Optional!
 
 /**
  * Pagination
@@ -498,7 +497,7 @@ function pagination_nav() {
 
   /** Previous Post Link */
   if (get_previous_posts_link())
-    printf('%s' . "\n", get_previous_posts_link('<span class="u-icon u-icon--m u-theme--path-fill--dark u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>o-arrow__bracket--right</title><path d="M3.25,6.41l3.5,3.5L8.16,8.5,4.66,5l3.5-3.5L6.75.09l-3.5,3.5L1.84,5Z" fill="#9b9b9b"></path></svg>
+    printf('%s' . "\n", get_previous_posts_link('<span class="u-icon u-icon--m u-theme--path-fill--dark u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>Left arrow bracket</title><path d="M3.25,6.41l3.5,3.5L8.16,8.5,4.66,5l3.5-3.5L6.75.09l-3.5,3.5L1.84,5Z" fill="#9b9b9b"></path></svg>
 </span>'));
 
   /** Link to first page, plus ellipses if necessary */
@@ -529,7 +528,7 @@ function pagination_nav() {
 
   /** Next Post Link */
   if (get_next_posts_link())
-    printf('%s' . "\n", get_next_posts_link('<span class="u-icon u-icon--m u-theme--path-fill--dark u-space--half--right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>Artboard 1</title><path d="M6.75,3.59,3.25.09,1.84,1.5,5.34,5,1.84,8.5,3.25,9.91l3.5-3.5L8.16,5Z" fill="#9b9b9b"></path></svg>
+    printf('%s' . "\n", get_next_posts_link('<span class="u-icon u-icon--m u-theme--path-fill--dark u-space--half--right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>Right arrow bracket</title><path d="M6.75,3.59,3.25.09,1.84,1.5,5.34,5,1.84,8.5,3.25,9.91l3.5-3.5L8.16,5Z" fill="#9b9b9b"></path></svg>
 </span>'));
 
   echo '</nav>' . "\n";

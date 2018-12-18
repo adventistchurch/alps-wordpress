@@ -47,7 +47,7 @@
                   $excerpt_length = 300;
                   $body = get_the_content($id);
                   $link = get_permalink($id);
-                  $cta = "Read More";
+                  $cta = _e("Read More", "alps");
                   $category = NULL;
                   $date = NULL;
                   $block_class = "u-spacing--half";
@@ -114,7 +114,7 @@
             @php pagination_nav() @endphp
           @endif
         @else
-          <p class="u-padding--left">{{ __('Sorry, no results were found.', 'sage') }}</p>
+          <p class="u-padding--left">{{ _e('Sorry, no results were found.', 'alps') }}</p>
         @endif
       </div>
     </article>
