@@ -130,7 +130,7 @@ function adventist_register_required_plugins() {
     array(
       'name'               => 'ALPS Gutenberg Blocks', // The plugin name.
       'slug'               => 'alps-gutenberg-blocks', // The plugin slug (typically the folder name).
-      'source'             => 'https://github.com/adventistchurch/alps-gutenberg-blocks/archive/master.zip', // The plugin source.
+      'source'             => 'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/download', // The plugin source.
       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.

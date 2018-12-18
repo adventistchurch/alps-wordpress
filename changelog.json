@@ -1,4 +1,25 @@
 {
+  "3.0.9-beta" : {
+    "description" : "### Added
+    - i18n (internationalization) `.pot` file for translation.
+    - `es.po` and `es.mo` translation files. from [@bertobox](https://github.com/bertobox)
+    - More Gutenberg block types: List, Video, HTML, embed, button.
+    - Ability to translate the `Learn More` menu title.
+
+    ### Changed
+    - Updated the site branding statement to be more generic and force people to change it.
+    - Clarified `Posts Sidebar` region to `Posts Template Sidebar`.
+    - Removed unused `Default Tempalte`.
+
+    ### Fixed
+    - Added pagination.
+    - Error with WPML causing white screen [#266](https://github.com/adventistchurch/alps-wordpress/issues/266)
+    - The requirements for the Gutenberg plugins.
+    - Issue with related pages not pulling the correct teaser or honoring the format settings. [#257](https://github.com/adventistchurch/alps-wordpress/issues/257)
+
+    ",
+    "upgrade_notice" : "This is the first beta release. Significant chagnes have been made."
+  },
   "3.0.8-alpha" : {
     "description" : "Version number increment"
   },
