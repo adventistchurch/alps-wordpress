@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: ALPS for WordPress\n"
-"POT-Creation-Date: 2018-12-17 20:13-0500\n"
-"PO-Revision-Date: 2018-12-16 19:28-0500\n"
+"Project-Id-Version: ALPS for Wordress\n"
+"POT-Creation-Date: 2018-12-18 15:57-0500\n"
+"PO-Revision-Date: 2018-12-18 15:52-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -483,47 +483,47 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: app/setup.php:50
+#: app/setup.php:56
 msgid "Primary Navigation"
 msgstr ""
 
-#: app/setup.php:51
+#: app/setup.php:57
 msgid "Secondary Navigation"
 msgstr ""
 
-#: app/setup.php:52
+#: app/setup.php:58
 msgid "Learn More"
 msgstr ""
 
-#: app/setup.php:53
+#: app/setup.php:59
 msgid "Footer Primary Navigation"
 msgstr ""
 
-#: app/setup.php:54
+#: app/setup.php:60
 msgid "Footer Secondary Navigation"
 msgstr ""
 
-#: app/setup.php:93
+#: app/setup.php:99
 msgid "Page Top"
 msgstr ""
 
-#: app/setup.php:97
+#: app/setup.php:103
 msgid "Page Bottom"
 msgstr ""
 
-#: app/setup.php:101
+#: app/setup.php:107
 msgid "Page Sidebar"
 msgstr ""
 
-#: app/setup.php:105
-msgid "Post Sidebar"
+#: app/setup.php:111
+msgid "Posts Template Sidebar"
 msgstr ""
 
-#: app/setup.php:109
+#: app/setup.php:115
 msgid "Post Footer Region"
 msgstr ""
 
-#: app/setup.php:113
+#: app/setup.php:119
 msgid "Footer Region"
 msgstr ""
 
@@ -623,7 +623,7 @@ msgid "There are no posts at this time."
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "ALPS for WordPress"
+msgid "ALPS for Wordress"
 msgstr ""
 
 #. Theme URI of the plugin/theme
