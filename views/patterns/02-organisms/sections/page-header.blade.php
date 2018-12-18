@@ -19,7 +19,7 @@
     $display_title = _e("Recent Posts", "alps");
     $title = NULL;
   } else if (is_archive()) {
-    $kicker = _e("Category", "alps") }};
+    $kicker = e("Category", "alps") }};
     $display_title = '';
     $title = single_cat_title( '', false );
   } else {

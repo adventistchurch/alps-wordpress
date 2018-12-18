@@ -179,3 +179,16 @@ Keep track of development and community news.
 
 Cache Error `vendor/illuminate/view/Engines/PhpEngine.php on line 43`:
 * Fix by changing the folder permissions of `wp-content` and `uploads` to `777`.
+
+## Add Secondary Nav icons
+
+* In `Appearance > Menus`, select `Screen Options` in the top-right hand corner of your screen.
+* Check `Title Attribute`
+* Add menu items to nav that has the Display location set to `Secondary Naviation`
+* Expand the menu item settings and add a `Title Attribute` with one of the following
+  - contact
+  - legal
+  - language
+  - find-a-church
+  - sitemap
+* IMPORTANT: You must use the title attributes above or you will get an error. They are case sensitive.

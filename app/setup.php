@@ -108,7 +108,7 @@ add_action('widgets_init', function () {
         'id'            => 'sidebar-page'
     ] + $config);
     register_sidebar([
-        'name'          => __('Post Sidebar', 'alps'),
+        'name'          => __('Posts Template Sidebar', 'sage'),
         'id'            => 'sidebar-posts'
     ] + $config);
     register_sidebar([
