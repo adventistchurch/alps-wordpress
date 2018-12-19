@@ -1,7 +1,11 @@
 {
+  "3.0.10-beta" : {
+    "description" : "Fixing the version number",
+    "upgrade_notice" : "This is the second beta release. Significant changes have been made between the alpha and beta versions."
+  },
   "3.0.9-beta" : {
     "description" : "Significant changes and bug fixes to prepare for the final release. Check the CHANGELOG.md for details.",
-    "upgrade_notice" : "This is the first beta release. Significant chagnes have been made."
+    "upgrade_notice" : "This is the first beta release. Significant changes have been made."
   },
   "3.0.8-alpha" : {
     "description" : "Version number increment"
