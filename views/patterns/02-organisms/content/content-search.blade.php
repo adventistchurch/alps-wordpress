@@ -41,7 +41,7 @@
               $excerpt_length = 300;
               $body = get_the_content($id);
               $link = get_permalink($id);
-              $cta = _e("Read More", "alps");
+              $cta = __("Read More", "alps");
               $block_class = "u-theme--border-color--darker u-border--left u-spacing--half";
             @endphp
             @include('patterns.01-molecules.blocks.content-block')
