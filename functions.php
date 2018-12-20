@@ -458,7 +458,7 @@ add_filter('allowed_block_types', function () {
  */
 require 'theme_update_check.php';
 $MyUpdateChecker = new ThemeUpdateChecker(
-  'alps-v3',
+  'alps-wordpress',
   'https://kernl.us/api/v1/theme-updates/5be537a15ecd012001496112/'
 );
 
