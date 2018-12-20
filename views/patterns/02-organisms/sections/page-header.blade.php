@@ -16,7 +16,7 @@
   }
 
   if (is_home()) {
-    $display_title = _e("Recent Posts", "alps");
+    $display_title = __("Recent Posts", "alps");
     $title = NULL;
   } else if (is_archive()) {
     $kicker = e("Category", "alps") }};
