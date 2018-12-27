@@ -440,6 +440,7 @@ add_filter('allowed_block_types', function () {
     'core/video',
     'core/html',
     'core/embed',
+    'core/paragraph',
     'alps-gutenberg-blocks/accordion',
     'alps-gutenberg-blocks/blockquote',
     'alps-gutenberg-blocks/content-block',
@@ -449,7 +450,6 @@ add_filter('allowed_block_types', function () {
     'alps-gutenberg-blocks/highlighted-paragraph',
     'alps-gutenberg-blocks/image-2up',
     'alps-gutenberg-blocks/image-breakout',
-    'alps-gutenberg-blocks/paragraph',
   ];
 });
 
