@@ -1,6 +1,6 @@
 {
   "3.0.13-beta" : {
-    "description" : "Fixes an issue with the paragraphs block not displaying functioning correctly. This removes the custom block and goes back to the default core paragraphs block.",
+    "description" : "Fixes an issue with the paragraphs block not displaying functioning correctly. This removes the custom block and goes back to the default core paragraphs block."
   },
   "3.0.12-beta" : {
     "description" : "Fixed an issue with i18n phrases not using the correct function.",
