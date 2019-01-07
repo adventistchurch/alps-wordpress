@@ -1,5 +1,5 @@
-<nav class="c-secondary-nav" role="navigation">
-  @if (has_nav_menu('secondary_navigation'))
+@if (has_nav_menu('secondary_navigation'))
+  <nav class="c-secondary-nav" role="navigation">
     @php
       $menu_name = 'secondary_navigation';
       $menu_locations = get_nav_menu_locations();
@@ -8,35 +8,21 @@
       $count = 0;
       $submenu = false;
       $parent = false;
+      $parent_id = false;
     @endphp
     <ul class="c-secondary-nav__list">
-      @php
-        $languages = apply_filters('wpml_active_languages', NULL);
-      @endphp
-      @if (!empty($languages))
-        <li class="c-secondary-nav__list-item c-secondary-nav__list-item__language c-secondary-nav__list-item__toggle is-priority">
-          <select class="u-font--secondary-nav u-color--gray" onChange="top.location.href=this.options[this.selectedIndex].value;">
-          <option value="language">{{ _e("Language", "alps") }}</option>
-          @foreach ($languages as $language)
-            <option value="{{ '?lang=' . $language['code'] }}">{{ $language['translated_name'] }}</option>
-          @endforeach
-          </select>
-        </li>
-      @endif
       @php
         $secondary_nav = json_decode(json_encode($secondary_nav), true);
       @endphp
       @foreach ($secondary_nav as $nav)
         @if (isset($secondary_nav[$count + 1]))
-          @php
-            $parent = $secondary_nav[$count + 1]['menu_item_parent'];
-          @endphp
+          @php $parent = $secondary_nav[$count + 1]['menu_item_parent']; @endphp
         @endif
         @if (!$nav['menu_item_parent'])
           @php $parent_id = $nav['ID']; @endphp
-          <li class="c-secondary-nav__list-item has-subnav @if ($nav['classes']){{ $nav['classes']}}@endif">
+          <li class="c-secondary-nav__list-item has-subnav">
             <a href="{{ $nav['url'] }}" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-              {{ $nav['title'] }}
+              {!! $nav['title'] !!}
             </a>
         @endif
         @if ($parent_id == $nav['menu_item_parent'])
@@ -45,21 +31,21 @@
             <ul class="c-secondary-nav__subnav c-subnav">
           @endif
             <li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
-              <a class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $nav['url'] }}">{{ $nav['title'] }}</a>
+              <a class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $nav['url'] }}">{!! $nav['title'] !!}</a>
             </li>
-            @if ($parent != $parent_id && $submenu)
-              </ul> <!-- /.c-secondary-nav__subnav -->
-              @php $submenu = false; @endphp
-            @endif
+          @if ($parent != $parent_id && $submenu)
+            </ul> <!-- /.c-secondary-nav__subnav -->
+            @php $submenu = false; @endphp
+          @endif
         @endif
-        @if ($parent != $parent_id)
+        @if ($parent_id && $parent != $parent_id)
           </li>
           @php $submenu = false; @endphp
         @endif
         @php $count++; @endphp
       @endforeach
       {!! wp_reset_postdata() !!}
-    @endif
+    </ul> <!-- /.c-secondary-nav__list -->
     <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
       <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
         <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>{{_e("Search", "alps") }}
@@ -70,5 +56,5 @@
         <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>{{ _e("Menu", "alps") }}
       </a>
     </li>
-  </ul> <!-- /.c-secondary-nav__list -->
-</nav> <!-- /.c-secondary-nav -->
+  </nav> <!-- /.c-secondary-nav -->
+@endif

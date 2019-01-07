@@ -2,6 +2,73 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.pagination a {
+  border: none !important;
+}
+
+.wpml-ls-native,
+.wpml-ls-display {
+  margin: 0 !important;
+}
+
+.wpml-ls-bracket {
+  margin: 0 !important;
+
+  &:first-child {
+    padding-left: 5px;
+  }
+}
+
+.wpml-ls-flag {
+  padding-right: 3px;
+}
+
+.c-subnav {
+  overflow: visible;
+  z-index: 99;
+
+  .c-secondary-nav__list-item.has-subnav {
+    display: none;
+  }
+
+  &__link {
+    align-items: center;
+    display: flex;
+  }
+
+  .wpml-ls-flag {
+    display: none;
+  }
+
+  .wpml-ls-flag + .wpml-ls-display {
+    position: relative;
+    width: calc(100% + 20px);
+  }
+}
+
+.c-header__nav-secondary .c-secondary-nav__list-item.has-subnav:not(.is-priority) .c-secondary-nav__link {
+  padding-left: 10px;
+  padding-right: 15px;
+}
+
+.c-secondary-nav__subnav__link .wpml-ls-flag {
+  width: 18px;
+  height: 12px;
+}
+
+.c-header__nav-secondary .c-secondary-nav__list {
+  overflow: visible;
+  flex-wrap: wrap-reverse;
+}
+
+.c-header__nav-secondary {
+  z-index: 2;
+}
+
+.c-header__nav-primary {
+  z-index: 0;
+}
+
 .c-post-navigation {
   display: flex;
   justify-content: space-between;
