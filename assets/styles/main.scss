@@ -24,13 +24,6 @@
 }
 
 .c-subnav {
-  overflow: visible;
-  z-index: 99;
-
-  .c-secondary-nav__list-item.has-subnav {
-    display: none;
-  }
-
   &__link {
     align-items: center;
     display: flex;
@@ -46,27 +39,9 @@
   }
 }
 
-.c-header__nav-secondary .c-secondary-nav__list-item.has-subnav:not(.is-priority) .c-secondary-nav__link {
-  padding-left: 10px;
-  padding-right: 15px;
-}
-
 .c-secondary-nav__subnav__link .wpml-ls-flag {
   width: 18px;
   height: 12px;
-}
-
-.c-header__nav-secondary .c-secondary-nav__list {
-  overflow: visible;
-  flex-wrap: wrap-reverse;
-}
-
-.c-header__nav-secondary {
-  z-index: 2;
-}
-
-.c-header__nav-primary {
-  z-index: 0;
 }
 
 .c-post-navigation {
