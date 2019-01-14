@@ -28,6 +28,7 @@
         @if ($parent_id == $nav['menu_item_parent'])
           @if (!$submenu)
             @php $submenu = true; @endphp
+            <span class="c-subnav__arrow o-arrow--down u-path-fill--gray"></span>
             <ul class="c-secondary-nav__subnav c-subnav">
           @endif
             <li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
