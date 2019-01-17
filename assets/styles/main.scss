@@ -2,6 +2,52 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.pagination a {
+  border: none !important;
+}
+
+.wpml-ls-native,
+.wpml-ls-display {
+  margin: 0 !important;
+}
+
+.wpml-ls-bracket {
+  margin: 0 !important;
+
+  &:first-child {
+    padding-left: 5px;
+  }
+}
+
+.wpml-ls-flag {
+  padding-right: 3px;
+}
+
+.c-subnav {
+  &__link {
+    align-items: center;
+    display: flex;
+  }
+
+  .wpml-ls-flag {
+    display: none;
+  }
+
+  .wpml-ls-flag + .wpml-ls-display {
+    position: relative;
+    width: calc(100% + 20px);
+  }
+}
+
+.has-subnav .has-subnav {
+  display: none;
+}
+
+.c-secondary-nav__subnav__link .wpml-ls-flag {
+  width: 18px;
+  height: 12px;
+}
+
 .c-post-navigation {
   display: flex;
   justify-content: space-between;

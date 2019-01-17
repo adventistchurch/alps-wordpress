@@ -1,4 +1,7 @@
 {
+  "3.0.0-beta14" : {
+    "description" : "Adding dropdown support in the secondary menus, removing hardcoded WPML menu, and fixing the version number."
+  },
   "3.0.13-beta" : {
     "description" : "Fixes an issue with the paragraphs block not displaying functioning correctly. This removes the custom block and goes back to the default core paragraphs block."
   },
