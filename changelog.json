@@ -1,5 +1,5 @@
 {
-  "3.0.0-beta14" : {
+  "3.0.14-beta" : {
     "description" : "Adding dropdown support in the secondary menus, removing hardcoded WPML menu, and fixing the version number."
   },
   "3.0.13-beta" : {
