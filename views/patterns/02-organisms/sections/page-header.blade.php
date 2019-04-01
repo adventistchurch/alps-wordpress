@@ -3,10 +3,10 @@
   if (!is_home()) {
     global $post;
 
-    if (get_post_meta($post->ID, 'header_background_image', true)) {
+    if (get_post_meta($post->ID, 'header_background_image', true) && !is_archive()) {
       $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
       $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
-    } elseif (get_post_thumbnail_id($post->ID)) {
+    } elseif (get_post_thumbnail_id($post->ID) && !is_archive()) {
       $header_background_image = get_post_thumbnail_id($post->ID);
       $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
     } else {
