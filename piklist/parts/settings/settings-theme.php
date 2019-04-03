@@ -48,7 +48,6 @@
       )
     ));
   }
-
   piklist('field', array(
     'type' => 'group',
     'label' => 'Sabbath Column',
@@ -116,7 +115,6 @@
       ),
     )
   ));
-
   piklist('field', array(
     'type' => 'group',
     'label' => 'Theme Colors',
@@ -256,7 +254,6 @@
       'button' => 'Add Image'
     )
   ));
-
   piklist('field', array(
     'type' => 'checkbox',
     'field' => 'index_hide_sidebar',
@@ -267,19 +264,16 @@
       'true' => 'Hide the content sidebar'
     )
   ));
-
-
   piklist('field', array(
-    'type' => 'group'
-    // ,'field' => 'category_settings' // removing this parameter saves all fields as separate meta
-    ,'label' => __('Home/Category Settings', 'alps')
-    ,'list' => false
-    ,'fields' => array(
+    'type' => 'group',
+    'label' => __('Home/Category Settings', 'alps'),
+    'list' => false,
+    'fields' => array(
       array(
         'type' => 'html',
         'value' => '<em>Select how you would like your category pages to display.</em>'
-      )
-      ,array(
+      ),
+      array(
         'type' => 'checkbox',
         'field' => 'posts_grid',
         'label' => 'Posts Feed Grid',
@@ -287,8 +281,8 @@
         'choices' => array(
           'true' => 'Select to display the posts side-by-side.',
         )
-      )
-      ,array(
+      ),
+      array(
         'type' => 'checkbox',
         'field' => 'posts_grid_3up',
         'description' => '*The sidebar must be hidden for the pages to display 3up.',
@@ -298,14 +292,14 @@
         'true' => 'Select to display the posts 3up at the largest breakpoint.',
         ),
         'conditions' => array(
-            array(
-                'reset' => false,
-                'field' => 'posts_grid',
-                'value' => 'true'
-            )
+          array(
+            'reset' => false,
+            'field' => 'posts_grid',
+            'value' => 'true'
+          )
         )
-      )
-      ,array(
+      ),
+      array(
         'type' => 'checkbox',
         'field' => 'posts_image',
         'label' => 'Posts Feed Image',
@@ -313,8 +307,8 @@
         'choices' => array(
           'true' => 'Select to display the feature image for the posts.',
         )
-      )
-      ,array(
+      ),
+      array(
         'type' => 'checkbox',
         'field' => 'posts_image_round',
         'label' => 'Round Image',
@@ -333,5 +327,4 @@
       )
     )
   ));
-
 ?>
