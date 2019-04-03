@@ -172,7 +172,7 @@
     'field' => 'footer_description',
     'label' => 'Footer Description',
     'columns' => 12,
-    'value' => '<a href="//www.adventist.org/en/">Adventist.org</a> is the Official website of the Seventh-day Adventist world church &bull; <a href="//www.adventist.org/en/world-church/">View Regions</a>'
+    'value' => '<a href="//www.adventist.org/en/">Adventist.org</a> is the Official website of the Seventh-day Adventist world church &bull; <a href="//www.adventist.org/en/world-church/">View Regions</a>',
   ));
   piklist('field', array(
     'type' => 'textarea',
@@ -267,56 +267,71 @@
       'true' => 'Hide the content sidebar'
     )
   ));
+
+
   piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'posts_grid',
-    'label' => 'Home/Category Posts Feed Grid',
-    'columns' => 12,
-    'choices' => array(
-      'true' => 'Select to display the posts side-by-side.',
-    )
-  ));
-  piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'posts_grid_3up',
-    'description' => '*The sidebar must be hidden for the pages to display 3up.',
-    'label' => 'Home/Category Posts Feed Grid (3up)',
-    'columns' => 12,
-    'choices' => array(
-      'true' => 'Select to display the posts 3up at the largest breakpoint.',
-    ),
-    'conditions' => array(
+    'type' => 'group'
+    // ,'field' => 'category_settings' // removing this parameter saves all fields as separate meta
+    ,'label' => __('Home/Category Settings', 'alps')
+    ,'list' => false
+    ,'fields' => array(
       array(
-        'reset' => false,
+        'type' => 'html',
+        'value' => '<em>Select how you would like your category pages to display.</em>'
+      )
+      ,array(
+        'type' => 'checkbox',
         'field' => 'posts_grid',
-        'value' => 'true'
+        'label' => 'Posts Feed Grid',
+        'columns' => 12,
+        'choices' => array(
+          'true' => 'Select to display the posts side-by-side.',
+        )
       )
-    )
-  ));
-  piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'posts_image',
-    'label' => 'Home/Category Posts Feed Image',
-    'columns' => 12,
-    'choices' => array(
-      'true' => 'Select to display the feature image for the posts.',
-    )
-  ));
-  piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'posts_image_round',
-    'label' => 'Home/Category Posts Feed Round Image',
-    'description' => '*Does not work for images displays side-by-side.',
-    'columns' => 12,
-    'choices' => array(
-      'true' => 'Select to make the featured image round.',
-    ),
-    'conditions' => array(
-      array(
-        'reset' => false,
+      ,array(
+        'type' => 'checkbox',
+        'field' => 'posts_grid_3up',
+        'description' => '*The sidebar must be hidden for the pages to display 3up.',
+        'label' => 'Posts Feed Grid (3up)',
+        'columns' => 12,
+        'choices' => array(
+        'true' => 'Select to display the posts 3up at the largest breakpoint.',
+        ),
+        'conditions' => array(
+            array(
+                'reset' => false,
+                'field' => 'posts_grid',
+                'value' => 'true'
+            )
+        )
+      )
+      ,array(
+        'type' => 'checkbox',
         'field' => 'posts_image',
-        'value' => 'true'
+        'label' => 'Posts Feed Image',
+        'columns' => 12,
+        'choices' => array(
+          'true' => 'Select to display the feature image for the posts.',
+        )
+      )
+      ,array(
+        'type' => 'checkbox',
+        'field' => 'posts_image_round',
+        'label' => 'Round Image',
+        'description' => '*Does not work for images displays side-by-side.',
+        'columns' => 12,
+        'choices' => array(
+          'true' => 'Select to make the featured image round.',
+        ),
+        'conditions' => array(
+          array(
+            'reset' => false,
+            'field' => 'posts_image',
+            'value' => 'true'
+          )
+        )
       )
     )
   ));
+
 ?>
