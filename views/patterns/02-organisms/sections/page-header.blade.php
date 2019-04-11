@@ -19,7 +19,11 @@
     $display_title = __("Recent Posts", "alps");
     $title = NULL;
   } else if (is_archive()) {
-    $kicker = __("Category", "alps");
+    if (get_option('alps_theme_settings')['posts_label'] == "true" ) {
+      $kicker = __("Category", "alps");
+    } else {
+      $kicker = NULL;
+    }
     $display_title = '';
     $title = single_cat_title( '', false );
   } else {
