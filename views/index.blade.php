@@ -19,6 +19,9 @@
   <section id="top" class="l-main__content l-grid l-grid--7-col {{ $section_offset }} l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
     <article @php post_class("c-article l-grid-item l-grid-item--l--4-col $article_offset") @endphp>
       <div class="c-article__body">
+        @if (is_active_sidebar('category-top'))
+          @php dynamic_sidebar('category-top') @endphp
+        @endif
         @if (have_posts())
           <div class="text u-spacing--double u-space--double--top">
             @php
@@ -115,6 +118,9 @@
           @endif
         @else
           <p class="u-padding--left">{{ _e('Sorry, no results were found.', 'alps') }}</p>
+        @endif
+        @if (is_active_sidebar('category-bottom'))
+          @php dynamic_sidebar('category-bottom') @endphp
         @endif
       </div>
     </article>

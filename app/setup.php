@@ -119,7 +119,14 @@ add_action('widgets_init', function () {
         'name'          => __('Footer Region', 'alps'),
         'id'            => 'footer-region'
     ] + $config);
-
+    register_sidebar([
+        'name'          => __('Category Top', 'alps'),
+        'id'            => 'category-top'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Category Bottom', 'alps'),
+        'id'            => 'category-bottom'
+    ] + $config);
 });
 
 /**
