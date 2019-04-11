@@ -275,6 +275,16 @@
       ),
       array(
         'type' => 'checkbox',
+        'field' => 'posts_label',
+        'label' => 'Category Posts Feed Label',
+        'columns' => 12,
+        'value' => true,
+        'choices' => array(
+          'true' => 'Select to display the label "Category" on category posts feed.',
+        )
+      ),
+      array(
+        'type' => 'checkbox',
         'field' => 'posts_grid',
         'label' => 'Posts Feed Grid',
         'columns' => 12,
@@ -325,16 +335,6 @@
           )
         )
       )
-    )
-  ));
-
-  piklist('field', array(
-    'type' => 'checkbox',
-    'field' => 'posts_label',
-    'label' => 'Category Posts Feed Label',
-    'columns' => 12,
-    'choices' => array(
-      'true' => 'Select to display the label "Category" on category posts feed.',
     )
   ));
 ?>
