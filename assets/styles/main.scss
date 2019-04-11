@@ -2,6 +2,12 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.c-drawer__nav {
+  .priority-nav__dropdown-toggle {
+    display: none;
+  }
+}
+
 .pagination a {
   border: none !important;
 }
