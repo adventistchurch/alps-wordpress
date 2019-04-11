@@ -59,7 +59,7 @@
             @if (isset($link))
               <a href="{{ $link }}" class="c-block__title-link u-theme--link-hover--dark">
             @endif
-            @if (isset($eyebrow))<em class="u-theme--color--lighter">{{ $eyebrow . ' ' }}</em>@endif
+              @if (isset($eyebrow))<em class="u-theme--color--lighter">{{ $eyebrow . ' ' }}</em>@endif
               {!! $title !!}
             @if (isset($link))
               </a>
@@ -70,9 +70,9 @@
           <p class="c-media-block__description c-block__description">
             @php
               if (strlen($excerpt) > $excerpt_length) {
-                echo trim(mb_substr($excerpt, 0, $excerpt_length)) . '&hellip;';
+                echo strip_tags(trim(mb_substr($excerpt, 0, $excerpt_length))) . '&hellip;';
               } else {
-                echo $excerpt;
+                echo strip_tags($excerpt);
               }
             @endphp
           </p>
@@ -80,9 +80,9 @@
           <p class="c-media-block__description c-block__description">
             @php
               if (strlen($body) > $excerpt_length) {
-                echo trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
+                echo strip_tags(trim(mb_substr($body, 0, $excerpt_length))) . '&hellip;';
               } else {
-                echo $body;
+                echo strip_tags($body);
               }
             @endphp
           </p>

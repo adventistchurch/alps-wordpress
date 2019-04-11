@@ -52,18 +52,19 @@
     @endphp
       @foreach ($pages as $page)
         @php
-          if ($related == 'related_all') {
-            $id = $page->ID;
-          } elseif ($related == 'related_custom') {
+          if ($related == 'related_custom') {
             $id = $page;
+            $title = get_the_title($id);
+            $excerpt = get_post_field('post_content', $id);
+            $link = get_the_permalink($id);
           } else {
             $id = $page->ID;
+            $title = $page->post_title;
+            $excerpt = $page->post_content;
+            $link = $page->guid;
           }
-          $title = $page->post_title;
-          $excerpt = $page->post_content;
           $excerpt_length = 400;
           $body = false;
-          $link = $page->guid;
           $category = NULL;
           $date = NULL;
           $cta = __("Read More", "alps");
