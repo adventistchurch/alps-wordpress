@@ -104,6 +104,12 @@
   }
 }
 
+.c-widget_recent_entries {
+  li {
+    padding-left: 0;
+  }
+}
+
 // Breakout Block
 .c-sidebar .c-block__breakout {
   @media (max-width: 900px) {

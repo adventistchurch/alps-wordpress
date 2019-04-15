@@ -1,3 +1,4 @@
+
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	function hotDisposeChunk(chunkId) {
 /******/ 		delete installedChunks[chunkId];
@@ -1260,6 +1261,7 @@ if (module) {
 /*! all exports used */
 /***/ (function(module, exports) {
 
+
 module.exports = function(module) {
 	if(!module.webpackPolyfill) {
 		module.deprecate = function() {};
@@ -2374,4 +2376,5 @@ wp.customize('blogname', function (value) {
 
 /***/ })
 /******/ ]);
+
 //# sourceMappingURL=customizer.js.map

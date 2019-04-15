@@ -6,3 +6,5 @@ npm-debug.log
 yarn-error.log
 .cache-loader
 .DS_Store
+.package-lock.json
+.yarn.lock

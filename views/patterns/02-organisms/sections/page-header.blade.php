@@ -3,10 +3,10 @@
   if (!is_home()) {
     global $post;
 
-    if (get_post_meta($post->ID, 'header_background_image', true)) {
+    if (get_post_meta($post->ID, 'header_background_image', true) && !is_archive()) {
       $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
       $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
-    } elseif (get_post_thumbnail_id($post->ID)) {
+    } elseif (get_post_thumbnail_id($post->ID) && !is_archive()) {
       $header_background_image = get_post_thumbnail_id($post->ID);
       $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
     } else {
@@ -19,7 +19,11 @@
     $display_title = __("Recent Posts", "alps");
     $title = NULL;
   } else if (is_archive()) {
-    $kicker = __("Category", "alps");
+    if (get_option('alps_theme_settings')['posts_label'] == "true" ) {
+      $kicker = __("Category", "alps");
+    } else {
+      $kicker = NULL;
+    }
     $display_title = '';
     $title = single_cat_title( '', false );
   } else {
