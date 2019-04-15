@@ -2,12 +2,37 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
-.c-drawer__nav {
-  .priority-nav__dropdown-toggle {
-    display: none;
+// Utility classes
+.u-space--zero--right {
+  margin-right: 0 !important;
+}
+
+.u-padding--zero--top {
+  padding-top: 0 !important;
+}
+
+.u-shift--left--1-col--medium-large {
+  @media (min-width: 700px) and (max-width: 900px) {
+    margin-left: calc((100vw / 7) * -1);
   }
 }
 
+.u-shift--left--1-col--medium-xlarge {
+  @media (min-width: 700px) and (max-width: 1100px) {
+    margin-left: calc((100vw / 7) * -1);
+  }
+}
+
+.u-hide {
+  display: none;
+}
+
+// Blocks
+.c-media-block .c-block__title-link {
+  border-bottom: 0 !important;
+}
+
+// Navigation
 .pagination a {
   border: none !important;
 }
