@@ -58,6 +58,7 @@
             $link = get_the_permalink($id);
             if (get_the_excerpt($id)) {
               $excerpt = get_the_excerpt($id);
+              $excerpt_length = 999;
             } else {
               $excerpt = get_post_field('post_content', $id);
             }
@@ -67,6 +68,7 @@
             $link = $page->guid;
             if ($page->post_excerpt) {
               $excerpt = $page->post_excerpt;
+              $excerpt_length = 999;
             } else {
               $excerpt = $page->post_content;
             }
@@ -122,6 +124,15 @@
               $excerpt_length = 400;
             } else {
               $excerpt_length = 150;
+            }
+          }
+          if ($related == 'related_custom') {
+            if (get_the_excerpt($id)) {
+              $excerpt_length = 9999;
+            }
+          } else {
+            if ($page->post_excerpt) {
+              $excerpt_length = 9999;
             }
           }
         @endphp
