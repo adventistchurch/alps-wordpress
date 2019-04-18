@@ -101,6 +101,11 @@ add_filter('upload_mimes', 'cc_mime_types');
 require_once __DIR__.'/app/plugin-activation.php';
 
 /**
+ * Adds excerpts to pages
+ */
+add_post_type_support( 'page', 'excerpt' );
+
+/**
  * Require plugins on theme install
  */
 add_action('tgmpa_register', 'adventist_register_required_plugins');

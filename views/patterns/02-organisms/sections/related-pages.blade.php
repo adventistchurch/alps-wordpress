@@ -55,15 +55,24 @@
           if ($related == 'related_custom') {
             $id = $page;
             $title = get_the_title($id);
-            $excerpt = get_post_field('post_content', $id);
             $link = get_the_permalink($id);
+            if (get_the_excerpt($id)) {
+              $excerpt = get_the_excerpt($id);
+              $excerpt_length = 999;
+            } else {
+              $excerpt = get_post_field('post_content', $id);
+            }
           } else {
             $id = $page->ID;
             $title = $page->post_title;
-            $excerpt = $page->post_content;
             $link = $page->guid;
+            if ($page->post_excerpt) {
+              $excerpt = $page->post_excerpt;
+              $excerpt_length = 999;
+            } else {
+              $excerpt = $page->post_content;
+            }
           }
-          $excerpt_length = 400;
           $body = false;
           $category = NULL;
           $date = NULL;
@@ -79,7 +88,7 @@
           if ($thumb_id) {
             $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
             if ($related_grid == "true") {
-              $excerpt_length = 150;
+              $excerpt_length = 100;
               $thumb_size = 'horiz__16x9';
               $block_class = "c-media-block__stacked c-block__stacked u-space--right u-space--double--bottom";
               $block_content_class = "u-border--left u-theme--border-color--darker--left";
@@ -93,7 +102,7 @@
               } else {
                 $block_img_wrap_class = "";
               }
-              $excerpt_length = 200;
+              $excerpt_length = 150;
               $thumb_size = 'thumbnail';
               $thumb_id = get_post_thumbnail_id($id);
               $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
@@ -112,6 +121,18 @@
             $thumb_id = NULL;
             if ($related_grid == "true") {
               $block_class = "u-spacing u-padding--right u-space--double--bottom";
+              $excerpt_length = 400;
+            } else {
+              $excerpt_length = 150;
+            }
+          }
+          if ($related == 'related_custom') {
+            if (get_the_excerpt($id)) {
+              $excerpt_length = 9999;
+            }
+          } else {
+            if ($page->post_excerpt) {
+              $excerpt_length = 9999;
             }
           }
         @endphp
