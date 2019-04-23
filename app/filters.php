@@ -21,6 +21,12 @@ add_filter('body_class', function (array $classes) {
     $classes[] = 'has-grid';
   }
 
+  // Add class if sidebar is true on pages and posts
+  $post_id = get_queried_object_id();
+  if ((is_active_sidebar('sidebar-page') && get_post_meta($post_id, 'hide_sidebar', true) != 'true') || ((is_active_sidebar('sidebar-posts') && get_post_meta($post_id, 'hide_sidebar', true) != 'true'))) {
+    $classes[] = 'has-sidebar';
+  }
+
   // Add class if sabbath column is hidden
   $hide_sabbath = get_option('alps_theme_settings')['sabbath_hide'];
   if ($hide_sabbath == 'true') {
