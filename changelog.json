@@ -1,6 +1,9 @@
 {
+  "3.0.16-beta" : {
+    "description" : "Fixes the breakout block on the wrong grid alignment."
+  },
   "3.0.15-beta" : {
-    "description" : "Adds a Latest Posts block"
+    "description" : "Adds a Latest Posts block."
   },
   "3.0.14-beta" : {
     "description" : "Adding dropdown support in the secondary menus, removing hardcoded WPML menu, and fixing the version number."
