@@ -27,8 +27,8 @@
     $display_title = '';
     $title = single_cat_title( '', false );
   } else {
-    $kicker = get_post_meta($post->ID, 'kicker', true);
-    $display_title = get_post_meta($post->ID, 'display_title', true);
+    $kicker = carbon_get_post_meta($post->ID, 'kicker');
+    $display_title = carbon_get_post_meta($post->ID, 'display_title');
     $title = get_the_title($post->ID);
   }
 @endphp

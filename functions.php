@@ -105,6 +105,23 @@ require_once __DIR__.'/app/plugin-activation.php';
  */
 add_post_type_support( 'page', 'excerpt' );
 
+
+/**
+ * Carbon fields
+ */
+use Carbon_Fields\Container as CarbonContainer;
+use Carbon_Fields\Field;
+
+add_action( 'carbon_fields_register_fields', 'crb_attach_post_meta' );
+function crb_attach_post_meta() {
+  CarbonContainer::make( 'post_meta', 'Sitewide: Template Additions' )
+    ->where( 'post_type', '=', 'page' )
+    ->add_fields( array(
+      Field::make( 'text', 'display_title', __( 'Display Title' ) ),
+      Field::make( 'text', 'kicker', __( 'Kicker' ) )
+  ));
+}
+
 /**
  * Require plugins on theme install
  */

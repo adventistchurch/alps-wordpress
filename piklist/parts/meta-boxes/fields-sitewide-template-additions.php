@@ -13,6 +13,7 @@
   ));
   piklist('field', array(
     'type' => 'text',
+    //'key' => 'field_5820cb9697242',
     'field' => 'kicker',
     'label' => 'Kicker',
     'description' => 'Enter a kicker that will display above the title.',
