@@ -1,4 +1,7 @@
 {
+  "3.0.17-beta" : {
+    "description" : "Fixes the footer logo missing when the Sabbath column is hidden."
+  },
   "3.0.16-beta" : {
     "description" : "Fixes the breakout block on the wrong grid alignment."
   },
