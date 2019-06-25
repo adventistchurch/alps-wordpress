@@ -10,7 +10,9 @@
  * @link https://github.com/roots/sage/pull/1042
  */
 
-require_once( 'carbon-fields/_init.php' );
+// CALL / INITIALIZE CARBON FIELDS
+// UNCOMMENT THIS LINE AFTER CONVERTING FIELDS
+//require_once( 'carbon-fields/_init.php' );
 
 $sage_includes = [
   'lib/assets.php',    // Scripts and stylesheets

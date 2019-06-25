@@ -8,18 +8,11 @@ require_once( 'cf-global.php' );
 require_once( 'cf-front-page.php' );
 require_once( 'cf-page.php' );
 require_once( 'cf-post.php' );
+
 // still working on this
 // require_once( 'cf-widget.php' );
 
-
-add_action( 'after_setup_theme', 'crb_load' );
-function crb_load() {
-    require_once( ABSPATH . '/vendor/autoload.php' );
-    \Carbon_Fields\Carbon_Fields::boot();
-}
-
-
-// REMOVE MEDIA BUTTON FROM RICH TEXT EDITOR
+// REMOVE MEDIA BUTTON FROM CF RICH TEXT EDITOR
 add_filter( 'crb_media_buttons_html', function( $html, $field_name ) {
     $fields = array( 'content_block_freeform_body', 'sb_body', 'content_body_1' );
 	if (in_array( $field_name, $fields ) ) {
