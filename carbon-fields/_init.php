@@ -12,6 +12,13 @@ require_once( 'cf-post.php' );
 // still working on this
 // require_once( 'cf-widget.php' );
 
+// LOAD CF FROM COMPOSER ADDED VENDOR DIR
+add_action( 'after_setup_theme', 'crb_load' );
+function crb_load() {
+    require_once( 'vendor/autoload.php' );
+    \Carbon_Fields\Carbon_Fields::boot();
+}
+
 // REMOVE MEDIA BUTTON FROM CF RICH TEXT EDITOR
 add_filter( 'crb_media_buttons_html', function( $html, $field_name ) {
     $fields = array( 'content_block_freeform_body', 'sb_body', 'content_body_1' );
