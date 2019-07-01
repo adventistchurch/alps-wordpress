@@ -1,6 +1,5 @@
 <?php
 
-
 use Carbon_Fields\Widget;
 use Carbon_Fields\Field;
 
@@ -19,8 +18,8 @@ class ThemeWidgetExample extends Widget {
         echo '<p>' . $instance['content'] . '</p>';
     }
 }
-/*
-function load_widgets() {
+
+add_action( 'widgets_init', 'alps_widgets' );
+function alps_widgets() {
     register_widget( 'ThemeWidgetExample' );
 }
-*/

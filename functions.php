@@ -12,7 +12,7 @@
 
 // CALL / INITIALIZE CARBON FIELDS
 // UNCOMMENT THIS LINE AFTER CONVERTING FIELDS
-//require_once( 'carbon-fields/_init.php' );
+require_once( 'carbon-fields/_init.php' );
 
 $sage_includes = [
   'lib/assets.php',    // Scripts and stylesheets
@@ -139,9 +139,13 @@ function piklist_theme_setting_pages($pages) {
 /**
  * Reformat text widget
  */
-add_action( 'widgets_init', 'register_my_widgets' );
+
+
+// add_action( 'widgets_init', 'register_my_widgets' );
 function register_my_widgets() {
   register_widget( 'My_Text_Widget' );
+  // CF - ADD
+  register_widget( 'ThemeWidgetExample' );
 }
 
 class My_Text_Widget extends WP_Widget_Text {
