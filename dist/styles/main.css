@@ -166,14 +166,6 @@
   border: 0;
 }
 
-.c-page-header a {
-  color: white !important;
-}
-
-.c-page-header a:hover {
-  text-decoration: underline;
-}
-
 .c-footer-widgets {
   margin-right: 20px;
 }
