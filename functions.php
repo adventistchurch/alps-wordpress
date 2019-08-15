@@ -140,24 +140,33 @@ function adventist_register_required_plugins() {
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
     ),
+    // Guidebook
+    array(
+      'name'               => 'Guidebook', // The plugin name.
+      'slug'               => 'guidebook', // The plugin slug (typically the folder name).
+      'source'             => 'https://github.com/sortabrilliant/guidepost/archive/master.zip',
+      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+    ),
     // WordPress SEO
     array(
-      'name'     => 'WordPress SEO by Yoast',
-      'slug'     => 'wordpress-seo',
-      'required' => false,
+      'name'              => 'WordPress SEO by Yoast',
+      'slug'              => 'wordpress-seo',
+      'required'          => false,
     ),
     // SVG Support
     array(
-      'name'     => 'SVG Support',
-      'slug'     => 'svg-support',
-      'required' => true,
-      'force_activation'   => true,
+      'name'              => 'SVG Support',
+      'slug'              => 'svg-support',
+      'required'          => true,
+      'force_activation'  => true,
     ),
     array(
-      'name'     => $plugin_name,
-      'slug'     => $plugin_slug,
-      'required' => $plugin_required,
-      'force_activation'   => $plugin_activation,
+      'name'              => $plugin_name,
+      'slug'              => $plugin_slug,
+      'required'          => $plugin_required,
+      'force_activation'  => $plugin_activation,
     ),
   );
   $config = array(
@@ -456,6 +465,7 @@ add_filter('allowed_block_types', function () {
     'alps-gutenberg-blocks/image-2up',
     'alps-gutenberg-blocks/image-breakout',
     'alps-gutenberg-blocks/latest-posts',
+    'sbb/guidepost',
   ];
 });
 
