@@ -1,17 +1,10 @@
 @php
   global $post;
-  $hide_sabbath = get_option('alps_theme_settings')['sabbath_hide'];
   // If has sidebar and hide sidebar is not true
   if (is_active_sidebar('sidebar-page') && get_post_meta($post->ID, 'hide_sidebar', true) != 'true') {
     $section_offset = 'u-shift--left--1-col--at-xxlarge';
     $article_offset = 'l-grid-item--xl--3-col';
-  }
-  // If
-  elseif ($hide_sabbath == 'true') {
-    $section_offset = 'u-shift--left--1-col--at-large';
-    $article_offset = 'l-grid-item--xl--4-col';
-  }
-  else {
+  } else {
     $section_offset = 'u-shift--left--1-col--at-large';
     $article_offset = '';
   }
