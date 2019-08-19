@@ -142,8 +142,8 @@ function adventist_register_required_plugins() {
     ),
     // Guidebook
     array(
-      'name'               => 'Guidebook', // The plugin name.
-      'slug'               => 'guidebook', // The plugin slug (typically the folder name).
+      'name'               => 'Guidebpost', // The plugin name.
+      'slug'               => 'guidepost', // The plugin slug (typically the folder name).
       'source'             => 'https://github.com/sortabrilliant/guidepost/archive/master.zip',
       'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
