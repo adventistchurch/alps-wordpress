@@ -8,7 +8,7 @@
       $footer_primary_nav = json_decode(json_encode($footer_primary_nav), true);
     @endphp
     @foreach ($footer_primary_nav as $nav)
-      <a href="{{ $nav['url'] }}" class="c-footer__primary-nav__link u-theme--link-hover--light u-link--white"><strong>{{ $nav['title'] }}</strong></a>
+      <a href="{{ $nav['url'] }}" class="c-footer__primary-nav__link u-theme--link-hover--light u-link--white {{ implode(' ', $nav['classes']) }}" target="{{ $nav['target'] }}" title="{{ $nav['attr_title'] }}" description="{{ $nav['description'] }}" rel="{{ implode(' ', $nav['xfn']) }}"><strong>{{ $nav['title'] }}</strong></a>
     @endforeach
     {!! wp_reset_postdata() !!}
   </nav> <!-- /.c-footer__primary-nav -->

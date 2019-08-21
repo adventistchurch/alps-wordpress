@@ -21,7 +21,7 @@
         @if (!$nav['menu_item_parent'])
           @php $parent_id = $nav['ID']; @endphp
           <li class="c-secondary-nav__list-item has-subnav">
-            <a href="{{ $nav['url'] }}" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
+            <a href="{{ $nav['url'] }}" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base {{ implode(' ', $nav['classes']) }}" target="{{ $nav['target'] }}" title="{{ $nav['attr_title'] }}" description="{{ $nav['description'] }}" rel="{{ implode(' ', $nav['xfn']) }}">
               {!! $nav['title'] !!}
             </a>
         @endif
@@ -32,7 +32,7 @@
             <ul class="c-secondary-nav__subnav c-subnav">
           @endif
             <li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
-              <a class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $nav['url'] }}">{!! $nav['title'] !!}</a>
+              <a href="{{ $nav['url'] }}" class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base {{ implode(' ', $nav['classes']) }}" target="{{ $nav['target'] }}" title="{{ $nav['attr_title'] }}" description="{{ $nav['description'] }}" rel="{{ implode(' ', $nav['xfn']) }}">{!! $nav['title'] !!}</a>
             </li>
           @if ($parent != $parent_id && $submenu)
             </ul> <!-- /.c-secondary-nav__subnav -->

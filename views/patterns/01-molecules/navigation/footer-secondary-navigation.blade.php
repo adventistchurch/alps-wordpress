@@ -8,7 +8,7 @@
       $footer_secondary_nav = json_decode(json_encode($footer_secondary_nav), true);
     @endphp
     @foreach ($footer_secondary_nav as $nav)
-      <a href="{{ $nav['url'] }}" class="c-footer__secondary-nav__link u-theme--link-hover--light u-link--white">
+      <a href="{{ $nav['url'] }}" class="c-footer__secondary-nav__link u-theme--link-hover--light u-link--white {{ implode(' ', $nav['classes']) }}" target="{{ $nav['target'] }}" title="{{ $nav['attr_title'] }}" description="{{ $nav['description'] }}" rel="{{ implode(' ', $nav['xfn']) }}">
         <span class="u-icon u-icon--xs u-path-fill--white u-space--half--right">@include('patterns.00-atoms.icons.icon-legal')</span><font>{{ $nav['title'] }}</font>
       </a>
     @endforeach

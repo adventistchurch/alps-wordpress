@@ -54,7 +54,7 @@
           <h3 class="u-font--secondary--s u-text-transform--upper"><strong>{{ $menu->name }}:</strong></h3>
           <p class="u-spacing--half">
             @foreach ($tertiary_nav as $nav)
-              <a href="{{ $nav['url'] }}" target="_blank" class="u-link--white">{{ $nav['title'] }}</a>
+              <a href="{{ $nav['url'] }}" target="_blank" class="u-link--white {{ implode(' ', $nav['classes']) }}" target="{{ $nav['target'] }}" title="{{ $nav['attr_title'] }}" description="{{ $nav['description'] }}" rel="{{ implode(' ', $nav['xfn']) }}">{{ $nav['title'] }}</a>
             @endforeach
           </p>
           {!! wp_reset_postdata() !!}
