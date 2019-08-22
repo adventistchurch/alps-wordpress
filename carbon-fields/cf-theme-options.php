@@ -23,13 +23,13 @@ function crb_attach_theme_options() {
       ->add_tab( __( 'COLORS' ), array( 
         Field::make( 'select', 'primary_theme_color', __( 'Primary Theme Color' ) )
             ->add_options( array(
-                'emperor' => __( 'Emporer' ),
-                'earth' => __( 'Earth' ),
+                'emperor'   => __( 'Emporer' ),
+                'earth'     => __( 'Earth' ),
                 'grapevine' => __( 'Grapevine' ),
-                'denim' => __( 'Denim' ),
-                'campfire' => __( 'Campfire' ),
-                'treefrog' => __( 'Tree Frog' ),
-                'ming' => __( 'Ming' ),
+                'denim'     => __( 'Denim' ),
+                'campfire'  => __( 'Campfire' ),
+                'treefrog'  => __( 'Tree Frog' ),
+                'ming'      => __( 'Ming' ),
             ) )
             ->set_width( 33 ),
           Field::make( 'select', 'secondary_theme_color', __( 'Secondary Theme Color' ) )
@@ -68,15 +68,14 @@ function crb_attach_theme_options() {
               ->set_option_value( 'true' )
               ->set_help_text( 'Select if you would like to hide the post author site wide.' ),
         ) )
-         ->add_tab( __( 'DEFAULT NEWS CATEGORY' ), array( 
+         ->add_tab( __( 'NEWS TEMPLATE CATEGORIES' ), array( 
             Field::make( 'association', 'category' )
               ->set_types( array(
                 array(
-                    'type' => 'term',
-                    'taxonomy' => 'category',
+                    'type'      => 'term',
+                    'taxonomy'  => 'category',
                 ),
               ) )
               ->set_min( 1 )
-              ->set_max( 1 )
          ) );
 }

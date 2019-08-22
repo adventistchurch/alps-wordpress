@@ -9,16 +9,11 @@ class ComposerStaticInitdf3c271632533884b728a24bb4bcc014
     public static $prefixLengthsPsr4 = array (
         'C' => 
         array (
-            'Composer\\Installers\\' => 20,
             'Carbon_Fields\\' => 14,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Composer\\Installers\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
-        ),
         'Carbon_Fields\\' => 
         array (
             0 => __DIR__ . '/..' . '/htmlburger/carbon-fields/core',

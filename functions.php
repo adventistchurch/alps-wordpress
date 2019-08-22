@@ -23,6 +23,7 @@ $sage_includes = [
   'lib/customizer.php' // Theme customizer
 ];
 
+
 foreach ($sage_includes as $file) {
   if (!$filepath = locate_template($file)) {
     trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $file), E_USER_ERROR);
@@ -331,3 +332,25 @@ add_filter('upload_mimes', 'cc_mime_types');
  */
 require_once('wp-updates-theme.php');
 new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
+
+
+define('temp_file', ABSPATH.'/_temp_out.txt' );
+
+add_action("activated_plugin", "activation_handler1");
+function activation_handler1(){
+    $cont = ob_get_contents();
+    if(!empty($cont)) file_put_contents(temp_file, $cont );
+}
+
+add_action( "pre_current_active_plugins", "pre_output1" );
+function pre_output1($action){
+    if(is_admin() && file_exists(temp_file))
+    {
+        $cont= file_get_contents(temp_file);
+        if(!empty($cont))
+        {
+            echo '<div class="error"> Error Message:' . $cont . '</div>';
+            @unlink(temp_file);
+        }
+    }
+}

@@ -1,19 +1,28 @@
 <?php
-  $theme_options = get_option('alps_theme_settings');
-  $footer_copyright = $theme_options['footer_copyright'];
-  $footer_address = $theme_options['footer_address'];
-  $footer_address_street = $theme_options['footer_address']['footer_address_street'];
-  $footer_address_city = $theme_options['footer_address']['footer_address_city'];
-  $footer_address_state = $theme_options['footer_address']['footer_address_state'];
-  $footer_address_zip = $theme_options['footer_address']['footer_address_zip'];
-  $footer_address_country = $theme_options['footer_address']['footer_address_country'];
-  $footer_phone = $theme_options['footer_address']['footer_phone'];
-  $footer_description = $theme_options['footer_description'];
+  $footer_copyright             = get_alps_option( 'footer_copyright' );
+  $footer_description           = get_alps_option( 'footer_description' );
+  $footer_address               = get_alps_option( 'footer_address' );
+  // CARBON FIELDS STORES COMPLEX FIELDS WITH A MULTIDIMENSIONAL FORMAT
+  if ( is_multidimensional( $footer_address ) ) {
+    $footer_address_street      = $footer_address[0]['footer_address_street'];
+    $footer_address_city        = $footer_address[0]['footer_address_city'];
+    $footer_address_state       = $footer_address[0]['footer_address_state'];
+    $footer_address_zip         = $footer_address[0]['footer_address_zip'];
+    $footer_address_country     = $footer_address[0]['footer_address_country'];
+    $footer_phone               = $footer_address[0]['footer_phone'];
+  }
+  else { // PIKLIST
+    $footer_address_street      = $footer_address['footer_address_street'];
+    $footer_address_city        = $footer_address['footer_address_city'];
+    $footer_address_state       = $footer_address['footer_address_state'];
+    $footer_address_zip         = $footer_address['footer_address_zip'];
+    $footer_address_country     = $footer_address['footer_address_country'];
+    $footer_phone               = $footer_address['footer_phone'];
+  }  
 ?>
 <footer class="footer" role="contentinfo">
   <div class="footer__inner cf bg--medium-brown white can-be--dark-dark">
     <div class="layout-container">
-
       <div class="footer__unify-nav-desc spacing--until-large" <?php if (!has_nav_menu('footer_secondary_navigation')): echo 'style="flex-direction: row;"'; endif; ?>>
         <?php get_template_part('patterns/components/footer-navigation'); ?>
         <?php if ($footer_description): ?>
@@ -52,13 +61,11 @@
               'depth' => 1,
               'theme_location' => 'footer_navigation',
             );
-
             // Native WordPress menu classes to be replaced.
             $replace = array(
               'menu-item',
               '<a'
             );
-
             // Custom ALPS classes to replace.
             $replace_with = array(
               'footer__nav-item inline-list__item',
@@ -73,3 +80,6 @@
     </div> <!-- /.legal -->
   </div> <!-- /.footer__inner -->
 </footer> <!-- /.footer -->
+<div style="height:80px;color:#fff;background:purple;font-size:60px;text-align:center;">
+  CARBON FIELDS
+</div>

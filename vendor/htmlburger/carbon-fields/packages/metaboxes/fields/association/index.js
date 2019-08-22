@@ -64,9 +64,7 @@ addFilter( 'carbon-fields.association.metabox', 'carbon-fields/metaboxes', withP
 				}
 
 				if ( isNestedComplex ) {
-					const fieldReferences = get( fields, accessor.replace( /\.name$/, '.fields' ) );
-					const fieldReference = findFieldByName( fieldReferences, chunk );
-					const field = find( fields, [ 'id', fieldReference.id ] );
+					const field = findFieldByName( fields, chunk );
 
 					accessor = fields.indexOf( field );
 					hierarchy = `${ hierarchy }${ field.base_name }`;

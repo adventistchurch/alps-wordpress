@@ -44,7 +44,6 @@ get( window.cf, 'preloaded.blocks', [] ).forEach( ( container ) => {
 	registerBlockType( `carbon-fields/${ name }`, {
 		title: container.title,
 		icon: getBlockSetting( 'icon' ),
-		parent: getBlockSetting( 'parent', [] ),
 		category: getBlockSetting( 'category.slug' ),
 		keywords: getBlockSetting( 'keywords', [] ),
 		description: getBlockSetting( 'description', '' ),
@@ -57,7 +56,6 @@ get( window.cf, 'preloaded.blocks', [] ).forEach( ( container ) => {
 		supports: {
 			tabs: isPlainObject( getBlockSetting( 'tabs' ) ),
 			preview: getBlockSetting( 'preview' ),
-			innerBlocks: getBlockSetting( 'inner_blocks.enabled' ),
 			alignWide: false,
 			anchor: false,
 			html: false

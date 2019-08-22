@@ -2,9 +2,9 @@
 /**
  * Template Name: Single Template
  */
- $blocks = get_post_meta($post->ID, 'primary_structured_content', true);
- $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
- $carousel_slides = get_post_meta($post->ID, 'carousel_slides', true);
+ $blocks          = get_alps_field( 'primary_structured_content' );
+ $carousel_type   = get_alps_field( 'carousel_type' );
+ $carousel_slides = get_alps_field( 'carousel_slides' );
 ?>
 <?php while (have_posts()): the_post(); ?>
   <?php if ($carousel_type == 'large_format_2_col_4x3' && $carousel_slides || $carousel_type == 'large_format_2_col_16x9' && $carousel_slides): ?>
@@ -16,21 +16,34 @@
   <?php endif; ?>
     <div class="layout-container full--until-large">
       <div class="column__primary bg--white can-be--dark-light spacing--double">
-        <?php foreach ($blocks as $block): ?>
-          <?php
-            $block_layout = $block['content_block_layout'];
-            $grid_layout = $block['content_block_grid_layout'];
-            $image = $block['content_block_image_file'][0];
-            $grid_body_1 = wpautop($block['content_block_grid_body_1']);
-            $grid_image_1 = $block['content_block_grid_file_1'][0];
-            $grid_body_2 = wpautop($block['content_block_grid_body_2']);
-            $grid_image_2 = $block['content_block_grid_file_2'][0];
-            $grid_body_3 = wpautop($block['content_block_grid_body_3']);
-            $grid_image_3 = $block['content_block_grid_file_3'][0];
-          ?>
-
-          <?php if ($block_layout == 'content_block_grid'): ?>
-            <?php
+        <?php 
+          foreach ($blocks as $block): 
+            $block_layout   = $block['content_block_layout'];
+            $grid_layout    = $block['content_block_grid_layout'];
+            $grid_image_2 = '';
+            if ( !empty( $block['content_block_image_file'] ) ) {
+              $image  = $block['content_block_image_file'][0];
+            }
+            if ( !empty( wpautop( $block['content_block_grid_body_1'] ) ) ) {
+              $grid_body_1 = wpautop($block['content_block_grid_body_1']);
+            }
+            if ( !empty( $block['content_block_grid_file_1'] ) ) {
+              $grid_image_1 = $block['content_block_grid_file_1'][0];
+            }
+            if ( !empty( wpautop( $block['content_block_grid_body_2'] ) ) ) {
+              $grid_body_2 = wpautop($block['content_block_grid_body_2']);
+            }
+            if ( !empty( $block['content_block_grid_file_2'] ) ) {
+              $grid_image_2 = $block['content_block_grid_file_2'][0];
+            }
+            if ( !empty( wpautop( $block['content_block_grid_body_3'] ) ) ) {
+              $grid_body_3 = wpautop($block['content_block_grid_body_3']);
+            }
+            if ( !empty( $block['content_block_grid_file_3'] ) ) {
+              $grid_image_3 = $block['content_block_grid_file_3'][0];
+            }
+            
+            if ($block_layout == 'content_block_grid'): 
               if ($grid_layout == '1up') {
                $grid_class = 'g-1up';
                $grid_item_class = '';
@@ -59,11 +72,13 @@
             <div class="g <?php echo $grid_class; ?> pad--primary spacing">
               <div class="gi<?php echo $grid_item_class; ?>">
                 <div class="text spacing">
-                  <?php echo $grid_body_1; ?>
+                  <?php if ( !empty( $grid_body_1 ) ) echo $grid_body_1; ?>
                   <?php
-                    $thumb_id = wp_get_attachment_image_url( $grid_image_1, 'horiz__4x3--s' );
-                    $caption = get_the_excerpt($grid_image_1);
-                    $alt = get_post_meta( $grid_image_1, '_wp_attachment_image_alt', true );
+                    if ( !empty( $grid_image_1 ) ) {
+                      $thumb_id = wp_get_attachment_image_url( $grid_image_1, 'horiz__4x3--s' );
+                      $caption  = get_the_excerpt($grid_image_1);
+                      $alt      = get_post_meta( $grid_image_1, '_wp_attachment_image_alt', true );
+                    }                    
                   ?>
                   <?php if ($grid_layout == '1up' && $thumb_id): ?>
                     <figure class="figure">
@@ -81,7 +96,7 @@
                         <figcaption class="figcaption"><p class="font--secondary--xs"><?php echo $caption; ?></p></figcaption>
                       <?php endif; ?>
                     </figure>
-                  <?php elseif ($thumb_id): ?>
+                  <?php elseif ( !empty( $thumb_id ) ): ?>
                     <figure class="figure">
                       <div class="img-wrap">
                         <img itemprop="image" src="<?php echo $thumb_id; ?>" alt="<?php echo $alt; ?>">
@@ -95,13 +110,13 @@
               </div>
               <div class="gi">
                 <div class="text spacing">
-                  <?php echo $grid_body_2; ?>
+                  <?php if ( !empty( $grid_body_2 ) ) echo $grid_body_2;  ?>
                   <?php
                     $thumb_id = wp_get_attachment_image_url( $grid_image_2, 'horiz__4x3--s' );
-                    $caption = get_the_excerpt($grid_image_2);
-                    $alt = get_post_meta( $grid_image_2, '_wp_attachment_image_alt', true );
+                    $caption  = get_the_excerpt($grid_image_2);
+                    $alt      = get_post_meta( $grid_image_2, '_wp_attachment_image_alt', true );
                   ?>
-                  <?php if ($thumb_id): ?>
+                  <?php if ( !empty( $thumb_id ) ): ?>
                     <figure class="figure">
                       <div class="img-wrap">
                         <img itemprop="image" src="<?php echo $thumb_id; ?>" alt="<?php echo $alt; ?>">
@@ -116,13 +131,13 @@
               <?php if ($grid_layout == '3up'): ?>
                 <div class="gi">
                   <div class="text spacing">
-                    <?php echo $grid_body_3; ?>
+                    <?php if ( !empty( $grid_body_3 ) ) echo $grid_body_3;  ?>
                     <?php
                       $thumb_id = wp_get_attachment_image_url( $grid_image_3, 'horiz__4x3--s' );
-                      $caption = get_the_excerpt($grid_image_3);
-                      $alt = get_post_meta( $grid_image_3, '_wp_attachment_image_alt', true );
+                      $caption  = get_the_excerpt($grid_image_3);
+                      $alt      = get_post_meta( $grid_image_3, '_wp_attachment_image_alt', true );
                     ?>
-                    <?php if ($thumb_id): ?>
+                    <?php if ( !empty( $thumb_id ) ): ?>
                       <figure class="figure">
                         <div class="img-wrap">
                           <img itemprop="image" src="<?php echo $thumb_id; ?>" alt="<?php echo $alt; ?>">

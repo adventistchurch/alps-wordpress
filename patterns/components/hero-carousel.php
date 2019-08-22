@@ -1,6 +1,6 @@
 <?php
-  $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
-  $carousel_slides = get_post_meta($post->ID, 'carousel_slides', true);
+  $carousel_type    = get_alps_field( 'carousel_type' );
+  $carousel_slides  = get_alps_field( 'carousel_slides' );
   if ($carousel_type == 'small_format_inset') {
     $image_size = 'horiz__16x9';
   } else {
@@ -12,13 +12,13 @@
     <div class="carousel__slides js-carousel__single-item">
       <?php
         foreach ($carousel_slides as $slide): setup_postdata($slide);
-        $image = $slide['carousel_image'][0];
-        $title = $slide['carousel_title'];
-        $subtitle = $slide['carousel_subtitle'];
-        $description = $slide['carousel_description'];
-        $link_text = $slide['carousel_link_text'];
-        $link_url = $slide['carousel_link_url'];
-        $align_right = $slide['carousel_text_align_right'];
+          $image        = $slide['carousel_image'][0];
+          $title        = $slide['carousel_title'];
+          $subtitle     = $slide['carousel_subtitle'];
+          $description  = $slide['carousel_description'];
+          $link_text    = $slide['carousel_link_text'];
+          $link_url     = $slide['carousel_link_url'];
+          $align_right  = $slide['carousel_text_align_right'];
       ?>
         <div class="carousel__item rel">
           <picture class="picture">

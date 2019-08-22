@@ -9,13 +9,13 @@
   $header_block_image = '';
   $header_background_image = '';
   if (is_page() || is_single()) {
-    $display_title = get_post_meta($post->ID, 'display_title', true);
-    $kicker = get_post_meta($post->ID, 'kicker', true);
-    $header_block_text = get_post_meta($post->ID, 'header_block_text', true);
-    $header_block_title = get_post_meta($post->ID, 'header_block_title', true);
-    $header_block_subtitle = get_post_meta($post->ID, 'header_block_subtitle', true);
-    $header_block_image = get_post_meta($post->ID,'header_block_image', true);
-    $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
+    $display_title            = get_alps_field( 'display_title' );
+    $kicker                   = get_alps_field( 'kicker' );
+    $header_block_text        = get_alps_field( 'header_block_text' );
+    $header_block_title       = get_alps_field( 'header_block_title' );
+    $header_block_subtitle    = get_alps_field( 'header_block_subtitle' );
+    $header_block_image       = get_alps_field( 'header_block_image' );
+    $header_background_image  = get_alps_field( 'header_background_image' );
   }
 
   if (is_single()) {

@@ -65,7 +65,6 @@ class Media_Gallery_Field extends Field {
 	 * Change the type of the field
 	 *
 	 * @param string $type
-	 * @return Media_Gallery_Field
 	 */
 	public function set_type( $type ) {
 		$this->file_type = $type;

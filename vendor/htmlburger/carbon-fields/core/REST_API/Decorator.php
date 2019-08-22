@@ -79,7 +79,6 @@ class Decorator {
 	/**
 	 * Get Post Meta Container visibility settings
 	 *
-	 * @param \Carbon_Fields\Container\Post_Meta_Container $container
 	 * @return array
 	 */
 	public static function get_post_meta_container_settings( $container ) {
@@ -89,7 +88,6 @@ class Decorator {
 	/**
 	 * Get Term Meta Container visibility settings
 	 *
-	 * @param \Carbon_Fields\Container\Term_Meta_Container $container
 	 * @return array
 	 */
 	public static function get_term_meta_container_settings( $container ) {
@@ -99,7 +97,6 @@ class Decorator {
 	/**
 	 * Get User Meta Container visibility settings
 	 *
-	 * @param \Carbon_Fields\Container\User_Meta_Container $container
 	 * @return string
 	 */
 	public static function get_user_meta_container_settings( $container ) {
@@ -109,7 +106,6 @@ class Decorator {
 	/**
 	 * Get Comment Meta Container visibility settings
 	 *
-	 * @param \Carbon_Fields\Container\Comment_Meta_Container $container
 	 * @return string
 	 */
 	public static function get_comment_meta_container_settings( $container ) {

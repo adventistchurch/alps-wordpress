@@ -1,6 +1,7 @@
 /**
  * External dependencies.
  */
+import { unmountComponentAtNode } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 import { get, map } from 'lodash';
 
@@ -11,7 +12,6 @@ import { renderContainer } from '../../../containers';
 import base from '../conditions/base';
 import boolean from '../conditions/boolean';
 import postTerm from '../conditions/post-term';
-import postTemplate from '../conditions/post-template';
 import postAncestorId from '../conditions/post-ancestor-id';
 import termParentId from '../conditions/term-parent-id';
 import termAncestorId from '../conditions/term-ancestor-id';
@@ -28,7 +28,7 @@ const conditions = {
 	post_parent_id: base,
 	post_level: base,
 	post_format: base,
-	post_template: postTemplate,
+	post_template: base,
 	term_level: base,
 	term_parent: termParentId,
 	term_ancestor: termAncestorId,
@@ -96,25 +96,22 @@ export default function handler( { containers, context } ) {
 		results.forEach( ( [ id, result ] ) => {
 			const postboxNode = document.getElementById( id );
 			const containerNode = document.querySelector( `.container-${ id }` );
-			const isMounted = !! containerNode.dataset.mounted;
 
 			if ( postboxNode ) {
 				postboxNode.hidden = ! result;
 			}
 
 			if ( containerNode ) {
-				if ( result && ! isMounted ) {
+				if ( result && ! containerNode.dataset.mounted ) {
+					containerNode.dataset.mounted = true;
+
 					renderContainer( containers[ id ], context );
 				}
 
-				if ( ! result && isMounted ) {
+				if ( ! result && containerNode.dataset.mounted ) {
 					delete containerNode.dataset.mounted;
 
-					// Rely on React's internals instead of `unmountComponentAtNode`
-					// due to https://github.com/facebook/react/issues/13690.
-					// TODO: Conditionally render the fields in the container, this way
-					// we can move away from mount/unmount cycles.
-					containerNode._reactRootContainer.unmount();
+					unmountComponentAtNode( containerNode );
 				}
 			}
 		} );

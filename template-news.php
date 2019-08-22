@@ -2,20 +2,30 @@
 /**
  * Template Name: News Template
  */
-  $theme_options = get_option('alps_theme_settings');
-  $categories = $theme_options['category'];
-  $category_ids = array();
-  foreach ($categories as $category){
-    $category_ids[] = $category;
+$alps_categories = get_alps_option( 'category' );
+$category_ids   = [];
+// WE HAVE DIFFERENT DATA STRUCTURE HERE DEPENDING ( PL / CF )
+$cf = get_option( 'alps_cf_converted' );
+if ( $cf ) {
+  foreach ( $alps_categories as $cf_arr ) {
+    foreach ( $cf_arr as $key => $val ) {
+      if ( 'id' == $key ) {
+        $category_ids[] = $val;
+      }
+    }
   }
-  $category_ids = implode(',', $category_ids);
+} else {
+  foreach ( $alps_categories as $cat => $val ) {
+    $category_ids[] = $val;
+  }
+}
 ?>
 <?php get_template_part('templates/page', 'header-carousel'); ?>
 <?php include(locate_template('patterns/components/news-navigation.php')); ?>
 <div class="layout-container full--until-large">
   <div class="flex-container cf">
     <div class="shift-left--fluid column__primary bg--white no-pad--top no-pad--btm can-be--dark-light">
-      <?php $carousel_type = get_post_meta($post->ID, 'carousel_type', true); ?>
+      <?php $carousel_type = get_alps_field('carousel_type', $post->ID); ?>
       <?php if ($carousel_type == 'small_format_inset'): ?>
         <?php include(locate_template('patterns/components/hero-carousel.php')); ?>
       <?php endif; ?>
@@ -30,45 +40,48 @@
             <hr>
             <?php
               // Recent News
-              $news = array(
-                'cat' => array($category_ids),
-                'posts_per_page' => 4,
-                'tax_query' => array( array(
-                  'taxonomy' => 'post_format',
-                  'field' => 'slug',
-                  'terms' => array('post-format-video' , 'post-format-gallery'),
-                  'operator' => 'NOT IN'
+              $news_args = array(
+                'cat'             => $category_ids,
+                'posts_per_page'  => 4,
+                'post_type'       => 'post',
+                'tax_query'       => array( array(
+                  'taxonomy'  => 'post_format',
+                  'field'     => 'slug',
+                  'terms'     => array('post-format-video' , 'post-format-gallery'),
+                  'operator'  => 'NOT IN'
                 ))
               );
-              query_posts($news);
+              query_posts($news_args);
+              //$news_posts = new WP_Query( $news_args );
             ?>
             <?php while (have_posts()) : the_post(); ?>
               <div class="pad">
                 <?php
-                  $title = get_the_title();
-                  $intro = get_post_meta($post->ID, 'intro', true);;
-                  $body = strip_tags(get_the_content());
-                  $body = strip_shortcodes($body);
-                  $excerpt_length = 100;
-                  $image = get_post_thumbnail_id();
-                  $button_text = __('Read More', 'sage');
-                  $date = get_the_date();
-                  $button_url = get_the_permalink();
-                  $round_image = 'false';
-                  $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
-                  $thumbnail_round = wp_get_attachment_image_src($image, "square--s")[0];
-                  $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                  $block_inner_class = 'block__row--small-to-large';
-                  if (isset($post->post_date) && $post->post_type == 'post') {
-                    $date = get_the_date('M j, Y');
-                    $date_formatted = get_the_date('c');
-                  }
+                  $title              = get_the_title();
+                  $intro              = get_alps_field( 'intro', get_the_id() );
+                  $kicker             = '';
+                  $body               = strip_tags(get_the_content());
+                  $body               = strip_shortcodes($body);
+                  $excerpt_length     = 100;
+                  $image              = get_post_thumbnail_id();
+                  $button_text        = __('Read More', 'sage');
+                  $date               = get_the_time();
+                  $button_url         = get_the_permalink();
+                  $round_image        = 'false';
+                  $thumbnail          = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+                  $thumbnail_round    = wp_get_attachment_image_src($image, "square--s")[0];
+                  $alt                = get_post_meta($image, '_wp_attachment_image_alt', true);
+                  $block_inner_class  = 'block__row--small-to-large';
+                 //if (isset($post->post_date) && $post->post_type == 'post') {
+                    $date           = get_the_time('M j, Y');
+                    $date_formatted = get_the_time('c');
+                  //}
                 ?>
                 <?php include(locate_template('patterns/blocks/block-media.php')); ?>
               </div>
               <hr>
             <?php endwhile; ?>
-            <?php wp_reset_query(); ?>
+            <?php wp_reset_query();  ?>
           </div><!-- ./spacing -->
         </div><!-- ./gi -->
         <div class="gi pad-double--btm">
@@ -82,13 +95,13 @@
             <?php
               // Featured Video
               $videos = array(
-                'cat' => array($category_ids),
-                'posts_per_page' => 1,
-                'tax_query' => array( array(
-                  'taxonomy' => 'post_format',
-                  'field' => 'slug',
-                  'terms' => array('post-format-video'),
-                  'operator' => 'IN'
+                'cat'             => $category_ids,
+                'posts_per_page'  => 1,
+                'tax_query'       => array( array(
+                  'taxonomy'  => 'post_format',
+                  'field'     => 'slug',
+                  'terms'     => array('post-format-video'),
+                  'operator'  => 'IN'
                 ))
               );
               query_posts($videos);
@@ -96,18 +109,18 @@
             <?php while (have_posts()) : the_post(); ?>
               <div class="pad no-pad--btm">
                 <?php
-                  $title = get_the_title();
-                  $image = get_post_thumbnail_id();
-                  $intro = '';
-                  $body = '';
-                  $button_url = get_the_permalink();
-                  $button_text = '';
-                  $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
-                  $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                  $block_inner_class = 'block';
+                  $title              = get_the_title();
+                  $image              = get_post_thumbnail_id();
+                  $intro              = '';
+                  $body               = '';
+                  $button_url         = get_the_permalink();
+                  $button_text        = '';
+                  $thumbnail          = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+                  $alt                = get_post_meta($image, '_wp_attachment_image_alt', true);
+                  $block_inner_class  = 'block';
                   if (isset($post->post_date) && $post->post_type == 'post') {
-                    $date = get_the_date('M j, Y');
-                    $date_formatted = get_the_date('c');
+                    $date           = get_the_time('M j, Y');
+                    $date_formatted = get_the_time('c');
                   }
                 ?>
                 <?php include(locate_template('patterns/blocks/block-media.php')); ?>
@@ -119,14 +132,14 @@
               <?php
                 // Videos
                 $videos = array(
-                  'cat' => array($category_ids),
-                  'posts_per_page' => 6,
-                  'offset' => 1,
-                  'tax_query' => array( array(
-                    'taxonomy' => 'post_format',
-                    'field' => 'slug',
-                    'terms' => array('post-format-video'),
-                    'operator' => 'IN'
+                  'cat'             => $category_ids,
+                  'posts_per_page'  => 6,
+                  'offset'          => 1,
+                  'tax_query'       => array( array(
+                    'taxonomy'  => 'post_format',
+                    'field'     => 'slug',
+                    'terms'     => array('post-format-video'),
+                    'operator'  => 'IN'
                   ))
                 );
                 query_posts($videos);
@@ -135,19 +148,19 @@
                 <div class="gi spacing--half">
                   <div class="pad-half--left pad-half--right">
                     <?php
-                      $title = get_the_title();
-                      $title_size = 'font--secondary--s';
-                      $image = get_post_thumbnail_id();
-                      $intro = '';
-                      $body = '';
-                      $button_url = get_the_permalink();
-                      $button_text = '';
-                      $thumbnail = wp_get_attachment_image_src($image, "horiz__16x9--s")[0];
-                      $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                      $block_inner_class = 'block';
+                      $title              = get_the_title();
+                      $title_size         = 'font--secondary--s';
+                      $image              = get_post_thumbnail_id();
+                      $intro              = '';
+                      $body               = '';
+                      $button_url         = get_the_permalink();
+                      $button_text        = '';
+                      $thumbnail          = wp_get_attachment_image_src($image, "horiz__16x9--s")[0];
+                      $alt                = get_post_meta($image, '_wp_attachment_image_alt', true);
+                      $block_inner_class  = 'block';
                       if (isset($post->post_date) && $post->post_type == 'post') {
-                        $date = get_the_date('M j, Y');
-                        $date_formatted = get_the_date('c');
+                        $date           = get_the_time('M j, Y');
+                        $date_formatted = get_the_time('c');
                       }
                     ?>
                     <?php include(locate_template('patterns/blocks/block-media.php')); ?>
@@ -167,34 +180,34 @@
                     <?php
                       // Photos
                       $gallery = array(
-                        'cat' => array($category_ids),
-                        'posts_per_page' => 3,
-                        'tax_query' => array( array(
-                          'taxonomy' => 'post_format',
-                          'field' => 'slug',
-                          'terms' => array('post-format-gallery'),
-                          'operator' => 'IN'
+                        'cat'             => $category_ids,
+                        'posts_per_page'  => 3,
+                        'tax_query'       => array( array(
+                          'taxonomy'  => 'post_format',
+                          'field'     => 'slug',
+                          'terms'     => array('post-format-gallery'),
+                          'operator'  => 'IN'
                         ))
                       );
                       query_posts($gallery);
                     ?>
                     <?php while (have_posts()) : the_post(); ?>
                       <?php
-                        $id = get_the_id();
-                        $title = get_the_title();
-                        $intro = get_post_meta($post->ID, 'intro', true);
-                        $body = strip_tags(get_the_content());
-                        $body = strip_shortcodes($body);
-                        $excerpt_length = 100;
-                        $image = get_post_thumbnail_id();
-                        $button_text = __('Read More', 'sage');
-                        $date = get_the_date();
-                        $button_url = get_the_permalink();
-                        $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
-                        $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                        $block_inner_class = 'block';
+                        $id                 = get_the_id();
+                        $title              = get_the_title();
+                        $intro              = get_post_meta($post->ID, 'intro', true);
+                        $body               = strip_tags(get_the_content());
+                        $body               = strip_shortcodes($body);
+                        $excerpt_length     = 100;
+                        $image              = get_post_thumbnail_id();
+                        $button_text        = __('Read More', 'sage');
+                        $date               = get_the_date();
+                        $button_url         = get_the_permalink();
+                        $thumbnail          = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+                        $alt                = get_post_meta($image, '_wp_attachment_image_alt', true);
+                        $block_inner_class  = 'block';
                         if (isset($post->post_date) && $post->post_type == 'post') {
-                          $date = get_the_date('M j, Y');
+                          $date           = get_the_date('M j, Y');
                           $date_formatted = get_the_date('c');
                         }
                       ?>

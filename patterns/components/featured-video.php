@@ -1,6 +1,6 @@
 <?php
-  $video_url = get_post_meta($post->ID, 'video_url', true);
-  $video_caption = get_post_meta($post->ID, 'video_caption', true);
+  $video_url      = get_alps_field( 'video_url' );
+  $video_caption  = get_alps_field( 'video_caption' );
 ?>
 <figure class="figure w--100p">
   <div class="img-wrap fitvid">

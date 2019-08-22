@@ -48,7 +48,7 @@ class Date_Field extends Field {
 	public function set_value_from_input( $input ) {
 		if ( isset( $input[ $this->get_name() ] ) ) {
 			$date = \DateTime::createFromFormat( $this->input_format_php, $input[ $this->get_name() ] );
-			$value = ( $date instanceof \DateTime ) ? $date->format( $this->storage_format ) : '';
+			$value = ( is_a( $date, 'DateTime' ) ) ? $date->format( $this->storage_format ) : '';
 			$this->set_value( $value );
 		} else {
 			$this->clear_value();
@@ -65,7 +65,7 @@ class Date_Field extends Field {
 		$value = $this->get_value();
 		if ( ! empty( $value ) ) {
 			$date = \DateTime::createFromFormat( $this->storage_format, $value );
-			$value = ( $date instanceof \DateTime ) ? $date->format( $this->input_format_php ) : '';
+			$value = ( is_a( $date, 'DateTime' ) ) ? $date->format( $this->input_format_php ) : '';
 		}
 
 		$field_data = array_merge( $field_data, array(
@@ -102,9 +102,7 @@ class Date_Field extends Field {
 	/**
 	 * Get the expected input format in php and js variants
 	 *
-	 * @param string $php_format
-	 * @param string $js_format
-	 * @return self $this
+	 * @return array
 	 */
 	public function get_input_format( $php_format, $js_format ) {
 		$this->input_format_php = $php_format;

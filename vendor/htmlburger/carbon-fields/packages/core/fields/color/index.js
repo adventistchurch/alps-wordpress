@@ -10,7 +10,7 @@ import { get } from 'lodash';
  */
 import './style.scss';
 import Picker from './picker';
-import { hexToRgba, rgbaToHex } from '../../utils/hex-and-rgba';
+import hexToRgba from '../../utils/hex-to-rgba';
 
 class ColorField extends Component {
 	/**
@@ -27,7 +27,7 @@ class ColorField extends Component {
 	 *
 	 * @return {void}
 	 */
-	getBackgroundColor = () => {
+	getBackgrounColor = () => {
 		const { field, value } = this.props;
 
 		const colorHex = value ? value : '#FFFFFFFF';
@@ -44,15 +44,9 @@ class ColorField extends Component {
 	 * @return {void}
 	 */
 	handleChange = ( color ) => {
-		const { id, onChange, field } = this.props;
+		const { id, onChange } = this.props;
 
-		let value = get( color, 'hex', '' ).toUpperCase();
-
-		if ( field.alphaEnabled ) {
-			value = rgbaToHex( get( color, 'rgb', null ) );
-		}
-
-		onChange( id, value );
+		onChange( id, get( color, 'hex', '' ) );
 	}
 
 	/**
@@ -86,7 +80,7 @@ class ColorField extends Component {
 				/>
 
 				<button type="button" className="button cf-color__toggle" onClick={ this.togglePicker }>
-					<span className="cf-color__preview" style={ { backgroundColor: this.getBackgroundColor() } }></span>
+					<span className="cf-color__preview" style={ { backgroundColor: this.getBackgrounColor() } }></span>
 
 					<span className="cf-color__toggle-text">
 						{ __( 'Select a color', 'carbon-fields-ui' ) }

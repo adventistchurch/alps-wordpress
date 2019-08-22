@@ -18,6 +18,7 @@ import {
 	without,
 	isMatch,
 	isEmpty
+
 } from 'lodash';
 import {
 	combine,
@@ -44,13 +45,6 @@ class AssociationField extends Component {
 	selectedList = createRef();
 
 	/**
-	 * Keeps reference to the DOM bnode that contains the options.
-	 *
-	 * @type {Object}
-	 */
-	sourceList = createRef();
-
-	/**
 	 * Lifecycle hook.
 	 *
 	 * @return {void}
@@ -68,49 +62,8 @@ class AssociationField extends Component {
 			totalOptionsCount: field.options.total_options
 		} );
 
-		if ( value.length ) {
+		if ( value ) {
 			fetchSelectedOptions();
-		}
-
-		this.sourceList.current.addEventListener( 'scroll', this.handleSourceListScroll );
-	}
-
-	/**
-	 * Lifecycle hook.
-	 *
-	 * @return {void}
-	 */
-	componentWillUnmount() {
-		this.sourceList.current.removeEventListener( 'scroll', this.handleSourceListScroll );
-	}
-
-	/**
-	 * Handles the scroll event of the source list.
-	 *
-	 * @return {void}
-	 */
-	handleSourceListScroll = () => {
-		const {
-			fetchOptions,
-			setState,
-			options,
-			page,
-			queryTerm
-		} = this.props;
-
-		const sourceList = this.sourceList.current;
-
-		if ( sourceList.offsetHeight + sourceList.scrollTop === sourceList.scrollHeight ) {
-			setState( {
-				page: page + 1
-			} );
-
-			fetchOptions( {
-				type: 'append',
-				options: options,
-				queryTerm,
-				page: page + 1
-			} );
 		}
 	}
 
@@ -126,16 +79,8 @@ class AssociationField extends Component {
 			setState
 		} = this.props;
 
-		setState( {
-			page: 1,
-			queryTerm
-		} );
-
-		fetchOptions( {
-			type: 'replace',
-			page: 1,
-			queryTerm
-		} );
+		setState( { queryTerm } );
+		fetchOptions( { queryTerm } );
 	}
 
 	/**
@@ -227,8 +172,7 @@ class AssociationField extends Component {
 			field,
 			totalOptionsCount,
 			selectedOptions,
-			queryTerm,
-			isLoading
+			queryTerm
 		} = this.props;
 
 		let { options } = this.props;
@@ -255,12 +199,6 @@ class AssociationField extends Component {
 						onChange={ this.handleSearchChange }
 					/>
 
-					{
-						isLoading
-							? <span className="cf-association__spinner spinner is-active"></span>
-							: ''
-					}
-
 					<span className="cf-association__counter">
 						{ sprintf(
 							__( 'Showing %1$d of %2$d results', 'carbon-fields-ui' ),
@@ -271,7 +209,7 @@ class AssociationField extends Component {
 				</div>
 
 				<div className="cf-association__cols">
-					<div className="cf-association__col" ref={ this.sourceList }>
+					<div className="cf-association__col">
 						{
 							options.map( ( option, index ) => {
 								return (
@@ -282,9 +220,7 @@ class AssociationField extends Component {
 
 										<div className="cf-association__option-content">
 											<span className="cf-association__option-title">
-												<span className="cf-association__option-title-inner">
-													{ option.title }
-												</span>
+												{ option.title }
 											</span>
 
 											<span className="cf-association__option-type">
@@ -293,14 +229,7 @@ class AssociationField extends Component {
 										</div>
 
 										<div className="cf-association__option-actions">
-											{ option.edit_link && (
-												<a
-													className="cf-association__option-action cf-association__option-action--edit dashicons dashicons-edit"
-													href={ option.edit_link.replace( '&amp;', '&', 'g' ) }
-													target="_blank"
-													rel="noopener noreferrer"
-												></a>
-											) }
+											<a className="cf-association__option-action cf-association__option-action--edit dashicons dashicons-edit" href={ option.edit_link }></a>
 
 											{ (
 												! option.disabled
@@ -439,15 +368,10 @@ function handler( props ) {
 
 		switch ( type ) {
 			case 'FETCH_OPTIONS':
-				setState( {
-					isLoading: true
-				} );
-
 				// eslint-disable-next-line
 				const request = window.jQuery.get( window.ajaxurl, {
 					action: 'carbon_fields_fetch_association_options',
 					term: payload.queryTerm,
-					page: payload.page || 1,
 					container_id: props.containerId,
 					field_name: hierarchyResolver()
 				}, null, 'json' );
@@ -458,7 +382,7 @@ function handler( props ) {
 				request.done( ( response ) => {
 					if ( response && response.success ) {
 						setState( {
-							options: payload.type === 'replace' ? response.data.options : [ ...payload.options, ...response.data.options ],
+							options: response.data.options,
 							totalOptionsCount: response.data.total_options
 						} );
 					} else {
@@ -467,11 +391,6 @@ function handler( props ) {
 				} );
 
 				request.fail( errorHandler );
-				request.always( () => {
-					setState( {
-						isLoading: false
-					} );
-				} );
 				break;
 
 			case 'FETCH_SELECTED_OPTIONS':
@@ -480,7 +399,7 @@ function handler( props ) {
 					'get',
 					{
 						container_id: props.containerId,
-						options: props.value.map( ( option ) => `${ option.id }:${ option.type }:${ option.subtype }` ).join( ';' ),
+						options: props.value,
 						field_id: hierarchyResolver()
 					}
 				)
@@ -499,9 +418,7 @@ const applyWithState = withState( {
 	options: [],
 	selectedOptions: [],
 	totalOptionsCount: 0,
-	queryTerm: '',
-	page: 1,
-	isLoading: false
+	queryTerm: ''
 } );
 
 const applyWithEffects = withEffects( aperture, { handler } );

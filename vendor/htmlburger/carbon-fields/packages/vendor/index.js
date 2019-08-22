@@ -5,7 +5,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import nanoid from 'nanoid';
 import immer from 'immer';
-import * as apiFetch from '@wordpress/api-fetch';
 import * as compose from '@wordpress/compose';
 import * as element from '@wordpress/element';
 import * as hooks from '@wordpress/hooks';
@@ -32,7 +31,6 @@ window.cf.vendor = [
 	[ 'react-dom', ReactDOM ],
 	[ 'nanoid', nanoid ],
 	[ 'immer', immer ],
-	[ '@wordpress/api-fetch', apiFetch ],
 	[ '@wordpress/compose', compose ],
 	[ '@wordpress/element', element ],
 	[ '@wordpress/hooks', hooks ],

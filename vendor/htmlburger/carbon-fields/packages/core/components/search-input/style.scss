@@ -37,11 +37,9 @@
 		border-color: $wp-color-gray-light-500;
 	}
 
-	.block-editor .cf-container &,
-	.wp-block .cf-field &,
-	.edit-post-sidebar .cf-block__fields & {
+	.wp-block .cf-field & {
 		border-radius: 0;
-		border: 0;
+		border-color: $wp-color-gray-light-500;
 
 		&:focus {
 			box-shadow: none;

@@ -3,16 +3,13 @@
  * Template Name: Long Form Template
  */
 
- // Featured image
- $thumb_id = get_post_thumbnail_id();
- // Image alt
- $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-
- $display_title = get_post_meta($post->ID, 'display_title', true);
- $kicker = get_post_meta($post->ID, 'kicker', true);
- $subtitle = get_post_meta($post->ID, 'subtitle', true);
- $intro = get_post_meta($post->ID, 'intro', true);
- $hide_featured_image = get_post_meta($post->ID,'hide_featured_image', true);
+ $thumb_id            = get_post_thumbnail_id();
+ $alt                 = get_alps_field( '_wp_attachment_image_alt', $thumb_id );
+ $display_title       = get_alps_field( 'display_title', $post->ID );
+ $kicker              = get_alps_field( 'kicker', $post->ID );
+ $subtitle            = get_alps_field( 'subtitle', $post->ID );
+ $intro               = get_alps_field( 'intro', $post->ID );
+ $hide_featured_image = get_alps_field( 'hide_featured_image', $post->ID );
 ?>
 <?php while (have_posts()) : the_post(); ?>
   <header class="longform__header  longform__header--with-hero">

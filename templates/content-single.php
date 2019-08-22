@@ -5,17 +5,15 @@
   <?php endif; ?>
   <?php
     // Featured image
-    $thumb_id = get_post_thumbnail_id();
-    // Image alt
-    $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-
-    $display_title = get_post_meta($post->ID, 'display_title', true);
-    $kicker = get_post_meta($post->ID, 'kicker', true);
-    $subtitle = get_post_meta($post->ID, 'subtitle', true);
-    $intro = get_post_meta($post->ID, 'intro', true);
-    $video_url = get_post_meta($post->ID, 'video_url', true);
-    $hide_featured_image = get_post_meta($post->ID,'hide_featured_image', true);
-    $caption = get_the_post_thumbnail_caption();
+    $thumb_id               = get_post_thumbnail_id();
+    $alt                    = get_alps_field( '_wp_attachment_image_alt', $thumb_id );
+    $display_title          = get_alps_field( 'display_title' );
+    $kicker                 = get_alps_field( 'kicker' );
+    $subtitle               = get_alps_field( 'subtitle' );
+    $intro                  = get_alps_field( 'intro' );
+    $video_url              = get_alps_field( 'video_url' );
+    $hide_featured_image    = get_alps_field( 'hide_featured_image' );
+    $caption                = get_the_post_thumbnail_caption();
   ?>
   <div class="layout-container full--until-large">
     <div class="flex-container cf">
@@ -40,9 +38,8 @@
               <div class="article__meta">
                 <span class="pub_date font--secondary--s gray can-be--white"><?php the_date(); ?></span>
                 <?php
-                  $theme_options = get_option('alps_theme_settings');
-                  $hide_author_global = $theme_options['hide_author_global'];
-                  $hide_author_post = get_post_meta($post->ID, 'hide_author_post', true);
+                  $hide_author_global   = get_alps_option( 'hide_author_global' );
+                  $hide_author_post     = get_alps_field( 'hide_author_post' );
                 ?>
                 <?php if ($hide_author_global == true || $hide_author_post == true): ?>
                 <?php else: ?>
