@@ -2,6 +2,25 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+// Alter the article width based on sidebar and sabbath column
+body.has-sidebar--pages.hide-sabbath,
+body.has-sidebar--posts.hide-sabbath {
+  .c-article {
+    @media (min-width: 901px) {
+      width: calc(100vw / 7 * 3 - 0.01px);
+    }
+  }
+}
+
+body.hide-sabbath:not(.has-sidebar--pages),
+body.hide-sabbath:not(.has-sidebar--posts) {
+  .c-article {
+    @media (min-width: 901px) {
+      width: calc(100vw / 7 * 4 - 0.01px);
+    }
+  }
+}
+
 // Utility classes
 .u-space--zero--right {
   margin-right: 0 !important;
@@ -12,13 +31,13 @@
 }
 
 .u-shift--left--1-col--medium-large {
-  @media (min-width: 700px) and (max-width: 900px) {
+  @media (min-width: 701px) and (max-width: 900px) {
     margin-left: calc((100vw / 7) * -1);
   }
 }
 
 .u-shift--left--1-col--medium-xlarge {
-  @media (min-width: 700px) and (max-width: 1100px) {
+  @media (min-width: 701px) and (max-width: 1100px) {
     margin-left: calc((100vw / 7) * -1);
   }
 }
@@ -116,11 +135,11 @@
     margin-top: 0;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 901px) {
     margin-right: -20px;
   }
 
-  @media (min-width: 1300px) {
+  @media (min-width: 1301px) {
     margin-top: -40px;
   }
 
@@ -129,11 +148,11 @@
 }
 
 .body.hide-sabbath .c-sidebar .c-block__breakout {
-  @media (min-width: 700px) {
+  @media (min-width: 701px) {
     margin-top: -30px;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 901px) {
     margin-top: -40px;
   }
 }
@@ -260,7 +279,7 @@
   font-style: italic;
   line-height: 1.35;
 
-  @media (min-width: 900px) {
+  @media (min-width: 901px) {
     font-size: 15px;
   }
 }

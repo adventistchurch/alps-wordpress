@@ -2,6 +2,20 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+@media (min-width: 901px) {
+  body.has-sidebar--pages.hide-sabbath .c-article,
+  body.has-sidebar--posts.hide-sabbath .c-article {
+    width: calc(100vw / 7 * 3 - 0.01px);
+  }
+}
+
+@media (min-width: 901px) {
+  body.hide-sabbath:not(.has-sidebar--pages) .c-article,
+  body.hide-sabbath:not(.has-sidebar--posts) .c-article {
+    width: calc(100vw / 7 * 4 - 0.01px);
+  }
+}
+
 .u-space--zero--right {
   margin-right: 0 !important;
 }
@@ -10,13 +24,13 @@
   padding-top: 0 !important;
 }
 
-@media (min-width: 700px) and (max-width: 900px) {
+@media (min-width: 701px) and (max-width: 900px) {
   .u-shift--left--1-col--medium-large {
     margin-left: calc((100vw / 7) * -1);
   }
 }
 
-@media (min-width: 700px) and (max-width: 1100px) {
+@media (min-width: 701px) and (max-width: 1100px) {
   .u-shift--left--1-col--medium-xlarge {
     margin-left: calc((100vw / 7) * -1);
   }
@@ -119,25 +133,25 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
   .c-sidebar .c-block__breakout {
     margin-right: -20px;
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1301px) {
   .c-sidebar .c-block__breakout {
     margin-top: -40px;
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 701px) {
   .body.hide-sabbath .c-sidebar .c-block__breakout {
     margin-top: -30px;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
   .body.hide-sabbath .c-sidebar .c-block__breakout {
     margin-top: -40px;
   }
@@ -249,7 +263,7 @@
   line-height: 1.35;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
   .wp-caption-text {
     font-size: 15px;
   }
