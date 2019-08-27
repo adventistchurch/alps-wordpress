@@ -14,17 +14,28 @@ function crb_load() {
 		// IN SAGE THEMES ///////////////
 		// WIDGETS HAVE TO BE LOADED HERE
 		require_once( 'cf-widget.php' );
-
 }
 
 // REMOVE MEDIA BUTTON FROM CF RICH TEXT EDITOR
 add_filter( 'crb_media_buttons_html', function( $html, $field_name ) {
-    $fields = array( 'content_block_freeform_body', 'sb_body', 'content_body_1' );
+    $fields = array( 'content_block_freeform_body', 'sb_body', 'content_body_1', 'footer_description' );
 	if (in_array( $field_name, $fields ) ) {
 		return;
 	}
 	return $html;
 }, 10, 2);
+
+// ADD CF ADMIN STYLESHEET
+function cf_admin_style() {
+  wp_enqueue_style('cf-admin-styles', get_template_directory_uri() . '/carbon-fields/cf-admin.css' );
+}
+add_action('admin_enqueue_scripts', 'cf_admin_style');
+
+// ADD CF JAVASCRIPT
+function cf_admin_js( $hook ) {
+  wp_enqueue_script('cf-admin-js',  get_template_directory_uri() . '/carbon-fields/cf-admin.js' );
+}
+add_action('admin_enqueue_scripts', 'cf_admin_js');
 
 function get_alps_field( $field, $id = NULL ) {
 	global $post;
@@ -43,7 +54,6 @@ function get_alps_option( $field ) {
 	global $post;
 	$cf = get_option( 'alps_cf_converted' );
 	if ( $cf ) {
-		
 		return carbon_get_theme_option( $field );
 	} else {
 		$options 	= get_option( 'alps_theme_settings' );
@@ -66,3 +76,16 @@ function get_alps_option( $field ) {
 function is_multidimensional(array $array) {
   return count($array) !== count($array, COUNT_RECURSIVE);
 }
+
+// DEBUG THEME OPTIONS SAVE
+/*
+add_action( 'carbon_fields_theme_options_container_saved', 'crb_debug_theme_options' );
+function crb_debug_theme_options() {
+	global $wpdb;
+	// $wpdb->last_query;
+	// $wpdb->last_result;
+	// $wpdb->last_error;
+	
+	die( '<pre>'.print_r( $wpdb->queries ).'</pre>' );
+}
+*/

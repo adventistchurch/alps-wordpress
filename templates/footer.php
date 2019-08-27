@@ -80,6 +80,3 @@
     </div> <!-- /.legal -->
   </div> <!-- /.footer__inner -->
 </footer> <!-- /.footer -->
-<div style="height:80px;color:#fff;background:purple;font-size:60px;text-align:center;">
-  CARBON FIELDS
-</div>

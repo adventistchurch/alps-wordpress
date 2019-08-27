@@ -6,8 +6,9 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
 
-    Container::make( 'theme_options', __( 'Theme Options' ) )
-      ->set_page_file( 'theme-options' )
+    Container::make( 'theme_options', __( 'ALPS Theme Settings' ) )
+      ->set_page_parent( 'themes.php' )
+      ->set_page_file( 'alps-theme-options' )
       ->add_tab( __( 'LOGOS' ), array( 
         Field::make( 'separator', 'crb_logos', __( 'Logos' ) ),
         Field::make( 'checkbox', 'logo_desktop_wide', __( 'Logo Wide / Desktop' ) )
@@ -44,7 +45,8 @@ function crb_attach_theme_options() {
             ->set_width( 33 ),
       ) )
         ->add_tab( __( 'FOOTER CONTENT' ), array( 
-          Field::make( 'rich_text', 'footer_description', __( 'Footer Description' ) ),
+          Field::make( 'rich_text', 'footer_description', __( 'Footer Description' ) )
+            ->set_rows( 300 ),
           Field::make( 'text', 'footer_copyright', __( 'Footer Copyright' ) ),
           Field::make( 'complex', 'footer_address', __( 'Footer Address' ) )
               ->add_fields( array(
@@ -76,6 +78,5 @@ function crb_attach_theme_options() {
                     'taxonomy'  => 'category',
                 ),
               ) )
-              ->set_min( 1 )
          ) );
 }

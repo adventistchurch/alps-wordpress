@@ -1,8 +1,6 @@
-<div style="height:80px;color:#fff;background:purple;font-size:60px;text-align:center;">
-  CARBON FIELDS
-</div>
 <?php
   $current_language = apply_filters('wpml_current_language', NULL);
+  $theme_color      = get_alps_option( 'primary_theme_color' );
   if ($current_language) {
     $logo_desktop_wide  = get_alps_option( 'logo_desktop_wide_' . $current_language[0] );
     $logo_desktop       = get_alps_option( 'logo_desktop_' . $current_language[0] );
