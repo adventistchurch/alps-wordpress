@@ -14,12 +14,12 @@ function crb_attach_theme_options() {
         Field::make( 'checkbox', 'logo_desktop_wide', __( 'Logo Wide / Desktop' ) )
           ->set_option_value( 'true' )
           ->set_help_text( 'Select if the default logo orientation is wide, or desktop, rather than square.' ),
-        Field::make( 'image', 'logo_desktop', __( 'Logo - Desktop' ) )
+        Field::make( 'image', 'option_logo_desktop', __( 'Logo - Desktop' ) )
             ->set_width( 33 ),
-        Field::make( 'image', 'logo_mobile', __( 'Logo - Mobile' ) )
+        Field::make( 'image', 'option_logo_mobile', __( 'Logo - Mobile' ) )
             ->set_width( 33 ),
-        Field::make( 'image', 'logo_text', __( 'Logo - Subtext' ) )
-            ->set_width( 33 ),      
+        Field::make( 'image', 'option_logo_text', __( 'Logo - Subtext' ) )
+            ->set_width( 33 ),  
       ) )
       ->add_tab( __( 'COLORS' ), array( 
         Field::make( 'select', 'primary_theme_color', __( 'Primary Theme Color' ) )

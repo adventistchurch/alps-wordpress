@@ -54,21 +54,21 @@ function get_alps_option( $field ) {
 	global $post;
 	$cf = get_option( 'alps_cf_converted' );
 	if ( $cf ) {
-		return carbon_get_theme_option( $field );
+		$option = carbon_get_theme_option( $field );
 	} else {
 		$options 	= get_option( 'alps_theme_settings' );
 		$option 	= $options[ $field ];
-		if ( is_array( $option ) ) {
-			// RETURN SINGLE KEY/VAL ARRAY AS VAL (IMAGES)
-			if ( count( $option ) == 1 ) { 
-				return $option[0];
-			} else {
-				// RETURN COMPLETE ARRAY
-				return $option;
-			}
+	}
+	if ( is_array( $option ) ) {
+		// RETURN SINGLE KEY/VAL ARRAY AS VAL (IMAGES)
+		if ( count( $option ) == 1 ) { 
+			return $option[0];
 		} else {
+			// RETURN COMPLETE ARRAY
 			return $option;
 		}
+	} else {
+		return $option;
 	}
 }
 

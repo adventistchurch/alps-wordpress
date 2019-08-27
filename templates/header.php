@@ -8,9 +8,9 @@
     $logo_text          = get_alps_option( 'logo_text_' . $current_language[0] );
   } else {
     $logo_desktop_wide  = get_alps_option( 'logo_desktop_wide' );
-    $logo_desktop       = get_alps_option( 'logo_desktop' );
-    $logo_mobile        = get_alps_option( 'logo_mobile' );
-    $logo_text          = get_alps_option( 'logo_text' );
+    $logo_desktop       = get_alps_option( 'option_logo_desktop' );
+    $logo_mobile        = get_alps_option( 'option_logo_mobile' );
+    $logo_text          = get_alps_option( 'option_logo_text' );
   }
 ?>
 <header class="header <?php if ($logo_desktop_wide == 'wide'): echo 'header__wide-logo '; endif; ?>can-be--dark-dark" role="banner" id="header">
