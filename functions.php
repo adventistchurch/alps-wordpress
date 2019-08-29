@@ -266,22 +266,37 @@ function wordpress_breadcrumbs() {
 require_once get_template_directory() . '/lib/plugin-activation.php';
 add_action( 'tgmpa_register', 'adventist_register_required_plugins' );
 function adventist_register_required_plugins() {
-  $plugins = array(
-    array(
-      'name'               => 'Piklist', // The plugin name.
-      'slug'               => 'piklist', // The plugin slug (typically the folder name).
-      'source'             => get_template_directory() . '/lib/plugins/piklist.zip', // The plugin source.
-      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-    ),
-    // WordPress SEO
-		array(
-			'name'     => 'WordPress SEO by Yoast',
-			'slug'     => 'wordpress-seo',
-			'required' => false,
-		)
-  );
+  $cf = get_option( 'alps_cf_converted' );
+  if ( $cf ) {
+    $plugins = array(
+      // WordPress SEO
+      array(
+        'name'     => 'WordPress SEO by Yoast',
+        'slug'     => 'wordpress-seo',
+        'required' => false,
+      )
+    );
+  }
+  else {
+    $plugins = array(
+      array(
+        'name'               => 'Piklist', // The plugin name.
+        'slug'               => 'piklist', // The plugin slug (typically the folder name).
+        'source'             => get_template_directory() . '/lib/plugins/piklist.zip', // The plugin source.
+        'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+        'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+        'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+      ),
+      // WordPress SEO
+      array(
+        'name'     => 'WordPress SEO by Yoast',
+        'slug'     => 'wordpress-seo',
+        'required' => false,
+      )
+    );
+  }
+
+
   $config = array(
     'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.
     'default_path' => '',                      // Default absolute path to bundled plugins.
