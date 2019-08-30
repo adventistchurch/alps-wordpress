@@ -451,6 +451,7 @@ add_filter('allowed_block_types', function () {
     'core/spacer',
     'core/button',
     'core/list',
+    'core/shortcode',
     'core/video',
     'core/html',
     'core/embed',
