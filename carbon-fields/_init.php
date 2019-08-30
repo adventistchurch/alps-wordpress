@@ -114,8 +114,8 @@ if ( !$cf ) {
 			else {
 				deactivate_plugins( array( $plugin_slug, 'piklist/piklist.php' ) );
 				// NOW NUKE THE PIKLIST & CONVERTER PLUGINS & THEME CONFIG FILES
-				$convert_plugin_dir = WP_PLUGIN_DIR . '/carbon-fields-converter-master';
-				$piklist_plugin_dir = WP_PLUGIN_DIR . '/piklist';
+				$convert_plugin_dir = ABSPATH . 'wp-content/plugins/carbon-fields-converter-master';
+				$piklist_plugin_dir = ABSPATH . 'wp-content/plugins/piklist';
 				$piklist_theme_dir 	= get_template_directory() . '/piklist';
 				$dirs = array( $convert_plugin_dir, $piklist_plugin_dir, $piklist_theme_dir );
 				foreach ( $dirs as $dir ) {
