@@ -124,7 +124,7 @@ if ( !$cf ) {
 				// REMOVE THEME SUPPLIED PIKLST
 				unlink( get_template_directory() . '/lib/plugins/piklist.zip' );
 
-				echo '<p>Activated.</p> <p style="font-size:26px">The ALPS Fields Converter has run successfully. The Piklist plugin has been deactivated, and you may delete it, and the ALPS Fields Converter plugin now. <a href="'. admin_url( 'plugins.php?action=alps_update_complete' ) . '">Click here to return to the plugin management page.</a></p>';
+				echo '<p>Activated.</p> <p style="font-size:26px">The ALPS Fields Converter has run successfully. <a href="'. admin_url( 'plugins.php?action=alps_update_complete' ) . '">Click here to return to the plugin management page.</a></p>';
 			}
 		} else {
 			echo 'Could not install the new plugin.';
