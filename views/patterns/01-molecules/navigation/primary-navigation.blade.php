@@ -9,6 +9,17 @@
       $submenu = false;
     @endphp
     <ul class="c-primary-nav__list c-priority-nav__list">
+      @php
+        // CHECK IF WPML PLUGIN ACTIVE - IF SO, SHOW SWITCHER
+        // USING BRACKETS ON IF STATEMENT BECAUSE NOT HAVING THEM CAUSES A 500 ERROR
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+        if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {
+          echo '<li>';
+          do_action( 'wpml_add_language_selector' );
+          echo '</li>';
+        }
+      @endphp
+
       @php $primary_nav = json_decode(json_encode($primary_nav), true); @endphp
       @foreach ($primary_nav as $nav)
         @if (isset($primary_nav[$count + 1]))
