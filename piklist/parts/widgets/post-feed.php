@@ -20,9 +20,9 @@
     'posts_per_page'    => $count,
     'offset'            => $offset
   );
-  if ( is_int( $tag ) ) {
+  if ( $tag != 'none' ) {
       $tag_id           = $tag;
-      $args['tag']      = $tag;
+      $args['tag_id']   = $tag;
   }
   $the_query = new WP_Query($args);
 ?>
