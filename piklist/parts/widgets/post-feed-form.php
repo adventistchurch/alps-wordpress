@@ -16,6 +16,21 @@
     ),
     'columns' => 12
   ));
+
+  $tag_options  = get_tags( array( 'hide_empty' => true ) );
+  $tag_names    = array_column( $tag_options, 'name' );
+  $tag_ids      = array_column( $tag_options, 'term_id' );
+  $tag_options  = array_combine( $tag_ids, $tag_names );
+  $tag_options  = [ 'none' => 'Select A Tag'] + $tag_options;
+
+  piklist('field', array(
+    'type' => 'select',
+    'field' => 'post_feed_tag',
+    'label' => 'Tag',
+    'description' => 'Select the TAG for the feed.',
+    'choices' => $tag_options,
+    'columns' => 12
+  ));
   piklist('field', array(
     'type' => 'text',
     'field' => 'post_feed_title',

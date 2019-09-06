@@ -5,20 +5,25 @@
   */
 ?>
 <?php
-  $offset = empty($settings['post_feed_offset']) ? '' : $settings['post_feed_offset'];
-  $featured = empty($settings['post_feed_featured']) ? false : $settings['post_feed_featured'];
-  $category = empty($settings['post_feed_category']) ? 'news' : $settings['post_feed_category'];
-  $title = empty($settings['post_feed_title']) ? get_cat_name($category) : $settings['post_feed_title'];
-  $url = empty($settings['post_feed_url']) ? '' : $settings['post_feed_url'];
-  $count = empty($settings['post_feed_count']) ? '-1' : $settings['post_feed_count'];
-  $layout_grid = empty($settings['post_feed_layout']) ? false : $settings['post_feed_layout'];
-
+  $offset       = empty($settings['post_feed_offset']) ? '' : $settings['post_feed_offset'];
+  $featured     = empty($settings['post_feed_featured']) ? false : $settings['post_feed_featured'];
+  $category     = empty($settings['post_feed_category']) ? 'news' : $settings['post_feed_category'];
+  $title        = empty($settings['post_feed_title']) ? get_cat_name($category) : $settings['post_feed_title'];
+  $url          = empty($settings['post_feed_url']) ? '' : $settings['post_feed_url'];
+  $count        = empty($settings['post_feed_count']) ? '-1' : $settings['post_feed_count'];
+  $layout_grid  = empty($settings['post_feed_layout']) ? false : $settings['post_feed_layout'];
+  // WILL ALWAYS HAVE A VALUE OF 'none' IF NOT SET, ELSE IS AN INTEGER
+  $tag          = $settings['post_feed_tag'];
   // Post Feed args
   $args = array(
-    'cat' => $category,
-    'posts_per_page' => $count,
-    'offset' => $offset
+    'cat'               => $category,
+    'posts_per_page'    => $count,
+    'offset'            => $offset
   );
+  if ( is_int( $tag ) ) {
+      $tag_id           = $tag;
+      $args['tag']      = $tag;
+  }
   $the_query = new WP_Query($args);
 ?>
 
@@ -35,10 +40,12 @@
     <?php if ($the_query->have_posts()): ?>
       <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
         <?php
-          $id = get_the_ID();
-          $title = get_the_title($id);
-          $link = get_permalink($id);
+          $id       = get_the_ID();
+          $title    = get_the_title($id);
+          $link     = get_permalink($id);
           $category = get_the_category();
+          $the_tag  = get_tag( $tag_id );
+
           if (get_the_category()) {
               if (class_exists('WPSEO_Primary_Term')) {
                   $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
@@ -54,30 +61,30 @@
               }
           }
           if ($featured == true) {
-              $date = date('F j, Y', strtotime(get_the_date()));
-              $excerpt = get_the_excerpt($id);
-              $body = get_the_content($id);
-              $thumb_id = get_post_thumbnail_id($id);
-              $thumb_size = 'horiz__4x3';
-              $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-              $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+              $date         = date('F j, Y', strtotime(get_the_date()));
+              $excerpt      = get_the_excerpt($id);
+              $body         = get_the_content($id);
+              $thumb_id     = get_post_thumbnail_id($id);
+              $thumb_size   = 'horiz__4x3';
+              $image        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+              $alt          = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
               $block_meta_class = "u-theme--color--dark u-font--secondary--xs";
               if ($layout_grid == true) {
-                  $excerpt_length = 100;
-                  $block_class = "c-block--reversed c-media-block--reversed l-grid--7-col";
-                  $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
-                  $block_content_class = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--1-col u-border--left u-theme--border-color--darker--left u-color--gray u-spacing--half";
-                  $block_title_class = "u-theme--color--darker u-font--primary--s";
-                  $block_group_class = "u-flex--justify-start";
+                  $excerpt_length       = 100;
+                  $block_class          = "c-block--reversed c-media-block--reversed l-grid--7-col";
+                  $block_img_class      = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
+                  $block_content_class  = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--1-col u-border--left u-theme--border-color--darker--left u-color--gray u-spacing--half";
+                  $block_title_class    = "u-theme--color--darker u-font--primary--s";
+                  $block_group_class    = "u-flex--justify-start";
               } else {
-                  $excerpt_length = 200;
-                  $block_class = "c-block__stacked c-media-block__stacked";
-                  $block_content_class = "l-grid-item u-border--left u-color--gray u-theme--border-color--darker--left u-spacing--half";
-                  $block_title_class = "u-theme--color--darker u-font--primary--m";
+                  $excerpt_length       = 200;
+                  $block_class          = "c-block__stacked c-media-block__stacked";
+                  $block_content_class  = "l-grid-item u-border--left u-color--gray u-theme--border-color--darker--left u-spacing--half";
+                  $block_title_class    = "u-theme--color--darker u-font--primary--m";
               }
           } else {
-              $block_class = "c-block__text u-theme--border-color--darker u-border--left u-padding--bottom u-spacing--half";
-              $block_title_class = "u-theme--color--darker u-font--primary--s";
+              $block_class          = "c-block__text u-theme--border-color--darker u-border--left u-padding--bottom u-spacing--half";
+              $block_title_class    = "u-theme--color--darker u-font--primary--s";
           }
         ?>
         <?php if ($featured == true): ?>
