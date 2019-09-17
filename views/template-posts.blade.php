@@ -3,40 +3,48 @@
 --}}
 @php
   global $post;
+  $post->ID = get_queried_object_id();
   // List
-  $post_feed_list = get_post_meta($post->ID, 'post_feed_list', true);
-  $post_feed_list_title = get_post_meta($post->ID, 'post_feed_list_title', true);
-  $post_feed_list_link = get_post_meta($post->ID, 'post_feed_list_link', true);
-  $post_feed_list_custom = get_post_meta($post->ID, 'post_feed_list_custom_array');
-  $post_feed_list_category = get_post_meta($post->ID, 'post_feed_list_category_array', true);
-  $post_feed_list_count = get_post_meta($post->ID, 'post_feed_list_count', true);
-  $post_feed_list_offset = get_post_meta($post->ID, 'post_feed_list_offset', true);
-  $post_feed_list_round = get_post_meta($post->ID, 'post_feed_list_round_image', true);
+  $post_feed_list                 = get_alps_field( 'post_feed_list' );
+  $post_feed_list_title           = get_alps_field( 'post_feed_list_title' );
+  $post_feed_list_link            = get_alps_field( 'post_feed_list_link' );
+  if ( !empty( $CF_ACTIVE ) ) {
+    $post_feed_list_custom        = get_post_meta( 'post_feed_list_custom_array', $post->ID );
+    $post_feed_list_category      = get_post_meta( 'post_feed_list_category_array', $post->ID );
+  } else {
+    $post_feed_list_custom        = get_alps_field( 'post_feed_list_custom_array' );
+    $post_feed_list_category      = get_alps_field( 'post_feed_list_category_array' );
+
+  }
+  $post_feed_list_count           = get_alps_field( 'post_feed_list_count' );
+  $post_feed_list_offset          = get_alps_field( 'post_feed_list_offset' );
+  $post_feed_list_round           = get_alps_field( 'post_feed_list_round_image' );
 
   // Full Width
-  $post_feed_full = get_post_meta($post->ID, 'post_feed_full', true);
-  $post_feed_full_title = get_post_meta($post->ID, 'post_feed_full_title', true);
-  $post_feed_full_link = get_post_meta($post->ID, 'post_feed_full_link', true);
-  $post_feed_full_category = get_post_meta($post->ID, 'post_feed_full_category_array');
-  $post_feed_full_featured = get_post_meta($post->ID, 'post_feed_full_featured', true);
-  $post_feed_full_featured_array = get_post_meta($post->ID, 'post_feed_full_featured_array');
-  $post_feed_full_offset = get_post_meta($post->ID, 'post_feed_full_offset', true);
+  $post_feed_full                 = get_alps_field( 'post_feed_full' );
+  $post_feed_full_title           = get_alps_field( 'post_feed_full_title' );
+  $post_feed_full_link            = get_alps_field( 'post_feed_full_link' );
+  $post_feed_full_category        = get_alps_field( 'post_feed_full_category_array' );
+  $post_feed_full_featured        = get_alps_field( 'post_feed_full_featured' );
+  $post_feed_full_featured_array  = get_alps_field( 'post_feed_full_featured_array' );
+  $post_feed_full_offset          = get_alps_field( 'post_feed_full_offset' );
 
   // Archive
-  $post_feed_archive = get_post_meta($post->ID, 'post_feed_archive', true);
-  $post_feed_archive_title = get_post_meta($post->ID, 'post_feed_archive_title', true);
-  $post_feed_archive_link = get_post_meta($post->ID, 'post_feed_archive_link', true);
-  $post_feed_archive_category = get_post_meta($post->ID, 'post_feed_archive_category_array');
-  $post_feed_archive_count = get_post_meta($post->ID, 'post_feed_archive_count', true);
-  $post_feed_archive_offset = get_post_meta($post->ID, 'post_feed_archive_offset', true);
+  $post_feed_archive              = get_alps_field( 'post_feed_archive' );
+  $post_feed_archive_title        = get_alps_field( 'post_feed_archive_title' );
+  $post_feed_archive_link         = get_alps_field( 'post_feed_archive_link' );
+  $post_feed_archive_category     = get_alps_field( 'post_feed_archive_category_array' );
+  $post_feed_archive_count        = get_alps_field( 'post_feed_archive_count' );
+  $post_feed_archive_offset       = get_alps_field( 'post_feed_archive_offset' );
 @endphp
 @extends('layouts.app')
 @section('content')
+
   @while(have_posts())
     {!! the_post() !!}
     @php
-      $post->ID = get_queried_object_id();
-      if (is_active_sidebar('sidebar-posts') && get_post_meta($post->ID, 'hide_sidebar', true) != 'true') {
+
+      if ( is_active_sidebar( 'sidebar-posts' ) && !get_alps_field( 'hide_sidebar' ) ) {
         $section_offset = 'u-shift--left--1-col--at-xxlarge';
         $article_offset = 'l-grid-item--xl--3-col';
       } else {
@@ -46,7 +54,7 @@
     @endphp
     <div>
       @include('patterns.02-organisms.sections.page-header')
-      @if (get_post_meta($post->ID, 'show_hero_featured_post', true) == 'true')
+      @if ( get_alps_field( 'show_hero_featured_post' ) )
         @include('patterns.02-organisms.sections.page-header-feature')
       @endif
     </div>
@@ -57,11 +65,11 @@
             @php the_content() @endphp
           </div>
         @endif
-        @if ($post_feed_list != 'post_feed_list_false')
+        @if ( $post_feed_list != 'post_feed_list_false' )
           <div class="c-block-wrap u-spacing--double">
-            @if ($post_feed_list_title || $post_feed_list_link)
+            @if ( $post_feed_list_title || $post_feed_list_link )
               <div class="c-block__heading u-theme--border-color--darker">
-                @if ($post_feed_list_title)
+                @if ( $post_feed_list_title )
                   <h3 class="c-block__heading-title u-theme--color--darker">{{ $post_feed_list_title }}</h3>
                 @endif
                 @if ($post_feed_list_link)
@@ -69,7 +77,7 @@
                 @endif
               </div>
             @endif
-            @if ($post_feed_list == 'post_feed_list_category')
+            @if ( $post_feed_list == 'post_feed_list_category' )
               @php
                 if ($post_feed_list_count) {
                   $post_feed_list_count = $post_feed_list_count;
@@ -77,12 +85,12 @@
                   $post_feed_list_count = 3;
                 }
                 $posts = new WP_Query(array(
-                  'post_type' => 'post',
-                  'posts_per_page' => $post_feed_list_count,
-                  'post_status' => 'publish',
-                  'category__in' => $post_feed_list_category,
-                  'order_by' => 'date',
-                  'offset' => $post_feed_list_offset
+                  'post_type'       => 'post',
+                  'posts_per_page'  => $post_feed_list_count,
+                  'post_status'     => 'publish',
+                  'category__in'    => $post_feed_list_category,
+                  'order_by'        => 'date',
+                  'offset'          => $post_feed_list_offset
                 ));
               @endphp
               <div class="c-block-wrap__content u-spacing--double">
@@ -90,11 +98,11 @@
                   @php
                     $posts->the_post();
                     $picture = NULL;
-                    $id = get_the_ID();
-                    $title = get_the_title($id);
-                    $link = get_permalink($id);
-                    $date = date('F j, Y', strtotime(get_the_date('', $id)));
-                    $category = get_the_category($id);
+                    $id         = get_the_ID();
+                    $title      = get_the_title($id);
+                    $link       = get_permalink($id);
+                    $date       = date('F j, Y', strtotime(get_the_date('', $id)));
+                    $category   = get_the_category($id);
                     if ($category) {
                       if (class_exists('WPSEO_Primary_Term')) {
                         $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
@@ -110,7 +118,7 @@
                         $category = $category[0]->name;
                       }
                     }
-                    $header_background_image = get_post_meta($id, 'header_background_image', true);
+                    $header_background_image = get_alps_field( 'header_background_image', $id );
                     if (!empty($header_background_image)) {
                       $thumb_id = $header_background_image;
                     } else if (get_post_thumbnail_id($id)) {
@@ -120,45 +128,53 @@
                     }
                     if ($thumb_id && $post_feed_list_round == 'true') {
                       $block_img_wrap_class = "u-round u-space--left";
-                      $picture = true;
-                      $thumb_size = 'thumbnail';
-                      $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
-                      $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-                      $image_break_m = "500";
-                      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                      $picture              = true;
+                      $thumb_size           = 'thumbnail';
+                      $image_s              = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
+                      $image_m              = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                      $image_break_m        = '500';
+                      $alt                  = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                     } else if ($thumb_id) {
-                      $picture = true;
-                      $thumb_size = 'horiz__4x3';
-                      $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-                      $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
-                      $image_break_m = "500";
-                      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                      $picture              = true;
+                      $thumb_size           = 'horiz__4x3';
+                      $image_s              = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                      $image_m              = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
+                      $image_break_m        = '500';
+                      $alt                  = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                     }
-                    $block_group_class = "u-flex--justify-start";
-                    $block_class = "c-block__stacked--until-small u-spacing--until-small l-grid--7-col l-grid-wrap l-large-break";
-                    $block_img_class = "l-grid-item l-grid-item--s--2-col l-grid-item--l--1-col u-padding--zero--sides";
-                    $block_content_class = "l-grid-item l-grid-item--s--4-col l-grid-item--l--3-col u-flex--justify-start u-padding--left";
-                    $block_title_class = "u-theme--color--dark u-font--primary--l";
-                    $block_meta_class = "u-theme--color--base";
+                    $block_group_class    = "u-flex--justify-start";
+                    $block_class          = "c-block__stacked--until-small u-spacing--until-small l-grid--7-col l-grid-wrap l-large-break";
+                    $block_img_class      = "l-grid-item l-grid-item--s--2-col l-grid-item--l--1-col u-padding--zero--sides";
+                    $block_content_class  = "l-grid-item l-grid-item--s--4-col l-grid-item--l--3-col u-flex--justify-start u-padding--left";
+                    $block_title_class    = "u-theme--color--dark u-font--primary--l";
+                    $block_meta_class     = "u-theme--color--base";
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
                 @endwhile
                 {!! wp_reset_query() !!}
                 {!! wp_reset_postdata() !!}
               </div>
-            @elseif ($post_feed_list == 'post_feed_list_custom')
+            @elseif ( $post_feed_list == 'post_feed_list_custom' )
               @php
                 $posts = $post_feed_list_custom;
+                $posts = new WP_Query(array(
+                  'post_type'       => 'post',
+                  'posts_per_page'  => $post_feed_list_count,
+                  'post_status'     => 'publish',
+                  'category__in'    => $post_feed_list_category,
+                  'order_by'        => 'date',
+                  'offset'          => $post_feed_list_offset
+                ));
               @endphp
               <div class="c-block-wrap__content u-spacing--double">
                 @foreach($posts as $post)
                   @php
-                    $picture = NULL;
-                    $id = $post;
-                    $title = get_the_title($id);
-                    $link = get_permalink($id);
-                    $date = date('F j, Y', strtotime(get_the_date('', $id)));
-                    $category = get_the_category($id);
+                    $picture    = NULL;
+                    $id         = $post;
+                    $title      = get_the_title($id);
+                    $link       = get_permalink($id);
+                    $date       = date('F j, Y', strtotime(get_the_date('', $id)));
+                    $category   = get_the_category($id);
                     if ($category) {
                       if (class_exists('WPSEO_Primary_Term')) {
                         $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
@@ -174,7 +190,7 @@
                         $category = $category[0]->name;
                       }
                     }
-                    $header_background_image = get_post_meta($id, 'header_background_image', true);
+                    $header_background_image = get_alps_field( 'header_background_image', $id );
                     if (!empty($header_background_image)) {
                       $thumb_id = $header_background_image;
                     } else if (get_post_thumbnail_id($id)) {
@@ -184,25 +200,25 @@
                     }
                     if ($thumb_id && $post_feed_list_round == 'true') {
                       $block_img_wrap_class = "u-round u-space--left";
-                      $picture = true;
-                      $thumb_size = 'thumbnail';
-                      $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
-                      $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-                      $image_break_m = "500";
-                      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                      $picture              = true;
+                      $thumb_size           = 'thumbnail';
+                      $image_s              = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
+                      $image_m              = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                      $image_break_m        = '500';
+                      $alt                  = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                     } else if ($thumb_id) {
-                      $picture = true;
-                      $thumb_size = 'horiz__4x3';
-                      $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-                      $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
-                      $image_break_m = "500";
-                      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                      $picture              = true;
+                      $thumb_size           = 'horiz__4x3';
+                      $image_s              = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                      $image_m              = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
+                      $image_break_m        = '500';
+                      $alt                  = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                     }
-                    $block_class = "c-block__stacked--until-small u-spacing--until-small l-grid--7-col l-grid-wrap l-large-break";
-                    $block_img_class = "l-grid-item l-grid-item--s--2-col l-grid-item--l--1-col u-padding--zero--sides";
-                    $block_content_class = "l-grid-item l-grid-item--s--4-col l-grid-item--l--3-col u-flex--justify-start u-padding--left";
-                    $block_title_class = "u-theme--color--dark u-font--primary--l";
-                    $block_meta_class = "u-theme--color--base";
+                    $block_class          = "c-block__stacked--until-small u-spacing--until-small l-grid--7-col l-grid-wrap l-large-break";
+                    $block_img_class      = "l-grid-item l-grid-item--s--2-col l-grid-item--l--1-col u-padding--zero--sides";
+                    $block_content_class  = "l-grid-item l-grid-item--s--4-col l-grid-item--l--3-col u-flex--justify-start u-padding--left";
+                    $block_title_class    = "u-theme--color--dark u-font--primary--l";
+                    $block_meta_class     = "u-theme--color--base";
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
                 @endforeach
@@ -237,15 +253,15 @@
                 @endif
               </div>
             @endif
-            @if ($post_feed_full_featured == 'post_feed_full_featured_true')
+            @if ( $post_feed_full_featured == 'post_feed_full_featured_true' )
               <div class="c-block-wrap__content u-spacing">
                 @php
-                  $picture = NULL;
-                  $id = $post_feed_full_featured_array[0];
-                  $title = get_the_title($id);
-                  $link = get_permalink($id);
-                  $date = date('F j, Y', strtotime(get_the_date('', $id)));
-                  $category = get_the_category($id);
+                  $picture    = NULL;
+                  $id         = $post_feed_full_featured_array;
+                  $title      = get_the_title($id);
+                  $link       = get_permalink($id);
+                  $date       = date('F j, Y', strtotime(get_the_date('', $id)));
+                  $category   = get_the_category($id);
                   if ($category) {
                     if (class_exists('WPSEO_Primary_Term')) {
                       $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
@@ -261,7 +277,7 @@
                       $category = $category[0]->name;
                     }
                   }
-                  $header_background_image = get_post_meta($id, 'header_background_image', true);
+                  $header_background_image = get_alps_field( 'header_background_image', $id );
                   if (!empty($header_background_image)) {
                     $thumb_id = $header_background_image;
                   } else if (get_post_thumbnail_id($id)) {
@@ -270,21 +286,21 @@
                     $thumb_id = NULL;
                   }
                   if ($thumb_id) {
-                    $picture = true;
-                    $thumb_size = 'horiz__4x3';
-                    $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-                    $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
-                    $image_l = wp_get_attachment_image_src($thumb_id, $thumb_size . '--l')[0];
-                    $image_break_m = "500";
-                    $image_break_l = "900";
-                    $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                    $picture        = true;
+                    $thumb_size     = 'horiz__4x3';
+                    $image_s        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                    $image_m        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
+                    $image_l        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--l')[0];
+                    $image_break_m  = '500';
+                    $image_break_l  = '900';
+                    $alt            = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                   }
-                  $block_class = "c-block__inline c-media-block__inine c-block--reversed c-media-block--reversed l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7";
+                  $block_class          = "c-block__inline c-media-block__inine c-block--reversed c-media-block--reversed l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7";
                   $block_img_wrap_class = NULL;
-                  $block_img_class = "l-grid-item l-grid-item--s--3-col u-padding--zero--sides";
-                  $block_content_class = "l-grid-item l-grid-item--s--3-col u-border-left--black--at-large u-theme--border-color--darker--left u-color--gray u-background-color--gray--light can-be--dark-dark u-padding--top u-padding--bottom u-flex--justify-between";
-                  $block_title_class = "u-theme--color--dark u-font--primary--l";
-                  $block_meta_class = "u-theme--color--base";
+                  $block_img_class      = "l-grid-item l-grid-item--s--3-col u-padding--zero--sides";
+                  $block_content_class  = "l-grid-item l-grid-item--s--3-col u-border-left--black--at-large u-theme--border-color--darker--left u-color--gray u-background-color--gray--light can-be--dark-dark u-padding--top u-padding--bottom u-flex--justify-between";
+                  $block_title_class    = "u-theme--color--dark u-font--primary--l";
+                  $block_meta_class     = "u-theme--color--base";
                 @endphp
                 @include('patterns.01-molecules.blocks.media-block')
                 {!! wp_reset_postdata() !!}
@@ -299,24 +315,24 @@
           <div class="l-grid-item u-padding--zero--sides u-flex">
             @php
               $posts = new WP_Query(array(
-                'post_type' => 'post',
-                'posts_per_page' => 6,
-                'post_status' => 'publish',
-                'category__in' => $post_feed_full_category,
-                'order_by' => 'date',
-                'post__not_in' => $post_feed_full_featured_array,
-                'offset' => $post_feed_full_offset
+                'post_type'       => 'post',
+                'posts_per_page'  => 6,
+                'post_status'     => 'publish',
+                'category__in'    => $post_feed_full_category,
+                'order_by'        => 'date',
+                'post__not_in'    => $post_feed_full_featured_array,
+                'offset'          => $post_feed_full_offset
               ));
             @endphp
             @while ($posts->have_posts())
               @php
                 $posts->the_post();
-                $picture = NULL;
-                $id = get_the_ID();
-                $title = get_the_title($id);
-                $link = get_permalink($id);
-                $date = date('F j, Y', strtotime(get_the_date('', $id)));
-                $category = get_the_category($id);
+                $picture    = NULL;
+                $id         = get_the_ID();
+                $title      = get_the_title($id);
+                $link       = get_permalink($id);
+                $date       = date('F j, Y', strtotime(get_the_date('', $id)));
+                $category   = get_the_category($id);
                 if ($category) {
                   if (class_exists('WPSEO_Primary_Term')) {
                     $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
@@ -332,7 +348,7 @@
                     $category = $category[0]->name;
                   }
                 }
-                $header_background_image = get_post_meta($id, 'header_background_image', true);
+                $header_background_image = get_alps_field( 'header_background_image',$id );
                 if (!empty($header_background_image)) {
                   $thumb_id = $header_background_image;
                 } else if (get_post_thumbnail_id($id)) {
@@ -341,21 +357,21 @@
                   $thumb_id = NULL;
                 }
                 if ($thumb_id) {
-                  $picture = true;
-                  $thumb_size = 'horiz__4x3';
-                  $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-                  $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
-                  $image_break_m = "500";
-                  $image_break_l = NULL;
-                  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                  $picture        = true;
+                  $thumb_size     = 'horiz__4x3';
+                  $image_s        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                  $image_m        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
+                  $image_break_m  = '500';
+                  $image_break_l  = NULL;
+                  $alt            = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                 }
-                $block_type = get_post_format($id);
-                $block_class = "c-block__stacked c-media-block__stacked l-grid-wrap l-grid--7-col l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col";
+                $block_type           = get_post_format($id);
+                $block_class          = "c-block__stacked c-media-block__stacked l-grid-wrap l-grid--7-col l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col";
                 $block_img_wrap_class = NULL;
-                $block_img_class = "l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col u-padding--zero--sides u-space--right";
-                $block_content_class = "l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col u-border--left";
-                $block_title_class = "u-theme--color--dark u-font--primary--s";
-                $block_meta_class = "u-theme--color--base u-font--secondary--xs";
+                $block_img_class      = "l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col u-padding--zero--sides u-space--right";
+                $block_content_class  = "l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col u-border--left";
+                $block_title_class    = "u-theme--color--dark u-font--primary--s";
+                $block_meta_class     = "u-theme--color--base u-font--secondary--xs";
               @endphp
               @include('patterns.01-molecules.blocks.media-block')
             @endwhile
@@ -386,12 +402,12 @@
                 $post_feed_archive_count = 10;
               }
               $archive_posts = new WP_Query(array(
-                'post_type' => 'post',
-                'posts_per_page' => $post_feed_archive_count,
-                'post_status' => 'publish',
-                'category__in' => $post_feed_archive_category,
-                'order_by' => 'date',
-                'offset' => $post_feed_archive_offset
+                'post_type'       => 'post',
+                'posts_per_page'  => $post_feed_archive_count,
+                'post_status'     => 'publish',
+                'category__in'    => $post_feed_archive_category,
+                'order_by'        => 'date',
+                'offset'          => $post_feed_archive_offset
               ));
             @endphp
             @if ($archive_posts->have_posts())
@@ -399,12 +415,12 @@
                 @while ($archive_posts->have_posts())
                   @php
                     $archive_posts->the_post();
-                    $picture = NULL;
-                    $id = get_the_ID();
-                    $title = get_the_title($id);
-                    $link = get_permalink($id);
-                    $date = date('F j, Y', strtotime(get_the_date('', $id)));
-                    $category = get_the_category($id);
+                    $picture    = NULL;
+                    $id         = get_the_ID();
+                    $title      = get_the_title($id);
+                    $link       = get_permalink($id);
+                    $date       = date('F j, Y', strtotime(get_the_date('', $id)));
+                    $category   = get_the_category($id);
                     if ($category) {
                       if (class_exists('WPSEO_Primary_Term')) {
                         $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
@@ -420,7 +436,7 @@
                         $category = $category[0]->slug;
                       }
                     }
-                    $header_background_image = get_post_meta($id, 'header_background_image', true);
+                    $header_background_image = get_alps_field( 'header_background_image', $id );
                     if (!empty($header_background_image)) {
                       $thumb_id = $header_background_image;
                     } else if (get_post_thumbnail_id($id)) {
@@ -429,19 +445,19 @@
                       $thumb_id = NULL;
                     }
                     if ($thumb_id) {
-                      $picture = true;
-                      $thumb_size = 'horiz__4x3';
-                      $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-                      $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
-                      $image_break_m = "500";
-                      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                      $picture        = true;
+                      $thumb_size     = 'horiz__4x3';
+                      $image_s        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+                      $image_m        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
+                      $image_break_m  = '500';
+                      $alt            = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                     }
-                    $block_type = NULL;
-                    $block_class = "c-block--reversed c-media-block--reversed l-grid-wrap l-grid-wrap--6-of-7  l-grid--7-col";
-                    $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--zero--sides";
-                    $block_content_class = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--3-col u-flex--justify-start u-border--left";
-                    $block_title_class = "u-theme--color--dark u-font--primary--l";
-                    $block_meta_class = "u-theme--color--base";
+                    $block_type           = NULL;
+                    $block_class          = "c-block--reversed c-media-block--reversed l-grid-wrap l-grid-wrap--6-of-7  l-grid--7-col";
+                    $block_img_class      = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--zero--sides";
+                    $block_content_class  = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--3-col u-flex--justify-start u-border--left";
+                    $block_title_class    = "u-theme--color--dark u-font--primary--l";
+                    $block_meta_class     = "u-theme--color--base";
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
                 @endwhile

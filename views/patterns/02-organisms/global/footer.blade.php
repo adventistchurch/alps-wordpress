@@ -1,15 +1,32 @@
 @php
-  $theme_options = get_option('alps_theme_settings');
-  $hide_sabbath = $theme_options['sabbath_hide'];
-  $footer_logo = $theme_options['footer_logo_icon'][0];
-  $footer_text = $theme_options['footer_description'];
-  $footer_copyright = $theme_options['footer_copyright'];
-  $footer_address_street = $theme_options['footer_address_street'];
-  $footer_address_zip = $theme_options['footer_address_zip'];
-  $footer_address_city = $theme_options['footer_address_city'];
-  $footer_address_state = $theme_options['footer_address_state'];
-  $footer_address_country = $theme_options['footer_address_country'];
-  $footer_address_phone = $theme_options['footer_phone'];
+
+  $hide_sabbath                 = get_alps_option( 'sabbath_hide' );
+  $footer_logo                  = get_alps_option( 'footer_logo_icon' );
+  $footer_text                  = get_alps_option( 'footer_description' );
+  $footer_copyright             = get_alps_option( 'footer_copyright' );
+  // CARBON FIELDS STORES COMPLEX FIELDS WITH A MULTIDIMENSIONAL FORMAT
+  $footer_address               = get_alps_option( 'footer_address' );
+  if ( !empty( $footer_address ) )  {
+
+    //if ( is_multidimensional( $footer_address ) ) {
+      $footer_address_street      = $footer_address['footer_address_street'];
+      $footer_address_city        = $footer_address['footer_address_city'];
+      $footer_address_state       = $footer_address['footer_address_state'];
+      $footer_address_zip         = $footer_address['footer_address_zip'];
+      $footer_address_country     = $footer_address['footer_address_country'];
+      $footer_address_phone       = $footer_address['footer_phone'];
+
+    //}
+  }
+  else { // PIKLIST
+
+    $footer_address_street      = get_alps_option( 'footer_address_street' );
+    $footer_address_city        = get_alps_option( 'footer_address_city');
+    $footer_address_state       = get_alps_option( 'footer_address_state' );
+    $footer_address_zip         = get_alps_option( 'footer_address_zip' );
+    $footer_address_country     = get_alps_option( 'footer_address_country' );
+    $footer_address_phone       = get_alps_option( 'footer_phone' );
+  }
 @endphp
 @if (is_active_sidebar('footer-region'))
   <div class="c-footer-widgets u-spacing">
@@ -29,7 +46,7 @@
     <div class="l-grid-item l-grid-item--m--3-col l-grid-item--l--2-col c-footer__secondary-nav">
       @include('patterns.01-molecules.navigation.footer-secondary-navigation')
     </div> <!-- /.c-footer__secondary-nav -->
-    @if ($hide_sabbath == 'true')
+    @if ($hide_sabbath == true )
       <div class="l-grid-item--7-col l-grid-item--m--1-col c-footer__logo u-path-fill--white">
         @if ($footer_logo)
           <img class="style-svg" src="{{ wp_get_attachment_url($footer_logo) }}" alt="{{ get_post_meta($footer_logo, '_wp_attachment_image_alt', true) }}">

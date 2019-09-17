@@ -1,6 +1,5 @@
 <?php
 
-
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
@@ -44,7 +43,7 @@ function crb_attach_front_page_fields() {
         ->set_conditional_logic( array(
           array(
               'field' => 'content_block',
-              'value' => 'freeform', 
+              'value' => 'freeform',
           ) ) ),
        Field::make( 'association', 'content_block_relationship', __( 'Relationship Content Block' ) )
         ->set_types( array(
@@ -60,9 +59,9 @@ function crb_attach_front_page_fields() {
         ->set_conditional_logic( array(
         array(
             'field' => 'content_block',
-            'value' => 'relationship', 
+            'value' => 'relationship',
         ) ) ),
-    ) 
+    )
   );
 
   Container::make( 'post_meta', 'ALPS: Home - Story Block' )
@@ -96,5 +95,5 @@ function crb_attach_front_page_fields() {
       Field::make( 'text', 'sb_cta', __( 'Call to Action Text' ) )
         ->set_width( 50 ),
   ) );
-    
+
 }

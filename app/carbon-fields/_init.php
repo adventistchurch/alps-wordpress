@@ -1,4 +1,6 @@
 <?php
+// SET V3 FOR PLUGIN TO READ
+define( 'ALPS_V3', true );
 
 require_once( 'cf-theme-options.php' );
 require_once( 'cf-global.php' );
@@ -61,7 +63,7 @@ function get_alps_option( $field ) {
 	}
 	if ( is_array( $option ) ) {
 		// RETURN SINGLE KEY/VAL ARRAY AS VAL (IMAGES)
-		if ( count( $option ) == 1 ) { 
+		if ( count( $option ) == 1 ) {
 			return $option[0];
 		} else {
 			// RETURN COMPLETE ARRAY
@@ -78,7 +80,7 @@ function is_multidimensional(array $array) {
 }
 
 $cf = get_option( 'alps_cf_converted' );
-if ( !$cf ) { 
+if ( !$cf ) {
 	function alps_admin_notice__cf_upgrade() {
 		$url = add_query_arg( array( 'action' => 'alps_convert_plugin' ), admin_url( 'admin.php' ));
     ?>
@@ -87,7 +89,7 @@ if ( !$cf ) {
 			<p style="font-size:22px"><?php _e( '
 				Clicking the link below will run an upgrade script. This will download, install and run a converter plugin. After running, the plugin will uninstall and delete itself, and remove the Piklist plugin completely from your site.
 			' ); ?></p>
-      <p style="font-size:22px"><?php _e( '<a href="'. $url . '">click here to install and run the field converter plugin</a>.' ); ?></p>				
+      <p style="font-size:22px"><?php _e( '<a href="'. $url . '">click here to install and run the field converter plugin</a>.' ); ?></p>
     </div>
     <?php
 	}
@@ -97,7 +99,7 @@ if ( !$cf ) {
 	function alps_convert_plugin() {
 		$plugin_slug 			= 'carbon-fields-converter-master/alps-fields-converter.php';
 		$plugin_zip 			= 'https://github.com/adventistchurch/carbon-fields-converter/archive/master.zip';
-      
+
 		if ( is_plugin_installed( $plugin_slug ) ) {
 			upgrade_plugin( $plugin_slug );
 			$installed = true;
@@ -110,7 +112,7 @@ if ( !$cf ) {
 			$activate = activate_plugin( $plugin_slug );
 			if ( is_wp_error( $activate ) ) {
 				echo '<br>' . $activate->get_error_message();
-			} 
+			}
 			else {
 				deactivate_plugins( array( $plugin_slug, 'piklist/piklist.php' ) );
 				// NOW NUKE THE PIKLIST & CONVERTER PLUGINS & THEME CONFIG FILES
@@ -130,7 +132,7 @@ if ( !$cf ) {
 			echo 'Could not install the new plugin.';
 		}
 	}
-   
+
 	function is_plugin_installed( $slug ) {
 		if ( ! function_exists( 'get_plugins' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -142,7 +144,7 @@ if ( !$cf ) {
 			return false;
 		}
 	}
- 
+
 	function install_plugin( $plugin_zip ) {
 		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 		wp_cache_flush();
@@ -150,7 +152,7 @@ if ( !$cf ) {
 		$installed = $upgrader->install( $plugin_zip );
 		return $installed;
 	}
- 
+
 	function upgrade_plugin( $plugin_slug ) {
 		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 		wp_cache_flush();
@@ -166,7 +168,7 @@ function alps_admin_notice__alps_update_complete() {
 			<p style="font-size:28px"><?php _e( 'ALPS: The update is complete.' ) ?></p>
 			<p style="font-size:22px"><?php _e( '
 				The converter plugin has run and updated your ALPS powered site. This plugin has removed both itself and Piklist from your site.
-			' ); ?></p>    
+			' ); ?></p>
 		</div>
     <?php
 		}
@@ -180,8 +182,8 @@ function alps_admin_notice__alps_update_complete() {
     foreach ( $objects as $object ) {
       if ( $object != '.' && $object != '..' ) {
         if ( filetype( $dir . '/' . $object ) == 'dir' ) {
-					alps_remove_dir_recursively( $dir . '/' .$object ); 
-				}   
+					alps_remove_dir_recursively( $dir . '/' .$object );
+				}
         else {
 					unlink( $dir . '/' . $object) ;
 				}

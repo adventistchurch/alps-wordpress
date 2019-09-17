@@ -1,35 +1,36 @@
 @php
   use Roots\Sage\Titles;
-  if (!is_home()) {
+  if ( !is_home() && !is_archive() ) {
     global $post;
+    $hide_featured_image        = get_alps_field( 'hide_featured_image' );
+    $header_background_image    = '';
+    $page_header_class          = NULL;
 
-    if (get_post_meta($post->ID, 'header_background_image', true) && !is_archive()) {
-      $header_background_image = get_post_meta($post->ID, 'header_background_image', true);
-      $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
-    } elseif (get_post_thumbnail_id($post->ID) && !is_archive()) {
-      $header_background_image = get_post_thumbnail_id($post->ID);
-      $page_header_class = "c-background-image blended u-background--cover u-gradient--bottom";
-    } else {
-      $header_background_image = "";
-      $page_header_class = NULL;
+    if ( get_post_thumbnail_id( $post->ID ) ) {
+      $header_background_image  = get_post_thumbnail_id( $post->ID );
+      $page_header_class        = 'c-background-image blended u-background--cover u-gradient--bottom';
+    }
+    if ( get_alps_field( 'header_background_image' ) && get_post_thumbnail_id( $post->ID )  && $hide_featured_image ) {
+      $header_background_image  = get_alps_field( 'header_background_image' );
+      $page_header_class        = 'c-background-image blended u-background--cover u-gradient--bottom';
     }
   }
 
   if (is_home()) {
-    $display_title = __("Recent Posts", "alps");
-    $title = NULL;
+    $display_title  = __( 'Recent Posts', 'alps' );
+    $title          = NULL;
   } else if (is_archive()) {
-    if (get_option('alps_theme_settings')['posts_label'] == "true" ) {
-      $kicker = __("Category", "alps");
+    if ( get_alps_option( 'posts_label' ) ) {
+      $kicker       = __( 'Category', 'alps');
     } else {
-      $kicker = NULL;
+      $kicker       = NULL;
     }
-    $display_title = '';
-    $title = single_cat_title( '', false );
+    $display_title  = '';
+    $title          = single_cat_title( '', false );
   } else {
-    $kicker = get_post_meta($post->ID, 'kicker', true);
-    $display_title = get_post_meta($post->ID, 'display_title', true);
-    $title = get_the_title($post->ID);
+    $kicker         = get_alps_field( 'kicker' );
+    $display_title  = get_alps_field( 'display_title' );
+    $title          = get_the_title( $post->ID );
   }
 @endphp
 <header class="c-page-header c-page-header__simple u-theme--background-color--dark @if(isset($page_header_class)){{ $page_header_class }}@endif">

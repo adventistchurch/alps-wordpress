@@ -1,17 +1,19 @@
 @php
-  $theme_options = get_option('alps_theme_settings');
-  $current_language = apply_filters('wpml_current_language', NULL);
-  if ($current_language) {
-    $logo = $theme_options['logo_' . $current_language][0];
-  } else {
-    $logo = $theme_options['logo'][0];
-  }
+$current_language = apply_filters('wpml_current_language', NULL);
 
-  if ($theme_options['dark_theme']) {
-    $header_logo_class = "u-theme--path-fill--base";
-  } else {
-    $header_logo_class = "";
-  }
+if ($current_language) {
+  $logo = get_alps_option( 'logo_' . $current_language );
+} else {
+  $logo = get_alps_option( 'logo' );
+}
+
+if ( !empty( get_alps_option( 'dark_theme' ) )  ) {
+  $dark_theme         = get_alps_option( 'dark_theme' );
+  $header_logo_class  = "u-theme--path-fill--base";
+} else {
+  $header_logo_class = "";
+}
+
 @endphp
 <header class="c-header" role="banner" id="header">
   <div class="c-header--inner">

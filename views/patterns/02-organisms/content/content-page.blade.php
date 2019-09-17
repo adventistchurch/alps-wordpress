@@ -1,7 +1,7 @@
 @php
   global $post;
   // If has sidebar and hide sidebar is not true
-  if (is_active_sidebar('sidebar-page') && get_post_meta($post->ID, 'hide_sidebar', true) != 'true') {
+  if ( is_active_sidebar( 'sidebar-page' ) && !get_alps_field( 'hide_sidebar' ) ) {
     $section_offset = 'u-shift--left--1-col--at-xxlarge';
     $article_offset = 'l-grid-item--xl--3-col';
   } else {

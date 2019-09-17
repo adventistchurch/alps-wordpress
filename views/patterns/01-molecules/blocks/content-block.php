@@ -17,7 +17,7 @@
         if (strlen($excerpt) > $excerpt_length) {
           echo strip_tags(trim(mb_substr($excerpt, 0, $excerpt_length))) . '&hellip;';
         } else {
-          echo strip_tags($excerpt;
+          echo strip_tags($excerpt);
         }
       ?>
     </p>

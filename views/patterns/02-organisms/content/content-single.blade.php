@@ -1,16 +1,20 @@
 @php
   global $post;
-  if (get_post_meta($post->ID, 'hide_sidebar', true) != 'true') {
+  if ( get_alps_field( 'hide_sidebar' ) != true ) {
+    $has_sidebar = false;
     $section_offset = 'u-shift--left--1-col--at-xxlarge';
     $article_offset = 'l-grid-item--xl--3-col';
   } else {
+    $has_sidebar = true;
     $section_offset = 'u-shift--left--1-col--at-large';
     $article_offset = '';
   }
 
-  if (get_post_meta($post->ID, 'hide_dropcap', true) != 'true') {
+  if ( get_alps_field( 'hide_dropcap' ) != true ) {
+    $has_dropcap = false;
     $classes = "has-dropcap";
   } else {
+    $has_dropcap = true;
     $classes = "";
   }
 @endphp
@@ -22,7 +26,7 @@
       @include('patterns.02-organisms.sections.article-footer')
     </article>
   </div>
-  @if (get_post_meta($post->ID, 'hide_sidebar', true) != 'true')
+  @if ( !$has_sidebar )
     <div class="c-sidebar l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col u-padding--zero--sides">
       @include('patterns.02-organisms.asides.related-stories')
     </div>

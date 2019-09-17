@@ -1,9 +1,8 @@
 @php
-  $theme_options = get_option('alps_theme_settings');
-  $site_branding_statement = '';
-  $global_branding_statement = '';
-  $site_branding_statement = $theme_options['site_branding_statement'];
-  $global_branding_statement = $theme_options['global_branding_statement'];
+  $site_branding_statement    = '';
+  $global_branding_statement  = '';
+  $site_branding_statement    = get_alps_option( 'site_branding_statement' );
+  $global_branding_statement  = get_alps_option( 'global_branding_statement' ) ;
 @endphp
 <div class="c-drawer l-grid l-grid--7-col">
   <div class="c-drawer__toggle js-toggle-parent u-theme--background-color-trans--darker">

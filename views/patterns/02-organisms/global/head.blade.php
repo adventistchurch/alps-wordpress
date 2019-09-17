@@ -1,6 +1,5 @@
 @php
-  $theme_options = get_option('alps_theme_settings');
-  $theme_color = $theme_options['theme_color'];
+  $theme_color = get_alps_option( 'theme_color' );
 @endphp
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
