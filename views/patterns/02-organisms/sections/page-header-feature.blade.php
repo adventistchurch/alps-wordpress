@@ -19,7 +19,7 @@
   $block_type   = get_post_format( $id );
   $date         = date('F j, Y', strtotime(get_the_date('', $id)));
 
-  $display_title = get_alps_field( 'display_title'. $id );
+  $display_title = get_alps_field( 'display_title', $id );
   if ( !empty( $display_title ) ) {
     $title = $display_title;
   } else {

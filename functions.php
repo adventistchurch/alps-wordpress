@@ -559,7 +559,20 @@ function get_alps_field( $field, $id = NULL ) {
     }
     $cf = get_option( 'alps_cf_converted' );
     if ( $cf ) {
-        return carbon_get_post_meta( $id, $field );
+        $field_data = carbon_get_post_meta( $id, $field );
+        if ( !empty( $field_data ) ) {
+            if ( is_array( $field_data ) ) {
+               if ( count( $field_data ) == 1 ) {
+                    return $field_data[0];
+                } else {
+                    // RETURN COMPLETE ARRAY
+                    return $field_data;
+                }
+            }
+        }
+        else {
+            return $field_data;
+        }
     } else {
         return get_post_meta( $id, $field, true );
     }
