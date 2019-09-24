@@ -1,8 +1,16 @@
 @php
-  $related = get_post_meta($post->ID, 'related', true);
-  $related_grid = get_post_meta($post->ID, 'related_grid', true);
-  $related_image = get_post_meta($post->ID, 'related_image', true);
-  $related_image_round = get_post_meta($post->ID, 'related_image_round', true);
+  $cf_  = '';
+  $cf   = get_option( 'alps_cf_converted' );
+  if ( $cf ) {
+    $cf_ = '_';
+  }
+  $related              = get_post_meta( $post->ID, $cf_.'related', true );
+  $related_grid         = get_post_meta( $post->ID, $cf_.'related_grid', true );
+  $related_image        = get_post_meta( $post->ID, $cf_.'related_image', true );
+  $related_image_round  = get_post_meta( $post->ID, $cf_.'related_image_round', true );
+
+
+
   if ($related == 'related_top_level')  {
     // Loop of pages for top level pages
     $pages = get_pages(
@@ -26,7 +34,20 @@
     );
   } elseif ($related == 'related_custom') {
     // Loop of selected pages
-    $pages = get_post_meta($post->ID, 'related_custom_value');
+    if ( $cf ) {
+      // CARBON FIELDS HAS COMPELTELY DIFFERENT FORMAT HERE
+      $assigned = carbon_get_post_meta( get_the_id(), 'related_custom_value' );
+      $pages = [];
+      foreach ( $assigned as $k => $entry ) {
+        foreach ( $entry as $key => $val ) {
+          if ( !empty($val) ) {
+            if ( $key == 'id' ) array_push( $pages, $val );
+          }
+        }
+      }
+    } else {
+      $pages = get_post_meta($post->ID, 'related_custom_value' );
+    }
   } else {
     $pages = false;
   }

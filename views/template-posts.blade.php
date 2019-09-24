@@ -4,38 +4,67 @@
 @php
   global $post;
   $post->ID = get_queried_object_id();
-  // List
-  $post_feed_list                 = get_alps_field( 'post_feed_list' );
-  $post_feed_list_title           = get_alps_field( 'post_feed_list_title' );
-  $post_feed_list_link            = get_alps_field( 'post_feed_list_link' );
-  if ( !empty( $CF_ACTIVE ) ) {
-    $post_feed_list_custom        = get_post_meta( 'post_feed_list_custom_array', $post->ID );
-    $post_feed_list_category      = get_post_meta( 'post_feed_list_category_array', $post->ID );
+  $cf       = get_option( 'alps_cf_converted' );
+
+  if ( $cf )  {
+
+    $post_feed_list                 = carbon_get_post_meta( $post->ID, 'post_feed_list' );
+    $post_feed_list_title           = carbon_get_post_meta( $post->ID, 'post_feed_list_title' );
+    $post_feed_list_link            = carbon_get_post_meta( $post->ID, 'post_feed_list_link' );
+    $post_feed_list_custom          = carbon_get_post_meta( $post->ID, 'post_feed_list_custom_array' );
+    $post_feed_list_category        = carbon_get_post_meta( $post->ID, 'post_feed_list_category_array' );
+    $post_feed_list_count           = carbon_get_post_meta( $post->ID, 'post_feed_list_count' );
+    $post_feed_list_offset          = carbon_get_post_meta( $post->ID, 'post_feed_list_offset' );
+    $post_feed_list_round           = carbon_get_post_meta( $post->ID, 'post_feed_list_round_image' );
+
+    // PASS ID
+    $post_feed_list_category        = $post_feed_list_category[0]['id'];
+
+    // Full Width
+    $post_feed_full                 = carbon_get_post_meta( $post->ID, 'post_feed_full' );
+    $post_feed_full_title           = carbon_get_post_meta( $post->ID, 'post_feed_full_title' );
+    $post_feed_full_link            = carbon_get_post_meta( $post->ID, 'post_feed_full_link' );
+    $post_feed_full_category        = carbon_get_post_meta( $post->ID, 'post_feed_full_category_array' );
+    $post_feed_full_featured        = carbon_get_post_meta( $post->ID, 'post_feed_full_featured' );
+    $post_feed_full_featured_array  = carbon_get_post_meta( $post->ID, 'post_feed_full_featured_array' );
+    $post_feed_full_offset          = carbon_get_post_meta( $post->ID, 'post_feed_full_offset' );
+
+    // PASS ID
+    $post_feed_full_featured_array  = $post_feed_full_featured_array[0]['id'];
+    $post_feed_full_category        = $post_feed_full_category[0]['id'];
+
+    // Archive
+    $post_feed_archive              = carbon_get_post_meta( $post->ID, 'post_feed_archive' );
+    $post_feed_archive_title        = carbon_get_post_meta( $post->ID, 'post_feed_archive_title' );
+    $post_feed_archive_link         = carbon_get_post_meta( $post->ID, 'post_feed_archive_link' );
+    $post_feed_archive_category     = carbon_get_post_meta( $post->ID, 'post_feed_archive_category_array' );
+    $post_feed_archive_count        = carbon_get_post_meta( $post->ID, 'post_feed_archive_count' );
+    $post_feed_archive_offset       = carbon_get_post_meta( $post->ID, 'post_feed_archive_offset' );
+
+    // PASS ID
+    $post_feed_archive_category     = $post_feed_archive_category[0]['id'];
+
+
   } else {
-    $post_feed_list_custom        = get_alps_field( 'post_feed_list_custom_array' );
-    $post_feed_list_category      = get_alps_field( 'post_feed_list_category_array' );
 
+    $post_feed_list                 = get_alps_field( 'post_feed_list' );
+    $post_feed_list_title           = get_alps_field( 'post_feed_list_title' );
+    $post_feed_list_link            = get_alps_field( 'post_feed_list_link' );
+    $post_feed_list_custom          = get_post_meta( $post->ID , 'post_feed_list_custom_array' );
+    $post_feed_list_category        = get_alps_field( 'post_feed_list_category_array' );
+    $post_feed_list_count           = get_alps_field( 'post_feed_list_count' );
+    $post_feed_list_offset          = get_alps_field( 'post_feed_list_offset' );
+    $post_feed_list_round           = get_alps_field( 'post_feed_list_round_image' );
+
+    // Archive
+    $post_feed_archive              = get_alps_field( 'post_feed_archive' );
+    $post_feed_archive_title        = get_alps_field( 'post_feed_archive_title' );
+    $post_feed_archive_link         = get_alps_field( 'post_feed_archive_link' );
+    $post_feed_archive_category     = get_alps_field( 'post_feed_archive_category_array' );
+    $post_feed_archive_count        = get_alps_field( 'post_feed_archive_count' );
+    $post_feed_archive_offset       = get_alps_field( 'post_feed_archive_offset' );
   }
-  $post_feed_list_count           = get_alps_field( 'post_feed_list_count' );
-  $post_feed_list_offset          = get_alps_field( 'post_feed_list_offset' );
-  $post_feed_list_round           = get_alps_field( 'post_feed_list_round_image' );
 
-  // Full Width
-  $post_feed_full                 = get_alps_field( 'post_feed_full' );
-  $post_feed_full_title           = get_alps_field( 'post_feed_full_title' );
-  $post_feed_full_link            = get_alps_field( 'post_feed_full_link' );
-  $post_feed_full_category        = get_alps_field( 'post_feed_full_category_array' );
-  $post_feed_full_featured        = get_alps_field( 'post_feed_full_featured' );
-  $post_feed_full_featured_array  = get_alps_field( 'post_feed_full_featured_array' );
-  $post_feed_full_offset          = get_alps_field( 'post_feed_full_offset' );
-
-  // Archive
-  $post_feed_archive              = get_alps_field( 'post_feed_archive' );
-  $post_feed_archive_title        = get_alps_field( 'post_feed_archive_title' );
-  $post_feed_archive_link         = get_alps_field( 'post_feed_archive_link' );
-  $post_feed_archive_category     = get_alps_field( 'post_feed_archive_category_array' );
-  $post_feed_archive_count        = get_alps_field( 'post_feed_archive_count' );
-  $post_feed_archive_offset       = get_alps_field( 'post_feed_archive_offset' );
 @endphp
 @extends('layouts.app')
 @section('content')
@@ -43,7 +72,6 @@
   @while(have_posts())
     {!! the_post() !!}
     @php
-
       if ( is_active_sidebar( 'sidebar-posts' ) && !get_alps_field( 'hide_sidebar' ) ) {
         $section_offset = 'u-shift--left--1-col--at-xxlarge';
         $article_offset = 'l-grid-item--xl--3-col';
@@ -79,12 +107,12 @@
             @endif
             @if ( $post_feed_list == 'post_feed_list_category' )
               @php
-                if ($post_feed_list_count) {
+                if ( $post_feed_list_count ) {
                   $post_feed_list_count = $post_feed_list_count;
                 } else {
                   $post_feed_list_count = 3;
                 }
-                $posts = new WP_Query(array(
+                $feed_posts = new WP_Query(array(
                   'post_type'       => 'post',
                   'posts_per_page'  => $post_feed_list_count,
                   'post_status'     => 'publish',
@@ -94,10 +122,10 @@
                 ));
               @endphp
               <div class="c-block-wrap__content u-spacing--double">
-                @while ($posts->have_posts())
+                @while ($feed_posts->have_posts())
                   @php
-                    $posts->the_post();
-                    $picture = NULL;
+                    $feed_posts->the_post();
+                    $picture    = NULL;
                     $id         = get_the_ID();
                     $title      = get_the_title($id);
                     $link       = get_permalink($id);
@@ -156,24 +184,42 @@
               </div>
             @elseif ( $post_feed_list == 'post_feed_list_custom' )
               @php
-                $posts = $post_feed_list_custom;
-                $posts = new WP_Query(array(
-                  'post_type'       => 'post',
-                  'posts_per_page'  => $post_feed_list_count,
+                // PASS ONLY VALUES TO POST__IN
+                if ( !$cf ) {
+                  $custom_post_ids = [];
+                  foreach ( $post_feed_list_custom as $index => $id ) {
+                    $custom_post_ids[] = $id;
+                  }
+                  $post_feed_list_custom = $custom_post_ids;
+                } else {
+                  $assigned = $post_feed_list_custom;
+                  $selected = [];
+                  foreach ( $assigned as $k => $entry ) {
+                    foreach ( $entry as $key => $val ) {
+                      if ( !empty($val) ) {
+                        if ( $key == 'id' ) array_push( $selected, $val );
+                      }
+                    }
+                  }
+                  $post_feed_list_custom = $selected;
+                }
+                $custom_posts = new WP_Query(array(
                   'post_status'     => 'publish',
-                  'category__in'    => $post_feed_list_category,
-                  'order_by'        => 'date',
-                  'offset'          => $post_feed_list_offset
+                  'post__in'        => $post_feed_list_custom,
+                  'posts_per_page'  => count( $post_feed_list_custom ),
                 ));
+
               @endphp
               <div class="c-block-wrap__content u-spacing--double">
-                @foreach($posts as $post)
+                @while ($custom_posts->have_posts())
                   @php
+                    $custom_posts->the_post();
                     $picture    = NULL;
-                    $id         = $post;
+                    $id         = $post->ID;
                     $title      = get_the_title($id);
                     $link       = get_permalink($id);
                     $date       = date('F j, Y', strtotime(get_the_date('', $id)));
+
                     $category   = get_the_category($id);
                     if ($category) {
                       if (class_exists('WPSEO_Primary_Term')) {
@@ -219,9 +265,11 @@
                     $block_content_class  = "l-grid-item l-grid-item--s--4-col l-grid-item--l--3-col u-flex--justify-start u-padding--left";
                     $block_title_class    = "u-theme--color--dark u-font--primary--l";
                     $block_meta_class     = "u-theme--color--base";
+
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
-                @endforeach
+                @endwhile
+                {!! wp_reset_query() !!}
                 {!! wp_reset_postdata() !!}
               </div>
             @endif
@@ -401,6 +449,8 @@
               } else {
                 $post_feed_archive_count = 10;
               }
+
+
               $archive_posts = new WP_Query(array(
                 'post_type'       => 'post',
                 'posts_per_page'  => $post_feed_archive_count,

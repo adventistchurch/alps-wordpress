@@ -87,10 +87,12 @@ add_action( 'carbon_fields_register_fields', 'crb_attach_related_pages' );
 function crb_attach_related_pages() {
   Container::make( 'post_meta', 'ALPS: Related Pages' )
     ->where( 'post_type', '=', 'page' )
+    ->where( 'post_template', '!=', 'views/template-posts.blade.php')
     ->add_fields( array(
       Field::make( 'radio', 'related', __( 'Related Pages Format' ) )
         ->set_help_text( 'Select the format of the related pages.' )
         ->add_options( array(
+          'false'               => 'None',
           'related_top_level'   => 'Show first level child pages only',
           'related_all'         => 'Show child and grandchild pages',
           'related_custom'      => 'Show custom pages'

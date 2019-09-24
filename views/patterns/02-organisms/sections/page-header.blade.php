@@ -6,11 +6,11 @@
     $header_background_image    = '';
     $page_header_class          = NULL;
 
-    if ( get_post_thumbnail_id( $post->ID ) ) {
+    if ( !$hide_featured_image && get_post_thumbnail_id( $post->ID ) ) {
       $header_background_image  = get_post_thumbnail_id( $post->ID );
       $page_header_class        = 'c-background-image blended u-background--cover u-gradient--bottom';
     }
-    if ( get_alps_field( 'header_background_image' ) && get_post_thumbnail_id( $post->ID )  && $hide_featured_image ) {
+    if ( get_alps_field( 'header_background_image' ) ) {
       $header_background_image  = get_alps_field( 'header_background_image' );
       $page_header_class        = 'c-background-image blended u-background--cover u-gradient--bottom';
     }

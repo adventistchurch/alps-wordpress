@@ -558,11 +558,11 @@ function get_alps_field( $field, $id = NULL ) {
         $id = get_queried_object_id();
     }
     $cf = get_option( 'alps_cf_converted' );
-    if ( $cf ) {
+    if ( !empty( $cf ) ) {
         $field_data = carbon_get_post_meta( $id, $field );
         if ( !empty( $field_data ) ) {
             if ( is_array( $field_data ) ) {
-               if ( count( $field_data ) == 1 ) {
+                if ( count( $field_data ) === 1 ) {
                     return $field_data[0];
                 } else {
                     // RETURN COMPLETE ARRAY
@@ -573,7 +573,7 @@ function get_alps_field( $field, $id = NULL ) {
         else {
             return $field_data;
         }
-    } else {
+    } else { // PIKLIST
         return get_post_meta( $id, $field, true );
     }
 }

@@ -35,7 +35,7 @@ function crb_attach_theme_options() {
           ) )
           ->set_width( 33 ),
         Field::make( 'checkbox', 'dark_theme', __( 'Dark Theme' ) )
-          ->set_option_value( 'yes' )
+          ->set_option_value( 'true' )
           ->set_help_text( 'Select if you would like the theme to be dark.' )
           ->set_width( 33 ),
         Field::make( 'checkbox', 'grid_lines', __( 'Grid Lines' ) )
@@ -70,10 +70,14 @@ function crb_attach_theme_options() {
           ->set_option_value( 'true' )
           ->set_help_text( 'Select to display the posts side-by-side.' )
           ->set_width( 33 ),
-         Field::make( 'checkbox', 'posts_grid_3up', __( 'Posts Feed Grid (3up)' ) )
+        Field::make( 'checkbox', 'posts_grid_3up', __( 'Posts Feed Grid (3up)' ) )
           ->set_option_value( 'true' )
           ->set_help_text( 'Select to display the posts 3up at the largest breakpoint. The sidebar must be hidden for the pages to display 3up.' )
-          ->set_width( 33 )
+          ->set_width( 33 ),
+        Field::make( 'checkbox', 'posts_image', __( 'Posts Feed Image' ) )
+          ->set_option_value( 'true' )
+          ->set_help_text( 'Select to display the feature image for the posts.' )
+         ->set_width( 33 ),
       ) )
       ->add_tab( __( 'SABBATH COLUMN' ), array(
 
@@ -89,7 +93,7 @@ function crb_attach_theme_options() {
             ->set_option_value( 'true' )
             ->set_help_text( 'Select to hide the sabbath column.' )
             ->set_width( 33 ),
-        Field::make( 'radio', 'sabbath_hide_screens', 'Subtitle text style' )
+        Field::make( 'radio', 'sabbath_hide_screens', 'Hide the sabbath column at certain screen widths' )
             ->add_options( array(
                 'hide-sabbath--all' => 'Hide the sabbath column for all screen widths.',
                 'hide-sabbath--until-small' => 'Hide the sabbath column at small screens.',

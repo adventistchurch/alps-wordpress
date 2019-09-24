@@ -26,7 +26,9 @@
     $title = get_the_title( $id );
   }
 
-  $header_background_image = get_alps_field( 'header_background_image', $id );
+  $header_background_image = get_alps_field( 'header_background_image' );
+
+
   if (!empty($header_background_image)) {
     $thumb_id = $header_background_image;
   } else if (get_post_thumbnail_id($id)) {
@@ -57,9 +59,8 @@
     }
   }
 
-  $hide_featured_image = get_alps_field( 'hide_featured_image', $id );
 
-  if ($thumb_id && $hide_featured_image != 'true') {
+  if ( $thumb_id && !$hide_featured_image ) {
     $picture        = true;
     $thumb_size     = 'horiz__4x3';
     $image_s        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
