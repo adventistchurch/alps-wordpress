@@ -1,8 +1,15 @@
 @php
   use Roots\Sage\Titles;
+
+  $cf     = get_option( 'alps_cf_converted' );
+  $cf_    = '';
+  if ( $cf ) {
+    $cf_ = '_';
+  }
+
   if ( !is_home() && !is_archive() ) {
     global $post;
-    $hide_featured_image        = get_alps_field( 'hide_featured_image' );
+    $hide_featured_image        = get_post_meta( $post->ID, $cf_.'hide_featured_image', true );
     $header_background_image    = '';
     $page_header_class          = NULL;
 
@@ -10,8 +17,8 @@
       $header_background_image  = get_post_thumbnail_id( $post->ID );
       $page_header_class        = 'c-background-image blended u-background--cover u-gradient--bottom';
     }
-    if ( get_alps_field( 'header_background_image' ) ) {
-      $header_background_image  = get_alps_field( 'header_background_image' );
+    if ( get_post_meta( $post->ID, $cf_.'header_background_image', true ) ) {
+      $header_background_image  = get_post_meta( $post->ID, $cf_.'header_background_image', true );
       $page_header_class        = 'c-background-image blended u-background--cover u-gradient--bottom';
     }
   }
@@ -28,8 +35,8 @@
     $display_title  = '';
     $title          = single_cat_title( '', false );
   } else {
-    $kicker         = get_alps_field( 'kicker' );
-    $display_title  = get_alps_field( 'display_title' );
+    $kicker         = get_post_meta( $post->ID, $cf_.'kicker', true );
+    $display_title  = get_post_meta( $post->ID, $cf_.'display_title', true );
     $title          = get_the_title( $post->ID );
   }
 @endphp

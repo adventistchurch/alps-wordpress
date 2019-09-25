@@ -113,9 +113,34 @@ function crb_attach_related_pages() {
             )
           )
         ),
-       Field::make( 'checkbox', 'make_the_image_round', __( 'Make the Image Round' ) )
+       Field::make( 'checkbox', 'related_grid', __( 'Related Pages Grid' ) )
             ->set_option_value( 'true' )
-            ->set_help_text( __( 'To make the image round, check this box.' ) )
+            ->set_help_text( __( 'Select to display the related pages side-by-side.' ) ),
+       Field::make( 'checkbox', 'related_grid_3up', __( 'Related Pages Grid (3up)' ) )
+            ->set_option_value( 'true' )
+            ->set_help_text( __( 'Select to display the related pages in 3 columns on large screens.' ) )
+            ->set_conditional_logic(
+                array(
+                    array(
+                    'field' => 'related_grid',
+                    'value' => true
+                    )
+                )
+            ),
+      Field::make( 'checkbox', 'related_image', __( 'Related Pages Image' ) )
+            ->set_option_value( 'true' )
+            ->set_help_text( __( 'Select to display the feature image for the related pages.' ) ),
+       Field::make( 'checkbox', 'related_image_round', __( 'Related Pages Round Image' ) )
+            ->set_option_value( 'true' )
+            ->set_help_text( __( 'Select to make the featured image round.' ) )
+            ->set_conditional_logic(
+                array(
+                    array(
+                    'field' => 'related_image',
+                    'value' => true
+                    )
+                )
+            ),
     ) );
 }
 

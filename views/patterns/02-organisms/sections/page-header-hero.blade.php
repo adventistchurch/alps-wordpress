@@ -11,17 +11,21 @@
   if ( $hero_type == 'false' || $hero_type == NULL )  {
     $hero = false;
   } else {
-    $hero = true;
-    $hero_image = [];
+    $hero         = true;
+    $hero_image   = [];
+    $extended     = '';
+    $extended     = get_post_meta( $post->ID, $cf_.'hero_image_extended', true );
+    $scroll_hint  = '';
     if ( $hero_type == 'full' ) {
       array_push( $hero_image,  get_post_meta( $post->ID, $cf_.'hero_image', true ) );
       $block_group_class  = 'u-flex--justify-center u-overlay--dark';
       $block_title_class  = 'l-grid-item--5-col l-grid-item--m--2-col u-font--primary--xl u-flex--justify-center';
       $scroll_class       = '';
-      if ( get_alps_field( 'hero_scroll_hint' ) ) {
+      $scroll_hint        = get_post_meta( $post->ID, $cf_.'hero_scroll_hint', true );
+      if ( $scroll_hint ) {
         $scroll_class = ' has-scroll';
       }
-      if ( get_alps_field( 'hero_image_extended' ) ) {
+      if ( $extended ) {
         $block_content_class  = 'l-grid--7-col l-grid-wrap l-grid-wrap--7-of-7 u-color--white';
         $block_class          = 'c-block__full c-media-block__full' . $scroll_class;
       } else {
@@ -40,7 +44,7 @@
         $block_class        = 'c-block__inset c-media-block__inset';
         $block_title_class  = 'l-grid-item l-grid-item--l--4-col l-grid-item--xl--3-col u-font--primary--xl';
         $block_meta_class   = 'l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col';
-      if ( get_alps_field( 'hero_image_extended' ) ) {
+      if ( $extended ) {
         $block_img_class      = 'l-grid-wrap l-grid-wrap--7-of-7';
         $block_content_class  = 'l-grid--7-col l-grid-wrap l-grid-wrap--7-of-7 u-shift--left--1-col--at-xxlarge u-border-left--white--at-large u-theme--background-color--darker u-color--white';
         $block_group_class    = ' ';
@@ -50,8 +54,10 @@
     }
   }
 @endphp
+
+
 @if ($hero)
-  <header class="c-hero c-page-header c-page-header__feature @if($hero_type == 'column'){{ 'c-page-header__3-col' }}@endif @if( get_alps_field( 'hero_scroll_hint' ) ) {{ $scroll_class }} @endif">
+  <header class="c-hero c-page-header c-page-header__feature @if($hero_type == 'column'){{ 'c-page-header__3-col' }}@endif  {{ $scroll_class }}">
     <div class="c-page-header__content">
       @php
       $hero_data = array();
@@ -72,7 +78,7 @@
             $eyebrow    = $image[ 'hero_kicker_column' ];
             $title      = $image[ 'hero_title_column' ];
             $link       = NULL;
-            if ( $image[ 'hero_link_url_column' ] ) {
+            if ( isset( $image[ 'hero_link_url_column' ] ) ) {
               $link = $image[ 'hero_link_url_column' ];
             }
           } else {
