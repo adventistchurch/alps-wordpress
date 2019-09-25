@@ -1,7 +1,13 @@
 @php
   global $post;
+  $cf   = get_option( 'alps_cf_converted' );
+  $cf_  = '';
+  if ( $cf ) {
+    $cf_ = '_';
+  }
+
   // If has sidebar and hide sidebar is not true
-  if ( is_active_sidebar( 'sidebar-page' ) && !get_alps_field( 'hide_sidebar' ) ) {
+  if ( is_active_sidebar( 'sidebar-page' ) && !get_post_meta( $post->ID, $cf_.'hide_sidebar', true ) ) {
     $section_offset = 'u-shift--left--1-col--at-xxlarge';
     $article_offset = 'l-grid-item--xl--3-col';
   } else {

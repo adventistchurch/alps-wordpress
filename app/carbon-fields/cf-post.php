@@ -28,6 +28,6 @@ function crb_hide_dropcap() {
     ->add_fields( array(
         Field::make( 'checkbox', 'hide_dropcap', __( 'Hide the Dropcap' ) )
             ->set_help_text( 'Hides the dropcap on main content.' )
-            ->set_option_value( 'yes' )
+            ->set_option_value( 'true' )
     ) );
 }

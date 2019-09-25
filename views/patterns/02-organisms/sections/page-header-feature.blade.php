@@ -1,10 +1,15 @@
 @php
   use Roots\Sage\Titles;
   global $post;
+  $cf   = get_option( 'alps_cf_converted' );
+  $cf_  = '';
+  if ( $cf ) {
+    $cf_ = '_';
+  }
 
   if (is_page_template( 'views/template-posts.blade.php' )) {
     $hero_post = get_alps_field( 'hero_featured_post') ;
-    if ( !empty( $CF_ACTIVE ) ) {
+    if ( $cf ) {
       $id = $hero_post[0]['id'];
     } else {
       $id = $hero_post;
@@ -15,19 +20,19 @@
     $link = NULL;
   }
 
-  $kicker       = get_alps_field( 'kicker', $id );
+  $kicker       = get_post_meta( $post->ID, $cf_.'kicker', true );
   $block_type   = get_post_format( $id );
   $date         = date('F j, Y', strtotime(get_the_date('', $id)));
 
-  $display_title = get_alps_field( 'display_title', $id );
+  $display_title = get_post_meta( $post->ID, $cf_.'display_title', true );
   if ( !empty( $display_title ) ) {
     $title = $display_title;
   } else {
     $title = get_the_title( $id );
   }
 
-  $header_background_image = get_alps_field( 'header_background_image' );
-
+  $header_background_image  = get_post_meta( $post->ID, $cf_.'header_background_image', true );
+  $hide_featured_image      = get_post_meta( $post->ID, $cf_.'hide_featured_image', true );
 
   if (!empty($header_background_image)) {
     $thumb_id = $header_background_image;
@@ -60,7 +65,7 @@
   }
 
 
-  if ( $thumb_id && !$hide_featured_image ) {
+  if ( ( $thumb_id && $header_background_image ) || ( $thumb_id && !$header_background_image && !$hide_featured_image ) ) {
     $picture        = true;
     $thumb_size     = 'horiz__4x3';
     $image_s        = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
@@ -92,6 +97,7 @@
     $block_title_class      = "u-color--white u-font--primary--l";
   }
 @endphp
+
 <header class="c-page-header c-page-header__feature">
   <div class="c-page-header__content">
     @include('patterns.01-molecules.blocks.media-block')
