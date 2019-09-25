@@ -77,6 +77,10 @@ function crb_attach_theme_options() {
           ->set_option_value( 'true' )
           ->set_help_text( 'Select to display the feature image for the posts.' )
          ->set_width( 33 ),
+        Field::make( 'checkbox', 'posts_image_round', __( 'Posts Round Images' ) )
+          ->set_option_value( 'true' )
+          ->set_help_text( 'Make the post feed images round.' )
+         ->set_width( 33 ),
       ) )
       ->add_tab( __( 'SABBATH COLUMN' ), array(
 
