@@ -1,5 +1,3 @@
-<h1>FOOTER</h1>
-
 @php
   echo carbon_get_theme_option( 'footer_logo_icon' );
 
