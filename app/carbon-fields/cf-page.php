@@ -118,7 +118,7 @@ function crb_attach_related_pages() {
             ->set_help_text( __( 'Select to display the related pages side-by-side.' ) ),
        Field::make( 'checkbox', 'related_grid_3up', __( 'Related Pages Grid (3up)' ) )
             ->set_option_value( 'true' )
-            ->set_help_text( __( 'Select to display the related pages in 3 columns on large screens. This will only display is the Sabbath column is hidden.' ) )
+            ->set_help_text( __( 'Select to display the related pages in 3 columns on large screens. This will only display if the Sabbath column is hidden.' ) )
             ->set_conditional_logic(
                 array(
                     array(
