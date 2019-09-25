@@ -79,7 +79,7 @@
       $block_img_class      = "l-grid-item l-grid-item--m--3-col l-grid-item--l--4-col u-padding--zero--sides";
       $block_content_class  = "l-grid-item l-grid-item--m--3-col l-grid-item--l--2-col u-theme--border-color--darker--left u-theme--color--lighter u-theme--background-color--darker can-be--dark-dark u-padding--top u-padding--bottom u-flex--align-end";
       $block_title_class    = "u-color--white u-font--primary--l";
-    } elseif ( get_alps_field( 'featured_image_hero_layout' ) == "hero_layout_1_3") {
+    } elseif ( get_post_meta( $post->ID, $cf_.'featured_image_hero_layout', true ) == "hero_layout_1_3") {
       $block_class          = "c-block__inline c-media-block__inine c-block--reversed c-media-block--reversed l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7";
       $block_img_class      = "l-grid-item l-grid-item--m--3-col l-grid-item--l--4-col u-padding--zero--sides";
       $block_content_class  = "l-grid-item l-grid-item--m--3-col l-grid-item--l--2-col u-theme--border-color--darker--left u-theme--color--lighter u-theme--background-color--darker can-be--dark-dark u-padding--top u-padding--bottom u-flex--align-end";
