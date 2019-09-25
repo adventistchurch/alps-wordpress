@@ -11,8 +11,7 @@ function crb_attach_theme_options() {
     ->add_tab( __( 'GLOBAL' ), array(
 
       Field::make( 'separator', 'crb_logo', __( 'Logo' ) ),
-      Field::make( 'image', 'logo', __( 'Logo' ) )
-          ->set_width( 100 ),
+      Field::make( 'image', 'logo', __( 'Logo' ) ),
       Field::make( 'separator', 'crb_theme_colors', __( 'Theme Color Options / Grid' ) ),
       Field::make( 'select', 'theme_color', __( 'Theme Color' ) )
           ->add_options( array(
