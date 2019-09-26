@@ -14,11 +14,11 @@
               <?php dynamic_sidebar('widget_area_primary_top'); ?>
             </div>
           <?php endif; ?>
-          <?php if (get_post_meta($post->ID, 'display_title', true) || get_the_content()): ?>
+          <?php if ( get_alps_field( 'display_title', $post->ID ) || get_the_content() ): ?>
             <div class="pad--primary spacing text">
-              <?php if (get_post_meta($post->ID, 'display_title', true)): ?>
+              <?php if ( get_alps_field( 'display_title', $post->ID ) ): ?>
                 <h2 class="font--tertiary--l theme--primary-text-color">
-                  <?php echo get_post_meta($post->ID, 'display_title', true); ?>
+                  <?php echo get_alps_field( 'display_title', $post->ID ); ?>
                 </h2>
               <?php endif; ?>
               <?php the_content(); ?>

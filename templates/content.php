@@ -1,7 +1,7 @@
 <?php
   $carousel_type = '';
   if (is_page() || is_single()) {
-      $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
+      $carousel_type = get_alps_field( 'carousel_type' );
   }
 ?>
 <div class="layout-container full--until-large">
@@ -31,19 +31,19 @@
               <div class="spacing">
                 <div class="pad">
                   <?php
-                    $title = get_the_title();
-                    $intro = get_post_meta($post->ID, 'intro', true);
-                    $body = strip_tags(get_the_content());
-                    $body = strip_shortcodes($body);
-                    $excerpt_length = 100;
-                    $image = get_post_thumbnail_id();
-                    $button_text = __('Read More', 'sage');
-                    $date = get_the_date();
-                    $button_url = get_the_permalink();
-                    $round_image = 'false';
-                    $thumbnail = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
-                    $thumbnail_round = wp_get_attachment_image_src($image, "square--xs")[0];
-                    $alt = get_post_meta($image, '_wp_attachment_image_alt', true);
+                    $title            = get_the_title();
+                    $intro            = get_alps_field( 'intro', $post->ID );
+                    $body             = strip_tags(get_the_content());
+                    $body             = strip_shortcodes($body);
+                    $excerpt_length   = 100;
+                    $image            = get_post_thumbnail_id();
+                    $button_text      = __('Read More', 'sage');
+                    $date             = get_the_date();
+                    $button_url       = get_the_permalink();
+                    $round_image      = 'false';
+                    $thumbnail        = wp_get_attachment_image_src($image, "horiz__4x3--s")[0];
+                    $thumbnail_round  = wp_get_attachment_image_src($image, "square--xs")[0];
+                    $alt              = get_alps_field( '_wp_attachment_image_alt', $image );
                   ?>
                   <?php include(locate_template('patterns/blocks/block-media.php')); ?>
                 </div>

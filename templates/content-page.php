@@ -1,13 +1,11 @@
 <?php
-  // Featured image
-  $thumb_id = get_post_thumbnail_id();
-  // Image alt
-  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-  $display_title = get_post_meta($post->ID, 'display_title', true);
-  $intro = get_post_meta($post->ID, 'intro', true);
-  $hide_featured_image = get_post_meta($post->ID, 'hide_featured_image', true);
-  $video_url = get_post_meta($post->ID, 'video_url', true);
-  $carousel_type = get_post_meta($post->ID, 'carousel_type', true);
+  $thumb_id             = get_post_thumbnail_id();
+  $alt                  = get_alps_field( '_wp_attachment_image_alt', $thumb_id );
+  $display_title        = get_alps_field( 'display_title' );
+  $intro                = get_alps_field( 'intro' );
+  $hide_featured_image  = get_alps_field( 'hide_featured_image' );
+  $video_url            = get_alps_field( 'video_url' );
+  $carousel_type        = get_alps_field( 'carousel_type' );
 ?>
 <div class="layout-container full--until-large">
   <div class="flex-container cf">

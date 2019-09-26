@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Separator
+   ========================================================================== */
+
+.cf-separator .cf-field__head {
+	.cf-container-term-meta & {
+		display: none;
+	}
+}
+
+.cf-separator .cf-field__body {
+	.cf-container-term-meta & {
+		position: absolute;
+		left: 0;
+	}
+}

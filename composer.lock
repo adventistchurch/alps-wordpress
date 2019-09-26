@@ -1,0 +1,151 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ab2eb5361e22f07ea5945a9b378acc9b",
+    "packages": [
+        {
+            "name": "htmlburger/carbon-fields",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/htmlburger/carbon-fields.git",
+                "reference": "6425d314b1c9bcdcc83660ac400e20e57582ddd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/6425d314b1c9bcdcc83660ac400e20e57582ddd6",
+                "reference": "6425d314b1c9bcdcc83660ac400e20e57582ddd6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.7",
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Carbon_Fields\\": "core/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "htmlBurger",
+                    "role": "Developer",
+                    "email": "wordpress@htmlburger.com",
+                    "homepage": "https://htmlburger.com/"
+                },
+                {
+                    "name": "Marin Atanasov",
+                    "role": "Developer",
+                    "email": "contact@marinatanasov.com",
+                    "homepage": "http://marinatanasov.com/"
+                },
+                {
+                    "name": "Siyan Panayotov",
+                    "role": "Developer",
+                    "homepage": "http://siyanpanayotov.com/"
+                },
+                {
+                    "name": "Georgi Stoyanov",
+                    "role": "Developer",
+                    "email": "stoyanov.gs@gmail.com"
+                },
+                {
+                    "name": "Stanimir Panchev",
+                    "role": "Developer",
+                    "email": "Stan4omir@gmail.com"
+                },
+                {
+                    "name": "Peter Petrov",
+                    "role": "Developer",
+                    "email": "peter.petrov89@gmail.com"
+                },
+                {
+                    "name": "Plamen Kostadinov",
+                    "role": "Developer",
+                    "email": "pkostadinov.2create@gmail.com",
+                    "homepage": "http://plasmen.info/"
+                },
+                {
+                    "name": "Stanimir Stoyanov",
+                    "role": "Developer",
+                    "email": "stanimir.k.stoyanov@gmail.com"
+                },
+                {
+                    "name": "Georgi Popov",
+                    "role": "Developer",
+                    "homepage": "http://magadanski.com/"
+                },
+                {
+                    "name": "German Velchev",
+                    "role": "Developer",
+                    "email": "germozy@gmail.com"
+                },
+                {
+                    "name": "Rashko Petrov",
+                    "role": "Developer",
+                    "email": "brutalenemy666@gmail.com",
+                    "homepage": "http://errorfactory.com/"
+                },
+                {
+                    "name": "Miroslav Mitev",
+                    "role": "Developer",
+                    "email": "mmitev.2create@gmail.com"
+                },
+                {
+                    "name": "Kaloyan Ivanov",
+                    "role": "Developer",
+                    "email": "kaloyanxivanov@gmail.com",
+                    "homepage": "http://vilepixels.com/"
+                },
+                {
+                    "name": "Atanas Angelov",
+                    "role": "Developer",
+                    "email": "atanas.angelov.dev@gmail.com"
+                },
+                {
+                    "name": "Alexander Panayotov",
+                    "role": "Developer",
+                    "email": "alexander.panayotov@gmail.com",
+                    "homepage": "http://alexanderpanayotov.com/"
+                },
+                {
+                    "name": "Viktor Vasilev",
+                    "role": "Developer",
+                    "email": "liberalcho@gmail.com"
+                },
+                {
+                    "name": "Georgi Georgiev",
+                    "role": "Developer",
+                    "email": "george.georgiev96@gmail.com"
+                },
+                {
+                    "name": "Atanas Vasilev",
+                    "role": "Developer",
+                    "email": "atanasvasilev91@gmail.com"
+                }
+            ],
+            "description": "WordPress developer-friendly custom fields for post types, taxonomy terms, users, comments, widgets, options and more.",
+            "homepage": "http://carbonfields.net/",
+            "time": "2019-01-14T12:30:37+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

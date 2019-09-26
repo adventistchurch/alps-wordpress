@@ -9,6 +9,11 @@
  *
  * @link https://github.com/roots/sage/pull/1042
  */
+
+// CALL / INITIALIZE CARBON FIELDS
+// UNCOMMENT THIS LINE AFTER CONVERTING FIELDS
+require_once( 'carbon-fields/_init.php' );
+
 $sage_includes = [
   'lib/assets.php',    // Scripts and stylesheets
   'lib/extras.php',    // Custom functions
@@ -17,6 +22,7 @@ $sage_includes = [
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php' // Theme customizer
 ];
+
 
 foreach ($sage_includes as $file) {
   if (!$filepath = locate_template($file)) {
@@ -134,9 +140,13 @@ function piklist_theme_setting_pages($pages) {
 /**
  * Reformat text widget
  */
-add_action( 'widgets_init', 'register_my_widgets' );
+
+
+// add_action( 'widgets_init', 'register_my_widgets' );
 function register_my_widgets() {
   register_widget( 'My_Text_Widget' );
+  // CF - ADD
+  register_widget( 'ThemeWidgetExample' );
 }
 
 class My_Text_Widget extends WP_Widget_Text {
@@ -256,22 +266,37 @@ function wordpress_breadcrumbs() {
 require_once get_template_directory() . '/lib/plugin-activation.php';
 add_action( 'tgmpa_register', 'adventist_register_required_plugins' );
 function adventist_register_required_plugins() {
-  $plugins = array(
-    array(
-      'name'               => 'Piklist', // The plugin name.
-      'slug'               => 'piklist', // The plugin slug (typically the folder name).
-      'source'             => get_template_directory() . '/lib/plugins/piklist.zip', // The plugin source.
-      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-    ),
-    // WordPress SEO
-		array(
-			'name'     => 'WordPress SEO by Yoast',
-			'slug'     => 'wordpress-seo',
-			'required' => false,
-		)
-  );
+  $cf = get_option( 'alps_cf_converted' );
+  if ( $cf ) {
+    $plugins = array(
+      // WordPress SEO
+      array(
+        'name'     => 'WordPress SEO by Yoast',
+        'slug'     => 'wordpress-seo',
+        'required' => false,
+      )
+    );
+  }
+  else {
+    $plugins = array(
+      array(
+        'name'               => 'Piklist', // The plugin name.
+        'slug'               => 'piklist', // The plugin slug (typically the folder name).
+        'source'             => get_template_directory() . '/lib/plugins/piklist.zip', // The plugin source.
+        'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+        'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+        'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+      ),
+      // WordPress SEO
+      array(
+        'name'     => 'WordPress SEO by Yoast',
+        'slug'     => 'wordpress-seo',
+        'required' => false,
+      )
+    );
+  }
+
+
   $config = array(
     'id'           => 'adventist',                 // Unique ID for hashing notices for multiple instances of TGMPA.
     'default_path' => '',                      // Default absolute path to bundled plugins.
@@ -322,3 +347,25 @@ add_filter('upload_mimes', 'cc_mime_types');
  */
 require_once('wp-updates-theme.php');
 new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
+
+
+define('temp_file', ABSPATH.'/_temp_out.txt' );
+
+add_action("activated_plugin", "activation_handler1");
+function activation_handler1(){
+    $cont = ob_get_contents();
+    if(!empty($cont)) file_put_contents(temp_file, $cont );
+}
+
+add_action( "pre_current_active_plugins", "pre_output1" );
+function pre_output1($action){
+    if(is_admin() && file_exists(temp_file))
+    {
+        $cont= file_get_contents(temp_file);
+        if(!empty($cont))
+        {
+            echo '<div class="error"> Error Message:' . $cont . '</div>';
+            @unlink(temp_file);
+        }
+    }
+}

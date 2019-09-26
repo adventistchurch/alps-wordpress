@@ -15,9 +15,9 @@
             </div>
           <?php endif; ?>
           <div class="pad--primary spacing text">
-            <?php if (get_post_meta($post->ID, 'display_title', true)): ?>
+            <?php if (get_alps_field( 'display_title', $post->ID )): ?>
               <h2 class="font--tertiary--l theme--primary-text-color">
-                <?php echo get_post_meta($post->ID, 'display_title', true); ?>
+                <?php echo get_alps_field( 'display_title', $post->ID ); ?>
               </h2>
             <?php elseif (!is_front_page()): ?>
               <h2 class="font--tertiary--l theme--primary-text-color">

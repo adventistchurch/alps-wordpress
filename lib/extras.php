@@ -18,14 +18,14 @@ function body_class($classes) {
   }
 
   // Add class if theme color is selected
-  $primary_theme_color = get_option('alps_theme_settings')['primary_theme_color'];
+  $primary_theme_color = get_alps_option( 'primary_theme_color' ) ;
   if ($primary_theme_color) {
     $classes[] = 'theme--' . $primary_theme_color;
   } else {
     $classes[] = 'theme--ming';
   }
 
-  $secondary_theme_color = get_option('alps_theme_settings')['secondary_theme_color'];
+  $secondary_theme_color = get_alps_option( 'secondary_theme_color' );
   if ($secondary_theme_color) {
     $classes[] = 'theme--' . $secondary_theme_color;
   } else {
@@ -33,7 +33,7 @@ function body_class($classes) {
   }
 
   // Add class if dark theme is true
-  $dark_theme = get_option('alps_theme_settings')['dark_theme'];
+  $dark_theme = get_alps_option( 'dark_theme');
   if ($dark_theme) {
     $classes[] = 'dark';
   }

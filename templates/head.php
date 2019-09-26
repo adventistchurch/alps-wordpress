@@ -1,6 +1,5 @@
 <?php
-  $theme_options = get_option('alps_theme_settings');
-  $theme_color = $theme_options['primary_theme_color'];
+$theme_color = get_alps_option( 'primary_theme_color' );
 ?>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
