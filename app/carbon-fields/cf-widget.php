@@ -14,7 +14,7 @@ class ALPS_Author_Box extends Widget {
 
       $author_box_title  = empty($settings['text_link_title']) ? '' : $settings['text_link_title'];
       ?>
-      <div class="c-block c-block__text has-image u-theme--border-color--darker u-border--left c-block__text-expand u-spacing u-background-color--gray--light u-padding u-clear-fix can-be--dark-dark">
+      <div class="c-block c-block__text has-image u-theme--border-color--darker c-block__text-expand u-spacing u-background-color--gray--light u-padding--zero u-clear-fix can-be--dark-dark">
         <?php if (function_exists('get_avatar_url')): ?>
             <img class="c-block__image" itemprop="image" src="<?php echo get_avatar_url(get_the_author_meta('email'), array("size"=>400)); ?>">
         <?php endif; ?>
