@@ -203,7 +203,7 @@ class ALPS_Post_Feed_Widget extends Widget {
     }
     ?>
     <?php echo $before_block; ?>
-      <?php include(locate_template('patterns/blocks/block-media.php')); ?>
+      <?php include(locate_template('views/patterns/01-molecules/blocks/media-block.php')); ?>
     <?php echo $after_block; ?>
   <?php endwhile; ?>
   <?php wp_reset_query(); ?>
