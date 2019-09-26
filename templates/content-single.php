@@ -32,9 +32,6 @@
               <?php if ($subtitle): ?>
                 <h2 class="font--secondary--m"><?php echo $subtitle; ?></h2>
               <?php endif; ?>
-              <?php if (in_category('news')): ?>
-                <?php include(locate_template('patterns/components/share-tools.php')); ?>
-              <?php endif; ?>
               <div class="article__meta">
                 <span class="pub_date font--secondary--s gray can-be--white"><?php the_date(); ?></span>
                 <?php
