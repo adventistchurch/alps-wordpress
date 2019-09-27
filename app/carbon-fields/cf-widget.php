@@ -102,7 +102,6 @@ class ALPS_Text_With_Link_Widget extends Widget {
       <?php echo $before_title; ?>
         <?php if (!empty($settings['title'])): ?>
         <h3 class="font--tertiary--m theme--secondary-text-color space--btm">
-          <div class="icon icon--s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.22 99.29"><title>List Icon</title><path d="M34.68,54.8H65.57V44.87H34.68V54.8ZM77.58,0.36H22.42a11.06,11.06,0,0,0-11,11V88.61a11.06,11.06,0,0,0,11,11H77.58a11.06,11.06,0,0,0,11-11V11.39A11.06,11.06,0,0,0,77.58.36Zm0,88.26H22.42V11.39H77.58V88.61ZM65.44,23.35H34.56V33H65.44V23.35Zm0,43.3H34.56v9.65H65.44V66.66Z" transform="translate(-11.39 -0.36)" fill="#010101" class="theme--primary-fill-color"/></svg></div>
           <?php echo $settings['title']; ?>
         </h3>
         <?php endif; ?>
@@ -140,80 +139,118 @@ class ALPS_Post_Feed_Widget extends Widget {
     // Register widget function. Must have the same name as the class
     function __construct() {
         $this->setup( 'alps_widget_post_feed', 'ALPS - Post Feed', 'Feed of posts in the selected caetgory.', array(
-            Field::make( 'select', 'feed_category_list', __( 'Feed Category' ) )
+            Field::make( 'select', 'post_feed_category', __( 'Feed Category' ) )
                 ->set_options( cat_list() ),
-            Field::make( 'text', 'feed_title', 'Feed Title' ) ,
-            Field::make( 'text', 'feed_widget_post_count', 'Number of Posts' ) ,
-            Field::make( 'checkbox', 'for_sidebar', __( ' Format For Sidebar?' ) ),
-            Field::make( 'text', 'feed_widget_btn_text', 'More Button Text' )
-                ->set_width( 50 ),
-            Field::make( 'text', 'feed_widget_btn_link', 'More Button Link' )
-                ->set_width( 50 )
+            Field::make( 'text', 'post_feed_title', 'Feed Title' ) ,
+            Field::make( 'text', 'post_feed_url', 'See All Link' )
+                ->set_help_text( 'Enter the url to view all of the post from the selected category.' ) ,
+            Field::make( 'text', 'post_feed_count', 'Number of Posts to Display' ) ,
+            Field::make( 'text', 'post_feed_offset', 'Post Offset' )
+                ->set_help_text( 'Enter the number of posts to offset.') ,
+            Field::make( 'checkbox', 'post_feed_featured', __( ' Post Image/Description:' ) )
+                ->set_help_text( 'Check to show the image and description for each post.')
+                ->set_option_value( 'true' ),
+            Field::make( 'checkbox', 'post_feed_layout', __( ' Grid Layout' ) )
+                ->set_help_text( 'Check to show the image and description side-by-side.')
+                ->set_option_value( 'true' ),
         ) );
     }
 
     // Called when rendering the widget in the front-end
     function front_end( $args, $settings ) {
-      $feed_category  = empty($settings['feed_category_list']) ? 'news' : $settings['feed_category_list'];
-      $for_sidebar    = empty($settings['for_sidebar']) ? '' : $settings['for_sidebar'];
-      $widget_title   = empty($settings['feed_title']) ? 'News' : $settings['feed_title'];
-      $post_count     = empty($settings['feed_widget_post_count']) ? '-1' : $settings['feed_widget_post_count'];
-      $btn_text       = empty($settings['feed_widget_btn_text']) ? '' : $settings['feed_widget_btn_text'];
-      $btn_link       = empty($settings['feed_widget_btn_link']) ? '' : $settings['feed_widget_btn_link'];
+      $feed_category  = empty($settings['post_feed_category']) ? 'news' : $settings['post_feed_category'];
+      $feed_title     = empty($settings['post_feed_title']) ? 'News' : $settings['post_feed_title'];
+      $feed_url       = empty($settings['post_feed_url']) ? '' : $settings['post_feed_url'];
+      $feed_count     = empty($settings['post_feed_count']) ? '5' : $settings['post_feed_count'];
+      $feed_offset    = empty($settings['post_feed_offset']) ? '' : $settings['post_feed_offset'];
+      $feed_featured  = empty($settings['post_feed_featured']) ? '' : $settings['post_feed_featured'];
+      $feed_layout    = empty($settings['post_feed_layout']) ? '' : $settings['post_feed_layout'];
 
       $args = array(
-        'cat' => $feed_category,
-        'posts_per_page' => $post_count,
+        'cat'               => $feed_category,
+        'posts_per_page'    => $feed_count,
       );
-    $the_query = new WP_Query($args);
-  ?>
+      if ( !empty( $feed_offset ) ) {
+          $args[ 'offset' ] = $feed_offset;
+      }
+      $feed = new WP_Query($args);
 
-  <?php
-    if ($the_query->have_posts()):
-      if ($for_sidebar != 'true') {
-        $block_inner_class = 'block__row';
-        $excerpt_length = 200;
-        $hr = '<hr class="w--100p">';
-        echo '<h2 class="font--tertiary--l theme--primary-text-color pad pad-double--top pad-half--btm">'. $widget_title . '</h2><hr>';
-        $before_block = '<div class="spacing"><div class="pad">';
-        $after_block = '</div></div>';
-    } else {
-        $block_inner_class = 'block__row--small-to-large';
-        $excerpt_length = 100;
-        $hr = '';
-        echo '<h3 class="font--tertiary--m theme--secondary-text-color">'. $widget_title . '</h3>';
-        $before_block = '';
-        $after_block = '';
-    }
-    while ($the_query->have_posts()) : $the_query->the_post();
-      $title        = get_the_title();
-      $intro        = get_post_meta(get_the_ID(), '_intro', true);
-      $body         = strip_tags(get_the_content());
-      $body         = strip_shortcodes($body);
-      $kicker       = get_post_meta(get_the_ID(), '_kicker', true);
-      $button_text  = __('Read More', 'sage');
-      $button_url   = get_the_permalink();
-      $round_image  = '';
-      $thumb_id     = get_post_thumbnail_id();
-      $thumbnail    = wp_get_attachment_image_src($thumb_id, "horiz__4x3--s")[0];
-      $alt          = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-      if (isset($post->post_date) && $post->post_type == 'post') {
-        $date = get_the_date('M j, Y');
-        $date_formatted = get_the_date('c');
-    }
+      if ( $feed->have_posts() ) :
     ?>
-    <?php echo $before_block; ?>
-      <?php include(locate_template('views/patterns/01-molecules/blocks/media-block.php')); ?>
-    <?php echo $after_block; ?>
-  <?php endwhile; ?>
-  <?php wp_reset_query(); ?>
-  <?php if ($btn_link): ?>
-    <hr/>
-    <a class="center-block btn theme--secondary-background-color space space--top space-half--btm"  style="display:table;" href="<?php echo $btn_link; ?>"><?php echo $btn_text; ?></a>
-  <?php endif;
-    endif;
+    <div class="c-block-wrap u-spacing">
+      <div class="c-block__heading u-theme--border-color--darker">
+        <h3 class="c-block__heading-title u-theme--color--darker">
+          <?php echo $feed_title; ?>
+        </h3>
+        <?php if ( !empty( $feed_url ) ) : ?>
+        <a href="<?php echo $feed_url ?>" class="c-block__heading-link u-theme--color--base u-theme--link-hover--dark">See All</a>
+        <?php endif; ?>
+      </div>
+      <div class="c-block-wrap__content u-spacing">
 
-  } // front_end
+      <?php
+        while ( $feed->have_posts() ) : $feed->the_post();
+          $body         = strip_tags( get_the_content() );
+          $body         = strip_shortcodes( $body );
+          $teaser       = wp_trim_words( $body, '30' );
+          $thumb_id     = get_post_thumbnail_id();
+          $thumbnail    = wp_get_attachment_image_src( $thumb_id, 'horiz__4x3--s' )[0];
+          $srcset       = wp_get_attachment_image_srcset( $thumb_id, 'full' );
+          $alt          = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+          $date         = get_the_time( 'M j, Y' );
+          $time         = get_the_time( 'c' );
+          $categories   = get_the_category();
+
+          if ( !empty( $categories ) ) {
+            $category =  esc_html( $categories[0]->name );
+          }
+
+      ?>
+      <div class="c-media-block c-block
+        <?php if ( empty( $feed_layout ) ) : echo 'c-block__stacked c-media-block__stacked'; endif; ?>
+        <?php if ( !empty( $feed_layout ) && !empty( $feed_featured ) ) : echo 'c-widget-feed--grid'; endif; ?> ">
+        <?php if ( !empty( $feed_featured ) ) : ?>
+        <div class="c-media-block__image c-block__image">
+          <div class="c-block__image-wrap ">
+            <picture class="picture">
+              <img class="wp-image" src="<?php echo $thumbnail ?>" alt="<?php echo $alt ?>" itemprop="image">
+            </picture>
+          </div>
+        </div> <!-- c-media-block__image -->
+        <?php endif; ?>
+
+        <div class="c-media-block__content c-block__content u-spacing l-grid-item u-border--left u-color--gray u-theme--border-color--darker--left u-spacing--half">
+          <div class="u-spacing c-block__group c-media-block__group ">
+            <div class="u-spacing u-width--100p">
+              <h3 class="c-media-block__title c-block__title u-theme--color--darker u-font--primary--m ">
+                <a href="<?php echo get_the_permalink() ?>" class="c-block__title-link u-theme--link-hover--dark">
+                  <?php echo get_the_title() ?>
+                </a>
+              </h3>
+              <?php if ( !empty( $feed_featured ) ) : ?>
+              <p class="c-media-block__description c-block__description">
+                 <?php echo $teaser ?>
+              </p>
+              <?php endif; ?>
+            </div>
+            <div class="c-media-block__meta c-block__meta u-theme--color--dark u-font--secondary--xs">
+              <span class="c-block__category u-text-transform--upper">
+                <?php echo $category ?>
+              </span>
+                <time class="c-block__date u-text-transform--upper" datetime="<?php echo $time ?>">
+                  <?php echo $date ?>
+                </time>
+            </div>
+          </div>
+        </div> <!-- c-media-block__content -->
+      </div> <!-- c-media-block -->
+    <?php
+    endwhile; ?>
+     </div>
+    </div>
+    <?php
+  endif;
+  } // FRONT END DISPLAY
 }
 
 add_action( 'widgets_init', 'alps_widgets' );

@@ -122,6 +122,20 @@
   padding-left: 0;
 }
 
+.c-carbon_fields_alps_widget_post_feed.u-border--left {
+  border-left: 0;
+}
+
+.c-widget-feed--grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-widget-feed--grid > div {
+  width: 48% !important;
+}
+
 .c-sidebar .c-block__breakout {
   margin-right: -15px;
   margin-top: -80px;
