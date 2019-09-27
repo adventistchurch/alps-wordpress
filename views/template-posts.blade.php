@@ -5,8 +5,10 @@
   global $post;
   $post->ID = get_queried_object_id();
   $cf       = get_option( 'alps_cf_converted' );
-
+  $cf_      = '';
   if ( $cf )  {
+    $cf_ = '_';
+
 
     $post_feed_list                 = carbon_get_post_meta( $post->ID, 'post_feed_list' );
     $post_feed_list_title           = carbon_get_post_meta( $post->ID, 'post_feed_list_title' );
@@ -17,8 +19,10 @@
     $post_feed_list_offset          = carbon_get_post_meta( $post->ID, 'post_feed_list_offset' );
     $post_feed_list_round           = carbon_get_post_meta( $post->ID, 'post_feed_list_round_image' );
 
-    // PASS ID
-    $post_feed_list_category        = $post_feed_list_category[0]['id'];
+      // PASS ID
+    if ( !empty( $post_feed_list_category ) ) {
+      $post_feed_list_category        = $post_feed_list_category[0]['id'];
+    }
 
     // Full Width
     $post_feed_full                 = carbon_get_post_meta( $post->ID, 'post_feed_full' );
@@ -30,8 +34,12 @@
     $post_feed_full_offset          = carbon_get_post_meta( $post->ID, 'post_feed_full_offset' );
 
     // PASS ID
-    $post_feed_full_featured_array  = $post_feed_full_featured_array[0]['id'];
-    $post_feed_full_category        = $post_feed_full_category[0]['id'];
+    if ( !empty( $post_feed_full_featured_array ) ) {
+      $post_feed_full_featured_array  = $post_feed_full_featured_array[0]['id'];
+    }
+    if ( !empty( $post_feed_full_category ) ) {
+      $post_feed_full_category        = $post_feed_full_category[0]['id'];
+    }
 
     // Archive
     $post_feed_archive              = carbon_get_post_meta( $post->ID, 'post_feed_archive' );
@@ -42,7 +50,9 @@
     $post_feed_archive_offset       = carbon_get_post_meta( $post->ID, 'post_feed_archive_offset' );
 
     // PASS ID
-    $post_feed_archive_category     = $post_feed_archive_category[0]['id'];
+    if ( !empty( $post_feed_archive_category ) ) {
+      $post_feed_archive_category   = $post_feed_archive_category[0]['id'];
+    }
 
 
   } else {
@@ -72,7 +82,7 @@
   @while(have_posts())
     {!! the_post() !!}
     @php
-      if ( is_active_sidebar( 'sidebar-posts' ) && !get_alps_field( 'hide_sidebar' ) ) {
+      if ( is_active_sidebar( 'sidebar-posts' ) && !get_alps_option( 'index_hide_sidebar' ) && !get_post_meta( $post->ID, $cf_.'hide_sidebar', true ) ) {
         $section_offset = 'u-shift--left--1-col--at-xxlarge';
         $article_offset = 'l-grid-item--xl--3-col';
       } else {
@@ -279,7 +289,7 @@
           </div>
         @endif
       </article>
-      @if (is_active_sidebar('sidebar-posts') && get_post_meta($post->ID, 'hide_sidebar', true) != 'true')
+      @if ( is_active_sidebar('sidebar-posts') && !get_alps_option( 'index_hide_sidebar' ) && get_post_meta($post->ID, $cf_.'hide_sidebar', true) != 'true' )
         <div class="c-sidebar l-grid-item l-grid-item--l--2-col u-padding--zero--sides">
           <div class="u-spacing--double u-padding--right">
             @php dynamic_sidebar('sidebar-posts') @endphp

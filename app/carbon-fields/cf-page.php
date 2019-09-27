@@ -8,7 +8,8 @@ function crb_attach_hero() {
   Container::make( 'post_meta', 'ALPS: Hero' )
     ->where( 'post_type', '=', 'page' )
     ->add_fields( array(
-        Field::make( 'separator', 'crb_hero_banner', __( 'Hero Banner' ) ),
+        Field::make( 'separator', 'crb_hero_banner', __( 'Hero Banner' ) )
+            ->set_help_text( __( 'IMPORTANT: Setting a hero style below will completely override anything you have entered for your ALPS Header Banner or your Featured Image.' ) ),
         Field::make( 'radio', 'hero_type', __( 'Hero Style' ) )
             ->set_help_text( 'Select the hero configuration.' )
             ->add_options( array(
