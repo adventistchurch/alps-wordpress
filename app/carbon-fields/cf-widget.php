@@ -2,7 +2,7 @@
 
 use Carbon_Fields\Widget;
 use Carbon_Fields\Field;
-
+/*
 class ALPS_Author_Box extends Widget {
     // Register widget function. Must have the same name as the class
     function __construct() {
@@ -75,7 +75,7 @@ class ALPS_Author_Box extends Widget {
     <?php
     }
 }
-
+*/
 class ALPS_Text_With_Link_Widget extends Widget {
     // Register widget function. Must have the same name as the class
     function __construct() {
@@ -91,48 +91,26 @@ class ALPS_Text_With_Link_Widget extends Widget {
 
     // Called when rendering the widget in the front-end
   function front_end( $args, $settings ) {
-    $before_widget  = '';
-    $before_title   = '';
-    $after_title    = '';
-    $after_widget   = '';
-    ?>
-    <div class="with-divider grid--uniform">
-    <?php echo $before_widget; ?>
-      <div class="widget_text_link can-be--dark-dark">
-      <?php echo $before_title; ?>
-        <?php if (!empty($settings['title'])): ?>
-        <h3 class="font--tertiary--m theme--secondary-text-color space--btm">
-          <?php echo $settings['title']; ?>
-        </h3>
-        <?php endif; ?>
-        <?php echo $after_title; ?>
-          <div class="media-block__inner spacing--quarter">
-            <div class="media-block__content block__content">
-            <div class="spacing--half">
-            <?php if (!empty($settings['content'])): ?>
-              <div class="text text--s pad-half--btm">
-                <p class="media-block__description block__description">
-                  <span class="font--primary--xs">
-                    <?php echo $settings['content']; ?>
-                  </span>
-                </p>
-              </div>
-              <?php endif; ?>
-              <?php if (!empty($settings['url'])): ?>
-              <p>
-                <a class="media-block__cta block__cta btn theme--secondary-background-color" href="<?php echo $settings['url']; ?>">
-                <?php echo $settings['url_text']; ?>
-                </a>
-              </p>
-              <?php endif; ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    <?php echo $after_widget; ?>
-    </div>
+  ?>
+  <div class="c-block__breakout u-padding u-padding--double--bottom u-padding--double--top u-spacing u-theme--background-color--darker u-theme--background-color--darker can-be--dark-dark">
+    <?php if (!empty($settings['title'])): ?>
+    <h3 class="c-block__title u-color--white">
+      <?php echo $settings['title']; ?>
+    </h3>
+    <?php endif; ?>
+    <?php if (!empty($settings['content'])): ?>
+    <p class="c-block__body u-theme--color--lighter">
+      <?php echo $settings['content']; ?>
+    </p>
+    <?php endif; ?>
+    <?php if (!empty($settings['url'])): ?>
+    <a href="<?php echo $settings['url']; ?>" class="o-button o-button--lighter">
+      <?php echo $settings['url_text']; ?>
+    </a>
+    <?php endif; ?>
+  </div>
   <?php
-    }
+  }
 }
 
 class ALPS_Post_Feed_Widget extends Widget {
@@ -255,7 +233,7 @@ class ALPS_Post_Feed_Widget extends Widget {
 
 add_action( 'widgets_init', 'alps_widgets' );
 function alps_widgets() {
-    register_widget( 'ALPS_Author_Box' );
+    //register_widget( 'ALPS_Author_Box' );
     register_widget( 'ALPS_Text_With_Link_Widget' );
     register_widget( 'ALPS_Post_Feed_Widget' );
 }

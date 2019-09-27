@@ -159,6 +159,22 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   margin-top: -80px;
 }
 
+/* THIS ALMOST ASSUREDLY NEEDS FINE TUNING / ADJUSTMENTS */
+.c-carbon_fields_alps_widget_text_with_link {
+  /* RESET SO WE CAN OVERRIDE */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  background: none !important;
+  border-left: 0 !important;
+
+  .c-block__breakout {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
 .body.hide-sabbath .c-sidebar .c-block__breakout {
   @media (min-width: 701px) {
     margin-top: -30px;
