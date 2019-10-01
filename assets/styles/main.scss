@@ -129,16 +129,28 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   }
 }
 
-.c-carbon_fields_alps_widget_post_feed.u-border--left {
-  border-left: 0;
+.c-carbon_fields_alps_widget_post_feed {
+  padding: 0;
+
+  &.u-border--left {
+    border-left: 0;
+  }
+
+  &.u-background-color--gray--light {
+    background: none;
+  }
 }
 
 .c-widget-feed--grid {
   display: flex;
 
   > div {
-    width: 48% !important;
+    width: 48% !important; // sorry
   }
+}
+
+.c-widget_search {
+  margin-top: 1.25rem;
 }
 
 // Breakout Block
@@ -162,16 +174,20 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 /* THIS ALMOST ASSUREDLY NEEDS FINE TUNING / ADJUSTMENTS */
 .c-carbon_fields_alps_widget_text_with_link {
   /* RESET SO WE CAN OVERRIDE */
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  background: none !important;
-  border-left: 0 !important;
+  background: none;
+  border-left: 0;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
 
   .c-block__breakout {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    @media (min-width: 901px) {
+      margin-right: -20px;
+    }
+
+    @media (min-width: 1301px) {
+      margin-top: -40px;
+    }
   }
 }
 

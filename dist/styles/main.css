@@ -122,8 +122,16 @@
   padding-left: 0;
 }
 
+.c-carbon_fields_alps_widget_post_feed {
+  padding: 0;
+}
+
 .c-carbon_fields_alps_widget_post_feed.u-border--left {
   border-left: 0;
+}
+
+.c-carbon_fields_alps_widget_post_feed.u-background-color--gray--light {
+  background: none;
 }
 
 .c-widget-feed--grid {
@@ -134,6 +142,10 @@
 
 .c-widget-feed--grid > div {
   width: 48% !important;
+}
+
+.c-widget_search {
+  margin-top: 1.25rem;
 }
 
 .c-sidebar .c-block__breakout {
@@ -163,17 +175,23 @@
 
 .c-carbon_fields_alps_widget_text_with_link {
   /* RESET SO WE CAN OVERRIDE */
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  background: none !important;
-  border-left: 0 !important;
+  background: none;
+  border-left: 0;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
 }
 
-.c-carbon_fields_alps_widget_text_with_link .c-block__breakout {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+@media (min-width: 901px) {
+  .c-carbon_fields_alps_widget_text_with_link .c-block__breakout {
+    margin-right: -20px;
+  }
+}
+
+@media (min-width: 1301px) {
+  .c-carbon_fields_alps_widget_text_with_link .c-block__breakout {
+    margin-top: -40px;
+  }
 }
 
 @media (min-width: 701px) {

@@ -2,7 +2,7 @@
 
 use Carbon_Fields\Widget;
 use Carbon_Fields\Field;
-/*
+
 class ALPS_Author_Box extends Widget {
     // Register widget function. Must have the same name as the class
     function __construct() {
@@ -75,7 +75,7 @@ class ALPS_Author_Box extends Widget {
     <?php
     }
 }
-*/
+
 class ALPS_Text_With_Link_Widget extends Widget {
     // Register widget function. Must have the same name as the class
     function __construct() {
@@ -92,7 +92,7 @@ class ALPS_Text_With_Link_Widget extends Widget {
     // Called when rendering the widget in the front-end
   function front_end( $args, $settings ) {
   ?>
-  <div class="c-block__breakout u-padding u-padding--double--bottom u-padding--double--top u-spacing u-theme--background-color--darker u-theme--background-color--darker can-be--dark-dark">
+  <div class="c-block__breakout u-padding--double--bottom u-padding--double--top u-padding--left u-padding--right u-spacing u-theme--background-color--darker u-theme--background-color--darker can-be--dark-dark">
     <?php if (!empty($settings['title'])): ?>
     <h3 class="c-block__title u-color--white">
       <?php echo $settings['title']; ?>
@@ -233,7 +233,7 @@ class ALPS_Post_Feed_Widget extends Widget {
 
 add_action( 'widgets_init', 'alps_widgets' );
 function alps_widgets() {
-    //register_widget( 'ALPS_Author_Box' );
+    register_widget( 'ALPS_Author_Box' );
     register_widget( 'ALPS_Text_With_Link_Widget' );
     register_widget( 'ALPS_Post_Feed_Widget' );
 }
