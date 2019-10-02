@@ -130,7 +130,7 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 }
 
 .c-carbon_fields_alps_widget_post_feed {
-  padding: 0;
+  padding: 0 !important;
 
   &.u-border--left {
     border-left: 0;
@@ -174,11 +174,12 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 /* THIS ALMOST ASSUREDLY NEEDS FINE TUNING / ADJUSTMENTS */
 .c-carbon_fields_alps_widget_text_with_link {
   /* RESET SO WE CAN OVERRIDE */
-  background: none;
-  border-left: 0;
+  background: none !important;
+  border-left: 0 !important;
   margin-left: -20px;
   margin-right: -20px;
   margin-top: -20px;
+  padding-bottom: 0 !important;
 
   .c-block__breakout {
     @media (min-width: 901px) {
