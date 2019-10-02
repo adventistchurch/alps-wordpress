@@ -3,6 +3,19 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+add_action( 'carbon_fields_register_fields', 'crb_attach_long_header' );
+function crb_attach_long_header() {
+  Container::make( 'post_meta', 'ALPS: Header Banner' )
+    ->add_fields( array(
+      Field::make( 'separator', 'crb_long_header', __( 'Banner' ) )
+         ->set_help_text( __( 'IMPORTANT: Setting the Header Banner will override the display of the Featured Image.' ) ),
+      Field::make( 'text', 'display_title', __( 'Long Header Title' ) ),
+      Field::make( 'text', 'kicker', __( 'Long Header Kicker' ) ),
+      Field::make( 'text', 'long_header_subtitle', __( 'Long Header Subtitle' ) ),
+      Field::make( 'image', 'header_background_image', __( 'Long Header Image' ) )
+    ) );
+}
+
 add_action( 'carbon_fields_register_fields', 'crb_attach_hero' );
 function crb_attach_hero() {
   Container::make( 'post_meta', 'ALPS: Hero' )
@@ -84,6 +97,7 @@ function crb_attach_hero() {
             ->set_max( 3 ),
       ) );
 }
+
 add_action( 'carbon_fields_register_fields', 'crb_attach_related_pages' );
 function crb_attach_related_pages() {
   Container::make( 'post_meta', 'ALPS: Related Pages' )
@@ -160,6 +174,7 @@ function crb_post_in_banner() {
             ->set_max( 1 )
     ) );
 }
+
 // POST FEED - LIST ------------------------------------------------
 add_action( 'carbon_fields_register_fields', 'crb_post_feed_list' );
 function crb_post_feed_list() {
@@ -228,6 +243,7 @@ function crb_post_feed_list() {
             ->set_conditional_logic( array( array('field' => 'post_feed_list', 'value' => 'post_feed_list_custom', ) ) )
     ) );
 }
+
 // POST FEED - FULL ------------------------------------------------
 add_action( 'carbon_fields_register_fields', 'crb_post_feed_full' );
 function crb_post_feed_full() {
@@ -290,6 +306,7 @@ function crb_post_feed_full() {
             ) ),
     ) );
 }
+
 // POST FEED - ARCHIVE ------------------------------------------------
 add_action( 'carbon_fields_register_fields', 'crb_post_feed_archive' );
 function crb_post_feed_archive() {

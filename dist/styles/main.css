@@ -340,5 +340,9 @@ figure {
   max-width: 100%;
 }
 
+.u-space--top--zero {
+  margin-top: 0 !important;
+}
+
 
 /*# sourceMappingURL=main.css.map*/

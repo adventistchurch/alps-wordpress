@@ -351,3 +351,8 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 figure {
   max-width: 100%;
 }
+
+// OVERRIDES
+.u-space--top--zero {
+  margin-top: 0 !important;
+}
