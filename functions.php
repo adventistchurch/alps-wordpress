@@ -551,6 +551,11 @@ function pagination_nav() {
   echo '</nav>' . "\n";
 }
 
+
+// PROCESS SHORTCODES IN PAGE / POST EXCERPTS
+add_filter( 'the_excerpt', 'shortcode_unautop' );
+add_filter( 'the_excerpt', 'do_shortcode' );
+
 // HELPER FUNCTION TO PULL CUSTOM FIELDS FROM EITHER CF or PL
 function get_alps_field( $field, $id = NULL ) {
     global $post;
@@ -610,6 +615,8 @@ function get_alps_option( $field ) {
 function is_multidimensional(array $array) {
     return count($array) !== count($array, COUNT_RECURSIVE);
 }
+
+
 
 
 
