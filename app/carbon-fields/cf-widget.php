@@ -100,7 +100,7 @@ class ALPS_Text_With_Link_Widget extends Widget {
     <?php endif; ?>
     <?php if (!empty($settings['content'])): ?>
     <p class="c-block__body u-theme--color--lighter">
-      <?php echo $settings['content']; ?>
+      <?php echo do_shortcode( $settings['content'] ); ?>
     </p>
     <?php endif; ?>
     <?php if (!empty($settings['url'])): ?>
