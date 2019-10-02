@@ -9,8 +9,6 @@
   $related_image        = get_post_meta( $post->ID, $cf_.'related_image', true );
   $related_image_round  = get_post_meta( $post->ID, $cf_.'related_image_round', true );
 
-
-
   if ($related == 'related_top_level')  {
     // Loop of pages for top level pages
     $pages = get_pages(
@@ -78,20 +76,20 @@
             $title = get_the_title($id);
             $link = get_the_permalink($id);
             if (get_the_excerpt($id)) {
-              $excerpt = get_the_excerpt($id);
+              $excerpt = do_shortcode( get_the_excerpt($id) );
               $excerpt_length = 999;
             } else {
-              $excerpt = get_post_field('post_content', $id);
+              $excerpt = do_shortcode( get_post_field('post_content', $id) );
             }
           } else {
             $id = $page->ID;
             $title = $page->post_title;
             $link = $page->guid;
             if ($page->post_excerpt) {
-              $excerpt = $page->post_excerpt;
+              $excerpt = do_shortcode( $page->post_excerpt );
               $excerpt_length = 999;
             } else {
-              $excerpt = $page->post_content;
+              $excerpt = do_shortcode( $page->post_content );
             }
           }
           $body = false;

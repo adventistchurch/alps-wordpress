@@ -15,9 +15,9 @@
     <p class="c-block__body text">
       @php
         if (strlen($excerpt) > $excerpt_length) {
-          echo strip_tags(trim(mb_substr($excerpt, 0, $excerpt_length))) . '&hellip;';
+          echo do_shortcode( strip_tags(trim(mb_substr($excerpt, 0, $excerpt_length))) . '&hellip;' );
         } else {
-          echo strip_tags($excerpt);
+          echo do_shortcode( strip_tags($excerpt) );
         }
       @endphp
     </p>
@@ -25,9 +25,9 @@
     <p class="c-block__body text">
       @php
         if (strlen($body) > $excerpt_length) {
-          echo strip_tags(trim(mb_substr($body, 0, $excerpt_length))) . '&hellip;';
+          echo do_shortcode( strip_tags(trim(mb_substr($body, 0, $excerpt_length))) . '&hellip;' );
         } else {
-          echo strip_tags($body);
+          echo do_shortcode( strip_tags($body) );
         }
       @endphp
     </p>

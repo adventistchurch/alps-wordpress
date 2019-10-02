@@ -551,12 +551,6 @@ function pagination_nav() {
   echo '</nav>' . "\n";
 }
 
-// PROCESS SHORTCODES IN PAGE / POST EXCERPTS
-add_filter( 'the_excerpt', 'shortcode_unautop' );
-add_filter( 'get_the_excerpt', 'shortcode_unautop' );
-add_filter( 'the_excerpt', 'do_shortcode' );
-add_filter( 'get_the_excerpt', 'do_shortcode') ;
-
 // HELPER FUNCTION TO PULL CUSTOM FIELDS FROM EITHER CF or PL
 function get_alps_field( $field, $id = NULL ) {
     global $post;

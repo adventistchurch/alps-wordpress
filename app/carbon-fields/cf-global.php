@@ -23,6 +23,16 @@ function crb_attach_template_fields() {
         ->set_width(50),
     ) );
 
+  Container::make( 'post_meta', 'ALPS: Long Header' )
+    ->add_fields( array(
+      Field::make( 'separator', 'crb_long_header', __( 'Long Header' ) )
+         ->set_help_text( __( 'IMPORTANT: Setting the Long Header will override the display of the Header Banner and Featured Image.' ) ),
+      Field::make( 'text', 'long_header_title', __( 'Long Header Title' ) ),
+      Field::make( 'text', 'long_header_kicker', __( 'Long Header Kicker' ) ),
+      Field::make( 'text', 'long_header_subtitle', __( 'Long Header Subtitle' ) ),
+      Field::make( 'image', 'long_header_image', __( 'Long Header Image' ) )
+    ) );
+
   Container::make( 'post_meta', 'ALPS: Header Banner' )
     //->set_context( 'carbon_fields_after_title' )
     //->set_priority( 'high' )
