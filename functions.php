@@ -756,4 +756,7 @@ function alps_admin_notice__alps_update_complete() {
 }
 add_action( 'admin_notices', 'alps_admin_notice__alps_update_complete' );
 
-
+function alps_test_shortcode() {
+   return ' Hello world! ';
+}
+add_shortcode( 'test', 'alps_test_shortcode' );

@@ -31,7 +31,6 @@
       )
     );
   } elseif ($related == 'related_custom') {
-    // Loop of selected pages
     if ( $cf ) {
       // CARBON FIELDS HAS COMPELTELY DIFFERENT FORMAT HERE
       $assigned = carbon_get_post_meta( get_the_id(), 'related_custom_value' );
@@ -44,7 +43,7 @@
         }
       }
     } else {
-      $pages = get_post_meta($post->ID, 'related_custom_value' );
+      $pages = get_post_meta( $post->ID, 'related_custom_value' );
     }
   } else {
     $pages = false;
@@ -55,7 +54,7 @@
     @php
       if ($related_grid == "true") {
         if (!is_active_sidebar('sidebar-page') || get_post_meta($post->ID, 'hide_sidebar', true) == 'true') {
-          if (get_post_meta($post->ID, 'related_grid_3up', true) == 'true') {
+          if ( get_post_meta($post->ID, 'related_grid_3up', true) == 'true' ) {
             $grid_class = "l-grid-item--6-col u-shift--right--1-col--at-large u-shift--left--1-col--at-medium u-no-gutters";
             $grid_item_class = "l-grid-item--s--3-col l-grid-item--l--2-col";
           } else {
@@ -69,45 +68,45 @@
         echo '<div class="l-grid l-grid--7-col ' . $grid_class . '">';
       }
     @endphp
-      @foreach ($pages as $page)
+      @foreach ( $pages as $page )
         @php
-          if ($related == 'related_custom') {
-            $id = $page;
-            $title = get_the_title($id);
-            $link = get_the_permalink($id);
-            if (get_the_excerpt($id)) {
-              $excerpt = do_shortcode( get_the_excerpt($id) );
-              $excerpt_length = 999;
+          if ( $related == 'related_custom' ) {
+            $id       = $page;
+            $title    = get_the_title( $id );
+            $link     = get_the_permalink( $id );
+            if ( has_excerpt( $id ) ) {
+              $excerpt = get_the_excerpt( $id );
             } else {
-              $excerpt = do_shortcode( get_post_field('post_content', $id) );
+              $excerpt = get_post_field( 'post_content', $id, 'raw' );
             }
+            $excerpt_length = 55;
           } else {
-            $id = $page->ID;
-            $title = $page->post_title;
-            $link = $page->guid;
-            if ($page->post_excerpt) {
-              $excerpt = do_shortcode( $page->post_excerpt );
-              $excerpt_length = 999;
+            $id       = $page->ID;
+            $title    = $page->post_title;
+            $link     = $page->guid;
+            if ( has_excerpt( $id ) ) {
+              $excerpt = get_the_excerpt( $id );
             } else {
-              $excerpt = do_shortcode( $page->post_content );
+              $excerpt = $page->post_content;
             }
+            $excerpt_length = 55;
           }
-          $body = false;
-          $category = NULL;
-          $date = NULL;
-          $cta = __("Read More", "alps");
-          $block_class = "u-spacing--half";
-          $block_title_class = "u-theme--color--darker u-font--primary--m";
-          $block_meta_class = "hide";
-          if ($related_image == "true") {
-            $thumb_id = get_post_thumbnail_id($id);
+          $body               = false;
+          $category           = NULL;
+          $date               = NULL;
+          $cta                = __("Read More", "alps");
+          $block_class        = "u-spacing--half";
+          $block_title_class  = "u-theme--color--darker u-font--primary--m";
+          $block_meta_class   = "hide";
+          if ( $related_image  == true ) {
+            $thumb_id         = get_post_thumbnail_id($id);
           } else {
-            $thumb_id = false;
+            $thumb_id         = false;
           }
           if ($thumb_id) {
             $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
             if ($related_grid == "true") {
-              $excerpt_length = 100;
+              $excerpt_length = 55;
               $thumb_size = 'horiz__16x9';
               $block_class = "c-media-block__stacked c-block__stacked u-space--right u-space--double--bottom";
               $block_content_class = "u-border--left u-theme--border-color--darker--left";
@@ -121,7 +120,7 @@
               } else {
                 $block_img_wrap_class = "";
               }
-              $excerpt_length = 150;
+              $excerpt_length = 55;
               $thumb_size = 'thumbnail';
               $thumb_id = get_post_thumbnail_id($id);
               $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
@@ -140,18 +139,9 @@
             $thumb_id = NULL;
             if ($related_grid == "true") {
               $block_class = "u-spacing u-padding--right u-space--double--bottom";
-              $excerpt_length = 400;
+              $excerpt_length = 55;
             } else {
-              $excerpt_length = 150;
-            }
-          }
-          if ($related == 'related_custom') {
-            if (get_the_excerpt($id)) {
-              $excerpt_length = 9999;
-            }
-          } else {
-            if ($page->post_excerpt) {
-              $excerpt_length = 9999;
+              $excerpt_length = 55;
             }
           }
         @endphp
