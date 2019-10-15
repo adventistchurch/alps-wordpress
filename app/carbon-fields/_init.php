@@ -1,6 +1,4 @@
 <?php
-// SET V3 FOR PLUGIN TO READ
-define( 'ALPS_V3', true );
 
 require_once( 'cf-theme-options.php' );
 require_once( 'cf-global.php' );

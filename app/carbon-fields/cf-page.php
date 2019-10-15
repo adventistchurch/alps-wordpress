@@ -3,16 +3,16 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-add_action( 'carbon_fields_register_fields', 'crb_attach_long_header' );
-function crb_attach_long_header() {
+add_action( 'carbon_fields_register_fields', 'crb_attach_header' );
+function crb_attach_header() {
   Container::make( 'post_meta', 'ALPS: Header Banner' )
     ->add_fields( array(
       Field::make( 'separator', 'crb_long_header', __( 'Banner' ) )
          ->set_help_text( __( 'IMPORTANT: Setting the Header Banner will override the display of the Featured Image.' ) ),
-      Field::make( 'text', 'display_title', __( 'Long Header Title' ) ),
-      Field::make( 'text', 'kicker', __( 'Long Header Kicker' ) ),
-      Field::make( 'text', 'long_header_subtitle', __( 'Long Header Subtitle' ) ),
-      Field::make( 'image', 'header_background_image', __( 'Long Header Image' ) )
+      Field::make( 'text', 'display_title', __( 'Header Title' ) ),
+      Field::make( 'text', 'kicker', __( 'Header Kicker' ) ),
+      Field::make( 'text', 'long_header_subtitle', __( 'Header Subtitle' ) ),
+      Field::make( 'image', 'header_background_image', __( 'Header Image' ) )
     ) );
 }
 
@@ -97,6 +97,28 @@ function crb_attach_hero() {
             ->set_max( 3 ),
       ) );
 }
+
+add_action( 'carbon_fields_register_fields', 'crb_attach_page_template_fields' );
+function crb_attach_page_template_fields() {
+  Container::make( 'post_meta', 'ALPS: Entry Sidebar / Featured Image' )
+    ->where( 'post_type', '=', 'page' )
+    ->add_fields( array(
+     Field::make( 'separator', 'crb_hide_sidebar', __( 'Hide Sidebar' ) )
+        ->set_width(50),
+     Field::make( 'separator', 'crb_hide_img', __( 'Hide Featured Image' ) )
+        ->set_width(50),
+      Field::make( 'checkbox', 'hide_sidebar', __( 'Hide Sidebar' ) )
+        ->set_help_text( __( 'Hides the sidebar for this entry if it is active.' ) )
+        ->set_option_value( 'true' )
+        ->set_width(50),
+      Field::make( 'checkbox', 'hide_featured_image', __( 'Hide Featured Image' ) )
+        ->set_help_text( __( 'Hides the featured image on the page/post header for this entry.' ) )
+        ->set_option_value( 'true' )
+        ->set_width(50),
+    ) );
+
+}
+
 
 add_action( 'carbon_fields_register_fields', 'crb_attach_related_pages' );
 function crb_attach_related_pages() {

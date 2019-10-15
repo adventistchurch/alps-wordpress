@@ -4,8 +4,6 @@ namespace App;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-define( 'ALPS_V3', true );
-
 $cf = get_option( 'alps_cf_converted' );
 
 if ( $cf ) {
