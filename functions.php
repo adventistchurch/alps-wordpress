@@ -123,6 +123,8 @@ function adventist_register_required_plugins() {
     }
     $plugins = array(
     // Piklist
+    // no longer requiring piklist
+    /*
     array(
       'name'               => 'Piklist', // The plugin name.
       'slug'               => 'piklist', // The plugin slug (typically the folder name).
@@ -131,6 +133,7 @@ function adventist_register_required_plugins() {
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
     ),
+    */
     // Gutenberg Blocks
     array(
       'name'               => 'ALPS Gutenberg Blocks', // The plugin name.
