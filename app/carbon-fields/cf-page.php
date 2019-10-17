@@ -6,6 +6,7 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_attach_header' );
 function crb_attach_header() {
   Container::make( 'post_meta', 'ALPS: Header Banner' )
+    ->where( 'post_type', '=', 'page' )
     ->add_fields( array(
       Field::make( 'separator', 'crb_long_header', __( 'Banner' ) )
          ->set_help_text( __( 'IMPORTANT: Setting the Header Banner will override the display of the Featured Image.' ) ),
