@@ -7,10 +7,13 @@
     $cf_ = '_';
   }
   // SET TO INITIALIZE / OVERRIDE
-  $header_background_image  = '';
-  $long_header_title        = '';
-  $long_header_kicker       = '';
-  $long_header_subtitle     = '';
+  $header_background_image    = '';
+  $long_header_title          = '';
+  $long_header_kicker         = '';
+  $long_header_subtitle       = '';
+  $page_header_class          = '';
+  $page_header_inner_class    = '';
+  $page_header_content_class  = '';
 
   if ( is_home() ) {
     $long_header_title      = __( 'Recent Posts', 'alps' );
@@ -44,7 +47,11 @@
     @php
       $page_header_class          = 'o-background-image u-background--cover has-background';
       $page_header_inner_class    = 'u-gradient--bottom';
-      $page_header_content_class  = 'u-border-left--white--at-medium';
+      $page_header_content_class  = 'u-shift--left--1-col--at-medium u-border-left--white--at-medium';
+
+      if ( is_page_template( 'views/template-posts.blade.php' ) ) {
+        $page_header_content_class  = '';
+      }
     @endphp
     <style type="text/css">
       .o-background-image {
@@ -64,7 +71,7 @@
   @endif
  <header class="c-page-header c-page-header__long u-theme--background-color--dark  u-space--zero--top {{ $page_header_class }}">
   <div class="c-page-header__long--inner l-grid l-grid--7-col {{ $page_header_inner_class }}">
-     <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 u-shift--left--1-col--at-medium {{ $page_header_content_class }}">
+     <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7  {{ $page_header_content_class }}">
     @if ( $long_header_kicker )
       <span class="o-kicker u-color--white">{{ $long_header_kicker }}</span>
     @endif
