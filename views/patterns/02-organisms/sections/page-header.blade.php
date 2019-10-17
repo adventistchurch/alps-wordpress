@@ -9,6 +9,7 @@
   // SET TO INITIALIZE / OVERRIDE
   $header_background_image  = '';
   $long_header_title        = '';
+  $long_header_kicker       = '';
   $long_header_subtitle     = '';
 
   if ( is_home() ) {
