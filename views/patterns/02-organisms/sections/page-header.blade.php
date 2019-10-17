@@ -6,72 +6,66 @@
   if ( $cf ) {
     $cf_ = '_';
   }
-  $long_header_title = '';
-  if ( !is_home() && !is_archive() ) {
-    global $post;
-    $long_header_title            = get_post_meta( $post->ID, $cf_.'display_title', true );
-    if ( empty( $long_header_title ) ) {
-      $hide_featured_image        = get_post_meta( $post->ID, $cf_.'hide_featured_image', true );
-      $header_background_image    = '';
-      $page_header_class          = NULL;
+  // SET TO INITIALIZE / OVERRIDE
+  $header_background_image  = '';
+  $long_header_title        = '';
+  $long_header_subtitle     = '';
 
-      if ( !$hide_featured_image && get_post_thumbnail_id( $post->ID ) ) {
-        $header_background_image  = get_post_thumbnail_id( $post->ID );
-        $page_header_class        = 'c-background-image blended u-background--cover u-gradient--bottom';
-      }
-    } else {
-      $header_background_image  = get_post_meta( $post->ID, $cf_.'header_background_image', true );
-    }
+  if ( is_home() ) {
+    $long_header_title   = __( 'Recent Posts', 'alps' );
   }
-
-  if (is_home()) {
-    $display_title  = __( 'Recent Posts', 'alps' );
-    $title          = NULL;
-  } else if (is_archive()) {
+  elseif ( is_archive() ) {
     if ( get_alps_option( 'posts_label' ) ) {
-      $kicker       = __( 'Category', 'alps');
-    } else {
-      $kicker       = NULL;
+      $long_header_kicker = __( 'Category', 'alps');
     }
-    $display_title  = '';
-    $title          = single_cat_title( '', false );
-  } else {
-    $kicker         = get_post_meta( $post->ID, $cf_.'kicker', true );
-    $display_title  = get_post_meta( $post->ID, $cf_.'display_title', true );
-    $title          = get_the_title( $post->ID );
+    $long_header_title = single_cat_title( '', false );
   }
+  else {
+    // LEGACY HEADER FIELDS
+    $long_header_kicker = get_post_meta( $post->ID, $cf_.'kicker', true );
+    $long_header_title  = get_post_meta( $post->ID, $cf_.'display_title', true );
+    $title              = get_the_title( $post->ID );
+  }
+
+if ( !is_home() && !is_archive() ) {
+  global $post;
+
+  $long_header_title = '';
+  if ( !$long_header_title ) {
+    $long_header_title = $title;
+  }
+  $long_header_kicker       = get_post_meta( $post->ID, $cf_.'kicker', true );
+  $long_header_subtitle     = carbon_get_the_post_meta( 'long_header_subtitle' );
+  $header_background_image  = get_post_meta( $post->ID, $cf_.'header_background_image', true );
+  if ( !$header_background_image && !empty( $hide_featured_image ) ) {
+    $header_background_image  = get_post_thumbnail_id( $post->ID );
+  }
+}
 @endphp
 
- @if (!empty($header_background_image))
-<style type="text/css">
-  .o-background-image {
-    background-image: url(<?php echo wp_get_attachment_image_url( $header_background_image, 'featured__hero--m' ); ?>);
-  }
-  @media (min-width: 900px) {
-    .o-background-image {
-      background-image: url(<?php echo wp_get_attachment_image_url( $header_background_image, 'featured__hero--l' ); ?>);
-    }
-  }
-  @media (min-width: 1100px) {
-    .o-background-image {
-      background-image: url(<?php echo wp_get_attachment_image_url( $header_background_image, 'featured__hero--xl' ); ?>);
-    }
-  }
-</style>
-@endif
-@if ( $long_header_title )
+@if ( $header_background_image )
   @php
-    $long_header_kicker       = get_post_meta( $post->ID, $cf_.'kicker', true );
-    $long_header_subtitle     = carbon_get_the_post_meta( 'long_header_subtitle' );
-    $header_background_image  = get_post_meta( $post->ID, $cf_.'header_background_image', true );
+    $page_header_class          = 'o-background-image u-background--cover has-background';
+    $page_header_inner_class    = 'u-gradient--bottom';
+    $page_header_content_class  = 'u-border-left--white--at-medium';
   @endphp
-  @if ( $header_background_image )
-    @php
-      $page_header_class          = 'o-background-image u-background--cover has-background';
-      $page_header_inner_class    = 'u-gradient--bottom';
-      $page_header_content_class  = 'u-border-left--white--at-medium';
-    @endphp
-  @endif
+  <style type="text/css">
+    .o-background-image {
+      background-image: url(<?php echo wp_get_attachment_image_url( $header_background_image, 'featured__hero--m' ); ?>);
+    }
+    @media (min-width: 900px) {
+      .o-background-image {
+        background-image: url(<?php echo wp_get_attachment_image_url( $header_background_image, 'featured__hero--l' ); ?>);
+      }
+    }
+    @media (min-width: 1100px) {
+      .o-background-image {
+        background-image: url(<?php echo wp_get_attachment_image_url( $header_background_image, 'featured__hero--xl' ); ?>);
+      }
+    }
+  </style>
+@endif
+
  <header class="c-page-header c-page-header__long u-theme--background-color--dark  u-space--zero--top {{ $page_header_class }}">
   <div class="c-page-header__long--inner l-grid l-grid--7-col {{ $page_header_inner_class }}">
      <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 u-shift--left--1-col--at-medium {{ $page_header_content_class }}">
@@ -86,11 +80,11 @@
     </div>
   </div>
 </header>
- @if ( $long_header_subtitle )
+@if ( $long_header_subtitle )
 <div class="c-page-header__subtitle c-page-header__long__subtitle l-grid l-grid--7-col u-space--top--zero">
   <div class="l-grid-wrap l-grid-wrap--5-of-7 u-shift--left--1-col--at-medium u-border--left u-font--secondary--m">
-        {{ $long_header_subtitle }}
+    {{ $long_header_subtitle }}
   </div>
 </div>
-  @endif
 @endif
+
