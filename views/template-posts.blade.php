@@ -9,7 +9,6 @@
   if ( $cf )  {
     $cf_ = '_';
 
-
     $post_feed_list                 = carbon_get_post_meta( $post->ID, 'post_feed_list' );
     $post_feed_list_title           = carbon_get_post_meta( $post->ID, 'post_feed_list_title' );
     $post_feed_list_link            = carbon_get_post_meta( $post->ID, 'post_feed_list_link' );
@@ -19,7 +18,7 @@
     $post_feed_list_offset          = carbon_get_post_meta( $post->ID, 'post_feed_list_offset' );
     $post_feed_list_round           = carbon_get_post_meta( $post->ID, 'post_feed_list_round_image' );
 
-      // PASS ID
+    // PASS ID
     if ( !empty( $post_feed_list_category ) ) {
       $post_feed_list_category        = $post_feed_list_category[0]['id'];
     }
@@ -53,10 +52,7 @@
     if ( !empty( $post_feed_archive_category ) ) {
       $post_feed_archive_category   = $post_feed_archive_category[0]['id'];
     }
-
-
   } else {
-
     $post_feed_list                 = get_alps_field( 'post_feed_list' );
     $post_feed_list_title           = get_alps_field( 'post_feed_list_title' );
     $post_feed_list_link            = get_alps_field( 'post_feed_list_link' );
@@ -74,7 +70,6 @@
     $post_feed_archive_count        = get_alps_field( 'post_feed_archive_count' );
     $post_feed_archive_offset       = get_alps_field( 'post_feed_archive_offset' );
   }
-
 @endphp
 @extends('layouts.app')
 @section('content')
@@ -186,6 +181,9 @@
                     $block_content_class  = "l-grid-item l-grid-item--s--4-col l-grid-item--l--3-col u-flex--justify-start u-padding--left";
                     $block_title_class    = "u-theme--color--dark u-font--primary--l";
                     $block_meta_class     = "u-theme--color--base";
+
+                    $excerpt        = get_the_excerpt( $id );
+                    $excerpt_length = 35; // WORDS
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
                 @endwhile
@@ -276,6 +274,8 @@
                     $block_title_class    = "u-theme--color--dark u-font--primary--l";
                     $block_meta_class     = "u-theme--color--base";
 
+                    $excerpt        = get_the_excerpt( $id );
+                    $excerpt_length = 35; // WORDS
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
                 @endwhile
@@ -359,6 +359,9 @@
                   $block_content_class  = "l-grid-item l-grid-item--s--3-col u-border-left--black--at-large u-theme--border-color--darker--left u-color--gray u-background-color--gray--light can-be--dark-dark u-padding--top u-padding--bottom u-flex--justify-between";
                   $block_title_class    = "u-theme--color--dark u-font--primary--l";
                   $block_meta_class     = "u-theme--color--base";
+
+                  $excerpt        = get_the_excerpt( $id );
+                  $excerpt_length = 35; // WORDS
                 @endphp
                 @include('patterns.01-molecules.blocks.media-block')
                 {!! wp_reset_postdata() !!}
@@ -430,6 +433,10 @@
                 $block_content_class  = "l-grid-item--3-col l-grid-item--m--2-col l-grid-item--xl--1-col u-border--left";
                 $block_title_class    = "u-theme--color--dark u-font--primary--s";
                 $block_meta_class     = "u-theme--color--base u-font--secondary--xs";
+
+                $excerpt        = get_the_excerpt( $id );
+                $excerpt_length = 35; // WORDS
+
               @endphp
               @include('patterns.01-molecules.blocks.media-block')
             @endwhile
@@ -518,6 +525,9 @@
                     $block_content_class  = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--3-col u-flex--justify-start u-border--left";
                     $block_title_class    = "u-theme--color--dark u-font--primary--l";
                     $block_meta_class     = "u-theme--color--base";
+                    $excerpt        = get_the_excerpt( $id );
+                    $excerpt_length = 35; // WORDS
+
                   @endphp
                   @include('patterns.01-molecules.blocks.media-block')
                 @endwhile
