@@ -20,25 +20,26 @@
             $parentID = $nav->ID;
             $sub_items = array_filter( $nav_items, function( $item ) use ( $parentID ) { return $item->menu_item_parent == $parentID; } );
           @endphp
-          <span class="c-subnav__arrow o-arrow--down u-path-fill--gray"></span>
+          <span class="c-primary-nav__arrow c-subnav__arrow o-arrow--down u-path-fill--gray"></span>
           <ul class="c-primary-nav__subnav c-subnav">
           @foreach ( $sub_items as $sub_item => $sub )
-            <li class="c-primary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
+            @php
+              $show_sub_subnav  = '';
+              $has_sub_subnav   = array_search( $sub->ID, array_column( $nav_items, 'menu_item_parent' ) );
+              if ( $has_sub_subnav ) $show_sub_subnav = 'has-subnav js-this';
+            @endphp
+            <li class="c-primary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light u-theme--border-color--dark @php echo $show_subnav @endphp">
               <a class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $sub->url }}">{{ $sub->title }}</a>
-              @php
-                $show_sub_subnav  = '';
-                $has_sub_subnav   = array_search( $sub->ID, array_column( $nav_items, 'menu_item_parent' ) );
-                if ( $has_sub_subnav ) $show_sub_subnav = 'has-subnav';
-              @endphp
               @if ( $has_sub_subnav )
+                 <span class="c-primary-nav__subnav__arrow c-subnav__arrow o-arrow--down u-path-fill--gray js-toggle" data-toggled="this" data-prefix="this"></span>
                 <ul class="c-primary-nav__subnav c-subnav">
                  @php
                   $parentID = $sub->ID;
                   $sub_subitems = array_filter( $nav_items, function( $item ) use ( $parentID ) { return $item->menu_item_parent == $parentID; } );
                 @endphp
                 @foreach ( $sub_subitems as $sub_subitem => $sub_item )
-                <li class="c-primary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
-                <a class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $sub_item->url }}">{{ $sub_item->title }}</a></li>
+                <li class="c-primary-nav__subnav__subnav__list-item c-subnav__list-item u-theme--background-color--base">
+                <a class="c-primary-nav__subnav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--lighter" href="{{ $sub_item->url }}">{{ $sub_item->title }}</a></li>
                 @endforeach
                 </ul>
               @endif
