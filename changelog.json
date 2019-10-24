@@ -1,4 +1,10 @@
 {
+  "3.0.19-beta" : {
+    "description" : "Version increment to fix deployment."
+  },
+  "3.0.18-beta" : {
+    "description" : "Adds the shortcode block and a new CTA block."
+  },
   "3.0.17-beta" : {
     "description" : "Fixes the footer logo missing when the Sabbath column is hidden."
   },
