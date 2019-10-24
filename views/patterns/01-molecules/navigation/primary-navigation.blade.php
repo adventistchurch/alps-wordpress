@@ -11,6 +11,15 @@
     <ul class="c-primary-nav__list c-priority-nav__list">
       @php $primary_nav = json_decode(json_encode($primary_nav), true); @endphp
       @foreach ($primary_nav as $nav)
+        @php
+          $link_url = $nav['url'];
+          $link_text = $nav['title'];
+          $link_classes = ($nav['classes'] ? ' ' . implode(' ', $nav['classes']) : '');
+          $link_target = ($nav['target'] ? ' target="'. $nav['target'] . '"' : '');
+          $link_title = ($nav['attr_title'] ? ' title="'. $nav['attr_title'] . '"' : '');
+          $link_description = ($nav['description'] ? ' description="' . $nav['description'] . '"' : '');
+          $link_rel = ($nav['xfn'] ? ' rel="'. $nav['xfn'] . '"' : '');
+        @endphp
         @if (isset($primary_nav[$count + 1]))
           @php
             $parent = $primary_nav[$count + 1]['menu_item_parent'];
@@ -19,7 +28,7 @@
         @if (!$nav['menu_item_parent'])
           @php $parent_id = $nav['ID']; @endphp
           <li class="c-primary-nav__list-item has-subnav">
-            <a href="{{ $nav['url'] }}" class="c-primary-nav__link u-font--primary-nav u-color--gray--dark u-theme--link-hover--base u-theme--border-color--base">{{ $nav['title'] }}</a>
+            <a href="{{ $link_url }}" class="c-primary-nav__link u-font--primary-nav u-color--gray--dark u-theme--link-hover--base u-theme--border-color--base{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}>{{ $link_text }}</a>
         @endif
         @if ($parent_id == $nav['menu_item_parent'])
           @if (!$submenu)
@@ -28,7 +37,7 @@
             <ul class="c-primary-nav__subnav c-subnav">
           @endif
             <li class="c-primary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
-              <a class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $nav['url'] }}">{{ $nav['title'] }}</a>
+              <a href="{{ $link_url }}" class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}>{{ $link_text }}</a>
             </li>
             @if ($parent != $parent_id && $submenu)
               </ul> <!-- /.c-primary-nav__subnav -->
