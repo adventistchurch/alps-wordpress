@@ -123,7 +123,7 @@ function crb_attach_page_template_fields() {
 
 add_action( 'carbon_fields_register_fields', 'crb_attach_related_pages' );
 function crb_attach_related_pages() {
-  Container::make( 'post_meta', 'ALPS: Related Pages' )
+  Container::make( 'post_meta', 'ALPS: Related Pages & Posts' )
     ->where( 'post_type', '=', 'page' )
     ->where( 'post_template', '!=', 'views/template-posts.blade.php')
     ->add_fields( array(
@@ -138,11 +138,10 @@ function crb_attach_related_pages() {
       ),
       Field::make( 'association', 'related_custom_value', __( 'Assign Pages' ) )
         ->set_types( array(
-          array(
-            'type'      => 'post',
-            'post_type' => 'page',
+          array( 'type' => 'post', 'post_type' => 'page' ),
+          array( 'type' => 'post', 'post_type' => 'post' )
           )
-        ) )
+        )
         ->set_conditional_logic(
           array(
             array(
