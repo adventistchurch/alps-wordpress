@@ -121,45 +121,52 @@ function adventist_register_required_plugins() {
       $plugin_required = true;
       $plugin_activation = true;
     }
+
+
     $plugins = array(
-    // Gutenberg Blocks
-    array(
-      'name'               => 'ALPS Gutenberg Blocks', // The plugin name.
-      'slug'               => 'alps-gutenberg-blocks', // The plugin slug (typically the folder name).
-      'source'             => 'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/download', // The plugin source.
-      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-    ),
-    // Guidebook
-    array(
-      'name'               => 'Guidepost', // The plugin name.
-      'slug'               => 'guidepost', // The plugin slug (typically the folder name).
-      'source'             => 'https://github.com/sortabrilliant/guidepost/archive/master.zip',
-      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-    ),
-    // WordPress SEO
-    array(
-      'name'              => 'WordPress SEO by Yoast',
-      'slug'              => 'wordpress-seo',
-      'required'          => false,
-    ),
-    // SVG Support
-    array(
-      'name'              => 'SVG Support',
-      'slug'              => 'svg-support',
-      'required'          => true,
-      'force_activation'  => true,
-    ),
-    array(
-      'name'              => $plugin_name,
-      'slug'              => $plugin_slug,
-      'required'          => $plugin_required,
-      'force_activation'  => $plugin_activation,
-    ),
+      // Gutenberg Blocks
+
+      // Guidebook
+      array(
+        'name'               => 'Guidepost', // The plugin name.
+        'slug'               => 'guidepost', // The plugin slug (typically the folder name).
+        'source'             => 'https://github.com/sortabrilliant/guidepost/archive/master.zip',
+        'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+        'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+        'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+      ),
+      // WordPress SEO
+      array(
+        'name'              => 'WordPress SEO by Yoast',
+        'slug'              => 'wordpress-seo',
+        'required'          => false,
+      ),
+      // SVG Support
+      array(
+        'name'              => 'SVG Support',
+        'slug'              => 'svg-support',
+        'required'          => true,
+        'force_activation'  => true,
+      ),
+      array(
+        'name'              => $plugin_name,
+        'slug'              => $plugin_slug,
+        'required'          => $plugin_required,
+        'force_activation'  => $plugin_activation,
+      ),
   );
+
+  if ( get_bloginfo( 'version' ) >= '5.0.0' ) {
+    // ADD IF WP IS V5 OR GREATER
+    array_push( $plugins,  array(
+      'name'               => 'ALPS Gutenberg Blocks',
+      'slug'               => 'alps-gutenberg-blocks',
+      'source'             => 'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/download',
+      'required'           => true,
+      'force_activation'   => true,
+      'force_deactivation' => false,
+    ) );
+  }
   $config = array(
     'id'           => 'adventist',             // Unique ID for hashing notices for multiple instances of TGMPA.
     'default_path' => '',                      // Default absolute path to bundled plugins.
@@ -632,10 +639,26 @@ if ( !$cf ) {
     ?>
     <div class="notice notice-warning is-dismissible" style="background:#fff;border:2px solid black; border-left:6px solid red"">
         <p style="font-size:28px"><?php _e( 'ALPS: The ALPS theme requires an update. Please read and follow the instructions below.' ) ?></p>
-        <p style="font-size:22px"><?php _e( '
-            Clicking the link below will run an upgrade script. This will download, install and run a converter plugin. After running, the plugin will uninstall and delete itself, and remove the Piklist plugin completely from your site.
-            ' ); ?></p>
+        <?php
+        // FIRST CHECK FOR WP VERSION
+        if ( version_compare( get_bloginfo( 'version' ), '5.2.4', '>' ) ) { ?>
+        <p style="font-size:22px">
+          <span style="color:red; font-weight:bold">WordPress Update Required<br>If you do not upgrade WordPress, your site will not function properly. Please update now.</span>
+        </p>
+        <p style="font-size:22px">
+          Please click on the link below, and then click on the blue Update Now button on the update page.
+        </p>
+
+        <p style="font-size:22px">
+          <a href="<?php echo admin_url( 'update-core.php', 'http' ) ?>">Update WordPress</a>
+        </p>
+        <?php
+        }
+        else { ?>
+        <p style="font-size:22px"><?php _e( 'Clicking the link below will run an upgrade script. This will download, install and run a converter plugin. After running, the plugin will uninstall and delete itself, and remove the Piklist plugin completely from your site.' ); ?></p>
         <p style="font-size:22px"><?php _e( '<a href="'. $url . '">click here to install and run the field converter plugin</a>.' ); ?></p>
+
+        <?php } ?>
     </div>
     <?php
     }
