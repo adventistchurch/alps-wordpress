@@ -76,8 +76,8 @@
               }
             @endphp
           </p>
-        @else
-          <p class="c-media-block__description c-block__description">
+        @elseif (!empty( $body ))
+          <p class="c-media-block__description c-block__description">this is
             @php
               if ( str_word_count( $body ) > $excerpt_length) {
                 echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
