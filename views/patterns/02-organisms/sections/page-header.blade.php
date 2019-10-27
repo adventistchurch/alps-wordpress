@@ -13,7 +13,7 @@
   $long_header_subtitle       = '';
   $page_header_class          = '';
   $page_header_inner_class    = '';
-  $page_header_content_class  = '';
+  $page_header_content_class  = 'u-shift--left--1-col--at-xxlarge';
 
   if ( is_home() ) {
     $long_header_title      = __( 'Recent Posts', 'alps' );
@@ -47,7 +47,7 @@
     @php
       $page_header_class          = 'o-background-image u-background--cover has-background';
       $page_header_inner_class    = 'u-gradient--bottom';
-      $page_header_content_class  = 'u-shift--left--1-col--at-medium u-border-left--white--at-medium';
+      $page_header_content_class  .= ' u-border-left--white--at-large';
 
       if ( is_page_template( 'views/template-posts.blade.php' ) ) {
         $page_header_content_class  = '';
@@ -75,10 +75,8 @@
     @if ( $long_header_kicker )
       <span class="o-kicker u-color--white">{{ $long_header_kicker }}</span>
     @endif
-      <h1 class="u-font--primary--xl u-color--white">
-        <a class="u-link--white u-link-hover--white u-font-weight--bold" href="<?php the_permalink() ?>">
+      <h1 class="u-font--primary--xl u-color--white u-font-weight--bold">
           {{ $long_header_title }}
-        </a>
       </h1>
     </div>
   </div>
