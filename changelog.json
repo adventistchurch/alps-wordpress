@@ -1,4 +1,7 @@
 {
+  "3.0.0-beta20" : {
+    "description" : "Removing of Piklist and adding support for title, class, etc attributes in the menu system."
+  },
   "3.0.19-beta" : {
     "description" : "Version increment to fix deployment."
   },
