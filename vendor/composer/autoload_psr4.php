@@ -14,8 +14,6 @@ return array(
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
-    'Sober\\Controller\\Module\\' => array($vendorDir . '/soberwp/controller/src/Module'),
-    'Sober\\Controller\\' => array($vendorDir . '/soberwp/controller/src'),
     'Roots\\Sage\\Installer\\' => array($vendorDir . '/roots/sage-installer/src'),
     'Roots\\Sage\\' => array($vendorDir . '/roots/sage-lib'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
@@ -32,7 +30,7 @@ return array(
     'Illuminate\\Config\\' => array($vendorDir . '/illuminate/config'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
+    'Carbon_Fields\\' => array($vendorDir . '/htmlburger/carbon-fields/core'),
     'Brain\\Hierarchy\\' => array($vendorDir . '/brain/hierarchy/src'),
-    'App\\' => array($baseDir . '/app'),
     '' => array($vendorDir . '/nesbot/carbon/src'),
 );

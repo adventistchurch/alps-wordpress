@@ -1,10 +1,12 @@
 @if (has_nav_menu('primary_navigation'))
+
   <nav class="c-primary-nav c-priority-nav" role="navigation">
     @php
       $menu_name = 'primary_navigation';
       $menu_locations = get_nav_menu_locations();
       $menu = wp_get_nav_menu_object( $menu_locations[ $menu_name ] );
-      $primary_nav = wp_get_nav_menu_items( $menu->term_id);
+      $primary_nav = wp_get_nav_menu_items( $menu->term_id );
+
       $count = 0;
       $submenu = false;
     @endphp

@@ -10,14 +10,14 @@ add_filter('body_class', function (array $classes) {
   $classes[] = 'body';
 
   // Add class if dark theme is true
-  $dark_theme = get_option('alps_theme_settings')['dark_theme'];
-  if ($dark_theme) {
+  $dark_theme = get_alps_option( 'dark_theme' );
+  if ( !empty( $dark_theme ) ) {
     $classes[] = 'u-theme--dark';
   }
 
   // Add class if grid lines is true
-  $grid_lines = get_option('alps_theme_settings')['grid_lines'];
-  if ($grid_lines) {
+  $grid_lines = get_alps_option( 'grid_lines' );
+  if ( !empty( $grid_lines ) ) {
     $classes[] = 'has-grid';
   }
 
@@ -33,14 +33,14 @@ add_filter('body_class', function (array $classes) {
   }
 
   // Add class if sabbath column is hidden
-  $hide_sabbath = get_option('alps_theme_settings')['sabbath_hide'];
-  if ($hide_sabbath == 'true') {
-    $hide_sabbath_screens = get_option('alps_theme_settings')['sabbath_hide_screens'][0];
-    if ($hide_sabbath_screens == 'hide-sabbath hide-sabbath--until-small') {
+  $hide_sabbath = get_alps_option( 'sabbath_hide' );
+  if ($hide_sabbath == true ) {
+    $hide_sabbath_screens = get_alps_option( 'sabbath_hide_screens' );
+    if ($hide_sabbath_screens == 'hide-sabbath--until-small') {
       $classes[] = 'hide-sabbath hide-sabbath--until-small';
-    } else if ($hide_sabbath_screens == 'hide-sabbath hide-sabbath--until-medium') {
-      $classes[] = 'hide-sabbath hide-sabbath--until-medium';
-    } else if ($hide_sabbath_screens == 'hide-sabbath hide-sabbath--until-large') {
+    } else if ($hide_sabbath_screens == 'hide-sabbath--until-medium') {
+      $classes[] = 'hide-sabbath--until-medium';
+    } else if ($hide_sabbath_screens == 'hide-sabbath--until-large') {
       $classes[] = 'hide-sabbath hide-sabbath--until-large';
     } else {
       $classes[] = 'hide-sabbath hide-sabbath--all';
@@ -109,3 +109,13 @@ add_filter('comments_template', function ($comments_template) {
     );
     return template_path(locate_template(["views/{$comments_template}", $comments_template]) ?: $comments_template);
 }, 100);
+
+
+// REMOVE MEDIA BUTTON FROM CF RICH TEXT EDITOR
+add_filter( 'crb_media_buttons_html', function( $html, $field_name ) {
+    $fields = array( 'content_block_freeform_body', 'sb_body', 'content_body_1', 'footer_description' );
+    if (in_array( $field_name, $fields ) ) {
+        return;
+    }
+    return $html;
+}, 10, 2);
