@@ -1,6 +1,5 @@
 # ALPS WordPress Theme Setup
 
-
 ## Theme installation via WordPress Admin Panel
 
 1. In your WordPress admin panel, navigate to `Appearance->Themes`
