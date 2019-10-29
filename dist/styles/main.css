@@ -83,10 +83,6 @@
   width: calc(100% + 20px);
 }
 
-.has-subnav .has-subnav {
-  display: none;
-}
-
 .c-secondary-nav__subnav__link .wpml-ls-flag {
   width: 18px;
   height: 12px;
