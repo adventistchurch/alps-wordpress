@@ -1,16 +1,16 @@
-@if (has_nav_menu('secondary_navigation'))
-  <nav class="c-secondary-nav" role="navigation">
-    @php
-      $menu_name = 'secondary_navigation';
-      $menu_locations = get_nav_menu_locations();
-      $menu = wp_get_nav_menu_object( $menu_locations[ $menu_name ] );
-      $secondary_nav = wp_get_nav_menu_items( $menu->term_id);
-      $count = 0;
-      $submenu = false;
-      $parent = false;
-      $parent_id = false;
-    @endphp
-    <ul class="c-secondary-nav__list">
+<nav class="c-secondary-nav" role="navigation">
+  <ul class="c-secondary-nav__list">
+    @if (has_nav_menu('secondary_navigation'))
+      @php
+        $menu_name = 'secondary_navigation';
+        $menu_locations = get_nav_menu_locations();
+        $menu = wp_get_nav_menu_object( $menu_locations[ $menu_name ] );
+        $secondary_nav = wp_get_nav_menu_items( $menu->term_id);
+        $count = 0;
+        $submenu = false;
+        $parent = false;
+        $parent_id = false;
+      @endphp
       @php
         $secondary_nav = json_decode(json_encode($secondary_nav), true);
       @endphp
@@ -54,15 +54,16 @@
       @endforeach
       {!! wp_reset_postdata() !!}
     </ul> <!-- /.c-secondary-nav__list -->
-    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
-      <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>{{_e("Search", "alps") }}
-      </a>
-    </li>
-    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__menu c-secondary-nav__list-item__toggle js-toggle-menu is-priority">
-      <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>{{ _e("Menu", "alps") }}
-      </a>
-    </li>
-  </nav> <!-- /.c-secondary-nav -->
-@endif
+  @endif
+  <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
+    <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
+      <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>{{_e("Search", "alps") }}
+    </a>
+  </li>
+  <li class="c-secondary-nav__list-item c-secondary-nav__list-item__menu c-secondary-nav__list-item__toggle js-toggle-menu is-priority">
+    <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
+      <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>{{ _e("Menu", "alps") }}
+    </a>
+  </li>
+</nav> <!-- /.c-secondary-nav -->
+
