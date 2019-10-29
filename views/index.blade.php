@@ -1,12 +1,11 @@
 @extends('layouts.app')
 @section('content')
   @php
-    $theme_options = get_option('alps_theme_settings');
-    $hide_sidebar = $theme_options['index_hide_sidebar'];
-    $posts_grid = $theme_options['posts_grid'];
-    $post_grid_3up = $theme_options['posts_grid_3up'];
-    $posts_image = $theme_options['posts_image'];
-    $posts_image_round = $theme_options['posts_image_round'];
+    $hide_sidebar       = get_alps_option( 'index_hide_sidebar' );
+    $posts_grid         = get_alps_option( 'posts_grid' );
+    $post_grid_3up      = get_alps_option( 'posts_grid_3up' );
+    $posts_image        = get_alps_option( 'posts_image' );
+    $posts_image_round  = get_alps_option( 'posts_image_round' );
     if (is_active_sidebar('sidebar-posts') && $hide_sidebar != 'true') {
       $section_offset = 'u-shift--left--1-col--at-xxlarge';
       $article_offset = 'l-grid-item--xl--3-col';

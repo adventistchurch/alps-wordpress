@@ -125,6 +125,30 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   }
 }
 
+.c-carbon_fields_alps_widget_post_feed {
+  padding: 0 !important;
+
+  &.u-border--left {
+    border-left: 0;
+  }
+
+  &.u-background-color--gray--light {
+    background: none;
+  }
+}
+
+.c-widget-feed--grid {
+  display: flex;
+
+  > div {
+    width: 48% !important; // sorry
+  }
+}
+
+.c-widget_search {
+  margin-top: 1.25rem;
+}
+
 // Breakout Block
 .c-sidebar .c-block__breakout {
   @media (max-width: 900px) {
@@ -141,6 +165,27 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 
   margin-right: -15px;
   margin-top: -80px;
+}
+
+/* THIS ALMOST ASSUREDLY NEEDS FINE TUNING / ADJUSTMENTS */
+.c-carbon_fields_alps_widget_text_with_link {
+  /* RESET SO WE CAN OVERRIDE */
+  background: none !important;
+  border-left: 0 !important;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
+  padding-bottom: 0 !important;
+
+  .c-block__breakout {
+    @media (min-width: 901px) {
+      margin-right: -20px;
+    }
+
+    @media (min-width: 1301px) {
+      margin-top: -40px;
+    }
+  }
 }
 
 .body.hide-sabbath .c-sidebar .c-block__breakout {
@@ -301,4 +346,9 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 
 figure {
   max-width: 100%;
+}
+
+// OVERRIDES
+.u-space--top--zero {
+  margin-top: 0 !important;
 }

@@ -1,25 +1,17 @@
 @php
-  $theme_options = get_option('alps_theme_settings');
-
-  if ($theme_options['sabbath_icon']) {
-    $sabbath_icon = $theme_options['sabbath_icon'][0];
-  } else {
-    $sabbath_icon = '';
-  }
-
-  if ($theme_options['sabbath_background']) {
-    $sabbath_background = $theme_options['sabbath_background'][0];
-  } else {
-    $sabbath_background = '';
-  }
-
-  if ($theme_options['sabbath_scroll']) {
+  // SET VARS
+  $sabbath_icon       = '';
+  $sabbath_background = '';
+  $sabbath_icon_class = '';
+  // DEFINE VARS
+  $sabbath_icon       = get_alps_option( 'sabbath_icon' );
+  $sabbath_background = get_alps_option( 'sabbath_background' );
+  if ( get_alps_option( 'sabbath_scroll' )  ) {
     $sabbath_icon_class = 'js-show-on-scroll is-hidden';
-  } else {
-    $sabbath_icon_class = '';
   }
 @endphp
 <aside class="l-wrap__sabbath l-sabbath js-sticky-parent js-toggle-menu @if (!empty($sabbath_background)){{'u-background-image--sabbath'}}@endif">
+
   @if (!empty($sabbath_background))
     <style>
       .u-background-image--sabbath {

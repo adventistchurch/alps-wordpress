@@ -58,7 +58,7 @@ array_map(function ($file) use ($sage_error) {
     if (!locate_template($file, true, true)) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'alps'), $file), 'File not found');
     }
-}, ['helpers', 'setup', 'filters', 'admin']);
+}, ['helpers', 'setup', 'fields', 'filters', 'admin']);
 
 /**
  * Here's what's happening with these hooks:
@@ -121,54 +121,52 @@ function adventist_register_required_plugins() {
       $plugin_required = true;
       $plugin_activation = true;
     }
+
+
     $plugins = array(
-    // Piklist
-    array(
-      'name'               => 'Piklist', // The plugin name.
-      'slug'               => 'piklist', // The plugin slug (typically the folder name).
-      'source'             => 'https://github.com/piklist/piklist/archive/develop.zip', // The plugin source.
-      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-    ),
-    // Gutenberg Blocks
-    array(
-      'name'               => 'ALPS Gutenberg Blocks', // The plugin name.
-      'slug'               => 'alps-gutenberg-blocks', // The plugin slug (typically the folder name).
-      'source'             => 'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/download', // The plugin source.
-      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-    ),
-    // Guidebook
-    array(
-      'name'               => 'Guidebpost', // The plugin name.
-      'slug'               => 'guidepost', // The plugin slug (typically the folder name).
-      'source'             => 'https://github.com/sortabrilliant/guidepost/archive/master.zip',
-      'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-      'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-      'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-    ),
-    // WordPress SEO
-    array(
-      'name'              => 'WordPress SEO by Yoast',
-      'slug'              => 'wordpress-seo',
-      'required'          => false,
-    ),
-    // SVG Support
-    array(
-      'name'              => 'SVG Support',
-      'slug'              => 'svg-support',
-      'required'          => true,
-      'force_activation'  => true,
-    ),
-    array(
-      'name'              => $plugin_name,
-      'slug'              => $plugin_slug,
-      'required'          => $plugin_required,
-      'force_activation'  => $plugin_activation,
-    ),
+      // Gutenberg Blocks
+
+      // Guidebook
+      array(
+        'name'               => 'Guidepost', // The plugin name.
+        'slug'               => 'guidepost', // The plugin slug (typically the folder name).
+        'source'             => 'https://github.com/sortabrilliant/guidepost/archive/master.zip',
+        'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+        'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+        'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+      ),
+      // WordPress SEO
+      array(
+        'name'              => 'WordPress SEO by Yoast',
+        'slug'              => 'wordpress-seo',
+        'required'          => false,
+      ),
+      // SVG Support
+      array(
+        'name'              => 'SVG Support',
+        'slug'              => 'svg-support',
+        'required'          => true,
+        'force_activation'  => true,
+      ),
+      array(
+        'name'              => $plugin_name,
+        'slug'              => $plugin_slug,
+        'required'          => $plugin_required,
+        'force_activation'  => $plugin_activation,
+      ),
   );
+
+  if ( get_bloginfo( 'version' ) >= '5.0.0' ) {
+    // ADD IF WP IS V5 OR GREATER
+    array_push( $plugins,  array(
+      'name'               => 'ALPS Gutenberg Blocks',
+      'slug'               => 'alps-gutenberg-blocks',
+      'source'             => 'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/download',
+      'required'           => true,
+      'force_activation'   => true,
+      'force_deactivation' => false,
+    ) );
+  }
   $config = array(
     'id'           => 'adventist',             // Unique ID for hashing notices for multiple instances of TGMPA.
     'default_path' => '',                      // Default absolute path to bundled plugins.
@@ -466,6 +464,7 @@ add_filter('allowed_block_types', function () {
     'alps-gutenberg-blocks/image-2up',
     'alps-gutenberg-blocks/image-breakout',
     'alps-gutenberg-blocks/latest-posts',
+    'alps-gutenberg-blocks/cta',
     'sbb/guidepost',
   ];
 });
@@ -550,3 +549,227 @@ function pagination_nav() {
 
   echo '</nav>' . "\n";
 }
+
+// HELPER FUNCTION TO PULL CUSTOM FIELDS FROM EITHER CF or PL
+function get_alps_field( $field, $id = NULL ) {
+    global $post;
+    if ( empty( $id ) ) {
+        $id = get_queried_object_id();
+    }
+    $cf = get_option( 'alps_cf_converted' );
+    if ( !empty( $cf ) ) {
+        $field_data = carbon_get_post_meta( $id, $field );
+        if ( !empty( $field_data ) ) {
+            if ( is_array( $field_data ) ) {
+                if ( count( $field_data ) === 1 ) {
+                    return $field_data[0];
+                } else {
+                    // RETURN COMPLETE ARRAY
+                    return $field_data;
+                }
+            }
+        }
+        else {
+            return $field_data;
+        }
+    } else { // PIKLIST
+        return get_post_meta( $id, $field, true );
+    }
+}
+
+function get_alps_option( $field ) {
+    global $post;
+    $cf = get_option( 'alps_cf_converted' );
+    if ( $cf ) {
+        $option = carbon_get_theme_option( $field );
+    } else {
+        if ( $options = get_option( 'alps_theme_settings' ) ) {
+            if ( isset( $options[ $field ] )  ) {
+                $option = $options[ $field ];
+            }
+            else {
+                $option = '';
+            }
+        }
+    }
+    if ( is_array( $option ) ) {
+        // RETURN SINGLE KEY/VAL ARRAY AS VAL (IMAGES)
+        if ( count( $option ) == 1 ) {
+            return $option[0];
+        } else {
+            // RETURN COMPLETE ARRAY
+            return $option;
+        }
+    } else {
+        return $option;
+    }
+}
+
+// HELPER FUNCTION
+function is_multidimensional(array $array) {
+    return count($array) !== count($array, COUNT_RECURSIVE);
+}
+
+
+
+
+
+$cf = get_option( 'alps_cf_converted' );
+// CARBON FIELDS
+// IF CARBON FIELDS IS INSTALLED
+$CF_ACTIVE = false;
+if ( $cf ) {
+    $CF_ACTIVE = true;
+     // ADD CF ADMIN STYLESHEET
+    function cf_admin_style() {
+        wp_enqueue_style('cf-admin-styles', get_template_directory_uri() . '/app/carbon-fields/cf-admin.css' );
+    }
+    add_action('admin_enqueue_scripts', 'cf_admin_style');
+
+    // ADD CF JAVASCRIPT
+    function cf_admin_js( $hook ) {
+        wp_enqueue_script('cf-admin-js',  get_template_directory_uri() . '/app/carbon-fields/cf-admin.js' );
+    }
+    add_action('admin_enqueue_scripts', 'cf_admin_js');
+}
+
+// IF CARBON FIELDS HAS NOT BEEN INSTALLED YET
+if ( !$cf ) {
+    function alps_admin_notice__cf_upgrade() {
+        $url = add_query_arg( array( 'action' => 'alps_convert_plugin' ), admin_url( 'admin.php' ));
+    ?>
+    <div class="notice notice-warning is-dismissible" style="background:#fff;border:2px solid black; border-left:6px solid red"">
+        <p style="font-size:28px"><?php _e( 'ALPS: The ALPS theme requires an update. Please read and follow the instructions below.' ) ?></p>
+        <?php
+        // FIRST CHECK FOR WP VERSION
+        if ( version_compare( get_bloginfo( 'version' ), '5.2.4', '>' ) ) { ?>
+        <p style="font-size:22px">
+          <span style="color:red; font-weight:bold">WordPress Update Required<br>If you do not upgrade WordPress, your site will not function properly. Please update now.</span>
+        </p>
+        <p style="font-size:22px">
+          Please click on the link below, and then click on the blue Update Now button on the update page.
+        </p>
+
+        <p style="font-size:22px">
+          <a href="<?php echo admin_url( 'update-core.php', 'http' ) ?>">Update WordPress</a>
+        </p>
+        <?php
+        }
+        else { ?>
+        <p style="font-size:22px"><?php _e( 'Clicking the link below will run an upgrade script. This will download, install and run a converter plugin. After running, the plugin will uninstall and delete itself, and remove the Piklist plugin completely from your site.' ); ?></p>
+        <p style="font-size:22px"><?php _e( '<a href="'. $url . '">click here to install and run the field converter plugin</a>.' ); ?></p>
+
+        <?php } ?>
+    </div>
+    <?php
+    }
+    add_action( 'admin_notices', 'alps_admin_notice__cf_upgrade' );
+
+    function alps_convert_plugin() {
+        $plugin_slug 	= 'carbon-fields-converter-master/alps-fields-converter.php';
+        $plugin_zip 	= 'https://github.com/adventistchurch/carbon-fields-converter/archive/master.zip';
+
+        if ( is_plugin_installed( $plugin_slug ) ) {
+            upgrade_plugin( $plugin_slug );
+            $installed = true;
+        } else {
+            $installed = install_plugin( $plugin_zip );
+        }
+        if ( !is_wp_error( $installed ) && $installed ) {
+            echo 'Activating new plugin...';
+            wp_cache_flush();
+            $activate = activate_plugin( $plugin_slug );
+            if ( is_wp_error( $activate ) ) {
+                echo '<br>' . $activate->get_error_message();
+            }
+            else {
+                deactivate_plugins( array( $plugin_slug, 'piklist/piklist.php' ) );
+                // NOW NUKE THE PIKLIST & CONVERTER PLUGINS & THEME CONFIG FILES
+                $convert_plugin_dir = ABSPATH . 'wp-content/plugins/carbon-fields-converter-master';
+                $piklist_plugin_dir = ABSPATH . 'wp-content/plugins/piklist';
+                $piklist_theme_dir 	= get_template_directory() . '/piklist';
+                $dirs = array( $convert_plugin_dir, $piklist_plugin_dir, $piklist_theme_dir );
+                foreach ( $dirs as $dir ) {
+                    alps_remove_dir_recursively( $dir );
+                }
+                // REMOVE THEME SUPPLIED PIKLST
+                $piklist_theme_file = get_template_directory() . '/lib/plugins/piklist.zip';
+                if ( file_exists( $piklist_theme_file ) ) {
+                    unlink( $piklist_theme_file );
+                }
+
+                echo '<p>Activated.</p> <p style="font-size:26px">The ALPS Fields Converter has run successfully. <a href="'. admin_url( 'plugins.php?action=alps_update_complete' ) . '">Click here to return to the plugin management page.</a></p>';
+            }
+        } else {
+            echo 'Could not install the new plugin.';
+        }
+    }
+    add_action( 'admin_action_alps_convert_plugin', 'alps_convert_plugin' );
+
+    function is_plugin_installed( $slug ) {
+        if ( ! function_exists( 'get_plugins' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+        $all_plugins = get_plugins();
+        if ( !empty( $all_plugins[$slug] ) ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function install_plugin( $plugin_zip ) {
+        include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+        wp_cache_flush();
+        $upgrader = new Plugin_Upgrader();
+        $installed = $upgrader->install( $plugin_zip );
+        return $installed;
+    }
+
+    function upgrade_plugin( $plugin_slug ) {
+        include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+        wp_cache_flush();
+        $upgrader = new Plugin_Upgrader();
+        $upgraded = $upgrader->upgrade( $plugin_slug );
+        return $upgraded;
+    }
+} // IF CARBON FIELDS HAS NOT BEEN INSTALLED YET
+
+
+// PIKLIST WILL NOT DELETE THROUGH ADMIN, SO NUKE IT FROM ORBIT
+ function alps_remove_dir_recursively( $dir ) {
+  if ( is_dir( $dir ) ) {
+    $objects = scandir( $dir );
+    foreach ( $objects as $object ) {
+      if ( $object != '.' && $object != '..' ) {
+        if ( filetype( $dir . '/' . $object ) == 'dir' ) {
+                    alps_remove_dir_recursively( $dir . '/' .$object );
+                }
+        else {
+                    unlink( $dir . '/' . $object) ;
+                }
+      }
+    }
+    reset($objects);
+    rmdir($dir);
+  }
+ }
+
+function alps_admin_notice__alps_update_complete() {
+    if ( isset( $_GET[ 'action' ] ) ) {
+        if ( $_GET[ 'action' ]  == 'alps_update_complete' ) {
+    ?>
+    <div class="notice notice-warning is-dismissible" style="background:#fff;border:2px solid black; border-left:6px solid red">
+        <p style="font-size:28px"><?php _e( 'ALPS: The update is complete.' ) ?></p>
+        <p style="font-size:22px"><?php _e( '
+            The converter plugin has run and updated your ALPS powered site. This plugin has removed both itself and Piklist from your site.
+        ' ); ?></p>
+    </div>
+<?php
+        }
+    }
+}
+add_action( 'admin_notices', 'alps_admin_notice__alps_update_complete' );
+
+// SET V3 FOR PLUGIN TO READ
+define( 'ALPS_V3', true );

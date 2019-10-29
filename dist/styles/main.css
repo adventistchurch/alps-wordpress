@@ -122,6 +122,32 @@
   padding-left: 0;
 }
 
+.c-carbon_fields_alps_widget_post_feed {
+  padding: 0 !important;
+}
+
+.c-carbon_fields_alps_widget_post_feed.u-border--left {
+  border-left: 0;
+}
+
+.c-carbon_fields_alps_widget_post_feed.u-background-color--gray--light {
+  background: none;
+}
+
+.c-widget-feed--grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-widget-feed--grid > div {
+  width: 48% !important;
+}
+
+.c-widget_search {
+  margin-top: 1.25rem;
+}
+
 .c-sidebar .c-block__breakout {
   margin-right: -15px;
   margin-top: -80px;
@@ -141,6 +167,30 @@
 
 @media (min-width: 1301px) {
   .c-sidebar .c-block__breakout {
+    margin-top: -40px;
+  }
+}
+
+/* THIS ALMOST ASSUREDLY NEEDS FINE TUNING / ADJUSTMENTS */
+
+.c-carbon_fields_alps_widget_text_with_link {
+  /* RESET SO WE CAN OVERRIDE */
+  background: none !important;
+  border-left: 0 !important;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
+  padding-bottom: 0 !important;
+}
+
+@media (min-width: 901px) {
+  .c-carbon_fields_alps_widget_text_with_link .c-block__breakout {
+    margin-right: -20px;
+  }
+}
+
+@media (min-width: 1301px) {
+  .c-carbon_fields_alps_widget_text_with_link .c-block__breakout {
     margin-top: -40px;
   }
 }
@@ -288,6 +338,10 @@
 
 figure {
   max-width: 100%;
+}
+
+.u-space--top--zero {
+  margin-top: 0 !important;
 }
 
 

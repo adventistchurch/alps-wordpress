@@ -1,7 +1,7 @@
 <!doctype html>
 @php
   // Add class if theme color is selected
-  $theme_color = get_option('alps_theme_settings')['theme_color'];
+  $theme_color = get_alps_option( 'theme_color' );
   if ($theme_color) {
     $theme_color_class = 'u-theme--' . $theme_color;
   } else {

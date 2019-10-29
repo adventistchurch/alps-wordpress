@@ -66,23 +66,23 @@
             @endif
           </h3>
         @endif
-        @if (!empty($excerpt))
+        @if (!empty( $excerpt ))
           <p class="c-media-block__description c-block__description">
             @php
-              if (strlen($excerpt) > $excerpt_length) {
-                echo strip_tags(trim(mb_substr($excerpt, 0, $excerpt_length))) . '&hellip;';
+              if ( str_word_count( $excerpt ) > $excerpt_length) {
+                echo do_shortcode( wp_trim_words( $excerpt, $excerpt_length ) );
               } else {
-                echo strip_tags($excerpt);
+                echo do_shortcode( strip_tags( $excerpt ) );
               }
             @endphp
           </p>
-        @elseif (!empty($body))
-          <p class="c-media-block__description c-block__description">
+        @elseif (!empty( $body ))
+          <p class="c-media-block__description c-block__description">this is
             @php
-              if (strlen($body) > $excerpt_length) {
-                echo strip_tags(trim(mb_substr($body, 0, $excerpt_length))) . '&hellip;';
+              if ( str_word_count( $body ) > $excerpt_length) {
+                echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
               } else {
-                echo strip_tags($body);
+                echo do_shortcode( $body );
               }
             @endphp
           </p>

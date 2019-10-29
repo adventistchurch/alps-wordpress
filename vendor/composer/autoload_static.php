@@ -10,7 +10,6 @@ class ComposerStaticInit71a02d1f943eb0ce78b65704640e08f2
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
-        'b50336562d531777993d90ca775abd88' => __DIR__ . '/..' . '/soberwp/controller/controller.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -24,8 +23,6 @@ class ComposerStaticInit71a02d1f943eb0ce78b65704640e08f2
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
-            'Sober\\Controller\\Module\\' => 24,
-            'Sober\\Controller\\' => 17,
         ),
         'R' => 
         array (
@@ -60,14 +57,11 @@ class ComposerStaticInit71a02d1f943eb0ce78b65704640e08f2
         'C' => 
         array (
             'Composer\\Installers\\' => 20,
+            'Carbon_Fields\\' => 14,
         ),
         'B' => 
         array (
             'Brain\\Hierarchy\\' => 16,
-        ),
-        'A' => 
-        array (
-            'App\\' => 4,
         ),
     );
 
@@ -103,14 +97,6 @@ class ComposerStaticInit71a02d1f943eb0ce78b65704640e08f2
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
-        ),
-        'Sober\\Controller\\Module\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/soberwp/controller/src/Module',
-        ),
-        'Sober\\Controller\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/soberwp/controller/src',
         ),
         'Roots\\Sage\\Installer\\' => 
         array (
@@ -176,13 +162,13 @@ class ComposerStaticInit71a02d1f943eb0ce78b65704640e08f2
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
+        'Carbon_Fields\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/htmlburger/carbon-fields/core',
+        ),
         'Brain\\Hierarchy\\' => 
         array (
             0 => __DIR__ . '/..' . '/brain/hierarchy/src',
-        ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

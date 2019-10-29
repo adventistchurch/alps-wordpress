@@ -8,7 +8,16 @@
       $footer_primary_nav = json_decode(json_encode($footer_primary_nav), true);
     @endphp
     @foreach ($footer_primary_nav as $nav)
-      <a href="{{ $nav['url'] }}" class="c-footer__primary-nav__link u-theme--link-hover--light u-link--white"><strong>{{ $nav['title'] }}</strong></a>
+      @php
+        $link_url = $nav['url'];
+        $link_text = $nav['title'];
+        $link_classes = ($nav['classes'] ? ' ' . implode(' ', $nav['classes']) : '');
+        $link_target = ($nav['target'] ? ' target="'. $nav['target'] . '"' : '');
+        $link_title = ($nav['attr_title'] ? ' title="'. $nav['attr_title'] . '"' : '');
+        $link_description = ($nav['description'] ? ' description="' . $nav['description'] . '"' : '');
+        $link_rel = ($nav['xfn'] ? ' rel="'. $nav['xfn'] . '"' : '');
+      @endphp
+      <a href="{{ $link_url }}" class="c-footer__primary-nav__link u-theme--link-hover--light u-link--white{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}><strong>{{ $link_text }}</strong></a>
     @endforeach
     {!! wp_reset_postdata() !!}
   </nav> <!-- /.c-footer__primary-nav -->
