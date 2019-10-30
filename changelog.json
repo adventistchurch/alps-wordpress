@@ -1,4 +1,7 @@
 {
+  "3.0.22-beta" : {
+    "description" : "Adding support for Tertiary menus."
+  },
   "3.0.21-beta" : {
     "description" : "Removing of Piklist and adding support for title, class, etc attributes in the menu system."
   },
