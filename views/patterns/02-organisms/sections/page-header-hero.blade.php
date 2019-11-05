@@ -39,7 +39,6 @@
         $block_content_class  = 'u-color--white';
         $block_title_class    = 'u-font--primary--xl u-flex--justify-center';
     } elseif ( $hero_type == 'default' ) {
-
         array_push( $hero_image, get_post_meta( $post->ID, $cf_.'hero_image', true ) );
         $block_class        = 'c-block__inset c-media-block__inset';
         $block_title_class  = 'l-grid-item l-grid-item--l--4-col l-grid-item--xl--3-col u-font--primary--xl';

@@ -14,7 +14,7 @@
           if ( $has_subnav ) $show_subnav = 'has-subnav';
         @endphp
          <li class="c-primary-nav__list-item {{ $show_subnav }}">
-            <a href="{{ $nav->url }}" class="c-primary-nav__link u-font--primary-nav u-color--gray--dark u-theme--link-hover--base u-theme--border-color--base">{{ $nav->title }}</a>
+            <a href="{{ $nav->url }}" class="c-primary-nav__link u-font--primary-nav u-color--gray--dark u-theme--link-hover--base u-theme--border-color--base">{!! $nav->title !!}</a>
         @if ( $has_subnav )
           @php
             $parentID = $nav->ID;
@@ -24,7 +24,7 @@
           <ul class="c-primary-nav__subnav c-subnav">
           @foreach ( $sub_items as $sub_item => $sub )
             <li class="c-primary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
-              <a class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $sub->url }}">{{ $sub->title }}</a>
+              <a class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $sub->url }}">{!! $sub->title !!}</a>
               @php
                 $show_sub_subnav  = '';
                 $has_sub_subnav   = array_search( $sub->ID, array_column( $nav_items, 'menu_item_parent' ) );
@@ -38,7 +38,7 @@
                 @endphp
                 @foreach ( $sub_subitems as $sub_subitem => $sub_item )
                 <li class="c-primary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
-                <a class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $sub_item->url }}">{{ $sub_item->title }}</a></li>
+                <a class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $sub_item->url }}">{!! $sub_item->title !!}</a></li>
                 @endforeach
                 </ul>
               @endif

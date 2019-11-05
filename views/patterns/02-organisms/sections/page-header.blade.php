@@ -76,7 +76,7 @@
       <span class="o-kicker u-color--white">{{ $long_header_kicker }}</span>
     @endif
       <h1 class="u-font--primary--xl u-color--white u-font-weight--bold">
-          {{ $long_header_title }}
+        {!! $long_header_title !!}
       </h1>
     </div>
   </div>

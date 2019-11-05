@@ -17,7 +17,7 @@
         $link_description = ($nav['description'] ? ' description="' . $nav['description'] . '"' : '');
         $link_rel = ($nav['xfn'] ? ' rel="'. $nav['xfn'] . '"' : '');
       @endphp
-      <a href="{{ $link_url }}" class="c-footer__primary-nav__link u-theme--link-hover--light u-link--white{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}><strong>{{ $link_text }}</strong></a>
+      <a href="{{ $link_url }}" class="c-footer__primary-nav__link u-theme--link-hover--light u-link--white{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}><strong>{!! $link_text !!}</strong></a>
     @endforeach
     {!! wp_reset_postdata() !!}
   </nav> <!-- /.c-footer__primary-nav -->

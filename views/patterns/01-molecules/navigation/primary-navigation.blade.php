@@ -14,7 +14,7 @@
         if ( $has_subnav ) $show_subnav = ' has-subnav';
       @endphp
        <li class="c-primary-nav__list-item{{ $show_subnav }}">
-          <a href="{{ $nav->url }}" class="c-primary-nav__link u-font--primary-nav u-color--gray--dark u-theme--link-hover--base u-theme--border-color--base">{{ $nav->title }}</a>
+          <a href="{{ $nav->url }}" class="c-primary-nav__link u-font--primary-nav u-color--gray--dark u-theme--link-hover--base u-theme--border-color--base">{!! $nav->title !!}</a>
       @if ( $has_subnav )
         @php
           $parentID = $nav->ID;
@@ -29,7 +29,7 @@
               if ( $has_sub_subnav ) $show_sub_subnav = ' has-subnav js-this';
             @endphp
             <li class="c-primary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light u-theme--border-color--dark{{ $show_sub_subnav }}">
-              <a class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $sub->url }}">{{ $sub->title }}</a>
+              <a class="c-primary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base" href="{{ $sub->url }}">{!! $sub->title !!}</a>
               @if ( $has_sub_subnav )
                 <span class="c-primary-nav__subnav__arrow c-subnav__arrow o-arrow--down u-path-fill--gray js-toggle" data-toggled="this" data-prefix="this"></span>
                 <ul class="c-primary-nav__subnav__subnav c-subnav">
@@ -39,7 +39,7 @@
                   @endphp
                   @foreach ( $sub_subitems as $sub_subitem => $sub_item )
                     <li class="c-primary-nav__subnav__subnav__list-item c-subnav__list-item u-theme--background-color--base">
-                      <a class="c-primary-nav__subnav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--lighter" href="{{ $sub_item->url }}">{{ $sub_item->title }}</a>
+                      <a class="c-primary-nav__subnav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--lighter" href="{{ $sub_item->url }}">{!! $sub_item->title !!}</a>
                     </li>
                   @endforeach
                 </ul>

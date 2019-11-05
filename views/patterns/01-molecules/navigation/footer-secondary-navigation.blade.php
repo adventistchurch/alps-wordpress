@@ -18,7 +18,7 @@
         $link_rel = ($nav['xfn'] ? ' rel="'. $nav['xfn'] . '"' : '');
       @endphp
       <a href="{{ $link_url }}" class="c-footer__secondary-nav__link u-theme--link-hover--light u-link--white{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}>
-        <span class="u-icon u-icon--xs u-path-fill--white u-space--half--right">@include('patterns.00-atoms.icons.icon-legal')</span><font>{{ $link_text }}</font>
+        <span class="u-icon u-icon--xs u-path-fill--white u-space--half--right">@include('patterns.00-atoms.icons.icon-legal')</span><font>{!! $link_text !!}</font>
       </a>
     @endforeach
     {!! wp_reset_postdata() !!}

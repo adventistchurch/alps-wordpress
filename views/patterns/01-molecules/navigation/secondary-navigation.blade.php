@@ -30,7 +30,7 @@
         @if (!$nav['menu_item_parent'])
           @php $parent_id = $nav['ID']; @endphp
           <li class="c-secondary-nav__list-item has-subnav">
-            <a href="{{ $link_url }}" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}>{{ $link_text }}</a>
+            <a href="{{ $link_url }}" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}>{!! $link_text !!}</a>
         @endif
         @if ($parent_id == $nav['menu_item_parent'])
           @if (!$submenu)
@@ -39,7 +39,7 @@
             <ul class="c-secondary-nav__subnav c-subnav">
           @endif
             <li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
-              <a href="{{ $link_url }}" class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}>{{ $link_text }}</a>
+              <a href="{{ $link_url }}" class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}>{!! $link_text !!}</a>
             </li>
           @if ($parent != $parent_id && $submenu)
             </ul> <!-- /.c-secondary-nav__subnav -->
