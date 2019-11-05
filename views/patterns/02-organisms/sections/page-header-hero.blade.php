@@ -87,7 +87,7 @@
             $category   = NULL;
             $link       = NULL;
             if ( get_post_meta( $post->ID, $cf_.'hero_kicker', true ) ) {
-              $category = get_post_meta( $post->ID, $cf_.'hero_title', true );
+              $category = get_post_meta( $post->ID, $cf_.'hero_kicker', true );
             }
             if ( get_post_meta( $post->ID, $cf_.'hero_link_url', true ) ) {
               $link = get_post_meta( $post->ID, $cf_.'hero_link_url', true );
