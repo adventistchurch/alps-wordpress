@@ -1,10 +1,4 @@
 <?php
-  /*
-    Title: Post Feed
-    Description: Feed of posts in the selected category
-  */
-?>
-<?php
   $offset = empty($settings['post_feed_offset']) ? '' : $settings['post_feed_offset'];
   $featured = empty($settings['post_feed_featured']) ? false : $settings['post_feed_featured'];
   $category = empty($settings['post_feed_category']) ? 'news' : $settings['post_feed_category'];
@@ -17,7 +11,7 @@
   $args = array(
     'cat' => $category,
     'posts_per_page' => $count,
-    'offset' => $offset
+    'offset' => $offset,
   );
   $the_query = new WP_Query($args);
 ?>
@@ -38,46 +32,54 @@
           $id = get_the_ID();
           $title = get_the_title($id);
           $link = get_permalink($id);
+
           $category = get_the_category();
           if (get_the_category()) {
-              if (class_exists('WPSEO_Primary_Term')) {
-                  $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
-                  $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
-                  $term = get_term($wpseo_primary_term);
-                  if (is_wp_error($term)) {
-                      $category = $category[0]->name;
-                  } else {
-                      $category = $term->name;
-                  }
-              } else {
-                  $category = $category[0]->name;
-              }
+            if (class_exists('WPSEO_Primary_Term')) {
+                $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
+                $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+                $term = get_term($wpseo_primary_term);
+
+                if (is_wp_error($term)) {
+                    $category = $category[0]->name;
+                }
+                else {
+                    $category = $term->name;
+                }
+            }
+            else {
+              $category = $category[0]->name;
+            }
           }
+
           if ($featured == true) {
-              $date = date('F j, Y', strtotime(get_the_date()));
-              $excerpt = get_the_excerpt($id);
-              $body = get_the_content($id);
-              $thumb_id = get_post_thumbnail_id($id);
-              $thumb_size = 'horiz__4x3';
-              $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-              $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-              $block_meta_class = "u-theme--color--dark u-font--secondary--xs";
-              if ($layout_grid == true) {
-                  $excerpt_length = 100;
-                  $block_class = "c-block--reversed c-media-block--reversed l-grid--7-col";
-                  $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
-                  $block_content_class = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--1-col u-border--left u-theme--border-color--darker--left u-color--gray u-spacing--half";
-                  $block_title_class = "u-theme--color--darker u-font--primary--s";
-                  $block_group_class = "u-flex--justify-start";
-              } else {
-                  $excerpt_length = 200;
-                  $block_class = "c-block__stacked c-media-block__stacked";
-                  $block_content_class = "l-grid-item u-border--left u-color--gray u-theme--border-color--darker--left u-spacing--half";
-                  $block_title_class = "u-theme--color--darker u-font--primary--m";
-              }
-          } else {
-              $block_class = "c-block__text u-theme--border-color--darker u-border--left u-padding--bottom u-spacing--half";
+            $date = date('F j, Y', strtotime(get_the_date()));
+            $excerpt = get_the_excerpt($id);
+            $body = get_the_content($id);
+            $thumb_id = get_post_thumbnail_id($id);
+            $thumb_size = 'horiz__4x3';
+            $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+            $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+            $block_meta_class = "u-theme--color--dark u-font--secondary--xs";
+
+            if ($layout_grid == true) {
+              $excerpt_length = 100;
+              $block_class = "c-block--reversed c-media-block--reversed l-grid--7-col";
+              $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
+              $block_content_class = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--1-col u-border--left u-theme--border-color--darker--left u-color--gray u-spacing--half";
               $block_title_class = "u-theme--color--darker u-font--primary--s";
+              $block_group_class = "u-flex--justify-start";
+            }
+            else {
+              $excerpt_length = 200;
+              $block_class = "c-block__stacked c-media-block__stacked";
+              $block_content_class = "l-grid-item u-border--left u-color--gray u-theme--border-color--darker--left u-spacing--half";
+              $block_title_class = "u-theme--color--darker u-font--primary--m";
+            }
+          }
+          else {
+            $block_class = "c-block__text u-theme--border-color--darker u-border--left u-padding--bottom u-spacing--half";
+            $block_title_class = "u-theme--color--darker u-font--primary--s";
           }
         ?>
         <?php if ($featured == true): ?>
@@ -126,9 +128,9 @@
                     <p class="c-media-block__description c-block__description">
                       <?php
                         if (strlen($excerpt) > $excerpt_length) {
-                            echo trim(mb_substr($excerpt, 0, $excerpt_length)) . '&hellip;';
+                          echo trim(mb_substr($excerpt, 0, $excerpt_length)) . '&hellip;';
                         } else {
-                            echo $excerpt;
+                          echo $excerpt;
                         }
                       ?>
                     </p>
@@ -136,9 +138,9 @@
                     <p class="c-media-block__description c-block__description">
                       <?php
                         if (strlen($body) > $excerpt_length) {
-                            echo trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
+                          echo trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
                         } else {
-                            echo $body;
+                          echo $body;
                         }
                       ?>
                     </p>
@@ -177,9 +179,9 @@
               <p class="c-block__body text">
                 <?php
                   if (strlen($excerpt) > $excerpt_length) {
-                      echo trim(mb_substr($excerpt, 0, $excerpt_length)) . '&hellip;';
+                    echo trim(mb_substr($excerpt, 0, $excerpt_length)) . '&hellip;';
                   } else {
-                      echo $excerpt;
+                    echo $excerpt;
                   }
                 ?>
               </p>
@@ -187,9 +189,9 @@
               <p class="c-block__body text">
                 <?php
                   if (strlen($body) > $excerpt_length) {
-                      echo trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
+                    echo trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
                   } else {
-                      echo $body;
+                    echo $body;
                   }
                 ?>
               </p>
@@ -221,7 +223,7 @@
       <?php endwhile; ?>
       <?php wp_reset_query(); ?>
     <?php else: ?>
-        <?php _e("There are no posts at this time.", "alps"); ?>
+      <?php _e("There are no posts at this time.", "alps"); ?>
     <?php endif; ?>
   </div>
 </div>

@@ -1,19 +1,18 @@
 @php
-$current_language = apply_filters('wpml_current_language', NULL);
+  $current_language = apply_filters('wpml_current_language', NULL);
 
-if ($current_language) {
-  $logo = get_alps_option( 'logo_' . $current_language );
-} else {
-  $logo = get_alps_option( 'logo' );
-}
+  if ($current_language) {
+    $logo = get_alps_option('logo_' . $current_language);
+  } else {
+    $logo = get_alps_option('logo');
+  }
 
-if ( !empty( get_alps_option( 'dark_theme' ) )  ) {
-  $dark_theme         = get_alps_option( 'dark_theme' );
-  $header_logo_class  = "u-theme--path-fill--base";
-} else {
-  $header_logo_class = "";
-}
-
+  if (!empty(get_alps_option('dark_theme'))) {
+    $dark_theme         = get_alps_option('dark_theme');
+    $header_logo_class  = "u-theme--path-fill--base";
+  } else {
+    $header_logo_class = "";
+  }
 @endphp
 <header class="c-header" role="banner" id="header">
   <div class="c-header--inner">
@@ -33,7 +32,6 @@ if ( !empty( get_alps_option( 'dark_theme' ) )  ) {
     </div> <!-- /.c-header__logo -->
     <div class="c-header__nav-primary">
       @include('patterns.01-molecules.navigation.primary-navigation')
-      {{-- when ready: @include('patterns.01-molecules.navigation.primary-navigation-tertiary') --}}
     </div>
   </div> <!-- /.c-header--inner -->
 </header> <!-- .c-header -->

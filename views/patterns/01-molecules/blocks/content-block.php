@@ -11,23 +11,23 @@
       </a>
     <?php endif; ?>
   </h3>
-  <?php if (!empty( $excerpt )): ?>
+  <?php if (!empty($excerpt)): ?>
     <p class="c-block__body text">
       <?php
-        if ( str_word_count($excerpt) > $excerpt_length ) {
-          echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
+        if (str_word_count($excerpt) > $excerpt_length) {
+          echo do_shortcode(wp_trim_words($body, $excerpt_length));
         } else {
-          echo do_shortcode( strip_tags($excerpt, '<img>') );
+          echo do_shortcode(strip_tags($excerpt, '<img>'));
         }
       ?>
     </p>
   <?php elseif (!empty($body)): ?>
     <p class="c-block__body text">
       <?php
-        if ( str_word_count($body) > $excerpt_length) {
-          echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
+        if (str_word_count($body) > $excerpt_length) {
+          echo do_shortcode(wp_trim_words($body, $excerpt_length));
         } else {
-          echo do_shortcode( strip_tags($body) );
+          echo do_shortcode(strip_tags($body));
         }
       ?>
     </p>

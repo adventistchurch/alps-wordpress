@@ -38,23 +38,23 @@
             <?php endif; ?>
           </h3>
         <?php endif; ?>
-        <?php if (!empty( $excerpt )): ?>
+        <?php if (!empty($excerpt)): ?>
           <p class="c-media-block__description c-block__description">
             <?php
-              if (strlen( $excerpt ) > $excerpt_length) {
-                echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
+              if (strlen($excerpt) > $excerpt_length) {
+                  echo do_shortcode(wp_trim_words($body, $excerpt_length));
               } else {
-                echo do_shortcode( strip_tags( $excerpt ) );
+                  echo do_shortcode(strip_tags($excerpt));
               }
             ?>
           </p>
-        <?php elseif (!empty( $body )): ?>
+        <?php elseif (!empty($body)): ?>
           <p class="c-media-block__description c-block__description">
             <?php
-              if (strlen( $body ) > $excerpt_length) {
-                echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
+              if (strlen($body) > $excerpt_length) {
+                  echo do_shortcode(wp_trim_words($body, $excerpt_length));
               } else {
-                echo do_shortcode( strip_tags( $body ) );
+                  echo do_shortcode(strip_tags($body));
               }
             ?>
           </p>
@@ -74,5 +74,5 @@
         <a href="<?php echo $link ?>" class="c-block__button o-button o-button--outline"><?php echo $cta ?><span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><?php include(locate_template('patterns/00-atoms/icons/icon-arrow-long-right.blade.php')); ?></span></a>
       <?php endif; ?>
     </div>
-  </div> <!-- c-media-block__content -->
-</div> <!-- c-media-block -->
+  </div> <!-- .c-media-block__content -->
+</div> <!-- .c-media-block -->

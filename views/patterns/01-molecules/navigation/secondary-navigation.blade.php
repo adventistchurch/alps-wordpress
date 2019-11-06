@@ -4,8 +4,8 @@
       @php
         $menu_name = 'secondary_navigation';
         $menu_locations = get_nav_menu_locations();
-        $menu = wp_get_nav_menu_object( $menu_locations[ $menu_name ] );
-        $secondary_nav = wp_get_nav_menu_items( $menu->term_id);
+        $menu = wp_get_nav_menu_object($menu_locations[ $menu_name ]);
+        $secondary_nav = wp_get_nav_menu_items($menu->term_id);
         $count = 0;
         $submenu = false;
         $parent = false;

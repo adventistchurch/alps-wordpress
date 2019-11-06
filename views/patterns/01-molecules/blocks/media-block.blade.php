@@ -66,23 +66,23 @@
             @endif
           </h3>
         @endif
-        @if (!empty( $excerpt ))
+        @if (!empty($excerpt))
           <p class="c-media-block__description c-block__description">
             @php
-              if ( str_word_count( $excerpt ) > $excerpt_length) {
-                echo do_shortcode( wp_trim_words( $excerpt, $excerpt_length ) );
+              if (str_word_count($excerpt) > $excerpt_length) {
+                echo do_shortcode(wp_trim_words($excerpt, $excerpt_length));
               } else {
-                echo do_shortcode( strip_tags( $excerpt ) );
+                echo do_shortcode(strip_tags($excerpt));
               }
             @endphp
           </p>
-        @elseif (!empty( $body ))
+        @elseif (!empty($body))
           <p class="c-media-block__description c-block__description">this is
             @php
-              if ( str_word_count( $body ) > $excerpt_length) {
-                echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
+              if (str_word_count($body) > $excerpt_length) {
+                echo do_shortcode(wp_trim_words($body, $excerpt_length));
               } else {
-                echo do_shortcode( $body );
+                echo do_shortcode($body);
               }
             @endphp
           </p>
@@ -102,5 +102,5 @@
         <a href="{{ $link }}" class="c-block__button o-button o-button--outline">{{ $cta }}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
       @endif
     </div>
-  </div> <!-- c-media-block__content -->
-</div> <!-- c-media-block -->
+  </div> <!-- .c-media-block__content -->
+</div> <!-- .c-media-block -->

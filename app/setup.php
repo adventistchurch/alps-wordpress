@@ -26,10 +26,10 @@ add_action('wp_enqueue_scripts', function () {
  */
 
 add_action('after_setup_theme', function () {
-	/**
-	 * Make theme available for translation.
+  /**
+   * Make theme available for translation.
      * Translations can be filed in the /lang/ directory.
-	 */
+   */
     load_theme_textdomain('alps', get_template_directory() . '/lang');
 
     /**
@@ -181,13 +181,11 @@ add_image_size('featured__hero--xl', 1600, 600, array('center', 'center'));
 add_image_size('horiz__16x9--s', 500, 280, array('center', 'center'));
 add_image_size('horiz__16x9--m', 800, 450, array('center', 'center'));
 add_image_size('horiz__16x9--l', 1100, 620, array('center', 'center'));
-//add_image_size('horiz__16x9--xl', 1600, 900, array('center', 'center'));
 
 // 4:3 crop.
 add_image_size('horiz__4x3--s', 500, 375, array('center', 'center'));
 add_image_size('horiz__4x3--m', 700, 600, array('center', 'center'));
 add_image_size('horiz__4x3--l', 900, 700, array('center', 'center'));
-//add_image_size('horiz__4x3--xl', 1600, 1200, array('center', 'center'));
 
 // Flexible height
 add_image_size('flex-height--s', 350, 9999);

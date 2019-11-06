@@ -3,8 +3,8 @@
     @php
       $menu_name = 'footer_secondary_navigation';
       $menu_locations = get_nav_menu_locations();
-      $menu = wp_get_nav_menu_object( $menu_locations[ $menu_name ] );
-      $footer_secondary_nav = wp_get_nav_menu_items( $menu->term_id);
+      $menu = wp_get_nav_menu_object($menu_locations[ $menu_name ]);
+      $footer_secondary_nav = wp_get_nav_menu_items($menu->term_id);
       $footer_secondary_nav = json_decode(json_encode($footer_secondary_nav), true);
     @endphp
     @foreach ($footer_secondary_nav as $nav)

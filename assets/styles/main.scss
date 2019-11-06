@@ -111,44 +111,6 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   width: inherit;
 }
 
-// Widgets
-.c-widget {
-  li {
-    padding-bottom: 5px;
-    padding-left: 20px;
-  }
-}
-
-.c-widget_recent_entries {
-  li {
-    padding-left: 0;
-  }
-}
-
-.c-carbon_fields_alps_widget_post_feed {
-  padding: 0 !important;
-
-  &.u-border--left {
-    border-left: 0;
-  }
-
-  &.u-background-color--gray--light {
-    background: none;
-  }
-}
-
-.c-widget-feed--grid {
-  display: flex;
-
-  > div {
-    width: 48% !important; // sorry
-  }
-}
-
-.c-widget_search {
-  margin-top: 1.25rem;
-}
-
 // Breakout Block
 .c-sidebar .c-block__breakout {
   @media (max-width: 900px) {
@@ -167,27 +129,6 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   margin-top: -80px;
 }
 
-/* THIS ALMOST ASSUREDLY NEEDS FINE TUNING / ADJUSTMENTS */
-.c-carbon_fields_alps_widget_text_with_link {
-  /* RESET SO WE CAN OVERRIDE */
-  background: none !important;
-  border-left: 0 !important;
-  margin-left: -20px;
-  margin-right: -20px;
-  margin-top: -20px;
-  padding-bottom: 0 !important;
-
-  .c-block__breakout {
-    @media (min-width: 901px) {
-      margin-right: -20px;
-    }
-
-    @media (min-width: 1301px) {
-      margin-top: -40px;
-    }
-  }
-}
-
 .body.hide-sabbath .c-sidebar .c-block__breakout {
   @media (min-width: 701px) {
     margin-top: -30px;
@@ -202,9 +143,9 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 .c-breadcrumbs {
   a {
     border: 0 !important;
-    color: #717171;
 
     // $c-gray
+    color: #717171;
 
     &::after {
       content: "\203A";
@@ -288,10 +229,30 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 }
 
 // Widgets
-.c-widget ul {
-  & > * + * {
-    margin-top: 10px;
+.c-widget {
+  ul {
+    list-style-type: disc;
+
+    & > * + * {
+      margin-top: 10px;
+    }
   }
+
+  li {
+    padding-bottom: 5px;
+    margin-left: 20px;
+  }
+}
+
+.c-carbon_fields_alps_widget_post_feed,
+.c-carbon_fields_alps_widget_text_with_link {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+
+.c-widget_search {
+  margin-top: 1.25rem;
 }
 
 // Search and filter
@@ -312,9 +273,8 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 
 // Article Body
 .wp-caption-text {
-  color: #717171;
-
   // $c-gray
+  color: #717171;
   font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
   font-size: 13px;
   font-style: italic;
