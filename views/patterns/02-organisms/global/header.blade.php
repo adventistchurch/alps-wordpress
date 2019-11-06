@@ -33,7 +33,6 @@ if ( !empty( get_alps_option( 'dark_theme' ) )  ) {
     </div> <!-- /.c-header__logo -->
     <div class="c-header__nav-primary">
       @include('patterns.01-molecules.navigation.primary-navigation')
-      {{-- when ready: @include('patterns.01-molecules.navigation.primary-navigation-tertiary') --}}
     </div>
   </div> <!-- /.c-header--inner -->
 </header> <!-- .c-header -->
