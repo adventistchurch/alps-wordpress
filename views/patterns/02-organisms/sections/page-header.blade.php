@@ -29,6 +29,7 @@
   if (!is_home() && !is_archive()) {
     global $post;
     // PAGE FIELDS
+    $hide_featured_image = get_post_meta($post->ID, $cf_.'hide_featured_image', true);
     $long_header_kicker = get_post_meta($post->ID, $cf_.'kicker', true);
     $long_header_title = get_post_meta($post->ID, $cf_.'display_title', true);
     $long_header_subtitle = carbon_get_the_post_meta('long_header_subtitle');
@@ -37,8 +38,7 @@
     if (!$long_header_title) {
       $long_header_title = $title;
     }
-
-    if (!$header_background_image && !empty($hide_featured_image)) {
+    if (!$header_background_image && empty($hide_featured_image)) {
       $header_background_image = get_post_thumbnail_id($post->ID);
     }
   }
