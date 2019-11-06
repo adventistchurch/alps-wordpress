@@ -229,6 +229,7 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 }
 
 // Widgets
+
 .c-widget {
   ul {
     list-style-type: disc;
@@ -244,11 +245,21 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   }
 }
 
+.u-theme--dark {
+  .c-widget {
+    p,
+    a,
+    li {
+      color: white;
+    }
+  }
+}
+
 .c-carbon_fields_alps_widget_post_feed,
 .c-carbon_fields_alps_widget_text_with_link {
-  padding: 0;
-  background-color: transparent;
-  border: 0;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: 0 !important;
 }
 
 .c-widget_search {
