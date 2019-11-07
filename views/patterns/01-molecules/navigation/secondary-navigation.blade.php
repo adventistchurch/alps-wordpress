@@ -29,9 +29,6 @@
               @foreach ($languages as $language)
                 <li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
                   <a href="{{ $language['url'] }}" class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base">
-                    @if ($language['country_flag_url'])
-                      <img src="{{ $language['country_flag_url'] }}" height="12" alt="{{ $language['language_code'] }}" width="18" class="u-space--half--right" />
-                    @endif
                     @if ($language['native_name'])
                       {{ icl_disp_language($language['native_name']) }}
                     @endif
