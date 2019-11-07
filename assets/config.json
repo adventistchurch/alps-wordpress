@@ -9,8 +9,8 @@
     ]
   },
   "publicPath": "/wp-content/themes/alps-v3",
-  "devUrl": "http://alps-v3.test",
-  "proxyUrl": "http://localhost:3000",
+  "devUrl": "http://alps-v3.test/",
+  "proxyUrl": "http://localhost:3000/",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
     "{app,views}/**/*.php"
