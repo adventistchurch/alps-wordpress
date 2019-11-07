@@ -1,6 +1,6 @@
 @php
-  $cf_  = '';
-  $cf   = get_option('alps_cf_converted');
+  $cf_ = '';
+  $cf = get_option('alps_cf_converted');
   if ($cf) {
     $cf_ = '_';
   }

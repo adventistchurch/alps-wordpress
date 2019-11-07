@@ -40,8 +40,12 @@
   display: none;
 }
 
-.c-media-block .c-block__title-link {
-  border-bottom: 0 !important;
+.blockquote p::before {
+  content: "\"";
+}
+
+.blockquote p::after {
+  content: "\"";
 }
 
 .pagination a {

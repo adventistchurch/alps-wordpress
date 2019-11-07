@@ -46,9 +46,12 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   display: none;
 }
 
-// Blocks
-.c-media-block .c-block__title-link {
-  border-bottom: 0 !important;
+.blockquote p::before {
+  content: "\00022";
+}
+
+.blockquote p::after {
+  content: "\00022";
 }
 
 // Navigation

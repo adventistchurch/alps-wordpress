@@ -16,8 +16,8 @@
           $link_title = ($nav->attr_title ? ' title="'. $nav->attr_title . '"' : '');
           $link_description = ($nav->description ? ' description="' . $nav->description . '"' : '');
           $link_rel = ($nav->xfn ? ' rel="'. $nav->xfn . '"' : '');
-          $show_subnav  = '';
-          $has_subnav   = array_search($nav->ID, array_column($nav_items, 'menu_item_parent'));
+          $show_subnav = '';
+          $has_subnav = array_search($nav->ID, array_column($nav_items, 'menu_item_parent'));
           if ($has_subnav) $show_subnav = ' has-subnav';
         @endphp
         <li class="c-primary-nav__list-item{{ $show_subnav }}">
@@ -38,8 +38,8 @@
                   $link_title = ($sub->attr_title ? ' title="'. $sub->attr_title . '"' : '');
                   $link_description = ($sub->description ? ' description="' . $sub->description . '"' : '');
                   $link_rel = ($sub->xfn ? ' rel="'. $sub->xfn . '"' : '');
-                  $show_sub_subnav  = '';
-                  $has_sub_subnav   = array_search($sub->ID, array_column($nav_items, 'menu_item_parent'));
+                  $show_sub_subnav = '';
+                  $has_sub_subnav = array_search($sub->ID, array_column($nav_items, 'menu_item_parent'));
                   if ($has_sub_subnav) $show_sub_subnav = ' has-subnav js-this';
                 @endphp
                 <li class="c-primary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light u-theme--border-color--dark{{ $show_sub_subnav }}">

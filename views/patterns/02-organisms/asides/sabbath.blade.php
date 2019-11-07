@@ -1,11 +1,11 @@
 @php
   // SET VARS
-  $sabbath_icon       = '';
+  $sabbath_icon = '';
   $sabbath_background = '';
   $sabbath_icon_class = '';
 
   // DEFINE VARS
-  $sabbath_icon       = get_alps_option('sabbath_icon');
+  $sabbath_icon = get_alps_option('sabbath_icon');
   $sabbath_background = get_alps_option('sabbath_background');
   if (get_alps_option('sabbath_scroll')) {
     $sabbath_icon_class = 'js-show-on-scroll is-hidden';

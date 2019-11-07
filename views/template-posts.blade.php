@@ -56,7 +56,7 @@
     $post_feed_list = get_alps_field('post_feed_list');
     $post_feed_list_title = get_alps_field('post_feed_list_title');
     $post_feed_list_link = get_alps_field('post_feed_list_link');
-    $post_feed_list_custom = get_post_meta($post->ID , 'post_feed_list_custom_array');
+    $post_feed_list_custom = get_post_meta($post->ID, 'post_feed_list_custom_array');
     $post_feed_list_category = get_alps_field('post_feed_list_category_array');
     $post_feed_list_count = get_alps_field('post_feed_list_count');
     $post_feed_list_offset = get_alps_field('post_feed_list_offset');
@@ -87,7 +87,7 @@
     @endphp
     <div>
       @include('patterns.02-organisms.sections.page-header')
-      @if (get_alps_field('show_hero_featured_post'))
+      @if (get_post_meta($post->ID, $cf_.'show_hero_featured_post', true))
         @include('patterns.02-organisms.sections.page-header-feature')
       @endif
     </div>
@@ -377,6 +377,7 @@
                   $block_img_class = "l-grid-item l-grid-item--s--3-col u-padding--zero--sides";
                   $block_content_class = "l-grid-item l-grid-item--s--3-col u-border-left--black--at-large u-theme--border-color--darker--left u-color--gray u-background-color--gray--light can-be--dark-dark u-padding--top u-padding--bottom u-flex--justify-between";
                   $block_title_class = "u-theme--color--dark u-font--primary--l";
+                  $block_title_link_class = "u-theme--link-hover--darker";
                   $block_meta_class = "u-theme--color--base";
                   $excerpt = get_the_excerpt($id);
                   $excerpt_length = 35;
@@ -399,7 +400,7 @@
                 'post_status' => 'publish',
                 'category__in' => $post_feed_full_category,
                 'order_by' => 'date',
-                'post__not_in' => $post_feed_full_featured_array,
+                'post__not_in' => array($post_feed_full_featured_array),
                 'offset' => $post_feed_full_offset
               ));
             @endphp

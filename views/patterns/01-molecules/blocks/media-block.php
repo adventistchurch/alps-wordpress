@@ -28,9 +28,9 @@
           <h4 class="c-media-block__kicker c-block__kicker <?php if (isset($block_kicker_class)): ?><?php echo $block_kicker_class ?><?php endif; ?>"><?php echo $kicker ?></h4>
         <?php endif; ?>
         <?php if (isset($title)): ?>
-          <h3 class="c-media-block__title c-block__title <?php if (isset($block_title_class)): ?><?php echo $block_title_class ?><?php endif; ?> <?php if (isset($kicker)): ?><?php echo 'u-space--zero'?><?php endif; ?>">
+          <h3 class="c-media-block__title c-block__title <?php if (isset($block_title_class)): ?><?php echo $block_title_class ?><?php endif; ?> <?php if (isset($kicker)): ?><?php echo 'u-space--zero' ?><?php endif; ?>">
             <?php if (isset($link)): ?>
-              <a href="<?php echo $link ?>" class="c-block__title-link u-theme--link-hover--dark">
+              <a href="<?php echo $link ?>" class="c-block__title-link <?php if (isset($block_title_link_class)): ?><?php echo $block_title_link_class ?><?php else: ?><?php echo 'u-theme--link-hover--dark' ?><?php endif; ?>">
             <?php endif; ?>
             <?php echo $title ?>
             <?php if (isset($link)): ?>

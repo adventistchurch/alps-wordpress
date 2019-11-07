@@ -8,8 +8,8 @@
   }
 
   if (!empty(get_alps_option('dark_theme'))) {
-    $dark_theme         = get_alps_option('dark_theme');
-    $header_logo_class  = "u-theme--path-fill--base";
+    $dark_theme = get_alps_option('dark_theme');
+    $header_logo_class = "u-theme--path-fill--base";
   } else {
     $header_logo_class = "";
   }

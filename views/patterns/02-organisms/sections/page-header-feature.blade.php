@@ -9,8 +9,9 @@
 
   if (is_page_template('views/template-posts.blade.php')) {
     $hero_post = get_alps_field('hero_featured_post') ;
+
     if ($cf) {
-      $id = $hero_post[0]['id'];
+      $id = $hero_post['id'];
     }
     else {
       $id = $hero_post;
@@ -104,6 +105,7 @@
     $block_content_class = "u-shift--left--1-col--at-large l-grid-item l-grid-item--m--6-col l-grid-item--l--4-col l-grid-item--xl--3-col u-border--left u-theme--border-color--light--left u-theme--color--lighter";
     $block_title_class = "u-color--white u-font--primary--l";
   }
+  $block_title_link_class = "u-theme--link-hover--light";
 @endphp
 
 <header class="c-page-header c-page-header__feature">

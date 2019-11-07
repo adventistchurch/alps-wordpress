@@ -57,7 +57,7 @@
         @if (isset($title))
           <h3 class="c-media-block__title c-block__title @if (isset($block_title_class)){{ $block_title_class }}@endif @if (isset($kicker)){{ 'u-space--zero'}}@endif">
             @if (isset($link))
-              <a href="{{ $link }}" class="c-block__title-link u-theme--link-hover--dark">
+              <a href="{{ $link }}" class="c-block__title-link @if (isset($block_title_link_class)){{ $block_title_link_class }}@else{{ 'u-theme--link-hover--dark' }}@endif">
             @endif
               @if (isset($eyebrow))<em class="u-theme--color--lighter">{{ $eyebrow . ' ' }}</em>@endif
               {!! $title !!}

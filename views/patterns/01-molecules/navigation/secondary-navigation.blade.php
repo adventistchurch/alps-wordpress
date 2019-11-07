@@ -16,8 +16,8 @@
           $link_title = ($nav->attr_title ? ' title="'. $nav->attr_title . '"' : '');
           $link_description = ($nav->description ? ' description="' . $nav->description . '"' : '');
           $link_rel = ($nav->xfn ? ' rel="'. $nav->xfn . '"' : '');
-          $show_subnav  = '';
-          $has_subnav   = array_search($nav->ID, array_column($nav_items, 'menu_item_parent'));
+          $show_subnav = '';
+          $has_subnav = array_search($nav->ID, array_column($nav_items, 'menu_item_parent'));
           if ($has_subnav) $show_subnav = ' has-subnav';
         @endphp
         @if (apply_filters('wpml_active_languages', NULL, 'skip_missing=0'))
