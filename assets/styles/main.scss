@@ -21,23 +21,6 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   }
 }
 
-.c-hero {
-  img,
-  .u-overlay--dark {
-    transition: all 0.25s ease;
-  }
-
-  &__block-link:hover {
-    img {
-      filter: blur(3px);
-    }
-
-    .u-overlay--dark {
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-  }
-}
-
 // Utility classes
 .u-space--zero--right {
   margin-right: 0 !important;
@@ -64,11 +47,11 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 }
 
 .blockquote p::before {
-  content: "\00022";
+  content: "\201C";
 }
 
 .blockquote p::after {
-  content: "\00022";
+  content: "\201D";
 }
 
 // Navigation

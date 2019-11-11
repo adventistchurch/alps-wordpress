@@ -1,6 +1,6 @@
 <div class="c-media-block c-block @if (isset($block_class)){{ $block_class }}@endif">
   @if (isset($image) or isset($picture))
-    <div class="c-media-block__image c-block__image @if (isset($block_img_class)){{ $block_img_class }}@endif @if (isset($block_type)) c-block__icon c-block__icon--{{ $block_type }}@endif @if (isset($background_image)){{ 'u-background--cover c-media-block__background-image c-background-image--' . $thumb_id }}@endif">
+    <div class="c-media-block__image c-block__image @if (isset($block_img_class)){{ $block_img_class }}@endif @if (isset($block_type))c-block__icon c-block__icon--{{ $block_type }}@endif @if (isset($background_image)){{ 'u-background--cover c-media-block__background-image c-background-image--' . $thumb_id }}@endif">
       <div class="c-block__image-wrap @if (isset($block_img_wrap_class)){{ $block_img_wrap_class }}@endif">
         @if (isset($background_image))
           <style type="text/css">

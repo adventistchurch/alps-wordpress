@@ -16,22 +16,6 @@
   }
 }
 
-.c-hero img,
-.c-hero .u-overlay--dark {
-  -webkit-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-}
-
-.c-hero__block-link:hover img {
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
-}
-
-.c-hero__block-link:hover .u-overlay--dark {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
 .u-space--zero--right {
   margin-right: 0 !important;
 }
@@ -57,11 +41,11 @@
 }
 
 .blockquote p::before {
-  content: "\"";
+  content: "\201C";
 }
 
 .blockquote p::after {
-  content: "\"";
+  content: "\201D";
 }
 
 .pagination a {

@@ -1,6 +1,6 @@
 <div class="c-media-block c-block <?php if (isset($block_class)): ?><?php echo $block_class ?><?php endif; ?>">
   <?php if (isset($image) || isset($picture)): ?>
-    <div class="c-media-block__image c-block__image <?php if (isset($block_img_class)): ?><?php echo $block_img_class ?><?php endif; ?> <?php if (isset($block_type)): ?> c-block__icon c-block__icon--<?php echo $block_type ?><?php endif; ?>">
+    <div class="c-media-block__image c-block__image <?php if (isset($block_img_class)): ?><?php echo $block_img_class ?><?php endif; ?> <?php if (isset($block_type)): ?>c-block__icon c-block__icon--<?php echo $block_type ?><?php endif; ?>">
       <div class="c-block__image-wrap <?php if (isset($block_img_wrap_class)): ?><?php echo $block_img_wrap_class ?><?php endif; ?>">
         <?php if (isset($picture)): ?>
           <picture class="picture">
