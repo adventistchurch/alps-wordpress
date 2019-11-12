@@ -1,15 +1,16 @@
 @extends('layouts.app')
 @section('content')
   @php
-    $hide_sidebar       = get_alps_option( 'index_hide_sidebar' );
-    $posts_grid         = get_alps_option( 'posts_grid' );
-    $post_grid_3up      = get_alps_option( 'posts_grid_3up' );
-    $posts_image        = get_alps_option( 'posts_image' );
-    $posts_image_round  = get_alps_option( 'posts_image_round' );
+    $hide_sidebar = get_alps_option('index_hide_sidebar');
+    $posts_grid = get_alps_option('posts_grid');
+    $post_grid_3up = get_alps_option('posts_grid_3up');
+    $posts_image = get_alps_option('posts_image');
+    $posts_image_round = get_alps_option('posts_image_round');
     if (is_active_sidebar('sidebar-posts') && $hide_sidebar != 'true') {
       $section_offset = 'u-shift--left--1-col--at-xxlarge';
       $article_offset = 'l-grid-item--xl--3-col';
-    } else {
+    }
+    else {
       $section_offset = 'u-shift--left--1-col--at-large';
       $article_offset = '';
     }
@@ -29,11 +30,13 @@
                   if ($post_grid_3up == 'true') {
                     $grid_class = "l-grid-item--6-col u-shift--right--1-col--at-large u-shift--left--1-col--at-medium u-no-gutters";
                     $grid_item_class = "l-grid-item--s--3-col l-grid-item--l--2-col";
-                  } else {
+                  }
+                  else {
                     $grid_class = "l-grid-item--6-col l-grid-item--m--4-col u-no-gutters";
                     $grid_item_class = "l-grid-item--xs--3-col l-grid-item--m--2-col";
                   }
-                } else {
+                }
+                else {
                   $grid_class = "l-grid-item--6-col l-grid-item--l--4-col u-shift--left--1-col--standard u-no-gutters";
                   $grid_item_class = "l-grid-item--s--3-col l-grid-item--l--2-col";
                 }
@@ -46,7 +49,7 @@
                   $id = get_the_ID();
                   $title = get_the_title($id);
                   $excerpt = get_the_excerpt($id);
-                  $excerpt_length = 300;
+                  $excerpt_length = 55;
                   $body = get_the_content($id);
                   $link = get_permalink($id);
                   $cta = __("Read More", "alps");
@@ -57,13 +60,14 @@
                   $block_meta_class = "hide";
                   if ($posts_image == "true") {
                     $thumb_id = get_post_thumbnail_id($id);
-                  } else {
+                  }
+                  else {
                     $thumb_id = false;
                   }
                   if ($thumb_id) {
                     $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                     if ($posts_grid == "true") {
-                      $excerpt_length = 150;
+                      $excerpt_length = 25;
                       $thumb_size = 'horiz__16x9';
                       $block_class = "c-media-block__stacked c-block__stacked u-space--right u-space--double--bottom";
                       $block_content_class = "u-border--left u-theme--border-color--darker--left";
@@ -71,13 +75,15 @@
                       $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
                       $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
                       $image_break_m = "500";
-                    } else {
+                    }
+                    else {
                       if ($posts_image_round == "true") {
                         $block_img_wrap_class = "u-round u-space--left";
-                      } else {
+                      }
+                      else {
                         $block_img_wrap_class = "";
                       }
-                      $excerpt_length = 200;
+                      $excerpt_length = 35;
                       $thumb_size = 'thumbnail';
                       $thumb_id = get_post_thumbnail_id($id);
                       $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
@@ -86,13 +92,15 @@
                         $block_class = "c-media-block__row c-block__row l-grid--7-col l-grid-wrap";
                         $block_img_class = "l-grid-item l-grid-item--2-col l-grid-item--m--1-col u-padding--zero--sides";
                         $block_content_class = "l-grid-item l-grid-item--4-col l-grid-item--m--3-col";
-                      } else {
+                      }
+                      else {
                         $block_class = "c-media-block__row c-block__row l-grid--7-col l-grid-wrap l-standard-break";
                         $block_img_class = "l-grid-item l-grid-item--2-col l-grid-item--m--1-col l-grid-item--xl--1-col u-padding--zero--sides";
                         $block_content_class = "l-grid-item l-grid-item--4-col l-grid-item--m--3-col l-grid-item--xl--2-col";
                       }
                     }
-                  } else {
+                  }
+                  else {
                     $thumb_id = NULL;
                     if ($posts_grid == "true") {
                       $block_class = "u-spacing u-padding--right u-space--double--bottom";

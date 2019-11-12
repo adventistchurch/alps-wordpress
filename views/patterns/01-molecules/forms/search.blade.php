@@ -1,4 +1,4 @@
-<form action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" method="get" class="search-form">
+<form action="<?php echo esc_url(home_url('/')); ?>" role="search" method="get" class="search-form">
   <fieldset>
     <input type="search" value="{{ the_search_query() }}" name="s" placeholder="{{ _e("Search...", "alps") }}" class="search-form__input u-font--secondary--s" required />
     <button class="search-form__submit is-vishidden">

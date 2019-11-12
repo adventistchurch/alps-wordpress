@@ -40,52 +40,16 @@
   display: none;
 }
 
-.c-media-block .c-block__title-link {
-  border-bottom: 0 !important;
+.blockquote p::before {
+  content: "\201C";
+}
+
+.blockquote p::after {
+  content: "\201D";
 }
 
 .pagination a {
   border: none !important;
-}
-
-.wpml-ls-native,
-.wpml-ls-display {
-  margin: 0 !important;
-}
-
-.wpml-ls-bracket {
-  margin: 0 !important;
-}
-
-.wpml-ls-bracket:first-child {
-  padding-left: 5px;
-}
-
-.wpml-ls-flag {
-  padding-right: 3px;
-}
-
-.c-subnav__link {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c-subnav .wpml-ls-flag {
-  display: none;
-}
-
-.c-subnav .wpml-ls-flag + .wpml-ls-display {
-  position: relative;
-  width: calc(100% + 20px);
-}
-
-.c-secondary-nav__subnav__link .wpml-ls-flag {
-  width: 18px;
-  height: 12px;
 }
 
 .c-post-navigation {
@@ -109,98 +73,8 @@
   width: inherit;
 }
 
-.c-widget li {
-  padding-bottom: 5px;
-  padding-left: 20px;
-}
-
-.c-widget_recent_entries li {
-  padding-left: 0;
-}
-
-.c-carbon_fields_alps_widget_post_feed {
-  padding: 0 !important;
-}
-
-.c-carbon_fields_alps_widget_post_feed.u-border--left {
-  border-left: 0;
-}
-
-.c-carbon_fields_alps_widget_post_feed.u-background-color--gray--light {
-  background: none;
-}
-
-.c-widget-feed--grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c-widget-feed--grid > div {
-  width: 48% !important;
-}
-
-.c-widget_search {
-  margin-top: 1.25rem;
-}
-
-.c-sidebar .c-block__breakout {
-  margin-right: -15px;
-  margin-top: -80px;
-}
-
-@media (max-width: 900px) {
-  .c-sidebar .c-block__breakout {
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 901px) {
-  .c-sidebar .c-block__breakout {
-    margin-right: -20px;
-  }
-}
-
-@media (min-width: 1301px) {
-  .c-sidebar .c-block__breakout {
-    margin-top: -40px;
-  }
-}
-
-/* THIS ALMOST ASSUREDLY NEEDS FINE TUNING / ADJUSTMENTS */
-
-.c-carbon_fields_alps_widget_text_with_link {
-  /* RESET SO WE CAN OVERRIDE */
-  background: none !important;
-  border-left: 0 !important;
-  margin-left: -20px;
-  margin-right: -20px;
-  margin-top: -20px;
-  padding-bottom: 0 !important;
-}
-
-@media (min-width: 901px) {
-  .c-carbon_fields_alps_widget_text_with_link .c-block__breakout {
-    margin-right: -20px;
-  }
-}
-
-@media (min-width: 1301px) {
-  .c-carbon_fields_alps_widget_text_with_link .c-block__breakout {
-    margin-top: -40px;
-  }
-}
-
-@media (min-width: 701px) {
-  .body.hide-sabbath .c-sidebar .c-block__breakout {
-    margin-top: -30px;
-  }
-}
-
-@media (min-width: 901px) {
-  .body.hide-sabbath .c-sidebar .c-block__breakout {
-    margin-top: -40px;
-  }
+.c-drawer .u-icon {
+  margin-right: 5px;
 }
 
 .c-breadcrumbs a {
@@ -279,8 +153,38 @@
   text-transform: uppercase;
 }
 
+.c-widget ul {
+  list-style-type: disc;
+}
+
 .c-widget ul > * + * {
   margin-top: 10px;
+}
+
+.c-widget li {
+  padding-bottom: 5px;
+  margin-left: 20px;
+}
+
+.u-theme--dark .c-widget p,
+.u-theme--dark .c-widget a,
+.u-theme--dark .c-widget li {
+  color: white;
+}
+
+.u-theme--dark .c-drawer .o-arrow--down::after {
+  border-top-color: transparent;
+}
+
+.c-carbon_fields_alps_widget_post_feed,
+.c-carbon_fields_alps_widget_text_with_link {
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.c-widget_search {
+  margin-top: 1.25rem;
 }
 
 .searchandfilter ul {

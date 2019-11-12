@@ -32,7 +32,7 @@ if (post_password_required()) {
       comment_form(
         array(
           'title_reply_before' => '<h3 class="u-font--secondary--m comment-reply-title u-theme--color--darker">',
-          'title_reply_after'  => '</h3>',
+          'title_reply_after' => '</h3>',
           'logged_in_as' => '',
           'title_reply' => _e("Leave a Comment", "alps"),
           'label_submit' => _e('Submit', "sage"),

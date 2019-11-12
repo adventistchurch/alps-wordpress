@@ -14,20 +14,20 @@
   @if (!empty($excerpt))
     <p class="c-block__body text">
       @php
-        if (str_word_count( $excerpt ) > $excerpt_length) {
-          echo do_shortcode( wp_trim_words( $excerpt, $excerpt_length ) );
+        if (str_word_count($excerpt) > $excerpt_length) {
+          echo do_shortcode(wp_trim_words($excerpt, $excerpt_length));
         } else {
-          echo do_shortcode( strip_tags( $excerpt ) );
+          echo do_shortcode(strip_tags($excerpt));
         }
       @endphp
     </p>
   @else
     <p class="c-block__body text">
       @php
-        if (str_word_count( $body ) > $excerpt_length) {
-          echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
+        if (str_word_count($body) > $excerpt_length) {
+          echo do_shortcode(wp_trim_words($body, $excerpt_length));
         } else {
-          echo do_shortcode(  $body  );
+          echo do_shortcode($body);
         }
       @endphp
     </p>

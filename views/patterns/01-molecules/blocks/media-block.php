@@ -1,6 +1,6 @@
 <div class="c-media-block c-block <?php if (isset($block_class)): ?><?php echo $block_class ?><?php endif; ?>">
   <?php if (isset($image) || isset($picture)): ?>
-    <div class="c-media-block__image c-block__image <?php if (isset($block_img_class)): ?><?php echo $block_img_class ?><?php endif; ?> <?php if (isset($block_type)): ?> c-block__icon c-block__icon--<?php echo $block_type ?><?php endif; ?>">
+    <div class="c-media-block__image c-block__image <?php if (isset($block_img_class)): ?><?php echo $block_img_class ?><?php endif; ?> <?php if (isset($block_type)): ?>c-block__icon c-block__icon--<?php echo $block_type ?><?php endif; ?>">
       <div class="c-block__image-wrap <?php if (isset($block_img_wrap_class)): ?><?php echo $block_img_wrap_class ?><?php endif; ?>">
         <?php if (isset($picture)): ?>
           <picture class="picture">
@@ -28,9 +28,9 @@
           <h4 class="c-media-block__kicker c-block__kicker <?php if (isset($block_kicker_class)): ?><?php echo $block_kicker_class ?><?php endif; ?>"><?php echo $kicker ?></h4>
         <?php endif; ?>
         <?php if (isset($title)): ?>
-          <h3 class="c-media-block__title c-block__title <?php if (isset($block_title_class)): ?><?php echo $block_title_class ?><?php endif; ?> <?php if (isset($kicker)): ?><?php echo 'u-space--zero'?><?php endif; ?>">
+          <h3 class="c-media-block__title c-block__title <?php if (isset($block_title_class)): ?><?php echo $block_title_class ?><?php endif; ?> <?php if (isset($kicker)): ?><?php echo 'u-space--zero' ?><?php endif; ?>">
             <?php if (isset($link)): ?>
-              <a href="<?php echo $link ?>" class="c-block__title-link u-theme--link-hover--dark">
+              <a href="<?php echo $link ?>" class="c-block__title-link <?php if (isset($block_title_link_class)): ?><?php echo $block_title_link_class ?><?php else: ?><?php echo 'u-theme--link-hover--dark' ?><?php endif; ?>">
             <?php endif; ?>
             <?php echo $title ?>
             <?php if (isset($link)): ?>
@@ -38,23 +38,23 @@
             <?php endif; ?>
           </h3>
         <?php endif; ?>
-        <?php if (!empty( $excerpt )): ?>
+        <?php if (!empty($excerpt)): ?>
           <p class="c-media-block__description c-block__description">
             <?php
-              if (strlen( $excerpt ) > $excerpt_length) {
-                echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
+              if (strlen($excerpt) > $excerpt_length) {
+                  echo do_shortcode(wp_trim_words($body, $excerpt_length));
               } else {
-                echo do_shortcode( strip_tags( $excerpt ) );
+                  echo do_shortcode(strip_tags($excerpt));
               }
             ?>
           </p>
-        <?php elseif (!empty( $body )): ?>
+        <?php elseif (!empty($body)): ?>
           <p class="c-media-block__description c-block__description">
             <?php
-              if (strlen( $body ) > $excerpt_length) {
-                echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
+              if (strlen($body) > $excerpt_length) {
+                  echo do_shortcode(wp_trim_words($body, $excerpt_length));
               } else {
-                echo do_shortcode( strip_tags( $body ) );
+                  echo do_shortcode(strip_tags($body));
               }
             ?>
           </p>
@@ -74,5 +74,5 @@
         <a href="<?php echo $link ?>" class="c-block__button o-button o-button--outline"><?php echo $cta ?><span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><?php include(locate_template('patterns/00-atoms/icons/icon-arrow-long-right.blade.php')); ?></span></a>
       <?php endif; ?>
     </div>
-  </div> <!-- c-media-block__content -->
-</div> <!-- c-media-block -->
+  </div> <!-- .c-media-block__content -->
+</div> <!-- .c-media-block -->

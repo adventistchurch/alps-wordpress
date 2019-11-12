@@ -773,3 +773,27 @@ add_action( 'admin_notices', 'alps_admin_notice__alps_update_complete' );
 
 // SET V3 FOR PLUGIN TO READ
 define( 'ALPS_V3', true );
+
+function wpml_language_menu_items(){
+  $languages = icl_get_languages('skip_missing=0');
+  if (!empty($languages)) {
+    echo '<li class="c-secondary-nav__list-item has-subnav">';
+      echo '<a href="" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base"><span class="u-icon u-icon--xs u-path-fill--gray"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>Language</title><path d="M10,4V2H6V0H4V2H0V4H5.9A9.16,9.16,0,0,1,4.51,5.56a8.84,8.84,0,0,1-1-1.08L1.9,5.74a12,12,0,0,0,1,1A26.55,26.55,0,0,1,.55,8.11l.9,1.78a22.2,22.2,0,0,0,3-1.8,23.58,23.58,0,0,0,3.06,1.8l.9-1.78A22.43,22.43,0,0,1,6.11,6.78,10.49,10.49,0,0,0,8.22,4Z" fill="#777"/></svg></span>Languages</a>';
+      echo '<span class="c-subnav__arrow o-arrow--down u-path-fill--gray"></span>';
+      echo '<ul class="c-secondary-nav__subnav c-subnav">';
+        foreach($languages as $language) {
+          echo '<li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">';
+            echo '<a href="'.icl_disp_language($language['url']).'" class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base">';
+              if ($language['country_flag_url']) {
+                echo '<img src="'.$language['country_flag_url'].'" height="12" alt="'.$language['language_code'].'" width="18" class="u-space--half--right" />';
+              }
+              echo icl_disp_language($language['native_name']);
+              echo icl_disp_language(' (' . $language['translated_name'] . ')');
+            echo '</a>';
+          echo '</li>';
+        }
+      echo '</ul>';
+    echo '</li>';
+  }
+}
+

@@ -1,6 +1,6 @@
 <div class="c-media-block c-block @if (isset($block_class)){{ $block_class }}@endif">
   @if (isset($image) or isset($picture))
-    <div class="c-media-block__image c-block__image @if (isset($block_img_class)){{ $block_img_class }}@endif @if (isset($block_type)) c-block__icon c-block__icon--{{ $block_type }}@endif @if (isset($background_image)){{ 'u-background--cover c-media-block__background-image c-background-image--' . $thumb_id }}@endif">
+    <div class="c-media-block__image c-block__image @if (isset($block_img_class)){{ $block_img_class }}@endif @if (isset($block_type))c-block__icon c-block__icon--{{ $block_type }}@endif @if (isset($background_image)){{ 'u-background--cover c-media-block__background-image c-background-image--' . $thumb_id }}@endif">
       <div class="c-block__image-wrap @if (isset($block_img_wrap_class)){{ $block_img_wrap_class }}@endif">
         @if (isset($background_image))
           <style type="text/css">
@@ -57,7 +57,7 @@
         @if (isset($title))
           <h3 class="c-media-block__title c-block__title @if (isset($block_title_class)){{ $block_title_class }}@endif @if (isset($kicker)){{ 'u-space--zero'}}@endif">
             @if (isset($link))
-              <a href="{{ $link }}" class="c-block__title-link u-theme--link-hover--dark">
+              <a href="{{ $link }}" class="c-block__title-link @if (isset($block_title_link_class)){{ $block_title_link_class }}@else{{ 'u-theme--link-hover--dark' }}@endif">
             @endif
               @if (isset($eyebrow))<em class="u-theme--color--lighter">{{ $eyebrow . ' ' }}</em>@endif
               {!! $title !!}
@@ -66,23 +66,23 @@
             @endif
           </h3>
         @endif
-        @if (!empty( $excerpt ))
+        @if (!empty($excerpt))
           <p class="c-media-block__description c-block__description">
             @php
-              if ( str_word_count( $excerpt ) > $excerpt_length) {
-                echo do_shortcode( wp_trim_words( $excerpt, $excerpt_length ) );
+              if (str_word_count($excerpt) > $excerpt_length) {
+                echo do_shortcode(wp_trim_words($excerpt, $excerpt_length));
               } else {
-                echo do_shortcode( strip_tags( $excerpt ) );
+                echo do_shortcode(strip_tags($excerpt));
               }
             @endphp
           </p>
-        @elseif (!empty( $body ))
+        @elseif (!empty($body))
           <p class="c-media-block__description c-block__description">this is
             @php
-              if ( str_word_count( $body ) > $excerpt_length) {
-                echo do_shortcode( wp_trim_words( $body, $excerpt_length ) );
+              if (str_word_count($body) > $excerpt_length) {
+                echo do_shortcode(wp_trim_words($body, $excerpt_length));
               } else {
-                echo do_shortcode( $body );
+                echo do_shortcode($body);
               }
             @endphp
           </p>
@@ -102,5 +102,5 @@
         <a href="{{ $link }}" class="c-block__button o-button o-button--outline">{{ $cta }}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
       @endif
     </div>
-  </div> <!-- c-media-block__content -->
-</div> <!-- c-media-block -->
+  </div> <!-- .c-media-block__content -->
+</div> <!-- .c-media-block -->

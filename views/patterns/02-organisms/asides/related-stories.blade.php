@@ -1,6 +1,6 @@
 @php
-  $post_type  = get_post_type($post->ID);
-  $category   = get_the_category();
+  $post_type = get_post_type($post->ID);
+  $category = get_the_category();
   if ($category) {
     if (class_exists('WPSEO_Primary_Term')) {
       $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
@@ -17,10 +17,10 @@
     }
   }
   $args = array(
-    'post_type'       => $post_type,
-    'category_name'   => $category,
-    'posts_per_page'  => 2,
-    'post__not_in'    => array($post->ID)
+    'post_type' => $post_type,
+    'category_name' => $category,
+    'posts_per_page' => 2,
+    'post__not_in' => array($post->ID)
   );
   $related = new WP_Query($args);
 @endphp
@@ -34,9 +34,10 @@
       @while ($related->have_posts())
         @php
           $related->the_post();
-          $title    = get_the_title();
-          $link     = get_permalink();
-          $date     = date('F j, Y', strtotime(get_the_date()));
+          $id = get_the_ID();
+          $title = get_the_title();
+          $link = get_permalink();
+          $date = date('F j, Y', strtotime(get_the_date()));
           $category = $category;
         @endphp
         @if (get_post_thumbnail_id())
@@ -56,8 +57,11 @@
         @else
           @php
             $thumb_id = NULL;
-            $block_class = "c-block__text u-theme--border-color--darker u-border--left u-padding--bottom u-spacing--half";
+            $block_class = "c-block__text u-theme--border-color--darker u-border--left u-padding--bottom u-padding--right u-spacing--half";
             $block_title_class = "u-theme--color--darker u-font--primary--s";
+            $excerpt = get_the_excerpt();
+            $body = get_the_content();
+            $excerpt_length = 35;
           @endphp
           @include('patterns.01-molecules.blocks.content-block')
         @endif
