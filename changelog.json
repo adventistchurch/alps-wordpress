@@ -1,4 +1,7 @@
 {
+  "3.0.23-beta" : {
+    "description" : "A collection of urgent bugs."
+  },
   "3.0.22-beta" : {
     "description" : "Adding support for Tertiary menus."
   },

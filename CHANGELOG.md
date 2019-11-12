@@ -3,6 +3,15 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+##[3.0.23-beta]
+### Fixed
+- Fixed WPML Language Switcher. [#292](https://github.com/adventistchurch/alps-wordpress/issues/292)
+- Fixed Display of Special Characters in Title Causes Error. [#367](https://github.com/adventistchurch/alps-wordpress/issues/367)
+- Fixed Hero image text hover animation missing [#312](https://github.com/adventistchurch/alps-wordpress/issues/312)
+- Fixed Console errors. [#365](https://github.com/adventistchurch/alps-wordpress/issues/365)
+- Fixed Sidebar not hiding. [#371](https://github.com/adventistchurch/alps-wordpress/issues/371)
+
 ##[3.0.22-beta]
 ### Added
 - Adding support for Tertiary menus. [#341](https://github.com/adventistchurch/alps-wordpress/pull/341)
