@@ -1,4 +1,7 @@
 {
+  "3.0.24-beta" : {
+    "description" : "Restoring deleted piklist files."
+  },
   "3.0.23-beta" : {
     "description" : "A collection of urgent bugs."
   },
