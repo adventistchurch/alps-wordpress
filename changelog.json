@@ -1,4 +1,7 @@
 {
+  "3.0.25-beta" : {
+    "description" : "Fixed a bug with the sidebar hiding and 3-up grids."
+  },
   "3.0.24-beta" : {
     "description" : "Restoring deleted piklist files."
   },
