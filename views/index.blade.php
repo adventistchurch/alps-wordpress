@@ -28,7 +28,7 @@
               if ($posts_grid == "true") {
                 if (!is_active_sidebar('sidebar-posts') || $hide_sidebar == 'true') {
                   if ($post_grid_3up == 'true') {
-                    $grid_class = "l-grid-item--6-col u-shift--right--1-col--at-large u-shift--left--1-col--at-medium u-no-gutters";
+                    $grid_class = "l-grid-item--6-col l-grid-item--l--4-col l-grid-item--xl--6-col u-shift--right--1-col--at-large u-shift--left--1-col--at-xlarge u-shift--left--1-col--standard u-no-gutters ";
                     $grid_item_class = "l-grid-item--s--3-col l-grid-item--l--2-col";
                   }
                   else {
