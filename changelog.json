@@ -1,4 +1,7 @@
 {
+  "3.0.26-beta" : {
+    "description" : "Fixed Theme cache files not working in some hosting."
+  },
   "3.0.25-beta" : {
     "description" : "Fixed a bug with the sidebar hiding and 3-up grids."
   },

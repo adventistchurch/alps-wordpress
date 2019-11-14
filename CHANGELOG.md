@@ -4,6 +4,10 @@ A record of the changes made to `ALPS for Wordpress`.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+##[3.0.26-beta]
+### Fixed
+- Fixed Theme cache files not working in some hosting. [#358](https://github.com/adventistchurch/alps-wordpress/issues/358)
+
 ##[3.0.25-beta]
 ### Fixed
 - Fixed a bug with the sidebar hiding and 3-up grids. [#376](https://github.com/adventistchurch/alps-wordpress/issues/376)
