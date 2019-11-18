@@ -186,6 +186,17 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   }
 }
 
+// Guidepost styles
+.wp-block-sbb-guidepost {
+  margin-left: 40px;
+
+  ul {
+    & > * + * {
+      margin-top: 10px;
+    }
+  }
+}
+
 .u-theme--dark {
   .c-widget {
     p,

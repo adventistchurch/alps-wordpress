@@ -166,6 +166,14 @@
   margin-left: 20px;
 }
 
+.wp-block-sbb-guidepost {
+  margin-left: 40px;
+}
+
+.wp-block-sbb-guidepost ul > * + * {
+  margin-top: 10px;
+}
+
 .u-theme--dark .c-widget p,
 .u-theme--dark .c-widget a,
 .u-theme--dark .c-widget li {
