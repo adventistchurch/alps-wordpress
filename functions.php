@@ -618,9 +618,6 @@ if ( !$piklist_options ) {
     // DO NOT SHOW UPGRADE NOTICE: PIKLIST HAS BEEN REMOVED OR NEVER EXISITED
     // GOING TO SET CF FLAG MANUALLY
     $piklist_removed = true;
-
-} else {
-    // MANUALLY SET TO PREVENT UNNECESSARY UPGRADE
     update_option( 'alps_cf_converted', TRUE );
 }
 
