@@ -111,28 +111,20 @@ add_post_type_support( 'page', 'excerpt' );
 add_action('tgmpa_register', 'adventist_register_required_plugins');
 function adventist_register_required_plugins() {
     if (get_bloginfo('version') >= '5.0.0') {
-      $plugin_name = 'Classic Editor';
-      $plugin_slug = 'classic-editor';
-      $plugin_required = true;
-      $plugin_activation = true;
-    } else {
       $plugin_name = 'Gutenberg';
       $plugin_slug = 'gutenberg';
       $plugin_required = true;
       $plugin_activation = true;
     }
 
-
     $plugins = array(
-      // Gutenberg Blocks
-
       // Guidebook
       array(
         'name'               => 'Guidepost', // The plugin name.
         'slug'               => 'guidepost', // The plugin slug (typically the folder name).
         'source'             => 'https://github.com/sortabrilliant/guidepost/archive/master.zip',
-        'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-        'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+        'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+        'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
         'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
       ),
       // WordPress SEO
