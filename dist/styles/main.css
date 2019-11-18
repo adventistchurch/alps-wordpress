@@ -166,14 +166,6 @@
   margin-left: 20px;
 }
 
-.wp-block-sbb-guidepost {
-  margin-left: 40px;
-}
-
-.wp-block-sbb-guidepost ul > * + * {
-  margin-top: 10px;
-}
-
 .u-theme--dark .c-widget p,
 .u-theme--dark .c-widget a,
 .u-theme--dark .c-widget li {
@@ -238,6 +230,19 @@
 .wp-embed-aspect-16-9 .wp-block-embed__wrapper::before,
 .wp-block-embed .wp-block-embed__wrapper::before {
   padding: 0 !important;
+}
+
+.wp-block-sbb-guidepost {
+  margin-left: 40px;
+}
+
+.wp-block-sbb-guidepost ul li {
+  margin-top: 10px;
+}
+
+.wp-block-sbb-guidepost ul ul {
+  margin-left: 20px;
+  margin-top: 5px;
 }
 
 .search-submit {

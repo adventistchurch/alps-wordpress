@@ -186,17 +186,6 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   }
 }
 
-// Guidepost styles
-.wp-block-sbb-guidepost {
-  margin-left: 40px;
-
-  ul {
-    & > * + * {
-      margin-top: 10px;
-    }
-  }
-}
-
 .u-theme--dark {
   .c-widget {
     p,
@@ -264,6 +253,22 @@ body.hide-sabbath:not(.has-sidebar--posts) {
 .wp-embed-aspect-16-9 .wp-block-embed__wrapper::before,
 .wp-block-embed .wp-block-embed__wrapper::before {
   padding: 0 !important;
+}
+
+// Guidepost styles
+.wp-block-sbb-guidepost {
+  margin-left: 40px;
+
+  ul {
+    li {
+      margin-top: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+  }
 }
 
 // Misc
