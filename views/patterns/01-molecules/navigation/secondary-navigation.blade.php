@@ -1,6 +1,27 @@
 <nav class="c-secondary-nav" role="navigation">
   <ul class="c-secondary-nav__list">
     @if (has_nav_menu('secondary_navigation'))
+      @if (apply_filters('wpml_active_languages', NULL, 'skip_missing=0'))
+        @php $languages = icl_get_languages('skip_missing=0'); @endphp
+        <li class="c-secondary-nav__list-item has-subnav">
+          <a href="" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base"><span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-language')</span>Languages</a>
+          <span class="c-subnav__arrow o-arrow--down u-path-fill--gray"></span>
+          <ul class="c-secondary-nav__subnav c-subnav">
+            @foreach ($languages as $language)
+              <li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
+                <a href="{{ $language['url'] }}" class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base">
+                  @if ($language['native_name'])
+                    {{ icl_disp_language($language['native_name']) }}
+                  @endif
+                  @if ($language['translated_name'])
+                    {{ icl_disp_language(' (' . $language['translated_name'] . ')') }}
+                  @endif
+                </a>
+              </li>
+            @endforeach
+          </ul>
+        </li>
+      @endif
       @php
         $menu_locations = get_nav_menu_locations();
         $menu = wp_get_nav_menu_object($menu_locations[ 'secondary_navigation' ]);
@@ -20,27 +41,6 @@
           $has_subnav = array_search($nav->ID, array_column($nav_items, 'menu_item_parent'));
           if ($has_subnav) $show_subnav = ' has-subnav';
         @endphp
-        @if (apply_filters('wpml_active_languages', NULL, 'skip_missing=0'))
-          @php $languages = icl_get_languages('skip_missing=0'); @endphp
-          <li class="c-secondary-nav__list-item has-subnav">
-            <a href="" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base"><span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-language')</span>Languages</a>
-            <span class="c-subnav__arrow o-arrow--down u-path-fill--gray"></span>
-            <ul class="c-secondary-nav__subnav c-subnav">
-              @foreach ($languages as $language)
-                <li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">
-                  <a href="{{ $language['url'] }}" class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base">
-                    @if ($language['native_name'])
-                      {{ icl_disp_language($language['native_name']) }}
-                    @endif
-                    @if ($language['translated_name'])
-                      {{ icl_disp_language(' (' . $language['translated_name'] . ')') }}
-                    @endif
-                  </a>
-                </li>
-              @endforeach
-            </ul>
-          </li>
-        @endif
         <li class="c-secondary-nav__list-item{{ $show_subnav }}">
           <a href="{{ $link_url }}" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base{{ $link_classes }}"{!! $link_target !!}{!! $link_title !!}{!! $link_description !!}{!! $link_rel !!}>{!! $link_text !!}</a>
           @if ($has_subnav)
