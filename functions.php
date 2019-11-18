@@ -610,9 +610,19 @@ function is_multidimensional(array $array) {
     return count($array) !== count($array, COUNT_RECURSIVE);
 }
 
+// RUN A CHECK TO SEE IF PIKLIST OPTIONS ARE STILL IN THE DB
+// WE ARE TRYING TO PREVENT FRESH INSTALLS FROM RUNNING THE CF CONVERSION
+$piklist_removed = '';
+$piklist_options = get_option( 'alps_theme_settings' );
+if ( !$piklist_options ) {
+    // DO NOT SHOW UPGRADE NOTICE: PIKLIST HAS BEEN REMOVED OR NEVER EXISITED
+    // GOING TO SET CF FLAG MANUALLY
+    $piklist_removed = true;
 
-
-
+} else {
+    // MANUALLY SET TO PREVENT UNNECESSARY UPGRADE
+    update_option( 'alps_cf_converted', TRUE );
+}
 
 $cf = get_option( 'alps_cf_converted' );
 // CARBON FIELDS
