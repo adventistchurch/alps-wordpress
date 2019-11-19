@@ -1,4 +1,7 @@
 {
+  "3.0.27-beta" : {
+    "description" : "Remove requirements for Classic Editor, fixing the version compare, misc fixes."
+  },
   "3.0.26-beta" : {
     "description" : "Fixed Theme cache files not working in some hosting."
   },
