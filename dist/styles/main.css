@@ -232,6 +232,19 @@
   padding: 0 !important;
 }
 
+.wp-block-sbb-guidepost {
+  margin-left: 40px;
+}
+
+.wp-block-sbb-guidepost ul li {
+  margin-top: 10px;
+}
+
+.wp-block-sbb-guidepost ul ul {
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
 .search-submit {
   margin-top: 10px;
 }

@@ -255,6 +255,22 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   padding: 0 !important;
 }
 
+// Guidepost styles
+.wp-block-sbb-guidepost {
+  margin-left: 40px;
+
+  ul {
+    li {
+      margin-top: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+  }
+}
+
 // Misc
 .search-submit {
   margin-top: 10px;
