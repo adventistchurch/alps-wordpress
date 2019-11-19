@@ -642,7 +642,7 @@ if ( !$cf ) {
         <p style="font-size:28px"><?php _e( 'ALPS: The ALPS theme requires an update. Please read and follow the instructions below.' ) ?></p>
         <?php
         // FIRST CHECK FOR WP VERSION
-        if ( version_compare( get_bloginfo( 'version' ), '5.2.4', '>' ) ) { ?>
+        if ( version_compare( get_bloginfo( 'version' ), '5.2.4', '<' ) ) { ?>
         <p style="font-size:22px">
           <span style="color:red; font-weight:bold">WordPress Update Required<br>If you do not upgrade WordPress, your site will not function properly. Please update now.</span>
         </p>
