@@ -110,13 +110,6 @@ add_post_type_support( 'page', 'excerpt' );
  */
 add_action('tgmpa_register', 'adventist_register_required_plugins');
 function adventist_register_required_plugins() {
-    if (get_bloginfo('version') >= '5.0.0') {
-      $plugin_name = 'Gutenberg';
-      $plugin_slug = 'gutenberg';
-      $plugin_required = true;
-      $plugin_activation = true;
-    }
-
     $plugins = array(
       // Guidebook
       array(
@@ -139,12 +132,6 @@ function adventist_register_required_plugins() {
         'slug'              => 'svg-support',
         'required'          => true,
         'force_activation'  => true,
-      ),
-      array(
-        'name'              => $plugin_name,
-        'slug'              => $plugin_slug,
-        'required'          => $plugin_required,
-        'force_activation'  => $plugin_activation,
       ),
   );
 
