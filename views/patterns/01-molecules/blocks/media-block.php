@@ -42,9 +42,9 @@
           <p class="c-media-block__description c-block__description">
             <?php
               if (strlen($excerpt) > $excerpt_length) {
-                  echo do_shortcode(wp_trim_words($body, $excerpt_length));
+                  echo strip_shortcodes(wp_trim_words($body, $excerpt_length));
               } else {
-                  echo do_shortcode(strip_tags($excerpt));
+                  echo strip_shortcodes(strip_tags($excerpt));
               }
             ?>
           </p>
@@ -52,9 +52,9 @@
           <p class="c-media-block__description c-block__description">
             <?php
               if (strlen($body) > $excerpt_length) {
-                  echo do_shortcode(wp_trim_words($body, $excerpt_length));
+                  echo strip_shortcodes(wp_trim_words($body, $excerpt_length));
               } else {
-                  echo do_shortcode(strip_tags($body));
+                  echo strip_shortcodes(strip_tags($body));
               }
             ?>
           </p>
