@@ -1,15 +1,27 @@
-## ALPS for Wordpress License
 
-ALPS for Wordpress and the Adventist Living Pattern System is developed using Sage, whose license information is below.
+## Adventist Living Pattern System (ALPS) License
 
-The following license applies to all code not contained in the original Sage project:
+The Adventist Living Pattern System is developed using the Roots Sage starter
+theme, whose license information is below.
 
-This pattern library and accompanying themes, source-code, documentation and resources are Copyright (c) 2016 by the General Conference of Seventh-day Adventists. They are only authorized for use by Seventh-day Adventist denominational entities, as authorized by the General Conference of Seventh-day Adventists, its divisions, unions and conferences. In addition, the name and logo are trademarked and registered identities. The General Conference of Seventh-day Adventists reserves the legal right to protect the integrity of the church against misuse or unauthorized use of these resources.
+The following license applies to all code not contained in `/app`, `/config`,
+`/resources`:
+
+This pattern library and accompanying themes, source-code, documentation and
+resources are Copyright (c) 2019 by the General Conference of Seventh-day
+Adventists. They are only authorized for use by Seventh-day Adventist
+denominational entities, as authorized by the General Conference of Seventh-day
+Adventists, its divisions, unions and conferences. In addition, the name and
+logo are trademarked and registered identities. The General Conference of
+Seventh-day Adventists reserves the legal right to protect the integrity of
+the church against misuse or unauthorized use of these resources.
 
 
+## Roots Sage starter theme
 
+The following license applies to all code in `/app`, `/config`, `/resources`:
 
-## Sage License
+### The MIT License (MIT)
 
 Copyright (c) Ben Word and Scott Walkinshaw
 
