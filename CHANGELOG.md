@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 - Removed requirement for the Gutenberg plugin. [#387](https://github.com/adventistchurch/alps-wordpress/pull/387)
 
+### Add
+- Added support for the ARVE/NextGenThemes embed block.
+
 ##[3.0.27-beta]
 ### Fixed
 - Fixing the version_compare function operator. [#385](https://github.com/adventistchurch/alps-wordpress/issues/385)
