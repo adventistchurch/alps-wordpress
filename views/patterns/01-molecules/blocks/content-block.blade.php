@@ -15,9 +15,9 @@
     <p class="c-block__body text">
       @php
         if (str_word_count($excerpt) > $excerpt_length) {
-          echo do_shortcode(wp_trim_words($excerpt, $excerpt_length));
+          echo strip_shortcodes(wp_trim_words($excerpt, $excerpt_length));
         } else {
-          echo do_shortcode(strip_tags($excerpt));
+          echo strip_shortcodes(strip_tags($excerpt));
         }
       @endphp
     </p>
@@ -25,9 +25,9 @@
     <p class="c-block__body text">
       @php
         if (str_word_count($body) > $excerpt_length) {
-          echo do_shortcode(wp_trim_words($body, $excerpt_length));
+          echo strip_shortcodes(wp_trim_words($body, $excerpt_length));
         } else {
-          echo do_shortcode($body);
+          echo strip_shortcodes($body);
         }
       @endphp
     </p>
