@@ -21,6 +21,19 @@ body.hide-sabbath:not(.has-sidebar--posts) {
   }
 }
 
+/* WP ADMIN MENU */
+body.admin-bar.menu-is-active .c-drawer.this-is-active {
+  top: 46px !important;
+}
+
+/* BREAKPOINT FOR WP ADMIN MENU */
+@media (min-width: 783px) {
+  body.admin-bar.menu-is-active .c-drawer.this-is-active {
+    top: 32px !important;
+  }
+}
+
+
 // Utility classes
 .u-space--zero--right {
   margin-right: 0 !important;
