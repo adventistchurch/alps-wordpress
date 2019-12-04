@@ -432,6 +432,7 @@ add_filter('allowed_block_types', function () {
     'core/video',
     'core/html',
     'core/embed',
+    'core/separator',
     'core/paragraph',
     'alps-gutenberg-blocks/accordion',
     'alps-gutenberg-blocks/blockquote',
@@ -454,8 +455,8 @@ add_filter('allowed_block_types', function () {
  */
 require 'theme_update_check.php';
 $MyUpdateChecker = new ThemeUpdateChecker(
-  'alps-wordpress',
-  'https://kernl.us/api/v1/theme-updates/5be537a15ecd012001496112/'
+  'alps-aorg-v3',
+  'https://kernl.us/api/v1/theme-updates/5de832e3cd89bf658d69fcac/'
 );
 
 /**

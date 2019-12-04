@@ -1,4 +1,8 @@
 {
+
+  "3.0.29" : {
+    "description" : "Created Adventist.org branch."
+  },
   "3.0.28" : {
     "description" : "Removed requirement for the Gutenberg plugin, shortcodes from expanding in teasers. Added support for the ARVE/NextGenThemes embed block and a License.txt file."
   },
