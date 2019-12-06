@@ -2,6 +2,12 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.c-header--overlay {
+  .u-theme--path-fill--base svg path {
+    fill: white;
+  }
+}
+
 // Alter the article width based on sidebar and sabbath column
 body.has-sidebar--pages.hide-sabbath,
 body.has-sidebar--posts.hide-sabbath {
