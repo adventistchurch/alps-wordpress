@@ -70,8 +70,11 @@
           <?php endif; ?>
         </div>
       <?php endif; ?>
-      <?php if (isset($cta)): ?>
-        <a href="<?php echo $link ?>" class="c-block__button o-button o-button--outline"><?php echo $cta ?><span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><?php include(locate_template('patterns/00-atoms/icons/icon-arrow-long-right.blade.php')); ?></span></a>
+      <?php if (isset($link)): ?>
+        <a href="<?php echo $link ?>" class="c-block__button o-button o-button--outline">
+          <?php echo $cta ?>
+          <span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><?php include(locate_template('patterns/00-atoms/icons/icon-arrow-long-right.blade.php')); ?></span>
+        </a>
       <?php endif; ?>
     </div>
   </div> <!-- .c-media-block__content -->
