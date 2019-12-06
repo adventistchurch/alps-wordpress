@@ -2,6 +2,7 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.c-header--overlay .c-logo svg path,
 .c-header--overlay .u-theme--path-fill--base svg path {
   fill: white;
 }
