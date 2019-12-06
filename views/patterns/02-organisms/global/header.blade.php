@@ -40,10 +40,10 @@
       @include('patterns.01-molecules.navigation.primary-navigation')
     </div>
   </div> <!-- /.c-header--inner -->
-  @if (carbon_get_the_post_meta('hero_type') == 'full' && get_alps_option('sabbath_icon'))
+  @if (carbon_get_the_post_meta('hero_type') == 'full')
     <div class="c-header__sabbath u-theme--gradient--top">
       <div class="o-logo u-path-fill--white">
-        @include('patterns.00-atoms.logos.icon-logo-dark')
+        @include('patterns.00-atoms.logos.alps-icon-logo')
       </div>
     </div>
   @endif

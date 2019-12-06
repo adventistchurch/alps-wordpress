@@ -2,6 +2,11 @@
     $WORDPRESS STYLES
 \* ------------------------------------ */
 
+.c-header--overlay .c-logo svg path,
+.c-header--overlay .u-theme--path-fill--base svg path {
+  fill: white;
+}
+
 @media (min-width: 901px) {
   body.has-sidebar--pages.hide-sabbath .c-article,
   body.has-sidebar--posts.hide-sabbath .c-article {
