@@ -51,13 +51,12 @@
     <div class="c-article__body u-spacing--double">
       <div class="c-content-read-more u-spacing u-theme--border-color--base text">
         <h2>Yes, these steps look easy. Easy enough to set aside for “later.” Easy enough to think that maybe they're not so important, or not so special. But that would be a mistake.</h2>
-
         <p>The Bible tells the story of Naaman, the commander of the Syrian army. He contracted leprosy which was incurable and terminal. One of his slaves, an Israelite, suggested that he go to Samaria, where the prophet Elisha would be able to heal him.</p>
         <p>Elisha told Naaman to go wash himself in the river Jordan, and to immerse himself seven times if he wanted to be healed. Naaman was insulted. That river was muddy and it was unacceptable for a high official to bath in it.</p>
         <blockquote class="pullquote u-theme--border-color--darker--left u-theme--color--darker u-padding--right">
           <p>Yes, the instructions to dunk himself in the Jordan were simple, but what did he have to lose?</p>
         </blockquote>
-        <p>He was about to leave in a rage when one  of his soldiers pointed out that if Elisha had  asked him to do something great and  difficult, he would have followed  instructions without question. Yes, the  instructions to dunk himself in the Jordan  were simple, but what did he have to lose?</p>
+        <p>He was about to leave in a rage when one of his soldiers pointed out that if Elisha had asked him to do something great and difficult, he would have followed instructions without question. Yes, the instructions to dunk himself in the Jordan were simple, but what did he have to lose?</p>
         <p>Naaman accepted the counsel, followed Elisha's instructions and was healed. (2 Kings 5:1-15)</p>
         <p>Just like Naaman, you are free to choose your course of action. You can continue struggling with your troubles, drifting through life without meaning or purpose, and missing out on a journey that will bring you eternal life. Or, you can follow the simple steps on this page. The choice is yours.</p>
         <button class="o-button o-button--outline js-toggle-parent">
@@ -122,6 +121,10 @@
                 <![endif]-->
                 <img itemprop="image" srcset="//picsum.photos/600/330" alt="Alt Text">
               </picture>
+              <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
+                <strong>{{ media_block_default.picture.video.title }}</strong>
+                <button href="{{ media_block_default.picture.video.link }}" class="o-button o-button--outline o-button--outline--white"><span class="u-icon u-icon--xs u-space--half--right">{% include '@atoms/icons/icon-play.twig' %}</span>Watch Video</button>
+              </div>
             </div>
           </div>
           <!-- c-media-block__image -->
@@ -161,6 +164,10 @@
                 <![endif]-->
                 <img itemprop="image" srcset="//picsum.photos/600/330" alt="Alt Text">
               </picture>
+              <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
+                <strong>{{ media_block_default.picture.video.title }}</strong>
+                <button href="{{ media_block_default.picture.video.link }}" class="o-button o-button--outline o-button--outline--white"><span class="u-icon u-icon--xs u-space--half--right">{% include '@atoms/icons/icon-play.twig' %}</span>Watch Video</button>
+              </div>
             </div>
           </div>
           <!-- c-media-block__image -->
@@ -200,6 +207,10 @@
                 <![endif]-->
                 <img itemprop="image" srcset="//picsum.photos/600/330" alt="Alt Text">
               </picture>
+              <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
+                <strong>{{ media_block_default.picture.video.title }}</strong>
+                <button href="{{ media_block_default.picture.video.link }}" class="o-button o-button--outline o-button--outline--white"><span class="u-icon u-icon--xs u-space--half--right">{% include '@atoms/icons/icon-play.twig' %}</span>Watch Video</button>
+              </div>
             </div>
           </div>
           <!-- c-media-block__image -->
