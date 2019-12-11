@@ -1,5 +1,7 @@
 {
-
+  "3.0.30" : {
+    "description" : "Fixed homepage content."
+  },
   "3.0.29" : {
     "description" : "Created Adventist.org branch."
   },

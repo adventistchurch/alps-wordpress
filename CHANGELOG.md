@@ -4,10 +4,13 @@ A record of the changes made to `ALPS for Wordpress`.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [3.0.30]
+### Forked
+- Fixed homepage content.
+
 ## [3.0.29]
 ### Forked
 - This is a forked version of the main ALPS for Wordpress theme that is created for Adventist.org. Eventually this will get merged back into the main branch.
-
 
 ## [3.0.28]
 ### Fixed
@@ -24,7 +27,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Updating theme incorrectly stops at WP version check. [#384](https://github.com/adventistchurch/alps-wordpress/issues/384)
 - Remove Classic Editor Requirement. [#379](https://github.com/adventistchurch/alps-wordpress/issues/379)
 - Fixes the display of the Guidepost blocks.
-
 
 ## [3.0.26-beta]
 ### Fixed
