@@ -330,20 +330,4 @@
     </div>
   </article>
 </section>
-<section id="QPNxmEviUOg" class="c-section c-section__video-full c-video-full js-video js-toggle">
-  <div class="c-video-full__video fitvid u-gradient--bottom">
-    <iframe src="https://www.youtube.com/embed/QPNxmEviUOg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" id="fitvid632274"></iframe>
-  </div>
-  <div class="c-video-full__content">
-    <span class="u-icon u-icon--xl u-space--right u-path-fill--white">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.56 15">
-        <title>icon-play</title>
-        <path d="M10.56,7.5,0,15V0Z" fill="#231f20"></path>
-      </svg>
-    </span>
-    <div class="u-color--white">
-      <h3 class="u-font--primary--l"><strong class="js-video-title">Casting a Vision – Revival for Mission</strong></h3>
-      <strong class="u-font--secondary--s js-video-duration">29:29</strong>
-    </div>
-  </div>
-</section>
+
