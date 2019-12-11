@@ -36,7 +36,7 @@
       <p class="u-font--secondary--m">Find answers and peace as you begin to understand God’s plan for your life</p>
     </div>
   </div>
-  <button href="" class="o-button o-button--white">
+  <a href="/study-the-bible/" class="o-button o-button--white">
     <span class="u-icon u-icon--xs u-space--half--right">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
         <title>o-arrow__short--right</title>
@@ -44,15 +44,21 @@
       </svg>
     </span>
     Start a Bible Study
-  </button>
+  </a>
 </section>
 <section id="top" class="l-main__content l-grid l-grid--7-col u-shift--left--1-col--at-xxlarge l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
   <article class="c-article l-grid-item l-grid-item--l--4-col l-grid-item--xl--3-col">
     <div class="c-article__body u-spacing--double">
       <div class="c-content-read-more u-spacing u-theme--border-color--base text">
-        <h2>Yes, these steps look easy. Easy enough to set aside for "later." Easy enough to think that maybe they're not so important, or not so special. But that would be a mistake.</h2>
+        <h2>Yes, these steps look easy. Easy enough to set aside for “later.” Easy enough to think that maybe they're not so important, or not so special. But that would be a mistake.</h2>
         <p>The Bible tells the story of Naaman, the commander of the Syrian army. He contracted leprosy which was incurable and terminal. One of his slaves, an Israelite, suggested that he go to Samaria, where the prophet Elisha would be able to heal him.</p>
         <p>Elisha told Naaman to go wash himself in the river Jordan, and to immerse himself seven times if he wanted to be healed. Naaman was insulted. That river was muddy and it was unacceptable for a high official to bath in it.</p>
+        <blockquote class="pullquote u-theme--border-color--darker--left u-theme--color--darker u-padding--right">
+          <p>Yes, the instructions to dunk himself in the Jordan were simple, but what did he have to lose?</p>
+        </blockquote>
+        <p>He was about to leave in a rage when one of his soldiers pointed out that if Elisha had asked him to do something great and difficult, he would have followed instructions without question. Yes, the instructions to dunk himself in the Jordan were simple, but what did he have to lose?</p>
+        <p>Naaman accepted the counsel, followed Elisha's instructions and was healed. (2 Kings 5:1-15)</p>
+        <p>Just like Naaman, you are free to choose your course of action. You can continue struggling with your troubles, drifting through life without meaning or purpose, and missing out on a journey that will bring you eternal life. Or, you can follow the simple steps on this page. The choice is yours.</p>
         <button class="o-button o-button--outline js-toggle-parent">
           <span class="u-icon u-icon--xs u-space--half--right">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.01 10">
@@ -77,15 +83,15 @@
             <li>See the world differently—understand why our lives are so full of trouble and at the same time, learn why there is hope.</li>
             <li>Learn the end of the story, and find freedom, healing and hope in Jesus</li>
           </ul>
-          <button href="" class="o-button o-button--primary">
+          <a href="/bible/understanding-the-bible/" class="o-button o-button--primary">
             <span class="u-icon u-icon--xs u-space--half--right">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 12.39">
-                <title>icon-download</title>
-                <path d="M12.73,7.16H15v5.23H0V7.16H2.27v3H12.73ZM14.66,1.6,13.06,0,7.5,5.56,1.94,0,.34,1.6,7.5,8.76Z" fill="#231f20"></path>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+                <title>o-arrow__short--right</title>
+                <path d="M5,.09,3.62,1.5,6.12,4H.05V6H6.12L3.62,8.5,5,9.91,10,5Z" fill="#9b9b9b"></path>
               </svg>
             </span>
-            Download Now
-          </button>
+            Yes, I want to start on that path today!
+          </a>
         </div>
       </div>
     </div>
@@ -95,8 +101,8 @@
   <div class="c-testimonies-media--inner u-spacing--double">
     <div class="c-testimonies-media__heading">
       <div class="c-block__heading u-theme--border-color--base">
-        <h3 class="c-block__heading-title">Testimonies</h3>
-        <a href="#" class="c-block__heading-link u-theme--color--light u-theme--link-hover--lighter">See All</a>
+        <h3 class="c-block__heading-title">Stories of Transformation</h3>
+        <a href="/stories-of-transformation/" class="c-block__heading-link u-theme--color--light u-theme--link-hover--lighter">See All</a>
       </div>
       <div class="o-dots"></div>
     </div>
@@ -106,26 +112,26 @@
           <div class="c-media-block__image c-block__image ">
             <div class="c-block__image-wrap ">
               <picture class="picture">
-                <!--[if IE 9]>
-                <video style="display: none;">
-                  <![endif]-->
-                  <source srcset="//picsum.photos/800/450" media="(min-width: 500px)">
-                  <!--[if IE 9]>
-                </video>
-                <![endif]-->
-                <img itemprop="image" srcset="//picsum.photos/600/330" alt="Alt Text">
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                            <source srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/corniel-500x280.png" media="(min-width: 500px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img itemprop="image" srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/corniel.png" alt="">
               </picture>
+              <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
+                <strong>Corniel / From Devil Worship to God</strong>
+                <a href="/stories/corniel-from-devil-worship-to-god/" class="o-button o-button--outline o-button--outline--white"><span class="u-icon u-icon--xs u-space--half--right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.56 15"><title>icon-play</title><path d="M10.56,7.5,0,15V0Z" fill="#231f20"></path></svg></span>Watch Video</a>
+              </div>
             </div>
           </div>
           <!-- c-media-block__image -->
           <div class="c-media-block__content c-block__content u-spacing u-border--left u-theme--border-color--base">
             <div class="u-spacing c-block__group c-media-block__group u-flex--justify-start">
               <div class="u-width--100p u-spacing">
-                <p class="c-media-block__description c-block__description">"Aenean quis velit vel purus est, vel semper ex tristique ut. Proin dapibus luctus pellentesque."</p>
+                <p class="c-media-block__description c-block__description">"My plan for the future is to go back home to tell the young men… that there is a better way. There is a God who can change them as He changed me."</p>
               </div>
               <div class="c-media-block__meta c-block__meta ">
               </div>
-              <a href="" class="c-block__button o-button o-button--outline--white" tabindex="0">
+              <a href="/stories/corniel-from-devil-worship-to-god/" class="c-block__button o-button o-button--outline--white" tabindex="0">
                 <span class="u-icon u-icon--xs u-path-fill--base u-space--half--right">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.01 10">
                     <title>o-cion</title>
@@ -145,26 +151,26 @@
           <div class="c-media-block__image c-block__image ">
             <div class="c-block__image-wrap ">
               <picture class="picture">
-                <!--[if IE 9]>
-                <video style="display: none;">
-                  <![endif]-->
-                  <source srcset="//picsum.photos/800/450" media="(min-width: 500px)">
-                  <!--[if IE 9]>
-                </video>
-                <![endif]-->
-                <img itemprop="image" srcset="//picsum.photos/600/330" alt="Alt Text">
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/magdalena-500x280.png" media="(min-width: 500px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img itemprop="image" srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/magdalena.png" alt="">
               </picture>
+              <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
+                <strong>Magdalena / Joy to Live with Christ</strong>
+                <a href="/stories/magdalena-joy-to-live-with-christ/" class="o-button o-button--outline o-button--outline--white"><span class="u-icon u-icon--xs u-space--half--right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.56 15"><title>icon-play</title><path d="M10.56,7.5,0,15V0Z" fill="#231f20"></path></svg></span>Watch Video</a>
+              </div>
             </div>
           </div>
           <!-- c-media-block__image -->
           <div class="c-media-block__content c-block__content u-spacing u-border--left u-theme--border-color--base">
             <div class="u-spacing c-block__group c-media-block__group u-flex--justify-start">
               <div class="u-width--100p u-spacing">
-                <p class="c-media-block__description c-block__description">"Aenean quis velit vel purus est, vel semper ex tristique ut. Proin dapibus luctus pellentesque."</p>
+                <p class="c-media-block__description c-block__description">"There is a Bible verse that is engraved in my heart, John 8:32, which says ‘Then you will know the truth and the truth shall set you free.’ It set me free from the fears of the world. It placed God’s love in my heart. A love that makes me grateful for everything that He has done for me and can also do for you. He can take away all the pain that you are suffering. He can transform your life."</p>
               </div>
               <div class="c-media-block__meta c-block__meta ">
               </div>
-              <a href="" class="c-block__button o-button o-button--outline--white" tabindex="-1">
+              <a href="/stories/magdalena-joy-to-live-with-christ/" class="c-block__button o-button o-button--outline--white" tabindex="-1">
                 <span class="u-icon u-icon--xs u-path-fill--base u-space--half--right">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.01 10">
                     <title>o-cion</title>
@@ -184,26 +190,65 @@
           <div class="c-media-block__image c-block__image ">
             <div class="c-block__image-wrap ">
               <picture class="picture">
-                <!--[if IE 9]>
-                <video style="display: none;">
-                  <![endif]-->
-                  <source srcset="//picsum.photos/800/450" media="(min-width: 500px)">
-                  <!--[if IE 9]>
-                </video>
-                <![endif]-->
-                <img itemprop="image" srcset="//picsum.photos/600/330" alt="Alt Text">
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                            <source srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/francisco-500x280.png" media="(min-width: 500px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img itemprop="image" srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/francisco.png" alt="">
               </picture>
+              <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
+                <strong>Francisco / The Transforming Power of Love</strong>
+                <a href="/stories/francisco-the-transforming-power-of-love/" class="o-button o-button--outline o-button--outline--white"><span class="u-icon u-icon--xs u-space--half--right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.56 15"><title>icon-play</title><path d="M10.56,7.5,0,15V0Z" fill="#231f20"></path></svg></span>Watch Video</a>
+              </div>
             </div>
           </div>
           <!-- c-media-block__image -->
           <div class="c-media-block__content c-block__content u-spacing u-border--left u-theme--border-color--base">
             <div class="u-spacing c-block__group c-media-block__group u-flex--justify-start">
               <div class="u-width--100p u-spacing">
-                <p class="c-media-block__description c-block__description">"Aenean quis velit vel purus est, vel semper ex tristique ut. Proin dapibus luctus pellentesque."</p>
+                <p class="c-media-block__description c-block__description">"There is not task of challenge too hard to God. Search God. Because I searched Him, a miracle took place in my life. "</p>
               </div>
               <div class="c-media-block__meta c-block__meta ">
               </div>
-              <a href="" class="c-block__button o-button o-button--outline--white" tabindex="-1">
+              <a href="/stories/francisco-the-transforming-power-of-love/" class="c-block__button o-button o-button--outline--white" tabindex="-1">
+                <span class="u-icon u-icon--xs u-path-fill--base u-space--half--right">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.01 10">
+                    <title>o-cion</title>
+                    <path d="M10,2.31H0V0H10ZM6.36,3.85H0v2.3H6.36ZM8.22,7.7H0V10H8.22Z" fill="#231f20"></path>
+                  </svg>
+                </span>
+                Read more
+              </a>
+            </div>
+          </div>
+          <!-- c-media-block__content -->
+        </div>
+        <!-- c-media-block -->
+      </div>
+      <div class="c-testimonies-media__block">
+        <div class="c-media-block c-block c-block c-media-block u-color--white">
+          <div class="c-media-block__image c-block__image ">
+            <div class="c-block__image-wrap ">
+              <picture class="picture">
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                            <source srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/remember-the-sabbath-day-500x280.png" media="(min-width: 500px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img itemprop="image" srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/remember-the-sabbath-day.png" alt="">
+              </picture>
+              <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
+                <strong>Kevin and Anita / Remember the Sabbath Day </strong>
+                <a href="/stories/kevin-and-anita-remember-the-sabbath-day/" class="o-button o-button--outline o-button--outline--white"><span class="u-icon u-icon--xs u-space--half--right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.56 15"><title>icon-play</title><path d="M10.56,7.5,0,15V0Z" fill="#231f20"></path></svg></span>Watch Video</a>
+              </div>
+            </div>
+          </div>
+          <!-- c-media-block__image -->
+          <div class="c-media-block__content c-block__content u-spacing u-border--left u-theme--border-color--base">
+            <div class="u-spacing c-block__group c-media-block__group u-flex--justify-start">
+              <div class="u-width--100p u-spacing">
+                <p class="c-media-block__description c-block__description">"Through my Bible studies with the Seventh-day Adventist Church and watching Hope Channel, I have now got an understanding and I believe that Jesus Christ is coming back soon. And I’m looking forward to the day He comes back."</p>
+              </div>
+              <div class="c-media-block__meta c-block__meta ">
+              </div>
+              <a href="/stories/kevin-and-anita-remember-the-sabbath-day/" class="c-block__button o-button o-button--outline--white" tabindex="-1">
                 <span class="u-icon u-icon--xs u-path-fill--base u-space--half--right">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.01 10">
                     <title>o-cion</title>
@@ -236,8 +281,8 @@
           </svg>
         </span>
       </button>
-      <a href="" class="o-button o-button--outline--white">
-        See all testimonies
+      <a href="/stories-of-transformation/" class="o-button o-button--outline--white">
+        See all Stories
         <span class="u-icon u-icon--m u-space--half--left">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
             <title>o-arrow__long--left</title>
@@ -272,7 +317,7 @@
         <p>So check out the Bible Study Catalog. If you're in a hurry, download the free guide on how to study the Bible. And if you'd like to have us pray for you personally, send us a prayer request.</p>
         <p>You can stop drifting through life without answers. You don't have to miss out on the journey that can bring you everlasting life. You can find freedom, healing and hope in Jesus.</p>
         <p>He's waiting for you.</p>
-        <button href="" class="o-button o-button--primary">
+        <a href="/study-the-bible/" class="o-button o-button--primary">
           <span class="u-icon u-icon--xs u-space--half--right">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
               <title>o-arrow__short--right</title>
@@ -280,25 +325,9 @@
             </svg>
           </span>
           Start a bible study
-        </button>
+        </a>
       </div>
     </div>
   </article>
 </section>
-<section id="QPNxmEviUOg" class="c-section c-section__video-full c-video-full js-video js-toggle">
-  <div class="c-video-full__video fitvid u-gradient--bottom">
-    <iframe src="https://www.youtube.com/embed/QPNxmEviUOg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" id="fitvid632274"></iframe>
-  </div>
-  <div class="c-video-full__content">
-    <span class="u-icon u-icon--xl u-space--right u-path-fill--white">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.56 15">
-        <title>icon-play</title>
-        <path d="M10.56,7.5,0,15V0Z" fill="#231f20"></path>
-      </svg>
-    </span>
-    <div class="u-color--white">
-      <h3 class="u-font--primary--l"><strong class="js-video-title">Casting a Vision – Revival for Mission</strong></h3>
-      <strong class="u-font--secondary--s js-video-duration">29:29</strong>
-    </div>
-  </div>
-</section>
+
