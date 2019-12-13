@@ -1,6 +1,6 @@
 <nav class="c-secondary-nav" role="navigation">
-  @if (has_nav_menu('secondary_navigation') or apply_filters('wpml_active_languages', NULL, 'skip_missing=0'))
-    <ul class="c-secondary-nav__list">
+  <ul class="c-secondary-nav__list">
+    @if (has_nav_menu('secondary_navigation') or apply_filters('wpml_active_languages', NULL, 'skip_missing=0'))
       @if (apply_filters('wpml_active_languages', NULL, 'skip_missing=0'))
         @php $languages = icl_get_languages('skip_missing=0'); @endphp
         <li class="c-secondary-nav__list-item c-secondary-nav__list-item__languages has-subnav">
@@ -70,16 +70,16 @@
           </li>
         @endforeach
       @endif
-    </ul> <!-- /.c-secondary-nav__list -->
-  @endif
-  <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
-    <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-      <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>{{_e("Search", "alps") }}
-    </a>
-  </li>
-  <li class="c-secondary-nav__list-item c-secondary-nav__list-item__menu c-secondary-nav__list-item__toggle js-toggle-menu is-priority">
-    <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
-      <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>{{ _e("Menu", "alps") }}
-    </a>
-  </li>
+    @endif
+    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
+      <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
+        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>{{_e("Search", "alps") }}
+      </a>
+    </li>
+    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__menu c-secondary-nav__list-item__toggle js-toggle-menu is-priority">
+      <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
+        <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>{{ _e("Menu", "alps") }}
+      </a>
+    </li>
+  </ul> <!-- /.c-secondary-nav__list -->
 </nav> <!-- /.c-secondary-nav -->
