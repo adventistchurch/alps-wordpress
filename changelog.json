@@ -1,5 +1,8 @@
 {
-  "3.0.30" : {
+  "3.0.31-adventist" : {
+    "description" : "Fixed header menus."
+  },
+  "3.0.30-adventist" : {
     "description" : "Fixed homepage content."
   },
   "3.0.29" : {
