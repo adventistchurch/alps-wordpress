@@ -1,4 +1,7 @@
 {
+  "3.0.29" : {
+    "description" : "Fix to the header menu."
+  },
   "3.0.28" : {
     "description" : "Removed requirement for the Gutenberg plugin, shortcodes from expanding in teasers. Added support for the ARVE/NextGenThemes embed block and a License.txt file."
   },
