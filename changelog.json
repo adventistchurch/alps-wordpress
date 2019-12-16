@@ -1,4 +1,7 @@
 {
+  "3.0.30" : {
+    "description" : "Removed custom jQuery version. Now it depends on the Wordpress version."
+  },
   "3.0.29" : {
     "description" : "Fix to the header menu."
   },
