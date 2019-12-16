@@ -113,9 +113,9 @@
             <div class="c-block__image-wrap ">
               <picture class="picture">
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                            <source srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/corniel-500x280.png" media="(min-width: 500px)">
+                                            <source srcset="https://www.adventist.org/wp-content/uploads/2019/12/corniel-500x280.png" media="(min-width: 500px)">
                 <!--[if IE 9]></video><![endif]-->
-                <img itemprop="image" srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/corniel.png" alt="">
+                <img itemprop="image" srcset="https://www.adventist.org/wp-content/uploads/2019/12/corniel.png" alt="">
               </picture>
               <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
                 <strong>Corniel / From Devil Worship to God</strong>
@@ -152,9 +152,9 @@
             <div class="c-block__image-wrap ">
               <picture class="picture">
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
-                  <source srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/magdalena-500x280.png" media="(min-width: 500px)">
+                  <source srcset="https://www.adventist.org/wp-content/uploads/2019/12/magdalena-500x280.png" media="(min-width: 500px)">
                 <!--[if IE 9]></video><![endif]-->
-                <img itemprop="image" srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/magdalena.png" alt="">
+                <img itemprop="image" srcset="https://www.adventist.org/wp-content/uploads/2019/12/magdalena.png" alt="">
               </picture>
               <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
                 <strong>Magdalena / Joy to Live with Christ</strong>
@@ -191,9 +191,9 @@
             <div class="c-block__image-wrap ">
               <picture class="picture">
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                            <source srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/francisco-500x280.png" media="(min-width: 500px)">
+                                            <source srcset="https://www.adventist.org/wp-content/uploads/2019/12/francisco-500x280.png" media="(min-width: 500px)">
                 <!--[if IE 9]></video><![endif]-->
-                <img itemprop="image" srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/francisco.png" alt="">
+                <img itemprop="image" srcset="https://www.adventist.org/wp-content/uploads/2019/12/francisco.png" alt="">
               </picture>
               <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
                 <strong>Francisco / The Transforming Power of Love</strong>
@@ -230,9 +230,9 @@
             <div class="c-block__image-wrap ">
               <picture class="picture">
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                            <source srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/remember-the-sabbath-day-500x280.png" media="(min-width: 500px)">
+                                            <source srcset="https://www.adventist.org/wp-content/uploads/2019/12/remember-the-sabbath-day-500x280.png" media="(min-width: 500px)">
                 <!--[if IE 9]></video><![endif]-->
-                <img itemprop="image" srcset="https://dev02.adventist.org/wp-content/uploads/2019/12/remember-the-sabbath-day.png" alt="">
+                <img itemprop="image" srcset="https://www.adventist.org/wp-content/uploads/2019/12/remember-the-sabbath-day.png" alt="">
               </picture>
               <div class="c-media-block__image-video c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
                 <strong>Kevin and Anita / Remember the Sabbath Day </strong>

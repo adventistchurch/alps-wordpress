@@ -1,4 +1,7 @@
 {
+  "3.0.32-adventist" : {
+    "description" : "Fixing broken hardcoded image links."
+  },
   "3.0.31-adventist" : {
     "description" : "Fixed header menus."
   },
