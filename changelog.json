@@ -1,4 +1,7 @@
 {
+  "3.0.31" : {
+    "description" : "Fixed the navigation bar covering ALPS elements for logged in users."
+  },
   "3.0.30" : {
     "description" : "Removed custom jQuery version. Now it depends on the Wordpress version."
   },
