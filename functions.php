@@ -434,6 +434,7 @@ add_filter('allowed_block_types', function () {
     'core/embed',
     'core/separator',
     'core/paragraph',
+    'core/table',
     'alps-gutenberg-blocks/accordion',
     'alps-gutenberg-blocks/blockquote',
     'alps-gutenberg-blocks/content-block',
