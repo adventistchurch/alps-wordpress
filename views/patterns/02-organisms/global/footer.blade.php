@@ -57,9 +57,9 @@
       <p class="c-footer__copyright">© {{ date('Y') }}@if ($footer_copyright) {{ $footer_copyright }} @endif</p>
       <address class="c-footer__address" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
         @if ($footer_address_street)<span itemprop="streetAddress">{{ $footer_address_street }}</span>@endif
-        @if ($footer_address_zip)<span itemprop="addressPostCode">{{ ', ' .  $footer_address_zip }}</span>@endif
         @if ($footer_address_city)<span itemprop="addressLocality">{{ ' ' .  $footer_address_city }}</span>@endif
         @if ($footer_address_state)<span itemprop="addressRegion">{{ ', ' .  $footer_address_state }}</span>@endif
+        @if ($footer_address_zip)<span itemprop="addressPostCode">{{ ' ' .  $footer_address_zip }}</span>@endif
         {{ $footer_address_country }}
         @if ($footer_address_phone)<a itemprop="telephone" href="tel:{{ $footer_address_phone }}" class="c-footer__phone u-link--white u-theme--link-hover--light">{{ $footer_address_phone }}</a>@endif
       </address>
@@ -67,4 +67,5 @@
   </div> <!-- /.c-footer--inner -->
 </footer> <!-- /.c-footer -->
 
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="//cdn.adventist.org/alps/3/latest/js/script.min.js" type="text/javascript" async></script>
