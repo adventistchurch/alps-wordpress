@@ -1,3 +1,8 @@
+@if ($title_h1)
+  @php $h_tag = 'h1' @endphp
+@else
+  @php $h_tag = 'h3' @endphp
+@endif
 <div class="c-media-block c-block @if (isset($block_class)){{ $block_class }}@endif">
   @if (isset($image) or isset($picture))
     <div class="c-media-block__image c-block__image @if (isset($block_img_class)){{ $block_img_class }}@endif @if (isset($block_type))c-block__icon c-block__icon--{{ $block_type }}@endif @if (isset($background_image)){{ 'u-background--cover c-media-block__background-image c-background-image--' . $thumb_id }}@endif">
@@ -55,7 +60,7 @@
           <h4 class="c-media-block__kicker c-block__kicker @if (isset($block_kicker_class)){{ $block_kicker_class }}@endif">{{ $kicker }}</h4>
         @endif
         @if (isset($title))
-          <h3 class="c-media-block__title c-block__title @if (isset($block_title_class)){{ $block_title_class }}@endif @if (isset($kicker)){{ 'u-space--zero'}}@endif">
+          <{{ $h_tag }} class="c-media-block__title c-block__title @if (isset($block_title_class)){{ $block_title_class }}@endif @if (isset($kicker)){{ 'u-space--zero'}}@endif">
             @if (isset($link))
               <a href="{{ $link }}" class="c-block__title-link @if (isset($block_title_link_class)){{ $block_title_link_class }}@else{{ 'u-theme--link-hover--dark' }}@endif">
             @endif
@@ -64,7 +69,7 @@
             @if (isset($link))
               </a>
             @endif
-          </h3>
+          </{{ $h_tag }}>
         @endif
         @if (!empty($excerpt))
           <p class="c-media-block__description c-block__description">

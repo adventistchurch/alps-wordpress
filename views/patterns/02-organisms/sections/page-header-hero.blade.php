@@ -119,6 +119,7 @@
           $image_l = wp_get_attachment_image_src($thumb_id, $thumb_size . '--l')[0];
           $image_xl = wp_get_attachment_image_src($thumb_id, $thumb_size . '--xl')[0];
           $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+          $title_h1 = true;
         @endphp
         @include('patterns.01-molecules.blocks.media-block')
       @endforeach

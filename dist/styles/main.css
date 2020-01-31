@@ -36,6 +36,10 @@ body.admin-bar .c-drawer {
   }
 }
 
+.u-font-weight--bold {
+  font-weight: 600 !important;
+}
+
 .u-space--zero--right {
   margin-right: 0 !important;
 }
