@@ -170,7 +170,7 @@
     'field' => 'footer_description',
     'label' => 'Footer Description',
     'columns' => 12,
-    'value' => '<a href="//www.adventist.org/en/">Adventist.org</a> is the Official website of the Seventh-day Adventist world church &bull; <a href="//www.adventist.org/en/world-church/">View Regions</a>',
+    'value' => '<a href="//www.adventist.org/en/">Adventist.org</a> is the official website of the Seventh-day Adventist World Church &bull; <a href="//www.adventist.org/en/world-church/">View Regions</a>',
   ));
   piklist('field', array(
     'type' => 'textarea',
