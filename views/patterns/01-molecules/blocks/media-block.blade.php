@@ -103,8 +103,11 @@
           @endif
         </div>
       @endif
-      @if (isset($cta))
-        <a href="{{ $link }}" class="c-block__button o-button o-button--outline">{{ $cta }}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
+      @if (isset($link))
+        <a href="{{ $link }}" class="c-block__button o-button o-button--outline{{ ' ' . $link_class }}">
+          {{ $cta }}
+          <span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span>
+        </a>
       @endif
     </div>
   </div> <!-- .c-media-block__content -->

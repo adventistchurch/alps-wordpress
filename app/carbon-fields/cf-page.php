@@ -69,6 +69,17 @@ function crb_attach_hero()
         'value' => 'full'
       )
     )),
+    Field::make('text', 'hero_link_cta', __('Hero Link CTA'))->set_help_text(__('Enter text for a button on the hero image.'))->set_conditional_logic(array(
+      'relation' => 'OR', // Optional, defaults to "AND"
+      array(
+        'field' => 'hero_type',
+        'value' => 'default'
+      ),
+      array(
+        'field' => 'hero_type',
+        'value' => 'full'
+      )
+    )),
     Field::make('checkbox', 'hero_image_extended', __('Hero Image Extended'))->set_option_value('true')->set_help_text('Check to extend the hero image over the sabbath column.')->set_width(50)->set_conditional_logic(array(
       'relation' => 'OR', // Optional, defaults to "AND"
       array(
@@ -95,7 +106,8 @@ function crb_attach_hero()
       Field::make('image', 'hero_image_column', __('Hero Image')),
       Field::make('textarea', 'hero_title_column', __('Hero Title'))->set_help_text(__('The title of the hero image.'))->set_rows(2)->set_width(50),
       Field::make('text', 'hero_kicker_column', __('Hero Kicker'))->set_help_text(__('Displays below the title in the hero image.'))->set_width(50),
-      Field::make('text', 'hero_link_url', __('Hero Link URL'))->set_help_text(__('Enter an URL to link the hero image.'))
+      Field::make('text', 'hero_link_url', __('Hero Link URL'))->set_help_text(__('Enter an URL to link the hero image.')),
+      Field::make('text', 'hero_link_cta', __('Hero Link CTA'))->set_help_text(__('Enter text for a button on the hero image.'))
     ))->set_min(3)->set_max(3)
   ));
 }

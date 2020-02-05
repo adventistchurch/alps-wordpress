@@ -8,6 +8,7 @@
   if (empty($hero_type) && $cf) {
     $hero_type = carbon_get_the_post_meta('hero_type');
   }
+
   if ($hero_type == 'false' || $hero_type == NULL)  {
     $hero = false;
   }
@@ -97,7 +98,13 @@
               $category = get_post_meta($post->ID, $cf_.'hero_kicker', true);
             }
             if (get_post_meta($post->ID, $cf_.'hero_link_url', true)) {
+              if (get_post_meta($post->ID, $cf_.'hero_link_cta', true)) {
+                $cta = get_post_meta($post->ID, $cf_.'hero_link_cta', true);
+              } else {
+                $cta = "Learn More";
+              }
               $link = get_post_meta($post->ID, $cf_.'hero_link_url', true);
+              $link_class = "o-button--white";
             }
           }
           if ($hero_type == 'default') {

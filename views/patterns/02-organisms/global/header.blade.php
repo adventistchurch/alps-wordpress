@@ -1,6 +1,12 @@
 @php
   $current_language = apply_filters('wpml_current_language', NULL);
 
+  if (carbon_get_the_post_meta('hero_type') == 'full') {
+    $header_class = ' c-header--overlay u-theme--gradient--top';
+  } else {
+    $header_class = "";
+  }
+
   if ($current_language) {
     $logo = get_alps_option('logo_' . $current_language);
   } else {
@@ -14,7 +20,7 @@
     $header_logo_class = "";
   }
 @endphp
-<header class="c-header" role="banner" id="header">
+<header class="c-header{{ $header_class }}" role="banner" id="header">
   <div class="c-header--inner">
     <div class="c-header__nav-secondary">
       @include('patterns.01-molecules.navigation.secondary-navigation')
@@ -34,5 +40,12 @@
       @include('patterns.01-molecules.navigation.primary-navigation')
     </div>
   </div> <!-- /.c-header--inner -->
+  @if (carbon_get_the_post_meta('hero_type') == 'full')
+    <div class="c-header__sabbath u-theme--gradient--top">
+      <div class="o-logo u-path-fill--white">
+        @include('patterns.00-atoms.logos.alps-icon-logo')
+      </div>
+    </div>
+  @endif
 </header> <!-- .c-header -->
 @include('patterns.01-molecules.navigation.drawer-navigation')
