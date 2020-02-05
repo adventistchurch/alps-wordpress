@@ -21,6 +21,30 @@
   }
 }
 
+/* WP ADMIN MENU */
+
+#wpadminbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+body.admin-bar .l-sabbath__logo,
+body.admin-bar .c-drawer {
+  top: 46px !important;
+}
+
+@media (min-width: 782px) {
+  body.admin-bar .l-sabbath__logo,
+  body.admin-bar .c-drawer {
+    top: 32px !important;
+  }
+}
+
+.u-font-weight--bold {
+  font-weight: 600 !important;
+}
+
 .u-space--zero--right {
   margin-right: 0 !important;
 }

@@ -1,4 +1,7 @@
 {
+  "3.0.34-adventist" : {
+    "description" : "Fixed the h1 headers."
+  },
   "3.0.32-adventist" : {
     "description" : "Fixing broken hardcoded image links."
   },
