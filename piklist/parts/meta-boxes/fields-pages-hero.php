@@ -14,6 +14,7 @@
       'default' => 'Half screen image with text overlay (Min/Max Images: 1)',
       'full' => 'Full screen image with text overlay (Min/Max Images: 1)',
       'column' => 'Three column image format with text overlays (Min/Max Images: 3)',
+      'carousel' => 'Half screen image gallery with text overlay (Max Images: 6)',
       'false' => 'None'
     )
   ));

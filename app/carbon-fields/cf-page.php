@@ -17,87 +17,172 @@ function crb_attach_header()
 add_action('carbon_fields_register_fields', 'crb_attach_hero');
 function crb_attach_hero()
 {
-    Container::make('post_meta', 'ALPS: Hero')->where('post_type', '=', 'page')->where('post_template', '!=', 'views/template-posts.blade.php')->add_fields(array(
-    Field::make('separator', 'crb_hero_banner', __('Hero Banner'))->set_help_text(__('IMPORTANT: Setting a hero style below will completely override anything you have entered for your ALPS Header Banner or your Featured Image.')),
-    Field::make('radio', 'hero_type', __('Hero Style'))->set_help_text('Select the hero configuration.')->add_options(array(
-      'false' => 'None',
-      'default' => 'Half screen image with text overlay (Min/Max Images: 1)',
-      'full' => 'Full screen image with text overlay (Min/Max Images: 1)',
-      'column' => 'Three column image format with text overlays (Min/Max Images: 3)'
-    )),
-    Field::make('image', 'hero_image', __('Hero Image'))->set_conditional_logic(array(
-      'relation' => 'OR', // Optional, defaults to "AND"
-      array(
-        'field' => 'hero_type',
-        'value' => 'default'
-      ),
-      array(
-        'field' => 'hero_type',
-        'value' => 'full'
-      )
-    )),
-    Field::make('textarea', 'hero_title', __('Hero Title'))->set_help_text(__('The title of the hero image.'))->set_rows(2)->set_width(50)->set_conditional_logic(array(
-      'relation' => 'OR', // Optional, defaults to "AND"
-      array(
-        'field' => 'hero_type',
-        'value' => 'default'
-      ),
-      array(
-        'field' => 'hero_type',
-        'value' => 'full'
-      )
-    )),
-    Field::make('text', 'hero_kicker', __('Hero Kicker'))->set_help_text(__('Displays below the title in the hero image.'))->set_width(50)->set_conditional_logic(array(
-      'relation' => 'OR', // Optional, defaults to "AND"
-      array(
-        'field' => 'hero_type',
-        'value' => 'default'
-      ),
-      array(
-        'field' => 'hero_type',
-        'value' => 'full'
-      )
-    )),
-    Field::make('text', 'hero_link_url', __('Hero Link URL'))->set_help_text(__('Enter an URL to link the hero image.'))->set_conditional_logic(array(
-      'relation' => 'OR', // Optional, defaults to "AND"
-      array(
-        'field' => 'hero_type',
-        'value' => 'default'
-      ),
-      array(
-        'field' => 'hero_type',
-        'value' => 'full'
-      )
-    )),
-    Field::make('checkbox', 'hero_image_extended', __('Hero Image Extended'))->set_option_value('true')->set_help_text('Check to extend the hero image over the sabbath column.')->set_width(50)->set_conditional_logic(array(
-      'relation' => 'OR', // Optional, defaults to "AND"
-      array(
-        'field' => 'hero_type',
-        'value' => 'default'
-      ),
-      array(
-        'field' => 'hero_type',
-        'value' => 'full'
-      )
-    )),
-    Field::make('checkbox', 'hero_scroll_hint', __('Hero Scroll Hint'))->set_option_value('true')->set_help_text('Check to extend the hero image over the sabbath column.')->set_width(50)->set_conditional_logic(array(
-      array(
-        'field' => 'hero_type',
-        'value' => 'full'
-      )
-    )),
-    Field::make('complex', 'hero_column', __('Hero Column (3 Columns)'))->set_conditional_logic(array(
-      array(
-        'field' => 'hero_type',
-        'value' => 'column'
-      )
-    ))->add_fields(array(
-      Field::make('image', 'hero_image_column', __('Hero Image')),
-      Field::make('textarea', 'hero_title_column', __('Hero Title'))->set_help_text(__('The title of the hero image.'))->set_rows(2)->set_width(50),
-      Field::make('text', 'hero_kicker_column', __('Hero Kicker'))->set_help_text(__('Displays below the title in the hero image.'))->set_width(50),
-      Field::make('text', 'hero_link_url', __('Hero Link URL'))->set_help_text(__('Enter an URL to link the hero image.'))
-    ))->set_min(3)->set_max(3)
-  ));
+    Container
+        ::make('post_meta', 'ALPS: Hero')
+        ->where('post_type', '=', 'page')
+        ->where('post_template', '!=', 'views/template-posts.blade.php')
+        ->add_fields([
+            Field
+                ::make('separator', 'crb_hero_banner', __('Hero Banner'))
+                ->set_help_text(__('IMPORTANT: Setting a hero style below will completely override anything you have entered for your ALPS Header Banner or your Featured Image.')),
+            Field
+                ::make('radio', 'hero_type', __('Hero Style'))
+                ->set_help_text('Select the hero configuration.')
+                ->add_options([
+                      'false'   => 'None',
+                      'default' => 'Half screen image with text overlay (Min/Max Images: 1)',
+                      'full'    => 'Full screen image with text overlay (Min/Max Images: 1)',
+                      'column'  => 'Three column image format with text overlays (Min/Max Images: 3)',
+                      'carousel' => 'Half screen image gallery with text overlay (Max Images: 6)'
+                ]),
+            Field
+                ::make('image', 'hero_image', __('Hero Image'))
+                ->set_conditional_logic([
+                    'relation' => 'OR', // Optional, defaults to "AND"
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'default'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full'
+                    ]
+                ]),
+            Field
+                ::make('textarea', 'hero_title', __('Hero Title'))
+                ->set_help_text(__('The title of the hero image.'))
+                ->set_rows(2)
+                ->set_width(50)
+                ->set_conditional_logic([
+                    'relation' => 'OR', // Optional, defaults to "AND"
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'default'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full'
+                    ]
+                ]),
+            Field
+                ::make('text', 'hero_kicker', __('Hero Kicker'))
+                ->set_help_text(__('Displays below the title in the hero image.'))
+                ->set_width(50)
+                ->set_conditional_logic([
+                    'relation' => 'OR', // Optional, defaults to "AND"
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'default'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full'
+                    ]
+                ]),
+            Field
+                ::make('text', 'hero_link_url', __('Hero Link URL'))
+                ->set_help_text(__('Enter an URL to link the hero image.'))
+                ->set_conditional_logic([
+                    'relation' => 'OR', // Optional, defaults to "AND"
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'default'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full'
+                    ]
+                ]),
+            Field
+                ::make('checkbox', 'hero_image_extended', __('Hero Image Extended'))
+                ->set_option_value('true')
+                ->set_help_text('Check to extend the hero image over the sabbath column.')
+                ->set_width(50)
+                ->set_conditional_logic([
+                    'relation' => 'OR', // Optional, defaults to "AND"
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'default'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full'
+                    ]
+                ]),
+            Field
+                ::make('checkbox', 'hero_scroll_hint', __('Hero Scroll Hint'))
+                ->set_option_value('true')
+                ->set_help_text('Check to extend the hero image over the sabbath column.')
+                ->set_width(50)
+                ->set_conditional_logic([
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full'
+                    ]
+                ]),
+
+            Field
+                ::make('complex', 'hero_column', __('Hero Column (3 Columns)'))
+                ->set_conditional_logic([
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'column'
+                    ]
+                ])
+                ->add_fields([
+                    Field
+                        ::make('image', 'hero_image_column', __('Hero Image')),
+                    Field
+                        ::make('textarea', 'hero_title_column', __('Hero Title'))
+                        ->set_help_text(__('The title of the hero image.'))
+                        ->set_rows(2)
+                        ->set_width(50),
+                    Field
+                        ::make('text', 'hero_kicker_column', __('Hero Kicker'))
+                        ->set_help_text(__('Displays below the title in the hero image.'))
+                        ->set_width(50),
+                    Field
+                        ::make('text', 'hero_link_url', __('Hero Link URL'))
+                        ->set_help_text(__('Enter an URL to link the hero image.'))
+                ])
+                ->set_min(3)
+                ->set_max(3),
+            Field
+                ::make('complex', 'hero_carousel', __('Hero Carousel'))
+                ->set_conditional_logic([
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'carousel'
+                    ]
+                ])
+                // Field names refers to https://github.com/adventistchurch/alps/blob/v3.x/source/_patterns/02-organisms/sections/hero-carousel.json
+                ->add_fields([
+                    Field
+                        ::make('image', 'slide_image', __('Hero Image')),
+                    Field
+                        ::make('text', 'slide_heading', __('Hero Title'))
+                        ->set_help_text(__('The title of the hero image slide.'))
+                        ->set_width(50),
+                    Field
+                        ::make('text', 'slide_subtitle', __('Hero Kicker'))
+                        ->set_help_text(__('Displays below the title in the hero image slide.'))
+                        ->set_width(50),
+                    Field
+                        ::make('textarea', 'slide_dek', __('Hero Description'))
+                        ->set_help_text(__('Displays below the sub title in the hero image slide.'))
+                        ->set_width(100),
+                    Field
+                        ::make('text', 'slide_url', __('Hero Link URL'))
+                        ->set_help_text(__('Enter an URL to link the hero image slide.'))
+                        ->set_width(50),
+                    Field
+                        ::make('text', 'slide_cta', __('Hero Link CTA'))
+                        ->set_help_text(__('Displays title in the hero link.'))
+                        ->set_width(50),
+                ])
+                ->set_min(1)
+                ->set_max(6)
+        ]);
 }
 
 add_action('carbon_fields_register_fields', 'crb_attach_page_template_fields');
