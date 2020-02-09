@@ -113,12 +113,9 @@ function adventist_register_required_plugins() {
     $plugins = array(
       // Guidebook
       array(
-        'name'               => 'Guidepost', // The plugin name.
-        'slug'               => 'guidepost', // The plugin slug (typically the folder name).
-        'source'             => 'https://github.com/sortabrilliant/guidepost/archive/master.zip',
-        'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-        'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-        'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+        'name'               => 'Guidepost',
+        'slug'               => 'guidepost',
+        'required'           => false,
       ),
       // WordPress SEO
       array(
@@ -445,6 +442,7 @@ add_filter('allowed_block_types', function () {
     'alps-gutenberg-blocks/latest-posts',
     'alps-gutenberg-blocks/cta',
     'sbb/guidepost',
+    'sortabrilliant/guidepost',
     'nextgenthemes/arve-block',
   ];
 });

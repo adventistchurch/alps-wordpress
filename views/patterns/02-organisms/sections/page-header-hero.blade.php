@@ -77,58 +77,55 @@
           $hero_data = $hero_image;
         }
       @endphp
-      @if ( $hero_type == 'carousel' ) {
-        @include('patterns.01-molecules.components.carousel');
-      @else
-        @foreach ($hero_data as $image)
-          @php
-            if ($hero_type == 'column') {
-              if ($cf) {
-                $thumb_id = $image['hero_image_column'];
-              } else {
-                $thumb_id = $image['hero_image_column'][0];
-              }
-              $eyebrow = $image['hero_kicker_column'];
-              $title = $image['hero_title_column'];
-              $link = NULL;
-              if (isset($image['hero_link_url'])) {
-                $link = $image['hero_link_url'];
-              }
+      @foreach ($hero_data as $image)
+        @php
+          if ($hero_type == 'column') {
+            if ($cf) {
+              $thumb_id = $image['hero_image_column'];
             } else {
-              $thumb_id = $image;
-              $title = get_post_meta($post->ID, $cf_.'hero_title', true) ;
-              $category = NULL;
-              $link = NULL;
-              if (get_post_meta($post->ID, $cf_.'hero_kicker', true)) {
-                $category = get_post_meta($post->ID, $cf_.'hero_kicker', true);
-              }
-              if (get_post_meta($post->ID, $cf_.'hero_link_url', true)) {
-                $link = get_post_meta($post->ID, $cf_.'hero_link_url', true);
-              }
+              $thumb_id = $image['hero_image_column'][0];
             }
-            if ($hero_type == 'default') {
-              $thumb_size = 'featured__hero';
-              $image_break_m = '500';
-              $image_break_l = '800';
-              $image_break_xl = '1100';
+            $eyebrow = $image['hero_kicker_column'];
+            $title = $image['hero_title_column'];
+            $link = NULL;
+            if (isset($image['hero_link_url'])) {
+              $link = $image['hero_link_url'];
             }
-            else {
-              $background_image = true;
-              $thumb_size = 'flex-height';
-              $image_break_m = '350';
-              $image_break_l = '700';
-              $image_break_xl = '900';
+          } else {
+            $thumb_id = $image;
+            $title = get_post_meta($post->ID, $cf_.'hero_title', true) ;
+            $category = NULL;
+            $link = NULL;
+            if (get_post_meta($post->ID, $cf_.'hero_kicker', true)) {
+              $category = get_post_meta($post->ID, $cf_.'hero_kicker', true);
             }
-            $picture = true;
-            $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-            $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
-            $image_l = wp_get_attachment_image_src($thumb_id, $thumb_size . '--l')[0];
-            $image_xl = wp_get_attachment_image_src($thumb_id, $thumb_size . '--xl')[0];
-            $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-          @endphp
-          @include('patterns.01-molecules.blocks.media-block')
-        @endforeach
-      @endif
+            if (get_post_meta($post->ID, $cf_.'hero_link_url', true)) {
+              $link = get_post_meta($post->ID, $cf_.'hero_link_url', true);
+            }
+          }
+          if ($hero_type == 'default') {
+            $thumb_size = 'featured__hero';
+            $image_break_m = '500';
+            $image_break_l = '800';
+            $image_break_xl = '1100';
+          }
+          else {
+            $background_image = true;
+            $thumb_size = 'flex-height';
+            $image_break_m = '350';
+            $image_break_l = '700';
+            $image_break_xl = '900';
+          }
+          $picture = true;
+          $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+          $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m')[0];
+          $image_l = wp_get_attachment_image_src($thumb_id, $thumb_size . '--l')[0];
+          $image_xl = wp_get_attachment_image_src($thumb_id, $thumb_size . '--xl')[0];
+          $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+          $title_h1 = true;
+        @endphp
+        @include('patterns.01-molecules.blocks.media-block')
+      @endforeach
     </div>
     @if (get_alps_field('hero_scroll_hint') == true)
       <a href="#top" class="c-page-header__scroll"></a>

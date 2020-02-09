@@ -1,4 +1,7 @@
 {
+  "3.0.33" : {
+    "description" : "Fixes for footer messages, Guidepost, and the h1 in headers."
+  },
   "3.0.31" : {
     "description" : "Fixed the navigation bar covering ALPS elements for logged in users."
   },
