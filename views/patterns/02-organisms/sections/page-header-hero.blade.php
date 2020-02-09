@@ -77,6 +77,11 @@
           $hero_data = $hero_image;
         }
       @endphp
+
+      @if ($hero_type == 'carousel') {
+        @include('patterns.01-molecules.components.carousel');
+      @else
+
       @foreach ($hero_data as $image)
         @php
           if ($hero_type == 'column') {
@@ -126,6 +131,8 @@
         @endphp
         @include('patterns.01-molecules.blocks.media-block')
       @endforeach
+
+      @endif
     </div>
     @if (get_alps_field('hero_scroll_hint') == true)
       <a href="#top" class="c-page-header__scroll"></a>
