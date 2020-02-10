@@ -78,8 +78,8 @@
         }
       @endphp
 
-      @if ($hero_type == 'carousel') {
-        @include('patterns.01-molecules.components.carousel');
+      @if ($hero_type == 'carousel')
+        @include('patterns.01-molecules.components.carousel')
       @else
 
       @foreach ($hero_data as $image)

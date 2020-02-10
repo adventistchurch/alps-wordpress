@@ -19,7 +19,7 @@
         $alt      = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
         @endphp
 
-        @include('patterns.01-molecules.components.slide');
+        @include('patterns.01-molecules.components.slide')
     @endforeach
 
     </div>
