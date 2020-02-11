@@ -291,7 +291,12 @@ figure {
 
 .hero-carousel .carousel__item {
   font-size: 0.5em;
-  max-height: 40rem;
+}
+
+@media (min-width: 650px) {
+  .hero-carousel .carousel__item {
+    max-height: 40rem;
+  }
 }
 
 .hero-carousel .carousel__item .carousel__item-text__wrap {
@@ -321,29 +326,12 @@ figure {
   }
 }
 
-@media (min-width: 1800px) {
-  .hero-carousel .carousel__item .carousel__item-text__wrap {
-    height: 100%;
-    padding: 0;
-    width: calc(100vw / 7);
-  }
-}
-
 .hero-carousel .carousel__item .carousel__item-text__wrap h2 {
   font-weight: 800;
 }
 
 .hero-carousel .carousel__item .carousel__item-text__wrap .l-container {
   padding: 1rem;
-}
-
-@media (min-width: 1800px) {
-  .hero-carousel .carousel__item .carousel__item-text__wrap .l-container {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
 }
 
 .hero-carousel .carousel__item .carousel__item-text__wrap .l-container p {

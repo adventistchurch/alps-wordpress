@@ -1,7 +1,10 @@
 .hero-carousel {
   .carousel__item {
     font-size: 0.5em;
-    max-height: 40rem;
+
+    @media (min-width: 650px) {
+      max-height: 40rem;
+    }
 
     .carousel__item-text__wrap {
       color: #fff;
@@ -22,25 +25,12 @@
         padding: 7rem calc(100vw / 7) 0;
       }
 
-      @media (min-width: 1800px) {
-        height: 100%;
-        padding: 0;
-        width: calc(100vw / 7);
-      }
-
       h2 {
         font-weight: 800;
       }
 
       .l-container {
         padding: 1rem;
-
-        @media (min-width: 1800px) {
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-        }
 
         p {
           display: none;
