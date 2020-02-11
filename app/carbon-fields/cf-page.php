@@ -164,10 +164,6 @@ function crb_attach_hero()
                         ->set_help_text(__('The title of the hero image slide.'))
                         ->set_width(50),
                     Field
-                        ::make('text', 'slide_subtitle', __('Hero Kicker'))
-                        ->set_help_text(__('Displays below the title in the hero image slide.'))
-                        ->set_width(50),
-                    Field
                         ::make('textarea', 'slide_dek', __('Hero Description'))
                         ->set_help_text(__('Displays below the sub title in the hero image slide.'))
                         ->set_width(100),
