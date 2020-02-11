@@ -278,12 +278,17 @@ body.admin-bar {
 }
 
 // Guidepost styles
-.wp-block-sbb-guidepost {
+.wp-block-sbb-guidepost,
+.wp-block-sortabrilliant-guidepost {
   margin-left: 40px;
 
   ul {
     li {
       margin-top: 10px;
+
+      div.components-disabled {
+        display: inline;
+      }
     }
 
     ul {

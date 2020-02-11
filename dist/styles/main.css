@@ -256,15 +256,23 @@ body.admin-bar .c-drawer {
   padding: 0 !important;
 }
 
-.wp-block-sbb-guidepost {
+.wp-block-sbb-guidepost,
+.wp-block-sortabrilliant-guidepost {
   margin-left: 40px;
 }
 
-.wp-block-sbb-guidepost ul li {
+.wp-block-sbb-guidepost ul li,
+.wp-block-sortabrilliant-guidepost ul li {
   margin-top: 10px;
 }
 
-.wp-block-sbb-guidepost ul ul {
+.wp-block-sbb-guidepost ul li div.components-disabled,
+.wp-block-sortabrilliant-guidepost ul li div.components-disabled {
+  display: inline;
+}
+
+.wp-block-sbb-guidepost ul ul,
+.wp-block-sortabrilliant-guidepost ul ul {
   margin-left: 20px;
   margin-top: 5px;
 }

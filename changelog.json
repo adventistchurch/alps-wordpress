@@ -1,4 +1,7 @@
 {
+  "3.0.34" : {
+    "description" : "Fixed Guidepost css with the change of the Guidepost plugin."
+  },
   "3.0.33" : {
     "description" : "Fixes for footer messages, Guidepost, and the h1 in headers."
   },
