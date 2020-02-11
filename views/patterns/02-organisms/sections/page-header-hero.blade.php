@@ -45,7 +45,7 @@
       $block_title_link_class = 'u-theme--link-hover--light';
     }
     elseif ($hero_type == 'carousel') {
-      $hero_image[] = get_alps_field('hero_carousel');
+      $hero_image = get_alps_field('hero_carousel');
     }
     elseif ($hero_type == 'default') {
       array_push($hero_image, get_post_meta($post->ID, $cf_.'hero_image', true));
@@ -70,8 +70,16 @@
     <div class="c-page-header__content">
       @php
       $hero_data = array();
-        if ($hero_type == 'column' || $hero_type == 'carousel') {
+        if ($hero_type == 'column') {
           $hero_data = $hero_image[0];
+        }
+        elseif ($hero_type == 'carousel') {
+            // Fix: convert single slide into array with one element
+            if (isset($hero_image['_type'])) {
+                $hero_data[] = $hero_image;
+            } else {
+                $hero_data = $hero_image;
+            }
         }
         else {
           $hero_data = $hero_image;
