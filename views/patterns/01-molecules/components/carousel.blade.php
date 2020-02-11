@@ -1,12 +1,11 @@
-<section class="c-hero-carousel">
-  <div class="c-carousel u-position--relative">
-    <div class="c-carousel__slides js-carousel__single-item">
+<section class="hero-carousel">
+  <div class="carousel u-position--relative">
+    <div class="carousel__slides js-carousel__single-item">
 
     @foreach ($hero_data as $slide)
         @php
         $thumb_id  = ( $cf ) ? $slide['slide_image'] : $slide['slide_image'][0];
         $heading   = $slide['slide_heading'];
-        $subtitle  = $slide['slide_subtitle'];
         $dek       = $slide['slide_dek'];
         $cta       = $slide['slide_cta'];
         $url       = ( isset($slide['slide_url']) ) ? $slide['slide_url'] : null;
