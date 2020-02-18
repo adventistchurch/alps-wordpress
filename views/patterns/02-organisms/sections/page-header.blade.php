@@ -17,13 +17,21 @@
   $page_header_content_class = 'u-shift--left--1-col--at-xxlarge';
 
   if (is_home()) {
-    $long_header_title = __('Recent Posts', 'alps');
+    if (get_alps_option('posts_page_title')) {
+      $long_header_title = get_alps_option('posts_page_title');
+    } else {
+      $long_header_title = __('Recent Posts', 'alps');
+    }
   }
   elseif (is_archive()) {
     if (get_alps_option('posts_label')) {
       $long_header_kicker = __('Category', 'alps');
     }
-    $long_header_title = single_cat_title('', false);
+    if (get_alps_option('archive_page_title')) {
+      $long_header_title = get_alps_option('archive_page_title');
+    } else {
+      $long_header_title = single_cat_title('', false);
+    }
   }
 
   if (!is_home() && !is_archive()) {
@@ -73,7 +81,7 @@
 
 <header class="c-page-header c-page-header__long u-theme--background-color--dark  u-space--zero--top {{ $page_header_class }}">
   <div class="c-page-header__long--inner l-grid l-grid--7-col {{ $page_header_inner_class }}">
-     <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 {{ $page_header_content_class }}">
+    <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 {{ $page_header_content_class }}">
       @if ($long_header_kicker)
         <span class="o-kicker u-color--white">{{ $long_header_kicker }}</span>
       @endif
