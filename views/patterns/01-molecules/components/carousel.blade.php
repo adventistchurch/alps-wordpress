@@ -1,6 +1,6 @@
-<section class="hero-carousel">
-  <div class="carousel u-position--relative">
-    <div class="carousel__slides js-carousel__single-item">
+<section class="c-hero-carousel">
+  <div class="c-carousel c-carousel--inset u-position--relative">
+    <div class="c-carousel__slides js-carousel__single-item">
 
     @foreach ($hero_data as $slide)
         @php
