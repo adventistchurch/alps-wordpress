@@ -44,6 +44,9 @@
       $block_title_class = 'u-font--primary--xl u-flex--justify-center';
       $block_title_link_class = 'u-theme--link-hover--light';
     }
+    elseif ($hero_type == 'carousel') {
+      $hero_image = get_alps_field('hero_carousel');
+    }
     elseif ($hero_type == 'default') {
       array_push($hero_image, get_post_meta($post->ID, $cf_.'hero_image', true));
       $block_class = 'c-block__inset c-media-block__inset';
@@ -70,10 +73,23 @@
         if ($hero_type == 'column') {
           $hero_data = $hero_image[0];
         }
+        elseif ($hero_type == 'carousel') {
+            // Fix: convert single slide into array with one element
+            if (isset($hero_image['_type'])) {
+                $hero_data[] = $hero_image;
+            } else {
+                $hero_data = $hero_image;
+            }
+        }
         else {
           $hero_data = $hero_image;
         }
       @endphp
+
+      @if ($hero_type == 'carousel')
+        @include('patterns.01-molecules.components.carousel')
+      @else
+
       @foreach ($hero_data as $image)
         @php
           if ($hero_type == 'column') {
@@ -123,6 +139,8 @@
         @endphp
         @include('patterns.01-molecules.blocks.media-block')
       @endforeach
+
+      @endif
     </div>
     @if (get_alps_field('hero_scroll_hint') == true)
       <a href="#top" class="c-page-header__scroll"></a>
