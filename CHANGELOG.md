@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+##[3.x.x]
+### Added
+- Added a Hero Carousel slideshow with a maximum number of 6 images. [#318](https://github.com/adventistchurch/alps-wordpress/issues/318)
+
+
 ##[3.0.34]
 ### Fixed
 - Fixed Guidepost css with the change of the Guidepost plugin.
