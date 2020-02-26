@@ -1,4 +1,7 @@
 {
+  "3.1.0" : {
+    "description" : "Added a Hero Carousel slideshow with a maximum number of 6 images."
+  },
   "3.0.34" : {
     "description" : "Fixed Guidepost css with the change of the Guidepost plugin."
   },
