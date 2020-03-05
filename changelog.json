@@ -1,4 +1,7 @@
 {
+  "3.1.1" : {
+    "description" : "Fix for comment form not rendering correctly"
+  },
   "3.1.0" : {
     "description" : "Added a Hero Carousel slideshow with a maximum number of 6 images."
   },
