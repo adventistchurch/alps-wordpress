@@ -1,4 +1,7 @@
 {
+  "3.1.2" : {
+    "description" : "Fix: 4-digit Numbers appears on page when adding a 'Footer Logo Icon'"
+  },
   "3.1.1" : {
     "description" : "Fix for comment form not rendering correctly"
   },
