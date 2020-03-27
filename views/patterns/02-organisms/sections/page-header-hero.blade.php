@@ -17,7 +17,15 @@
     $extended = '';
     $extended = get_post_meta($post->ID, $cf_.'hero_image_extended', true);
     $scroll_hint = '';
-    if ($hero_type == 'full') {
+    if ($hero_type == 'full_overlay') {
+      array_push($hero_image,  get_post_meta($post->ID, $cf_.'hero_image', true));
+      $block_group_class = 'u-flex--justify-center u-overlay--dark';
+      $block_title_class = 'l-grid-item--5-col l-grid-item--m--2-col u-font--primary--xl u-flex--justify-center';
+      $block_title_link_class = 'u-theme--link-hover--lighter';
+      $block_content_class = 'l-grid--7-col l-grid-wrap l-grid-wrap--7-of-7 u-color--white';
+      $block_class = 'c-block__full c-media-block__full';
+    }
+    elseif ($hero_type == 'full') {
       array_push($hero_image,  get_post_meta($post->ID, $cf_.'hero_image', true));
       $block_group_class = 'u-flex--justify-center u-overlay--dark';
       $block_title_class = 'l-grid-item--5-col l-grid-item--m--2-col u-font--primary--xl u-flex--justify-center';
@@ -69,28 +77,26 @@
   <header class="c-hero c-page-header c-page-header__feature @if($hero_type == 'column'){{ 'c-page-header__3-col' }}@endif {{ $scroll_class }}">
     <div class="c-page-header__content">
       @php
-      $hero_data = array();
+        $hero_data = array();
         if ($hero_type == 'column') {
           $hero_data = $hero_image[0];
         }
         elseif ($hero_type == 'carousel') {
-            // Fix: convert single slide into array with one element
-            if (isset($hero_image['_type'])) {
-                $hero_data[] = $hero_image;
-            } else {
-                $hero_data = $hero_image;
-            }
+          // Fix: convert single slide into array with one element
+          if (isset($hero_image['_type'])) {
+            $hero_data[] = $hero_image;
+          } else {
+            $hero_data = $hero_image;
+          }
         }
         else {
           $hero_data = $hero_image;
         }
       @endphp
-
       @if ($hero_type == 'carousel')
         @include('patterns.01-molecules.components.carousel')
       @else
-
-      @foreach ($hero_data as $image)
+        @foreach ($hero_data as $image)
         @php
           if ($hero_type == 'column') {
             if ($cf) {
@@ -138,8 +144,7 @@
           $title_h1 = true;
         @endphp
         @include('patterns.01-molecules.blocks.media-block')
-      @endforeach
-
+        @endforeach
       @endif
     </div>
     @if (get_alps_field('hero_scroll_hint') == true)
