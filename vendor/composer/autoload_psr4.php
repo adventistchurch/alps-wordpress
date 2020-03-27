@@ -32,5 +32,6 @@ return array(
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
     'Carbon_Fields\\' => array($vendorDir . '/htmlburger/carbon-fields/core'),
     'Brain\\Hierarchy\\' => array($vendorDir . '/brain/hierarchy/src'),
+    'App\\' => array($baseDir . '/app'),
     '' => array($vendorDir . '/nesbot/carbon/src'),
 );
