@@ -15,6 +15,7 @@ import {
 	isEmpty,
 	debounce
 } from 'lodash';
+import $ from 'jquery';
 
 /**
  * The internal dependencies.
@@ -40,7 +41,7 @@ class OembedField extends Component {
 		const { value } = this.props;
 
 		const i = setInterval( () => {
-			if ( this.node.current.getBoundingClientRect().width > 0 ) {
+			if ( this.node.current !== null && this.node.current.getBoundingClientRect().width > 0 ) {
 				clearInterval( i );
 
 				this.handleSearch( value );
@@ -178,8 +179,7 @@ function handler( props ) {
 
 		switch ( type ) {
 			case 'FETCH_EMBED_CODE':
-				// eslint-disable-next-line
-				let request = $.get( window.wpApiSettings.root + 'oembed/1.0/proxy', {
+				const request = $.get( window.wpApiSettings.root + 'oembed/1.0/proxy', {
 					url: payload,
 					_wpnonce: window.wpApiSettings.nonce
 				} );
