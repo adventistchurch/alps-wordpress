@@ -423,7 +423,8 @@ add_filter('allowed_block_types', function () {
     'core/block',
     'core/embed',
     'core/spacer',
-    'core/button',
+    'core/button', // WP <=5.3
+    'core/buttons', // WP >= 5.4
     'core/list',
     'core/shortcode',
     'core/video',
