@@ -1,4 +1,4 @@
-<div class="c-carousel__item--inset u-position--relative" >
+<div class="c-carousel__item--inset u-position--relative">
   <picture class="picture">
     <!--[if IE 9]><video style="display: none;"><![endif]-->
     @if (isset($image_break_xl))
@@ -10,7 +10,7 @@
     <source srcset="{{ $image_m }}" media="(min-width: {{ $image_break_m }}px)">
     <!--[if IE 9]></video><![endif]-->
     <img itemprop="image" srcset="{{ $image_s }}" alt="{{ $alt }}">
-  </picture
+  </picture>
   <div class="c-carousel__item-text__wrap u-theme--background-color-trans--dark">
     <div class="l-container">
       <div class="c-carousel__item-text u-spacing--half">
