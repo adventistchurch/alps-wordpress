@@ -20,9 +20,9 @@
     // All pages
     'common': {
       init: function() {
-        $('.wp-block-button.is-style-default .wp-block-button__link').addClass('o-button o-button--primary');
-        $('.wp-block-button.is-style-outline .wp-block-button__link').addClass('o-button o-button--outline');
-        $('.wp-block-button.is-style-squared .wp-block-button__link').addClass('o-button o-button--square');
+        $('.wp-block-button .wp-block-button__link').addClass('o-button o-button--primary');
+        $('.wp-block-button.is-style-outline .wp-block-button__link').addClass('o-button--outline').removeClass('o-button--primary');
+        $('.wp-block-button.is-style-squared .wp-block-button__link').addClass('o-button--square').removeClass('o-button--primary');
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
