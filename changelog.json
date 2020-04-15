@@ -1,4 +1,7 @@
 {
+  "3.2.1" : {
+    "description" : "Fixed an error that broke the gallery."
+  },
   "3.2.0" : {
     "description" : "Adding a new full screen option, fixes to the buttons in WP 5.4 and WPML Logos."
   },

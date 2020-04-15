@@ -3,6 +3,10 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+##[3.2.1]
+### Fixed
+- Fix: Fixed an error that broke the gallery. [#455](https://github.com/adventistchurch/alps-wordpress/issues/455)
+
 ##[3.2.0]
 ### Fixed
 - Fix: Buttons not available in Wordpress 5.4. [#451](https://github.com/adventistchurch/alps-wordpress/issues/451)
