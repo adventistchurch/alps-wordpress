@@ -68,13 +68,12 @@ function crb_attach_theme_options()
             Field
                 ::make('separator', 'crb_content_display', __('Category Page Content Display')),
             Field
+                ::make('text', 'posts_page_title', __('Home Page Title'))
+                ->set_width(33),
+            Field
                 ::make('checkbox', 'index_hide_sidebar', __('Hide The Sidebar'))
                 ->set_option_value('true')
-                ->set_help_text('Hides the sidebar on the home/category page if it is active.'),
-            Field
-                ::make('separator', 'crb_posts_display', __('Category Posts Content Display')),
-            Field
-                ::make('text', 'posts_page_title', __('Home Page Title'))
+                ->set_help_text('Hides the sidebar on the home/category page if it is active.')
                 ->set_width(33),
             Field
                 ::make('checkbox', 'posts_label', __('Category Posts Feed Label'))
@@ -82,36 +81,32 @@ function crb_attach_theme_options()
                 ->set_help_text('Select to display the label "Category" on category posts feed.')
                 ->set_width(33),
             Field
+                ::make('separator', 'crb_posts_display', __('Category Posts Content Display')),
+            Field
+                ::make('text', 'archive_page_title', __('Archives Page Title'))
+                ->set_width(33),
+            Field
+                ::make('separator', 'crb_archive_display', __('Category Posts Grid and Image Display')),
+            Field
                 ::make('checkbox', 'posts_grid', __('Posts Feed Grid'))
                 ->set_option_value('true')
                 ->set_help_text('Select to display the posts side-by-side.')
-                ->set_width(33),
+                ->set_width(50),
             Field
                 ::make('checkbox', 'posts_grid_3up', __('Posts Feed Grid (3up)'))
                 ->set_option_value('true')
                 ->set_help_text('Select to display the posts 3up at the largest breakpoint. The sidebar must be hidden for the pages to display 3up.')
-                ->set_width(33),
+                ->set_width(50),
             Field
                 ::make('checkbox', 'posts_image', __('Posts Feed Image'))
                 ->set_option_value('true')
                 ->set_help_text('Select to display the feature image for the posts.')
-                ->set_width(33),
+                ->set_width(50),
             Field
                 ::make('checkbox', 'posts_image_round', __('Posts Round Images'))
                 ->set_option_value('true')
                 ->set_help_text('Make the post feed images round.')
-                ->set_width(33),
-            Field
-                ::make('separator', 'crb_archive_display', __('Posts Archive Content Display')),
-            Field
-                ::make('text', 'archive_page_title', __('Page Title'))
-                ->set_width(33),
-            Field
-                ::make('checkbox', 'archive_hide_sidebar', __('Hide The Sidebar'))
-                ->set_option_value('true')
-                ->set_help_text('Hides the sidebar on the posts archives if it is active.')
-                ->set_width(33),
-
+                ->set_width(50),
         ])
         ->add_tab(__('SABBATH COLUMN'), [
             Field
