@@ -197,7 +197,7 @@ body.admin-bar .c-drawer {
 }
 
 .u-theme--dark .c-drawer .o-arrow--down::after {
-  border-top-color: transparent;
+  border-top-color: transparent !important;
 }
 
 .c-carbon_fields_alps_widget_post_feed,
