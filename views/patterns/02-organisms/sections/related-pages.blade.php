@@ -21,7 +21,6 @@
         'sort_column' => 'menu_order'
       )
     );
-    print_r($pages);
   }
   elseif ($related == 'related_all') {
     // Loop of pages for child and grandchild pages
