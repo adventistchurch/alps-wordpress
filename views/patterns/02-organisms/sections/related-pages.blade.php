@@ -21,6 +21,7 @@
         'sort_column' => 'menu_order'
       )
     );
+    print_r($pages);
   }
   elseif ($related == 'related_all') {
     // Loop of pages for child and grandchild pages
@@ -92,7 +93,7 @@
           } else {
             $id = $page->ID;
             $title = $page->post_title;
-            $link = $page->guid;
+            $link = get_the_permalink($id);
             if (has_excerpt($id)) {
               $excerpt = get_the_excerpt($id);
             }
