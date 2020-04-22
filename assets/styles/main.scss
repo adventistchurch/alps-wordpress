@@ -205,6 +205,14 @@ body.admin-bar {
   li {
     padding-bottom: 5px;
     margin-left: 20px;
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
 
