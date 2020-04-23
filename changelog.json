@@ -1,4 +1,7 @@
 {
+  "3.2.2" : {
+    "description" : "Fixed links when the related pages were set to child pages and resolving to the page id and not the freindly url."
+  },
   "3.2.1" : {
     "description" : "Fixed an error that broke the gallery."
   },

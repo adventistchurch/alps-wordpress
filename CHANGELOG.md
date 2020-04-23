@@ -3,6 +3,10 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+##[3.2.2]
+### Fixed
+- Fix: Fixed links when the related pages were set to child pages and resolving to the page id and not the freindly url. [#460](https://github.com/adventistchurch/alps-wordpress/issues/460)
+
 ##[3.2.1]
 ### Fixed
 - Fix: Fixed an error that broke the gallery. [#455](https://github.com/adventistchurch/alps-wordpress/issues/455)
