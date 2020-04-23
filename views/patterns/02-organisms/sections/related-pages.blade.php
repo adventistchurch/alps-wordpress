@@ -92,7 +92,7 @@
           } else {
             $id = $page->ID;
             $title = $page->post_title;
-            $link = $page->guid;
+            $link = get_the_permalink($id);
             if (has_excerpt($id)) {
               $excerpt = get_the_excerpt($id);
             }
