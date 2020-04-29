@@ -24,11 +24,11 @@ add_filter('body_class', function (array $classes) {
   // Add class if sidebar is true on pages and posts
   $post_id = get_queried_object_id();
   // If has page sidebar
-  if ((is_active_sidebar('sidebar-page') && get_post_meta($post_id, 'hide_sidebar', true) != 'true')) {
+  if (is_active_sidebar('sidebar-page') && (carbon_get_post_meta($post_id, 'hide_sidebar') != 1)) {
     $classes[] = 'has-sidebar has-sidebar--pages';
   }
   // If has post sidebar
-  if ((is_active_sidebar('sidebar-posts') && get_post_meta($post_id, 'hide_sidebar', true) != 'true')) {
+  if (is_active_sidebar('sidebar-posts') && (carbon_get_post_meta($post_id, 'hide_sidebar') != 1) && (carbon_get_theme_option('index_hide_sidebar') != 1)) {
     $classes[] = 'has-sidebar has-sidebar--posts';
   }
 
@@ -37,13 +37,13 @@ add_filter('body_class', function (array $classes) {
   if ($hide_sabbath == true ) {
     $hide_sabbath_screens = get_alps_option( 'sabbath_hide_screens' );
     if ($hide_sabbath_screens == 'hide-sabbath--until-small') {
-      $classes[] = 'hide-sabbath hide-sabbath--until-small';
+      $classes[] = 'hide-sabbath--until-small';
     } else if ($hide_sabbath_screens == 'hide-sabbath--until-medium') {
       $classes[] = 'hide-sabbath--until-medium';
     } else if ($hide_sabbath_screens == 'hide-sabbath--until-large') {
-      $classes[] = 'hide-sabbath hide-sabbath--until-large';
+      $classes[] = 'hide-sabbath--until-large';
     } else {
-      $classes[] = 'hide-sabbath hide-sabbath--all';
+      $classes[] = 'hide-sabbath--all';
     }
   }
 

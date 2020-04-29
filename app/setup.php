@@ -196,3 +196,14 @@ add_image_size('flex-height--xl', 1100, 9999);
 
 // Square
 add_image_size('thumbnail--s', 200, 200, array('center', 'center'));
+
+// Makes image size available in dashboard for Gutenberg blocks.
+add_action('admin_init', function() {
+  $custom_sizes['horiz__16x9--m'] = 'Medium 16:9 (800x450)';
+  add_filter(
+    'image_size_names_choose',
+    function( $sizes ) use ( $custom_sizes ) {
+      return array_merge( $sizes, $custom_sizes );
+    }
+  );
+});
