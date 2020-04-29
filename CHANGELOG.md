@@ -3,6 +3,10 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+##[3.x.x]
+### Added
+- Added: A new Media Testimonies block. [#448](https://github.com/adventistchurch/alps-wordpress/pull/448)
+
 ##[3.2.2]
 ### Fixed
 - Fix: Fixed links when the related pages were set to child pages and resolving to the page id and not the freindly url. [#460](https://github.com/adventistchurch/alps-wordpress/issues/460)
