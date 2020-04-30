@@ -1,4 +1,7 @@
 {
+  "3.3.0" : {
+    "description" : "Adds the Media Testimonies block and sidebar menu link underlining."
+  },
   "3.2.2" : {
     "description" : "Fixed links when the related pages were set to child pages and resolving to the page id and not the freindly url."
   },
