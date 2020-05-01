@@ -91,7 +91,7 @@ add_action('after_setup_theme', function () {
  */
 add_action('widgets_init', function () {
     $config = [
-        'before_widget' => '<section class="c-widget c-%1$s c-%2$s u-spacing u-background-color--gray--light u-padding u-theme--border-color--darker u-border--left can-be--dark-dark">',
+        'before_widget' => '<section class="c-widget c-%1$s c-%2$s o-link-wrapper--underline u-spacing u-background-color--gray--light u-padding u-theme--border-color--darker u-border--left can-be--dark-dark">',
         'after_widget'  => '</section>',
         'before_title'  => '<h3 class="c-block__heading-title u-theme--color--darker">',
         'after_title'   => '</h3>'
@@ -196,3 +196,14 @@ add_image_size('flex-height--xl', 1100, 9999);
 
 // Square
 add_image_size('thumbnail--s', 200, 200, array('center', 'center'));
+
+// Makes image size available in dashboard for Gutenberg blocks.
+add_action('admin_init', function() {
+  $custom_sizes['horiz__16x9--m'] = 'Medium 16:9 (800x450)';
+  add_filter(
+    'image_size_names_choose',
+    function( $sizes ) use ( $custom_sizes ) {
+      return array_merge( $sizes, $custom_sizes );
+    }
+  );
+});

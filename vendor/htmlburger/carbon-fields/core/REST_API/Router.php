@@ -58,6 +58,13 @@ class Router {
 			'permission_callback' => 'allow_access',
 			'methods'             => 'GET',
 		),
+		'block_renderer' => array(
+			'path'                => '/block-renderer',
+			'callback'            => 'block_renderer',
+			'permission_callback' => 'block_renderer_permission',
+			'methods'             => 'POST',
+			'args'                => 'block_renderer_args_schema',
+		)
 	);
 
 	/**
@@ -101,6 +108,8 @@ class Router {
 
 	/**
 	 * Set routes
+	 *
+	 * @param array $routes
 	 */
 	public function set_routes( $routes ) {
 		$this->routes = $routes;
@@ -117,6 +126,8 @@ class Router {
 
 	/**
 	 * Set version
+	 *
+	 * @param string $version
 	 */
 	public function set_version( $version ) {
 		$this->version = $version;
@@ -133,6 +144,8 @@ class Router {
 
 	/**
 	 * Set vendor
+	 *
+	 * @param string $vendor
 	 */
 	public function set_vendor( $vendor ) {
 		$this->vendor = $vendor;
@@ -177,14 +190,15 @@ class Router {
 			'methods'             => $route['methods'],
 			'permission_callback' => array( $this, $route['permission_callback'] ),
 			'callback'            => array( $this, $route['callback'] ),
+			'args'                => isset( $route['args'] ) ? call_user_func( array( $this, $route['args'] ) ) : array(),
 		) );
 	}
 
 	/**
 	 * Proxy method for handling get/set for theme options
 	 *
-	 * @param  WP_REST_Request $request
-	 * @return array|WP_REST_Response
+	 * @param  \WP_REST_Request $request
+	 * @return array|\WP_REST_Response
 	 */
 	public function options_accessor( $request ) {
 		$request_type = $request->get_method();
@@ -199,7 +213,7 @@ class Router {
 	/**
 	 * Proxy method for handling theme options permissions
 	 *
-	 * @param  WP_REST_Request $request
+	 * @param  \WP_REST_Request $request
 	 * @return bool
 	 */
 	public function options_permission( $request ) {
@@ -279,25 +293,38 @@ class Router {
 	/**
 	 * Get Carbon Fields association options data.
 	 *
+	 * @access public
+	 *
 	 * @return array
 	 */
 	public function get_association_data() {
 		$container_id = $_GET['container_id'];
 		$field_id     = $_GET['field_id'];
-		$options      = isset( $_GET['options'] ) ? $_GET['options'] : array();
+		$options      = isset( $_GET['options'] ) ? explode( ';', $_GET['options'] ) : array();
 		$return_value = array();
 
+		/** @var \Carbon_Fields\Field\Association_Field $field */
 		$field = Helper::get_field( null, $container_id, $field_id );
 
-		foreach ( $options as $entry ) {
+		$options = array_map( function ( $option ) {
+			$option = explode( ':', $option );
+
+			return [
+				'id'      => $option[0],
+				'type'    => $option[1],
+				'subtype' => $option[2],
+			];
+		}, $options );
+
+		foreach ( $options as $option ) {
 			$item = array(
-				'type'       => $entry['type'],
-				'subtype'    => $entry['subtype'],
-				'thumbnail'  => $field->get_thumbnail_by_type( $entry['id'], $entry['type'], $entry['subtype'] ),
-				'id'         => intval( $entry['id'] ),
-				'title'      => $field->get_title_by_type( $entry['id'], $entry['type'], $entry['subtype'] ),
-				'label'      => $field->get_item_label( $entry['id'], $entry['type'], $entry['subtype'] ),
-				'is_trashed' => ( $entry['type'] == 'post' && get_post_status( $entry['id'] ) === 'trash' ),
+				'type'       => $option['type'],
+				'subtype'    => $option['subtype'],
+				'thumbnail'  => $field->get_thumbnail_by_type( $option['id'], $option['type'], $option['subtype'] ),
+				'id'         => intval( $option['id'] ),
+				'title'      => $field->get_title_by_type( $option['id'], $option['type'], $option['subtype'] ),
+				'label'      => $field->get_item_label( $option['id'], $option['type'], $option['subtype'] ),
+				'is_trashed' => ( $option['type'] == 'post' && get_post_status( $option['id'] ) === 'trash' ),
 			);
 
 			$return_value[] = $item;
@@ -331,8 +358,8 @@ class Router {
 	/**
 	 * Set Carbon theme options
 	 *
-	 * @param WP_REST_Request $request Full data about the request.
-	 * @return WP_Error|WP_REST_Response
+	 * @param \WP_REST_Request $request Full data about the request.
+	 * @return \WP_Error|\WP_REST_Response
 	 */
 	protected function set_options( $request ) {
 		$options = $request->get_params();
@@ -350,5 +377,111 @@ class Router {
 		}
 
 		return new \WP_REST_Response( __( 'Theme Options updated.', 'carbon-fields' ), 200 );
+	}
+
+	/**
+	 * Checks if a given request has access to read blocks.
+	 *
+	 * @see https://github.com/WordPress/WordPress/blob/master/wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php#L78-L116
+	 *
+	 * @param  \WP_REST_Request
+	 * @return true|\WP_Error
+	 */
+	public function block_renderer_permission( $request ) {
+		global $post;
+
+		$post_id = isset( $request['post_id'] ) ? intval( $request['post_id'] ) : 0;
+
+		if ( 0 < $post_id ) {
+			$post = get_post( $post_id );
+
+			if ( ! $post || ! current_user_can( 'edit_post', $post->ID ) ) {
+				return new \WP_Error(
+					'block_cannot_read',
+					__( 'Sorry, you are not allowed to read blocks of this post.', 'carbon-fields' ),
+					array(
+						'status' => rest_authorization_required_code(),
+					)
+				);
+			}
+		} else {
+			if ( ! current_user_can( 'edit_posts' ) ) {
+				return new \WP_Error(
+					'block_cannot_read',
+					__( 'Sorry, you are not allowed to read blocks as this user.', 'carbon-fields' ),
+					array(
+						'status' => rest_authorization_required_code(),
+					)
+				);
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Returns the schema of the accepted arguments.
+	 *
+	 * @see https://github.com/WordPress/WordPress/blob/master/wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php#L56-L71
+	 *
+	 * @return array
+	 */
+	public function block_renderer_args_schema() {
+		return array(
+			'name'       => array(
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'The name of the block.', 'carbon-fields' ),
+			),
+			'content'    => array(
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'The content of the block.', 'carbon-fields' ),
+			),
+			'post_id'    => array(
+				'type'        => 'integer',
+				'description' => __( 'ID of the post context.', 'carbon-fields' ),
+			),
+		);
+	}
+
+	/**
+	 * Returns block output from block's registered render_callback.
+	 *
+	 * @see https://github.com/WordPress/WordPress/blob/master/wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php#L118-L154
+	 *
+	 * @param  \WP_REST_Request $request
+	 * @return \WP_REST_Response|\WP_Error
+	 */
+	public function block_renderer( $request ) {
+		global $post;
+
+		$post_id = isset( $request['post_id'] ) ? intval( $request['post_id'] ) : 0;
+
+		if ( 0 < $post_id ) {
+			$post = get_post( $post_id );
+
+			// Set up postdata since this will be needed if post_id was set.
+			setup_postdata( $post );
+		}
+
+		$registry = \WP_Block_Type_Registry::get_instance();
+		$block    = $registry->get_registered( $request['name'] );
+
+		if ( null === $block ) {
+			return new \WP_Error(
+				'block_invalid',
+				__( 'Invalid block.' ),
+				array(
+					'status' => 404,
+				)
+			);
+		}
+
+		$data = array(
+			'rendered' => do_blocks( $request['content'] ),
+		);
+
+		return rest_ensure_response( $data );
 	}
 }

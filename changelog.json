@@ -1,4 +1,16 @@
 {
+  "3.3.0" : {
+    "description" : "Adds the Media Testimonies block and sidebar menu link underlining."
+  },
+  "3.2.2" : {
+    "description" : "Fixed links when the related pages were set to child pages and resolving to the page id and not the freindly url."
+  },
+  "3.2.1" : {
+    "description" : "Fixed an error that broke the gallery."
+  },
+  "3.2.0" : {
+    "description" : "Adding a new full screen option, fixes to the buttons in WP 5.4 and WPML Logos."
+  },
   "3.1.3" : {
     "description" : "Added the seperator block and fixed the new theme version notificaitons."
   },

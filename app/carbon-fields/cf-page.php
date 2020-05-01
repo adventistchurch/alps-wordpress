@@ -29,11 +29,12 @@ function crb_attach_hero()
                 ::make('radio', 'hero_type', __('Hero Style'))
                 ->set_help_text('Select the hero configuration.')
                 ->add_options([
-                      'false'   => 'None',
-                      'default' => 'Half screen image with text overlay (Min/Max Images: 1)',
-                      'full'    => 'Full screen image with text overlay (Min/Max Images: 1)',
-                      'column'  => 'Three column image format with text overlays (Min/Max Images: 3)',
-                      'carousel' => 'Half screen image gallery with text overlay (Max Images: 6)'
+                      'false'           => 'None',
+                      'default'         => 'Half screen image with text overlay (Min/Max Images: 1)',
+                      'full'            => 'Full screen image with text overlay (Min/Max Images: 1)',
+                      'full_overlay'    => 'Full screen image with text and header overlay (Min/Max Images: 1)',
+                      'column'          => 'Three column image format with text overlays (Min/Max Images: 3)',
+                      'carousel'        => 'Half screen image gallery with text overlay (Max Images: 6)'
                 ]),
             Field
                 ::make('image', 'hero_image', __('Hero Image'))
@@ -46,6 +47,10 @@ function crb_attach_hero()
                     [
                         'field' => 'hero_type',
                         'value' => 'full'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full_overlay'
                     ]
                 ]),
             Field
@@ -62,6 +67,10 @@ function crb_attach_hero()
                     [
                         'field' => 'hero_type',
                         'value' => 'full'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full_overlay'
                     ]
                 ]),
             Field
@@ -77,6 +86,10 @@ function crb_attach_hero()
                     [
                         'field' => 'hero_type',
                         'value' => 'full'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full_overlay'
                     ]
                 ]),
             Field
@@ -91,6 +104,10 @@ function crb_attach_hero()
                     [
                         'field' => 'hero_type',
                         'value' => 'full'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full_overlay'
                     ]
                 ]),
             Field
