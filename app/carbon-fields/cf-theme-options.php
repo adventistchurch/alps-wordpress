@@ -86,6 +86,11 @@ function crb_attach_theme_options()
                 ::make('text', 'archive_page_title', __('Archives Page Title'))
                 ->set_width(33),
             Field
+                ::make('checkbox', 'archive_hide_sidebar', __('Hide The Sidebar'))
+                ->set_option_value('true')
+                ->set_help_text('Hides the sidebar on the archive page if it is active.')
+                ->set_width(33),
+            Field
                 ::make('separator', 'crb_archive_display', __('Category Posts Grid and Image Display')),
             Field
                 ::make('checkbox', 'posts_grid', __('Posts Feed Grid'))

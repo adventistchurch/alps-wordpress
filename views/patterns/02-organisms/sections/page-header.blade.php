@@ -16,6 +16,8 @@
   $page_header_inner_class = '';
   $page_header_content_class = 'u-shift--left--1-col--at-xxlarge';
 
+  $isPostsPage = is_archive() && !get_option( 'page_for_posts' );
+
   if (is_home()) {
     if (get_alps_option('posts_page_title')) {
       $long_header_title = get_alps_option('posts_page_title');
@@ -23,7 +25,7 @@
       $long_header_title = __('Recent Posts', 'alps');
     }
   }
-  elseif (is_archive()) {
+  elseif ($isPostsPage) {
     if (get_alps_option('posts_label')) {
       $long_header_kicker = __('Category', 'alps');
     }
@@ -34,7 +36,7 @@
     }
   }
 
-  if (!is_home() && !is_archive()) {
+  if (!is_home() && !$isPostsPage) {
     global $post;
     // PAGE FIELDS
     $hide_featured_image = get_post_meta($post->ID, $cf_.'hide_featured_image', true);
