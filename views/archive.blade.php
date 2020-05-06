@@ -28,4 +28,3 @@
   @include('patterns.02-organisms.content.content-posts')
 
 @endsection
-w
