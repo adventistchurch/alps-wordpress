@@ -69,6 +69,7 @@ function crb_attach_theme_options()
                 ::make('separator', 'crb_content_display', __('Category Page Content Display')),
             Field
                 ::make('text', 'posts_page_title', __('Home Page Title'))
+                ->set_help_text('Sets a custom home page title for sites displaying the latest posts.')
                 ->set_width(33),
             Field
                 ::make('checkbox', 'index_hide_sidebar', __('Hide The Sidebar'))
@@ -84,6 +85,7 @@ function crb_attach_theme_options()
                 ::make('separator', 'crb_posts_display', __('Category Posts Content Display')),
             Field
                 ::make('text', 'archive_page_title', __('Archives Page Title'))
+                ->set_help_text('Sets a custom title for the archive page for sites with a custom posts page.')
                 ->set_width(33),
             Field
                 ::make('checkbox', 'archive_hide_sidebar', __('Hide The Sidebar'))
