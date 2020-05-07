@@ -23,7 +23,7 @@
       /**
        * Custom archive page
        */
-      $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebar();
+      $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebarOnArchive();
 
       $sidebar = [
         'id' => 'sidebar-posts',

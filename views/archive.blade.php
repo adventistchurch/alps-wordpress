@@ -1,14 +1,6 @@
 @extends('layouts.app')
 @section('content')
   @php
-    // Show the sidebar when both "index_hide_sidebar" and "archive_hide_sidebar" are false
-    $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebar();
-
-    $sidebar = [
-      'id' => 'sidebar-posts',
-      'isVisible' => $isVisibleSidebar,
-    ];
-
     /**
      * Header data
      */
@@ -22,6 +14,16 @@
             $headerTitle = __('Archives', 'alps');
         }
     }
+
+    // Show the sidebar when both "index_hide_sidebar" and "archive_hide_sidebar" are false
+    $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebarOnArchive();
+
+    $sidebar = [
+      'id' => 'sidebar-posts',
+      'isVisible' => $isVisibleSidebar,
+    ];
+
+
   @endphp
 
   @include('patterns.02-organisms.sections.page-header-v2')
