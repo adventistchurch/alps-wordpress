@@ -5,7 +5,7 @@
       /**
        * Home with latest posts
        */
-      $isVisibleSidebar = !get_alps_option('index_hide_sidebar');
+      $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebarOnFront();
 
       $sidebar = [
         'id' => 'sidebar-page',

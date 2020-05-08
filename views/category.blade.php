@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
   @php
-    // Show the sidebar when both "index_hide_sidebar" and "archive_hide_sidebar" are false
     $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebarOnArchive();
 
     $sidebar = [

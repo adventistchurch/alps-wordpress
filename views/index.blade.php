@@ -2,7 +2,7 @@
 @section('content')
   @php
     // Show the sidebar when "index_hide_sidebar"
-    $isVisibleSidebar = !get_alps_option('index_hide_sidebar');
+    $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebarOnFront();
 
     $sidebar = [
       'id' => 'sidebar-page',

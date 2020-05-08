@@ -3,19 +3,33 @@ namespace App;
 
 class TemplateHelpers {
     /**
-     * Get sidebar visibility
+     * Get sidebar visibility for Post List
      *
      * @return bool
      */
     public static function isVisibleSidebarOnArchive()
     {
-        $isVisible = !get_alps_option('index_hide_sidebar') && !get_alps_option('archive_hide_sidebar');
         if (get_option('show_on_front') === 'page') {
             $postsRootPostId = get_option('page_for_posts');
-            $isHiddenSidebar = (bool)get_post_meta($postsRootPostId, '_hide_sidebar', true);
-            if ($isHiddenSidebar) {
-                $isVisible = false;
-            }
+            $isVisible = !get_post_meta($postsRootPostId, '_hide_sidebar', true);
+        } else {
+            $isVisible = !get_alps_option('index_hide_sidebar') && !get_alps_option('archive_hide_sidebar');
+        }
+        return $isVisible;
+    }
+
+    /**
+     * Get sidebar visibility for Home Page
+     *
+     * @return bool
+     */
+    public static function isVisibleSidebarOnFront()
+    {
+        if (get_option('show_on_front') === 'page') {
+            $frontRootPostId = get_option('page_on_front');
+            $isVisible = !get_post_meta($frontRootPostId, '_hide_sidebar', true);
+        } else {
+            $isVisible = !get_alps_option('index_hide_sidebar');
         }
         return $isVisible;
     }
