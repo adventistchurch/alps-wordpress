@@ -1,4 +1,7 @@
 {
+  "3.4.0" : {
+    "description" : "Adds custom options for homepage and posts listing pages."
+  },
   "3.3.0" : {
     "description" : "Adds the Media Testimonies block and sidebar menu link underlining."
   },

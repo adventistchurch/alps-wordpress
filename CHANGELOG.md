@@ -3,6 +3,10 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+##[3.4.0]
+### Added
+- Added: Site admins can now customize the homepage title (when using recent posts), customize the posts title, and use the various header settings on custom posts listing pages. [#337](https://github.com/adventistchurch/alps-wordpress/issues/337)
+
 ##[3.3.0]
 ### Added
 - Added: A new Media Testimonies block. [#448](https://github.com/adventistchurch/alps-wordpress/pull/448)
