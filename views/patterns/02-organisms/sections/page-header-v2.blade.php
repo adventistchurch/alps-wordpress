@@ -1,5 +1,6 @@
 @php
-  $isHero = (bool)get_post_meta($postsRootPostId, '_hero_type', true);
+  $heroType = get_post_meta($postsRootPostId, '_hero_type', true);
+  $isHero = $heroType && $heroType !== 'false';
 @endphp
 
 @if ($isHero)
@@ -7,4 +8,3 @@
 @else
   @include('patterns.01-molecules.blocks.header-block')
 @endif
-

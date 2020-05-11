@@ -66,7 +66,7 @@ function crb_attach_theme_options()
         ])
         ->add_tab(__('POSTS OPTIONS'), [
             Field
-                ::make('separator', 'crb_content_display', __('Category Page Content Display')),
+                ::make('separator', 'crb_content_display', __('Home Page Content Display')),
             Field
                 ::make('text', 'posts_page_title', __('Home Page Title'))
                 ->set_help_text('Sets a custom home page title for sites displaying the latest posts.')
@@ -74,15 +74,10 @@ function crb_attach_theme_options()
             Field
                 ::make('checkbox', 'index_hide_sidebar', __('Hide The Sidebar'))
                 ->set_option_value('true')
-                ->set_help_text('Hides the sidebar on the home/category page if it is active.')
+                ->set_help_text('Hides the sidebar on the home/archive page if it is active.')
                 ->set_width(33),
             Field
-                ::make('checkbox', 'posts_label', __('Category Posts Feed Label'))
-                ->set_option_value('true')
-                ->set_help_text('Select to display the label "Category" on category posts feed.')
-                ->set_width(33),
-            Field
-                ::make('separator', 'crb_posts_display', __('Category Posts Content Display')),
+                ::make('separator', 'crb_posts_display', __('Posts Content Display')),
             Field
                 ::make('text', 'archive_page_title', __('Archives Page Title'))
                 ->set_help_text('Sets a custom title for the archive page for sites with a custom posts page.')
@@ -93,7 +88,12 @@ function crb_attach_theme_options()
                 ->set_help_text('Hides the sidebar on the archive page if it is active.')
                 ->set_width(33),
             Field
-                ::make('separator', 'crb_archive_display', __('Category Posts Grid and Image Display')),
+                ::make('checkbox', 'posts_label', __('Category Posts Feed Label'))
+                ->set_option_value('true')
+                ->set_help_text('Select to display the label "Category" on category posts feed.')
+                ->set_width(33),
+            Field
+                ::make('separator', 'crb_archive_display', __('Posts Grid and Image Display')),
             Field
                 ::make('checkbox', 'posts_grid', __('Posts Feed Grid'))
                 ->set_option_value('true')

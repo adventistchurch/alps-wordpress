@@ -5,7 +5,7 @@
       /**
        * Home with latest posts
        */
-      $isVisibleSidebar = !get_alps_option('index_hide_sidebar');
+      $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebarOnFront();
 
       $sidebar = [
         'id' => 'sidebar-page',
@@ -23,7 +23,7 @@
       /**
        * Custom archive page
        */
-      $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebar();
+      $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebarOnArchive();
 
       $sidebar = [
         'id' => 'sidebar-posts',
