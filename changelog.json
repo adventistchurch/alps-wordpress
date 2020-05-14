@@ -1,4 +1,7 @@
 {
+  "3.4.1" : {
+    "description" : "Fixed: The theme was missing the `hide-sabbath` class on all instances of the Sabbath column being hidden."
+  },
   "3.4.0" : {
     "description" : "Adds custom options for homepage and posts listing pages."
   },
