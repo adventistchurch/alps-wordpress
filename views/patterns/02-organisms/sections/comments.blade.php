@@ -2,6 +2,11 @@
 if (post_password_required()) {
   return;
 }
+
+ob_start();
+comments_template( '', true);
+ob_end_clean();
+
 @endphp
 <section id="comments" class="c-comments js-this can-be--dark-dark u-background-color--gray--light u-border--left u-theme--border-color--darker--left">
   <div class="c-comments--inner u-padding">
