@@ -3,47 +3,67 @@ if (post_password_required()) {
   return;
 }
 
+class ALPS_Walker_Comment extends Walker_Comment {
+    protected function html5_comment($comment, $depth, $args) {
+        $authorLink = get_comment_author_link($comment);
+        $createdAt = sprintf( __( '%1$s at %2$s' ), get_comment_date( '', $comment ), get_comment_time() );
+
+        ob_start();
+        comment_text($comment->comment_ID);
+        $content = ob_get_clean();
+
+        $avatar = get_avatar($comment, 50, 'mm', '', ['class' => 'avatar']);
+
+        ob_start();
+        edit_comment_link( '(' . __( 'Edit' ) . ')', '<span class="c-comment__edit-link u-font--secondary--s u-theme--color--base">', '</span>' );
+        $editLink = ob_get_clean();
+
+        echo <<<HTML
+<li class="c-comment__list-item comment u-spacing">
+  <div class="c-comment--inner u-border--left u-theme--border-color--darker">
+    <div class="c-comment__avatar u-space--right">
+      $avatar
+    </div>
+    <div class="c-comment__body u-spacing--quarter">
+      <div class="c-comment__meta">
+        <span class="byline u-font--secondary--s can-be--white u-theme--color--darker">$authorLink</span>
+        <span class="o-divider">|</span>
+        <span class="pub_date u-font--secondary--s u-color--gray can-be--white">$createdAt</span>
+        $editLink
+      </div>
+      <p class="c-comment__content">$content</p>
+    </div>
+  </div>
+</li>
+HTML;
+    }
+}
+$walker = new ALPS_Walker_Comment();
+
 ob_start();
 comments_template( '', true);
 ob_end_clean();
 
 @endphp
-<section id="comments" class="c-comments js-this can-be--dark-dark u-background-color--gray--light u-border--left u-theme--border-color--darker--left">
-  <div class="c-comments--inner u-padding">
-    @if (have_comments())
-      <h2 class="u-theme--color--darker">
-        {!! sprintf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'alps'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>') !!}
-      </h2>
-      <ol class="comment-list">
-        {!! wp_list_comments(['style' => 'ol', 'short_ping' => true]) !!}
-      </ol>
-      @if (get_comment_pages_count() > 1 && get_option('page_comments'))
-        <nav>
-          <ul class="pager">
-            @if (get_previous_comments_link())
-              <li class="previous">{!! previous_comments_link(_e('&larr; Older comments', 'alps')) !!}</li>
-            @endif
-            @if (get_next_comments_link())
-              <li class="next">{!! next_comments_link(_e('Newer comments &rarr;', 'alps')) !!}</li>
-            @endif
-          </ul>
-        </nav>
-      @endif
-    @endif
-    @if (!comments_open() && get_comments_number() != '0' && post_type_supports(get_post_type(), 'comments'))
-      <p>{{ _e('Sorry, no results were found.', 'alps') }}</p>
-    @endif
-    @php
-      comment_form(
-        array(
-          'title_reply_before' => '<h3 class="u-font--secondary--m comment-reply-title u-theme--color--darker">',
-          'title_reply_after' => '</h3>',
-          'logged_in_as' => '',
-          'title_reply' => __("Leave a Comment", "alps"),
-          'label_submit' => __('Submit', "sage"),
-          'class_form' => 'u-spacing'
-        )
-      );
-    @endphp
-  </div>
+<section class="c-comments u-spacing--double">
+  @if (have_comments())
+    <ul class="c-comment__list u-spacing">
+      <div class="c-block__heading u-theme--border-color--darker">
+        <h3 class="c-block__heading-title u-theme--color--darker">{{ get_comments_number() }} comments</h3>
+      </div>
+      {!! wp_list_comments(['style' => 'ol', 'short_ping' => true, 'walker' => $walker]) !!}
+    </ul>
+  @endif
+  @php
+    comment_form([
+      'title_reply_before' => '<h3 class="u-font--secondary--m comment-reply-title u-theme--color--darker">',
+      'title_reply_after' => '</h3>',
+      'logged_in_as' => '',
+      'title_reply' => __("Leave a Comment", "alps"),
+      'label_submit' => __('Submit', "sage"),
+      'class_form' => 'u-spacing'
+    ]);
+  @endphp
 </section>
+
+

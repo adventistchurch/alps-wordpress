@@ -150,47 +150,6 @@ body.admin-bar {
   opacity: 0.5;
 }
 
-// Comments
-.c-comments {
-  display: none;
-  margin-top: 20px;
-
-  &.this-is-active {
-    display: block;
-  }
-
-  h2,
-  h3 {
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-  form {
-    p {
-      font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
-    }
-  }
-
-  .comment-form-cookies-consent {
-    display: flex;
-
-    input[type=checkbox] {
-      width: 20px;
-      margin-top: 2px;
-    }
-  }
-
-  .comment-form-comment {
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-
-  .comment-reply-title {
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-}
-
 // Widgets
 
 .c-widget {

@@ -31,6 +31,7 @@
       @php the_content() @endphp
       @include('patterns.02-organisms.sections.article-footer')
     </article>
+    @include('patterns.02-organisms.sections.comments')
   </div>
   @if ($has_sidebar)
     <div class="c-sidebar l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col u-padding--zero--sides">
