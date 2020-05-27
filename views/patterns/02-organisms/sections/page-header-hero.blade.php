@@ -121,6 +121,9 @@
             if (get_post_meta($post->ID, $cf_.'hero_link_url', true)) {
               $link = get_post_meta($post->ID, $cf_.'hero_link_url', true);
             }
+            if (get_post_meta($post->ID, $cf_.'hero_link_button', true)) {
+              $cta = get_post_meta($post->ID, $cf_.'hero_link_button', true);
+            }
           }
           if ($hero_type == 'default') {
             $thumb_size = 'featured__hero';
