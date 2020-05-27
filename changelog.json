@@ -1,4 +1,7 @@
 {
+  "3.4.2" : {
+    "description" : "Fixed: CTA button missing from Full screen hero."
+  },
   "3.4.1" : {
     "description" : "Fixed: The theme was missing the `hide-sabbath` class on all instances of the Sabbath column being hidden."
   },

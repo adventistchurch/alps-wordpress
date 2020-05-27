@@ -3,6 +3,11 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+##[3.4.2]
+### Fixed
+- Fixed: CTA button missing from Full screen hero. [#476](https://github.com/adventistchurch/alps-wordpress/issues/476)
+
 ##[3.4.1]
 ### Fixed
 - Fixed: The theme was missing the `hide-sabbath` class on all instances of the Sabbath column being hidden. [#29](https://github.com/adventistchurch/alps-gutenberg-blocks/issues/29)
