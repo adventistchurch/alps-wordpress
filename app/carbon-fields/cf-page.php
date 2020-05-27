@@ -111,6 +111,20 @@ function crb_attach_hero()
                     ]
                 ]),
             Field
+                ::make('text', 'hero_link_button', __('Hero Link Button'))
+                ->set_help_text(__('Enter text here to show on the hero button. Filling this out sets the link on the button and not the hero image.'))
+                ->set_conditional_logic([
+                    'relation' => 'OR', // Optional, defaults to "AND"
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full'
+                    ],
+                    [
+                        'field' => 'hero_type',
+                        'value' => 'full_overlay'
+                    ]
+                ]),
+            Field
                 ::make('checkbox', 'hero_image_extended', __('Hero Image Extended'))
                 ->set_option_value('true')
                 ->set_help_text('Check to extend the hero image over the sabbath column.')
