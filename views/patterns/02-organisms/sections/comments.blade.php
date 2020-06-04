@@ -46,9 +46,9 @@ class ALPS_Walker_Comment extends Walker_Comment {
         if ($depth <= 1) {
             $listItemClass = 'c-comment__list-item';
         } else if ($depth > 1 && $depth < 5) {
-            $listItemClass = 'c-comment__children__list-item__depth-' . $depth;
+            $listItemClass = 'c-comment__children__list-item c-comment__children__list-item__depth-' . $depth;
         } else {
-            $listItemClass = 'c-comment__children__list-item__depth-5';
+            $listItemClass = 'c-comment__children__list-item c-comment__children__list-item__depth-5';
         }
 
         echo <<<HTML

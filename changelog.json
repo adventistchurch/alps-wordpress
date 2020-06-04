@@ -1,4 +1,7 @@
 {
+  "3.4.3" : {
+    "description" : " Fixed: Comments not showing."
+  },
   "3.4.2" : {
     "description" : "Fixed: CTA button missing from Full screen hero."
   },
