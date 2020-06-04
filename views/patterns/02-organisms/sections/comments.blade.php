@@ -4,6 +4,22 @@ if (post_password_required()) {
 }
 
 class ALPS_Walker_Comment extends Walker_Comment {
+    public function __construct() {
+        add_filter('comment_reply_link', function ($link) {
+            return str_replace('class=\'comment-reply-link\'', 'class=\'comment-reply-link u-font--secondary--s u-theme--color--base\'', $link);
+        });
+    }
+
+    public function start_lvl( &$output, $depth = 0, $args = array() ) {
+		    $GLOBALS['comment_depth'] = $depth + 1;
+        $output .= '<ul class="c-comment__children__list children u-spacing">';
+		}
+
+		public function end_lvl( &$output, $depth = 0, $args = array() ) {
+		    $GLOBALS['comment_depth'] = $depth + 1;
+		    $output .= '</ul>';
+	  }
+
     protected function html5_comment($comment, $depth, $args) {
         $authorLink = get_comment_author_link($comment);
         $createdAt = sprintf( __( '%1$s at %2$s' ), get_comment_date( '', $comment ), get_comment_time() );
@@ -18,9 +34,26 @@ class ALPS_Walker_Comment extends Walker_Comment {
         edit_comment_link( '(' . __( 'Edit' ) . ')', '<span class="c-comment__edit-link u-font--secondary--s u-theme--color--base">', '</span>' );
         $editLink = ob_get_clean();
 
+        $replyOpts = [
+            'add_below' => 'div-comment',
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth'],
+						'before'    => '<div class="c-comment__reply">',
+						'after'     => '</div>',
+        ];
+        $replyLink = get_comment_reply_link(array_merge($args, $replyOpts), $comment);
+
+        if ($depth <= 1) {
+            $listItemClass = 'c-comment__list-item';
+        } else if ($depth > 1 && $depth < 5) {
+            $listItemClass = 'c-comment__children__list-item__depth-' . $depth;
+        } else {
+            $listItemClass = 'c-comment__children__list-item__depth-5';
+        }
+
         echo <<<HTML
-<li class="c-comment__list-item comment u-spacing">
-  <div class="c-comment--inner u-border--left u-theme--border-color--darker">
+<li class="$listItemClass comment u-spacing" id="comment-$comment->comment_ID">
+  <div class="c-comment--inner u-border--left u-theme--border-color--darker" id="div-comment-$comment->comment_ID">
     <div class="c-comment__avatar u-space--right">
       $avatar
     </div>
@@ -32,6 +65,7 @@ class ALPS_Walker_Comment extends Walker_Comment {
         $editLink
       </div>
       <p class="c-comment__content">$content</p>
+      $replyLink
     </div>
   </div>
 </li>
