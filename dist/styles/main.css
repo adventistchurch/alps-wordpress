@@ -137,46 +137,6 @@ body.admin-bar .c-drawer {
   opacity: 0.5;
 }
 
-.c-comments {
-  display: none;
-  margin-top: 20px;
-}
-
-.c-comments.this-is-active {
-  display: block;
-}
-
-.c-comments h2,
-.c-comments h3 {
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.c-comments form p {
-  font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;
-}
-
-.c-comments .comment-form-cookies-consent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c-comments .comment-form-cookies-consent input[type=checkbox] {
-  width: 20px;
-  margin-top: 2px;
-}
-
-.c-comments .comment-form-comment {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.c-comments .comment-reply-title {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
 .c-widget ul {
   list-style-type: disc;
 }

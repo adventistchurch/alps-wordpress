@@ -7,6 +7,10 @@
   } else {
     $theme_color_class = 'u-theme--ming';
   }
+
+  if (is_singular()) {
+      wp_enqueue_script('comment-reply');
+  }
 @endphp
 <html class="{{ $theme_color_class }}" {{ get_language_attributes() }}>
   @include('patterns.02-organisms.global.head')
