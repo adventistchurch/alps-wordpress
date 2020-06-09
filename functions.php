@@ -159,15 +159,6 @@ function adventist_register_required_plugins() {
 }
 
 /**
- * Fix for Piklist fields not saving
- */
-function my_custom_init() {
-  remove_post_type_support('post', 'custom-fields');
-  remove_post_type_support('page', 'custom-fields');
-}
-add_action('init', 'my_custom_init');
-
-/**
  * Piklist Theme Settings
  */
 add_filter('piklist_admin_pages', 'piklist_theme_setting_pages');
