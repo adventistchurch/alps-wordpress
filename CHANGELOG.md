@@ -3,6 +3,12 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+##[3.4.4]
+### Fixed
+- Fixed: Fixed an error with the footer schema not using the correct `itemprop` name for the `postalCode`.
+- Fixed: Custom fields being hidden to prevent Piklist error. [#140](https://github.com/adventistchurch/alps-wordpress/issues/140)
+
 ##[3.4.3]
 ### Fixed
 - Fixed: Comments not showing. [#462](https://github.com/adventistchurch/alps-wordpress/issues/462)
