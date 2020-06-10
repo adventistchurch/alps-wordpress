@@ -421,6 +421,8 @@ add_filter('allowed_block_types', function () {
     'core/video',
     'core/html',
     'core/embed',
+    'core/columns',
+    'core/table',
     'core/paragraph',
     'core/separator',
     'alps-gutenberg-blocks/accordion',

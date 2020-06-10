@@ -1,4 +1,7 @@
 {
+  "3.4.5" : {
+    "description" : "Added: Core Table and Core Columns blocks for Gutenberg."
+  },
   "3.4.4" : {
     "description" : "Fixed: Schema error and custom meta fields not showing."
   },
