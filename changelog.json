@@ -1,4 +1,7 @@
 {
+  "3.4.6" : {
+    "description" : "Added support for a custom field called `schemamarkup`, fixed an issue with `aligncenter` not centering images, CTA buttons on Related pages to include the outlines."
+  },
   "3.4.5" : {
     "description" : "Added: Core Table and Core Columns blocks for Gutenberg."
   },
