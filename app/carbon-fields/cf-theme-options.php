@@ -81,6 +81,11 @@ function crb_attach_theme_options()
             Field
                 ::make('text', 'archive_page_title', __('Archives Page Title'))
                 ->set_help_text('Sets a custom title for the archive page for sites with a custom posts page.')
+                ->set_width(100),
+            Field
+                ::make('checkbox', 'is_related_stories_image_hidden', __('Hide The Related Stories Image'))
+                ->set_option_value('true')
+                ->set_help_text('Hides the image in the Related Stories block in sidebar.')
                 ->set_width(33),
             Field
                 ::make('checkbox', 'archive_hide_sidebar', __('Hide The Sidebar'))

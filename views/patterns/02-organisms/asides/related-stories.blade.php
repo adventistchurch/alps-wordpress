@@ -1,4 +1,7 @@
 @php
+
+  $isVisibleImage = !get_alps_option('is_related_stories_image_hidden');
+
   $post_type = get_post_type($post->ID);
   $category = get_the_category();
   if ($category) {
@@ -40,7 +43,7 @@
           $date = date('F j, Y', strtotime(get_the_date()));
           $category = $category;
         @endphp
-        @if (get_post_thumbnail_id())
+        @if ($isVisibleImage && get_post_thumbnail_id())
           @php
             $thumb_id = get_post_thumbnail_id();
             $thumb_size = 'horiz__4x3';
