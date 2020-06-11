@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Fixed
 - Fixed: Fixed an issue with `aligncenter` not center images.
+- Fixed: CTA buttons on Related pages to include the outlines.
 
 ##[3.4.5]
 ### Added
