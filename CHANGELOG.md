@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 - Added: Support for a custom field called `schemamarkup` to output JSON schema markup on a page.
 
+### Fixed
+- Fixed: Fixed an issue with `aligncenter` not center images.
+
 ##[3.4.5]
 ### Added
 - Added: Core Table and Core Columns blocks for Gutenberg.

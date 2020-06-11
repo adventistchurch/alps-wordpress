@@ -237,6 +237,12 @@ body.admin-bar .c-drawer {
   margin-top: 5px;
 }
 
+.wp-block-image .aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .search-submit {
   margin-top: 10px;
 }
