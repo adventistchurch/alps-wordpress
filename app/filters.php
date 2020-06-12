@@ -37,13 +37,13 @@ add_filter('body_class', function (array $classes) {
   if ($hide_sabbath == true ) {
     $hide_sabbath_screens = get_alps_option( 'sabbath_hide_screens' );
     if ($hide_sabbath_screens == 'hide-sabbath--until-small') {
-      $classes[] = 'hide-sabbath hide-sabbath--until-small';
+      $classes[] = 'hide-sabbath--until-small';
     } else if ($hide_sabbath_screens == 'hide-sabbath--until-medium') {
-      $classes[] = 'hide-sabbath hide-sabbath--until-medium';
+      $classes[] = 'hide-sabbath--until-medium';
     } else if ($hide_sabbath_screens == 'hide-sabbath--until-large') {
-      $classes[] = 'hide-sabbath hide-sabbath--until-large';
+      $classes[] = 'hide-sabbath--until-large';
     } else {
-      $classes[] = 'hide-sabbath hide-sabbath--all';
+      $classes[] = 'hide-sabbath';
     }
   }
 
