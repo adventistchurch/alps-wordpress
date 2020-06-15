@@ -96,7 +96,7 @@
       @if (isset($category) or isset($date))
         <div class="c-media-block__meta c-block__meta @if (isset($block_meta_class)){{ $block_meta_class }}@endif">
           @if (isset($category))
-            <span class="c-block__category u-text-transform--upper">{{ $category }}</span>
+            <span class="c-block__category u-text-transform--upper">{!! $category !!}</span>
           @endif
           @if (isset($date))
             <time itemprop="datePublished" class="c-block__date u-text-transform--upper">{{ $date }}</time>
