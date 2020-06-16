@@ -26,6 +26,14 @@
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+        // REMOVES OPENING QUOTE MARK FOR DROP CAPS
+        $( 'p.has-drop-cap' ).each( function() {
+          var dropCap = $( this ).html();
+          var dropCapSplit = dropCap.slice(0,1);
+          if ( dropCapSplit == '“') {
+            $(this).html( dropCap.substring(1) );
+          }
+        });
       },
     },
   };
