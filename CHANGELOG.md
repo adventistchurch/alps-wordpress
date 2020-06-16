@@ -3,6 +3,17 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+##[3.4.7]
+### Fixed
+- Fixed: & in categories displays as `&amp;` [#481](https://github.com/adventistchurch/alps-wordpress/issues/481)
+- Fixed: Category Posts Feed Label setting not working. [#466](https://github.com/adventistchurch/alps-wordpress/issues/466)
+- Fixed: Sabbath column hide settings working incorrectly. [#479](https://github.com/adventistchurch/alps-wordpress/issues/479)
+
+### Added
+- Added: a checkbox to disable images on the `Related Images` sidebar.
+
+
 ##[3.4.6]
 ### Added
 - Added: Support for a custom field called `schemamarkup` to output JSON schema markup on a page.

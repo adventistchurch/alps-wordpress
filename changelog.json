@@ -1,4 +1,7 @@
 {
+  "3.4.7" : {
+    "description" : "Added checkbox to disable related images, fixed & in categories, post feed label and sabbath column hiding."
+  },
   "3.4.6" : {
     "description" : "Added support for a custom field called `schemamarkup`, fixed an issue with `aligncenter` not centering images, CTA buttons on Related pages to include the outlines."
   },
