@@ -1,4 +1,7 @@
 {
+  "3.4.8" : {
+    "description" : "Added cache busting for WP css/js."
+  },
   "3.4.7" : {
     "description" : "Added checkbox to disable related images, fixed & in categories, post feed label and sabbath column hiding."
   },
