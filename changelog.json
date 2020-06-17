@@ -1,4 +1,7 @@
 {
+  "3.4.9" : {
+    "description" : "Added support for select `gutentor` and `qubely` blocks."
+  },
   "3.4.8" : {
     "description" : "Added cache busting for WP css/js."
   },
