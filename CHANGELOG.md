@@ -3,7 +3,7 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-##[3.4.xx]
+##[3.4.10]
 ### Added
 - Added: Switched the jquery CDN to Cloudflare's version after running extensive WebpageTest.com checks on the top 5 jQuery CDN's. The Cloudflare URL came it much a litte faster then GoogleAPis.com and a bit faster then the jquery.com version.
 

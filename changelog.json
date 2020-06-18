@@ -1,4 +1,7 @@
 {
+  "3.4.10" : {
+    "description" : "Switched the jquery CDN to Cloudflare's version."
+  },
   "3.4.9" : {
     "description" : "Added support for select `gutentor` and `qubely` blocks."
   },
