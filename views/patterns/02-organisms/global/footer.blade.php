@@ -65,5 +65,5 @@
   </div> <!-- /.c-footer--inner -->
 </footer> <!-- /.c-footer -->
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.adventist.org/alps/3/latest/js/script.min.js" type="text/javascript" async></script>
