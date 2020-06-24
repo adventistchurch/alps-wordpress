@@ -1,4 +1,7 @@
 {
+  "3.4.11" : {
+    "description" : "Fixed: Custom Logo set with WPML not Showing in 3.4.0 and forward"
+  },
   "3.4.10" : {
     "description" : "Switched the jquery CDN to Cloudflare's version."
   },
