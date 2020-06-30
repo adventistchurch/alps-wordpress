@@ -78,7 +78,16 @@ ob_start();
 comments_template( '', true);
 ob_end_clean();
 
+$customCommentTemplate = apply_filters('comments_template', 'alps.php');
+if ($customCommentTemplate !== 'alps.php') {
+    if (file_exists($customCommentTemplate)) {
+        require $customCommentTemplate;
+    }
+}
+
 @endphp
+
+@if ($customCommentTemplate === 'alps.php')
 <section class="c-comments u-spacing--double">
   @if (have_comments())
     <ul class="c-comment__list u-spacing">
@@ -99,5 +108,4 @@ ob_end_clean();
     ]);
   @endphp
 </section>
-
-
+@endif
