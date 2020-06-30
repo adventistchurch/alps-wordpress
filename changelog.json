@@ -1,4 +1,7 @@
 {
+  "3.4.12" : {
+    "description" : "Fixed: External comment systems not working."
+  },
   "3.4.11" : {
     "description" : "Fixed: Custom Logo set with WPML not Showing in 3.4.0 and forward"
   },
