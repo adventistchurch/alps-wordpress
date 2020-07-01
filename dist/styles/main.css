@@ -255,5 +255,15 @@ figure {
   margin-top: 0 !important;
 }
 
+.c-widget .c-block__breakout {
+  margin-right: 0;
+}
+
+@media (min-width: 900px) {
+  .c-widget .c-block__breakout {
+    margin-right: -1.25rem;
+  }
+}
+
 
 /*# sourceMappingURL=main.css.map*/
