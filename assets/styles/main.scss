@@ -276,3 +276,11 @@ figure {
 .u-space--top--zero {
   margin-top: 0 !important;
 }
+
+.c-widget .c-block__breakout {
+  margin-right: 0;
+
+  @media (min-width: 900px) {
+    margin-right: -1.25rem;
+  }
+}
