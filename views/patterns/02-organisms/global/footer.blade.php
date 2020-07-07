@@ -23,6 +23,8 @@
     $footer_address_country = get_alps_option('footer_address_country');
     $footer_address_phone = get_alps_option('footer_phone');
   }
+
+  $alpsVersion = \App\Core\ALPSVersions::get();
 @endphp
 @if (is_active_sidebar('footer-region'))
   <div class="c-footer-widgets u-spacing">
@@ -66,4 +68,4 @@
 </footer> <!-- /.c-footer -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.adventist.org/alps/3/latest/js/script.min.js" type="text/javascript" async></script>
+<script src="{{ $alpsVersion['scripts']['main'] }}" type="text/javascript" async></script>
