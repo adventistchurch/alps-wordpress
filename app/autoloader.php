@@ -4,14 +4,14 @@ if(!defined( 'ABSPATH' )) exit;
 const VENDOR = 'App';
 
 /**
- * Init PSR-4 autoloading for hope.* plugins
- * Class naming pattern: ACL\{ClassName}
- *                       ACL\{Folder}\{ClassName}
- *                       ACL\{Folder}\{SubFolder}\{ClassName}
+ * Init PSR-4 autoloading
+ * Class naming pattern: App\{ClassName}
+ *                       App\{Folder}\{ClassName}
+ *                       App\{Folder}\{SubFolder}\{ClassName}
  *
  * @param string $class  Class name for auto loading
  */
-function acl_autoload(string $class)
+function alps_autoload(string $class)
 {
     $parts = explode('\\', $class);
     if (count($parts) < 2) {
@@ -31,4 +31,4 @@ function acl_autoload(string $class)
         require_once $file;
     }
 }
-spl_autoload_register('acl_autoload');
+spl_autoload_register('alps_autoload');
