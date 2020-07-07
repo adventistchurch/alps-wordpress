@@ -71,11 +71,34 @@ function crb_attach_theme_options()
         }
     }
 
+    $versionFields = [];
+    $versions = \App\Core\ALPSVersions::getAll();
+    if ($versions && count($versions) > 0) {
+        $versionOptions = [];
+        foreach ($versions as $idx => $v) {
+            if ($idx === 0) {
+                $versionOptions['latest'] = __('Latest') . ' (' . $v['version'] . ')';
+            } else {
+                $versionOptions[$v['version']] = $v['version'];
+            }
+        }
+
+        $versionFields = [
+            Field
+                ::make('html', 'crb_alps_version')
+                ->set_html('<h3>ALPS Version</h3><p style="font-size:16px">Stick to the selected version of ALPS core</p>'),
+            Field
+                ::make('select', \App\Core\ALPSVersions::OPTION_KEY, __('Choose ALPS Version'))
+                ->add_options($versionOptions)
+                ->set_width(33),
+        ];
+    }
+
     Container
         ::make('theme_options', __('ALPS Theme Settings'))
         ->set_page_parent('themes.php')
         ->set_page_file('alps-theme-options')
-        ->add_tab(__('GLOBAL'), array_merge($logoFields, $globalFields))
+        ->add_tab(__('GLOBAL'), array_merge($logoFields, $globalFields, $versionFields))
         ->add_tab(__('POSTS OPTIONS'), [
             Field
                 ::make('separator', 'crb_content_display', __('Home Page Content Display')),
