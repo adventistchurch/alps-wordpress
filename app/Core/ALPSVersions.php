@@ -8,7 +8,7 @@ class ALPSVersions
 
     public function init()
     {
-        add_action(\App\Cron::ACTION, [$this, 'fetchVersions']);
+        add_action(\App\CronScheduler::ACTION, [$this, 'fetchVersions']);
     }
 
     public function fetchVersions()
