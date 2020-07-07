@@ -3,6 +3,11 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+##[3.5.0]
+### Added
+- ALPS version selector to allow an admin to set the version of ALPS used, including a "latest" option.  [#484](https://github.com/adventistchurch/alps-wordpress/issues/484)
+
+
 ##[3.4.13]
 ### Fixed
 - Fixed: BUG in breakout box right margin [#490](https://github.com/adventistchurch/alps-wordpress/issues/490)

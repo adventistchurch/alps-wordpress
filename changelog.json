@@ -1,4 +1,7 @@
 {
+  "3.5.0" : {
+    "description" : "ALPS version selector to allow an admin to set the version of ALPS used, including a `latest` option."
+  },
   "3.4.12" : {
     "description" : "Fixed: External comment systems not working."
   },
