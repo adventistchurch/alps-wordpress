@@ -1,7 +1,7 @@
 <?php
 namespace App;
 
-class Cron
+class CronScheduler
 {
     const ACTION = 'alps_cron';
 

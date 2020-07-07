@@ -788,4 +788,4 @@ function wpml_language_menu_items(){
 
 require_once('app/autoloader.php');
 (new App\Core\ALPSVersions())->init();
-(new App\Cron())->init();
+(new App\CronScheduler())->init();
