@@ -441,13 +441,11 @@ add_filter('allowed_block_types', function () {
     'sbb/guidepost',
     'sortabrilliant/guidepost',
     'nextgenthemes/arve-block',
-    'qubely/infobox',
-    'qubely/wrapper',
-    'qubely/timeline',
-    'qubely/accordion',
-    'qubely/accordion-item',
     'gutentor/m4',
     'gutentor/m4-col',
+    'gutentor/m3',
+    'kadence/infobox',
+    'kadence/accordion',
   ];
 });
 

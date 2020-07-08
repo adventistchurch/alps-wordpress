@@ -1,4 +1,7 @@
 {
+  "3.5.1" : {
+    "description" : "Removing Qubely block support and adding support for two Kadence blocks."
+  },
   "3.5.0" : {
     "description" : "ALPS version selector to allow an admin to set the version of ALPS used, including a `latest` option."
   },
