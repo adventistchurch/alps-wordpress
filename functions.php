@@ -444,8 +444,17 @@ add_filter('allowed_block_types', function () {
     'gutentor/m4',
     'gutentor/m4-col',
     'gutentor/m3',
+    'gutentor/e1',
     'kadence/infobox',
     'kadence/accordion',
+    'kadence/advancedbtn',
+    'kioken/advancedbtn',
+    'kioken/imagebox',
+    'kioken/wrapper',
+    'uagb/content-timeline',
+    'uagb/table-of-contents',
+    'gt3-photo-video-gallery/gallery',
+
   ];
 });
 

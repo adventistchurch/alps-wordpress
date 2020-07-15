@@ -1,4 +1,7 @@
 {
+  "3.5.2" : {
+    "description" : "Adding support for more kadance, gt3-photo-video-gallery, uagb, and kioken blocks."
+  },
   "3.5.1" : {
     "description" : "Removing Qubely block support and adding support for two Kadence blocks."
   },
