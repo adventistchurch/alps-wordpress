@@ -1,4 +1,7 @@
 {
+  "3.5.4" : {
+    "description" : "Fixed to properly format the localized post date."
+  },
   "3.5.3" : {
     "description" : "Adding support for `gt3pg-pro/grid` block."
   },
