@@ -135,7 +135,7 @@
                     $id = get_the_ID();
                     $title = get_the_title($id);
                     $link = get_permalink($id);
-                    $date = date('F j, Y', strtotime(get_the_date('', $id)));
+                    $date = get_the_date('F j, Y', $id);
 
                     $category = get_the_category($id);
                     if ($category) {
@@ -234,7 +234,7 @@
                     $id = $post->ID;
                     $title = get_the_title($id);
                     $link = get_permalink($id);
-                    $date = date('F j, Y', strtotime(get_the_date('', $id)));
+                    $date = get_the_date('F j, Y', $id);
 
                     $category = get_the_category($id);
                     if ($category) {
@@ -332,7 +332,7 @@
                   $id = $post_feed_full_featured_array;
                   $title = get_the_title($id);
                   $link = get_permalink($id);
-                  $date = date('F j, Y', strtotime(get_the_date('', $id)));
+                  $date = get_the_date('F j, Y', $id);
 
                   $category = get_the_category($id);
                   if ($category) {
@@ -411,7 +411,7 @@
                 $id = get_the_ID();
                 $title = get_the_title($id);
                 $link = get_permalink($id);
-                $date = date('F j, Y', strtotime(get_the_date('', $id)));
+                $date = get_the_date('F j, Y', $id);
                 $category = get_the_category($id);
                 if ($category) {
                   if (class_exists('WPSEO_Primary_Term')) {
@@ -508,7 +508,7 @@
                     $id = get_the_ID();
                     $title = get_the_title($id);
                     $link = get_permalink($id);
-                    $date = date('F j, Y', strtotime(get_the_date('', $id)));
+                    $date = get_the_date('F j, Y', $id);
                     $category = get_the_category($id);
                     if ($category) {
                       if (class_exists('WPSEO_Primary_Term')) {

@@ -40,7 +40,7 @@
           $id = get_the_ID();
           $title = get_the_title();
           $link = get_permalink();
-          $date = date('F j, Y', strtotime(get_the_date()));
+          $date = get_the_date('F j, Y');
           $category = $category;
         @endphp
         @if ($isVisibleImage && get_post_thumbnail_id())
