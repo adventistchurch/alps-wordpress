@@ -1,4 +1,7 @@
 {
+  "3.5.3" : {
+    "description" : "Adding support for `gt3pg-pro/grid` block."
+  },
   "3.5.2" : {
     "description" : "Adding support for more kadance, gt3-photo-video-gallery, uagb, and kioken blocks."
   },
