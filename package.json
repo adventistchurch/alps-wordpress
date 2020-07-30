@@ -60,7 +60,8 @@
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
     "lint:scripts": "eslint assets/scripts assets/build",
     "lint:styles": "stylelint \"assets/styles/**/*.{css,sass,scss,sss,less}\"",
-    "test": "npm run -s lint"
+    "test": "npm run -s lint",
+    "i18n-create-pot": "bin/i18n-create-pot.sh"
   },
   "engines": {
     "node": ">= 6.9.4"
