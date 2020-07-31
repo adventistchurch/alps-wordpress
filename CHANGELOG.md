@@ -3,6 +3,11 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+##[3.5.x]
+### Fixed
+- Fixed the double-spacing betwen paragraphs on articles. [#480](https://github.com/adventistchurch/alps/issues/480)
+
 ##[3.5.4]
 ### Fixed
 - Fixed to properly format the localized post date. [#327](https://github.com/adventistchurch/alps-wordpress/issues/327)
