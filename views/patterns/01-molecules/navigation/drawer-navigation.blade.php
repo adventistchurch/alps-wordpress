@@ -18,8 +18,6 @@
     <div class="c-drawer__nav">
       <div class="c-drawer__nav-primary">
         @include('patterns.01-molecules.navigation.primary-navigation')
-        <ul class="c-drawer__subnav u-theme--background-color--darker">
-        </ul>
       </div>
       <div class="c-drawer__nav-secondary">
         @include('patterns.01-molecules.navigation.secondary-navigation')
