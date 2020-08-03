@@ -1,4 +1,7 @@
 {
+  "3.5.5" : {
+    "description" : "Fixed the double-spacing betwen paragraphs on articles and buttons that weren't outlined."
+  },
   "3.5.4" : {
     "description" : "Fixed to properly format the localized post date."
   },
