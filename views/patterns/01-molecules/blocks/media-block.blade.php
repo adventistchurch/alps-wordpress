@@ -105,7 +105,7 @@
       @endif
       @if (isset($cta))
          <?php if (isset($cta)): ?>
-        <a href="{{ $link }}" class="c-block__button o-button o-button--outline o-button--white"><span class="u-icon u-icon--m u-path-fill--base u-space--half--right">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span>{{ $cta }}</a>
+        <a href="{{ $link }}" class="c-block__button o-button o-button--outline"><span class="u-icon u-icon--m u-path-fill--base u-space--half--right">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span>{{ $cta }}</a>
       <?php endif; ?>
       @endif
     </div>

@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ##[3.5.x]
 ### Fixed
 - Fixed the double-spacing betwen paragraphs on articles. [#480](https://github.com/adventistchurch/alps/issues/480)
+- Fixed issue with buttons that weren't outlined.
 
 ##[3.5.4]
 ### Fixed

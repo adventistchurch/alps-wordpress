@@ -76,7 +76,7 @@
         </div>
       <?php endif; ?>
       <?php if (isset($cta)): ?>
-        <a href="<?php echo $link ?>" class="c-block__button o-button o-button--outline o-button--white"><span class="u-icon u-icon--m u-path-fill--base u-space--half--right"><?php include(locate_template('patterns/00-atoms/icons/icon-arrow-long-right.blade.php')); ?></span><?php echo $cta ?></a>
+        <a href="<?php echo $link ?>" class="c-block__button o-button o-button--outline"><span class="u-icon u-icon--m u-path-fill--base u-space--half--right"><?php include(locate_template('patterns/00-atoms/icons/icon-arrow-long-right.blade.php')); ?></span><?php echo $cta ?></a>
       <?php endif; ?>
     </div>
   </div> <!-- .c-media-block__content -->
