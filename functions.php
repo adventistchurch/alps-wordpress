@@ -164,7 +164,7 @@ function adventist_register_required_plugins() {
 add_filter('piklist_admin_pages', 'piklist_theme_setting_pages');
 function piklist_theme_setting_pages($pages) {
   $pages[] = array(
-    'page_title' => __('ALPS Custom Settings')
+    'page_title' => __('ALPS Custom Settings', 'alps')
     ,'menu_title' => __('ALPS Custom Settings', 'alps')
     ,'sub_menu' => 'themes.php' //Under Appearance menu
     ,'capability' => 'manage_options'
@@ -298,18 +298,18 @@ function auto_nav_creation_footer() {
 
     // Set up default menu items
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Trademark and Logo Usage'),
+      'menu-item-title' =>  __('Trademark and Logo Usage', 'alps'),
       'menu-item-classes' => '',
       'menu-item-url' => 'https://www.adventist.org/en/copyright/trademark-and-logo-usage/',
       'menu-item-status' => 'publish'
     ));
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Legal Notice'),
+      'menu-item-title' =>  __('Legal Notice', 'alps'),
       'menu-item-url' => 'https://www.adventist.org/en/copyright/legal-notice/',
       'menu-item-status' => 'publish'
     ));
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Privacy Policy'),
+      'menu-item-title' =>  __('Privacy Policy', 'alps'),
       'menu-item-url' => 'http://privacy.adventist.org/en/',
       'menu-item-status' => 'publish'
     ));
@@ -336,23 +336,23 @@ function auto_nav_creation_learn_more() {
 
     // Set up default menu items
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Adventist.org'),
+      'menu-item-title' =>  __('Adventist.org', 'alps'),
       'menu-item-classes' => '',
       'menu-item-url' => 'https://www.adventist.org/en/',
       'menu-item-status' => 'publish'
     ));
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('ADRA'),
+      'menu-item-title' =>  __('ADRA', 'alps'),
       'menu-item-url' => 'https://adra.org/',
       'menu-item-status' => 'publish'
     ));
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Adventist World Radio'),
+      'menu-item-title' =>  __('Adventist World Radio', 'alps'),
       'menu-item-url' => 'https://www.awr.org/',
       'menu-item-status' => 'publish'
     ));
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Hope Channel'),
+      'menu-item-title' =>  __('Hope Channel', 'alps'),
       'menu-item-url' => 'https://www.hopetv.org/',
       'menu-item-status' => 'publish'
     ));
@@ -635,7 +635,7 @@ if ( !$cf ) {
         $url = add_query_arg( array( 'action' => 'alps_convert_plugin' ), admin_url( 'admin.php' ));
     ?>
     <div class="notice notice-warning is-dismissible" style="background:#fff;border:2px solid black; border-left:6px solid red"">
-        <p style="font-size:28px"><?php _e( 'ALPS: The ALPS theme requires an update. Please read and follow the instructions below.' ) ?></p>
+        <p style="font-size:28px"><?php _e( 'ALPS: The ALPS theme requires an update. Please read and follow the instructions below.', 'alps' ) ?></p>
         <?php
         // FIRST CHECK FOR WP VERSION
         if ( version_compare( get_bloginfo( 'version' ), '5.2.4', '<' ) ) { ?>
@@ -652,8 +652,8 @@ if ( !$cf ) {
         <?php
         }
         else { ?>
-        <p style="font-size:22px"><?php _e( 'Clicking the link below will run an upgrade script. This will download, install and run a converter plugin. After running, the plugin will uninstall and delete itself, and remove the Piklist plugin completely from your site.' ); ?></p>
-        <p style="font-size:22px"><?php _e( '<a href="'. $url . '">click here to install and run the field converter plugin</a>.' ); ?></p>
+        <p style="font-size:22px"><?php _e( 'Clicking the link below will run an upgrade script. This will download, install and run a converter plugin. After running, the plugin will uninstall and delete itself, and remove the Piklist plugin completely from your site.', 'alps' ); ?></p>
+        <p style="font-size:22px"><?php _e( '<a href="'. $url . '">click here to install and run the field converter plugin</a>.', 'alps' ); ?></p>
 
         <?php } ?>
     </div>
@@ -756,10 +756,10 @@ function alps_admin_notice__alps_update_complete() {
         if ( $_GET[ 'action' ]  == 'alps_update_complete' ) {
     ?>
     <div class="notice notice-warning is-dismissible" style="background:#fff;border:2px solid black; border-left:6px solid red">
-        <p style="font-size:28px"><?php _e( 'ALPS: The update is complete.' ) ?></p>
+        <p style="font-size:28px"><?php _e( 'ALPS: The update is complete.', 'alps' ) ?></p>
         <p style="font-size:22px"><?php _e( '
             The converter plugin has run and updated your ALPS powered site. This plugin has removed both itself and Piklist from your site.
-        ' ); ?></p>
+        ', 'alps' ); ?></p>
     </div>
 <?php
         }

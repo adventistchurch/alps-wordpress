@@ -13,6 +13,7 @@ for file in $(find ./views ./app functions.php -iname '*.php'); do
   xgettext \
     --from-code=UTF-8 \
     --keyword=__:1,2c \
+    --keyword=_e:1,2c \
     --join-existing \
     --output=$POT_TMP_FILE \
     $file
@@ -24,6 +25,7 @@ for file in $(find ./views -iname '*.blade.php'); do
     --language=Python \
     --from-code=UTF-8 \
     --keyword=__:1,2c \
+    --keyword=_e:1,2c \
     --join-existing \
     --output=$POT_TMP_FILE \
     $file

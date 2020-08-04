@@ -181,7 +181,7 @@
       @endif
 
       @else
-        <p class="u-padding--left">{{ _e('Sorry, no results were found.', 'alps') }}</p>
+        <p class="u-padding--left">{{ __('Sorry, no results were found.', 'alps') }}</p>
       @endif
 
       @if (is_active_sidebar('category-bottom'))

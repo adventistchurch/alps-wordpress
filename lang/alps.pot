@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-30 12:36+0300\n"
+"POT-Creation-Date: 2020-08-04 21:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,7 +139,7 @@ msgctxt "alps"
 msgid "Error locating <code>%s</code> for inclusion."
 msgstr ""
 
-#: functions.php:168
+#: functions.php:167 functions.php:168
 msgctxt "alps"
 msgid "ALPS Custom Settings"
 msgstr ""
@@ -147,6 +147,41 @@ msgstr ""
 #: functions.php:177
 msgctxt "alps"
 msgid "Save ALPS Theme Settings"
+msgstr ""
+
+#: functions.php:301
+msgctxt "alps"
+msgid "Trademark and Logo Usage"
+msgstr ""
+
+#: functions.php:307
+msgctxt "alps"
+msgid "Legal Notice"
+msgstr ""
+
+#: functions.php:312
+msgctxt "alps"
+msgid "Privacy Policy"
+msgstr ""
+
+#: functions.php:339
+msgctxt "alps"
+msgid "Adventist.org"
+msgstr ""
+
+#: functions.php:345
+msgctxt "alps"
+msgid "ADRA"
+msgstr ""
+
+#: functions.php:350
+msgctxt "alps"
+msgid "Adventist World Radio"
+msgstr ""
+
+#: functions.php:355
+msgctxt "alps"
+msgid "Hope Channel"
 msgstr ""
 
 #: views/index.blade.php:17
@@ -178,4 +213,111 @@ msgstr ""
 #: views/archive.blade.php:14
 msgctxt "alps"
 msgid "Archives"
+msgstr ""
+
+#: app/carbon-fields/widgets/alps-post-feed.php:228
+msgctxt "alps"
+msgid "There are no posts at this time."
+msgstr ""
+
+#: app/carbon-fields/widgets/alps-author-box.php:25
+msgctxt "alps"
+msgid "Website"
+msgstr ""
+
+#: app/carbon-fields/widgets/alps-author-box.php:35
+#: views/patterns/01-molecules/components/share-tools.blade.php:5
+msgctxt "alps"
+msgid "Facebook"
+msgstr ""
+
+#: app/carbon-fields/widgets/alps-author-box.php:45
+#: views/patterns/01-molecules/components/share-tools.blade.php:8
+msgctxt "alps"
+msgid "Twitter"
+msgstr ""
+
+#: app/carbon-fields/widgets/alps-author-box.php:52
+msgctxt "alps"
+msgid "Google+"
+msgstr ""
+
+#: functions.php:393
+msgctxt "alps"
+msgid ""
+"On theme activation, go to Appearance > Settings and save the settings to "
+"display the footer default information."
+msgstr ""
+
+#: views/template-posts.blade.php:566
+msgctxt "alps"
+msgid "See All"
+msgstr ""
+
+#: views/404.blade.php:6
+msgctxt "alps"
+msgid "Page not found"
+msgstr ""
+
+#: views/404.blade.php:14
+#: views/patterns/02-organisms/content/content-posts.blade.php:184
+#: views/patterns/02-organisms/content/content-search.blade.php:53
+msgctxt "alps"
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: views/404.blade.php:15
+msgctxt "alps"
+msgid "Go to homepage"
+msgstr ""
+
+#: views/patterns/01-molecules/forms/search.blade.php:5
+msgctxt "alps"
+msgid "Submit"
+msgstr ""
+
+#: views/patterns/01-molecules/navigation/secondary-navigation.blade.php:76
+#: views/patterns/02-organisms/content/content-search.blade.php:9
+msgctxt "alps"
+msgid "Search"
+msgstr ""
+
+#: views/patterns/01-molecules/navigation/secondary-navigation.blade.php:81
+msgctxt "alps"
+msgid "Menu"
+msgstr ""
+
+#: views/patterns/01-molecules/components/share-tools.blade.php:2
+msgctxt "alps"
+msgid "Share"
+msgstr ""
+
+#: views/patterns/01-molecules/components/share-tools.blade.php:11
+msgctxt "alps"
+msgid "Google"
+msgstr ""
+
+#: views/patterns/01-molecules/components/share-tools.blade.php:14
+msgctxt "alps"
+msgid "Email"
+msgstr ""
+
+#: views/patterns/02-organisms/sections/article-footer.blade.php:14
+msgctxt "alps"
+msgid "Comment"
+msgstr ""
+
+#: views/patterns/02-organisms/content/content-search.blade.php:22
+msgctxt "alps"
+msgid "Settings"
+msgstr ""
+
+#: views/patterns/02-organisms/asides/related-stories.blade.php:33
+msgctxt "alps"
+msgid "Related Stories"
+msgstr ""
+
+#: views/patterns/02-organisms/asides/related-stories.blade.php:74
+msgctxt "alps"
+msgid "There are no related stories at this time."
 msgstr ""
