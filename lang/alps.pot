@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-04 21:47+0300\n"
+"POT-Creation-Date: 2020-08-04 22:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,6 +62,11 @@ msgctxt "alps"
 msgid "Page Sidebar"
 msgstr ""
 
+#: app/setup.php:114
+msgctxt "alps"
+msgid "Posts Template Sidebar"
+msgstr ""
+
 #: app/setup.php:118
 msgctxt "alps"
 msgid "Post Footer Region"
@@ -80,6 +85,60 @@ msgstr ""
 #: app/setup.php:130
 msgctxt "alps"
 msgid "Category Bottom"
+msgstr ""
+
+#: app/carbon-fields/_init.php:85 functions.php:638
+msgctxt "alps"
+msgid ""
+"ALPS: The ALPS theme requires an update. Please read and follow the "
+"instructions below."
+msgstr ""
+
+#: app/carbon-fields/_init.php:86 functions.php:655
+msgctxt "alps"
+msgid ""
+"Clicking the link below will run an upgrade script. This will download, "
+"install and run a converter plugin. After running, the plugin will uninstall "
+"and delete itself, and remove the Piklist plugin completely from your site."
+msgstr ""
+
+#: app/carbon-fields/_init.php:87 functions.php:656
+msgctxt "alps"
+msgid "<a href=\""
+msgstr ""
+
+#: app/carbon-fields/_init.php:167 functions.php:759
+msgctxt "alps"
+msgid "ALPS: The update is complete."
+msgstr ""
+
+#: app/carbon-fields/_init.php:168
+msgctxt "alps"
+msgid ""
+"The converter plugin has run and updated your ALPS powered site. This plugin "
+"has removed both itself and Piklist from your site."
+msgstr ""
+
+#: app/carbon-fields/widgets/alps-post-feed.php:228
+msgctxt "alps"
+msgid "There are no posts at this time."
+msgstr ""
+
+#: app/carbon-fields/widgets/alps-author-box.php:25
+msgctxt "alps"
+msgid "Website"
+msgstr ""
+
+#: app/carbon-fields/widgets/alps-author-box.php:35
+#: views/patterns/01-molecules/components/share-tools.blade.php:5
+msgctxt "alps"
+msgid "Facebook"
+msgstr ""
+
+#: app/carbon-fields/widgets/alps-author-box.php:45
+#: views/patterns/01-molecules/components/share-tools.blade.php:8
+msgctxt "alps"
+msgid "Twitter"
 msgstr ""
 
 #: app/controllers/app.php:20
@@ -184,64 +243,6 @@ msgctxt "alps"
 msgid "Hope Channel"
 msgstr ""
 
-#: views/index.blade.php:17
-#: views/patterns/02-organisms/sections/page-header.blade.php:25
-#: views/home.blade.php:20
-msgctxt "alps"
-msgid "Recent Posts"
-msgstr ""
-
-#: views/patterns/02-organisms/sections/page-header.blade.php:30
-#: views/category.blade.php:21
-msgctxt "alps"
-msgid "Category"
-msgstr ""
-
-#: views/patterns/02-organisms/sections/related-pages.blade.php:108
-#: views/patterns/02-organisms/content/content-archive.blade.php:46
-#: views/patterns/02-organisms/content/content-posts.blade.php:120
-#: views/patterns/02-organisms/content/content-search.blade.php:44
-msgctxt "alps"
-msgid "Read More"
-msgstr ""
-
-#: views/patterns/02-organisms/sections/comments.blade.php:105
-msgctxt "alps"
-msgid "Leave a Comment"
-msgstr ""
-
-#: views/archive.blade.php:14
-msgctxt "alps"
-msgid "Archives"
-msgstr ""
-
-#: app/carbon-fields/widgets/alps-post-feed.php:228
-msgctxt "alps"
-msgid "There are no posts at this time."
-msgstr ""
-
-#: app/carbon-fields/widgets/alps-author-box.php:25
-msgctxt "alps"
-msgid "Website"
-msgstr ""
-
-#: app/carbon-fields/widgets/alps-author-box.php:35
-#: views/patterns/01-molecules/components/share-tools.blade.php:5
-msgctxt "alps"
-msgid "Facebook"
-msgstr ""
-
-#: app/carbon-fields/widgets/alps-author-box.php:45
-#: views/patterns/01-molecules/components/share-tools.blade.php:8
-msgctxt "alps"
-msgid "Twitter"
-msgstr ""
-
-#: app/carbon-fields/widgets/alps-author-box.php:52
-msgctxt "alps"
-msgid "Google+"
-msgstr ""
-
 #: functions.php:393
 msgctxt "alps"
 msgid ""
@@ -249,9 +250,25 @@ msgid ""
 "display the footer default information."
 msgstr ""
 
+#: functions.php:760
+msgctxt "alps"
+msgid ""
+"\n"
+"            The converter plugin has run and updated your ALPS powered site. "
+"This plugin has removed both itself and Piklist from your site.\n"
+"        "
+msgstr ""
+
 #: views/template-posts.blade.php:566
 msgctxt "alps"
 msgid "See All"
+msgstr ""
+
+#: views/index.blade.php:17
+#: views/patterns/02-organisms/sections/page-header.blade.php:25
+#: views/home.blade.php:20
+msgctxt "alps"
+msgid "Recent Posts"
 msgstr ""
 
 #: views/404.blade.php:6
@@ -294,12 +311,36 @@ msgstr ""
 
 #: views/patterns/01-molecules/components/share-tools.blade.php:11
 msgctxt "alps"
-msgid "Google"
+msgid "Email"
 msgstr ""
 
-#: views/patterns/01-molecules/components/share-tools.blade.php:14
+#: views/patterns/02-organisms/sections/page-header.blade.php:30
+#: views/category.blade.php:21
 msgctxt "alps"
-msgid "Email"
+msgid "Category"
+msgstr ""
+
+#: views/patterns/02-organisms/sections/related-pages.blade.php:108
+#: views/patterns/02-organisms/content/content-archive.blade.php:46
+#: views/patterns/02-organisms/content/content-posts.blade.php:120
+#: views/patterns/02-organisms/content/content-search.blade.php:44
+msgctxt "alps"
+msgid "Read More"
+msgstr ""
+
+#: views/patterns/02-organisms/sections/comments.blade.php:25
+msgctxt "alps"
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: views/patterns/02-organisms/sections/comments.blade.php:34
+msgctxt "alps"
+msgid "Edit"
+msgstr ""
+
+#: views/patterns/02-organisms/sections/comments.blade.php:105
+msgctxt "alps"
+msgid "Leave a Comment"
 msgstr ""
 
 #: views/patterns/02-organisms/sections/article-footer.blade.php:14
@@ -320,4 +361,9 @@ msgstr ""
 #: views/patterns/02-organisms/asides/related-stories.blade.php:74
 msgctxt "alps"
 msgid "There are no related stories at this time."
+msgstr ""
+
+#: views/archive.blade.php:14
+msgctxt "alps"
+msgid "Archives"
 msgstr ""
