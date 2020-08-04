@@ -17,6 +17,9 @@
         break;
       default:
         $headerTitle = single_cat_title('', false);
+        if (get_alps_option('posts_label')) {
+            $headerKicker = __('Category', 'alps');
+        }
     }
   @endphp
 

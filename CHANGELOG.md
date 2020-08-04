@@ -3,6 +3,91 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+##[3.5.5]
+### Fixed
+- Fixed the double-spacing betwen paragraphs on articles. [#480](https://github.com/adventistchurch/alps/issues/480)
+- Fixed issue with buttons that weren't outlined.
+
+##[3.5.4]
+### Fixed
+- Fixed to properly format the localized post date. [#327](https://github.com/adventistchurch/alps-wordpress/issues/327)
+
+##[3.5.3]
+### Fixed
+- Adding support for `gt3pg-pro/grid` block.
+
+##[3.5.2]
+### Fixed
+- Adding support for more kadance, gt3-photo-video-gallery, uagb, and kioken blocks.
+
+##[3.5.1]
+### Fixed
+- Removing Qubely block support and adding support for two Kadence blocks.
+
+##[3.5.0]
+### Added
+- ALPS version selector to allow an admin to set the version of ALPS used, including a "latest" option.  [#484](https://github.com/adventistchurch/alps-wordpress/issues/484)
+
+##[3.4.13]
+### Fixed
+- Fixed: BUG in breakout box right margin [#490](https://github.com/adventistchurch/alps-wordpress/issues/490)
+
+##[3.4.12]
+### Fixed
+- Fixed: External comment systems not working. [#493](https://github.com/adventistchurch/alps-wordpress/issues/493)
+
+##[3.4.11]
+### Fixed
+- Fixed: Custom Logo set with WPML not Showing in 3.4.0 and forward [#469](https://github.com/adventistchurch/alps-wordpress/issues/469)
+
+##[3.4.10]
+### Added
+- Added: Switched the jquery CDN to Cloudflare's version after running extensive WebpageTest.com checks on the top 5 jQuery CDN's. The Cloudflare URL came it much a litte faster then GoogleAPis.com and a bit faster then the jquery.com version.
+
+##[3.4.9]
+### Added
+- Added: Added support for select `gutentor` and `qubely` blocks.
+
+##[3.4.8]
+### Fixed
+- Fixed: adding cache busting for WP css/js [#487](https://github.com/adventistchurch/alps-wordpress/issues/478)
+
+##[3.4.7]
+### Fixed
+- Fixed: & in categories displays as `&amp;` [#481](https://github.com/adventistchurch/alps-wordpress/issues/481)
+- Fixed: Category Posts Feed Label setting not working. [#466](https://github.com/adventistchurch/alps-wordpress/issues/466)
+- Fixed: Sabbath column hide settings working incorrectly. [#479](https://github.com/adventistchurch/alps-wordpress/issues/479)
+
+### Added
+- Added: a checkbox to disable images on the `Related Images` sidebar.
+
+
+##[3.4.6]
+### Added
+- Added: Support for a custom field called `schemamarkup` to output JSON schema markup on a page.
+
+### Fixed
+- Fixed: Fixed an issue with `aligncenter` not centering images.
+- Fixed: CTA buttons on Related pages to include the outlines.
+
+##[3.4.5]
+### Added
+- Added: Core Table and Core Columns blocks for Gutenberg.
+
+##[3.4.4]
+### Fixed
+- Fixed: Fixed an error with the footer schema not using the correct `itemprop` name for the `postalCode`.
+- Fixed: Custom fields being hidden to prevent Piklist error. [#140](https://github.com/adventistchurch/alps-wordpress/issues/140)
+
+##[3.4.3]
+### Fixed
+- Fixed: Comments not showing. [#462](https://github.com/adventistchurch/alps-wordpress/issues/462)
+
+##[3.4.2]
+### Fixed
+- Fixed: CTA button missing from Full screen hero. [#476](https://github.com/adventistchurch/alps-wordpress/issues/476)
+
 ##[3.4.1]
 ### Fixed
 - Fixed: The theme was missing the `hide-sabbath` class on all instances of the Sabbath column being hidden. [#29](https://github.com/adventistchurch/alps-gutenberg-blocks/issues/29)

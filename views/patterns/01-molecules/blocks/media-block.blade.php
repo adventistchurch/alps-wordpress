@@ -96,15 +96,17 @@
       @if (isset($category) or isset($date))
         <div class="c-media-block__meta c-block__meta @if (isset($block_meta_class)){{ $block_meta_class }}@endif">
           @if (isset($category))
-            <span class="c-block__category u-text-transform--upper">{{ $category }}</span>
+            <span class="c-block__category u-text-transform--upper">{!! $category !!}</span>
           @endif
           @if (isset($date))
-            <time class="c-block__date u-text-transform--upper">{{ $date }}</time>
+            <time itemprop="datePublished" class="c-block__date u-text-transform--upper">{{ $date }}</time>
           @endif
         </div>
       @endif
       @if (isset($cta))
-        <a href="{{ $link }}" class="c-block__button o-button o-button--outline">{{ $cta }}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span></a>
+         <?php if (isset($cta)): ?>
+        <a href="{{ $link }}" class="c-block__button o-button o-button--outline"><span class="u-icon u-icon--m u-path-fill--base u-space--half--right">@include('patterns.00-atoms.icons.icon-arrow-long-right')</span>{{ $cta }}</a>
+      <?php endif; ?>
       @endif
     </div>
   </div> <!-- .c-media-block__content -->

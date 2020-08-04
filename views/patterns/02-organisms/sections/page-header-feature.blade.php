@@ -25,7 +25,7 @@
 
   $kicker = get_post_meta($post->ID, $cf_.'kicker', true);
   $block_type = get_post_format($id);
-  $date = date('F j, Y', strtotime(get_the_date('', $id)));
+  $date = get_the_date('F j, Y', $id);
   $title_h1 = true;
 
   $display_title = get_post_meta($post->ID, $cf_.'display_title', true);

@@ -159,15 +159,6 @@ function adventist_register_required_plugins() {
 }
 
 /**
- * Fix for Piklist fields not saving
- */
-function my_custom_init() {
-  remove_post_type_support('post', 'custom-fields');
-  remove_post_type_support('page', 'custom-fields');
-}
-add_action('init', 'my_custom_init');
-
-/**
  * Piklist Theme Settings
  */
 add_filter('piklist_admin_pages', 'piklist_theme_setting_pages');
@@ -430,6 +421,8 @@ add_filter('allowed_block_types', function () {
     'core/video',
     'core/html',
     'core/embed',
+    'core/columns',
+    'core/table',
     'core/paragraph',
     'core/separator',
     'alps-gutenberg-blocks/accordion',
@@ -448,6 +441,20 @@ add_filter('allowed_block_types', function () {
     'sbb/guidepost',
     'sortabrilliant/guidepost',
     'nextgenthemes/arve-block',
+    'gutentor/m4',
+    'gutentor/m4-col',
+    'gutentor/m3',
+    'gutentor/e1',
+    'kadence/infobox',
+    'kadence/accordion',
+    'kadence/advancedbtn',
+    'kioken/advancedbtn',
+    'kioken/imagebox',
+    'kioken/wrapper',
+    'uagb/content-timeline',
+    'uagb/table-of-contents',
+    'gt3-photo-video-gallery/gallery',
+    'gt3pg-pro/grid',
   ];
 });
 
@@ -786,3 +793,6 @@ function wpml_language_menu_items(){
   }
 }
 
+require_once('app/autoloader.php');
+(new App\Core\ALPSVersions())->init();
+(new App\CronScheduler())->init();

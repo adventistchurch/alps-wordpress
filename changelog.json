@@ -1,4 +1,55 @@
 {
+  "3.5.5" : {
+    "description" : "Fixed the double-spacing betwen paragraphs on articles and buttons that weren't outlined."
+  },
+  "3.5.4" : {
+    "description" : "Fixed to properly format the localized post date."
+  },
+  "3.5.3" : {
+    "description" : "Adding support for `gt3pg-pro/grid` block."
+  },
+  "3.5.2" : {
+    "description" : "Adding support for more kadance, gt3-photo-video-gallery, uagb, and kioken blocks."
+  },
+  "3.5.1" : {
+    "description" : "Removing Qubely block support and adding support for two Kadence blocks."
+  },
+  "3.5.0" : {
+    "description" : "ALPS version selector to allow an admin to set the version of ALPS used, including a `latest` option."
+  },
+  "3.4.12" : {
+    "description" : "Fixed: External comment systems not working."
+  },
+  "3.4.11" : {
+    "description" : "Fixed: Custom Logo set with WPML not Showing in 3.4.0 and forward"
+  },
+  "3.4.10" : {
+    "description" : "Switched the jquery CDN to Cloudflare's version."
+  },
+  "3.4.9" : {
+    "description" : "Added support for select `gutentor` and `qubely` blocks."
+  },
+  "3.4.8" : {
+    "description" : "Added cache busting for WP css/js."
+  },
+  "3.4.7" : {
+    "description" : "Added checkbox to disable related images, fixed & in categories, post feed label and sabbath column hiding."
+  },
+  "3.4.6" : {
+    "description" : "Added support for a custom field called `schemamarkup`, fixed an issue with `aligncenter` not centering images, CTA buttons on Related pages to include the outlines."
+  },
+  "3.4.5" : {
+    "description" : "Added: Core Table and Core Columns blocks for Gutenberg."
+  },
+  "3.4.4" : {
+    "description" : "Fixed: Schema error and custom meta fields not showing."
+  },
+  "3.4.3" : {
+    "description" : "Fixed: Comments not showing."
+  },
+  "3.4.2" : {
+    "description" : "Fixed: CTA button missing from Full screen hero."
+  },
   "3.4.1" : {
     "description" : "Fixed: The theme was missing the `hide-sabbath` class on all instances of the Sabbath column being hidden."
   },

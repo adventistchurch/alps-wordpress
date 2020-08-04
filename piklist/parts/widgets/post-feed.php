@@ -54,7 +54,7 @@
               }
           }
           if ($featured == true) {
-              $date = date('F j, Y', strtotime(get_the_date()));
+              $date = get_the_date('F j, Y');
               $excerpt = get_the_excerpt($id);
               $body = get_the_content($id);
               $thumb_id = get_post_thumbnail_id($id);

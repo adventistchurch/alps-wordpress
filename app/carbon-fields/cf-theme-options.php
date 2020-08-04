@@ -6,64 +6,99 @@ add_action('carbon_fields_register_fields', 'crb_attach_theme_options');
 
 function crb_attach_theme_options()
 {
+    $globalFields = [
+        Field
+            ::make('separator', 'crb_theme_colors', __('Theme Color Options / Grid')),
+        Field
+            ::make('select', 'theme_color', __('Theme Color'))
+            ->add_options([
+                'treefrog' => __('Treefrog'),
+                'ming' => __('Ming'),
+                'bluejay' => __('Bluejay'),
+                'iris' => __('Iris'),
+                'lily' => __('Lily'),
+                'scarlett' => __('Scarlett'),
+                'campfire' => __('Campfire'),
+                'winter' => __('Winter'),
+                'forest' => __('Forest'),
+                'cave' => __('Cave'),
+                'denim' => __('Denim'),
+                'emperor' => __('Emperor'),
+                'grapevine' => __('Grapevine'),
+                'velvet' => __('Velvet'),
+                'earth' => __('Earth'),
+                'night' => __('Night')
+            ])
+            ->set_width(33),
+        Field
+            ::make('checkbox', 'dark_theme', __('Dark Theme'))
+            ->set_option_value('true')
+            ->set_help_text('Select if you would like the theme to be dark.')
+            ->set_width(33),
+        Field
+            ::make('checkbox', 'grid_lines', __('Grid Lines'))
+            ->set_option_value('true')
+            ->set_help_text('Select if you would like show the grid lines.')
+            ->set_width(33),
+        Field
+            ::make('html', 'crb_statements_exp')
+            ->set_html('<h3>Global Site Statements</h3><p style="font-size:16px">Both of these statements show up in the navigation drawer.</p>'),
+        Field
+            ::make('textarea', 'site_branding_statement', __('Site Branding Statement'))
+            ->set_default_value('[Site Name] is a website of the Seventh-day Adventist church in [Region Name].')
+            ->set_help_text('Found in the navigation drawer')
+            ->set_rows(2)
+            ->set_width(50),
+        Field
+            ::make('textarea', 'global_branding_statement', __('Global Branding Statement'))
+            ->set_default_value('Seventh-day Adventists are devoted to helping people understand the Bible to find freedom, healing, and hope in Jesus.')
+            ->set_help_text('Found in the navigation drawer')
+            ->set_rows(2)
+            ->set_width(50),
+    ];
+
+    $languages = apply_filters('wpml_active_languages', NULL);
+    $logoFields = [
+        Field::make('separator', 'crb_logo', __('Logo')),
+    ];
+    if (empty($languages)) {
+        $logoFields[] = Field::make('image', 'logo', __('Logo'));
+    } else {
+        foreach ($languages as $lang) {
+            $logoFields[] = Field
+                ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')'))
+                ->set_width(33);
+        }
+    }
+
+    $versionFields = [];
+    $versions = \App\Core\ALPSVersions::getAll();
+    if ($versions && count($versions) > 0) {
+        $versionOptions = [];
+        foreach ($versions as $idx => $v) {
+            if ($idx === 0) {
+                $versionOptions['latest'] = __('Latest') . ' (' . $v['version'] . ')';
+            } else {
+                $versionOptions[$v['version']] = $v['version'];
+            }
+        }
+
+        $versionFields = [
+            Field
+                ::make('html', 'crb_alps_version')
+                ->set_html('<h3>ALPS Version</h3><p style="font-size:16px">Stick to the selected version of ALPS core</p>'),
+            Field
+                ::make('select', \App\Core\ALPSVersions::OPTION_KEY, __('Choose ALPS Version'))
+                ->add_options($versionOptions)
+                ->set_width(33),
+        ];
+    }
+
     Container
         ::make('theme_options', __('ALPS Theme Settings'))
         ->set_page_parent('themes.php')
         ->set_page_file('alps-theme-options')
-        ->add_tab(__('GLOBAL'), [
-            Field
-                ::make('separator', 'crb_logo', __('Logo')),
-            Field
-                ::make('image', 'logo', __('Logo')),
-            Field
-                ::make('separator', 'crb_theme_colors', __('Theme Color Options / Grid')),
-            Field
-                ::make('select', 'theme_color', __('Theme Color'))
-                ->add_options([
-                    'treefrog' => __('Treefrog'),
-                    'ming' => __('Ming'),
-                    'bluejay' => __('Bluejay'),
-                    'iris' => __('Iris'),
-                    'lily' => __('Lily'),
-                    'scarlett' => __('Scarlett'),
-                    'campfire' => __('Campfire'),
-                    'winter' => __('Winter'),
-                    'forest' => __('Forest'),
-                    'cave' => __('Cave'),
-                    'denim' => __('Denim'),
-                    'emperor' => __('Emperor'),
-                    'grapevine' => __('Grapevine'),
-                    'velvet' => __('Velvet'),
-                    'earth' => __('Earth'),
-                    'night' => __('Night')
-                ])
-                ->set_width(33),
-            Field
-                ::make('checkbox', 'dark_theme', __('Dark Theme'))
-                ->set_option_value('true')
-                ->set_help_text('Select if you would like the theme to be dark.')
-                ->set_width(33),
-            Field
-                ::make('checkbox', 'grid_lines', __('Grid Lines'))
-                ->set_option_value('true')
-                ->set_help_text('Select if you would like show the grid lines.')
-                ->set_width(33),
-            Field
-                ::make('html', 'crb_statements_exp')
-                ->set_html('<h3>Global Site Statements</h3><p style="font-size:16px">Both of these statements show up in the navigation drawer.</p>'),
-            Field
-                ::make('textarea', 'site_branding_statement', __('Site Branding Statement'))
-                ->set_default_value('[Site Name] is a website of the Seventh-day Adventist church in [Region Name].')
-                ->set_help_text('Found in the navigation drawer')
-                ->set_rows(2)
-                ->set_width(50),
-            Field
-                ::make('textarea', 'global_branding_statement', __('Global Branding Statement'))
-                ->set_default_value('Seventh-day Adventists are devoted to helping people understand the Bible to find freedom, healing, and hope in Jesus.')
-                ->set_help_text('Found in the navigation drawer')
-                ->set_rows(2)
-                ->set_width(50),
-        ])
+        ->add_tab(__('GLOBAL'), array_merge($logoFields, $globalFields, $versionFields))
         ->add_tab(__('POSTS OPTIONS'), [
             Field
                 ::make('separator', 'crb_content_display', __('Home Page Content Display')),
@@ -81,6 +116,11 @@ function crb_attach_theme_options()
             Field
                 ::make('text', 'archive_page_title', __('Archives Page Title'))
                 ->set_help_text('Sets a custom title for the archive page for sites with a custom posts page.')
+                ->set_width(100),
+            Field
+                ::make('checkbox', 'is_related_stories_image_hidden', __('Hide The Related Stories Image'))
+                ->set_option_value('true')
+                ->set_help_text('Hides the image in the Related Stories block in sidebar.')
                 ->set_width(33),
             Field
                 ::make('checkbox', 'archive_hide_sidebar', __('Hide The Sidebar'))
