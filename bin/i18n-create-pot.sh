@@ -45,3 +45,6 @@ rm -f $POT_TMP_FILE
 
 # Remove backup file, created by sed. "-i" is required in macOS version of sed.
 rm -f $POT_TMP_FILE.bak
+
+# Update the lang/alps.php file
+node bin/i18n-extract-blade.js
