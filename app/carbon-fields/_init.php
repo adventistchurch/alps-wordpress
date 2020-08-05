@@ -31,10 +31,10 @@ function cf_admin_style() {
 add_action('admin_enqueue_scripts', 'cf_admin_style');
 
 // ADD CF JAVASCRIPT
-//function cf_admin_js($hook) {
-//  wp_enqueue_script('cf-admin-js',  get_template_directory_uri() . '/carbon-fields/cf-admin.js');
-//}
-//add_action('admin_enqueue_scripts', 'cf_admin_js');
+function cf_admin_js($hook) {
+  wp_enqueue_script('cf-admin-js',  get_template_directory_uri() . '/carbon-fields/cf-admin.js');
+}
+add_action('admin_enqueue_scripts', 'cf_admin_js');
 
 function get_alps_field($field, $id = NULL) {
   global $post;
