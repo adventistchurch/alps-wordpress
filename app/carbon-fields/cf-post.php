@@ -23,11 +23,3 @@ function crb_attach_post_template_fields()
     Field::make('checkbox', 'hide_featured_image', __('Hide Featured Image'))->set_help_text(__('Hides the featured image on the page/post header for this entry.'))->set_option_value('true')->set_width(50)
   ));
 }
-
-add_action('carbon_fields_register_fields', 'crb_hide_dropcap');
-function crb_hide_dropcap()
-{
-  Container::make('post_meta', 'ALPS: Hide Dropcap')->where('post_type', '=', 'post')->set_context('side')->set_priority('low')->add_fields(array(
-    Field::make('checkbox', 'hide_dropcap', __('Hide the Dropcap'))->set_help_text('Hides the dropcap on main content.')->set_option_value('true')
-  ));
-}
