@@ -1,4 +1,7 @@
 {
+  "3.5.8" : {
+    "description" : "Added Russian `.po` files."
+  },
   "3.5.7" : {
     "description" : "Theme i18n refactoring."
   },

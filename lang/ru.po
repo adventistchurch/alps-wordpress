@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ALPS for Wordpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-04 22:04+0300\n"
-"PO-Revision-Date: 2020-08-11 06:52-0400\n"
+"PO-Revision-Date: 2020-08-11 15:46+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,52 +42,52 @@ msgstr "Узнать больше"
 #: app/setup.php:62
 msgctxt "alps"
 msgid "Footer Primary Navigation"
-msgstr ""
+msgstr "Основная навигация подвала"
 
 #: app/setup.php:63
 msgctxt "alps"
 msgid "Footer Secondary Navigation"
-msgstr ""
+msgstr "Вторичная навигация подвала"
 
 #: app/setup.php:102
 msgctxt "alps"
 msgid "Page Top"
-msgstr "Верх страницы"
+msgstr "Верхняя часть страницы"
 
 #: app/setup.php:106
 msgctxt "alps"
 msgid "Page Bottom"
-msgstr ""
+msgstr "Нижняя часть страницы"
 
 #: app/setup.php:110
 msgctxt "alps"
 msgid "Page Sidebar"
-msgstr "Сайдбар страницы"
+msgstr "Боковая панель страницы"
 
 #: app/setup.php:114
 msgctxt "alps"
 msgid "Posts Template Sidebar"
-msgstr ""
+msgstr "Шаблонная боковая панель записей"
 
 #: app/setup.php:118
 msgctxt "alps"
 msgid "Post Footer Region"
-msgstr ""
+msgstr "Область подвала записи"
 
 #: app/setup.php:122
 msgctxt "alps"
 msgid "Footer Region"
-msgstr ""
+msgstr "Область подвала"
 
 #: app/setup.php:126
 msgctxt "alps"
 msgid "Category Top"
-msgstr ""
+msgstr "Верхняя часть категории"
 
 #: app/setup.php:130
 msgctxt "alps"
 msgid "Category Bottom"
-msgstr ""
+msgstr "Нижняя часть категории"
 
 #: app/carbon-fields/_init.php:85 functions.php:638
 msgctxt "alps"
@@ -95,6 +95,8 @@ msgid ""
 "ALPS: The ALPS theme requires an update. Please read and follow the "
 "instructions below."
 msgstr ""
+"ALPS: Тема ALPS нуждается в обновлении. Пожалуйста, прочитайте и следуйте "
+"инструкциям ниже."
 
 #: app/carbon-fields/_init.php:86 functions.php:655
 msgctxt "alps"
@@ -103,6 +105,10 @@ msgid ""
 "install and run a converter plugin. After running, the plugin will uninstall "
 "and delete itself, and remove the Piklist plugin completely from your site."
 msgstr ""
+"При нажатии на ссылку ниже запустится обновление. Во время обновления будет "
+"загружен, установлен и запущен плагин конвертера. По завершению, плагин "
+"будет удален самостоятельно, а также полностью удалит плагин Piklist с "
+"вашего сайта."
 
 #: app/carbon-fields/_init.php:87 functions.php:656
 msgctxt "alps"
@@ -112,7 +118,7 @@ msgstr "<a href=\""
 #: app/carbon-fields/_init.php:167 functions.php:759
 msgctxt "alps"
 msgid "ALPS: The update is complete."
-msgstr ""
+msgstr "ALPS: Обновление завершено."
 
 #: app/carbon-fields/_init.php:168
 msgctxt "alps"
@@ -120,11 +126,13 @@ msgid ""
 "The converter plugin has run and updated your ALPS powered site. This plugin "
 "has removed both itself and Piklist from your site."
 msgstr ""
+"Плагин конвертера обновил ваш сайт с поддержкой ALPS. Этот плагин удалил "
+"себя и Piklist с вашего сайта."
 
 #: app/carbon-fields/widgets/alps-post-feed.php:228
 msgctxt "alps"
 msgid "There are no posts at this time."
-msgstr ""
+msgstr "На данный момент нет записей."
 
 #: app/carbon-fields/widgets/alps-author-box.php:25
 msgctxt "alps"
@@ -162,27 +170,27 @@ msgstr "Не найдено"
 #: functions.php:17
 msgctxt "alps"
 msgid "Sage &rsaquo; Error"
-msgstr "Sage &rsaquo; Error"
+msgstr "Ошибка &rsaquo; Темы"
 
 #: functions.php:27
 msgctxt "alps"
 msgid "You must be using PHP 7.1 or greater."
-msgstr ""
+msgstr "Вы должны использовать PHP 7.1 или выше."
 
 #: functions.php:27
 msgctxt "alps"
 msgid "Invalid PHP version"
-msgstr ""
+msgstr "Недопустимая версия PHP"
 
 #: functions.php:34
 msgctxt "alps"
 msgid "You must be using WordPress 4.7.0 or greater."
-msgstr "Вы должны использовать Систему 4.7.0 или выше."
+msgstr "Вы должны использовать WordPress 4.7.0 или выше."
 
 #: functions.php:34
 msgctxt "alps"
 msgid "Invalid WordPress version"
-msgstr "Недопустимая версия Системы"
+msgstr "Недопустимая версия WordPress"
 
 #: functions.php:43
 msgctxt "alps"
@@ -192,33 +200,33 @@ msgstr "Вы должны запустить <code>composer install</code> из 
 #: functions.php:44
 msgctxt "alps"
 msgid "Autoloader not found."
-msgstr ""
+msgstr "Автозагрузчик не найден."
 
 #: functions.php:59
 #, php-format
 msgctxt "alps"
 msgid "Error locating <code>%s</code> for inclusion."
-msgstr "Произошла ошибка с поиском <code>%s</code> для подключения."
+msgstr "Ошибка при поиске <code>%s</code> для включения."
 
 #: functions.php:167 functions.php:168
 msgctxt "alps"
 msgid "ALPS Custom Settings"
-msgstr ""
+msgstr "Пользовательские настройки ALPS"
 
 #: functions.php:177
 msgctxt "alps"
 msgid "Save ALPS Theme Settings"
-msgstr ""
+msgstr "Сохранить настройки темы ALPS"
 
 #: functions.php:301
 msgctxt "alps"
 msgid "Trademark and Logo Usage"
-msgstr ""
+msgstr "Использование товарного знака и логотипа"
 
 #: functions.php:307
 msgctxt "alps"
 msgid "Legal Notice"
-msgstr "Официальное уведомление"
+msgstr "Юридические вопросы"
 
 #: functions.php:312
 msgctxt "alps"
@@ -233,17 +241,17 @@ msgstr "Adventist.org"
 #: functions.php:345
 msgctxt "alps"
 msgid "ADRA"
-msgstr ""
+msgstr "ADRA"
 
 #: functions.php:350
 msgctxt "alps"
 msgid "Adventist World Radio"
-msgstr ""
+msgstr "Adventist World Radio"
 
 #: functions.php:355
 msgctxt "alps"
 msgid "Hope Channel"
-msgstr ""
+msgstr "Hope Channel"
 
 #: functions.php:393
 msgctxt "alps"
@@ -251,6 +259,8 @@ msgid ""
 "On theme activation, go to Appearance > Settings and save the settings to "
 "display the footer default information."
 msgstr ""
+"После активации темы перейдите в Внешний вид > Настройки и сохраните "
+"настройки чтобы отображать информацию подвала по умолчанию."
 
 #: functions.php:760
 msgctxt "alps"
@@ -260,6 +270,10 @@ msgid ""
 "This plugin has removed both itself and Piklist from your site.\n"
 "        "
 msgstr ""
+"\n"
+"            Плагин конвертера обновил ваш сайт с поддержкой ALPS. Этот "
+"плагин удалил себя и Piklist с вашего сайта.\n"
+"        "
 
 #: views/template-posts.blade.php:566
 msgctxt "alps"
@@ -283,7 +297,7 @@ msgstr "Страница не найдена"
 #: views/patterns/02-organisms/content/content-search.blade.php:53
 msgctxt "alps"
 msgid "Sorry, no results were found."
-msgstr "Извините, результатов не найдено."
+msgstr "К сожалению, ничего не найдено."
 
 #: views/404.blade.php:15
 msgctxt "alps"
@@ -363,7 +377,7 @@ msgstr "Похожие материалы"
 #: views/patterns/02-organisms/asides/related-stories.blade.php:74
 msgctxt "alps"
 msgid "There are no related stories at this time."
-msgstr ""
+msgstr "На данный момент нет похожих материалов."
 
 #: views/archive.blade.php:14
 msgctxt "alps"
