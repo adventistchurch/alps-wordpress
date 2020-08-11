@@ -3,39 +3,41 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ALPS for Wordpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-04 22:04+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-08-11 06:52-0400\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: ru\n"
 
 #: app/filters.php:74
 msgctxt "alps"
 msgid "Continued"
-msgstr ""
+msgstr "Продолжение"
 
 #: app/setup.php:59
 msgctxt "alps"
 msgid "Primary Navigation"
-msgstr ""
+msgstr "Основная навигация"
 
 #: app/setup.php:60
 msgctxt "alps"
 msgid "Secondary Navigation"
-msgstr ""
+msgstr "Вторичная навигация"
 
 #: app/setup.php:61
 msgctxt "alps"
 msgid "Learn More"
-msgstr ""
+msgstr "Узнать больше"
 
 #: app/setup.php:62
 msgctxt "alps"
@@ -50,7 +52,7 @@ msgstr ""
 #: app/setup.php:102
 msgctxt "alps"
 msgid "Page Top"
-msgstr ""
+msgstr "Верх страницы"
 
 #: app/setup.php:106
 msgctxt "alps"
@@ -60,7 +62,7 @@ msgstr ""
 #: app/setup.php:110
 msgctxt "alps"
 msgid "Page Sidebar"
-msgstr ""
+msgstr "Сайдбар страницы"
 
 #: app/setup.php:114
 msgctxt "alps"
@@ -105,7 +107,7 @@ msgstr ""
 #: app/carbon-fields/_init.php:87 functions.php:656
 msgctxt "alps"
 msgid "<a href=\""
-msgstr ""
+msgstr "<a href=\""
 
 #: app/carbon-fields/_init.php:167 functions.php:759
 msgctxt "alps"
@@ -127,40 +129,40 @@ msgstr ""
 #: app/carbon-fields/widgets/alps-author-box.php:25
 msgctxt "alps"
 msgid "Website"
-msgstr ""
+msgstr "Сайт"
 
 #: app/carbon-fields/widgets/alps-author-box.php:35
 #: views/patterns/01-molecules/components/share-tools.blade.php:5
 msgctxt "alps"
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: app/carbon-fields/widgets/alps-author-box.php:45
 #: views/patterns/01-molecules/components/share-tools.blade.php:8
 msgctxt "alps"
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: app/controllers/app.php:20
 msgctxt "alps"
 msgid "Latest Posts"
-msgstr ""
+msgstr "Последние записи"
 
 #: app/controllers/app.php:26
 #, php-format
 msgctxt "alps"
 msgid "Search Results for %s"
-msgstr ""
+msgstr "Результаты поиска для %s"
 
 #: app/controllers/app.php:29
 msgctxt "alps"
 msgid "Not Found"
-msgstr ""
+msgstr "Не найдено"
 
 #: functions.php:17
 msgctxt "alps"
 msgid "Sage &rsaquo; Error"
-msgstr ""
+msgstr "Sage &rsaquo; Error"
 
 #: functions.php:27
 msgctxt "alps"
@@ -175,17 +177,17 @@ msgstr ""
 #: functions.php:34
 msgctxt "alps"
 msgid "You must be using WordPress 4.7.0 or greater."
-msgstr ""
+msgstr "Вы должны использовать Систему 4.7.0 или выше."
 
 #: functions.php:34
 msgctxt "alps"
 msgid "Invalid WordPress version"
-msgstr ""
+msgstr "Недопустимая версия Системы"
 
 #: functions.php:43
 msgctxt "alps"
 msgid "You must run <code>composer install</code> from the Sage directory."
-msgstr ""
+msgstr "Вы должны запустить <code>composer install</code> из каталога Темы."
 
 #: functions.php:44
 msgctxt "alps"
@@ -196,7 +198,7 @@ msgstr ""
 #, php-format
 msgctxt "alps"
 msgid "Error locating <code>%s</code> for inclusion."
-msgstr ""
+msgstr "Произошла ошибка с поиском <code>%s</code> для подключения."
 
 #: functions.php:167 functions.php:168
 msgctxt "alps"
@@ -216,17 +218,17 @@ msgstr ""
 #: functions.php:307
 msgctxt "alps"
 msgid "Legal Notice"
-msgstr ""
+msgstr "Официальное уведомление"
 
 #: functions.php:312
 msgctxt "alps"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Политика конфиденциальности"
 
 #: functions.php:339
 msgctxt "alps"
 msgid "Adventist.org"
-msgstr ""
+msgstr "Adventist.org"
 
 #: functions.php:345
 msgctxt "alps"
@@ -262,63 +264,63 @@ msgstr ""
 #: views/template-posts.blade.php:566
 msgctxt "alps"
 msgid "See All"
-msgstr ""
+msgstr "Посмотреть все"
 
 #: views/index.blade.php:17
 #: views/patterns/02-organisms/sections/page-header.blade.php:25
 #: views/home.blade.php:20
 msgctxt "alps"
 msgid "Recent Posts"
-msgstr ""
+msgstr "Последние записи"
 
 #: views/404.blade.php:6
 msgctxt "alps"
 msgid "Page not found"
-msgstr ""
+msgstr "Страница не найдена"
 
 #: views/404.blade.php:14
 #: views/patterns/02-organisms/content/content-posts.blade.php:184
 #: views/patterns/02-organisms/content/content-search.blade.php:53
 msgctxt "alps"
 msgid "Sorry, no results were found."
-msgstr ""
+msgstr "Извините, результатов не найдено."
 
 #: views/404.blade.php:15
 msgctxt "alps"
 msgid "Go to homepage"
-msgstr ""
+msgstr "На главную"
 
 #: views/patterns/01-molecules/forms/search.blade.php:5
 msgctxt "alps"
 msgid "Submit"
-msgstr ""
+msgstr "Отправить"
 
 #: views/patterns/01-molecules/navigation/secondary-navigation.blade.php:76
 #: views/patterns/02-organisms/content/content-search.blade.php:9
 msgctxt "alps"
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: views/patterns/01-molecules/navigation/secondary-navigation.blade.php:81
 msgctxt "alps"
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: views/patterns/01-molecules/components/share-tools.blade.php:2
 msgctxt "alps"
 msgid "Share"
-msgstr ""
+msgstr "Поделиться"
 
 #: views/patterns/01-molecules/components/share-tools.blade.php:11
 msgctxt "alps"
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: views/patterns/02-organisms/sections/page-header.blade.php:30
 #: views/category.blade.php:21
 msgctxt "alps"
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 #: views/patterns/02-organisms/sections/related-pages.blade.php:108
 #: views/patterns/02-organisms/content/content-archive.blade.php:46
@@ -326,37 +328,37 @@ msgstr ""
 #: views/patterns/02-organisms/content/content-search.blade.php:44
 msgctxt "alps"
 msgid "Read More"
-msgstr ""
+msgstr "Подробнее"
 
 #: views/patterns/02-organisms/sections/comments.blade.php:25
 msgctxt "alps"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s в %2$s"
 
 #: views/patterns/02-organisms/sections/comments.blade.php:34
 msgctxt "alps"
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: views/patterns/02-organisms/sections/comments.blade.php:105
 msgctxt "alps"
 msgid "Leave a Comment"
-msgstr ""
+msgstr "Оставить комментарий"
 
 #: views/patterns/02-organisms/sections/article-footer.blade.php:14
 msgctxt "alps"
 msgid "Comment"
-msgstr ""
+msgstr "Комментарий"
 
 #: views/patterns/02-organisms/content/content-search.blade.php:22
 msgctxt "alps"
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: views/patterns/02-organisms/asides/related-stories.blade.php:33
 msgctxt "alps"
 msgid "Related Stories"
-msgstr ""
+msgstr "Похожие материалы"
 
 #: views/patterns/02-organisms/asides/related-stories.blade.php:74
 msgctxt "alps"
@@ -366,4 +368,4 @@ msgstr ""
 #: views/archive.blade.php:14
 msgctxt "alps"
 msgid "Archives"
-msgstr ""
+msgstr "Архивы"

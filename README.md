@@ -55,9 +55,6 @@
 ALPS is developed using Sage, from roots.io.
 
 ## [Sage](https://roots.io/sage/)
-[![Packagist](https://img.shields.io/packagist/vpre/roots/sage.svg?style=flat-square)](https://packagist.org/packages/roots/sage)
-[![devDependency Status](https://img.shields.io/david/dev/roots/sage.svg?style=flat-square)](https://david-dm.org/roots/sage#info=devDependencies)
-[![Build Status](https://img.shields.io/travis/roots/sage.svg?style=flat-square)](https://travis-ci.org/roots/sage)
 
 Sage is a WordPress starter theme with a modern development workflow.
 
@@ -145,7 +142,7 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 
 ### Localization
 Theme uses WordPress recommended way to localize with *.po files. Localization template located in `lang/alps.pot`.
-To add new language special software should be used (ex. POEdit).
+To add new language special software should be used (ex. POEdit). 
 
 To perform scan of new localizable strings in source files, run `npm run i18n-create-pot`.
 

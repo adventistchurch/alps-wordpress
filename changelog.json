@@ -1,4 +1,7 @@
 {
+  "3.5.7" : {
+    "description" : "Theme i18n refactoring."
+  },
   "3.5.6" : {
     "description" : "Misc cleanup and fixes. Dropcaps, JS, and Nav drawer."
   },

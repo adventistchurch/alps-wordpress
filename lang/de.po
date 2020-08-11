@@ -3,44 +3,45 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ALPS for Wordpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-04 22:04+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-08-11 06:50-0400\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
 
 #: app/filters.php:74
 msgctxt "alps"
 msgid "Continued"
-msgstr ""
+msgstr "Fortsetzung"
 
 #: app/setup.php:59
 msgctxt "alps"
 msgid "Primary Navigation"
-msgstr ""
+msgstr "Primäre Navigation"
 
 #: app/setup.php:60
 msgctxt "alps"
 msgid "Secondary Navigation"
-msgstr ""
+msgstr "Sekundäre Navigation"
 
 #: app/setup.php:61
 msgctxt "alps"
 msgid "Learn More"
-msgstr ""
+msgstr "Mehr erfahren"
 
 #: app/setup.php:62
 msgctxt "alps"
 msgid "Footer Primary Navigation"
-msgstr ""
+msgstr "Primäre Fussnavigation"
 
 #: app/setup.php:63
 msgctxt "alps"
@@ -50,17 +51,17 @@ msgstr ""
 #: app/setup.php:102
 msgctxt "alps"
 msgid "Page Top"
-msgstr ""
+msgstr "Seitenanfang"
 
 #: app/setup.php:106
 msgctxt "alps"
 msgid "Page Bottom"
-msgstr ""
+msgstr "Seitenende"
 
 #: app/setup.php:110
 msgctxt "alps"
 msgid "Page Sidebar"
-msgstr ""
+msgstr "Seiten Sidebar"
 
 #: app/setup.php:114
 msgctxt "alps"
@@ -105,7 +106,7 @@ msgstr ""
 #: app/carbon-fields/_init.php:87 functions.php:656
 msgctxt "alps"
 msgid "<a href=\""
-msgstr ""
+msgstr "<a href=\""
 
 #: app/carbon-fields/_init.php:167 functions.php:759
 msgctxt "alps"
@@ -127,76 +128,79 @@ msgstr ""
 #: app/carbon-fields/widgets/alps-author-box.php:25
 msgctxt "alps"
 msgid "Website"
-msgstr ""
+msgstr "Webseite"
 
 #: app/carbon-fields/widgets/alps-author-box.php:35
 #: views/patterns/01-molecules/components/share-tools.blade.php:5
 msgctxt "alps"
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: app/carbon-fields/widgets/alps-author-box.php:45
 #: views/patterns/01-molecules/components/share-tools.blade.php:8
 msgctxt "alps"
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: app/controllers/app.php:20
 msgctxt "alps"
 msgid "Latest Posts"
-msgstr ""
+msgstr "Neueste Beiträge"
 
 #: app/controllers/app.php:26
 #, php-format
 msgctxt "alps"
 msgid "Search Results for %s"
-msgstr ""
+msgstr "Suchergebnisse für %s"
 
 #: app/controllers/app.php:29
 msgctxt "alps"
 msgid "Not Found"
-msgstr ""
+msgstr "Nicht gefunden"
 
 #: functions.php:17
 msgctxt "alps"
 msgid "Sage &rsaquo; Error"
-msgstr ""
+msgstr "Sage &rsaquo; Fehler"
 
 #: functions.php:27
 msgctxt "alps"
 msgid "You must be using PHP 7.1 or greater."
-msgstr ""
+msgstr "Du musst PHP 7.1 oder höher verwenden."
 
 #: functions.php:27
 msgctxt "alps"
 msgid "Invalid PHP version"
-msgstr ""
+msgstr "Ungültige PHP-Version"
 
 #: functions.php:34
 msgctxt "alps"
 msgid "You must be using WordPress 4.7.0 or greater."
-msgstr ""
+msgstr "Du musst WordPress 4.7.0 oder größer verwenden."
 
 #: functions.php:34
 msgctxt "alps"
 msgid "Invalid WordPress version"
-msgstr ""
+msgstr "Ungültige WordPress-Version"
 
 #: functions.php:43
 msgctxt "alps"
 msgid "You must run <code>composer install</code> from the Sage directory."
 msgstr ""
+"Du musst <code>composer install</code> aus dem Sage-Verzeichnis laufen "
+"lassen."
 
 #: functions.php:44
 msgctxt "alps"
 msgid "Autoloader not found."
-msgstr ""
+msgstr "Autoloader nicht gefunden."
 
 #: functions.php:59
 #, php-format
 msgctxt "alps"
 msgid "Error locating <code>%s</code> for inclusion."
 msgstr ""
+"Es trat ein Fehler beim Auffinden von <code>%s</code> für die Einbindung auf."
 
 #: functions.php:167 functions.php:168
 msgctxt "alps"
@@ -216,22 +220,22 @@ msgstr ""
 #: functions.php:307
 msgctxt "alps"
 msgid "Legal Notice"
-msgstr ""
+msgstr "Impressum"
 
 #: functions.php:312
 msgctxt "alps"
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Datenschutzerklärung"
 
 #: functions.php:339
 msgctxt "alps"
 msgid "Adventist.org"
-msgstr ""
+msgstr "Adventist.org"
 
 #: functions.php:345
 msgctxt "alps"
 msgid "ADRA"
-msgstr ""
+msgstr "ADRA"
 
 #: functions.php:350
 msgctxt "alps"
@@ -262,63 +266,63 @@ msgstr ""
 #: views/template-posts.blade.php:566
 msgctxt "alps"
 msgid "See All"
-msgstr ""
+msgstr "Alles anzeigen"
 
 #: views/index.blade.php:17
 #: views/patterns/02-organisms/sections/page-header.blade.php:25
 #: views/home.blade.php:20
 msgctxt "alps"
 msgid "Recent Posts"
-msgstr ""
+msgstr "Letzte Beiträge"
 
 #: views/404.blade.php:6
 msgctxt "alps"
 msgid "Page not found"
-msgstr ""
+msgstr "Seite nicht gefunden"
 
 #: views/404.blade.php:14
 #: views/patterns/02-organisms/content/content-posts.blade.php:184
 #: views/patterns/02-organisms/content/content-search.blade.php:53
 msgctxt "alps"
 msgid "Sorry, no results were found."
-msgstr ""
+msgstr "Sorry, keine Ergebnisse gefunden."
 
 #: views/404.blade.php:15
 msgctxt "alps"
 msgid "Go to homepage"
-msgstr ""
+msgstr "Zur Startseite"
 
 #: views/patterns/01-molecules/forms/search.blade.php:5
 msgctxt "alps"
 msgid "Submit"
-msgstr ""
+msgstr "Senden"
 
 #: views/patterns/01-molecules/navigation/secondary-navigation.blade.php:76
 #: views/patterns/02-organisms/content/content-search.blade.php:9
 msgctxt "alps"
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: views/patterns/01-molecules/navigation/secondary-navigation.blade.php:81
 msgctxt "alps"
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #: views/patterns/01-molecules/components/share-tools.blade.php:2
 msgctxt "alps"
 msgid "Share"
-msgstr ""
+msgstr "Teilen"
 
 #: views/patterns/01-molecules/components/share-tools.blade.php:11
 msgctxt "alps"
 msgid "Email"
-msgstr ""
+msgstr "E-Mail"
 
 #: views/patterns/02-organisms/sections/page-header.blade.php:30
 #: views/category.blade.php:21
 msgctxt "alps"
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 #: views/patterns/02-organisms/sections/related-pages.blade.php:108
 #: views/patterns/02-organisms/content/content-archive.blade.php:46
@@ -326,37 +330,37 @@ msgstr ""
 #: views/patterns/02-organisms/content/content-search.blade.php:44
 msgctxt "alps"
 msgid "Read More"
-msgstr ""
+msgstr "Weiterlesen"
 
 #: views/patterns/02-organisms/sections/comments.blade.php:25
 msgctxt "alps"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s um %2$s"
 
 #: views/patterns/02-organisms/sections/comments.blade.php:34
 msgctxt "alps"
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: views/patterns/02-organisms/sections/comments.blade.php:105
 msgctxt "alps"
 msgid "Leave a Comment"
-msgstr ""
+msgstr "Hinterlasse einen Kommentar"
 
 #: views/patterns/02-organisms/sections/article-footer.blade.php:14
 msgctxt "alps"
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 #: views/patterns/02-organisms/content/content-search.blade.php:22
 msgctxt "alps"
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #: views/patterns/02-organisms/asides/related-stories.blade.php:33
 msgctxt "alps"
 msgid "Related Stories"
-msgstr ""
+msgstr "Das könnte Dich interessieren"
 
 #: views/patterns/02-organisms/asides/related-stories.blade.php:74
 msgctxt "alps"
@@ -366,4 +370,4 @@ msgstr ""
 #: views/archive.blade.php:14
 msgctxt "alps"
 msgid "Archives"
-msgstr ""
+msgstr "Archive"
