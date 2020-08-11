@@ -6,7 +6,7 @@
       </div>
       <div class="l-grid-item l-grid-item--m--3-col">
         <div class="u-flex">
-          <button type="submit" class="c-filter__button o-button u-space--right"><span class="u-icon u-icon--xs u-path-fill--white">@include('patterns.00-atoms.icons.icon-search')</span>{{ _e("Search", "alps") }}</button> <!-- /.search-form__submit -->
+          <button type="submit" class="c-filter__button o-button u-space--right"><span class="u-icon u-icon--xs u-path-fill--white">@include('patterns.00-atoms.icons.icon-search')</span>{{ __('Search', 'alps') }}</button> <!-- /.search-form__submit -->
           @if (shortcode_exists('searchandfilter'))
             <span class="c-filter__toggle js-toggle o-button o-button--simple" data-toggled="c-filter" data-prefix="c-filter"><span class="u-icon u-icon--xs">@include('patterns.00-atoms.icons.icon-settings')</span></span>
           @endif
@@ -19,7 +19,7 @@
       <div class="c-filter__form u-padding--top">
         <div class="l-grid l-grid--7-col u-shift--left--1-col--at-large">
           <div class="c-filter__form-item u-spacing--half l-grid-item">
-            <h3 class="u-font--secondary--s u-font-weight--bold u-text-transform--upper u-color--gray can-be--lighter">{{ _e("Settings", "alps") }}</h3>
+            <h3 class="u-font--secondary--s u-font-weight--bold u-text-transform--upper u-color--gray can-be--lighter">{{ __('Settings', 'alps') }}</h3>
             {!! do_shortcode('[searchandfilter taxonomies="category" types="radio" class="c-filter__form-group" submit_label="Search Again" hide_empty="0"]') !!}
           </div>
         </div>
@@ -50,7 +50,7 @@
             {!! do_shortcode('[ajax_load_more container_type="div" css_classes="u-spacing--double" post_type="post, page" scroll="false" transition_container="false" button_label="Load More" posts_per_page="10" offset="10"]') !!}
           @endif
         @else
-          <p>{{ _e('Sorry, no results were found.', 'alps') }}</p>
+          <p>{{ __('Sorry, no results were found.', 'alps') }}</p>
           {!! get_search_form(false) !!}
         @endif
       </div>

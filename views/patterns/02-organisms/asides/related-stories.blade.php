@@ -30,7 +30,7 @@
 
 <div class="c-related-posts u-spacing">
   <div class="c-block__heading u-theme--border-color--darker">
-    <h3 class="c-block__heading-title u-theme--color--darker">{{ _e("Related Stories", "alps") }}</h3>
+    <h3 class="c-block__heading-title u-theme--color--darker">{{ __('Related Stories', 'alps') }}</h3>
   </div>
   <div class="c-related-posts__blocks u-spacing">
     @if ($related->have_posts())
@@ -71,7 +71,7 @@
       @endwhile
       {!! wp_reset_postdata() !!}
     @else
-      {{ _e("There are no related stories at this time.", "alps") }}
+      {{ __('There are no related stories at this time.', 'alps') }}
     @endif
   </div>
 </div>

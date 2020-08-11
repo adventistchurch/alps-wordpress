@@ -221,7 +221,7 @@
       <?php endwhile; ?>
       <?php wp_reset_query(); ?>
     <?php else: ?>
-        <?php _e("There are no posts at this time.", "alps"); ?>
+        <?php _e('There are no posts at this time.', 'alps'); ?>
     <?php endif; ?>
   </div>
 </div>

@@ -60,7 +60,8 @@
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
     "lint:scripts": "eslint assets/scripts assets/build",
     "lint:styles": "stylelint \"assets/styles/**/*.{css,sass,scss,sss,less}\"",
-    "test": "npm run -s lint"
+    "test": "npm run -s lint",
+    "i18n-create-pot": "bin/i18n-create-pot.sh"
   },
   "engines": {
     "node": ">= 6.9.4"
@@ -72,6 +73,7 @@
     "bs-html-injector": "~3.0",
     "buble-loader": "^0.4.1",
     "cache-loader": "~1.2.0",
+    "chalk": "^4.1.0",
     "clean-webpack-plugin": "^0.1.18",
     "copy-globs-webpack-plugin": "^0.2.0",
     "css-loader": "^0.28.9",
@@ -82,10 +84,11 @@
     "extract-text-webpack-plugin": "~3.0.2",
     "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gettext-parser": "^4.0.4",
     "imagemin-mozjpeg": "~7.0.0",
     "imagemin-webpack-plugin": "~2.1.1",
     "import-glob": "~1.5",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.12.0",
     "postcss-loader": "~2.1.0",
     "postcss-safe-parser": "~3.0",
     "resolve-url-loader": "~2.3.0",
@@ -101,6 +104,7 @@
     "webpack-dev-middleware": "~2.0.4",
     "webpack-hot-middleware": "~2.22.0",
     "webpack-merge": "~4.1.1",
+    "winston": "^3.3.3",
     "yargs": "~11.0.0"
   },
   "dependencies": {

@@ -105,7 +105,7 @@
           $body = false;
           $category = NULL;
           $date = NULL;
-          $cta = __("Read More", "alps");
+          $cta = __('Read More', 'alps');
           $block_class = "u-spacing--half";
           $block_title_class = "u-theme--color--darker u-font--primary--m";
           $block_meta_class = "hide";

@@ -22,7 +22,7 @@ class ALPS_Walker_Comment extends Walker_Comment {
 
     protected function html5_comment($comment, $depth, $args) {
         $authorLink = get_comment_author_link($comment);
-        $createdAt = sprintf( __( '%1$s at %2$s' ), get_comment_date( '', $comment ), get_comment_time() );
+        $createdAt = sprintf( __( '%1$s at %2$s', 'alps' ), get_comment_date( '', $comment ), get_comment_time() );
 
         ob_start();
         comment_text($comment->comment_ID);
@@ -31,7 +31,7 @@ class ALPS_Walker_Comment extends Walker_Comment {
         $avatar = get_avatar($comment, 50, 'mm', '', ['class' => 'avatar']);
 
         ob_start();
-        edit_comment_link( '(' . __( 'Edit' ) . ')', '<span class="c-comment__edit-link u-font--secondary--s u-theme--color--base">', '</span>' );
+        edit_comment_link( '(' . __( 'Edit', 'alps' ) . ')', '<span class="c-comment__edit-link u-font--secondary--s u-theme--color--base">', '</span>' );
         $editLink = ob_get_clean();
 
         $replyOpts = [
