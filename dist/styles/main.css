@@ -265,5 +265,15 @@ figure {
   }
 }
 
+p.has-drop-cap:not(:focus)::first-letter {
+  float: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin: inherit;
+  text-transform: inherit;
+  font-style: inherit;
+}
+
 
 /*# sourceMappingURL=main.css.map*/

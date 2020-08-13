@@ -284,3 +284,13 @@ figure {
     margin-right: -1.25rem;
   }
 }
+
+p.has-drop-cap:not(:focus)::first-letter {
+  float: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin: inherit;
+  text-transform: inherit;
+  font-style: inherit;
+}
