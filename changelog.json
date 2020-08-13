@@ -1,4 +1,7 @@
 {
+  "3.5.9" : {
+    "description" : "Removed `has-dropcap` classes from the single page."
+  },
   "3.5.8" : {
     "description" : "Added Russian `.po` files."
   },

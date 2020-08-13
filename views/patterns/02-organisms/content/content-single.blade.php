@@ -16,13 +16,6 @@
     $article_offset = 'l-grid-item--xl--3-col';
   }
 
-  $has_dropcap = true;
-  $classes = "has-dropcap";
-
-  if (get_post_meta($post->ID , $cf_.'hide_dropcap', true) == true) {
-    $has_dropcap = false;
-    $classes = "";
-  }
 @endphp
 @include('patterns.02-organisms.sections.page-header-feature')
 <section id="top" class="l-main__content l-grid l-grid--7-col {{ $section_offset }} l-grid-wrap--6-of-7 u-spacing--double--until-large">
