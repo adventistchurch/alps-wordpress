@@ -86,9 +86,9 @@ function crb_attach_theme_options()
         $versionFields = [
             Field
                 ::make('html', 'crb_alps_version')
-                ->set_html('<h3>ALPS Version</h3><p style="font-size:16px">Stick to the selected version of ALPS core</p>'),
+                ->set_html('<h3>ALPS CORE Version</h3><p style="font-size:16px">Stick to the selected version of ALPS core CSS and Javascript.</p>'),
             Field
-                ::make('select', \App\Core\ALPSVersions::OPTION_KEY, __('Choose ALPS Version'))
+                ::make('select', \App\Core\ALPSVersions::OPTION_KEY, __('Choose ALPS CORE Version'))
                 ->add_options($versionOptions)
                 ->set_width(33),
         ];
