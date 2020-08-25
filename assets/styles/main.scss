@@ -209,6 +209,18 @@ body.admin-bar {
 }
 
 // Article Body
+@media (min-width: 701px) and (max-width: 900px) {
+  .body {
+    .full-width {
+      .c-article,
+      .c-sidebar {
+        margin: 0;
+        width: 100vw;
+      }
+    }
+  }
+}
+
 .wp-caption-text {
   // $c-gray
   color: #717171;
