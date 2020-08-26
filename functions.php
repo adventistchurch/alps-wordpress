@@ -653,7 +653,7 @@ if ( !$cf ) {
         }
         else { ?>
         <p style="font-size:22px"><?php _e( 'Clicking the link below will run an upgrade script. This will download, install and run a converter plugin. After running, the plugin will uninstall and delete itself, and remove the Piklist plugin completely from your site.', 'alps' ); ?></p>
-        <p style="font-size:22px"><?php _e( '<a href="'. $url . '">click here to install and run the field converter plugin</a>.', 'alps' ); ?></p>
+            <p style="font-size:22px"><a href="<?php echo $url ?>"><?php _e( 'click here to install and run the field converter plugin.', 'alps' ); ?></a></p>
 
         <?php } ?>
     </div>
@@ -757,9 +757,7 @@ function alps_admin_notice__alps_update_complete() {
     ?>
     <div class="notice notice-warning is-dismissible" style="background:#fff;border:2px solid black; border-left:6px solid red">
         <p style="font-size:28px"><?php _e( 'ALPS: The update is complete.', 'alps' ) ?></p>
-        <p style="font-size:22px"><?php _e( '
-            The converter plugin has run and updated your ALPS powered site. This plugin has removed both itself and Piklist from your site.
-        ', 'alps' ); ?></p>
+        <p style="font-size:22px"><?php _e( 'The converter plugin has run and updated your ALPS powered site. This plugin has removed both itself and Piklist from your site.', 'alps' ); ?></p>
     </div>
 <?php
         }

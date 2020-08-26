@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ALPS for Wordpress\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-04 22:04+0300\n"
+"POT-Creation-Date: 2020-08-26 07:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,14 +87,180 @@ msgctxt "alps"
 msgid "Category Bottom"
 msgstr ""
 
-#: app/carbon-fields/_init.php:85 functions.php:638
+#: app/carbon-fields/cf-widget.php:12
+msgctxt "alps"
+msgid "ALPS - Author Box"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:13
+msgctxt "alps"
+msgid "This will display a block of the post author's profile information."
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:16
+msgctxt "alps"
+msgid "Author"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:33
+msgctxt "alps"
+msgid "ALPS - Text with Link"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:34
+msgctxt "alps"
+msgid "Text block with formatted link."
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:37 app/carbon-fields/cf-front-page.php:36
+#: app/carbon-fields/cf-front-page.php:87
+msgctxt "alps"
+msgid "Title"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:39
+msgctxt "alps"
+msgid "Content"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:41 app/carbon-fields/cf-front-page.php:116
+msgctxt "alps"
+msgid "URL"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:44
+msgctxt "alps"
+msgid "URL Text"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:63
+msgctxt "alps"
+msgid "ALPS - Post Feed"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:64
+msgctxt "alps"
+msgid "Feed of posts in the selected category."
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:67
+msgctxt "alps"
+msgid "Feed Category"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:70
+msgctxt "alps"
+msgid "Feed Title"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:72
+msgctxt "alps"
+msgid "See All Link"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:73
+msgctxt "alps"
+msgid "Enter the url to view all of the post from the selected category."
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:75
+msgctxt "alps"
+msgid "Number of Posts to Display"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:77 app/carbon-fields/cf-page.php:453
+#: app/carbon-fields/cf-page.php:561 app/carbon-fields/cf-page.php:638
+msgctxt "alps"
+msgid "Post Offset"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:78
+msgctxt "alps"
+msgid ""
+"Enter the number of posts to offset. Only works if the number of posts is "
+"set."
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:80
+msgctxt "alps"
+msgid "Post Image/Description"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:81
+msgctxt "alps"
+msgid "Check to show the image and description for each post."
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:84
+msgctxt "alps"
+msgid "Grid Layout"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:85
+msgctxt "alps"
+msgid "Check to show the image and description side-by-side."
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:10
+msgctxt "alps"
+msgid "ALPS: Featured Image Hero Layout"
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:16
+msgctxt "alps"
+msgid "Feature Image Hero Layout"
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:17
+msgctxt "alps"
+msgid "If a featured image is set, select the layout of the hero."
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:19
+msgctxt "alps"
+msgid "Text Width: 1/3 and Image Width: 2/3"
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:20
+msgctxt "alps"
+msgid "Text Width: 1/2 and Image Width: 1/2"
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:29 app/carbon-fields/cf-page.php:229
+msgctxt "alps"
+msgid "ALPS: Entry Sidebar / Featured Image"
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:33 app/carbon-fields/cf-post.php:39
+#: app/carbon-fields/cf-page.php:233 app/carbon-fields/cf-page.php:239
+msgctxt "alps"
+msgid "Hide Sidebar"
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:36 app/carbon-fields/cf-post.php:44
+#: app/carbon-fields/cf-page.php:236 app/carbon-fields/cf-page.php:244
+msgctxt "alps"
+msgid "Hide Featured Image"
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:40 app/carbon-fields/cf-page.php:240
+msgctxt "alps"
+msgid "Hides the sidebar for this entry if it is active."
+msgstr ""
+
+#: app/carbon-fields/cf-post.php:45 app/carbon-fields/cf-page.php:245
+msgctxt "alps"
+msgid "Hides the featured image on the page/post header for this entry."
+msgstr ""
+
+#: app/carbon-fields/_init.php:96 functions.php:638
 msgctxt "alps"
 msgid ""
 "ALPS: The ALPS theme requires an update. Please read and follow the "
 "instructions below."
 msgstr ""
 
-#: app/carbon-fields/_init.php:86 functions.php:655
+#: app/carbon-fields/_init.php:97 functions.php:655
 msgctxt "alps"
 msgid ""
 "Clicking the link below will run an upgrade script. This will download, "
@@ -102,21 +268,640 @@ msgid ""
 "and delete itself, and remove the Piklist plugin completely from your site."
 msgstr ""
 
-#: app/carbon-fields/_init.php:87 functions.php:656
+#: app/carbon-fields/_init.php:98 functions.php:656
 msgctxt "alps"
-msgid "<a href=\""
+msgid "click here to install and run the field converter plugin."
 msgstr ""
 
-#: app/carbon-fields/_init.php:167 functions.php:759
+#: app/carbon-fields/_init.php:119
+msgctxt "alps"
+msgid "Activating new plugin..."
+msgstr ""
+
+#: app/carbon-fields/_init.php:137
+msgctxt "alps"
+msgid ""
+"<p>Activated.</p> <p style=\"font-size:26px\">The ALPS Fields Converter has "
+"run successfully."
+msgstr ""
+
+#: app/carbon-fields/_init.php:137
+msgctxt "alps"
+msgid "Click here to return to the plugin management page."
+msgstr ""
+
+#: app/carbon-fields/_init.php:140
+msgctxt "alps"
+msgid "Could not install the new plugin."
+msgstr ""
+
+#: app/carbon-fields/_init.php:183 functions.php:759
 msgctxt "alps"
 msgid "ALPS: The update is complete."
 msgstr ""
 
-#: app/carbon-fields/_init.php:168
+#: app/carbon-fields/_init.php:184 functions.php:760
 msgctxt "alps"
 msgid ""
 "The converter plugin has run and updated your ALPS powered site. This plugin "
 "has removed both itself and Piklist from your site."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:10
+msgctxt "alps"
+msgid "ALPS: Header Banner"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:14
+msgctxt "alps"
+msgid "Banner"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:15
+msgctxt "alps"
+msgid ""
+"IMPORTANT: Setting the Header Banner will override the display of the "
+"Featured Image."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:17
+msgctxt "alps"
+msgid "Header Title"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:19
+msgctxt "alps"
+msgid "Header Kicker"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:21
+msgctxt "alps"
+msgid "Header Subtitle"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:23
+msgctxt "alps"
+msgid "Header Image"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:31
+msgctxt "alps"
+msgid "ALPS: Hero"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:36
+msgctxt "alps"
+msgid "Hero Banner"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:37
+msgctxt "alps"
+msgid ""
+"IMPORTANT: Setting a hero style below will completely override anything you "
+"have entered for your ALPS Header Banner or your Featured Image."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:39
+msgctxt "alps"
+msgid "Hero Style"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:40
+msgctxt "alps"
+msgid "Select the hero configuration."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:42 app/carbon-fields/cf-page.php:263
+#: app/carbon-fields/cf-page.php:368 app/carbon-fields/cf-page.php:495
+#: app/carbon-fields/cf-page.php:604 app/carbon-fields/cf-front-page.php:21
+msgctxt "alps"
+msgid "None"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:43
+msgctxt "alps"
+msgid "Half screen image with text overlay (Min/Max Images: 1)"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:44
+msgctxt "alps"
+msgid "Full screen image with text overlay (Min/Max Images: 1)"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:45
+msgctxt "alps"
+msgid "Full screen image with text and header overlay (Min/Max Images: 1)"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:46
+msgctxt "alps"
+msgid "Three column image format with text overlays (Min/Max Images: 3)"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:47
+msgctxt "alps"
+msgid "Half screen image gallery with text overlay (Max Images: 6)"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:50 app/carbon-fields/cf-page.php:175
+#: app/carbon-fields/cf-page.php:202
+msgctxt "alps"
+msgid "Hero Image"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:67 app/carbon-fields/cf-page.php:177
+#: app/carbon-fields/cf-page.php:204
+msgctxt "alps"
+msgid "Hero Title"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:68 app/carbon-fields/cf-page.php:178
+msgctxt "alps"
+msgid "The title of the hero image."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:87 app/carbon-fields/cf-page.php:182
+msgctxt "alps"
+msgid "Hero Kicker"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:88 app/carbon-fields/cf-page.php:183
+msgctxt "alps"
+msgid "Displays below the title in the hero image."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:106 app/carbon-fields/cf-page.php:186
+#: app/carbon-fields/cf-page.php:212
+msgctxt "alps"
+msgid "Hero Link URL"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:107 app/carbon-fields/cf-page.php:187
+msgctxt "alps"
+msgid "Enter an URL to link the hero image."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:124
+msgctxt "alps"
+msgid "Hero Link Button"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:125
+msgctxt "alps"
+msgid ""
+"Enter text here to show on the hero button. Filling this out sets the link "
+"on the button and not the hero image."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:138
+msgctxt "alps"
+msgid "Hero Image Extended"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:140 app/carbon-fields/cf-page.php:156
+msgctxt "alps"
+msgid "Check to extend the hero image over the sabbath column."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:154
+msgctxt "alps"
+msgid "Hero Scroll Hint"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:166
+msgctxt "alps"
+msgid "Hero Column (3 Columns)"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:192
+msgctxt "alps"
+msgid "Hero Carousel"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:205
+msgctxt "alps"
+msgid "The title of the hero image slide."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:208
+msgctxt "alps"
+msgid "Hero Description"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:209
+msgctxt "alps"
+msgid "Displays below the sub title in the hero image slide."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:213
+msgctxt "alps"
+msgid "Enter an URL to link the hero image slide."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:216
+msgctxt "alps"
+msgid "Hero Link CTA"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:217
+msgctxt "alps"
+msgid "Displays title in the hero link."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:255
+msgctxt "alps"
+msgid "ALPS: Related Pages & Posts"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:260
+msgctxt "alps"
+msgid "Related Pages Format"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:261
+msgctxt "alps"
+msgid "Select the format of the related pages."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:264
+msgctxt "alps"
+msgid "Show first level child pages only"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:265
+msgctxt "alps"
+msgid "Show child and grandchild pages"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:266
+msgctxt "alps"
+msgid "Show custom pages"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:269
+msgctxt "alps"
+msgid "Assign Pages"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:287
+msgctxt "alps"
+msgid "Related Pages Grid"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:289
+msgctxt "alps"
+msgid "Select to display the related pages side-by-side."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:291
+msgctxt "alps"
+msgid "Related Pages Grid (3up)"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:293
+msgctxt "alps"
+msgid ""
+"Select to display the related pages in 3 columns on large screens. This will "
+"only display if the Sabbath column is hidden."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:301
+msgctxt "alps"
+msgid "Related Pages Image"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:303
+msgctxt "alps"
+msgid "Select to display the feature image for the related pages."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:305
+msgctxt "alps"
+msgid "Related Pages Round Image"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:307
+msgctxt "alps"
+msgid "Select to make the featured image round."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:326
+msgctxt "alps"
+msgid "ALPS: Hero Featured Post"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:331
+msgctxt "alps"
+msgid "Hero: Show Featured Post"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:333
+msgctxt "alps"
+msgid "Select to display a featured post in the hero."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:336
+msgctxt "alps"
+msgid "Select - Hero Featured Post"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:358
+msgctxt "alps"
+msgid "ALPS: Post Feed List"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:363
+msgctxt "alps"
+msgid "Post Feed - List"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:365
+msgctxt "alps"
+msgid "Post Feed: List"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:369 app/carbon-fields/cf-page.php:496
+#: app/carbon-fields/cf-page.php:605
+msgctxt "alps"
+msgid "Select a category of posts to feature."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:370
+msgctxt "alps"
+msgid "Select specific posts to feature."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:373 app/carbon-fields/cf-page.php:499
+#: app/carbon-fields/cf-page.php:608
+msgctxt "alps"
+msgid "Select Post Category"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:381
+msgctxt "alps"
+msgid "Select Specific Posts"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:390 app/carbon-fields/cf-page.php:508
+#: app/carbon-fields/cf-page.php:616
+msgctxt "alps"
+msgid "Section Title"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:391 app/carbon-fields/cf-page.php:509
+#: app/carbon-fields/cf-page.php:617
+msgctxt "alps"
+msgid "Enter the title for this featured posts section."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:402 app/carbon-fields/cf-page.php:519
+#: app/carbon-fields/cf-page.php:627
+msgctxt "alps"
+msgid "Section Link"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:403 app/carbon-fields/cf-page.php:520
+#: app/carbon-fields/cf-page.php:628
+msgctxt "alps"
+msgid "Enter the link to the posts archive page."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:414
+msgctxt "alps"
+msgid "Round Image Thumbnail"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:415
+msgctxt "alps"
+msgid "Check to make the image thumbnail round."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:427 app/carbon-fields/cf-page.php:571
+#: app/carbon-fields/cf-page.php:648
+msgctxt "alps"
+msgid "Select - Category"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:428 app/carbon-fields/cf-page.php:572
+#: app/carbon-fields/cf-page.php:649
+msgctxt "alps"
+msgid ""
+"Click on the category you want to select on the left and it will be selected "
+"on the right side. You can only select one category."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:443
+msgctxt "alps"
+msgid "Number of Posts"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:444
+msgctxt "alps"
+msgid ""
+"Enter the number of posts you would like to display. (If empty, defaults to "
+"3 posts in the selected category)"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:463
+msgctxt "alps"
+msgid "Select - Custom Posts"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:464
+msgctxt "alps"
+msgid ""
+"Click on the posts you want to select on the left and they will be selected "
+"on the right side."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:490
+msgctxt "alps"
+msgid "Post Feed - Full Width"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:492
+msgctxt "alps"
+msgid "Post Feed: Full Width"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:493 app/carbon-fields/cf-page.php:602
+msgctxt "alps"
+msgid "Displays as a list of posts."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:530
+msgctxt "alps"
+msgid "Full Width Featured Post"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:531
+msgctxt "alps"
+msgid "Select to include a post full width."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:541
+msgctxt "alps"
+msgid "Featured Post"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:542
+msgctxt "alps"
+msgid "Select (1) post to feature as a full width post."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:562 app/carbon-fields/cf-page.php:639
+msgctxt "alps"
+msgid "Enter the number of posts you would like to offset."
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:594
+msgctxt "alps"
+msgid "ALPS: Post Feed Archive"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:599
+msgctxt "alps"
+msgid "Post Feed - Archive"
+msgstr ""
+
+#: app/carbon-fields/cf-page.php:601
+msgctxt "alps"
+msgid "Post Feed: Archive"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:10
+msgctxt "alps"
+msgid "ALPS: Home - Row Block"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:15
+msgctxt "alps"
+msgid "Two Column Block?"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:17
+msgctxt "alps"
+msgid "To display the block in two columns, check this box."
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:19
+msgctxt "alps"
+msgid "Content Block Type"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:22
+#: app/carbon-fields/cf-front-page.php:28
+msgctxt "alps"
+msgid "Freeform Content Block"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:23
+#: app/carbon-fields/cf-front-page.php:62
+msgctxt "alps"
+msgid "Relationship Content Block"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:25
+msgctxt "alps"
+msgid "Choose your content type for this block."
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:31
+msgctxt "alps"
+msgid "Color Picker"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:33
+msgctxt "alps"
+msgid "Kicker"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:39
+msgctxt "alps"
+msgid "Image"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:42
+msgctxt "alps"
+msgid "Make the Image Round"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:44
+msgctxt "alps"
+msgid "To make the image round, check this box."
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:47
+#: app/carbon-fields/cf-front-page.php:110
+msgctxt "alps"
+msgid "Body"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:49
+msgctxt "alps"
+msgid "Button Text"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:52
+msgctxt "alps"
+msgid "Button URL"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:82
+msgctxt "alps"
+msgid "ALPS: Home - Story Block"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:90
+msgctxt "alps"
+msgid "Subtitle"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:93
+msgctxt "alps"
+msgid "Background Image"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:94
+msgctxt "alps"
+msgid "Choose an image to display in the background (optional)."
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:97
+msgctxt "alps"
+msgid "Thumbnail"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:98
+msgctxt "alps"
+msgid "Image to appear in the top left area of the block."
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:101
+msgctxt "alps"
+msgid "Side Image"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:102
+msgctxt "alps"
+msgid ""
+"Optionally include an image with the body copy. If this is a video "
+"thumbnail, check the \"Side Image Video\" box."
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:105
+msgctxt "alps"
+msgid "Side Image - Video?"
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:107
+msgctxt "alps"
+msgid "If the side image is a video thumbnail, check this box."
+msgstr ""
+
+#: app/carbon-fields/cf-front-page.php:119
+msgctxt "alps"
+msgid "Call to Action Text"
 msgstr ""
 
 #: app/carbon-fields/widgets/alps-post-feed.php:228
@@ -139,6 +924,432 @@ msgstr ""
 #: views/patterns/01-molecules/components/share-tools.blade.php:8
 msgctxt "alps"
 msgid "Twitter"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:12
+msgctxt "alps"
+msgid "Theme Color Options / Grid"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:14
+msgctxt "alps"
+msgid "Theme Color"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:16
+msgctxt "alps"
+msgid "Treefrog"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:17
+msgctxt "alps"
+msgid "Ming"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:18
+msgctxt "alps"
+msgid "Bluejay"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:19
+msgctxt "alps"
+msgid "Iris"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:20
+msgctxt "alps"
+msgid "Lily"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:21
+msgctxt "alps"
+msgid "Scarlett"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:22
+msgctxt "alps"
+msgid "Campfire"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:23
+msgctxt "alps"
+msgid "Winter"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:24
+msgctxt "alps"
+msgid "Forest"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:25
+msgctxt "alps"
+msgid "Cave"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:26
+msgctxt "alps"
+msgid "Denim"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:27
+msgctxt "alps"
+msgid "Emperor"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:28
+msgctxt "alps"
+msgid "Grapevine"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:29
+msgctxt "alps"
+msgid "Velvet"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:30
+msgctxt "alps"
+msgid "Earth"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:31
+msgctxt "alps"
+msgid "Night"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:35
+msgctxt "alps"
+msgid "Dark Theme"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:37
+msgctxt "alps"
+msgid "Select if you would like the theme to be dark."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:40
+msgctxt "alps"
+msgid "Grid Lines"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:42
+msgctxt "alps"
+msgid "Select if you would like show the grid lines."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:46
+msgctxt "alps"
+msgid ""
+"<h3>Global Site Statements</h3><p style=\"font-size:16px\">Both of these "
+"statements show up in the navigation drawer.</p>"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:48
+msgctxt "alps"
+msgid "Site Branding Statement"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:49
+msgctxt "alps"
+msgid ""
+"[Site Name] is a website of the Seventh-day Adventist church in [Region "
+"Name]."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:50
+#: app/carbon-fields/cf-theme-options.php:56
+msgctxt "alps"
+msgid "Found in the navigation drawer"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:54
+msgctxt "alps"
+msgid "Global Branding Statement"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:55
+msgctxt "alps"
+msgid ""
+"Seventh-day Adventists are devoted to helping people understand the Bible to "
+"find freedom, healing, and hope in Jesus."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:63
+#: app/carbon-fields/cf-theme-options.php:66
+msgctxt "alps"
+msgid "Logo"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:70
+msgctxt "alps"
+msgid "Logo ("
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:81
+msgctxt "alps"
+msgid "Latest"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:90
+msgctxt "alps"
+msgid ""
+"<h3>ALPS CORE Version</h3><p style=\"font-size:16px\">Stick to the selected "
+"version of ALPS core CSS and Javascript.</p>"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:92
+msgctxt "alps"
+msgid "Choose ALPS CORE Version"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:99
+msgctxt "alps"
+msgid "ALPS Theme Settings"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:102
+msgctxt "alps"
+msgid "GLOBAL"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:103
+msgctxt "alps"
+msgid "POSTS OPTIONS"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:105
+msgctxt "alps"
+msgid "Home Page Content Display"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:107
+msgctxt "alps"
+msgid "Home Page Title"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:108
+msgctxt "alps"
+msgid "Sets a custom home page title for sites displaying the latest posts."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:111
+#: app/carbon-fields/cf-theme-options.php:127
+msgctxt "alps"
+msgid "Hide The Sidebar"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:113
+msgctxt "alps"
+msgid "Hides the sidebar on the home/archive page if it is active."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:116
+msgctxt "alps"
+msgid "Posts Content Display"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:118
+msgctxt "alps"
+msgid "Archives Page Title"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:119
+msgctxt "alps"
+msgid ""
+"Sets a custom title for the archive page for sites with a custom posts page."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:122
+msgctxt "alps"
+msgid "Hide The Related Stories Image"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:124
+msgctxt "alps"
+msgid "Hides the image in the Related Stories block in sidebar."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:129
+msgctxt "alps"
+msgid "Hides the sidebar on the archive page if it is active."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:132
+msgctxt "alps"
+msgid "Category Posts Feed Label"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:134
+msgctxt "alps"
+msgid "Select to display the label \"Category\" on category posts feed."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:137
+msgctxt "alps"
+msgid "Posts Grid and Image Display"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:139
+msgctxt "alps"
+msgid "Posts Feed Grid"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:141
+msgctxt "alps"
+msgid "Select to display the posts side-by-side."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:144
+msgctxt "alps"
+msgid "Posts Feed Grid (3up)"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:146
+msgctxt "alps"
+msgid ""
+"Select to display the posts 3up at the largest breakpoint. The sidebar must "
+"be hidden for the pages to display 3up."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:149
+msgctxt "alps"
+msgid "Posts Feed Image"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:151
+msgctxt "alps"
+msgid "Select to display the feature image for the posts."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:154
+msgctxt "alps"
+msgid "Posts Round Images"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:156
+msgctxt "alps"
+msgid "Make the post feed images round."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:159
+msgctxt "alps"
+msgid "SABBATH COLUMN"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:161
+msgctxt "alps"
+msgid "Sabbath Icon"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:164
+msgctxt "alps"
+msgid "Sabbath Background Image"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:167
+msgctxt "alps"
+msgid "Hide Sabbath Icon Until Scroll"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:169
+msgctxt "alps"
+msgid "Select to hide the sabbath icon till you scroll."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:172
+msgctxt "alps"
+msgid "Hide the sabbath column"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:174
+msgctxt "alps"
+msgid "Select to hide the sabbath column."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:177
+msgctxt "alps"
+msgid "Hide the sabbath column at certain screen widths"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:179
+msgctxt "alps"
+msgid "Hide the sabbath column for all screen widths."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:180
+msgctxt "alps"
+msgid "Hide the sabbath column at small screens."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:181
+msgctxt "alps"
+msgid "Hide the sabbath column at medium screens."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:182
+msgctxt "alps"
+msgid "Hide the sabbath column at large screens."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:191
+msgctxt "alps"
+msgid "FOOTER CONTENT"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:193
+msgctxt "alps"
+msgid "Footer Description"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:195
+msgctxt "alps"
+msgid "Footer Copyright"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:197
+msgctxt "alps"
+msgid "Footer Address"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:200
+msgctxt "alps"
+msgid "Street Address"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:202
+msgctxt "alps"
+msgid "City"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:205
+msgctxt "alps"
+msgid "State"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:208
+msgctxt "alps"
+msgid "Postal Code"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:211
+msgctxt "alps"
+msgid "Country"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:214
+msgctxt "alps"
+msgid "Phone Number"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:220
+msgctxt "alps"
+msgid "Footer Logo Icon"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:221
+msgctxt "alps"
+msgid ""
+"Upload a logo icon for the footer. * Will only display if the sabbath column "
+"is hidden."
 msgstr ""
 
 #: app/controllers/app.php:20
@@ -248,15 +1459,6 @@ msgctxt "alps"
 msgid ""
 "On theme activation, go to Appearance > Settings and save the settings to "
 "display the footer default information."
-msgstr ""
-
-#: functions.php:760
-msgctxt "alps"
-msgid ""
-"\n"
-"            The converter plugin has run and updated your ALPS powered site. "
-"This plugin has removed both itself and Piklist from your site.\n"
-"        "
 msgstr ""
 
 #: views/template-posts.blade.php:566
