@@ -189,6 +189,14 @@ body.admin-bar .c-drawer {
   margin-top: 20px;
 }
 
+@media (min-width: 701px) and (max-width: 900px) {
+  .body .full-width .c-article,
+  .body .full-width .c-sidebar {
+    margin: 0;
+    width: 100vw;
+  }
+}
+
 .wp-caption-text {
   color: #717171;
   font-family: 'Noto Sans', "Helvetica", "Arial", sans-serif;

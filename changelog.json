@@ -1,4 +1,7 @@
 {
+  "3.5.11" : {
+    "description" : "Added a full-width page template."
+  },
   "3.5.10" : {
     "description" : "Overwride of Wordpress's `.has-drop-cap:not(:focus)::first-letter` style."
   },
