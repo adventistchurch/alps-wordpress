@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 07:32+0300\n"
+"POT-Creation-Date: 2020-08-26 07:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1092,13 +1092,13 @@ msgstr ""
 #: app/carbon-fields/cf-theme-options.php:90
 msgctxt "alps"
 msgid ""
-"<h3>ALPS Version</h3><p style=\"font-size:16px\">Stick to the selected "
-"version of ALPS core</p>"
+"<h3>ALPS CORE Version</h3><p style=\"font-size:16px\">Stick to the selected "
+"version of ALPS core CSS and Javascript.</p>"
 msgstr ""
 
 #: app/carbon-fields/cf-theme-options.php:92
 msgctxt "alps"
-msgid "Choose ALPS Version"
+msgid "Choose ALPS CORE Version"
 msgstr ""
 
 #: app/carbon-fields/cf-theme-options.php:99

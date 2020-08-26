@@ -204,8 +204,8 @@ __('Seventh-day Adventists are devoted to helping people understand the Bible to
 __('Logo', 'alps');
 __('Logo (', 'alps');
 __('Latest', 'alps');
-__('<h3>ALPS Version</h3><p style="font-size:16px">Stick to the selected version of ALPS core</p>', 'alps');
-__('Choose ALPS Version', 'alps');
+__('<h3>ALPS CORE Version</h3><p style="font-size:16px">Stick to the selected version of ALPS core CSS and Javascript.</p>', 'alps');
+__('Choose ALPS CORE Version', 'alps');
 __('ALPS Theme Settings', 'alps');
 __('GLOBAL', 'alps');
 __('POSTS OPTIONS', 'alps');
