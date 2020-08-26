@@ -4,12 +4,15 @@ A record of the changes made to `ALPS for Wordpress`.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+##[3.5.12]
+### Fixed
+- Added additional strings to the `.pot` file, bringing in some more files in the `/app` file.
+
 ##[3.5.11]
 ### Added
 - Added a full-width page template. [#518](https://github.com/adventistchurch/alps-wordpress/issues/518)
 ### Fixed
 - Clarified the language on the settings page for the ALPS core version.
-
 
 ##[3.5.10]
 ### Fixed

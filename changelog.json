@@ -1,4 +1,7 @@
 {
+  "3.5.12" : {
+    "description" : "Added additional strings to the `.pot` file, bringing in some more files in the `/app` file."
+  },
   "3.5.11" : {
     "description" : "Added a full-width page template."
   },
