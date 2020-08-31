@@ -1,4 +1,7 @@
 {
+  "3.5.13" : {
+    "description" : "Missing pagination on search results."
+  },
   "3.5.12" : {
     "description" : "Added additional strings to the `.pot` file, bringing in some more files in the `/app` file."
   },
