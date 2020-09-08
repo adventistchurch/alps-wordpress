@@ -455,6 +455,7 @@ add_filter('allowed_block_types', function () {
     'uagb/table-of-contents',
     'gt3-photo-video-gallery/gallery',
     'gt3pg-pro/grid',
+    'epyt/youtube',
   ];
 });
 
