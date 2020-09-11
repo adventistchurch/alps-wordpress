@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+  @php
+    do_action('alps_custom_sidebar_widgets');
+  @endphp
+
   <header class="c-page-header c-page-header__simple u-theme--background-color--dark">
     <div class="c-page-header__simple--inner u-padding">
       <h1 class="u-font--primary--xxl u-color--white">
