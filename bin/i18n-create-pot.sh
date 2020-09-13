@@ -33,6 +33,7 @@ done
 
 # Replace the Content-Type header with UTF-8 charset. msggrep not work with "charset=CHARSET".
 sed -i'.bak' -e 's/charset=CHARSET/charset=UTF-8/g' $POT_TMP_FILE
+rm -f $POT_TMP_FILE.bak
 
 # Filter the needed text domain in pot file
 msggrep \
@@ -40,11 +41,11 @@ msggrep \
   --regexp="^${TEXT_DOMAIN}$" \
   --output-file=$POT_FILE \
   $POT_TMP_FILE
-
 rm -f $POT_TMP_FILE
 
-# Remove backup file, created by sed. "-i" is required in macOS version of sed.
-rm -f $POT_TMP_FILE.bak
+# Remove the context data
+sed -i'.bak' -e "/msgctxt \"${TEXT_DOMAIN}\"/d" $POT_FILE
+rm -f $POT_FILE.bak
 
 # Update the lang/alps.php file
 node bin/i18n-extract-blade.js
