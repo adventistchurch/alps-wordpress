@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
   @php
+    do_action('alps_custom_sidebar_widgets');
+
     $isVisibleSidebar = \App\TemplateHelpers::isVisibleSidebarOnArchive();
 
     $sidebar = [

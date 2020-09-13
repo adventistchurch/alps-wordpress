@@ -1,5 +1,8 @@
 @php
   global $post;
+
+  do_action('alps_custom_sidebar_widgets');
+
   $cf = get_option('alps_cf_converted');
   $cf_ = '';
   if ($cf) {
