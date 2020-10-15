@@ -1,4 +1,7 @@
 {
+  "3.5.15" : {
+    "description" : "Add RU localization, fixed the `dynamic sidebar`, add the full width  template, fixed the ES translation."
+  },
   "3.5.14" : {
     "description" : "Missing pagination on search results."
   },
