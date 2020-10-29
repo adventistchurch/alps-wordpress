@@ -61,6 +61,11 @@ function crb_attach_theme_options()
     $languages = apply_filters('wpml_active_languages', NULL);
     $logoFields = [
         Field::make('separator', 'crb_logo', __('Logo', 'alps')),
+        Field
+            ::make('checkbox', 'is_wide_logo', __('Wide Logo', 'alps'))
+            ->set_option_value('true')
+            ->set_help_text(__('Select if you would like to use a wider than normal logo.', 'alps'))
+            ->set_width(100),
     ];
     if (empty($languages)) {
         $logoFields[] = Field::make('image', 'logo', __('Logo', 'alps'));
