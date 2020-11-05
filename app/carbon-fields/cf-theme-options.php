@@ -71,6 +71,11 @@ function crb_attach_theme_options()
                 ->set_width(33);
         }
     }
+    $logoFields[] = Field
+        ::make('checkbox', 'is_wide_logo', __('Wide Logo', 'alps'))
+        ->set_option_value('true')
+        ->set_help_text(__('Select if you would like to use a wider than normal logo.', 'alps'))
+        ->set_width(33);
 
     $versionFields = [];
     $versions = \App\Core\ALPSVersions::getAll();

@@ -21,13 +21,18 @@
     $header_class = "";
     $logo_class = "u-theme--path-fill--base";
   }
+
+  $logoContainerClass = ['c-header__logo', 'c-logo'];
+  if (get_alps_option('is_wide_logo')) {
+      $logoContainerClass[] = 'c-header__logo--wide';
+  }
 @endphp
 <header class="c-header{{ $header_class }}" role="banner" id="header">
   <div class="c-header--inner">
     <div class="c-header__nav-secondary">
       @include('patterns.01-molecules.navigation.secondary-navigation')
     </div>
-    <div class="c-header__logo c-logo">
+    <div class="{{ implode(' ', $logoContainerClass) }}">
       <a href="{{ get_home_url() }}" class="c-logo__link{{ $header_logo_class }}">
         @if ($logo)
           <img class="style-svg" src="{{ wp_get_attachment_url($logo) }}" alt="{{ get_post_meta($logo, '_wp_attachment_image_alt', true) }}">
