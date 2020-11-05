@@ -75,8 +75,14 @@ class TemplateHelpers {
 
     public function getPostData($postId)
     {
+        $isFeaturedImageHidden = get_post_meta($postId, '_hide_featured_image', true);
         $thumbId = get_post_thumbnail_id($postId);
-        $headerType = $thumbId ? \App\TemplateHelpers::POST_HEADER_TYPE_FEATURED  : \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
+
+        if ($isFeaturedImageHidden) {
+            $headerType = \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
+        } else {
+            $headerType = $thumbId ? \App\TemplateHelpers::POST_HEADER_TYPE_FEATURED  : \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
+        }
 
         $post = get_post($postId);
         $headerTitle = $post->post_title;
@@ -89,7 +95,6 @@ class TemplateHelpers {
             $headerCategory = $cat[0]->name;
         }
 
-        $thumbId = get_post_thumbnail_id($post->ID);
         $headerImageCaption = get_the_post_thumbnail_caption($post->ID);
         $headerImages = [
             's'  => wp_get_attachment_image_src($thumbId, 'horiz__4x3--s'),
