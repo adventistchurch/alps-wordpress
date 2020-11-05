@@ -3,6 +3,11 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.*.**]
+### Added
+- Added: A caption to the page header - feature image. [#514](https://github.com/adventistchurch/alps-wordpress/issues/514)
+
+
 ## [3.5.15]
 ### Added
 - Added Russian localization.
