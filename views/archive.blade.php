@@ -11,6 +11,7 @@
         extract(\App\TemplateHelpers::getRootPostData());
         break;
       default:
+        $headerType = \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
         $headerTitle = get_alps_option('archive_page_title');
         if (!$headerTitle) {
             $headerTitle = __('Archives', 'alps');

@@ -18,6 +18,7 @@
         extract(\App\TemplateHelpers::getRootPostData());
         break;
       default:
+        $headerType = \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
         $headerTitle = single_cat_title('', false);
         if (get_alps_option('posts_label')) {
             $headerKicker = __('Category', 'alps');

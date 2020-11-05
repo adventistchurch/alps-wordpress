@@ -2,6 +2,10 @@
 namespace App;
 
 class TemplateHelpers {
+    const POST_HEADER_TYPE_HERO = 'hero';
+    const POST_HEADER_TYPE_SIMPLE = 'simple';
+    const POST_HEADER_TYPE_FEATURED = 'featured';
+
     /**
      * Get sidebar visibility for Post List
      *
@@ -55,13 +59,63 @@ class TemplateHelpers {
 
         $postsRootPostIsVisibleSidebar = get_post_meta($postsRootPost->ID, '_hide_sidebar', true);
 
+        $headerHeroType = get_post_meta($postsRootPostId, '_hero_type', true);
+        $isHeroHeader = $headerHeroType && $headerHeroType !== 'false';
+
         return [
             'postsRootPostId' => $postsRootPostId,
             'postsRootPostIsVisibleSidebar' => $postsRootPostIsVisibleSidebar,
+            'headerType' => $isHeroHeader ? TemplateHelpers::POST_HEADER_TYPE_HERO : TemplateHelpers::POST_HEADER_TYPE_SIMPLE,
             'headerTitle' => $headerTitle,
             'headerKicker' => $headerKicker,
             'headerSubtitle' => $headerSubtitle,
             'headerBackgroundImage' => $headerBackgroundImage,
+        ];
+    }
+
+    public function getPostData($postId)
+    {
+        $isFeaturedImageHidden = get_post_meta($postId, '_hide_featured_image', true);
+        $thumbId = get_post_thumbnail_id($postId);
+
+        if ($isFeaturedImageHidden) {
+            $headerType = \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
+        } else {
+            $headerType = $thumbId ? \App\TemplateHelpers::POST_HEADER_TYPE_FEATURED  : \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
+        }
+
+        $post = get_post($postId);
+        $headerTitle = $post->post_title;
+        $headerDesc  = $post->post_excerpt;
+        $headerDate  = get_the_date('', $post->ID);
+
+        $headerCategory = '';
+        $cat = get_the_category($post->ID);
+        if (count($cat) > 0) {
+            $headerCategory = $cat[0]->name;
+        }
+
+        $headerImageCaption = get_the_post_thumbnail_caption($post->ID);
+        $headerImages = [
+            's'  => wp_get_attachment_image_src($thumbId, 'horiz__4x3--s'),
+            'm'  => wp_get_attachment_image_src($thumbId, 'horiz__4x3--m'),
+            'l'  => wp_get_attachment_image_src($thumbId, 'horiz__4x3--l'),
+            'xl' => wp_get_attachment_image_src($thumbId, 'horiz__4x3--xl'),
+        ];
+
+        $headerImages['s'][] = 0;
+        $headerImages['m'][] = 500;
+        $headerImages['l'][] = 800;
+        $headerImages['xl'][] = 1100;
+
+        return [
+            'headerType'  => $headerType,
+            'headerTitle' => $headerTitle,
+            'headerDesc'  => $headerDesc,
+            'headerDate'  => $headerDate,
+            'headerCategory'  => $headerCategory,
+            'headerImageCaption' => $headerImageCaption,
+            'headerImages' => $headerImages,
         ];
     }
 }

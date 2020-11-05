@@ -14,6 +14,7 @@
     /**
      * Header data
      */
+    $headerType = \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
     $headerTitle = get_alps_option('posts_page_title');
     if (!$headerTitle) {
         $headerTitle = __('Recent Posts', 'alps');
