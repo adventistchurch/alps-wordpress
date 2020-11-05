@@ -1,4 +1,7 @@
 {
+  "3.6.0" : {
+    "description" : "Added support for wide logos and the feature header caption on posts."
+  },
   "3.5.15" : {
     "description" : "Add RU localization, fixed the `dynamic sidebar`, add the full width  template, fixed the ES translation."
   },
