@@ -435,6 +435,7 @@ add_filter('allowed_block_types', function () {
     'alps-gutenberg-blocks/image-2up',
     'alps-gutenberg-blocks/image-breakout',
     'alps-gutenberg-blocks/latest-posts',
+    'alps-gutenberg-blocks/media-block',
     'alps-gutenberg-blocks/media-testimonies',
     'alps-gutenberg-blocks/media-testimony',
     'alps-gutenberg-blocks/cta',

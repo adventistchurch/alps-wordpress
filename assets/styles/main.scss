@@ -248,6 +248,10 @@ body.admin-bar {
   padding: 0 !important;
 }
 
+.wp-block-column:not(:first-child) {
+  margin-left: 1.25em;
+}
+
 // Guidepost styles
 .wp-block-sbb-guidepost,
 .wp-block-sortabrilliant-guidepost {
