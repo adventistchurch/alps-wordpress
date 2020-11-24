@@ -16,7 +16,7 @@
   // If has sidebar and hide sidebar is not true for entry or theme
   if ($active_sidebar && !$entry_hide_sidebar && !$theme_hide_sidebar) {
     $section_offset = 'u-shift--left--1-col--at-xxlarge';
-    $article_offset = 'l-grid-item--xl--3-col';
+    $article_offset = 'l-grid-item--xxl--3-col';
   } else {
     $section_offset = 'u-shift--left--1-col--at-large';
     $article_offset = '';

@@ -1,4 +1,7 @@
 {
+  "3.6.1" : {
+    "description" : "Fixed an issue with ALPS using the `l-grid-item--xl` classes as `l-grid-item--xxl`"
+  },
   "3.6.0" : {
     "description" : "Added support for wide logos and the feature header caption on posts."
   },

@@ -13,7 +13,7 @@
   if (get_post_meta($post->ID , $cf_.'hide_sidebar', true) == true ) {
     $has_sidebar = false;
     $section_offset = 'u-shift--left--1-col--at-xxlarge';
-    $article_offset = 'l-grid-item--xl--3-col';
+    $article_offset = 'l-grid-item--xxl--4-col';
   }
 
 @endphp
