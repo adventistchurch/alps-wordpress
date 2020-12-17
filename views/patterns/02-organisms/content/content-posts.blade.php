@@ -68,7 +68,7 @@
     'c-article',
     'l-grid-item',
     'l-grid-item--l--4-col',
-    $hasSidebar ? 'l-grid-item--xl--3-col' : null,
+    $hasSidebar ? 'l-grid-item--xl--4-col l-grid-item--xxl--3-col' : null,
   ];
 
   /**
