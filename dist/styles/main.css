@@ -224,6 +224,16 @@ body.admin-bar .c-drawer {
   padding: 0 !important;
 }
 
+.wp-block-column:not(:first-child) {
+  margin-left: 1.2em;
+}
+
+.wp-block-column .c-media-block,
+.wp-block-column .c-block__image,
+.wp-block-column .c-block__content {
+  width: auto !important;
+}
+
 .wp-block-sbb-guidepost,
 .wp-block-sortabrilliant-guidepost {
   margin-left: 40px;
