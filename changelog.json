@@ -1,4 +1,7 @@
 {
+  "3.6.2" : {
+    "description" : "Adding support for the new ALPS Media Block and fixing issues from the l-grid-item--xxl errors."
+  },
   "3.6.1" : {
     "description" : "Fixed an issue with ALPS using the `l-grid-item--xl` classes as `l-grid-item--xxl`"
   },
