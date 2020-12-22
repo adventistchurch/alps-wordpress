@@ -249,7 +249,14 @@ body.admin-bar {
 }
 
 .wp-block-column:not(:first-child) {
-  margin-left: 1em;
+  margin-left: 1.2em;
+}
+
+// Overwrites ALPS Media Block when they are located inside a column component.
+.wp-block-column .c-media-block,
+.wp-block-column .c-block__image,
+.wp-block-column .c-block__content {
+  width: auto !important;
 }
 
 // Guidepost styles
