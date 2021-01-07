@@ -12,7 +12,7 @@
       wp_enqueue_script('comment-reply');
   }
 @endphp
-<html class="{{ $theme_color_class }}" {{ get_language_attributes() }}>
+<html class="{{ $theme_color_class }}" {{ language_attributes() }}>
   @include('patterns.02-organisms.global.head')
   <body @php body_class() @endphp>
     <div class="l-wrap">

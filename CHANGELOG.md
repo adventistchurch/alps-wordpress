@@ -3,6 +3,11 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.6.3]
+### Fixed
+- Fixed an issue with the html language attributes displaying extra quote marks around them.
+
+
 ## [3.6.2]
 ### Added
 - Added support for the `ALPS Media Block` component.

@@ -1,4 +1,7 @@
 {
+  "3.6.3" : {
+    "description" : "Fixed issue with the html language attributes displaying extra quote marks around them."
+  },
   "3.6.2" : {
     "description" : "Adding support for the new ALPS Media Block and fixing issues from the l-grid-item--xxl errors."
   },
