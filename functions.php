@@ -113,8 +113,8 @@ function adventist_register_required_plugins() {
     $plugins = array(
       // Guidebook
       array(
-        'name'               => 'Guidepost',
-        'slug'               => 'guidepost',
+        'name'               => 'SimpleTOC',
+        'slug'               => 'simpletoc',
         'required'           => false,
       ),
       // WordPress SEO
@@ -442,6 +442,7 @@ add_filter('allowed_block_types', function () {
     'alps-gutenberg-blocks/cta',
     'sbb/guidepost',
     'sortabrilliant/guidepost',
+    'simpletoc/toc',
     'nextgenthemes/arve-block',
     'gutentor/m4',
     'gutentor/m4-col',

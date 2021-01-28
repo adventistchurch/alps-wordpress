@@ -208,6 +208,16 @@ body.admin-bar {
   margin-top: 20px;
 }
 
+// Footnotes (Footnotes Made Easy))
+.text ol.footnotes li {
+  font-size: 0.85rem;
+}
+
+.footnotes {
+  padding-top: 1.25rem;
+  border-top: 1px solid #717171;
+}
+
 // Article Body
 @media (min-width: 701px) and (max-width: 900px) {
   .body {
@@ -249,7 +259,7 @@ body.admin-bar {
 }
 
 .wp-block-column:not(:first-child) {
-  margin-left: 1.2em;
+  margin-left: 1.25em;
 }
 
 // Overwrites ALPS Media Block when they are located inside a column component.

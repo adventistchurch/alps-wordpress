@@ -189,6 +189,15 @@ body.admin-bar .c-drawer {
   margin-top: 20px;
 }
 
+.text ol.footnotes li {
+  font-size: 0.85rem;
+}
+
+.footnotes {
+  padding-top: 1.25rem;
+  border-top: 1px solid #717171;
+}
+
 @media (min-width: 701px) and (max-width: 900px) {
   .body .full-width .c-article,
   .body .full-width .c-sidebar {
@@ -225,7 +234,7 @@ body.admin-bar .c-drawer {
 }
 
 .wp-block-column:not(:first-child) {
-  margin-left: 1.2em;
+  margin-left: 1.25em;
 }
 
 .wp-block-column .c-media-block,
