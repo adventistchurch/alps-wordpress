@@ -1,4 +1,7 @@
 {
+  "3.6.5" : {
+    "description" : "Fixed the styling for footnotes, and Footnotes Made Easy. Removed support for Guidepost and replaced it with SimpleTOC."
+  },
   "3.6.4" : {
     "description" : "Fixed and updated the German translation."
   },
