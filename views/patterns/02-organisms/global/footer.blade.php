@@ -67,7 +67,6 @@
   </div> <!-- /.c-footer--inner -->
 </footer> <!-- /.c-footer -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
   $jq2 = $.noConflict(true);
 </script>
