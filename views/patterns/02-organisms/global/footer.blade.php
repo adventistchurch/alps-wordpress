@@ -67,7 +67,4 @@
   </div> <!-- /.c-footer--inner -->
 </footer> <!-- /.c-footer -->
 
-<script>
-  $jq2 = $.noConflict(true);
-</script>
 <script src="{{ $alpsVersion['scripts']['main'] }}" type="text/javascript" async></script>
