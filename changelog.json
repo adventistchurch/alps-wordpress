@@ -1,4 +1,7 @@
 {
+  "3.6.6" : {
+    "description" : "Removing the second copy of jQuery, (2.2.4). This REQUIRES Wordpress 5.6 or higher."
+  },
   "3.6.5" : {
     "description" : "Fixed the styling for footnotes, and Footnotes Made Easy. Removed support for Guidepost and replaced it with SimpleTOC."
   },

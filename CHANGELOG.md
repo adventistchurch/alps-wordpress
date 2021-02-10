@@ -3,6 +3,11 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [3.6.6]
+### Fixed
+- Removed the second version of jQuery (2.2.4) since Wordpress now includes jQuery 3.5.1 [#550](https://github.com/adventistchurch/alps-wordpress/issues/550)
+
 ## [3.6.5]
 ### Fixed
 - Fixed the styling for footnotes, and Footnotes Made Easy. [#507](https://github.com/adventistchurch/alps-wordpress/issues/507)
