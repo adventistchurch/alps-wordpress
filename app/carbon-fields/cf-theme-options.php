@@ -96,8 +96,18 @@ function crb_attach_theme_options()
                 ::make('html', 'crb_alps_version')
                 ->set_html(__('<h3>ALPS CORE Version</h3><p style="font-size:16px">Stick to the selected version of ALPS core CSS and Javascript.</p>', 'alps')),
             Field
+                ::make('checkbox', 'project_alps_version', __('Use project ALPS CORE Version', 'alps'))
+                ->set_option_value('false')
+                ->set_help_text(__('Select project ALPS core version or choose another version.', 'alps'))
+                ->set_width(33),
+            Field
                 ::make('select', \App\Core\ALPSVersions::OPTION_KEY, __('Choose ALPS CORE Version', 'alps'))
                 ->add_options($versionOptions)
+                ->set_conditional_logic([[
+                    'field' => 'project_alps_version',
+                    'value' => false,
+                    'compare' => '='
+                ]])
                 ->set_width(33),
         ];
     }
