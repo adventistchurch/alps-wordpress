@@ -63,14 +63,21 @@ function crb_attach_theme_options()
         Field::make('separator', 'crb_logo', __('Logo', 'alps')),
     ];
     if (empty($languages)) {
-        $logoFields[] = Field::make('image', 'logo', __('Logo', 'alps'));
+        $logoFields[] = Field
+            ::make('image', 'logo', __('Logo', 'alps'))
+            ->set_width(50);
     } else {
         foreach ($languages as $lang) {
             $logoFields[] = Field
                 ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')', 'alps'))
-                ->set_width(33);
+                ->set_width(50);
         }
     }
+    $logoFields[] = Field
+        ::make('checkbox', 'is_wide_logo', __('Wide Logo', 'alps'))
+        ->set_option_value('true')
+        ->set_help_text(__('Select if you would like to use a wider than normal logo.', 'alps'))
+        ->set_width(50);
 
     $versionFields = [];
     $versions = \App\Core\ALPSVersions::getAll();
