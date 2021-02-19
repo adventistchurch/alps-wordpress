@@ -81,7 +81,7 @@ class ALPSVersions
         foreach ($themes_keys as &$key) {
             $fileName = $latestVersion['version'].'-main-'.$key.'.css';
             self::uploadFile($latestVersion['styles']['themes'][$key], get_stylesheet_directory().self::LOCAL_PATH.'css/'.$fileName);
-            $result_themes = array($key => get_template_directory_uri().self::LOCAL_PATH.'css/'.$fileName);
+            $result_themes = array_merge(array($key => get_template_directory_uri().self::LOCAL_PATH.'css/'.$fileName), $result_themes);
         }
 
         $local_css_main = self::LOCAL_PATH.'css/'.$latestVersion['version'].'-main.css';
@@ -94,7 +94,7 @@ class ALPSVersions
 
         return [
             [
-                'version' => 'unknown',
+                'version' => $latestVersion['version'],
                 'scripts' => [
                     'main' => get_template_directory_uri().$local_js_main,
                     'head' => get_template_directory_uri().$local_js_head,
@@ -103,7 +103,7 @@ class ALPSVersions
                     'main' => get_template_directory_uri().$local_css_main,
                     'themes' => $result_themes
                 ],
-            ],
+            ]
         ];
     }
 
