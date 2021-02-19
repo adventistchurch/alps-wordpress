@@ -63,21 +63,14 @@ function crb_attach_theme_options()
         Field::make('separator', 'crb_logo', __('Logo', 'alps')),
     ];
     if (empty($languages)) {
-        $logoFields[] = Field
-            ::make('image', 'logo', __('Logo', 'alps'))
-            ->set_width(50);
+        $logoFields[] = Field::make('image', 'logo', __('Logo', 'alps'));
     } else {
         foreach ($languages as $lang) {
             $logoFields[] = Field
                 ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')', 'alps'))
-                ->set_width(50);
+                ->set_width(33);
         }
     }
-    $logoFields[] = Field
-        ::make('checkbox', 'is_wide_logo', __('Wide Logo', 'alps'))
-        ->set_option_value('true')
-        ->set_help_text(__('Select if you would like to use a wider than normal logo.', 'alps'))
-        ->set_width(50);
 
     $versionFields = [];
     $versions = \App\Core\ALPSVersions::getAll();
@@ -96,16 +89,18 @@ function crb_attach_theme_options()
                 ::make('html', 'crb_alps_version')
                 ->set_html(__('<h3>ALPS CORE Version</h3><p style="font-size:16px">Stick to the selected version of ALPS core CSS and Javascript.</p>', 'alps')),
             Field
-                ::make('checkbox', 'project_alps_version', __('Use project ALPS CORE Version', 'alps'))
-                ->set_option_value('false')
-                ->set_help_text(__('Select project ALPS core version or choose another version.', 'alps'))
+                ::make('radio', 'project_alps_version', __('ALPS Core files version', 'alps'))
+                ->add_options([
+                    'alps-remote' => __('REMOTE: This option pulls the ALPS CORE CSS and Javascript from the remote CDN.', 'alps'),
+                    'alps-local' => __('LOCAL: This option caches the most recent version of ALPS to your local site, reducing the connections to remote servers.', 'alps'),
+                ])
                 ->set_width(33),
             Field
                 ::make('select', \App\Core\ALPSVersions::OPTION_KEY, __('Choose ALPS CORE Version', 'alps'))
                 ->add_options($versionOptions)
                 ->set_conditional_logic([[
                     'field' => 'project_alps_version',
-                    'value' => false,
+                    'value' => 'alps-remote',
                     'compare' => '='
                 ]])
                 ->set_width(33),
