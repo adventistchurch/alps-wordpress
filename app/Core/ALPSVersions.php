@@ -37,7 +37,7 @@ class ALPSVersions
         }
 
         $versions = self::usingLocalVersion() ?
-            self::getLocalVersion(get_site_transient(self::STORAGE_KEY)[0]) :
+            self::getLocalVersion(get_site_transient(self::STORAGE_KEY)[3]) :
             get_site_transient(self::STORAGE_KEY);
 
         if ($versions) {
@@ -53,6 +53,11 @@ class ALPSVersions
         }
 
         return self::getFallbackVersion();
+    }
+
+    public static function getLocalCachedVersion() {
+        $cachedVersion = scandir(get_stylesheet_directory().self::LOCAL_PATH)[2];
+        return $cachedVersion ? $cachedVersion : 'Local styles was not cached yet!';
     }
 
     public static function usingLocalVersion() {
