@@ -77,20 +77,30 @@ class ALPSVersions
         $themes_keys = array_keys($latestVersion['styles']['themes']);
         $result_themes = [];
 
+        $version = $latestVersion['version'];
+
+        $local_css_main = self::LOCAL_PATH.$version.'/css/'.$version.'-main.css';
+        $local_js_head  = self::LOCAL_PATH.$version.'/js/'.$version.'-head-script.min.js';
+        $local_js_main  = self::LOCAL_PATH.$version.'/js/'.$version.'-script.min.js';
+
+        if(!self::currentVersionIsLatest($version)) {
+            self::cleanLocalDirectory(get_stylesheet_directory().self::LOCAL_PATH);
+
+            mkdir(get_stylesheet_directory().self::LOCAL_PATH.$version.'/css', 0777, true);
+            mkdir(get_stylesheet_directory().self::LOCAL_PATH.$version.'/js', 0777, true);
+
+            self::uploadFile($latestVersion['styles']['main'], get_stylesheet_directory().$local_css_main);
+            self::uploadFile($latestVersion['scripts']['head'], get_stylesheet_directory().$local_js_head);
+            self::uploadFile($latestVersion['scripts']['main'], get_stylesheet_directory().$local_js_main);
+        }
+
         //Cache themes styles
         foreach ($themes_keys as &$key) {
             $fileName = $latestVersion['version'].'-main-'.$key.'.css';
-            self::uploadFile($latestVersion['styles']['themes'][$key], get_stylesheet_directory().self::LOCAL_PATH.'css/'.$fileName);
-            $result_themes = array_merge(array($key => get_template_directory_uri().self::LOCAL_PATH.'css/'.$fileName), $result_themes);
+            $filePath = self::LOCAL_PATH.$version.'/css/'.$fileName;
+            self::uploadFile($latestVersion['styles']['themes'][$key], get_stylesheet_directory().$filePath);
+            $result_themes = array_merge(array($key => get_template_directory_uri().$filePath), $result_themes);
         }
-
-        $local_css_main = self::LOCAL_PATH.'css/'.$latestVersion['version'].'-main.css';
-        $local_js_head  = self::LOCAL_PATH.'js/'.$latestVersion['version'].'-head-script.min.js';
-        $local_js_main  = self::LOCAL_PATH.'js/'.$latestVersion['version'].'-script.min.js';
-
-        self::uploadFile($latestVersion['styles']['main'], get_stylesheet_directory().$local_css_main);
-        self::uploadFile($latestVersion['scripts']['head'], get_stylesheet_directory().$local_js_head);
-        self::uploadFile($latestVersion['scripts']['main'], get_stylesheet_directory().$local_js_main);
 
         return [
             [
@@ -122,7 +132,22 @@ class ALPSVersions
         }
     }
 
-    public static function log($data ){
+    private static function currentVersionIsLatest($currentVersion) {
+        return file_exists(get_stylesheet_directory().self::LOCAL_PATH.$currentVersion);
+    }
+
+    // delete all files and sub-folders from a folder
+    private static function cleanLocalDirectory($dir) {
+        foreach(glob($dir . '/*') as $file) {
+            if(is_dir($file))
+                self::cleanLocalDirectory($file);
+            else
+                unlink($file);
+        }
+        rmdir($dir);
+    }
+
+    private static function log($data ){
         echo '<script>';
         echo 'console.log('. json_encode( $data ) .')';
         echo '</script>';
