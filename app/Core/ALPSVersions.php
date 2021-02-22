@@ -37,7 +37,7 @@ class ALPSVersions
         }
 
         $versions = self::usingLocalVersion() ?
-            self::getLocalVersion(get_site_transient(self::STORAGE_KEY)[3]) :
+            self::getLocalVersion(get_site_transient(self::STORAGE_KEY)[0]) :
             get_site_transient(self::STORAGE_KEY);
 
         if ($versions) {
