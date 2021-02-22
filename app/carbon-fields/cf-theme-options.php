@@ -96,7 +96,7 @@ function crb_attach_theme_options()
                 ])
                 ->set_width(33),
             Field
-                ::make('select', \App\Core\ALPSVersions::OPTION_KEY, __('Choose ALPS CORE Version', 'alps'))
+                ::make('select', \App\Core\ALPSVersions::OPTION_KEY, __('Choose the REMOTE ALPS CDN Version', 'alps'))
                 ->add_options($versionOptions)
                 ->set_conditional_logic([[
                     'field' => 'project_alps_version',
