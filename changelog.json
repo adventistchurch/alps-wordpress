@@ -1,4 +1,7 @@
 {
+  "3.7.0" : {
+    "description" : "Added local caching of ALPS CDN CSS and Javascript files for performance. Fixed a bug where the related post grid at 3up widths (with hidden sidebar) is shifted wrong on the page."
+  },
   "3.6.6" : {
     "description" : "Removing the second copy of jQuery, (2.2.4). This REQUIRES Wordpress 5.6 or higher."
   },
