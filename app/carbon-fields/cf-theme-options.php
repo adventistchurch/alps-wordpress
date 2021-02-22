@@ -106,7 +106,7 @@ function crb_attach_theme_options()
                 ->set_width(33),
             Field
                 ::make('html', 'cached_version')
-                ->set_html(__('<h3 style="font-size:13px; margin-top: 0;">Cached LOCAL styles version</h3><p style="font-size:13px">'.\App\Core\ALPSVersions::getLocalCachedVersion().'</p>', 'alps'))
+                ->set_html(__('<h3 style="font-size:13px; margin-top: 0;">Cached LOCAL style version</h3><p style="font-size:13px">ALPS Version '.\App\Core\ALPSVersions::getLocalCachedVersion().'</p>', 'alps'))
                 ->set_conditional_logic([[
                     'field' => 'project_alps_version',
                     'value' => 'alps-local',

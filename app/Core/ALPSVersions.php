@@ -57,7 +57,7 @@ class ALPSVersions
 
     public static function getLocalCachedVersion() {
         $cachedVersion = scandir(get_stylesheet_directory().self::LOCAL_PATH)[2];
-        return $cachedVersion ? $cachedVersion : 'Local styles was not cached yet!';
+        return $cachedVersion ? $cachedVersion : 'Local styles are not cached yet!';
     }
 
     public static function usingLocalVersion() {
