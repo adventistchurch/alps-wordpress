@@ -1,4 +1,7 @@
 {
+  "3.7.1" : {
+    "description" : "Fixed a bug that didn't pull the latest version of the code."
+  },
   "3.7.0" : {
     "description" : "Added local caching of ALPS CDN CSS and Javascript files for performance. Fixed a bug where the related post grid at 3up widths (with hidden sidebar) is shifted wrong on the page."
   },
