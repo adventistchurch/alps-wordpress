@@ -1,4 +1,7 @@
 {
+  "3.7.2" : {
+    "description" : "HOTFIX: Bug with homepage 3-up grid displays shifting to the right to overlap the Sabbath column."
+  },
   "3.7.1" : {
     "description" : "Fixed a bug that didn't pull the latest version of the code."
   },

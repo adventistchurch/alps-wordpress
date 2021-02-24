@@ -95,7 +95,7 @@
             if ($postsLayoutType == POST_LAYOUT_GRID) {
               if (!$hasSidebar) {
                 if ($postsLayoutGrid3Up) {
-                  $grid_class = "l-grid-item--6-col l-grid-item--l--4-col l-grid-item--xl--6-col u-shift--right--1-col--at-large u-shift--left--1-col--at-xlarge u-shift--left--1-col--standard u-no-gutters ";
+                  $grid_class = "l-grid-item--6-col l-grid-item--l--4-col l-grid-item--xxl--6-col u-shift--right--1-col--at-large  u-shift--left--1-col--standard u-no-gutters ";
                   $grid_item_class = "l-grid-item--s--3-col l-grid-item--l--2-col";
                 } else {
                   $grid_class = "l-grid-item--6-col l-grid-item--m--4-col u-no-gutters";
