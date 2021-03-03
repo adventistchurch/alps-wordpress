@@ -39,6 +39,7 @@ class ALPSVersions
         $versions = self::usingLocalVersion() ?
             self::getLocalVersion(get_site_transient(self::STORAGE_KEY)[0]) :
             get_site_transient(self::STORAGE_KEY);
+        self::log("GET: ".self::usingLocalVersion());
 
         if ($versions) {
             if ($version === 'latest') {
@@ -57,6 +58,7 @@ class ALPSVersions
 
     public static function getLocalCachedVersion() {
         $cachedVersion = scandir(get_stylesheet_directory().self::LOCAL_PATH)[2];
+        self::log("getLocalCachedVersion: ".$cachedVersion);
         return $cachedVersion ? $cachedVersion : 'Local styles are not cached yet!';
     }
 
@@ -89,6 +91,7 @@ class ALPSVersions
         $local_js_main  = self::LOCAL_PATH.$version.'/js/'.$version.'-script.min.js';
 
         if(!self::currentVersionIsLatest($version)) {
+            self::log("2- getLocalVersion: ".get_stylesheet_directory()." - currentVersionIsLatest: ".get_stylesheet_directory().self::LOCAL_PATH);
             self::cleanLocalDirectory(get_stylesheet_directory().self::LOCAL_PATH);
 
             mkdir(get_stylesheet_directory().self::LOCAL_PATH.$version.'/css', 0777, true);
@@ -99,6 +102,7 @@ class ALPSVersions
             self::uploadFile($latestVersion['scripts']['main'], get_stylesheet_directory().$local_js_main);
         }
 
+        self::log("1 - getLocalVersion: ".get_stylesheet_directory()." - currentVersionIsLatest: ".get_stylesheet_directory().self::LOCAL_PATH);
         //Cache themes styles
         foreach ($themes_keys as &$key) {
             $fileName = $latestVersion['version'].'-main-'.$key.'.css';
@@ -124,17 +128,17 @@ class ALPSVersions
 
     public static function uploadFile($file, $newfile) {
 
-        if (!file_exists($newfile)) {
-            copy($file, $newfile);
+//        if (!file_exists($newfile)) {
+//            copy($file, $newfile);
 
             //For debugging
 
-//            if ( copy($file, $newfile) ) {
-//                self::log('Caching of css/js files success!');
-//            }else{
-//                self::log('Caching of css/js files failed. - '.$file.' - '.$newfile);
-//            }
-        }
+            if ( copy($file, $newfile) ) {
+                self::log('Caching of css/js files success!');
+            }else{
+                self::log('Caching of css/js files failed. - '.$file.' - '.$newfile);
+            }
+//        }
     }
 
     private static function currentVersionIsLatest($currentVersion) {
