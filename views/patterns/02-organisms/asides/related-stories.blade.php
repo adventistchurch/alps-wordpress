@@ -30,7 +30,7 @@
 
 <div class="c-related-posts u-spacing">
   <div class="c-block__heading u-theme--border-color--darker">
-    <h3 class="c-block__heading-title u-theme--color--darker">{{ __('Related Stories', 'alps') }}</h3>
+    <div class="c-block__heading-title u-theme--color--darker">{{ __('Related Stories', 'alps') }}</div>
   </div>
   <div class="c-related-posts__blocks u-spacing">
     @if ($related->have_posts())
