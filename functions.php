@@ -318,7 +318,12 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 /**
- * Provides automatic updates for the WordPress theme and plugins (http://wp-updates.com/)
+ * Provides automatic updates for the WordPress theme and plugins from Kernl (https://kernl.us/)
  */
-require_once('wp-updates-theme.php');
-new WPUpdatesThemeUpdater_1948( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
+require 'kernl-update-checker/kernl-update-checker.php';
+$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://kernl.us/api/v1/theme-updates/6048f1061a2cf4636d27cc93/',
+    __FILE__,
+    'alps-wordpress-v2'
+);
+    

@@ -1,0 +1,23 @@
+{
+	"name": "kernl/kernl-update-checker",
+	"type": "library",
+	"description": "The WordPress plugin and theme update checker for https://kernl.us",
+	"keywords": ["wordpress", "plugin updates", "automatic updates", "theme updates"],
+	"homepage": "https://github.com/vital101/plugin-update-checker",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Jack Slingerland",
+			"email": "jack@kernl.us",
+			"homepage": "https://kernl.us",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.2.0",
+		"ext-json": "*"
+	},
+	"autoload": {
+		"files": ["load-v4p10.php"]
+	}
+}
