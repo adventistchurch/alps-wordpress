@@ -1,7 +1,7 @@
 # ALPS WordPress Theme Setup
 
 ## Download
-[Download the most recent version of ALPS for Wordpress V2](https://kernl.us/api/v1/archive/6048f861e5de1d747414449b)
+[Download the most recent version of ALPS for Wordpress V2](https://kernl.us/api/v1/archive/6048f9cf091f9b57796d7290)
 
 ## Theme installation via WordPress Admin Panel
 
