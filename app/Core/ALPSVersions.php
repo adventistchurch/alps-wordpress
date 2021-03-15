@@ -89,6 +89,9 @@ class ALPSVersions
         $local_js_head  = self::LOCAL_PATH.$version.'/js/'.$version.'-head-script.min.js';
         $local_js_main  = self::LOCAL_PATH.$version.'/js/'.$version.'-script.min.js';
 
+        $local_images_background = self::LOCAL_PATH.$version.'/images/background-grid.svg';
+        $local_images_icons_gallery = self::LOCAL_PATH.$version.'/images/icons/o-icon__gallery.svg';
+
         $get_stylesheet_directory   = get_theme_root().'/'.self::PARENT_THEME;
         $get_template_directory_uri = get_theme_root_uri().'/'.self::PARENT_THEME;
 
@@ -97,10 +100,15 @@ class ALPSVersions
 
             mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/css', 0777, true);
             mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/js', 0777, true);
+            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/images', 0777, true);
+            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/images/icons', 0777, true);
 
             self::uploadFile($latestVersion['styles']['main'], $get_stylesheet_directory.$local_css_main);
             self::uploadFile($latestVersion['scripts']['head'], $get_stylesheet_directory.$local_js_head);
             self::uploadFile($latestVersion['scripts']['main'], $get_stylesheet_directory.$local_js_main);
+
+            self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/background-grid.svg', $get_stylesheet_directory.$local_images_background);
+            self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/icons/o-icon__gallery.svg', $get_stylesheet_directory.$local_images_icons_gallery);
         }
 
         //Cache themes styles
