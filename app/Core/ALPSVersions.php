@@ -7,6 +7,7 @@ class ALPSVersions
     const OPTION_KEY = 'alps_version';
 
     const LOCAL_PATH = '/app/local/alps/';
+    const PARENT_THEME = 'alps-wordpress-v3';
 
     public function init()
     {
@@ -39,7 +40,6 @@ class ALPSVersions
         $versions = self::usingLocalVersion() ?
             self::getLocalVersion(get_site_transient(self::STORAGE_KEY)[0]) :
             get_site_transient(self::STORAGE_KEY);
-        self::log("GET: ".self::usingLocalVersion());
 
         if ($versions) {
             if ($version === 'latest') {
@@ -57,8 +57,7 @@ class ALPSVersions
     }
 
     public static function getLocalCachedVersion() {
-        $cachedVersion = scandir(get_stylesheet_directory().self::LOCAL_PATH)[2];
-        self::log("getLocalCachedVersion: ".$cachedVersion);
+        $cachedVersion = scandir(get_theme_root().'/'.self::PARENT_THEME.self::LOCAL_PATH)[0];
         return $cachedVersion ? $cachedVersion : 'Local styles are not cached yet!';
     }
 
@@ -90,36 +89,45 @@ class ALPSVersions
         $local_js_head  = self::LOCAL_PATH.$version.'/js/'.$version.'-head-script.min.js';
         $local_js_main  = self::LOCAL_PATH.$version.'/js/'.$version.'-script.min.js';
 
+        $local_images_background = self::LOCAL_PATH.$version.'/images/background-grid.svg';
+        $local_images_icons_gallery = self::LOCAL_PATH.$version.'/images/icons/o-icon__gallery.svg';
+
+        $get_stylesheet_directory   = get_theme_root().'/'.self::PARENT_THEME;
+        $get_template_directory_uri = get_theme_root_uri().'/'.self::PARENT_THEME;
+
         if(!self::currentVersionIsLatest($version)) {
-            self::log("2- getLocalVersion: ".get_stylesheet_directory()." - currentVersionIsLatest: ".get_stylesheet_directory().self::LOCAL_PATH);
-            self::cleanLocalDirectory(get_stylesheet_directory().self::LOCAL_PATH);
+            self::cleanLocalDirectory($get_stylesheet_directory.self::LOCAL_PATH);
 
-            mkdir(get_stylesheet_directory().self::LOCAL_PATH.$version.'/css', 0777, true);
-            mkdir(get_stylesheet_directory().self::LOCAL_PATH.$version.'/js', 0777, true);
+            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/css', 0777, true);
+            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/js', 0777, true);
+            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/images', 0777, true);
+            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/images/icons', 0777, true);
 
-            self::uploadFile($latestVersion['styles']['main'], get_stylesheet_directory().$local_css_main);
-            self::uploadFile($latestVersion['scripts']['head'], get_stylesheet_directory().$local_js_head);
-            self::uploadFile($latestVersion['scripts']['main'], get_stylesheet_directory().$local_js_main);
+            self::uploadFile($latestVersion['styles']['main'], $get_stylesheet_directory.$local_css_main);
+            self::uploadFile($latestVersion['scripts']['head'], $get_stylesheet_directory.$local_js_head);
+            self::uploadFile($latestVersion['scripts']['main'], $get_stylesheet_directory.$local_js_main);
+
+            self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/background-grid.svg', $get_stylesheet_directory.$local_images_background);
+            self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/icons/o-icon__gallery.svg', $get_stylesheet_directory.$local_images_icons_gallery);
         }
 
-        self::log("1 - getLocalVersion: ".get_stylesheet_directory()." - currentVersionIsLatest: ".get_stylesheet_directory().self::LOCAL_PATH);
         //Cache themes styles
         foreach ($themes_keys as &$key) {
             $fileName = $latestVersion['version'].'-main-'.$key.'.css';
             $filePath = self::LOCAL_PATH.$version.'/css/'.$fileName;
-            self::uploadFile($latestVersion['styles']['themes'][$key], get_stylesheet_directory().$filePath);
-            $result_themes = array_merge(array($key => get_template_directory_uri().$filePath), $result_themes);
+            self::uploadFile($latestVersion['styles']['themes'][$key], $get_stylesheet_directory.$filePath);
+            $result_themes = array_merge(array($key => $get_template_directory_uri.$filePath), $result_themes);
         }
 
         return [
             [
                 'version' => $latestVersion['version'],
                 'scripts' => [
-                    'main' => get_template_directory_uri().$local_js_main,
+                    'main' => $get_template_directory_uri.$local_js_main,
                     'head' => get_template_directory_uri().$local_js_head,
                 ],
                 'styles' => [
-                    'main' => get_template_directory_uri().$local_css_main,
+                    'main' => $get_template_directory_uri.$local_css_main,
                     'themes' => $result_themes
                 ],
             ]
@@ -128,17 +136,17 @@ class ALPSVersions
 
     public static function uploadFile($file, $newfile) {
 
-//        if (!file_exists($newfile)) {
-//            copy($file, $newfile);
+        if (!file_exists($newfile)) {
+            copy($file, $newfile);
 
             //For debugging
 
-            if ( copy($file, $newfile) ) {
-                self::log('Caching of css/js files success!');
-            }else{
-                self::log('Caching of css/js files failed. - '.$file.' - '.$newfile);
-            }
-//        }
+//            if ( copy($file, $newfile) ) {
+//                self::log('Caching of css/js files success!');
+//            }else{
+//                self::log('Caching of css/js files failed. - '.$file.' - '.$newfile);
+//            }
+        }
     }
 
     private static function currentVersionIsLatest($currentVersion) {
