@@ -57,7 +57,7 @@ class ALPSVersions
     }
 
     public static function getLocalCachedVersion() {
-        $cachedVersion = scandir(get_theme_root().'/'.self::PARENT_THEME.self::LOCAL_PATH)[0];
+        $cachedVersion = scandir(get_theme_root().'/'.self::PARENT_THEME.self::LOCAL_PATH)[2];
         return $cachedVersion ? $cachedVersion : 'Local styles are not cached yet!';
     }
 
@@ -91,6 +91,7 @@ class ALPSVersions
 
         $local_images_background = self::LOCAL_PATH.$version.'/images/background-grid.svg';
         $local_images_icons_gallery = self::LOCAL_PATH.$version.'/images/icons/o-icon__gallery.svg';
+        $local_images_pattern = self::LOCAL_PATH.$version.'/images/background-pattern.png';
 
         $get_stylesheet_directory   = get_theme_root().'/'.self::PARENT_THEME;
         $get_template_directory_uri = get_theme_root_uri().'/'.self::PARENT_THEME;
@@ -109,6 +110,7 @@ class ALPSVersions
 
             self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/background-grid.svg', $get_stylesheet_directory.$local_images_background);
             self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/icons/o-icon__gallery.svg', $get_stylesheet_directory.$local_images_icons_gallery);
+            self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/background-pattern.png', $get_stylesheet_directory.$local_images_pattern);
         }
 
         //Cache themes styles
@@ -124,7 +126,7 @@ class ALPSVersions
                 'version' => $latestVersion['version'],
                 'scripts' => [
                     'main' => $get_template_directory_uri.$local_js_main,
-                    'head' => get_template_directory_uri().$local_js_head,
+                    'head' => $get_template_directory_uri.$local_js_head,
                 ],
                 'styles' => [
                     'main' => $get_template_directory_uri.$local_css_main,
@@ -150,7 +152,7 @@ class ALPSVersions
     }
 
     private static function currentVersionIsLatest($currentVersion) {
-        return file_exists(get_stylesheet_directory().self::LOCAL_PATH.$currentVersion);
+        return file_exists(get_theme_root().'/'.self::PARENT_THEME.self::LOCAL_PATH.$currentVersion);
     }
 
     // delete all files and sub-folders from a folder
