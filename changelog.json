@@ -1,4 +1,7 @@
 {
+  "3.7.3" : {
+    "description" : "Fix: Fixing a bug that didn't allow the local cached version of the ALPS CSS/JS to be used on subthemes."
+  },
   "3.7.2" : {
     "description" : "HOTFIX: Bug with homepage 3-up grid displays shifting to the right to overlap the Sabbath column."
   },

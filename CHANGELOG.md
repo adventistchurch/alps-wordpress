@@ -4,6 +4,11 @@ A record of the changes made to `ALPS for Wordpress`.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [3.7.3]
+### Fixed
+- Fix: Fixing a bug that didn't allow the local cached version of the ALPS CSS/JS to be used on subthemes. [#551](https://github.com/adventistchurch/alps-wordpress/issues/551)
+
+
 ## [3.7.2]
 ### Fixed
 - HOTFIX: Bug with homepage 3-up grid displays shifting to the right to overlap the Sabbath column.
