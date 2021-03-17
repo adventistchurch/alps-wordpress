@@ -9,6 +9,22 @@ class ALPSVersions
     const LOCAL_PATH = '/app/local/alps/';
     const PARENT_THEME = 'alps-wordpress-v3';
 
+    const LOCAL_ICONS = [
+//        "icon-play.svg",
+        "o-arrow__bracket--left.svg",
+        "o-arrow__short--down.svg",
+        "o-arrow--down.svg",
+        "o-icon__audio.svg",
+        "o-icon__gallery.svg",
+        "o-icon__language.svg",
+        "o-icon__video.svg"];
+
+    const LOCAL_IMAGES = [
+        "background-grid.png",
+        "background-grid.svg",
+        "background-pattern.png"
+    ];
+
     public function init()
     {
         add_action(\App\CronScheduler::ACTION, [$this, 'fetchVersions']);
@@ -57,7 +73,7 @@ class ALPSVersions
     }
 
     public static function getLocalCachedVersion() {
-        $cachedVersion = scandir(get_theme_root().'/'.self::PARENT_THEME.self::LOCAL_PATH)[0];
+        $cachedVersion = scandir(get_theme_root().'/'.self::PARENT_THEME.self::LOCAL_PATH)[2];
         return $cachedVersion ? $cachedVersion : 'Local styles are not cached yet!';
     }
 
@@ -89,9 +105,6 @@ class ALPSVersions
         $local_js_head  = self::LOCAL_PATH.$version.'/js/'.$version.'-head-script.min.js';
         $local_js_main  = self::LOCAL_PATH.$version.'/js/'.$version.'-script.min.js';
 
-        $local_images_background = self::LOCAL_PATH.$version.'/images/background-grid.svg';
-        $local_images_icons_gallery = self::LOCAL_PATH.$version.'/images/icons/o-icon__gallery.svg';
-
         $get_stylesheet_directory   = get_theme_root().'/'.self::PARENT_THEME;
         $get_template_directory_uri = get_theme_root_uri().'/'.self::PARENT_THEME;
 
@@ -107,8 +120,15 @@ class ALPSVersions
             self::uploadFile($latestVersion['scripts']['head'], $get_stylesheet_directory.$local_js_head);
             self::uploadFile($latestVersion['scripts']['main'], $get_stylesheet_directory.$local_js_main);
 
-            self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/background-grid.svg', $get_stylesheet_directory.$local_images_background);
-            self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/icons/o-icon__gallery.svg', $get_stylesheet_directory.$local_images_icons_gallery);
+            foreach(self::LOCAL_IMAGES as &$image) {
+                $local_image_path = self::LOCAL_PATH.$version.'/images/'.$image;
+                self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/'.$image, $get_stylesheet_directory.$local_image_path);
+            }
+
+            foreach(self::LOCAL_ICONS as &$icon) {
+                $local_icon_path = self::LOCAL_PATH.$version.'/images/icons/'.$icon;
+                self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/icons/'.$icon, $get_stylesheet_directory.$local_icon_path);
+            }
         }
 
         //Cache themes styles
@@ -124,7 +144,7 @@ class ALPSVersions
                 'version' => $latestVersion['version'],
                 'scripts' => [
                     'main' => $get_template_directory_uri.$local_js_main,
-                    'head' => get_template_directory_uri().$local_js_head,
+                    'head' => $get_template_directory_uri.$local_js_head,
                 ],
                 'styles' => [
                     'main' => $get_template_directory_uri.$local_css_main,
@@ -150,7 +170,7 @@ class ALPSVersions
     }
 
     private static function currentVersionIsLatest($currentVersion) {
-        return file_exists(get_stylesheet_directory().self::LOCAL_PATH.$currentVersion);
+        return file_exists(get_theme_root().'/'.self::PARENT_THEME.self::LOCAL_PATH.$currentVersion);
     }
 
     // delete all files and sub-folders from a folder
