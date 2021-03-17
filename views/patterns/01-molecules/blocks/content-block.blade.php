@@ -1,8 +1,13 @@
+@if ($title_div)
+  @php $h_tag = 'div' @endphp
+@else
+  @php $h_tag = 'h3' @endphp
+@endif
 <div class="c-block c-block__text @if (isset($thumb_id)){{ 'has-image' }}@endif u-theme--border-color--darker u-border--left @if (isset($block_class)){{ $block_class }}@endif">
   @if (isset($thumb_id))
     <img class="c-block__image" src="{{ wp_get_attachment_image_src($thumb_id, "featured__hero--m")[0] }}" />
   @endif
-  <h3 class="u-theme--color--darker @if (isset($block_title_class)){{ $block_title_class }}@endif">
+  <{{ $h_tag }} class="u-theme--color--darker @if (isset($block_title_class)){{ $block_title_class }}@endif">
     @if (isset($link))
       <a href="{{ $link }}" class="c-block__title-link u-theme--link-hover--dark">
     @endif
@@ -10,7 +15,7 @@
     @if (isset($link))
       </a>
     @endif
-  </h3>
+  </{{ $h_tag }}>
   @if (!empty($excerpt))
     <p class="c-block__body text">
       @php
