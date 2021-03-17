@@ -1,4 +1,7 @@
 {
+  "3.7.4" : {
+    "description" : "Fix: Pulling in the images along with the JS and CSS to the local cache."
+  },
   "3.7.3" : {
     "description" : "Fix: Fixing a bug that didn't allow the local cached version of the ALPS CSS/JS to be used on subthemes."
   },
