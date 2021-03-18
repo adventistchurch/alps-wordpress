@@ -66,6 +66,7 @@
             $excerpt = get_the_excerpt();
             $body = get_the_content();
             $excerpt_length = 35;
+            $title_div = true;
           @endphp
           @include('patterns.01-molecules.blocks.content-block')
         @endif
