@@ -55,6 +55,7 @@
             $block_group_class = "u-flex--justify-start";
             $block_content_class = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--1-col u-border--left u-theme--border-color--darker--left u-color--gray u-spacing--half";
             $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
+            $title_div = true;
           @endphp
           @include('patterns.01-molecules.blocks.media-block')
         @else
@@ -65,6 +66,7 @@
             $excerpt = get_the_excerpt();
             $body = get_the_content();
             $excerpt_length = 35;
+            $title_div = true;
           @endphp
           @include('patterns.01-molecules.blocks.content-block')
         @endif
