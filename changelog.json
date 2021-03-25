@@ -1,4 +1,7 @@
 {
+  "3.7.5" : {
+    "description" : "Fix: Switch related posts sidebar, menu drawer, and widget from using h3's to using divs."
+  },
   "3.7.4" : {
     "description" : "Fix: Pulling in the images along with the JS and CSS to the local cache."
   },
