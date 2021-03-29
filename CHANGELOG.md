@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+## [3.x.x]
+### Fixed
+- Fix: ALPS Related Pages block was only at 3 columns when the sidebar was hidden. [#546](https://github.com/adventistchurch/alps-wordpress/issues/546)
+
+
 ## [3.7.5]
 ### Fixed
 - Fix: Switch related posts sidebar and menu drawer from using h3's to using divs. [#558](https://github.com/adventistchurch/alps-wordpress/issues/558)
