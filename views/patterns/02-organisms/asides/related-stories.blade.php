@@ -4,6 +4,7 @@
 
   $post_type = get_post_type($post->ID);
   $category = get_the_category();
+  $category_slug = $category[0]->slug;
   if ($category) {
     if (class_exists('WPSEO_Primary_Term')) {
       $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
@@ -21,7 +22,7 @@
   }
   $args = array(
     'post_type' => $post_type,
-    'category_name' => $category,
+    'category_name' => $category_slug,
     'posts_per_page' => 2,
     'post__not_in' => array($post->ID)
   );
