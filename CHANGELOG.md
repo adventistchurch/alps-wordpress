@@ -5,9 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
-## [3.x.x]
+## [3.7.6]
 ### Fixed
 - Fix: ALPS Related Pages block was only at 3 columns when the sidebar was hidden. [#546](https://github.com/adventistchurch/alps-wordpress/issues/546)
+- Fix: A bug with related stories now showing for certain categories that had different slugs. [#536](https://github.com/adventistchurch/alps-wordpress/issues/536)
 
 
 ## [3.7.5]

@@ -1,4 +1,7 @@
 {
+  "3.7.6" : {
+    "description" : "-Fix: ALPS Related Pages block was only at 3 columns when the sidebar was hidden. A bug with related stories now showing for certain categories that had different slugs."
+  },
   "3.7.5" : {
     "description" : "Fix: Switch related posts sidebar, menu drawer, and widget from using h3's to using divs."
   },
