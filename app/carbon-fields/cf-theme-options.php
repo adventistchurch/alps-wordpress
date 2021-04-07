@@ -113,6 +113,18 @@ function crb_attach_theme_options()
                     'compare' => '='
                 ]])
                 ->set_width(33),
+            Field
+                ::make('html', 'crb_alps_languages')
+                ->set_html(__('<h3>ALPS CORE Languages Settings for WPML plugin</h3><p style="font-size:16px">WPML plugin '.(\App\Core\ALPSLanguages::WPMLPluginIsActive() ? 'is not installed or activated' : 'settings is active').'</p>', 'alps')),
+            Field
+                ::make('checkbox', 'project_alps_languages_hide_selector', __('Hide WPML languages', 'alps'))
+                ->set_option_value('false')
+                ->set_help_text(__('Hiding default WPML languages selector on page.', 'alps'))
+                ->set_conditional_logic([[
+                    'field' => \App\Core\ALPSLanguages::WPMLPluginIsActive(),
+                    'value' => false,
+                    'compare' => '='
+                ]]),
         ];
     }
 
