@@ -270,7 +270,7 @@ body.admin-bar .c-drawer {
   text-align: center;
 }
 
-.wp-block-image img {
+img {
   width: auto;
   height: auto;
 }
