@@ -270,6 +270,11 @@ body.admin-bar .c-drawer {
   text-align: center;
 }
 
+.wp-block-image img {
+  width: auto;
+  height: auto;
+}
+
 .search-submit {
   margin-top: 10px;
 }
