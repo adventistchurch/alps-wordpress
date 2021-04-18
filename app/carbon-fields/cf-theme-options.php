@@ -125,6 +125,13 @@ function crb_attach_theme_options()
                     'value' => false,
                     'compare' => '='
                 ]]),
+            Field
+                ::make('html', 'crb_alps_page_related_stories')
+                ->set_html(__('<h3>ALPS CORE Related Stories</h3><p style="font-size:16px">Settings for displaying </p>', 'alps')),
+            Field
+                ::make('checkbox', 'project_alps_related_stories_is_hiding_on_post_page', __('Hide Related Stories on Post page', 'alps'))
+                ->set_option_value('false')
+                ->set_help_text(__('Hiding Related Stories on Post page.', 'alps')),
         ];
     }
 
