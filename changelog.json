@@ -1,4 +1,34 @@
 {
+  "3.7.8" : {
+    "description" : "HOTFIX: Adding annother fix for CSS `auto` properties for height and width of images."
+  },
+  "3.7.7" : {
+    "description" : "HOTFIX: Adding CSS `auto` properties for height and width of images."
+  },
+  "3.7.6" : {
+    "description" : "Fix: ALPS Related Pages block was only at 3 columns when the sidebar was hidden. A bug with related stories now showing for certain categories that had different slugs."
+  },
+  "3.7.5" : {
+    "description" : "Fix: Switch related posts sidebar, menu drawer, and widget from using h3's to using divs."
+  },
+  "3.7.4" : {
+    "description" : "Fix: Pulling in the images along with the JS and CSS to the local cache."
+  },
+  "3.7.3" : {
+    "description" : "Fix: Fixing a bug that didn't allow the local cached version of the ALPS CSS/JS to be used on subthemes."
+  },
+  "3.7.2" : {
+    "description" : "HOTFIX: Bug with homepage 3-up grid displays shifting to the right to overlap the Sabbath column."
+  },
+  "3.7.1" : {
+    "description" : "Fixed a bug that didn't pull the latest version of the code."
+  },
+  "3.7.0" : {
+    "description" : "Added local caching of ALPS CDN CSS and Javascript files for performance. Fixed a bug where the related post grid at 3up widths (with hidden sidebar) is shifted wrong on the page."
+  },
+  "3.6.6" : {
+    "description" : "Removing the second copy of jQuery, (2.2.4). This REQUIRES Wordpress 5.6 or higher."
+  },
   "3.6.5" : {
     "description" : "Fixed the styling for footnotes, and Footnotes Made Easy. Removed support for Guidepost and replaced it with SimpleTOC."
   },

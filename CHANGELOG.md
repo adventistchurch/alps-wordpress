@@ -3,6 +3,60 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [3.7.8]
+### Fixed
+- HOTFIX: Adding annother fix for CSS `auto` properties for height and width of images.
+
+
+## [3.7.7]
+### Fixed
+- HOTFIX: Adding css `auto` properties for height and width of images.
+
+
+## [3.7.6]
+### Fixed
+- Fix: ALPS Related Pages block was only at 3 columns when the sidebar was hidden. [#546](https://github.com/adventistchurch/alps-wordpress/issues/546)
+- Fix: A bug with related stories now showing for certain categories that had different slugs. [#536](https://github.com/adventistchurch/alps-wordpress/issues/536)
+
+
+## [3.7.5]
+### Fixed
+- Fix: Switch related posts sidebar and menu drawer from using h3's to using divs. [#558](https://github.com/adventistchurch/alps-wordpress/issues/558)
+
+
+## [3.7.4]
+### Fixed
+- Fix: Pulling in the images along with the JS and CSS to the local cache. [#551](https://github.com/adventistchurch/alps-wordpress/issues/551)
+
+
+## [3.7.3]
+### Fixed
+- Fix: Fixing a bug that didn't allow the local cached version of the ALPS CSS/JS to be used on subthemes. [#551](https://github.com/adventistchurch/alps-wordpress/issues/551)
+
+
+## [3.7.2]
+### Fixed
+- HOTFIX: Bug with homepage 3-up grid displays shifting to the right to overlap the Sabbath column.
+
+
+## [3.7.1]
+### Fixed
+- Fixed a bug that didn't pull the latest version of the code. [#555](https://github.com/adventistchurch/alps-wordpress/pull/555)
+
+
+## [3.7.0]
+### Added
+- Added local caching of ALPS CDN CSS and Javascript files. It will pull the most recent version into the theme for added performance. [#551](https://github.com/adventistchurch/alps-wordpress/issues/551)
+### Fixed
+- Fixed a bug where the related post grid at 3up widths (with hidden sidebar) is shifted wrong on the page.
+
+
+## [3.6.6]
+### Fixed
+- Removed the second version of jQuery (2.2.4) since Wordpress now includes jQuery 3.5.1 [#550](https://github.com/adventistchurch/alps-wordpress/issues/550)
+
+
 ## [3.6.5]
 ### Fixed
 - Fixed the styling for footnotes, and Footnotes Made Easy. [#507](https://github.com/adventistchurch/alps-wordpress/issues/507)

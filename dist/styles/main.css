@@ -270,6 +270,11 @@ body.admin-bar .c-drawer {
   text-align: center;
 }
 
+img {
+  width: auto;
+  height: auto;
+}
+
 .search-submit {
   margin-top: 10px;
 }

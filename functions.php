@@ -463,13 +463,15 @@ add_filter('allowed_block_types', function () {
 });
 
 /**
- *Provides automatic updates for the WordPress theme and plugins from Kernl (https://kernl.us/)
+ * Provides automatic updates for the WordPress theme and plugins from Kernl (https://kernl.us/)
  */
-require 'theme_update_check.php';
-$MyUpdateChecker = new ThemeUpdateChecker(
-  'alps-wordpress-v3',
-  'https://kernl.us/api/v1/theme-updates/5be537a15ecd012001496112/'
+require 'kernl-update-checker/kernl-update-checker.php';
+$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://kernl.us/api/v1/theme-updates/5be537a15ecd012001496112/',
+    __FILE__,
+    'alps-wordpress-v3'
 );
+
 
 /**
  * Pagination
