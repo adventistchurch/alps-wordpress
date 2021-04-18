@@ -1,7 +1,7 @@
 <nav class="c-secondary-nav" role="navigation">
   <ul class="c-secondary-nav__list">
     @if (has_nav_menu('secondary_navigation') or apply_filters('wpml_active_languages', NULL, 'skip_missing=0'))
-      @if (apply_filters('wpml_active_languages', NULL, 'skip_missing=0'))
+      @if (apply_filters('wpml_active_languages', NULL, 'skip_missing=0') && !get_alps_option('project_alps_languages_hide_selector'))
         @php $languages = icl_get_languages('skip_missing=0'); @endphp
         <li class="c-secondary-nav__list-item c-secondary-nav__list-item__languages has-subnav">
           <a href="" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base"><span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-language')</span>Languages</a>
