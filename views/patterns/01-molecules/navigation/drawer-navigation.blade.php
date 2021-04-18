@@ -48,7 +48,7 @@
             $tertiary_nav = wp_get_nav_menu_items($menu->term_id);
             $tertiary_nav = json_decode(json_encode($tertiary_nav), true);
           @endphp
-          <h3 class="u-font--secondary--s u-text-transform--upper"><strong>{{ $menu->name }}:</strong></h3>
+          <div class="u-font--secondary--s u-text-transform--upper"><strong>{{ $menu->name }}:</strong></div>
           <p class="u-spacing--half">
             @foreach ($tertiary_nav as $nav)
               @php
