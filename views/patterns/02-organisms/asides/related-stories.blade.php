@@ -34,8 +34,9 @@
   $showRelatedStoriesOnPostPage = get_post_meta($post->ID, $cf_.'display_related_stories', true);
 @endphp
 
-@if (!$isGlobalHidingRelatedStories ||
-  ($isGlobalHidingRelatedStories && $showRelatedStoriesOnPostPage))
+@if ((!$isGlobalHidingRelatedStories && $showRelatedStoriesOnPostPage) ||
+      ($isGlobalHidingRelatedStories && $showRelatedStoriesOnPostPage)
+)
   <div class="c-related-posts u-spacing">
     <div class="c-block__heading u-theme--border-color--darker">
       <h3 class="c-block__heading-title u-theme--color--darker">{{ __('Related Stories', 'alps') }}</h3>
