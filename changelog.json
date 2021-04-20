@@ -1,4 +1,7 @@
 {
+  "3.7.9" : {
+    "description" : "HOTFIX: Update ALPS versions if value is empty (fix for Redis)"
+  },
   "3.7.8" : {
     "description" : "HOTFIX: Adding annother fix for CSS `auto` properties for height and width of images."
   },
