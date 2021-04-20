@@ -38,11 +38,17 @@ class ALPSVersions
         if ($data) {
             set_site_transient(self::STORAGE_KEY, $data);
         }
+
+        return $data;
     }
 
     public static function getAll()
     {
-        return get_site_transient(self::STORAGE_KEY);
+        $versions = get_site_transient(self::STORAGE_KEY);
+        if (!$versions) {
+            $versions = (new ALPSVersions())->fetchVersions();
+        }
+        return $versions;
     }
 
     public static function get()
