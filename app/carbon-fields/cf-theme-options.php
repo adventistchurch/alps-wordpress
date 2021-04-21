@@ -188,13 +188,6 @@ function crb_attach_theme_options()
                 ->set_option_value('true')
                 ->set_help_text(__('Make the post feed images round.', 'alps'))
                 ->set_width(50),
-            Field
-                ::make('html', 'crb_alps_page_related_stories')
-                ->set_html(__('<h3>Related Stories</h3>', 'alps')),
-            Field
-                ::make('checkbox', 'project_alps_related_stories_is_hiding_on_post_page', __('Hide Related Stories on Post page', 'alps'))
-                ->set_option_value('false')
-                ->set_help_text(__('Hiding Related Stories on Post page.', 'alps')),
         ])
         ->add_tab(__('SABBATH COLUMN', 'alps'), [
             Field

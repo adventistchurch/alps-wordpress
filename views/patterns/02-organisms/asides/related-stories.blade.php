@@ -28,7 +28,6 @@
   );
   $related = new WP_Query($args);
 @endphp
-
 <div class="c-related-posts u-spacing">
   <div class="c-block__heading u-theme--border-color--darker">
     <h3 class="c-block__heading-title u-theme--color--darker">{{ __('Related Stories', 'alps') }}</h3>
