@@ -114,24 +114,25 @@ function crb_attach_theme_options()
                 ]])
                 ->set_width(33),
         ];
+    }
 
-        if(\App\Core\ALPSLanguages::WPMLPluginIsActive()) {
-            $headerField = Field
-                ::make('html', 'crb_alps_languages')
-                ->set_html(__('<h3>WPML Language Selector Settings</h3>', 'alps'));
-            $contentField = Field
-                ::make('checkbox', 'project_alps_languages_hide_selector', __('Hide WPML languages', 'alps'))
-                ->set_option_value('false')
-                ->set_help_text(__('Hiding default WPML languages selector on page.', 'alps'));
-            array_push($versionFields, $headerField, $contentField);
-        }
+    $WPMLFields = [];
+    if(\App\Core\ALPSLanguages::WPMLPluginIsActive()) {
+        $WPMLHeader= Field
+            ::make('html', 'crb_alps_languages')
+            ->set_html(__('<h3>WPML Language Selector Settings</h3>', 'alps'));
+        $WPMLContent = Field
+            ::make('checkbox', 'project_alps_languages_hide_selector', __('Hide WPML languages', 'alps'))
+            ->set_option_value('false')
+            ->set_help_text(__('Hiding default WPML languages selector on page.', 'alps'));
+        array_push($WPMLFields, $WPMLHeader, $WPMLContent);
     }
 
     Container
         ::make('theme_options', __('ALPS Theme Settings', 'alps'))
         ->set_page_parent('themes.php')
         ->set_page_file('alps-theme-options')
-        ->add_tab(__('GLOBAL', 'alps'), array_merge($logoFields, $globalFields, $versionFields))
+        ->add_tab(__('GLOBAL', 'alps'), array_merge($logoFields, $globalFields, $versionFields, $WPMLFields))
         ->add_tab(__('POSTS OPTIONS', 'alps'), [
             Field
                 ::make('separator', 'crb_content_display', __('Home Page Content Display', 'alps')),
@@ -187,6 +188,13 @@ function crb_attach_theme_options()
                 ->set_option_value('true')
                 ->set_help_text(__('Make the post feed images round.', 'alps'))
                 ->set_width(50),
+            Field
+                ::make('html', 'crb_alps_page_related_stories')
+                ->set_html(__('<h3>Related Stories</h3>', 'alps')),
+            Field
+                ::make('checkbox', 'project_alps_related_stories_is_hiding_on_post_page', __('Hide Related Stories on Post page', 'alps'))
+                ->set_option_value('false')
+                ->set_help_text(__('Hiding Related Stories on Post page.', 'alps')),
         ])
         ->add_tab(__('SABBATH COLUMN', 'alps'), [
             Field
