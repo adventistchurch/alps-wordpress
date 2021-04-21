@@ -113,26 +113,26 @@ function crb_attach_theme_options()
                     'compare' => '='
                 ]])
                 ->set_width(33),
-            Field
-                ::make('html', 'crb_alps_languages')
-                ->set_html(__('<h3>ALPS CORE Languages Settings for WPML plugin</h3><p style="font-size:16px">WPML plugin '.(\App\Core\ALPSLanguages::WPMLPluginIsActive() ? 'is not installed or activated' : 'settings is active').'</p>', 'alps')),
-            Field
-                ::make('checkbox', 'project_alps_languages_hide_selector', __('Hide WPML languages', 'alps'))
-                ->set_option_value('false')
-                ->set_help_text(__('Hiding default WPML languages selector on page.', 'alps'))
-                ->set_conditional_logic([[
-                    'field' => \App\Core\ALPSLanguages::WPMLPluginIsActive(),
-                    'value' => false,
-                    'compare' => '='
-                ]]),
         ];
+    }
+
+    $WPMLFields = [];
+    if(\App\Core\ALPSLanguages::WPMLPluginIsActive()) {
+        $WPMLHeader= Field
+            ::make('html', 'crb_alps_languages')
+            ->set_html(__('<h3>WPML Language Selector Settings</h3>', 'alps'));
+        $WPMLContent = Field
+            ::make('checkbox', 'project_alps_languages_hide_selector', __('Hide WPML languages', 'alps'))
+            ->set_option_value('false')
+            ->set_help_text(__('Hiding default WPML languages selector on page.', 'alps'));
+        array_push($WPMLFields, $WPMLHeader, $WPMLContent);
     }
 
     Container
         ::make('theme_options', __('ALPS Theme Settings', 'alps'))
         ->set_page_parent('themes.php')
         ->set_page_file('alps-theme-options')
-        ->add_tab(__('GLOBAL', 'alps'), array_merge($logoFields, $globalFields, $versionFields))
+        ->add_tab(__('GLOBAL', 'alps'), array_merge($logoFields, $globalFields, $versionFields, $WPMLFields))
         ->add_tab(__('POSTS OPTIONS', 'alps'), [
             Field
                 ::make('separator', 'crb_content_display', __('Home Page Content Display', 'alps')),
