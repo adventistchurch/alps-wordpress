@@ -112,7 +112,7 @@ class ALPS_Related_Stories_Widget extends Widget
     // Called when rendering the widget in the front-end
     public function front_end($args, $settings)
     {
-        include_once(dirname(__FILE__) . '/widgets/related-stories/alps-related-stories.php');
+        include_once(dirname(__FILE__) . '/widgets/alps-related-stories.php');
     }
 }
 
