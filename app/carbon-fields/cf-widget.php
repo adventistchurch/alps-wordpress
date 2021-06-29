@@ -94,12 +94,35 @@ class ALPS_Post_Feed_Widget extends Widget
     }
 }
 
+class ALPS_Related_Stories_Widget extends Widget
+{
+    public function __construct()
+    {
+        $this->setup(
+            'alps_widget_related_storied',
+            __('ALPS - Related Stories', 'alps'),
+            __('Related Stories block for Post Page sidebar.', 'alps'),
+            [
+                Field
+                    ::make('text', 'related_stories_title', __('Title', 'alps')),
+            ]
+        );
+    }
+
+    // Called when rendering the widget in the front-end
+    public function front_end($args, $settings)
+    {
+        include_once(dirname(__FILE__) . '/widgets/alps-related-stories.php');
+    }
+}
+
 add_action('widgets_init', 'alps_widgets_init');
 function alps_widgets_init()
 {
     register_widget('ALPS_Author_Box_Widget');
     register_widget('ALPS_Text_With_Link_Widget');
     register_widget('ALPS_Post_Feed_Widget');
+    register_widget('ALPS_Related_Stories_Widget');
 }
 
 function cat_list()
