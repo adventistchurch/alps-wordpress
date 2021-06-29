@@ -1,4 +1,5 @@
 <?php
+    $title = empty($settings['related_stories_title']) ? '' : $settings['related_stories_title'];
     $isVisibleImage = !get_alps_option('is_related_stories_image_hidden');
 
     $post_type = get_post_type($post->ID);
@@ -32,7 +33,7 @@
 
 <div class="c-block-wrap u-spacing <?php if ($layout_grid == true): echo 'u-space--right--negative'; endif; ?>">
     <div class="c-block__heading u-theme--border-color--darker"">
-        <h3 class="c-block__heading-title u-theme--color--darker">Related Stories</h3>
+        <h3 class="c-block__heading-title u-theme--color--darker"><?php echo $title; ?></h3>
     </div>
     <div class="c-related-posts__blocks u-spacing">
         <?php if ($related->have_posts()): ?>

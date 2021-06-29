@@ -104,7 +104,7 @@ class ALPS_Related_Stories_Widget extends Widget
             __('Related Stories block for Post Page sidebar.', 'alps'),
             [
                 Field
-                    ::make('text', 'text_link_title', __('Title', 'alps')),
+                    ::make('text', 'related_stories_title', __('Title', 'alps')),
             ]
         );
     }
