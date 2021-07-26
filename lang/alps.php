@@ -10,7 +10,7 @@ __('Footer Secondary Navigation', 'alps');
 __('Page Top', 'alps');
 __('Page Bottom', 'alps');
 __('Page Sidebar', 'alps');
-__('Posts Template Sidebar', 'alps');
+__('Posts Sidebar', 'alps');
 __('Post Footer Region', 'alps');
 __('Footer Region', 'alps');
 __('Category Top', 'alps');

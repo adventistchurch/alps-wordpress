@@ -27,7 +27,7 @@
   </div>
   @if ($has_sidebar)
     <div class="c-sidebar l-grid-item l-grid-item--l--2-col l-grid-item--xl--2-col u-padding--zero--sides">
-      @include('patterns.02-organisms.asides.related-stories')
+      @php dynamic_sidebar('sidebar-posts') @endphp
     </div>
   @endif
 </section>
