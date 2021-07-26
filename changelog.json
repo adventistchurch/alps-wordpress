@@ -1,4 +1,7 @@
 {
+  "3.9.0" : {
+    "description" : "  Add: Switched 'Related Posts' to widgets."
+  },
   "3.8.0" : {
     "description" : "Added the ablity to diable the WPML language menu, and fixed a bug with CarbonFields and ALPS Settings page."
   },
