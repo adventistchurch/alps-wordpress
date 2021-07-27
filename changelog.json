@@ -1,4 +1,7 @@
 {
+  "3.9.1" : {
+    "description" : "Updated the Search drawer markup to allow for filter results."
+  },
   "3.9.0" : {
     "description" : "  Add: Switched 'Related Posts' to widgets."
   },
