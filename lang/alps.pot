@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 12:39+0300\n"
+"POT-Creation-Date: 2021-08-04 09:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgid "Page Sidebar"
 msgstr ""
 
 #: app/setup.php:114
-msgid "Posts Template Sidebar"
+msgid "Posts Sidebar"
 msgstr ""
 
 #: app/setup.php:118
@@ -93,7 +93,8 @@ msgstr ""
 msgid "Text block with formatted link."
 msgstr ""
 
-#: app/carbon-fields/cf-widget.php:37 app/carbon-fields/cf-front-page.php:36
+#: app/carbon-fields/cf-widget.php:37 app/carbon-fields/cf-widget.php:107
+#: app/carbon-fields/cf-front-page.php:36
 #: app/carbon-fields/cf-front-page.php:87
 msgid "Title"
 msgstr ""
@@ -165,6 +166,14 @@ msgstr ""
 msgid "Check to show the image and description side-by-side."
 msgstr ""
 
+#: app/carbon-fields/cf-widget.php:103
+msgid "ALPS - Related Stories"
+msgstr ""
+
+#: app/carbon-fields/cf-widget.php:104
+msgid "Related Stories block for Post Page sidebar."
+msgstr ""
+
 #: app/carbon-fields/cf-post.php:10
 msgid "ALPS: Featured Image Hero Layout"
 msgstr ""
@@ -207,20 +216,20 @@ msgstr ""
 msgid "Hides the featured image on the page/post header for this entry."
 msgstr ""
 
-#: app/carbon-fields/_init.php:96 functions.php:638
+#: app/carbon-fields/_init.php:96 functions.php:644
 msgid ""
 "ALPS: The ALPS theme requires an update. Please read and follow the "
 "instructions below."
 msgstr ""
 
-#: app/carbon-fields/_init.php:97 functions.php:655
+#: app/carbon-fields/_init.php:97 functions.php:661
 msgid ""
 "Clicking the link below will run an upgrade script. This will download, "
 "install and run a converter plugin. After running, the plugin will uninstall "
 "and delete itself, and remove the Piklist plugin completely from your site."
 msgstr ""
 
-#: app/carbon-fields/_init.php:98 functions.php:656
+#: app/carbon-fields/_init.php:98 functions.php:662
 msgid "click here to install and run the field converter plugin."
 msgstr ""
 
@@ -242,11 +251,11 @@ msgstr ""
 msgid "Could not install the new plugin."
 msgstr ""
 
-#: app/carbon-fields/_init.php:183 functions.php:759
+#: app/carbon-fields/_init.php:183 functions.php:765
 msgid "ALPS: The update is complete."
 msgstr ""
 
-#: app/carbon-fields/_init.php:184 functions.php:760
+#: app/carbon-fields/_init.php:184 functions.php:766
 msgid ""
 "The converter plugin has run and updated your ALPS powered site. This plugin "
 "has removed both itself and Piklist from your site."
@@ -893,206 +902,240 @@ msgid ""
 msgstr ""
 
 #: app/carbon-fields/cf-theme-options.php:92
-msgid "Choose ALPS CORE Version"
+msgid "ALPS Core files version"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:94
+msgid ""
+"REMOTE: This option pulls the ALPS CORE CSS and Javascript from the remote "
+"CDN."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:95
+msgid ""
+"LOCAL: This option caches the most recent version of ALPS to your local "
+"site, reducing the connections to remote servers."
 msgstr ""
 
 #: app/carbon-fields/cf-theme-options.php:99
+msgid "Choose the REMOTE ALPS CDN Version"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:109
+msgid ""
+"<h3 style=\"font-size:13px; margin-top: 0;\">Cached LOCAL style version</"
+"h3><p style=\"font-size:13px\">ALPS Version "
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:123
+msgid "<h3>WPML Language Selector Settings</h3>"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:125
+msgid "Hide WPML languages"
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:127
+msgid "Hiding default WPML languages selector on page."
+msgstr ""
+
+#: app/carbon-fields/cf-theme-options.php:132
 msgid "ALPS Theme Settings"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:102
+#: app/carbon-fields/cf-theme-options.php:135
 msgid "GLOBAL"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:103
+#: app/carbon-fields/cf-theme-options.php:136
 msgid "POSTS OPTIONS"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:105
+#: app/carbon-fields/cf-theme-options.php:138
 msgid "Home Page Content Display"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:107
+#: app/carbon-fields/cf-theme-options.php:140
 msgid "Home Page Title"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:108
+#: app/carbon-fields/cf-theme-options.php:141
 msgid "Sets a custom home page title for sites displaying the latest posts."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:111
-#: app/carbon-fields/cf-theme-options.php:127
+#: app/carbon-fields/cf-theme-options.php:144
+#: app/carbon-fields/cf-theme-options.php:160
 msgid "Hide The Sidebar"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:113
+#: app/carbon-fields/cf-theme-options.php:146
 msgid "Hides the sidebar on the home/archive page if it is active."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:116
+#: app/carbon-fields/cf-theme-options.php:149
 msgid "Posts Content Display"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:118
+#: app/carbon-fields/cf-theme-options.php:151
 msgid "Archives Page Title"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:119
+#: app/carbon-fields/cf-theme-options.php:152
 msgid ""
 "Sets a custom title for the archive page for sites with a custom posts page."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:122
+#: app/carbon-fields/cf-theme-options.php:155
 msgid "Hide The Related Stories Image"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:124
+#: app/carbon-fields/cf-theme-options.php:157
 msgid "Hides the image in the Related Stories block in sidebar."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:129
+#: app/carbon-fields/cf-theme-options.php:162
 msgid "Hides the sidebar on the archive page if it is active."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:132
+#: app/carbon-fields/cf-theme-options.php:165
 msgid "Category Posts Feed Label"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:134
+#: app/carbon-fields/cf-theme-options.php:167
 msgid "Select to display the label \"Category\" on category posts feed."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:137
+#: app/carbon-fields/cf-theme-options.php:170
 msgid "Posts Grid and Image Display"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:139
+#: app/carbon-fields/cf-theme-options.php:172
 msgid "Posts Feed Grid"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:141
+#: app/carbon-fields/cf-theme-options.php:174
 msgid "Select to display the posts side-by-side."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:144
+#: app/carbon-fields/cf-theme-options.php:177
 msgid "Posts Feed Grid (3up)"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:146
+#: app/carbon-fields/cf-theme-options.php:179
 msgid ""
 "Select to display the posts 3up at the largest breakpoint. The sidebar must "
 "be hidden for the pages to display 3up."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:149
+#: app/carbon-fields/cf-theme-options.php:182
 msgid "Posts Feed Image"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:151
+#: app/carbon-fields/cf-theme-options.php:184
 msgid "Select to display the feature image for the posts."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:154
+#: app/carbon-fields/cf-theme-options.php:187
 msgid "Posts Round Images"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:156
+#: app/carbon-fields/cf-theme-options.php:189
 msgid "Make the post feed images round."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:159
+#: app/carbon-fields/cf-theme-options.php:192
 msgid "SABBATH COLUMN"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:161
+#: app/carbon-fields/cf-theme-options.php:194
 msgid "Sabbath Icon"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:164
+#: app/carbon-fields/cf-theme-options.php:197
 msgid "Sabbath Background Image"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:167
+#: app/carbon-fields/cf-theme-options.php:200
 msgid "Hide Sabbath Icon Until Scroll"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:169
+#: app/carbon-fields/cf-theme-options.php:202
 msgid "Select to hide the sabbath icon till you scroll."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:172
+#: app/carbon-fields/cf-theme-options.php:205
 msgid "Hide the sabbath column"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:174
+#: app/carbon-fields/cf-theme-options.php:207
 msgid "Select to hide the sabbath column."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:177
+#: app/carbon-fields/cf-theme-options.php:210
 msgid "Hide the sabbath column at certain screen widths"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:179
+#: app/carbon-fields/cf-theme-options.php:212
 msgid "Hide the sabbath column for all screen widths."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:180
+#: app/carbon-fields/cf-theme-options.php:213
 msgid "Hide the sabbath column at small screens."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:181
+#: app/carbon-fields/cf-theme-options.php:214
 msgid "Hide the sabbath column at medium screens."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:182
+#: app/carbon-fields/cf-theme-options.php:215
 msgid "Hide the sabbath column at large screens."
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:191
+#: app/carbon-fields/cf-theme-options.php:224
 msgid "FOOTER CONTENT"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:193
+#: app/carbon-fields/cf-theme-options.php:226
 msgid "Footer Description"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:195
+#: app/carbon-fields/cf-theme-options.php:228
 msgid "Footer Copyright"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:197
+#: app/carbon-fields/cf-theme-options.php:230
 msgid "Footer Address"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:200
+#: app/carbon-fields/cf-theme-options.php:233
 msgid "Street Address"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:202
+#: app/carbon-fields/cf-theme-options.php:235
 msgid "City"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:205
+#: app/carbon-fields/cf-theme-options.php:238
 msgid "State"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:208
+#: app/carbon-fields/cf-theme-options.php:241
 msgid "Postal Code"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:211
+#: app/carbon-fields/cf-theme-options.php:244
 msgid "Country"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:214
+#: app/carbon-fields/cf-theme-options.php:247
 msgid "Phone Number"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:220
+#: app/carbon-fields/cf-theme-options.php:253
 msgid "Footer Logo Icon"
 msgstr ""
 
-#: app/carbon-fields/cf-theme-options.php:221
+#: app/carbon-fields/cf-theme-options.php:254
 msgid ""
 "Upload a logo icon for the footer. * Will only display if the sabbath column "
 "is hidden."
@@ -1190,27 +1233,27 @@ msgstr ""
 msgid "See All"
 msgstr ""
 
-#: views/index.blade.php:17
+#: views/index.blade.php:20
 #: views/patterns/02-organisms/sections/page-header.blade.php:25
-#: views/home.blade.php:20
+#: views/home.blade.php:23
 msgid "Recent Posts"
 msgstr ""
 
-#: views/404.blade.php:6
+#: views/404.blade.php:10
 msgid "Page not found"
 msgstr ""
 
-#: views/404.blade.php:14
+#: views/404.blade.php:18
 #: views/patterns/02-organisms/content/content-posts.blade.php:184
-#: views/patterns/02-organisms/content/content-search.blade.php:53
+#: views/patterns/02-organisms/content/content-search.blade.php:55
 msgid "Sorry, no results were found."
 msgstr ""
 
-#: views/404.blade.php:15
+#: views/404.blade.php:19
 msgid "Go to homepage"
 msgstr ""
 
-#: views/patterns/01-molecules/forms/search.blade.php:5
+#: views/patterns/01-molecules/forms/search.blade.php:7
 msgid "Submit"
 msgstr ""
 
@@ -1232,7 +1275,7 @@ msgid "Email"
 msgstr ""
 
 #: views/patterns/02-organisms/sections/page-header.blade.php:30
-#: views/category.blade.php:21
+#: views/category.blade.php:24
 msgid "Category"
 msgstr ""
 
@@ -1267,10 +1310,10 @@ msgstr ""
 msgid "Related Stories"
 msgstr ""
 
-#: views/patterns/02-organisms/asides/related-stories.blade.php:74
+#: views/patterns/02-organisms/asides/related-stories.blade.php:76
 msgid "There are no related stories at this time."
 msgstr ""
 
-#: views/archive.blade.php:14
+#: views/archive.blade.php:17
 msgid "Archives"
 msgstr ""
