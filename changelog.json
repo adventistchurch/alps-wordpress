@@ -1,4 +1,10 @@
 {
+  "3.9.1" : {
+    "description" : "Updated the Search drawer markup to allow for filter results."
+  },
+  "3.9.0" : {
+    "description" : "  Add: Switched 'Related Posts' to widgets."
+  },
   "3.8.0" : {
     "description" : "Added the ablity to diable the WPML language menu, and fixed a bug with CarbonFields and ALPS Settings page."
   },

@@ -4,6 +4,16 @@ A record of the changes made to `ALPS for Wordpress`.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [3.9.1]
+### Added
+- Updated the Search drawer markup to allow for filter results. [#578](https://github.com/adventistchurch/alps-wordpress/pull/578)
+
+
+## [3.9.0]
+### Added
+- Add: Switched "Related Posts" to widgets. [#565](https://github.com/adventistchurch/alps-wordpress/issues/565)
+
+
 ## [3.8.0]
 ### Added
 - Add: Added the ablity to diable the WPML language menu. [#548](https://github.com/adventistchurch/alps-wordpress/issues/548)
