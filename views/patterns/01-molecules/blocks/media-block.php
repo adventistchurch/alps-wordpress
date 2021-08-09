@@ -21,10 +21,14 @@
             <?php endif; ?>
             <source srcset="<?php echo $image_m ?>" media="(min-width: <?php echo $image_break_m ?>px)">
             <!--[if IE 9]></video><![endif]-->
-            <img itemprop="image" srcset="<?php echo $image_s ?>" alt="<?php echo $alt ?>">
+            <a href="<?php echo $link ?>">
+              <img itemprop="image" srcset="<?php echo $image_s ?>" alt="<?php echo $alt ?>">
+            </a>
           </picture>
         <?php elseif (isset($image)): ?>
-          <img src="<?php echo $image ?>" itemprop="image" alt="<?php echo $alt ?>" />
+          <a href="<?php echo $link ?>">
+            <img src="<?php echo $image ?>" itemprop="image" alt="<?php echo $alt ?>" />
+          </a>
         <?php endif; ?>
       </div>
     </div> <!-- c-media-block__image -->

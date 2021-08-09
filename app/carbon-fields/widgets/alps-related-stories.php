@@ -60,7 +60,7 @@
                         $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
                         $title_div = true;
                     ?>
-                    <?php include(get_template_directory() . '/views/patterns.01-molecules/blocks/media-block.php'); ?>
+                    <?php include(get_template_directory() . '/views/patterns/01-molecules/blocks/media-block.php'); ?>
                 <?php else: ?>
                     <?php
                         $thumb_id = NULL;
