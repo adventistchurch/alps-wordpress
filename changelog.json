@@ -1,4 +1,7 @@
 {
+  "3.9.2" : {
+    "description" : "Added a link to the image on the related stories block."
+  },
   "3.9.1" : {
     "description" : "Updated the Search drawer markup to allow for filter results."
   },
