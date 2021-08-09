@@ -1,4 +1,5 @@
 <?php
+    $title = empty($settings['related_stories_title']) ? '' : $settings['related_stories_title'];
     $isVisibleImage = !get_alps_option('is_related_stories_image_hidden');
 
     $post_type = get_post_type($post->ID);
@@ -59,7 +60,7 @@
                         $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
                         $title_div = true;
                     ?>
-                    <?php include(locate_template('patterns.01-molecules.blocks.media-block')); ?>
+                    <?php include(get_template_directory() . '/views/patterns/01-molecules/blocks/media-block.php'); ?>
                 <?php else: ?>
                     <?php
                         $thumb_id = NULL;
