@@ -1,0 +1,1363 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-04 09:14-0400\n"
+"PO-Revision-Date: 2021-09-05 19:06+0900\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ko_KR\n"
+
+#: app/filters.php:74
+msgid "Continued"
+msgstr "계속"
+
+#: app/setup.php:59
+msgid "Primary Navigation"
+msgstr "주 내비게이션"
+
+#: app/setup.php:60
+msgid "Secondary Navigation"
+msgstr "부 네비게이션"
+
+#: app/setup.php:61
+msgid "Learn More"
+msgstr "더 알아보기"
+
+#: app/setup.php:62
+msgid "Footer Primary Navigation"
+msgstr "풋터 주 네비게이션"
+
+#: app/setup.php:63
+msgid "Footer Secondary Navigation"
+msgstr "풋터 부 네비게이션"
+
+#: app/setup.php:102
+msgid "Page Top"
+msgstr "페이지 상단"
+
+#: app/setup.php:106
+msgid "Page Bottom"
+msgstr "페이지 하단"
+
+#: app/setup.php:110
+msgid "Page Sidebar"
+msgstr "페이지 사이드바"
+
+#: app/setup.php:114
+msgid "Posts Sidebar"
+msgstr "사이드바 게시"
+
+#: app/setup.php:118
+msgid "Post Footer Region"
+msgstr "포스트 푸터 리전"
+
+#: app/setup.php:122
+msgid "Footer Region"
+msgstr "풋터 리전"
+
+#: app/setup.php:126
+msgid "Category Top"
+msgstr "카테고리 상단"
+
+#: app/setup.php:130
+msgid "Category Bottom"
+msgstr "카테고리 하단"
+
+#: app/carbon-fields/cf-widget.php:12
+msgid "ALPS - Author Box"
+msgstr "ALPS - 저자 상자"
+
+#: app/carbon-fields/cf-widget.php:13
+msgid "This will display a block of the post author's profile information."
+msgstr "이렇게 하면 게시물 작성자의 프로필 정보 블록이 표시됩니다."
+
+#: app/carbon-fields/cf-widget.php:16
+msgid "Author"
+msgstr "작성자"
+
+#: app/carbon-fields/cf-widget.php:33
+msgid "ALPS - Text with Link"
+msgstr "ALPS - 링크가 있는 텍스트"
+
+#: app/carbon-fields/cf-widget.php:34
+msgid "Text block with formatted link."
+msgstr "포맷 된 링크가있는 텍스트 블록입니다."
+
+#: app/carbon-fields/cf-widget.php:37 app/carbon-fields/cf-widget.php:107
+#: app/carbon-fields/cf-front-page.php:36
+#: app/carbon-fields/cf-front-page.php:87
+msgid "Title"
+msgstr "제목"
+
+#: app/carbon-fields/cf-widget.php:39
+msgid "Content"
+msgstr "내용"
+
+#: app/carbon-fields/cf-widget.php:41 app/carbon-fields/cf-front-page.php:116
+msgid "URL"
+msgstr "URL"
+
+#: app/carbon-fields/cf-widget.php:44
+msgid "URL Text"
+msgstr "URL 텍스트"
+
+#: app/carbon-fields/cf-widget.php:63
+msgid "ALPS - Post Feed"
+msgstr "ALPS - 포스트 피드"
+
+#: app/carbon-fields/cf-widget.php:64
+msgid "Feed of posts in the selected category."
+msgstr "선택한 범주의 게시물 피드입니다."
+
+#: app/carbon-fields/cf-widget.php:67
+msgid "Feed Category"
+msgstr "피드 카테고리"
+
+#: app/carbon-fields/cf-widget.php:70
+msgid "Feed Title"
+msgstr "피드 제목"
+
+#: app/carbon-fields/cf-widget.php:72
+msgid "See All Link"
+msgstr "모든 링크 보기"
+
+#: app/carbon-fields/cf-widget.php:73
+msgid "Enter the url to view all of the post from the selected category."
+msgstr "URL을 입력하여 선택한 범주의 모든 게시물을 봅니다."
+
+#: app/carbon-fields/cf-widget.php:75
+msgid "Number of Posts to Display"
+msgstr "표시할 게시물 수"
+
+#: app/carbon-fields/cf-widget.php:77 app/carbon-fields/cf-page.php:453
+#: app/carbon-fields/cf-page.php:561 app/carbon-fields/cf-page.php:638
+msgid "Post Offset"
+msgstr "포스트 옵셋"
+
+#: app/carbon-fields/cf-widget.php:78
+msgid ""
+"Enter the number of posts to offset. Only works if the number of posts is "
+"set."
+msgstr ""
+"오프셋할 게시물 수를 입력합니다. 게시물 수가 설정된 경우에만 작동합니다."
+
+#: app/carbon-fields/cf-widget.php:80
+msgid "Post Image/Description"
+msgstr "게시물 이미지/설명"
+
+#: app/carbon-fields/cf-widget.php:81
+msgid "Check to show the image and description for each post."
+msgstr "각 게시물에 대한 이미지와 설명을 표시하려면 확인합니다."
+
+#: app/carbon-fields/cf-widget.php:84
+msgid "Grid Layout"
+msgstr "그리드 레이아웃"
+
+#: app/carbon-fields/cf-widget.php:85
+msgid "Check to show the image and description side-by-side."
+msgstr "이미지와 설명을 나란히 표시하려면 확인합니다."
+
+#: app/carbon-fields/cf-widget.php:103
+msgid "ALPS - Related Stories"
+msgstr "ALPS - 관련 게시물"
+
+#: app/carbon-fields/cf-widget.php:104
+msgid "Related Stories block for Post Page sidebar."
+msgstr "게시물 페이지 사이드바에 대한 관련 스토리 블록입니다."
+
+#: app/carbon-fields/cf-post.php:10
+msgid "ALPS: Featured Image Hero Layout"
+msgstr "ALPS: 주요 이미지 히어로 레이아웃"
+
+#: app/carbon-fields/cf-post.php:16
+msgid "Feature Image Hero Layout"
+msgstr "기능 이미지 히어로 레이아웃"
+
+#: app/carbon-fields/cf-post.php:17
+msgid "If a featured image is set, select the layout of the hero."
+msgstr "추천 이미지가 설정된 경우 히어로의 레이아웃을 선택합니다."
+
+#: app/carbon-fields/cf-post.php:19
+msgid "Text Width: 1/3 and Image Width: 2/3"
+msgstr "텍스트 너비: 1/3 및 이미지 너비: 2/3"
+
+#: app/carbon-fields/cf-post.php:20
+msgid "Text Width: 1/2 and Image Width: 1/2"
+msgstr "텍스트 너비: 1/2 및 이미지 너비: 1/2"
+
+#: app/carbon-fields/cf-post.php:29 app/carbon-fields/cf-page.php:229
+msgid "ALPS: Entry Sidebar / Featured Image"
+msgstr "ALPS: 엔트리 사이드바 / 추천 이미지"
+
+#: app/carbon-fields/cf-post.php:33 app/carbon-fields/cf-post.php:39
+#: app/carbon-fields/cf-page.php:233 app/carbon-fields/cf-page.php:239
+msgid "Hide Sidebar"
+msgstr "사이드바 숨기기"
+
+#: app/carbon-fields/cf-post.php:36 app/carbon-fields/cf-post.php:44
+#: app/carbon-fields/cf-page.php:236 app/carbon-fields/cf-page.php:244
+msgid "Hide Featured Image"
+msgstr "대표 이미지 숨기기"
+
+#: app/carbon-fields/cf-post.php:40 app/carbon-fields/cf-page.php:240
+msgid "Hides the sidebar for this entry if it is active."
+msgstr "활성 상태인 경우 이 항목의 사이드바를 숨깁니다."
+
+#: app/carbon-fields/cf-post.php:45 app/carbon-fields/cf-page.php:245
+msgid "Hides the featured image on the page/post header for this entry."
+msgstr "이 항목의 페이지/포스트 헤더에 대표 이미지를 숨깁니다."
+
+#: app/carbon-fields/_init.php:96 functions.php:644
+msgid ""
+"ALPS: The ALPS theme requires an update. Please read and follow the "
+"instructions below."
+msgstr ""
+"ALPS: ALPS 테마에는 업데이트가 필요합니다. 아래의 지침을 읽고 따르십시오."
+
+#: app/carbon-fields/_init.php:97 functions.php:661
+msgid ""
+"Clicking the link below will run an upgrade script. This will download, "
+"install and run a converter plugin. After running, the plugin will uninstall "
+"and delete itself, and remove the Piklist plugin completely from your site."
+msgstr ""
+"아래 링크를 클릭하면 업그레이드 스크립트가 실행됩니다. 이렇게 하면 컨버터 플"
+"러그인을 다운로드, 설치 및 실행합니다. 실행 후, 플러그인제거 하 고 자체를 삭"
+"제 합니다., 그리고 귀하의 사이트에서 완전히 Piklist 플러그인을 제거."
+
+#: app/carbon-fields/_init.php:98 functions.php:662
+msgid "click here to install and run the field converter plugin."
+msgstr "필드 컨버터 플러그인을 설치하고 실행하려면 여기를 클릭하십시오."
+
+#: app/carbon-fields/_init.php:119
+msgid "Activating new plugin..."
+msgstr "새로운 플러그인을 활성화 ..."
+
+#: app/carbon-fields/_init.php:137
+msgid ""
+"<p>Activated.</p> <p style=\"font-size:26px\">The ALPS Fields Converter has "
+"run successfully."
+msgstr ""
+"<p>활성화.</p><p style=\"font-size:26px\">ALPS 필드 변환기가 성공적으로 실행"
+"되었습니다."
+
+#: app/carbon-fields/_init.php:137
+msgid "Click here to return to the plugin management page."
+msgstr "플러그인 관리 페이지로 돌아가려면 여기를 클릭하십시오."
+
+#: app/carbon-fields/_init.php:140
+msgid "Could not install the new plugin."
+msgstr "새로운 플러그인을 설치할 수 없습니다."
+
+#: app/carbon-fields/_init.php:183 functions.php:765
+msgid "ALPS: The update is complete."
+msgstr "ALPS: 업데이트가 완료되었습니다."
+
+#: app/carbon-fields/_init.php:184 functions.php:766
+msgid ""
+"The converter plugin has run and updated your ALPS powered site. This plugin "
+"has removed both itself and Piklist from your site."
+msgstr ""
+"컨버터 플러그인실행 및 ALPS 전원 사이트를 업데이트했습니다. 이 플러그인은 사"
+"이트에서 자신과 Piklist 를 모두 제거했습니다."
+
+#: app/carbon-fields/cf-page.php:10
+msgid "ALPS: Header Banner"
+msgstr "ALPS: 헤더 배너"
+
+#: app/carbon-fields/cf-page.php:14
+msgid "Banner"
+msgstr "배너"
+
+#: app/carbon-fields/cf-page.php:15
+msgid ""
+"IMPORTANT: Setting the Header Banner will override the display of the "
+"Featured Image."
+msgstr "중요: 헤더 배너를 설정하면 대표 이미지의 표시가 재정의됩니다."
+
+#: app/carbon-fields/cf-page.php:17
+msgid "Header Title"
+msgstr "헤더 제목"
+
+#: app/carbon-fields/cf-page.php:19
+msgid "Header Kicker"
+msgstr "헤더 첫문장"
+
+#: app/carbon-fields/cf-page.php:21
+msgid "Header Subtitle"
+msgstr "헤더 자막"
+
+#: app/carbon-fields/cf-page.php:23
+msgid "Header Image"
+msgstr "헤더 이미지"
+
+#: app/carbon-fields/cf-page.php:31
+msgid "ALPS: Hero"
+msgstr "ALPS: 히어로"
+
+#: app/carbon-fields/cf-page.php:36
+msgid "Hero Banner"
+msgstr "히어로 배너"
+
+#: app/carbon-fields/cf-page.php:37
+msgid ""
+"IMPORTANT: Setting a hero style below will completely override anything you "
+"have entered for your ALPS Header Banner or your Featured Image."
+msgstr ""
+"중요: 아래 히어로 스타일을 설정하면 ALPS 헤더 배너 또는 대표 이미지에 입력한 "
+"모든 것이 완전히 재정의됩니다."
+
+#: app/carbon-fields/cf-page.php:39
+msgid "Hero Style"
+msgstr "히어로 스타일"
+
+#: app/carbon-fields/cf-page.php:40
+msgid "Select the hero configuration."
+msgstr "히어로 구성을 선택합니다."
+
+#: app/carbon-fields/cf-page.php:42 app/carbon-fields/cf-page.php:263
+#: app/carbon-fields/cf-page.php:368 app/carbon-fields/cf-page.php:495
+#: app/carbon-fields/cf-page.php:604 app/carbon-fields/cf-front-page.php:21
+msgid "None"
+msgstr "없음"
+
+#: app/carbon-fields/cf-page.php:43
+msgid "Half screen image with text overlay (Min/Max Images: 1)"
+msgstr "텍스트 오버레이가 있는 반쪽 화면 이미지(최소/최대 이미지: 1)"
+
+#: app/carbon-fields/cf-page.php:44
+msgid "Full screen image with text overlay (Min/Max Images: 1)"
+msgstr "텍스트 오버레이가 있는 전체 화면 이미지(최소/최대 이미지: 1)"
+
+#: app/carbon-fields/cf-page.php:45
+msgid "Full screen image with text and header overlay (Min/Max Images: 1)"
+msgstr "텍스트 및 헤더 오버레이가 있는 전체 화면 이미지(최소/최대 이미지: 1)"
+
+#: app/carbon-fields/cf-page.php:46
+msgid "Three column image format with text overlays (Min/Max Images: 3)"
+msgstr "텍스트 오버레이가 있는 세 개의 열 이미지 형식(최소/최대 이미지: 3)"
+
+#: app/carbon-fields/cf-page.php:47
+msgid "Half screen image gallery with text overlay (Max Images: 6)"
+msgstr "텍스트 오버레이가 있는 하프 스크린 이미지 갤러리(최대 이미지: 6)"
+
+#: app/carbon-fields/cf-page.php:50 app/carbon-fields/cf-page.php:175
+#: app/carbon-fields/cf-page.php:202
+msgid "Hero Image"
+msgstr "히어로 이미지"
+
+#: app/carbon-fields/cf-page.php:67 app/carbon-fields/cf-page.php:177
+#: app/carbon-fields/cf-page.php:204
+msgid "Hero Title"
+msgstr "히어로 타이틀"
+
+#: app/carbon-fields/cf-page.php:68 app/carbon-fields/cf-page.php:178
+msgid "The title of the hero image."
+msgstr "히어로 이미지의 제목입니다."
+
+#: app/carbon-fields/cf-page.php:87 app/carbon-fields/cf-page.php:182
+msgid "Hero Kicker"
+msgstr "히어로 첫문장"
+
+#: app/carbon-fields/cf-page.php:88 app/carbon-fields/cf-page.php:183
+msgid "Displays below the title in the hero image."
+msgstr "제목 아래에 히어로 이미지가 표시됩니다."
+
+#: app/carbon-fields/cf-page.php:106 app/carbon-fields/cf-page.php:186
+#: app/carbon-fields/cf-page.php:212
+msgid "Hero Link URL"
+msgstr "히어로 링크 URL"
+
+#: app/carbon-fields/cf-page.php:107 app/carbon-fields/cf-page.php:187
+msgid "Enter an URL to link the hero image."
+msgstr "URL을 입력하여 히어로 이미지를 연결합니다."
+
+#: app/carbon-fields/cf-page.php:124
+msgid "Hero Link Button"
+msgstr "히어로 링크 버튼"
+
+#: app/carbon-fields/cf-page.php:125
+msgid ""
+"Enter text here to show on the hero button. Filling this out sets the link "
+"on the button and not the hero image."
+msgstr ""
+"여기에 텍스트를 입력하여 히어로 버툰에 표시합니다. 이 밖으로 작성하려면 히어"
+"로 이미지가 아닌 버튼의 링크가 설정됩니다."
+
+#: app/carbon-fields/cf-page.php:138
+msgid "Hero Image Extended"
+msgstr "히어로 이미지 확장"
+
+#: app/carbon-fields/cf-page.php:140 app/carbon-fields/cf-page.php:156
+msgid "Check to extend the hero image over the sabbath column."
+msgstr "안식일 컬럼 위에 히어로 이미지를 확장하려면 체크합니다."
+
+#: app/carbon-fields/cf-page.php:154
+msgid "Hero Scroll Hint"
+msgstr "히어로 스크롤 힌트"
+
+#: app/carbon-fields/cf-page.php:166
+msgid "Hero Column (3 Columns)"
+msgstr "히어로 컬럼 (3 열)"
+
+#: app/carbon-fields/cf-page.php:192
+msgid "Hero Carousel"
+msgstr "히어로 캐로우셀"
+
+#: app/carbon-fields/cf-page.php:205
+msgid "The title of the hero image slide."
+msgstr "히어로 이미지 슬라이드의 제목입니다."
+
+#: app/carbon-fields/cf-page.php:208
+msgid "Hero Description"
+msgstr "히어로 설명"
+
+#: app/carbon-fields/cf-page.php:209
+msgid "Displays below the sub title in the hero image slide."
+msgstr "히어로 이미지 슬라이드의 하위 제목 아래에 표시됩니다."
+
+#: app/carbon-fields/cf-page.php:213
+msgid "Enter an URL to link the hero image slide."
+msgstr "URL을 입력하여 히어로 이미지 슬라이드를 연결합니다."
+
+#: app/carbon-fields/cf-page.php:216
+msgid "Hero Link CTA"
+msgstr "히어로 링크 CTA"
+
+#: app/carbon-fields/cf-page.php:217
+msgid "Displays title in the hero link."
+msgstr "히어로 링크에 제목이 표시됩니다."
+
+#: app/carbon-fields/cf-page.php:255
+msgid "ALPS: Related Pages & Posts"
+msgstr "ALPS: 관련 페이지 및 게시물"
+
+#: app/carbon-fields/cf-page.php:260
+msgid "Related Pages Format"
+msgstr "관련 페이지 형식"
+
+#: app/carbon-fields/cf-page.php:261
+msgid "Select the format of the related pages."
+msgstr "관련 페이지의 형식을 선택합니다."
+
+#: app/carbon-fields/cf-page.php:264
+msgid "Show first level child pages only"
+msgstr "첫 번째 수준 자식 페이지만 표시"
+
+#: app/carbon-fields/cf-page.php:265
+msgid "Show child and grandchild pages"
+msgstr "자녀 및 손자 페이지 표시"
+
+#: app/carbon-fields/cf-page.php:266
+msgid "Show custom pages"
+msgstr "사용자 지정 페이지 표시"
+
+#: app/carbon-fields/cf-page.php:269
+msgid "Assign Pages"
+msgstr "페이지 할당"
+
+#: app/carbon-fields/cf-page.php:287
+msgid "Related Pages Grid"
+msgstr "관련 페이지 그리드"
+
+#: app/carbon-fields/cf-page.php:289
+msgid "Select to display the related pages side-by-side."
+msgstr "관련 페이지를 나란히 표시하도록 선택합니다."
+
+#: app/carbon-fields/cf-page.php:291
+msgid "Related Pages Grid (3up)"
+msgstr "관련 페이지 그리드 (3up)"
+
+#: app/carbon-fields/cf-page.php:293
+msgid ""
+"Select to display the related pages in 3 columns on large screens. This will "
+"only display if the Sabbath column is hidden."
+msgstr ""
+"큰 화면에서 관련 페이지를 3개의 열에 표시하도록 선택합니다. 이것은 안식일 컬"
+"럼이 숨겨져 있는 경우에만 표시됩니다."
+
+#: app/carbon-fields/cf-page.php:301
+msgid "Related Pages Image"
+msgstr "관련 페이지 이미지"
+
+#: app/carbon-fields/cf-page.php:303
+msgid "Select to display the feature image for the related pages."
+msgstr "관련 페이지의 대표 이미지를 표시하도록 선택합니다."
+
+#: app/carbon-fields/cf-page.php:305
+msgid "Related Pages Round Image"
+msgstr "관련 페이지 라운드 이미지"
+
+#: app/carbon-fields/cf-page.php:307
+msgid "Select to make the featured image round."
+msgstr "대표 이미지를 둥글게 만들도록 선택합니다."
+
+#: app/carbon-fields/cf-page.php:326
+msgid "ALPS: Hero Featured Post"
+msgstr "ALPS: 히어로 대표 게시물"
+
+#: app/carbon-fields/cf-page.php:331
+msgid "Hero: Show Featured Post"
+msgstr "히어로: 대펴 게시물 표시"
+
+#: app/carbon-fields/cf-page.php:333
+msgid "Select to display a featured post in the hero."
+msgstr "히어로에 대표 게시물을 표시하려면 선택합니다."
+
+#: app/carbon-fields/cf-page.php:336
+msgid "Select - Hero Featured Post"
+msgstr "선택 - 히어로 대표 게시물"
+
+#: app/carbon-fields/cf-page.php:358
+msgid "ALPS: Post Feed List"
+msgstr "ALPS: 포스트 피드 목록"
+
+#: app/carbon-fields/cf-page.php:363
+msgid "Post Feed - List"
+msgstr "포스트 피드 - 목록"
+
+#: app/carbon-fields/cf-page.php:365
+msgid "Post Feed: List"
+msgstr "포스트 피드: 목록"
+
+#: app/carbon-fields/cf-page.php:369 app/carbon-fields/cf-page.php:496
+#: app/carbon-fields/cf-page.php:605
+msgid "Select a category of posts to feature."
+msgstr "게시물에 대한 대표 이미지를 표시하도록 선택합니다."
+
+#: app/carbon-fields/cf-page.php:370
+msgid "Select specific posts to feature."
+msgstr "특정 게시물을 선택합니다."
+
+#: app/carbon-fields/cf-page.php:373 app/carbon-fields/cf-page.php:499
+#: app/carbon-fields/cf-page.php:608
+msgid "Select Post Category"
+msgstr "게시물 카테고리 선택"
+
+#: app/carbon-fields/cf-page.php:381
+msgid "Select Specific Posts"
+msgstr "특정 게시물 선택"
+
+#: app/carbon-fields/cf-page.php:390 app/carbon-fields/cf-page.php:508
+#: app/carbon-fields/cf-page.php:616
+msgid "Section Title"
+msgstr "섹션 제목"
+
+#: app/carbon-fields/cf-page.php:391 app/carbon-fields/cf-page.php:509
+#: app/carbon-fields/cf-page.php:617
+msgid "Enter the title for this featured posts section."
+msgstr "이 대표 게시물 섹션의 제목을 입력합니다."
+
+#: app/carbon-fields/cf-page.php:402 app/carbon-fields/cf-page.php:519
+#: app/carbon-fields/cf-page.php:627
+msgid "Section Link"
+msgstr "섹션 링크"
+
+#: app/carbon-fields/cf-page.php:403 app/carbon-fields/cf-page.php:520
+#: app/carbon-fields/cf-page.php:628
+msgid "Enter the link to the posts archive page."
+msgstr "게시물 아카이브 페이지에 대한 링크를 입력합니다."
+
+#: app/carbon-fields/cf-page.php:414
+msgid "Round Image Thumbnail"
+msgstr "둥근 이미지 미리보기 이미지"
+
+#: app/carbon-fields/cf-page.php:415
+msgid "Check to make the image thumbnail round."
+msgstr "이미지 축소판을 둥글게 만들도록 확인합니다."
+
+#: app/carbon-fields/cf-page.php:427 app/carbon-fields/cf-page.php:571
+#: app/carbon-fields/cf-page.php:648
+msgid "Select - Category"
+msgstr "선택 - 카테고리"
+
+#: app/carbon-fields/cf-page.php:428 app/carbon-fields/cf-page.php:572
+#: app/carbon-fields/cf-page.php:649
+msgid ""
+"Click on the category you want to select on the left and it will be selected "
+"on the right side. You can only select one category."
+msgstr ""
+"왼쪽에서 선택할 카테고리를 클릭하면 오른쪽에 선택됩니다. 하나의 카테고리만 선"
+"택할 수 있습니다."
+
+#: app/carbon-fields/cf-page.php:443
+msgid "Number of Posts"
+msgstr "게시물 갯수"
+
+#: app/carbon-fields/cf-page.php:444
+msgid ""
+"Enter the number of posts you would like to display. (If empty, defaults to "
+"3 posts in the selected category)"
+msgstr ""
+"표시하려는 게시물 수를 입력합니다. (비어 있는 경우 선택한 카테고리의 게시물"
+"이 3개까지 기본값으로 설정됨)"
+
+#: app/carbon-fields/cf-page.php:463
+msgid "Select - Custom Posts"
+msgstr "선택 - 사용자 지정 게시물"
+
+#: app/carbon-fields/cf-page.php:464
+msgid ""
+"Click on the posts you want to select on the left and they will be selected "
+"on the right side."
+msgstr "왼쪽에서 선택하려는 게시물을 클릭하면 오른쪽에 선택됩니다."
+
+#: app/carbon-fields/cf-page.php:490
+msgid "Post Feed - Full Width"
+msgstr "포스트 피드 - 전체 너비"
+
+#: app/carbon-fields/cf-page.php:492
+msgid "Post Feed: Full Width"
+msgstr "포스트 피드: 전체 너비"
+
+#: app/carbon-fields/cf-page.php:493 app/carbon-fields/cf-page.php:602
+msgid "Displays as a list of posts."
+msgstr "게시물 목록으로 표시합니다."
+
+#: app/carbon-fields/cf-page.php:530
+msgid "Full Width Featured Post"
+msgstr "전체 너비 대표 게시물"
+
+#: app/carbon-fields/cf-page.php:531
+msgid "Select to include a post full width."
+msgstr "게시물 전체 너비를 포함하도록 선택합니다."
+
+#: app/carbon-fields/cf-page.php:541
+msgid "Featured Post"
+msgstr "대표 게시물"
+
+#: app/carbon-fields/cf-page.php:542
+msgid "Select (1) post to feature as a full width post."
+msgstr "전체 너비 게시물로 기능할 (1) 게시물을 선택합니다."
+
+#: app/carbon-fields/cf-page.php:562 app/carbon-fields/cf-page.php:639
+msgid "Enter the number of posts you would like to offset."
+msgstr "오프셋할 게시물 수를 입력합니다."
+
+#: app/carbon-fields/cf-page.php:594
+msgid "ALPS: Post Feed Archive"
+msgstr "ALPS: 포스트 피드 아카이브"
+
+#: app/carbon-fields/cf-page.php:599
+msgid "Post Feed - Archive"
+msgstr "포스트 피드 - 아카이브"
+
+#: app/carbon-fields/cf-page.php:601
+msgid "Post Feed: Archive"
+msgstr "포스트 피드: 아카이브"
+
+#: app/carbon-fields/cf-front-page.php:10
+msgid "ALPS: Home - Row Block"
+msgstr "ALPS: 홈 - 행 블록"
+
+#: app/carbon-fields/cf-front-page.php:15
+msgid "Two Column Block?"
+msgstr "두 개의 열 블록?"
+
+#: app/carbon-fields/cf-front-page.php:17
+msgid "To display the block in two columns, check this box."
+msgstr "블록을 두 열에 표시하려면 이 확인란을 선택합니다."
+
+#: app/carbon-fields/cf-front-page.php:19
+msgid "Content Block Type"
+msgstr "콘텐츠 블록 유형"
+
+#: app/carbon-fields/cf-front-page.php:22
+#: app/carbon-fields/cf-front-page.php:28
+msgid "Freeform Content Block"
+msgstr "자유형 콘텐츠 블록"
+
+#: app/carbon-fields/cf-front-page.php:23
+#: app/carbon-fields/cf-front-page.php:62
+msgid "Relationship Content Block"
+msgstr "관계 콘텐츠 블록"
+
+#: app/carbon-fields/cf-front-page.php:25
+msgid "Choose your content type for this block."
+msgstr "이 블록에 대한 콘텐츠 유형을 선택합니다."
+
+#: app/carbon-fields/cf-front-page.php:31
+msgid "Color Picker"
+msgstr "색상 선택기"
+
+#: app/carbon-fields/cf-front-page.php:33
+msgid "Kicker"
+msgstr "첫 문장"
+
+#: app/carbon-fields/cf-front-page.php:39
+msgid "Image"
+msgstr "이미지"
+
+#: app/carbon-fields/cf-front-page.php:42
+msgid "Make the Image Round"
+msgstr "이미지 둥글게 만들기"
+
+#: app/carbon-fields/cf-front-page.php:44
+msgid "To make the image round, check this box."
+msgstr "이미지를 둥글게 만들려면 이 확인란을 선택합니다."
+
+#: app/carbon-fields/cf-front-page.php:47
+#: app/carbon-fields/cf-front-page.php:110
+msgid "Body"
+msgstr "본문"
+
+#: app/carbon-fields/cf-front-page.php:49
+msgid "Button Text"
+msgstr "버튼 텍스트"
+
+#: app/carbon-fields/cf-front-page.php:52
+msgid "Button URL"
+msgstr "버튼 URL"
+
+#: app/carbon-fields/cf-front-page.php:82
+msgid "ALPS: Home - Story Block"
+msgstr "APLS: 홈 - 스토리 블록"
+
+#: app/carbon-fields/cf-front-page.php:90
+msgid "Subtitle"
+msgstr "부제목"
+
+#: app/carbon-fields/cf-front-page.php:93
+msgid "Background Image"
+msgstr "배경 이미지"
+
+#: app/carbon-fields/cf-front-page.php:94
+msgid "Choose an image to display in the background (optional)."
+msgstr "배경에 표시할 이미지를 선택합니다(선택 사항)."
+
+#: app/carbon-fields/cf-front-page.php:97
+msgid "Thumbnail"
+msgstr "썸네일"
+
+#: app/carbon-fields/cf-front-page.php:98
+msgid "Image to appear in the top left area of the block."
+msgstr "블록의 왼쪽 위 영역에 표시되는 이미지입니다."
+
+#: app/carbon-fields/cf-front-page.php:101
+msgid "Side Image"
+msgstr "사이드 이미지"
+
+#: app/carbon-fields/cf-front-page.php:102
+msgid ""
+"Optionally include an image with the body copy. If this is a video "
+"thumbnail, check the \"Side Image Video\" box."
+msgstr ""
+"선택적으로 바디 복사본이 있는 이미지를 포함합니다. 비디오 축소판인 경우 \"측"
+"면 이미지 비디오\" 상자를 선택합니다."
+
+#: app/carbon-fields/cf-front-page.php:105
+msgid "Side Image - Video?"
+msgstr "사이드 이미지 - 비디오?"
+
+#: app/carbon-fields/cf-front-page.php:107
+msgid "If the side image is a video thumbnail, check this box."
+msgstr "사이드 이미지가 비디오 축소판면인 경우 이 확인란을 선택합니다."
+
+#: app/carbon-fields/cf-front-page.php:119
+msgid "Call to Action Text"
+msgstr "콜 투 액션 제목"
+
+#: app/carbon-fields/widgets/alps-post-feed.php:228
+msgid "There are no posts at this time."
+msgstr "현재 게시물이 없습니다."
+
+#: app/carbon-fields/widgets/alps-author-box.php:25
+msgid "Website"
+msgstr "웹사이트"
+
+#: app/carbon-fields/widgets/alps-author-box.php:35
+#: views/patterns/01-molecules/components/share-tools.blade.php:5
+msgid "Facebook"
+msgstr "페이스북"
+
+#: app/carbon-fields/widgets/alps-author-box.php:45
+#: views/patterns/01-molecules/components/share-tools.blade.php:8
+msgid "Twitter"
+msgstr "트위터"
+
+#: app/carbon-fields/cf-theme-options.php:12
+msgid "Theme Color Options / Grid"
+msgstr "테마 색상 옵션 / 그리드"
+
+#: app/carbon-fields/cf-theme-options.php:14
+msgid "Theme Color"
+msgstr "테마 색상"
+
+#: app/carbon-fields/cf-theme-options.php:16
+msgid "Treefrog"
+msgstr "Treefrog"
+
+#: app/carbon-fields/cf-theme-options.php:17
+msgid "Ming"
+msgstr "Ming"
+
+#: app/carbon-fields/cf-theme-options.php:18
+msgid "Bluejay"
+msgstr "Bluejay"
+
+#: app/carbon-fields/cf-theme-options.php:19
+msgid "Iris"
+msgstr "Iris"
+
+#: app/carbon-fields/cf-theme-options.php:20
+msgid "Lily"
+msgstr "Lily"
+
+#: app/carbon-fields/cf-theme-options.php:21
+msgid "Scarlett"
+msgstr "Scarlett"
+
+#: app/carbon-fields/cf-theme-options.php:22
+msgid "Campfire"
+msgstr "Campfire"
+
+#: app/carbon-fields/cf-theme-options.php:23
+msgid "Winter"
+msgstr "Winter"
+
+#: app/carbon-fields/cf-theme-options.php:24
+msgid "Forest"
+msgstr "Forest"
+
+#: app/carbon-fields/cf-theme-options.php:25
+msgid "Cave"
+msgstr "Cave"
+
+#: app/carbon-fields/cf-theme-options.php:26
+msgid "Denim"
+msgstr "Denim"
+
+#: app/carbon-fields/cf-theme-options.php:27
+msgid "Emperor"
+msgstr "Emperor"
+
+#: app/carbon-fields/cf-theme-options.php:28
+msgid "Grapevine"
+msgstr "Grapevine"
+
+#: app/carbon-fields/cf-theme-options.php:29
+msgid "Velvet"
+msgstr "Velvet"
+
+#: app/carbon-fields/cf-theme-options.php:30
+msgid "Earth"
+msgstr "Earth"
+
+#: app/carbon-fields/cf-theme-options.php:31
+msgid "Night"
+msgstr "Night"
+
+#: app/carbon-fields/cf-theme-options.php:35
+msgid "Dark Theme"
+msgstr "어두운 테마"
+
+#: app/carbon-fields/cf-theme-options.php:37
+msgid "Select if you would like the theme to be dark."
+msgstr "테마가 어둡게 되려면 선택합니다."
+
+#: app/carbon-fields/cf-theme-options.php:40
+msgid "Grid Lines"
+msgstr "그리드 라인"
+
+#: app/carbon-fields/cf-theme-options.php:42
+msgid "Select if you would like show the grid lines."
+msgstr "그리드 라인을 표시하려면 선택합니다."
+
+#: app/carbon-fields/cf-theme-options.php:46
+msgid ""
+"<h3>Global Site Statements</h3><p style=\"font-size:16px\">Both of these "
+"statements show up in the navigation drawer.</p>"
+msgstr ""
+"<h3>글로벌 사이트 성명</h3><p style=\"font-size:16px\">이 두 성명 모두 탐색 "
+"영역에 표시됩니다.</p>"
+
+#: app/carbon-fields/cf-theme-options.php:48
+msgid "Site Branding Statement"
+msgstr "사이트 브랜딩 성명"
+
+#: app/carbon-fields/cf-theme-options.php:49
+msgid ""
+"[Site Name] is a website of the Seventh-day Adventist church in [Region "
+"Name]."
+msgstr ""
+"[사이트 이름]은 [지역 이름]에 있는 제칠일안식일예수재림교회의 웹사이트입니다."
+
+#: app/carbon-fields/cf-theme-options.php:50
+#: app/carbon-fields/cf-theme-options.php:56
+msgid "Found in the navigation drawer"
+msgstr "탐색 서랍에서 발견"
+
+#: app/carbon-fields/cf-theme-options.php:54
+msgid "Global Branding Statement"
+msgstr "글로벌 브랜딩 성명"
+
+#: app/carbon-fields/cf-theme-options.php:55
+msgid ""
+"Seventh-day Adventists are devoted to helping people understand the Bible to "
+"find freedom, healing, and hope in Jesus."
+msgstr ""
+"제칠일안식일예수재림교인들은 예수 안에서 자유와 치유, 희망을 찾기 위해 사람들"
+"이 성경을 이해할 수 있도록 돕기 위해 헌신하고 있습니다."
+
+#: app/carbon-fields/cf-theme-options.php:63
+#: app/carbon-fields/cf-theme-options.php:66
+msgid "Logo"
+msgstr "로고"
+
+#: app/carbon-fields/cf-theme-options.php:70
+msgid "Logo ("
+msgstr "로고 ("
+
+#: app/carbon-fields/cf-theme-options.php:81
+msgid "Latest"
+msgstr "최신"
+
+#: app/carbon-fields/cf-theme-options.php:90
+msgid ""
+"<h3>ALPS CORE Version</h3><p style=\"font-size:16px\">Stick to the selected "
+"version of ALPS core CSS and Javascript.</p>"
+msgstr ""
+"<h3>ALPS 코어 버전</h3><p style=\"font-size:16px\">ALPS 코어 CSS 및 자바 스크"
+"립트의 선택한 버전에 충실합니다.</p>"
+
+#: app/carbon-fields/cf-theme-options.php:92
+msgid "ALPS Core files version"
+msgstr "ALPS 코어 파일 버전"
+
+#: app/carbon-fields/cf-theme-options.php:94
+msgid ""
+"REMOTE: This option pulls the ALPS CORE CSS and Javascript from the remote "
+"CDN."
+msgstr ""
+"원격: 이 옵션은 원격 CDN에서 ALPS CORE CSS 및 자바스크립트를 가져옵니다."
+
+#: app/carbon-fields/cf-theme-options.php:95
+msgid ""
+"LOCAL: This option caches the most recent version of ALPS to your local "
+"site, reducing the connections to remote servers."
+msgstr ""
+"로컬: 이 옵션은 가장 최근 버전의 ALPS를 로컬 사이트에 캐시하여 원격 서버에 대"
+"한 연결을 줄입니다."
+
+#: app/carbon-fields/cf-theme-options.php:99
+msgid "Choose the REMOTE ALPS CDN Version"
+msgstr "원격 ALPS CDN 버전 선택"
+
+#: app/carbon-fields/cf-theme-options.php:109
+msgid ""
+"<h3 style=\"font-size:13px; margin-top: 0;\">Cached LOCAL style version</"
+"h3><p style=\"font-size:13px\">ALPS Version "
+msgstr ""
+"<h3 style=\"font-size:13px; margin-top: 0;\">캐시된 로컬 스타일 버전</h3><p "
+"style=\"font-size:13px\">ALPS 버전 "
+
+#: app/carbon-fields/cf-theme-options.php:123
+msgid "<h3>WPML Language Selector Settings</h3>"
+msgstr "<h3>WPML 언어 선택기 설정</h3>"
+
+#: app/carbon-fields/cf-theme-options.php:125
+msgid "Hide WPML languages"
+msgstr "WPML 언어 숨기기"
+
+#: app/carbon-fields/cf-theme-options.php:127
+msgid "Hiding default WPML languages selector on page."
+msgstr "페이지에 기본 WPML 언어 선택기 숨기기."
+
+#: app/carbon-fields/cf-theme-options.php:132
+msgid "ALPS Theme Settings"
+msgstr "ALPS 테마 설정"
+
+#: app/carbon-fields/cf-theme-options.php:135
+msgid "GLOBAL"
+msgstr "글로벌"
+
+#: app/carbon-fields/cf-theme-options.php:136
+msgid "POSTS OPTIONS"
+msgstr "게시물 옵션"
+
+#: app/carbon-fields/cf-theme-options.php:138
+msgid "Home Page Content Display"
+msgstr "홈페이지 콘텐츠 디스플레이"
+
+#: app/carbon-fields/cf-theme-options.php:140
+msgid "Home Page Title"
+msgstr "홈페이지 제목"
+
+#: app/carbon-fields/cf-theme-options.php:141
+msgid "Sets a custom home page title for sites displaying the latest posts."
+msgstr ""
+"최신 게시물을 표시하는 사이트에 대한 사용자 지정 홈 페이지 제목을 설정합니다."
+
+#: app/carbon-fields/cf-theme-options.php:144
+#: app/carbon-fields/cf-theme-options.php:160
+msgid "Hide The Sidebar"
+msgstr "사이드바 숨기기"
+
+#: app/carbon-fields/cf-theme-options.php:146
+msgid "Hides the sidebar on the home/archive page if it is active."
+msgstr "활성 상태인 경우 홈/아카이브 페이지에서 사이드바를 숨깁니다."
+
+#: app/carbon-fields/cf-theme-options.php:149
+msgid "Posts Content Display"
+msgstr "게시물 콘텐츠 디스플레이"
+
+#: app/carbon-fields/cf-theme-options.php:151
+msgid "Archives Page Title"
+msgstr "아카이브 페이지 제목"
+
+#: app/carbon-fields/cf-theme-options.php:152
+msgid ""
+"Sets a custom title for the archive page for sites with a custom posts page."
+msgstr ""
+"사용자 지정 게시물 페이지가 있는 사이트에 대한 아카이브 페이지에 대한 사용자 "
+"지정 제목을 설정합니다."
+
+#: app/carbon-fields/cf-theme-options.php:155
+msgid "Hide The Related Stories Image"
+msgstr "관련 게시물 이미지 숨기기"
+
+#: app/carbon-fields/cf-theme-options.php:157
+msgid "Hides the image in the Related Stories block in sidebar."
+msgstr "사이드바에서 관련 게시물 블록에 이미지를 숨깁니다."
+
+#: app/carbon-fields/cf-theme-options.php:162
+msgid "Hides the sidebar on the archive page if it is active."
+msgstr "활성 상태인 경우 아카이브 페이지의 사이드바를 숨깁니다."
+
+#: app/carbon-fields/cf-theme-options.php:165
+msgid "Category Posts Feed Label"
+msgstr "카테고리 게시물 피드 레이블"
+
+#: app/carbon-fields/cf-theme-options.php:167
+msgid "Select to display the label \"Category\" on category posts feed."
+msgstr ""
+"카테고리 게시물 피드에 \"카테고리\"라는 레이블을 표시하도록 선택합니다."
+
+#: app/carbon-fields/cf-theme-options.php:170
+msgid "Posts Grid and Image Display"
+msgstr "게시물 그리드 및 이미지 디스플레이"
+
+#: app/carbon-fields/cf-theme-options.php:172
+msgid "Posts Feed Grid"
+msgstr "게시물 피드 그리드"
+
+#: app/carbon-fields/cf-theme-options.php:174
+msgid "Select to display the posts side-by-side."
+msgstr "게시물을 나란히 표시하도록 선택합니다."
+
+#: app/carbon-fields/cf-theme-options.php:177
+msgid "Posts Feed Grid (3up)"
+msgstr "게시물 피드 그리드 (3up)"
+
+#: app/carbon-fields/cf-theme-options.php:179
+msgid ""
+"Select to display the posts 3up at the largest breakpoint. The sidebar must "
+"be hidden for the pages to display 3up."
+msgstr ""
+"가장 큰 중단점에 3up의 게시물을 표시하려면 선택합니다. 페이지가 3up을 표시하"
+"려면 사이드바를 숨겨야 합니다."
+
+#: app/carbon-fields/cf-theme-options.php:182
+msgid "Posts Feed Image"
+msgstr "게시물 피드 이미지"
+
+#: app/carbon-fields/cf-theme-options.php:184
+msgid "Select to display the feature image for the posts."
+msgstr "게시물에 대한 피처 이미지를 표시하도록 선택합니다."
+
+#: app/carbon-fields/cf-theme-options.php:187
+msgid "Posts Round Images"
+msgstr "둥근 이미지 게시"
+
+#: app/carbon-fields/cf-theme-options.php:189
+msgid "Make the post feed images round."
+msgstr "포스트 피드 이미지를 둥글게 만듭니다."
+
+#: app/carbon-fields/cf-theme-options.php:192
+msgid "SABBATH COLUMN"
+msgstr "안식일 컬럼"
+
+#: app/carbon-fields/cf-theme-options.php:194
+msgid "Sabbath Icon"
+msgstr "안식일 아이콘"
+
+#: app/carbon-fields/cf-theme-options.php:197
+msgid "Sabbath Background Image"
+msgstr "안식일 배경 이미지"
+
+#: app/carbon-fields/cf-theme-options.php:200
+msgid "Hide Sabbath Icon Until Scroll"
+msgstr "스크롤할 때까지 안식일 아이콘 숨기기"
+
+#: app/carbon-fields/cf-theme-options.php:202
+msgid "Select to hide the sabbath icon till you scroll."
+msgstr "스크롤할 때까지 안식일 아이콘을 숨기도록 선택합니다."
+
+#: app/carbon-fields/cf-theme-options.php:205
+msgid "Hide the sabbath column"
+msgstr "안식일 컬럼 숨기기"
+
+#: app/carbon-fields/cf-theme-options.php:207
+msgid "Select to hide the sabbath column."
+msgstr "안식일 컬럼을 숨기려면 선택합니다."
+
+#: app/carbon-fields/cf-theme-options.php:210
+msgid "Hide the sabbath column at certain screen widths"
+msgstr "특정 화면 너비에서 안식일 컬럼 숨기기"
+
+#: app/carbon-fields/cf-theme-options.php:212
+msgid "Hide the sabbath column for all screen widths."
+msgstr "모든 화면 너비에 대한 안식일 컬럼을 숨깁니다."
+
+#: app/carbon-fields/cf-theme-options.php:213
+msgid "Hide the sabbath column at small screens."
+msgstr "작은 화면에서 안식일 컬럼을 숨깁니다."
+
+#: app/carbon-fields/cf-theme-options.php:214
+msgid "Hide the sabbath column at medium screens."
+msgstr "중간 화면에서 안식일 컬럼을 숨깁니다."
+
+#: app/carbon-fields/cf-theme-options.php:215
+msgid "Hide the sabbath column at large screens."
+msgstr "큰 화면에서 안식일 컬럼을 숨깁니다."
+
+#: app/carbon-fields/cf-theme-options.php:224
+msgid "FOOTER CONTENT"
+msgstr "풋터 콘텐츠"
+
+#: app/carbon-fields/cf-theme-options.php:226
+msgid "Footer Description"
+msgstr "풋터 설명"
+
+#: app/carbon-fields/cf-theme-options.php:228
+msgid "Footer Copyright"
+msgstr "푸터 카피라이트"
+
+#: app/carbon-fields/cf-theme-options.php:230
+msgid "Footer Address"
+msgstr "풋터 주소"
+
+#: app/carbon-fields/cf-theme-options.php:233
+msgid "Street Address"
+msgstr "도로명 주소"
+
+#: app/carbon-fields/cf-theme-options.php:235
+msgid "City"
+msgstr "도시"
+
+#: app/carbon-fields/cf-theme-options.php:238
+msgid "State"
+msgstr "주"
+
+#: app/carbon-fields/cf-theme-options.php:241
+msgid "Postal Code"
+msgstr "우편번호"
+
+#: app/carbon-fields/cf-theme-options.php:244
+msgid "Country"
+msgstr "국가"
+
+#: app/carbon-fields/cf-theme-options.php:247
+msgid "Phone Number"
+msgstr "전화번호"
+
+#: app/carbon-fields/cf-theme-options.php:253
+msgid "Footer Logo Icon"
+msgstr "풋터 로고 아이콘"
+
+#: app/carbon-fields/cf-theme-options.php:254
+msgid ""
+"Upload a logo icon for the footer. * Will only display if the sabbath column "
+"is hidden."
+msgstr ""
+"풋터에 대한 로고 아이콘을 업로드합니다. * 안식일 컬럼이 숨겨져 있는 경우에만 "
+"표시됩니다."
+
+#: app/controllers/app.php:20
+msgid "Latest Posts"
+msgstr "최근 게시물"
+
+#: app/controllers/app.php:26
+#, php-format
+msgid "Search Results for %s"
+msgstr "%s의 검색 결과"
+
+#: app/controllers/app.php:29
+msgid "Not Found"
+msgstr "찾을 수 없습니다"
+
+#: functions.php:17
+msgid "Sage &rsaquo; Error"
+msgstr "세이지 &rsaquo; 오류"
+
+#: functions.php:27
+msgid "You must be using PHP 7.1 or greater."
+msgstr "PHP 7.1 이상을 사용해야 합니다."
+
+#: functions.php:27
+msgid "Invalid PHP version"
+msgstr "잘못된 PHP 버전"
+
+#: functions.php:34
+msgid "You must be using WordPress 4.7.0 or greater."
+msgstr "워드프레스 4.7.0 이상을 사용 해야 합니다."
+
+#: functions.php:34
+msgid "Invalid WordPress version"
+msgstr "잘못된 워드 프레스 버전"
+
+#: functions.php:43
+msgid "You must run <code>composer install</code> from the Sage directory."
+msgstr "<code>composer install</code>세이지 디렉토리에서 실행해야 합니다."
+
+#: functions.php:44
+msgid "Autoloader not found."
+msgstr "자동 로더를 찾을 수 없습니다."
+
+#: functions.php:59
+#, php-format
+msgid "Error locating <code>%s</code> for inclusion."
+msgstr "포함을 위한 오류 <code>%s</code> 찾기입니다."
+
+#: functions.php:167 functions.php:168
+msgid "ALPS Custom Settings"
+msgstr "ALPS 사용자 지정 설정"
+
+#: functions.php:177
+msgid "Save ALPS Theme Settings"
+msgstr "ALPS 테마 설정 저장"
+
+#: functions.php:301
+msgid "Trademark and Logo Usage"
+msgstr "상표 및 로고 사용"
+
+#: functions.php:307
+msgid "Legal Notice"
+msgstr "법적 고지"
+
+#: functions.php:312
+msgid "Privacy Policy"
+msgstr "개인정보처리방침"
+
+#: functions.php:339
+msgid "Adventist.org"
+msgstr "Adventist.org"
+
+#: functions.php:345
+msgid "ADRA"
+msgstr "아드라"
+
+#: functions.php:350
+msgid "Adventist World Radio"
+msgstr "재림교인 세계 라디오"
+
+#: functions.php:355
+msgid "Hope Channel"
+msgstr "호프채널"
+
+#: functions.php:393
+msgid ""
+"On theme activation, go to Appearance > Settings and save the settings to "
+"display the footer default information."
+msgstr ""
+"테마 활성화에서 모양 > 설정으로 이동하여 설정을 저장하여 풋터 기본 정보를 표"
+"시합니다."
+
+#: views/template-posts.blade.php:566
+msgid "See All"
+msgstr "모두 보기"
+
+#: views/index.blade.php:20
+#: views/patterns/02-organisms/sections/page-header.blade.php:25
+#: views/home.blade.php:23
+msgid "Recent Posts"
+msgstr "최근 게시물"
+
+#: views/404.blade.php:10
+msgid "Page not found"
+msgstr "페이지를 찾을 수 없습니다"
+
+#: views/404.blade.php:18
+#: views/patterns/02-organisms/content/content-posts.blade.php:184
+#: views/patterns/02-organisms/content/content-search.blade.php:55
+msgid "Sorry, no results were found."
+msgstr "죄송합니다. 검색 결과가 없습니다."
+
+#: views/404.blade.php:19
+msgid "Go to homepage"
+msgstr "홈페이지로 이동"
+
+#: views/patterns/01-molecules/forms/search.blade.php:7
+msgid "Submit"
+msgstr "제출"
+
+#: views/patterns/01-molecules/navigation/secondary-navigation.blade.php:76
+#: views/patterns/02-organisms/content/content-search.blade.php:9
+msgid "Search"
+msgstr "검색"
+
+#: views/patterns/01-molecules/navigation/secondary-navigation.blade.php:81
+msgid "Menu"
+msgstr "메뉴"
+
+#: views/patterns/01-molecules/components/share-tools.blade.php:2
+msgid "Share"
+msgstr "공유"
+
+#: views/patterns/01-molecules/components/share-tools.blade.php:11
+msgid "Email"
+msgstr "이메일"
+
+#: views/patterns/02-organisms/sections/page-header.blade.php:30
+#: views/category.blade.php:24
+msgid "Category"
+msgstr "카테고리"
+
+#: views/patterns/02-organisms/sections/related-pages.blade.php:108
+#: views/patterns/02-organisms/content/content-archive.blade.php:46
+#: views/patterns/02-organisms/content/content-posts.blade.php:120
+#: views/patterns/02-organisms/content/content-search.blade.php:44
+msgid "Read More"
+msgstr "더 보기"
+
+#: views/patterns/02-organisms/sections/comments.blade.php:25
+msgid "%1$s at %2$s"
+msgstr "%1$s 중 %2$s"
+
+#: views/patterns/02-organisms/sections/comments.blade.php:34
+msgid "Edit"
+msgstr "편집"
+
+#: views/patterns/02-organisms/sections/comments.blade.php:105
+msgid "Leave a Comment"
+msgstr "댓글 남기기"
+
+#: views/patterns/02-organisms/sections/article-footer.blade.php:14
+msgid "Comment"
+msgstr "댓글"
+
+#: views/patterns/02-organisms/content/content-search.blade.php:22
+msgid "Settings"
+msgstr "설정"
+
+#: views/patterns/02-organisms/asides/related-stories.blade.php:33
+msgid "Related Stories"
+msgstr "관련 게시물"
+
+#: views/patterns/02-organisms/asides/related-stories.blade.php:76
+msgid "There are no related stories at this time."
+msgstr "현재 관련 게시물이 없습니다."
+
+#: views/archive.blade.php:17
+msgid "Archives"
+msgstr "아카이브"

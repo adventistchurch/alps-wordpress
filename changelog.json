@@ -1,4 +1,7 @@
 {
+  "3.10.0" : {
+    "description" : "Added support for Korean internationalization `.po` files, KO, thanks to Sangyong Lee."
+  },
   "3.9.2" : {
     "description" : "Added a link to the image on the related stories block."
   },
