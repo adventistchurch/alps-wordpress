@@ -1,4 +1,7 @@
 {
+  "3.10.3" : {
+    "description" : "Synchronize releases."
+  },
   "3.10.1" : {
     "description" : "Fix: Localize Google Fonts within Template. Fix issue for GDPR of google fonts API."
   },
