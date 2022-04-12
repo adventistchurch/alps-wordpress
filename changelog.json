@@ -1,6 +1,6 @@
 {
   "3.10.1" : {
-    "description" : "Fix: Localize Google Fonts within Template. Fix issue for GDPR of google fonts API"
+    "description" : "Fix: Localize Google Fonts within Template. Fix issue for GDPR of google fonts API."
   },
   "3.10.0" : {
     "description" : "Added support for Korean internationalization `.po` files, KO, thanks to Sangyong Lee."

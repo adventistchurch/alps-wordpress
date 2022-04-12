@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [3.10.1]
 ### Fixed
-- Localize Google Fonts within Template. Fix issue for GDPR of google fonts API. [#584](https://github.com/adventistchurch/alps-wordpress/issues/584)
+- Localize Google Fonts within Template. Fix issue for GDPR of google fonts API. [#584](https://github.com/adventistchurch/alps-wordpress/issues/584).
 
 ## [3.10.0]
 ### Added
