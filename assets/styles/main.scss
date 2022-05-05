@@ -333,3 +333,17 @@ p.has-drop-cap:not(:focus)::first-letter {
   text-transform: inherit;
   font-style: inherit;
 }
+
+//Update styles for WooCommerce plugin
+div.woocommerce li.product::before {
+  display: none !important;
+}
+
+div.woocommerce li.product {
+  text-indent: 0 !important;;
+}
+
+//for right section of widgets {
+section.widget.c-woocommerce li {
+  list-style: none;
+}

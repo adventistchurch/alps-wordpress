@@ -1,4 +1,7 @@
 {
+  "3.10.5" : {
+    "description" : "Fix styles for Woocommerce plugin"
+  },
   "3.10.4" : {
     "description" : "Fix Localized Google internal fonts. Update link tag correct type in head."
   },
