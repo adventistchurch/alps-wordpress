@@ -1,4 +1,7 @@
 {
+  "3.10.6" : {
+    "description" : "Update css styles build."
+  },
   "3.10.5" : {
     "description" : "Fix styles for Woocommerce plugin"
   },
