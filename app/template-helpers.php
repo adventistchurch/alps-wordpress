@@ -62,6 +62,17 @@ class TemplateHelpers {
         $headerHeroType = get_post_meta($postsRootPostId, '_hero_type', true);
         $isHeroHeader = $headerHeroType && $headerHeroType !== 'false';
 
+        $GLOBALS["headerTitle"] = $headerTitle;
+        $GLOBALS["headerKicker"] = $headerKicker;
+        $GLOBALS["headerSubtitle"] = $headerSubtitle;
+
+        $GLOBALS["isVisibleFeaturedImage"] = $isVisibleFeaturedImage;
+        $GLOBALS["headerBackgroundImage"] = $headerBackgroundImage;
+        $GLOBALS["postsRootPostIsVisibleSidebar"] = $postsRootPostIsVisibleSidebar;
+
+        $GLOBALS["headerHeroType"] = $headerHeroType;
+        $GLOBALS["isHeroHeader"] = $isHeroHeader;
+
         return [
             'postsRootPostId' => $postsRootPostId,
             'postsRootPostIsVisibleSidebar' => $postsRootPostIsVisibleSidebar,
@@ -73,7 +84,7 @@ class TemplateHelpers {
         ];
     }
 
-    public function getPostData($postId)
+    public static function getPostData($postId)
     {
         $isFeaturedImageHidden = get_post_meta($postId, '_hide_featured_image', true);
         $thumbId = get_post_thumbnail_id($postId);

@@ -19,7 +19,7 @@
 @endphp
 <section id="top" class="l-main__content l-grid l-grid--7-col {{ $section_offset }} l-grid-wrap--6-of-7 u-spacing--double--until-large">
   <div class="c-article l-grid-item l-grid-item--l--3-col {{ $article_offset }}">
-    <article @php post_class("text c-article__body u-spacing $classes") @endphp>
+    <article @php post_class('text c-article__body u-spacing @isset($GLOBALS["classes"])') @endphp>
       @php the_content() @endphp
       @include('patterns.02-organisms.sections.article-footer')
     </article>
