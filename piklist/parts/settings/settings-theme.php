@@ -126,6 +126,13 @@
         'value' => 'treefrog',
         'columns' => 4,
         'choices' => array(
+          'nad-denim' => 'NAD - Denim', 'alps',
+          'nad-nile' => 'NAD - Nile', 'alps',
+          'nad-amethyst' => 'NAD - Amethyst', 'alps',
+          'nad-spark' => 'NAD - Spark', 'alps',
+          'nad-miracle' => 'NAD - Miracle', 'alps',
+          'nad-branch' => 'NAD - Branch', 'alps',
+          'nad-vine' => 'NAD - Vine', 'alps',
           'treefrog' => 'Treefrog',
           'ming' => 'Ming',
           'bluejay' => 'Bluejay',
@@ -161,6 +168,16 @@
         'columns' => 4,
         'choices' => array(
           'true' => 'Select if you would like show the grid lines'
+        )
+      ),
+      array(
+        'type' => 'checkbox',
+        'field' => 'square_button',
+        'label' => 'Square Buttons',
+        'value' => true,
+        'columns' => 4,
+        'choices' => array(
+          'true' => 'Select if you would like square buttons'
         )
       ),
     )
