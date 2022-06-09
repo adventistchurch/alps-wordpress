@@ -1,4 +1,16 @@
 {
+  "3.11.0" : {
+    "description" : "Support php 8. Update global variables and support blade files for php 8.0 version."
+  },
+  "3.10.6" : {
+    "description" : "Update css styles build."
+  },
+  "3.10.5" : {
+    "description" : "Fix styles for Woocommerce plugin"
+  },
+  "3.10.4" : {
+    "description" : "Fix Localized Google internal fonts. Update link tag correct type in head."
+  },
   "3.10.3" : {
     "description" : "Synchronize releases."
   },

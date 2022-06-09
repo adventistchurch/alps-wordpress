@@ -27,7 +27,7 @@
     'u-shift--left--1-col--at-xxlarge'
   ];
 
-  if ($headerBackgroundImage) {
+  if (@isset($GLOBALS["headerBackgroundImage"])) {
     $headerClasses[] = 'o-background-image';
     $headerClasses[] = 'u-background--cover';
     $headerClasses[] = 'has-background';
@@ -36,7 +36,7 @@
   }
 @endphp
 
-@if ($headerBackgroundImage)
+@if (@isset($GLOBALS["headerBackgroundImage"]))
   <style type="text/css">
     .o-background-image {
       background-image: url({{ wp_get_attachment_image_url($headerBackgroundImage, 'featured__hero--m') }});
@@ -57,7 +57,7 @@
 <header class="{{ join(' ', $headerClasses) }}">
   <div class="{{ join(' ', $headerInnerClasses) }}">
     <div class="{{ join(' ', $headerContentClasses) }}">
-      @if ($headerKicker)
+      @if (@isset($GLOBALS["headerKicker"]))
         <span class="o-kicker u-color--white">{{ $headerKicker }}</span>
       @endif
       <h1 class="u-font--primary--xl u-color--white u-font-weight--bold">
@@ -67,7 +67,7 @@
   </div>
 </header>
 
-@if ($headerSubtitle)
+@if (@isset($GLOBALS["headerSubtitle"]))
   <div class="c-page-header__subtitle c-page-header__long__subtitle l-grid l-grid--7-col u-space--top--zero">
     <div class="l-grid-wrap l-grid-wrap--5-of-7 u-shift--left--1-col--at-medium u-border--left u-font--secondary--m">
       {{ $headerSubtitle }}
