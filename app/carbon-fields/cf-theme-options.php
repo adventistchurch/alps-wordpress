@@ -216,6 +216,7 @@ function crb_attach_theme_options()
             Field
                 ::make('checkbox', 'sabbath_hide', __('Hide the sabbath column', 'alps'))
                 ->set_option_value('true')
+                ->set_default_value('true')
                 ->set_help_text(__('Select to hide the sabbath column.', 'alps'))
                 ->set_width(33),
             Field
