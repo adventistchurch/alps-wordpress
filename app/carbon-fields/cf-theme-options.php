@@ -265,5 +265,11 @@ function crb_attach_theme_options()
             Field
                 ::make('image', 'footer_logo_icon', __('Footer Logo Icon', 'alps'))
                 ->set_help_text(__('Upload a logo icon for the footer. * Will only display if the sabbath column is hidden.', 'alps')),
+            Field
+                ::make('checkbox', 'footer_logo_square', __('Square Fallback Footer Logo Icon', 'alps'))
+                ->set_option_value('true')
+                ->set_default_value('true')
+                ->set_help_text(__('If checked, and no custom logo has been chosen, fallback icon will default to square.', 'alps'))
+                ->set_width(33),
         ]);
 }
