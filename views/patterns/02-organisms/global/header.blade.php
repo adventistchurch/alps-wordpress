@@ -38,7 +38,7 @@
           <img class="style-svg" src="{{ wp_get_attachment_url($logo) }}" alt="{{ get_post_meta($logo, '_wp_attachment_image_alt', true) }}">
         @else
           <span class="{{ $logo_class }}">
-            @include('patterns.00-atoms.logos.alps-logo')
+            @include('patterns.00-atoms.logos.alps-logo-icon')
           </span>
         @endif
       </a>
