@@ -737,6 +737,22 @@ if ( !$cf ) {
     }
 } // IF CARBON FIELDS HAS NOT BEEN INSTALLED YET
 
+// SET DEFAULT VALUES FOR THEME OPTIONS
+add_action('after_switch_theme', 'setup_theme_options', 1);
+
+function setup_theme_options () {
+  
+  if (get_option('first_theme_activation') === false) {
+    
+    // Set a flag if the theme activation happened
+    add_option('first_theme_activation', true, '', false);
+
+    // stuff here only runs once, when the theme is activated for the 1st time
+    if (file_exists('defaults.php')) {
+      include 'defaults.php';
+    }
+  }
+}
 
 // PIKLIST WILL NOT DELETE THROUGH ADMIN, SO NUKE IT FROM ORBIT
  function alps_remove_dir_recursively( $dir ) {
