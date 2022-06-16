@@ -7,6 +7,8 @@
     $logo = get_alps_option('logo');
   }
 
+  $logo_nad = get_alps_option('logo_nad');
+
   if (!empty(get_alps_option('dark_theme'))) {
     $dark_theme = get_alps_option('dark_theme');
     $header_logo_class = " u-theme--path-fill--base";
@@ -36,9 +38,13 @@
       <a href="{{ get_home_url() }}" class="c-logo__link{{ $header_logo_class }}">
         @if ($logo)
           <img class="style-svg" src="{{ wp_get_attachment_url($logo) }}" alt="{{ get_post_meta($logo, '_wp_attachment_image_alt', true) }}">
+        @elseif ($logo_nad)
+          <span class="{{ $logo_class }}">
+            @include('patterns.00-atoms.logos.alps-logo-nad')
+          </span>
         @else
           <span class="{{ $logo_class }}">
-            @include('patterns.00-atoms.logos.alps-logo-icon')
+            @include('patterns.00-atoms.logos.alps-logo')
           </span>
         @endif
       </a>
