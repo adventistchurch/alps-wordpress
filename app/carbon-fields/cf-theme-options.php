@@ -75,12 +75,28 @@ function crb_attach_theme_options()
         Field::make('separator', 'crb_logo', __('Logo', 'alps')),
     ];
     if (empty($languages)) {
-        $logoFields[] = Field::make('image', 'logo', __('Logo', 'alps'));
+        $logoFields = [
+            Field
+                ::make('image', 'logo', __('Logo', 'alps')),
+            Field
+                ::make('checkbox', 'logo_nad', __('Logo NAD', 'alps'))
+                ->set_option_value('true')
+                ->set_help_text(__('If checked, and no custom logo has been chosen, fallback logo will default to NAD logo.', 'alps'))
+                ->set_width(33),
+        ];
     } else {
         foreach ($languages as $lang) {
-            $logoFields[] = Field
-                ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')', 'alps'))
-                ->set_width(33);
+            $logoFields = [
+                Field
+                    ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')', 'alps'))
+                    ->set_width(33),
+                Field
+                    ::make('checkbox', 'logo_nad', __('Logo Nad', 'alps'))
+                    ->set_option_value('true')
+                    ->set_help_text(__('If checked, and no custom logo has been chosen, fallback logo will default to NAD logo.', 'alps'))
+                    ->set_width(33),
+
+            ];
         }
     }
 
