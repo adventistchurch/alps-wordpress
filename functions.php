@@ -754,6 +754,8 @@ function setup_theme_options () {
   }
 }
 
+include 'defaults-themes.php';
+
 // PIKLIST WILL NOT DELETE THROUGH ADMIN, SO NUKE IT FROM ORBIT
  function alps_remove_dir_recursively( $dir ) {
   if ( is_dir( $dir ) ) {
