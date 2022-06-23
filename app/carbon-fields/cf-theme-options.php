@@ -78,24 +78,13 @@ function crb_attach_theme_options()
         $logoFields = [
             Field
                 ::make('image', 'logo', __('Logo', 'alps')),
-            Field
-                ::make('checkbox', 'logo_nad', __('Logo NAD', 'alps'))
-                ->set_option_value('true')
-                ->set_help_text(__('If checked, and no custom logo has been chosen, fallback logo will default to NAD logo.', 'alps'))
-                ->set_width(33),
         ];
     } else {
         foreach ($languages as $lang) {
             $logoFields = [
                 Field
                     ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')', 'alps'))
-                    ->set_width(33),
-                Field
-                    ::make('checkbox', 'logo_nad', __('Logo Nad', 'alps'))
-                    ->set_option_value('true')
-                    ->set_help_text(__('If checked, and no custom logo has been chosen, fallback logo will default to NAD logo.', 'alps'))
-                    ->set_width(33),
-
+                    ->set_width(33)
             ];
         }
     }
@@ -281,9 +270,11 @@ function crb_attach_theme_options()
                 ::make('image', 'footer_logo_icon', __('Footer Logo Icon', 'alps'))
                 ->set_help_text(__('Upload a logo icon for the footer. * Will only display if the sabbath column is hidden.', 'alps')),
             Field
-                ::make('checkbox', 'footer_logo_square', __('Square Fallback Footer Logo Icon', 'alps'))
-                ->set_option_value('true')
-                ->set_help_text(__('If checked, and no custom logo has been chosen, fallback icon will default to square.', 'alps'))
+                ::make('radio', 'footer_logo_type', __('Fallback Footer Logo Icon', 'alps'))
+                ->add_options([
+                    'square' => __('Square', 'alps'),
+                    'circle' => __('Circle', 'alps'),
+                ])
                 ->set_width(33),
         ]);
 }
