@@ -1,7 +1,7 @@
 @php
   $hide_sabbath = get_alps_option('sabbath_hide');
   $footer_logo = get_alps_option('footer_logo_icon');
-  $footer_logo_square = get_alps_option('footer_logo_square');
+  $footer_logo_type = get_alps_option('footer_logo_type');
   $footer_text = get_alps_option('footer_description');
   $footer_copyright = get_alps_option('footer_copyright');
 
@@ -49,10 +49,12 @@
       <div class="l-grid-item--7-col l-grid-item--m--1-col c-footer__logo u-path-fill--white">
         @if ($footer_logo)
           <img class="style-svg" src="{{ wp_get_attachment_url($footer_logo) }}" alt="{{ get_post_meta($footer_logo, '_wp_attachment_image_alt', true) }}">
-        @elseif ($footer_logo_square)
-          @include('patterns.00-atoms.icons.icon-logo-footer-square')
         @else
-          @include('patterns.00-atoms.icons.icon-logo-footer')
+          @if ($footer_logo_type == "square")
+            @include('patterns.00-atoms.icons.icon-logo-footer-square')
+          @else
+            @include('patterns.00-atoms.icons.icon-logo-footer')
+          @endif
         @endif
       </div> <!-- /.c-footer__logo -->
     @endif
