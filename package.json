@@ -1,115 +1,26 @@
 {
   "name": "sage",
-  "version": "9.0.1",
-  "author": "Roots <team@roots.io>",
-  "homepage": "https://roots.io/sage/",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/roots/sage.git"
-  },
-  "bugs": {
-    "url": "https://github.com/roots/sage/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
   "browserslist": [
-    "last 2 versions",
-    "android 4",
-    "opera 12"
+    "extends @wordpress/browserslist-config"
   ],
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "no-empty-source": null,
-      "no-descending-specificity": null,
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "extend",
-            "at-root",
-            "debug",
-            "warn",
-            "error",
-            "if",
-            "else",
-            "for",
-            "each",
-            "while",
-            "mixin",
-            "include",
-            "content",
-            "return",
-            "function"
-          ]
-        }
-      ]
-    }
+  "engines": {
+    "node": ">=16.0.0"
   },
   "scripts": {
-    "build": "webpack --progress --config assets/build/webpack.config.js",
-    "build:production": "webpack --progress -p --config assets/build/webpack.config.js",
-    "build:profile": "webpack --progress --profile --json --config assets/build/webpack.config.js",
-    "start": "webpack --hide-modules --watch --config assets/build/webpack.config.js",
-    "rmdist": "rimraf dist",
-    "lint": "npm run -s lint:scripts && npm run -s lint:styles",
-    "lint:scripts": "eslint assets/scripts assets/build",
-    "lint:styles": "stylelint \"assets/styles/**/*.{css,sass,scss,sss,less}\"",
-    "test": "npm run -s lint",
-    "i18n-create-pot": "bin/i18n-create-pot.sh"
-  },
-  "engines": {
-    "node": ">= 6.9.4"
+    "dev": "bud dev",
+    "build": "bud build",
+    "pot": "mkdir -p ./resources/lang && find ./resources ./app -iname '*.php' | xargs xgettext --add-comments=TRANSLATORS --force-po --from-code=UTF-8 --default-domain=de_DE -k__ -k_e -k_n:1,2 -k_x:1,2c -k_ex:1,2c -k_nx:4c,12 -kesc_attr__ -kesc_attr_e -kesc_attr_x:1,2c -kesc_html__ -kesc_html_e -kesc_html_x:1,2c -k_n_noop:1,2 -k_nx_noop:3c,1,2, -k__ngettext_noop:1,2 -o resources/lang/alps.pot && find ./resources -iname '*.blade.php' | xargs xgettext --language=Python --add-comments=TRANSLATORS --force-po --from-code=UTF-8 --default-domain=de_DE -k__ -k_e -k_n:1,2 -k_x:1,2c -k_ex:1,2c -k_nx:4c,12 -kesc_attr__ -kesc_attr_e -kesc_attr_x:1,2c -kesc_html__ -kesc_html_e -kesc_html_x:1,2c -k_n_noop:1,2 -k_nx_noop:3c,1,2, -k__ngettext_noop:1,2 -j -o resources/lang/alps.pot",
+    "translate": "yarn translate:pot && yarn translate:update",
+    "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --include=\"app,resources\"",
+    "translate:update": "for filename in ./resources/lang/*.po; do msgmerge -U $filename ./resources/lang/sage.pot; done; rm -f ./resources/lang/*.po~",
+    "translate:compile": "yarn translate:mo && yarn translate:js",
+    "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
+    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
   },
   "devDependencies": {
-    "autoprefixer": "~8.2.0",
-    "browser-sync": "~2.23.6",
-    "browsersync-webpack-plugin": "^0.6.0",
-    "bs-html-injector": "~3.0",
-    "buble-loader": "^0.4.1",
-    "cache-loader": "~1.2.0",
-    "chalk": "^4.1.0",
-    "clean-webpack-plugin": "^0.1.18",
-    "copy-globs-webpack-plugin": "^0.2.0",
-    "css-loader": "^0.28.9",
-    "cssnano": "~v4.0.0-rc.2",
-    "eslint": "~4.19.1",
-    "eslint-loader": "~1.9",
-    "eslint-plugin-import": "~2.11.0",
-    "extract-text-webpack-plugin": "~3.0.2",
-    "file-loader": "^1.1.6",
-    "friendly-errors-webpack-plugin": "^1.6.1",
-    "gettext-parser": "^4.0.4",
-    "imagemin-mozjpeg": "~7.0.0",
-    "imagemin-webpack-plugin": "~2.1.1",
-    "import-glob": "~1.5",
-    "node-sass": "^4.12.0",
-    "postcss-loader": "~2.1.0",
-    "postcss-safe-parser": "~3.0",
-    "resolve-url-loader": "~2.3.0",
-    "rimraf": "~2.6",
-    "sass-loader": "~6.0",
-    "style-loader": "^0.20.1",
-    "stylelint": "^8.4.0",
-    "stylelint-config-standard": "~18.2.0",
-    "stylelint-webpack-plugin": "^0.10.1",
-    "url-loader": "^0.6.2",
-    "webpack": "~3.10.0",
-    "webpack-assets-manifest": "^1.0.0",
-    "webpack-dev-middleware": "~2.0.4",
-    "webpack-hot-middleware": "~2.22.0",
-    "webpack-merge": "~4.1.1",
-    "winston": "^3.3.3",
-    "yargs": "~11.0.0"
-  },
-  "dependencies": {
-    "bootstrap": "v4.3.1",
-    "jquery": "^3.5.0",
-    "popper.js": "^1.14.3"
+    "@roots/bud": "5.8.7",
+    "@roots/bud-tailwindcss": "5.8.7",
+    "@roots/sage": "5.8.7"
   }
 }

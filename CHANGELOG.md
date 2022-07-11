@@ -3,6 +3,15 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.12.0]
+### Update
+- Support php 8.1. 
+- Migrate theme to Sage version 10. 
+- Migrate Carbon fields to the new version. 
+- Remove Kernel Scripts. 
+- Migrate from webpack to bud.
+- Update Composer libraries.
+
 ## [3.11.0]
 ### Fixed
 - Support php 8. Update global variables and support blade files for php 8.0 version.

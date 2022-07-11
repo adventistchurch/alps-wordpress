@@ -13,7 +13,7 @@ class ALPS_Author_Box_Widget extends Widget
             __('This will display a block of the post author\'s profile information.', 'alps'),
             [
                 Field
-                    ::make('text', 'text_link_title', __('Author', 'alps')),
+                    ::make('text', 'text_link_author', __('Author', 'alps')),
             ]
         );
     }

@@ -22,19 +22,19 @@
 2. Edit page
 3. In the sidebar, navigate to **Page Attributes**
 4. Select Template from the dropdown
-  * **Default Template**: Default template for all pages
-  * **Posts Template**: Landing page of posts in the category *news* (https://alps.adventist.io/v3/?p=pages-news)
+* **Default Template**: Default template for all pages
+* **Posts Template**: Landing page of posts in the category *news* (https://alps.adventist.io/v3/?p=pages-news)
 
 ### Add widgets to sidebar
 
 1. In your WordPress admin panel, navigate to `Appearance->Widgets`
 2. Drag widget to widget area
-  * **Page Top**: A region at the top of a Page content type.
-  * **Page Bottom**: A region at the bottom of a Page content type.
-  * **Page Sidebar**: A region at the side of a Page content type.
-  * **Post Sidebar**: A region at the side of a Post content type.
-  * **Post Footer Region**: A region at the bottom of a Post content type.
-  * **Footer Region**: A region at the bottom of any content type.
+* **Page Top**: A region at the top of a Page content type.
+* **Page Bottom**: A region at the bottom of a Page content type.
+* **Page Sidebar**: A region at the side of a Page content type.
+* **Post Sidebar**: A region at the side of a Post content type.
+* **Post Footer Region**: A region at the bottom of a Post content type.
+* **Footer Region**: A region at the bottom of any content type.
 
 ### Add menus
 
@@ -43,11 +43,11 @@
 3. Add links
 4. Go to **Manage Locations** tab
 5. Select location for the menu to appear
-  * **Primary Navigation**: The main navigation for the page
-  * **Secondary Navigation**: Appears above the main navigation
-  * **Secondary Footer Navigation**: Appears above the main footer navigation
-  * **Primary Footer Navigation**: The main footer navigation at the bottom of the page
-  * **Tertiary Navigation**: Appears below the page header on the *News Template*
+* **Primary Navigation**: The main navigation for the page
+* **Secondary Navigation**: Appears above the main navigation
+* **Secondary Footer Navigation**: Appears above the main footer navigation
+* **Primary Footer Navigation**: The main footer navigation at the bottom of the page
+* **Tertiary Navigation**: Appears below the page header on the *News Template*
 
 
 # ALPS WordPress Theme Development
@@ -101,32 +101,30 @@ During theme installation you will have options to update `style.css` theme head
 ```shell
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
-│   ├── controllers/      # → Controller files
-│   ├── admin.php         # → Theme customizer setup
+│   ├── Providers/        # → Service providers
+│   ├── View/             # → View models
 │   ├── filters.php       # → Theme filters
-│   ├── helpers.php       # → Helper functions
 │   └── setup.php         # → Theme setup
 ├── composer.json         # → Autoloading for `app/` files
-├── composer.lock         # → Composer lock file (never edit)
-├── dist/                 # → Built theme assets (never edit)
+├── public/               # → Built theme assets (never edit)
+├── functions.php         # → Theme bootloader
+├── index.php             # → Theme template wrapper
 ├── node_modules/         # → Node.js packages (never edit)
 ├── package.json          # → Node.js dependencies and scripts
 ├── resources/            # → Theme assets and templates
-│   ├── assets/           # → Front-end assets
-│   │   ├── config.json   # → Settings for compiled assets
-│   │   ├── build/        # → Webpack and ESLint config
-│   │   ├── fonts/        # → Theme fonts
-│   │   ├── images/       # → Theme images
-│   │   ├── scripts/      # → Theme JS
-│   │   └── styles/       # → Theme stylesheets
-│   ├── functions.php     # → Composer autoloader, theme includes
-│   ├── index.php         # → Never manually edit
-│   ├── screenshot.png    # → Theme screenshot for WP admin
-│   ├── style.css         # → Theme meta information
+│   ├── fonts/            # → Theme fonts
+│   ├── images/           # → Theme images
+│   ├── scripts/          # → Theme javascript
+│   ├── styles/           # → Theme stylesheets
 │   └── views/            # → Theme templates
+│       ├── components/   # → Component templates
+│       ├── forms/        # → Form templates
 │       ├── layouts/      # → Base templates
 │       └── partials/     # → Partial templates
-└── vendor/               # → Composer packages (never edit)
+├── screenshot.png        # → Theme screenshot for WP admin
+├── style.css             # → Theme meta information
+├── vendor/               # → Composer packages (never edit)
+└── bud.config.js         # → Bud configuration
 ```
 
 ### Theme setup
@@ -142,7 +140,7 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 
 ### Localization
 Theme uses WordPress recommended way to localize with *.po files. Localization template located in `lang/alps.pot`.
-To add new language special software should be used (ex. [POEdit](https://poedit.net/)). 
+To add new language special software should be used (ex. [POEdit](https://poedit.net/)).
 
 To perform scan of new localizable strings in source files, run `npm run i18n-create-pot`.
 
@@ -157,13 +155,13 @@ The translation in `ALPS for Wordpress` was done thanks to the following individ
 
 ### Build commands
 
-* `npm start` — Compile assets when file changes are made, start Browsersync session
+* `npm run dev` — Compile assets when file changes are made, start Browsersync session
 * `npm run build` — Compile and optimize the files in your assets directory
-* `npm run build:production` — Compile assets for production
+* [DEPRECATED] `npm run build:production` — ~~Compile assets for production~~
 
 ### Documentation
 
-* [Sage documentation](https://roots.io/sage/docs/)
+* [Sage documentation](https://docs.roots.io/sage/10.x/installation/)
 * [Controller documentation](https://github.com/soberwp/controller#usage)
 
 ### Contributing

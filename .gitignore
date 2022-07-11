@@ -1,12 +1,14 @@
-# Include your project-specific ignores in this file
-# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
-bower_components
-node_modules
+/node_modules
+/public
+.env
+.budfiles
+.idea
 npm-debug.log
 yarn-error.log
+
+bower_components
 .cache-loader
 .DS_Store
 .package-lock.json
 .yarn.lock
-.idea
 app/local/alps

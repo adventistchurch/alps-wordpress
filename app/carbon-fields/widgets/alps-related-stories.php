@@ -39,12 +39,12 @@
         <?php if ($related->have_posts()): ?>
             <?php while  ($related->have_posts()): ?>
                 <?php
-                $related->the_post();
-                $id = get_the_ID();
-                $title = get_the_title();
-                $link = get_permalink();
-                $date = get_the_date('F j, Y');
-                $category = $category;
+                    $related->the_post();
+                    $id = get_the_ID();
+                    $title = get_the_title();
+                    $link = get_permalink();
+                    $date = get_the_date('F j, Y');
+                    $category = $category;
                 ?>
                 <?php if ($isVisibleImage && get_post_thumbnail_id()): ?>
                     <?php
@@ -59,8 +59,9 @@
                         $block_content_class = "l-grid-item--4-col l-grid-item--m--3-col l-grid-item--l--1-col u-border--left u-theme--border-color--darker--left u-color--gray u-spacing--half";
                         $block_img_class = "l-grid-item--2-col l-grid-item--m--1-col l-grid-item--l--1-col u-padding--right";
                         $title_div = true;
+                        $GLOBALS['title_div'] = $title_div;
                     ?>
-                    <?php include(get_template_directory() . '/views/patterns/01-molecules/blocks/media-block.php'); ?>
+                    <?php include(get_template_directory() . '/resources/views/patterns/01-molecules/blocks/media-block.php'); ?>
                 <?php else: ?>
                     <?php
                         $thumb_id = NULL;
@@ -70,8 +71,9 @@
                         $body = get_the_content();
                         $excerpt_length = 35;
                         $title_div = true;
+                        $GLOBALS['title_div'] = $title_div;
                     ?>
-                    <?php include(get_template_directory() . '/views/patterns/01-molecules/blocks/content-block.php'); ?>
+                    <?php include(get_template_directory() . '/resources/views/patterns/01-molecules/blocks/content-block.php'); ?>
                 <?php endif; ?>
             <?php endwhile; ?>
             <?php wp_reset_postdata() ?>

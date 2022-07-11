@@ -1,0 +1,29 @@
+<?php
+
+namespace DummyNamespace;
+
+use Roots\Acorn\View\Composer;
+
+class DummyClass extends Composer
+{
+    /**
+     * List of views served by this composer.
+     *
+     * @var array
+     */
+    protected static $views = [
+        DummyViews
+    ];
+
+    /**
+     * Data to be passed to view before rendering.
+     *
+     * @return array
+     */
+    public function with()
+    {
+        return [
+            //
+        ];
+    }
+}

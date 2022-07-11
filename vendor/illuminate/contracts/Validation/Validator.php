@@ -10,8 +10,19 @@ interface Validator extends MessageProvider
      * Run the validator's rules against its data.
      *
      * @return array
+     *
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function validate();
+
+    /**
+     * Get the attributes and values that were validated.
+     *
+     * @return array
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function validated();
 
     /**
      * Determine if the data fails the validation rules.
@@ -38,7 +49,7 @@ interface Validator extends MessageProvider
     public function sometimes($attribute, $rules, callable $callback);
 
     /**
-     * After an after validation callback.
+     * Add an after validation callback.
      *
      * @param  callable|string  $callback
      * @return $this
