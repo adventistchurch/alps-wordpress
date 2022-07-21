@@ -13,6 +13,13 @@ function crb_attach_theme_options()
         Field
             ::make('select', 'theme_color', __('Theme Color', 'alps'))
             ->add_options([
+                'nad-denim' => __('NAD - Denim', 'alps'),
+                'nad-nile' => __('NAD - Nile', 'alps'),
+                'nad-amethyst' => __('NAD - Amethyst', 'alps'),
+                'nad-spark' => __('NAD - Spark', 'alps'),
+                'nad-miracle' => __('NAD - Miracle', 'alps'),
+                'nad-branch' => __('NAD - Branch', 'alps'),
+                'nad-vine' => __('NAD - Vine', 'alps'),
                 'treefrog' => __('Treefrog', 'alps'),
                 'ming' => __('Ming', 'alps'),
                 'bluejay' => __('Bluejay', 'alps'),
@@ -42,6 +49,11 @@ function crb_attach_theme_options()
             ->set_help_text(__('Select if you would like show the grid lines.', 'alps'))
             ->set_width(33),
         Field
+            ::make('checkbox', 'square_buttons', __('Square Buttons', 'alps'))
+            ->set_option_value('true')
+            ->set_help_text(__('Select if you would like square buttons', 'alps'))
+            ->set_width(33),
+        Field
             ::make('html', 'crb_statements_exp')
             ->set_html(__('<h3>Global Site Statements</h3><p style="font-size:16px">Both of these statements show up in the navigation drawer.</p>', 'alps')),
         Field
@@ -63,12 +75,17 @@ function crb_attach_theme_options()
         Field::make('separator', 'crb_logo', __('Logo', 'alps')),
     ];
     if (empty($languages)) {
-        $logoFields[] = Field::make('image', 'logo', __('Logo', 'alps'));
+        $logoFields = [
+            Field
+                ::make('image', 'logo', __('Logo', 'alps')),
+        ];
     } else {
         foreach ($languages as $lang) {
-            $logoFields[] = Field
-                ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')', 'alps'))
-                ->set_width(33);
+            $logoFields = [
+                Field
+                    ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')', 'alps'))
+                    ->set_width(33)
+            ];
         }
     }
 
@@ -252,5 +269,12 @@ function crb_attach_theme_options()
             Field
                 ::make('image', 'footer_logo_icon', __('Footer Logo Icon', 'alps'))
                 ->set_help_text(__('Upload a logo icon for the footer. * Will only display if the sabbath column is hidden.', 'alps')),
+            Field
+                ::make('radio', 'footer_logo_type', __('Fallback Footer Logo Icon', 'alps'))
+                ->add_options([
+                    'square' => __('Square', 'alps'),
+                    'circle' => __('Circle', 'alps'),
+                ])
+                ->set_width(33),
         ]);
 }

@@ -7,6 +7,8 @@
     $logo = get_alps_option('logo');
   }
 
+  $logo_nad = get_alps_option('logo_nad');
+
   if (!empty(get_alps_option('dark_theme'))) {
     $dark_theme = get_alps_option('dark_theme');
     $header_logo_class = " u-theme--path-fill--base";
@@ -26,6 +28,7 @@
   if (get_alps_option('is_wide_logo')) {
       $logoContainerClass[] = 'c-header__logo--wide';
   }
+  
 @endphp
 <header class="c-header{{ $header_class }}" role="banner" id="header">
   <div class="c-header--inner">
@@ -38,7 +41,7 @@
           <img class="style-svg" src="{{ wp_get_attachment_url($logo) }}" alt="{{ get_post_meta($logo, '_wp_attachment_image_alt', true) }}">
         @else
           <span class="{{ $logo_class }}">
-            @include('patterns.00-atoms.logos.alps-logo')
+          @includeFirst(['patterns.00-atoms.logos.alps-logo-custom', 'patterns.00-atoms.logos.alps-logo'])
           </span>
         @endif
       </a>
