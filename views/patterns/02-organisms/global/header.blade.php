@@ -7,8 +7,6 @@
     $logo = get_alps_option('logo');
   }
 
-  $logo_nad = get_alps_option('logo_nad');
-
   if (!empty(get_alps_option('dark_theme'))) {
     $dark_theme = get_alps_option('dark_theme');
     $header_logo_class = " u-theme--path-fill--base";

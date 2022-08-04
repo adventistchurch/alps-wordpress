@@ -2,33 +2,33 @@
 function custom_admin_styles() {
   ?>
   <style>
-    /* .cf-select__input option[value=nad-denim] {
+    .cf-select__input option[value=nad-denim] {
       display: none !important;
-    } */
+    }
 
-    /* .cf-select__input option[value=nad-nile] {
+    .cf-select__input option[value=nad-nile] {
       display: none !important;
-    } */
+    }
 
-    /* .cf-select__input option[value=nad-amethyst] {
+    .cf-select__input option[value=nad-amethyst] {
       display: none !important;
-    } */
+    }
 
-    /* .cf-select__input option[value=nad-spark] {
+    .cf-select__input option[value=nad-spark] {
       display: none !important;
-    } */
+    }
 
-    /* .cf-select__input option[value=nad-miracle] {
+    .cf-select__input option[value=nad-miracle] {
       display: none !important;
-    } */
+    }
 
-    /* .cf-select__input option[value=nad-branch] {
+    .cf-select__input option[value=nad-branch] {
       display: none !important;
-    } */
+    }
 
-    /* .cf-select__input option[value=nad-vine] {
+    .cf-select__input option[value=nad-vine] {
       display: none !important;
-    } */
+    }
 
     /* .cf-select__input option[value=treefrog] {
       display: none !important;
