@@ -291,14 +291,15 @@ add_action('load-nav-menus.php', 'auto_nav_creation_social');
  */
 function alps_setup_options () {
   $run_menu_maker_once = get_option('menu_check');
+
   if ( !$run_menu_maker_once ) {
     auto_nav_creation_primary();
     auto_nav_creation_secondary();
     auto_nav_creation_social();
 
-    if (file_exists('defaults.php')) {
+    // if (file_exists('defaults.php')) {
       include 'defaults.php';
-    }
+    // }
   }
   add_action('admin_notices', 'my_update_notice');
 }

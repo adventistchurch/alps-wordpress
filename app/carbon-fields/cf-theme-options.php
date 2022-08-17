@@ -13,14 +13,6 @@ function crb_attach_theme_options()
         Field
             ::make('select', 'theme_color', __('Theme Color', 'alps'))
             ->add_options([
-                'nad-denim' => __('NAD - Denim', 'alps'),
-                'nad-nile' => __('NAD - Nile', 'alps'),
-                'nad-amethyst' => __('NAD - Amethyst', 'alps'),
-                'nad-spark' => __('NAD - Spark', 'alps'),
-                'nad-miracle' => __('NAD - Miracle', 'alps'),
-                'nad-branch' => __('NAD - Branch', 'alps'),
-                'nad-vine' => __('NAD - Vine', 'alps'),
-                'treefrog' => __('Treefrog', 'alps'),
                 'ming' => __('Ming', 'alps'),
                 'bluejay' => __('Bluejay', 'alps'),
                 'iris' => __('Iris', 'alps'),
@@ -35,7 +27,15 @@ function crb_attach_theme_options()
                 'grapevine' => __('Grapevine', 'alps'),
                 'velvet' => __('Velvet', 'alps'),
                 'earth' => __('Earth', 'alps'),
-                'night' => __('Night', 'alps')
+                'night' => __('Night', 'alps'),
+                'nad-denim' => __('NAD - Denim', 'alps'),
+                'nad-nile' => __('NAD - Nile', 'alps'),
+                'nad-amethyst' => __('NAD - Amethyst', 'alps'),
+                'nad-spark' => __('NAD - Spark', 'alps'),
+                'nad-miracle' => __('NAD - Miracle', 'alps'),
+                'nad-branch' => __('NAD - Branch', 'alps'),
+                'nad-vine' => __('NAD - Vine', 'alps'),
+                'treefrog' => __('Treefrog', 'alps')
             ])
             ->set_width(33),
         Field

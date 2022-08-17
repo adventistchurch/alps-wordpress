@@ -6,10 +6,10 @@
 // Logo (logo file is located /patterns/00-atoms/logos/alps-logo-custom.blade.php)
 
 // Theme Color (nad-denim/nad-nile/nad-amethyst/nad-spark/nad-miracle/nad-branch/nad-vine/treefrog/ming/bluejay/iris/lily/scarlett/campfire/winter/forest/cave/denim/emperor/grapevine/velvet/earth/night)
-update_option( '_theme_color', 'treefrog' );
+update_option( '_theme_color', 'campfire' );
 
 // Dark Theme (true/false)
-update_option( '_dark_theme', '' );
+update_option( '_dark_theme', 'false' );
 
 // Grid Lines (true/false)
 update_option( '_grid_lines', '' );
@@ -65,23 +65,23 @@ update_option( '_posts_image_round', '' );
  */
 
 // Hide Sabbath Icon Until Scroll (true/false)
-update_option( '_sabbath_scroll', 'true' );
+update_option( '_sabbath_scroll', 'false' );
 
 // Hide the sabbath column (true/false)
-update_option( '_sabbath_hide', 'true' );
+update_option( '_sabbath_hide', 'false' );
 
 /*
  * Footer Content
  */
 
 // Footer Description (Text)
-update_option( '_footer_description', '' );
+update_option( '_footer_description', '[Site URL/Name] is the official website of the Seventh-day Adventist World Church.' );
 
 // Footer Copyright (Text)
-update_option( '_footer_copyright', '' );
+update_option( '_footer_copyright', 'General Conference of Seventh-day Adventists' );
 
 // Fallback Footer Logo Icon (square/circle)
-update_option( '_footer_logo_type', 'square' );
+update_option( '_footer_logo_type', 'circle' );
 
 // Footer Secondary Navigation
 function auto_nav_creation_footer() {
