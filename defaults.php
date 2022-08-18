@@ -1,6 +1,6 @@
 <?php
 /*
- * Global
+ * Global default settings for this installation
  */
 
 // Logo (logo file is located /patterns/00-atoms/logos/alps-logo-custom.blade.php)
@@ -25,6 +25,7 @@ update_option( '_global_branding_statement', 'Seventh-day Adventists are devoted
 
 // ALPS Core files version (alps-remote/alps-local)
 update_option( '_project_alps_version', 'alps-remote' );
+
 
 /*
  * Post Options
