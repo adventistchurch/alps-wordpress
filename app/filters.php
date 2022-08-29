@@ -21,6 +21,12 @@ add_filter('body_class', function (array $classes) {
     $classes[] = 'has-grid';
   }
 
+  // Add class if square buttons is true
+  $square_buttons = get_alps_option( 'square_buttons' );
+  if ( !empty( $square_buttons ) ) {
+    $classes[] = 'u-buttons--square';
+  }
+
   // Add class if sidebar is true on pages and posts
   $post_id = get_queried_object_id();
   // If has page sidebar
