@@ -3,7 +3,7 @@
  * Global default settings for this installation
  */
 
-// Logo (logo file is located /patterns/00-atoms/logos/alps-logo-custom.blade.php)
+// Logo (To use a different logo, place the SVG contents of the custom logo into a file at /views/patterns/00-atoms/logos/alps-logo-custom.blade.php)
 
 // Theme Color (nad-denim/nad-nile/nad-amethyst/nad-spark/nad-miracle/nad-branch/nad-vine/treefrog/ming/bluejay/iris/lily/scarlett/campfire/winter/forest/cave/denim/emperor/grapevine/velvet/earth/night)
 update_option( '_theme_color', 'campfire' );

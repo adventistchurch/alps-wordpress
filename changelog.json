@@ -1,4 +1,7 @@
 {
+  "3.13.2" : {
+    "description" : "Fixed the error that made the custom logo appear on all sites."
+  },
   "3.12.0" : {
     "description" : "Added the ablity to create a default version of the theme through `defaults.php` and `defaults-themes.php` files. Settings made in the `defaults.php` file will only show up on the first install."
   },
