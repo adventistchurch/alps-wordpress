@@ -3,6 +3,10 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.12.1]
+### Remove
+- Remove styles menu styles for supporting another languages in the menu. Main changes in the alps project [#574. CSS 3.11.7. Fix menu styles.](https://github.com/adventistchurch/alps/pull/574).
+
 ## [3.12.0]
 ### Added
 - Added the ablity to create a default version of the theme through `defaults.php` and `defaults-themes.php` files. Settings made in the `defaults.php` file will only show up on the first install.

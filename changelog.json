@@ -1,4 +1,7 @@
 {
+  "3.12.1" : {
+    "description" : "Remove styles menu styles for supporting another languages in the menu. Main changes in the alps project."
+  },
   "3.12.0" : {
     "description" : "Added the ablity to create a default version of the theme through `defaults.php` and `defaults-themes.php` files. Settings made in the `defaults.php` file will only show up on the first install."
   },
