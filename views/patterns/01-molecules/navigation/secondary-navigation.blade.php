@@ -71,12 +71,12 @@
         @endforeach
       @endif
     @endif
-    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__search c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
+    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__toggle js-toggle-menu js-toggle-search is-priority">
       <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
         <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-search')</span>{{__('Search', 'alps') }}
       </a>
     </li>
-    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__menu c-secondary-nav__list-item__toggle js-toggle-menu is-priority">
+    <li class="c-secondary-nav__list-item c-secondary-nav__list-item__toggle js-toggle-menu is-priority">
       <a href="#" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base">
         <span class="u-icon u-icon--xs u-path-fill--gray">@include('patterns.00-atoms.icons.icon-menu')</span>{{ __('Menu', 'alps') }}
       </a>
