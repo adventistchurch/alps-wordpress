@@ -393,7 +393,7 @@ add_filter('allowed_block_types', function () {
  * Provides automatic updates for the WordPress theme and plugins from Kernl (https://kernl.us/)
  */
 require 'kernl-update-checker/kernl-update-checker.php';
-$MyUpdateChecker = Puc_v4_FactoryKernl::buildUpdateChecker(
+$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'https://kernl.us/api/v1/theme-updates/6324881051460a5fdc60f207/',
     __FILE__,
     'alps-wordpress-v3-nad'

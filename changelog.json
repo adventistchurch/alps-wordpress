@@ -1,4 +1,7 @@
 {
+  "3.13.3" : {
+    "description" : "Fixed an error with the Kernl update functions."
+  },
   "3.13.2" : {
     "description" : "Fixed the error that made the custom logo appear on all sites."
   },

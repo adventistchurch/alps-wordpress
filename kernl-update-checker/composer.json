@@ -14,10 +14,10 @@
 		}
 	],
 	"require": {
-		"php": ">=5.2.0",
+		"php": ">=5.4.0",
 		"ext-json": "*"
 	},
 	"autoload": {
-		"files": ["load-v4p10.php"]
+		"files": ["load-v4p13.php"]
 	}
 }
