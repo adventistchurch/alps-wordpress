@@ -1,4 +1,7 @@
 {
+  "3.13.3" : {
+    "description" : "Update css styles for current build."
+  },
   "3.13.2" : {
     "description" : "Remove styles menu styles for supporting another languages in the menu. Main changes in the alps project."
   },
