@@ -1273,9 +1273,18 @@ msgstr ""
 "테마 활성화에서 모양 > 설정으로 이동하여 설정을 저장하여 풋터 기본 정보를 표"
 "시합니다."
 
+
 #: views/template-posts.blade.php:566
 msgid "See All"
 msgstr "모두 보기"
+
+#: views/template-posts.blade.php:566
+msgid "See All Stories"
+msgstr "모든 스토리 보기"
+
+#: views/template-posts.blade.php:566
+msgid "Watch Video"
+msgstr "비디오 보기"
 
 #: views/index.blade.php:20
 #: views/patterns/02-organisms/sections/page-header.blade.php:25
