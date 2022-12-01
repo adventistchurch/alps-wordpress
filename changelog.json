@@ -1,4 +1,7 @@
 {
+  "3.13.4" : {
+    "description" : "Update to show the NAD colors."
+  },
   "3.13.3" : {
     "description" : "Fixed an error with the Kernl update functions."
   },
