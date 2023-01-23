@@ -1,14 +1,15 @@
 /node_modules
 /public
+build
 .env
 .budfiles
 .idea
 npm-debug.log
 yarn-error.log
 
+vendor
 bower_components
 .cache-loader
 .DS_Store
-.package-lock.json
 .yarn.lock
 app/local/alps

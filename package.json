@@ -1,11 +1,11 @@
 {
-  "name": "sage",
+  "name": "alps-wordpress-v3-beta",
   "private": true,
   "browserslist": [
     "extends @wordpress/browserslist-config"
   ],
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "dev": "bud dev",
@@ -16,11 +16,22 @@
     "translate:update": "for filename in ./resources/lang/*.po; do msgmerge -U $filename ./resources/lang/sage.pot; done; rm -f ./resources/lang/*.po~",
     "translate:compile": "yarn translate:mo && yarn translate:js",
     "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
-    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
+    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang",
+    "wp:theme:build": "node devtools/runner.js theme:build",
+    "project:set-version": "node devtools/runner.js project:set-version"
   },
   "devDependencies": {
     "@roots/bud": "5.8.7",
     "@roots/bud-tailwindcss": "5.8.7",
-    "@roots/sage": "5.8.7"
+    "@roots/sage": "5.8.7",
+    "archiver": "^5.3.1",
+    "chalk": "^4.1.0",
+    "date-fns": "^2.29.3",
+    "fs-extra": "^11.1.0",
+    "luxon": "^3.2.1",
+    "node-sass": "^8.0.0",
+    "webpack": "^5.75.0",
+    "winston": "^3.8.2",
+    "yaml": "^2.2.1"
   }
 }
