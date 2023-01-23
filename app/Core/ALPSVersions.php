@@ -7,7 +7,7 @@ class ALPSVersions
     const OPTION_KEY = 'alps_version';
 
     const LOCAL_PATH = '/app/local/alps/';
-    const PARENT_THEME = 'alps-wordpress';
+    const PARENT_THEME = 'alps-wordpress-v3-beta';
 
     const LOCAL_ICONS = [
 //        "icon-play.svg",

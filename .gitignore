@@ -1,5 +1,6 @@
 /node_modules
 /public
+build
 .env
 .budfiles
 .idea
@@ -9,6 +10,5 @@ yarn-error.log
 bower_components
 .cache-loader
 .DS_Store
-.package-lock.json
 .yarn.lock
 app/local/alps
