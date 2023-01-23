@@ -71,5 +71,6 @@
         "App\\Providers\\ThemeServiceProvider"
       ]
     }
-  }
+  },
+  "version": "3.14.0"
 }
