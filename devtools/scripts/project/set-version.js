@@ -62,7 +62,7 @@ const createReleaseCommit = async (version) => {
 
 const setVersion = async (opts) => {
     const { logger } = opts;
-
+1
     console.log("WWWW: ");
 
     if (!await isWorkdirClean()) {
@@ -86,10 +86,6 @@ const setVersion = async (opts) => {
     // Update composer.json
     await setVersionInComposerJson(currentVersion.version);
     logger.info(`💚 ${chalk.yellow('composer.json')} updated`);
-
-    // Update plugin info
-    await setVersionInPlugin(currentVersion.version);
-    logger.info(`💚 ${chalk.yellow('plugin.php')} updated`);
 
     // Create commit and tag
     await createReleaseCommit(currentVersion);
