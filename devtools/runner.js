@@ -3,18 +3,21 @@ const yaml = require('yaml');
 const logger = require('./lib/logger.js');
 const themeBuild = require('./scripts/theme/build.js');
 const setVersion = require('./scripts/project/set-version');
+const themeRelease = require('./scripts/theme/release');
 
 const fs = fsLib.promises;
 
 const scripts = {
     'project:set-version': setVersion,
     'theme:build': themeBuild,
-    // 'plugin:release': require('./scripts/plugin/release'),
+    'theme:release': themeRelease,
     // 'i18n:create-json': require('./scripts/i18n/create-json'),
 };
 
 (async () => {
     let env = { ...process.env };
+
+    console.log("RRRR");
 
     if (process.env.NODE_ENV === 'development') {
         try {
@@ -46,6 +49,7 @@ const scripts = {
 })().then(() => {
     process.exit(0);
 }).catch((err) => {
+    console.log("HERE!")
     logger.error(`\n❌ ${err}`);
     process.exit(1);
 });

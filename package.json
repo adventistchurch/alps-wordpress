@@ -1,5 +1,6 @@
 {
   "name": "alps-wordpress-v3-beta",
+  "version": "3.14.0",
   "private": true,
   "browserslist": [
     "extends @wordpress/browserslist-config"
@@ -18,9 +19,11 @@
     "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
     "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang",
     "wp:theme:build": "node devtools/runner.js theme:build",
+    "wp:theme:release": "node devtools/runner.js theme:release",
     "project:set-version": "node devtools/runner.js project:set-version"
   },
   "devDependencies": {
+    "@octokit/rest": "^19.0.7",
     "@roots/bud": "5.8.7",
     "@roots/bud-tailwindcss": "5.8.7",
     "@roots/sage": "5.8.7",
@@ -30,9 +33,13 @@
     "fs-extra": "^11.1.0",
     "luxon": "^3.2.1",
     "node-sass": "^8.0.0",
+    "ssh2-sftp-client": "^9.0.4",
     "webpack": "^5.75.0",
     "winston": "^3.8.2",
     "yaml": "^2.2.1"
   },
-  "version": "3.14.0"
+  "dependencies": {
+    "aws-sdk": "^2.1302.0",
+    "dotenv": "^16.0.3"
+  }
 }

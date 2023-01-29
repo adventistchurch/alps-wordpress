@@ -4,14 +4,23 @@ const chalk = require('chalk');
 const { Octokit } = require("@octokit/rest");
 const getChangelog = require('../../lib/get-changelog');
 const getPackageInfo = require('../../lib/get-package-info');
+const R2 = require('aws-sdk/clients/s3.js');
+require('dotenv').config()
+
+// const R2_BUCKET_NAME = 'alps';
 
 const pluginRelease = async (opts) => {
-    const { logger, env } = opts;
+    let env = process.env ;
+    const { logger } = opts;
+
+    // const r2ClientId = env.R2_CLIENT_ID;
+    // const r2AccessKeyId = env.R2_ACCESS_KEY;
+    // const r2SecretAccessKey = env.R2_SECRET_ACCESS_KEY;
 
     const githubToken = env.GITHUB_TOKEN || null;
     const [githubOwner, githubRepo] = env.GITHUB_REPOSITORY.split('/');
     const githubRef = env.GITHUB_REF || null;
-
+    //
     const cdnHost = env.CDN_HOST || null;
     const cdnUser = env.CDN_USER || null;
     const cdnPrivateKey = env.CDN_PRIVATE_KEY || null;
@@ -30,6 +39,8 @@ const pluginRelease = async (opts) => {
     if (!match) {
         throw new Error(`Invalid tag name for release: "${githubRef.replace('refs/tags/', '')}"`);
     }
+
+    console.log("Match group of GITHUB_REF: 1: " + match.groups.tag);
     const tag = match.groups.tag;
 
     // Compose release description
@@ -75,6 +86,26 @@ const pluginRelease = async (opts) => {
         data: await fs.readFile(`${buildDir}${localFileName}`),
     });
     logger.info(`🍀 Release ${chalk.green(tag)} published on GitHub`);
+
+    // Upload to R2
+    // const r2 = new R2({
+    //   endpoint: `https://${r2ClientId}.r2.cloudflarestorage.com`,
+    //   accessKeyId: `${r2AccessKeyId}`,
+    //   secretAccessKey: `${r2SecretAccessKey}`,
+    //   signatureVersion: 'v4',
+    // });
+
+    // logger.info(
+    //   "➡️ Check creating R2 client!" + await r2.listObjects({ Bucket: R2_BUCKET_NAME }).promise()
+    // );
+    //
+    // // Upload to R2 .zip
+    // await r2.getSignedUrlPromise('putObject', { Bucket: R2_BUCKET_NAME, Key: distFileName })
+    // logger.info(`🔼 ${chalk.yellow(distFileName)} pushed to R2.`);
+    //
+    // // Upload to R2 .json
+    // await r2.getSignedUrlPromise('putObject', { Bucket: R2_BUCKET_NAME, Key: metadataFileName });
+    // logger.info(`🔼 ${chalk.yellow(metadataFileName)} pushed to R2.`);
 
     // Upload to CDN
     const sftp = new SFTPClient();
