@@ -1,0 +1,5 @@
+name: 'WP Theme::Deploy'
+description: 'Build and Deploy WordPress theme'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

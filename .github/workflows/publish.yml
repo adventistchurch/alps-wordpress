@@ -1,0 +1,20 @@
+name: Publish Plugin
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: ./.github/actions/plugin-deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CDN_HOST: ${{ secrets.CDN_HOST }}
+          CDN_USER: ${{ secrets.CDN_USER }}
+          CDN_PRIVATE_KEY: ${{ secrets.CDN_PRIVATE_KEY }}
+          CDN_PRIVATE_KEY_PASS: ${{ secrets.CDN_PRIVATE_KEY_PASS }}
+          CDN_ROOT_PATH: ${{ secrets.CDN_ROOT_PATH }}
