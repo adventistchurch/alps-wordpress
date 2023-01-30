@@ -23,10 +23,10 @@ const themeBuild = async (opts) => {
     logger.info('🎯 Build ALPS Theme');
   }
 
-  await exec('sudo apt-get install php php-curl', logger);
+  await exec('apt-get install php php-curl', logger);
   await exec('curl -sS https://getcomposer.org/installer -o composer-setup.php', logger);
-  await exec('sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer', logger);
-  await exec('sudo composer self-update', logger);
+  await exec('php composer-setup.php --install-dir=/usr/local/bin --filename=composer', logger);
+  await exec('composer self-update', logger);
   await exec('composer install', logger);
 
   logger.info(`💼 Copy plugin files to ${chalk.yellow(pluginDir)}`);
