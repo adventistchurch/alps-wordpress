@@ -5,6 +5,7 @@ const { DateTime } = require('luxon');
 const exec = require('../../lib/exec');
 const dirTree = require('../../lib/dir-tree');
 const getPackageInfo = require('../../lib/get-package-info');
+const getThemeMeta = require('../../lib/get-theme-meta');
 
 const createArchive = (src, name, logger) => {
     return new Promise((resolve, reject) => {
@@ -90,21 +91,21 @@ const themeBuild = async (opts) => {
     }
 
     // Gather metadata
-    if (!args.dev) {
-        const themeMeta = {
-            ...await getThemeMeta(),
-            version: pkg.version,
-            last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
-        };
-
-        themeMeta.download_url = themeMeta.download_url
-            .replace('{name}', pkg.name)
-            .replace('{file}', `${pkg.name}-v${pkg.version}.zip`);
-
-        await fs.writeFile(`${buildDir}${pkg.name}.json`, JSON.stringify(themeMeta, null, 2));
-
-        logger.info(`💚 ALPS Theme metadata saved to ${chalk.yellow(`${pkg.name}.json`)}`);
-    }
+    // if (!args.dev) {
+    //     const themeMeta = {
+    //         ...await getThemeMeta(),
+    //         version: pkg.version,
+    //         last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
+    //     };
+    //
+    //     themeMeta.download_url = themeMeta.download_url
+    //         .replace('{name}', pkg.name)
+    //         .replace('{file}', `${pkg.name}-v${pkg.version}.zip`);
+    //
+    //     await fs.writeFile(`${buildDir}${pkg.name}.json`, JSON.stringify(themeMeta, null, 2));
+    //
+    //     logger.info(`💚 ALPS Theme metadata saved to ${chalk.yellow(`${pkg.name}.json`)}`);
+    // }
 }
 
 module.exports = themeBuild;
