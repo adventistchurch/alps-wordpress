@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - uses: sudo apt-get install php php-curl
+      - uses: curl -sS https://getcomposer.org/installer -o composer-setup.php
+      - uses: sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+      - uses: sudo composer self-update
       - uses: ./.github/actions/theme-deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
