@@ -1,4 +1,4 @@
-FROM deeepvision/ci-node:1.0
+FROM node:18-alpine
 
 COPY run.sh /run.sh
 
