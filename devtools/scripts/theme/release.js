@@ -83,7 +83,7 @@ const pluginRelease = async (opts) => {
         method: 'POST',
         body: formDataZip,
         headers: {
-          'Authorization': `Bearer ${env.R2_ACCESS_TOKEN}`
+          'Authorization': `Bearer ${env.CLOUDFLARE_R2_ACCESS_TOKEN}`
         }
     }).catch((err) => {
       logger.info("R2 .ZIP uploading ERROR: " + err)
@@ -99,7 +99,7 @@ const pluginRelease = async (opts) => {
       method: 'POST',
       body: formDataJson,
       headers: {
-        'Authorization': `Bearer ${env.R2_ACCESS_TOKEN}`
+        'Authorization': `Bearer ${env.CLOUDFLARE_R2_ACCESS_TOKEN}`
       }
     }).catch((err) => {
       logger.info("R2 JSON uploading ERROR: " + err)
