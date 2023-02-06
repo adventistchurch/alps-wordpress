@@ -29,6 +29,8 @@ const pluginRelease = async (opts) => {
     if (!match) {
         throw new Error(`Invalid tag name for release: "${githubRef.replace('refs/tags/', '')}"`);
     }
+    const tag = match.groups.tag;
+    console.log("Check Tag: " + tag);
 
     // Compose release description
     const changelog = await getChangelog();
