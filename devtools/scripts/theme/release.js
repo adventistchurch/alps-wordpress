@@ -30,7 +30,6 @@ const pluginRelease = async (opts) => {
         throw new Error(`Invalid tag name for release: "${githubRef.replace('refs/tags/', '')}"`);
     }
     const tag = match.groups.tag;
-    console.log("Check Tag: " + tag);
 
     // Compose release description
     const changelog = await getChangelog();
@@ -42,6 +41,7 @@ const pluginRelease = async (opts) => {
             releaseDesc.push(`- ${changeTypeEntry}`);
         }
     }
+    console.log("Check Tag: " + tag);
 
     // Create Release on GitHub
     const octokit = new Octokit({
@@ -69,10 +69,12 @@ const pluginRelease = async (opts) => {
         body: releaseDesc.join("\n"),
     });
 
+    console.log("Checks before release!")
+
     await octokit.repos.uploadReleaseAsset({
         url: createReleaseResponse.data.upload_url,
         name: distFileName,
-        data: await fs.readFile(`${buildDir}${localFileName}`),
+        data: await fs.promises.readFile(`${buildDir}${localFileName}`),
     });
     logger.info(`🍀 Release ${chalk.green(tag)} published on GitHub`);
 
