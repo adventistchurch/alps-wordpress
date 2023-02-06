@@ -17,8 +17,6 @@ const scripts = {
 (async () => {
     let env = { ...process.env };
 
-    console.log("RRRR");
-
     if (process.env.NODE_ENV === 'development') {
         try {
             const envYaml = await fs.readFile('.env.yml', { encoding: 'utf-8' });

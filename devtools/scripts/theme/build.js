@@ -23,10 +23,6 @@ const themeBuild = async (opts) => {
     logger.info('🎯 Build ALPS Theme');
   }
 
-  // await exec('apt-get install php php-curl', logger);
-  // await exec('curl -sS https://getcomposer.org/installer -o composer-setup.php', logger);
-  // await exec('php composer-setup.php --install-dir=/usr/local/bin --filename=composer', logger);
-  // await exec('composer self-update', logger);
   await exec('composer install', logger);
 
   logger.info(`💼 Copy plugin files to ${chalk.yellow(pluginDir)}`);
@@ -64,21 +60,18 @@ const themeBuild = async (opts) => {
   }
 
   // Gather metadata
-  // if (!args.dev) {
-  //     const themeMeta = {
-  //         ...await getThemeMeta(),
-  //         version: pkg.version,
-  //         last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
-  //     };
-  //
-  //     themeMeta.download_url = themeMeta.download_url
-  //         .replace('{name}', pkg.name)
-  //         .replace('{file}', `${pkg.name}-v${pkg.version}.zip`);
-  //
-  //     await fs.writeFile(`${buildDir}${pkg.name}.json`, JSON.stringify(themeMeta, null, 2));
-  //
-  //     logger.info(`💚 ALPS Theme metadata saved to ${chalk.yellow(`${pkg.name}.json`)}`);
-  // }
+  if (!args.dev) {
+      const themeMeta = {
+          ...await getThemeMeta(),
+          version: pkg.version,
+          last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
+      };
+      themeMeta.download_url = themeMeta.download_url
+          .replace('{file}', `${pkg.name}-v${pkg.version}.zip`);
+
+      await fs.writeFile(`${buildDir}alps.json`, JSON.stringify(themeMeta, null, 2));
+      logger.info(`💚 ALPS Theme metadata saved to ${chalk.yellow(`alps.json`)}`);
+  }
 }
 
 const createArchive = (src, name, logger) => {

@@ -1,4 +1,4 @@
-FROM deeepvision/ci-node:1.2
+FROM deeepvision/ci-node:1.3
 
 COPY run.sh /run.sh
 

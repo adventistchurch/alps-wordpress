@@ -1,47 +1,34 @@
-const fs = require('fs').promises;
-const SFTPClient = require('ssh2-sftp-client');
+const fs = require('fs');
 const chalk = require('chalk');
 const { Octokit } = require("@octokit/rest");
 const getChangelog = require('../../lib/get-changelog');
 const getPackageInfo = require('../../lib/get-package-info');
-const R2 = require('aws-sdk/clients/s3.js');
+const FormData = require('form-data');
+const got = require("got");
 require('dotenv').config()
 
-// const R2_BUCKET_NAME = 'alps';
+const R2_BUCKET_NAME = 'alps';
 
 const pluginRelease = async (opts) => {
     let env = process.env ;
     const { logger } = opts;
 
-    // const r2ClientId = env.R2_CLIENT_ID;
-    // const r2AccessKeyId = env.R2_ACCESS_KEY;
-    // const r2SecretAccessKey = env.R2_SECRET_ACCESS_KEY;
-
     const githubToken = env.GITHUB_TOKEN || null;
     const [githubOwner, githubRepo] = env.GITHUB_REPOSITORY.split('/');
     const githubRef = env.GITHUB_REF || null;
-    //
-    const cdnHost = env.CDN_HOST || null;
-    const cdnUser = env.CDN_USER || null;
-    const cdnPrivateKey = env.CDN_PRIVATE_KEY || null;
-    const cdnPrivateKeyPass = env.CDN_PRIVATE_KEY_PASS || null;
-    const cdnRootPath = env.CDN_ROOT_PATH || null;
 
     const pkg = await getPackageInfo();
 
     const buildDir = 'build/';
     const localFileName = `${pkg.name}.zip`;
     const distFileName = `${pkg.name}-v${pkg.version}.zip`;
-    const metadataFileName = `${pkg.name}.json`;
+    const metadataFileName = `alps.json`;
 
     // Extract git tag
     const match = githubRef.match(/^refs\/tags\/(?<tag>v\d+\.\d+\.\d+)$/);
     if (!match) {
         throw new Error(`Invalid tag name for release: "${githubRef.replace('refs/tags/', '')}"`);
     }
-
-    console.log("Match group of GITHUB_REF: 1: " + match.groups.tag);
-    const tag = match.groups.tag;
 
     // Compose release description
     const changelog = await getChangelog();
@@ -87,42 +74,37 @@ const pluginRelease = async (opts) => {
     });
     logger.info(`🍀 Release ${chalk.green(tag)} published on GitHub`);
 
-    // Upload to R2
-    // const r2 = new R2({
-    //   endpoint: `https://${r2ClientId}.r2.cloudflarestorage.com`,
-    //   accessKeyId: `${r2AccessKeyId}`,
-    //   secretAccessKey: `${r2SecretAccessKey}`,
-    //   signatureVersion: 'v4',
-    // });
+    const formDataZip = new FormData();
+    formDataZip.append('bucket', R2_BUCKET_NAME);
+    formDataZip.append('path', '/wordpress/themes/alps/' + distFileName);
+    formDataZip.append('data', fs.createReadStream(`${buildDir}${localFileName}`));
 
-    // logger.info(
-    //   "➡️ Check creating R2 client!" + await r2.listObjects({ Bucket: R2_BUCKET_NAME }).promise()
-    // );
-    //
-    // // Upload to R2 .zip
-    // await r2.getSignedUrlPromise('putObject', { Bucket: R2_BUCKET_NAME, Key: distFileName })
-    // logger.info(`🔼 ${chalk.yellow(distFileName)} pushed to R2.`);
-    //
-    // // Upload to R2 .json
-    // await r2.getSignedUrlPromise('putObject', { Bucket: R2_BUCKET_NAME, Key: metadataFileName });
-    // logger.info(`🔼 ${chalk.yellow(metadataFileName)} pushed to R2.`);
+    await got('https://alps-r2.adventist.workers.dev/upload', {
+        method: 'POST',
+        body: formDataZip,
+        headers: {
+          'Authorization': `Bearer ${env.R2_ACCESS_TOKEN}`
+        }
+    }).catch((err) => {
+      logger.info("R2 .ZIP uploading ERROR: " + err)
+    })
+    logger.info(`🔼 ${chalk.yellow(distFileName)} pushed to R2.`);
 
-    // Upload to CDN
-    const sftp = new SFTPClient();
-    logger.info(`➡️ Check creating sftp client! Client was created!`);
-    await sftp.connect({
-        host: cdnHost,
-        username: cdnUser,
-        privateKey: cdnPrivateKey,
-        passphrase: cdnPrivateKeyPass,
-        debug: console.log
-    }).catch(e => logger.info(`Unable to connect -- ${e.message}`));
+    const formDataJson = new FormData();
+    formDataJson.append('bucket', R2_BUCKET_NAME);
+    formDataJson.append('path', '/wordpress/themes/alps/' + metadataFileName);
+    formDataJson.append('data', fs.createReadStream(`${buildDir}${metadataFileName}`));
 
-    await sftp.put(`${buildDir}${localFileName}`, `${cdnRootPath}/${distFileName}`);
-    logger.info(`🔼 ${chalk.yellow(distFileName)} pushed to CDN`);
-
-    await sftp.put(`${buildDir}${metadataFileName}`, `${cdnRootPath}/${metadataFileName}`);
-    logger.info(`🔼 ${chalk.yellow(metadataFileName)} pushed to CDN`);
+    await got('https://alps-r2.adventist.workers.dev/upload', {
+      method: 'POST',
+      body: formDataJson,
+      headers: {
+        'Authorization': `Bearer ${env.R2_ACCESS_TOKEN}`
+      }
+    }).catch((err) => {
+      logger.info("R2 JSON uploading ERROR: " + err)
+    })
+    logger.info(`🔼 ${chalk.yellow(metadataFileName)} pushed to R2.`);
 };
 
 module.exports = pluginRelease;
