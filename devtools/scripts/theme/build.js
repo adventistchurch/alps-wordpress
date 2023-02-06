@@ -23,7 +23,7 @@ const themeBuild = async (opts) => {
     logger.info('🎯 Build ALPS Theme');
   }
 
-  await exec('composer install', logger);
+  await exec('composer install --ignore-platform-reqs', logger);
 
   logger.info(`💼 Copy plugin files to ${chalk.yellow(pluginDir)}`);
 
