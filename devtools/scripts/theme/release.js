@@ -89,8 +89,6 @@ const pluginRelease = async (opts) => {
         headers: {
           'Authorization': `Bearer ${env.CLOUDFLARE_R2_ACCESS_TOKEN}`
         }
-    }).catch((err) => {
-      logger.info("R2 .ZIP uploading ERROR: " + err)
     })
     logger.info(`🔼 ${chalk.yellow(distFileName)} pushed to R2.`);
 
@@ -105,8 +103,6 @@ const pluginRelease = async (opts) => {
       headers: {
         'Authorization': `Bearer ${env.CLOUDFLARE_R2_ACCESS_TOKEN}`
       }
-    }).catch((err) => {
-      logger.info("R2 JSON uploading ERROR: " + err)
     })
     logger.info(`🔼 ${chalk.yellow(metadataFileName)} pushed to R2.`);
 };
