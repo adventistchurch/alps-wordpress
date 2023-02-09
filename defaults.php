@@ -18,10 +18,10 @@ update_option( '_grid_lines', '' );
 update_option( '_square_buttons', '' );
 
 // Site Branding Statement (Text)
-update_option( '_site_branding_statement', '[Site Name] is a website of the Seventh-day Adventist church in [Region Name].' );
+update_option( '_site_branding_statement', '[Site Name] is a website of the Seventh-day Adventist church in North America.' );
 
 // Global Branding Statement (Text)
-update_option( '_global_branding_statement', 'Seventh-day Adventists are devoted to helping people understand the Bible to find freedom, healing, and hope in Jesus.' );
+update_option( '_global_branding_statement', 'The Seventh-day Adventist Church in North America exists to share the distinctive, Christ-centered, Seventh-day Adventist message of hope and wholeness in North America and the world' );
 
 // ALPS Core files version (alps-remote/alps-local)
 update_option( '_project_alps_version', 'alps-remote' );
@@ -66,7 +66,7 @@ update_option( '_posts_image_round', '' );
  */
 
 // Hide Sabbath Icon Until Scroll (true/false)
-update_option( '_sabbath_scroll', 'false' );
+update_option( '_sabbath_scroll', 'true' );
 
 // Hide the sabbath column (true/false)
 update_option( '_sabbath_hide', 'false' );
@@ -76,10 +76,10 @@ update_option( '_sabbath_hide', 'false' );
  */
 
 // Footer Description (Text)
-update_option( '_footer_description', '[Site URL/Name] is the official website of the Seventh-day Adventist World Church.' );
+update_option( '_footer_description', '[Site URL/Name] is a website of the North American Division of the Seventh-Day Adventist Church.' );
 
 // Footer Copyright (Text)
-update_option( '_footer_copyright', 'General Conference of Seventh-day Adventists' );
+update_option( '_footer_copyright', 'North American Division of Seventh-day Adventists' );
 
 // Fallback Footer Logo Icon (square/circle)
 update_option( '_footer_logo_type', 'circle' );
