@@ -5,6 +5,7 @@ const getChangelog = require('../../lib/get-changelog');
 const getPackageInfo = require('../../lib/get-package-info');
 const FormData = require('form-data');
 const got = require("got");
+// const {THEME_PACKAGE_NAME} = require("../../dev-tools-constants");
 require('dotenv').config()
 
 const R2_BUCKET_NAME = 'alps';
@@ -22,7 +23,7 @@ const pluginRelease = async (opts) => {
     const buildDir = 'build/';
     const localFileName = `${pkg.name}.zip`;
     const distFileName = `${pkg.name}-v${pkg.version}.zip`;
-    const metadataFileName = `alps.json`;
+    const metadataFileName = `alps-wordpress-v3.json`;
 
     // Extract git tag
     const match = githubRef.match(/^refs\/tags\/(?<tag>v\d+\.\d+\.\d+)$/);
@@ -80,7 +81,7 @@ const pluginRelease = async (opts) => {
 
     const formDataZip = new FormData();
     formDataZip.append('bucket', R2_BUCKET_NAME);
-    formDataZip.append('path', '/wordpress/themes/alps/' + distFileName);
+    formDataZip.append('path', `/wordpress/themes/alps/alps-wordpress-v${pkg.version}.zip`);
     formDataZip.append('data', fs.createReadStream(`${buildDir}${localFileName}`));
 
     await got('https://alps-r2.adventist.workers.dev/upload', {
