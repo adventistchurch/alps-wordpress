@@ -293,13 +293,17 @@ function alps_setup_options () {
   $run_menu_maker_once = get_option('menu_check');
 
   if ( !$run_menu_maker_once ) {
+
+  // if (file_exists('defaults.php')) {
+    include 'defaults.php';
+    // }
     auto_nav_creation_primary();
     auto_nav_creation_secondary();
     auto_nav_creation_social();
 
-    // if (file_exists('defaults.php')) {
-      include 'defaults.php';
-    // }
+    auto_nav_creation_learn_more();
+    auto_nav_creation_social_footer();
+    auto_nav_creation_footer();
   }
   add_action('admin_notices', 'my_update_notice');
 }
