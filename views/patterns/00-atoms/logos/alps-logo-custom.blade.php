@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="Layer_1" x="0" y="0" style="enable-background:new 0 0 180 53.2684174" version="1.1" viewBox="0 0 180 53.268">
   <title>
     Seventh Day Adventist Church - North American Division
+  </title>
   <style>
     .st0{fill:#003a5d}
   </style>

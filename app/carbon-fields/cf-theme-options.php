@@ -272,8 +272,8 @@ function crb_attach_theme_options()
             Field
                 ::make('radio', 'footer_logo_type', __('Fallback Footer Logo Icon', 'alps'))
                 ->add_options([
-                    'square' => __('Square', 'alps'),
-                    'circle' => __('Circle', 'alps'),
+                    'plain' => __('Plain Logo Mark', 'alps'),
+                    'circle' => __('Circle Logo Mark', 'alps'),
                 ])
                 ->set_width(33),
         ]);

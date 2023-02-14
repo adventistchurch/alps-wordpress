@@ -6,7 +6,7 @@
 // Logo (To use a different logo, place the SVG contents of the custom logo into a file at /views/patterns/00-atoms/logos/alps-logo-custom.blade.php)
 
 // Theme Color (nad-denim/nad-nile/nad-amethyst/nad-spark/nad-miracle/nad-branch/nad-vine/treefrog/ming/bluejay/iris/lily/scarlett/campfire/winter/forest/cave/denim/emperor/grapevine/velvet/earth/night)
-update_option( '_theme_color', 'campfire' );
+update_option( '_theme_color', 'nad-denim' );
 
 // Dark Theme (true/false)
 update_option( '_dark_theme', 'false' );
@@ -96,19 +96,13 @@ function auto_nav_creation_footer() {
 
     // Set up default menu items
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Trademark and Logo Usage', 'alps'),
-      'menu-item-classes' => '',
-      'menu-item-url' => 'https://www.adventist.org/en/copyright/trademark-and-logo-usage/',
-      'menu-item-status' => 'publish'
-    ));
-    wp_update_nav_menu_item($menu->term_id, 0, array(
       'menu-item-title' =>  __('Legal Notice', 'alps'),
-      'menu-item-url' => 'https://www.adventist.org/en/copyright/legal-notice/',
+      'menu-item-url' => 'https://www.nadadventist.org/acc_notice',
       'menu-item-status' => 'publish'
     ));
     wp_update_nav_menu_item($menu->term_id, 0, array(
       'menu-item-title' =>  __('Privacy Policy', 'alps'),
-      'menu-item-url' => 'http://privacy.adventist.org/en/',
+      'menu-item-url' => 'https://www.nadadventist.org/privacy',
       'menu-item-status' => 'publish'
     ));
 
@@ -121,6 +115,54 @@ function auto_nav_creation_footer() {
   update_option( 'menu_check', true );
 }
 add_action('load-nav-menus.php', 'auto_nav_creation_footer');
+
+// Footer Secondary Navigation
+function auto_nav_creation_social_footer() {
+  $name = 'Footer Social Media Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set up default menu items
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Facebook', 'alps'),
+      'menu-item-classes' => '',
+      'menu-item-url' => 'https://www.facebook.com/NADAdventist',
+      'menu-item-status' => 'publish'
+    ));
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Twitter', 'alps'),
+      'menu-item-url' => 'https://twitter.com/NADAdventist',
+      'menu-item-status' => 'publish'
+    ));
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Vimeo', 'alps'),
+      'menu-item-url' => 'https://vimeo.com/nadadventist',
+      'menu-item-status' => 'publish'
+    ));
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('YouTube', 'alps'),
+      'menu-item-url' => 'https://www.youtube.com/user/nadadventist',
+      'menu-item-status' => 'publish'
+    ));
+    wp_update_nav_menu_item($menu->term_id, 0, array(
+      'menu-item-title' =>  __('Flickr', 'alps'),
+      'menu-item-url' => 'https://www.flickr.com/photos/nadadventist/',
+      'menu-item-status' => 'publish'
+    ));
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['footer_primary_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+
+  update_option( 'menu_check', true );
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_social_footer');
 
 // Drawer Navigation
 function auto_nav_creation_learn_more() {
@@ -140,18 +182,13 @@ function auto_nav_creation_learn_more() {
       'menu-item-status' => 'publish'
     ));
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('ADRA', 'alps'),
-      'menu-item-url' => 'https://adra.org/',
+      'menu-item-title' =>  __('North American Division of Seventh-day Adventists', 'alps'),
+      'menu-item-url' => 'https://www.nadadventist.org/',
       'menu-item-status' => 'publish'
     ));
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Adventist World Radio', 'alps'),
-      'menu-item-url' => 'https://www.awr.org/',
-      'menu-item-status' => 'publish'
-    ));
-    wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Hope Channel', 'alps'),
-      'menu-item-url' => 'https://www.hopetv.org/',
+      'menu-item-title' =>  __('Adventist Giving', 'alps'),
+      'menu-item-url' => 'https://adventistgiving.org/',
       'menu-item-status' => 'publish'
     ));
 
