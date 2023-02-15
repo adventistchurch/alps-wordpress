@@ -136,6 +136,7 @@ function get_alps_field( $field, $id = NULL ) {
 
 function get_alps_option( $field ) {
     global $post;
+    $option = '';
     $cf = get_option( 'alps_cf_converted' );
     if ( $cf ) {
         $option = carbon_get_theme_option( $field );
