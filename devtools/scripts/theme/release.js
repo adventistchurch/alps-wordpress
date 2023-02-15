@@ -22,7 +22,7 @@ const pluginRelease = async (opts) => {
 
     const buildDir = 'build/';
     const localFileName = `${pkg.name}.zip`;
-    const distFileName = `${pkg.name}-v${pkg.version}.zip`;
+    const distFileName = `alps-wordpress-v${pkg.version}.zip`;
     const metadataFileName = `alps-wordpress-v3.json`;
 
     // Extract git tag
