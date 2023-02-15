@@ -42,42 +42,42 @@ function cf_admin_js($hook)
 
 add_action('admin_enqueue_scripts', 'cf_admin_js');
 
-function get_alps_field($field, $id = NULL)
-{
-    global $post;
-    if (empty($id)) {
-        $id = get_queried_object_id();
-    }
-    $cf = get_option('alps_cf_converted');
-    if ($cf) {
-        return carbon_get_post_meta($id, $field);
-    } else {
-        return get_post_meta($id, $field, true);
-    }
-}
-
-function get_alps_option($field)
-{
-    global $post;
-    $cf = get_option('alps_cf_converted');
-    if ($cf) {
-        $option = carbon_get_theme_option($field);
-    } else {
-        $options = get_option('alps_theme_settings');
-        $option = $options[$field];
-    }
-    if (is_array($option)) {
-        // RETURN SINGLE KEY/VAL ARRAY AS VAL (IMAGES)
-        if (count($option) == 1) {
-            return $option[0];
-        } else {
-            // RETURN COMPLETE ARRAY
-            return $option;
-        }
-    } else {
-        return $option;
-    }
-}
+//function get_alps_field($field, $id = NULL)
+//{
+//    global $post;
+//    if (empty($id)) {
+//        $id = get_queried_object_id();
+//    }
+//    $cf = get_option('alps_cf_converted');
+//    if ($cf) {
+//        return carbon_get_post_meta($id, $field);
+//    } else {
+//        return get_post_meta($id, $field, true);
+//    }
+//}
+//
+//function get_alps_option($field)
+//{
+//    global $post;
+//    $cf = get_option('alps_cf_converted');
+//    if ($cf) {
+//        $option = carbon_get_theme_option($field);
+//    } else {
+//        $options = get_option('alps_theme_settings');
+//        $option = $options[$field];
+//    }
+//    if (is_array($option)) {
+//        // RETURN SINGLE KEY/VAL ARRAY AS VAL (IMAGES)
+//        if (count($option) == 1) {
+//            return $option[0];
+//        } else {
+//            // RETURN COMPLETE ARRAY
+//            return $option;
+//        }
+//    } else {
+//        return $option;
+//    }
+//}
 
 // HELPER FUNCTION
 function is_multidimensional(array $array)
