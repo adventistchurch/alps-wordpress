@@ -21,7 +21,7 @@ update_option( '_square_buttons', '' );
 update_option( '_site_branding_statement', '[Site Name] is a website of the Seventh-day Adventist church in North America.' );
 
 // Global Branding Statement (Text)
-update_option( '_global_branding_statement', 'The Seventh-day Adventist Church in North America exists to share the distinctive, Christ-centered, Seventh-day Adventist message of hope and wholeness in North America and the world' );
+update_option( '_global_branding_statement', 'The Seventh-day Adventist church in North America exists to share the distinctive, Christ-centered, Seventh-day Adventist message of hope and wholeness in North America and the world.' );
 
 // ALPS Core files version (alps-remote/alps-local)
 update_option( '_project_alps_version', 'alps-remote' );
@@ -76,10 +76,10 @@ update_option( '_sabbath_hide', 'false' );
  */
 
 // Footer Description (Text)
-update_option( '_footer_description', '[Site URL/Name] is a website of the North American Division of the Seventh-Day Adventist Church.' );
+update_option( '_footer_description', '[Site URL/Name] is a website of the North American Division of the Seventh-day Adventist church.' );
 
 // Footer Copyright (Text)
-update_option( '_footer_copyright', 'North American Division of Seventh-day Adventists' );
+update_option( '_footer_copyright', 'North American Division of the Seventh-day Adventist church' );
 
 // Fallback Footer Logo Icon (square/circle)
 update_option( '_footer_logo_type', 'circle' );
