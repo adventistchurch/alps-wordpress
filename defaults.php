@@ -187,7 +187,7 @@ function auto_nav_creation_learn_more() {
       'menu-item-status' => 'publish'
     ));
     wp_update_nav_menu_item($menu->term_id, 0, array(
-      'menu-item-title' =>  __('Adventist Giving', 'alps'),
+      'menu-item-title' =>  __('AdventistGiving', 'alps'),
       'menu-item-url' => 'https://adventistgiving.org/',
       'menu-item-status' => 'publish'
     ));
