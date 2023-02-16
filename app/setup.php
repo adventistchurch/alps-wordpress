@@ -55,7 +55,11 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'primary_navigation' => __('Primary Navigation', 'alps'),
+        'secondary_navigation' => __('Secondary Navigation', 'alps'),
+        'learn_more_navigation' => __('Learn More', 'alps'),
+        'footer_primary_navigation' => __('Footer Primary Navigation', 'alps'),
+        'footer_secondary_navigation' => __('Footer Secondary Navigation', 'alps')
     ]);
 
     /**

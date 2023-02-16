@@ -39,10 +39,10 @@
       </p>
     </div> <!-- /.c-footer__description -->
     <div class="l-grid-item l-grid-item--m--3-col l-grid-item--l--1-col c-footer__primary-nav">
-
+      @include('patterns.01-molecules.navigation.footer-primary-navigation')
     </div> <!-- /.c-footer__primary-nav -->
     <div class="l-grid-item l-grid-item--m--3-col l-grid-item--l--2-col c-footer__secondary-nav">
-
+      @include('patterns.01-molecules.navigation.footer-secondary-navigation')
     </div> <!-- /.c-footer__secondary-nav -->
     @if ($hide_sabbath == true)
       <div class="l-grid-item--7-col l-grid-item--m--1-col c-footer__logo u-path-fill--white">
