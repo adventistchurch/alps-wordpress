@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Roots\Sage\Container;
+//use Roots\Sage\Container;
 
 /**
  * Get the sage container.
@@ -12,16 +12,16 @@ use Roots\Sage\Container;
  * @param Container $container
  * @return Container|mixed
  */
-function sage($abstract = null, $parameters = [], Container $container = null)
-{
-    $container = $container ?: Container::getInstance();
-    if (!$abstract) {
-        return $container;
-    }
-    return $container->bound($abstract)
-        ? $container->makeWith($abstract, $parameters)
-        : $container->makeWith("sage.{$abstract}", $parameters);
-}
+//function sage($abstract = null, $parameters = [], Container $container = null)
+//{
+//    $container = $container ?: Container::getInstance();
+//    if (!$abstract) {
+//        return $container;
+//    }
+//    return $container->bound($abstract)
+//        ? $container->makeWith($abstract, $parameters)
+//        : $container->makeWith("sage.{$abstract}", $parameters);
+//}
 
 /**
  * Get / set the specified configuration value.
@@ -37,12 +37,12 @@ function sage($abstract = null, $parameters = [], Container $container = null)
 function config($key = null, $default = null)
 {
     if (is_null($key)) {
-        return sage('config');
+//        return sage('config');
     }
     if (is_array($key)) {
-        return sage('config')->set($key);
+//        return sage('config')->set($key);
     }
-    return sage('config')->get($key, $default);
+//    return sage('config')->get($key, $default);
 }
 
 /**
@@ -56,7 +56,7 @@ function template($file, $data = [])
         wp_enqueue_scripts();
     }
 
-    return sage('blade')->render($file, $data);
+//    return sage('blade')->render($file, $data);
 }
 
 /**
@@ -67,7 +67,7 @@ function template($file, $data = [])
  */
 function template_path($file, $data = [])
 {
-    return sage('blade')->compiledPath($file, $data);
+//    return sage('blade')->compiledPath($file, $data);
 }
 
 /**
@@ -76,7 +76,7 @@ function template_path($file, $data = [])
  */
 function asset_path($asset)
 {
-    return sage('assets')->getUri($asset);
+//    return sage('assets')->getUri($asset);
 }
 
 /**
