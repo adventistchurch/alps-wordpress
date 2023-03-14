@@ -9,7 +9,7 @@ require_once('cf-post.php');
 add_action('after_setup_theme', 'crb_load');
 function crb_load()
 {
-    require_once __DIR__ . '/../vendor/autoload.php';
+    require_once __DIR__ . '/../../vendor/autoload.php';
     \Carbon_Fields\Carbon_Fields::boot();
     // IN SAGE THEMES ///////////////
     // WIDGETS HAVE TO BE LOADED HERE
@@ -176,7 +176,7 @@ if (!$cf) {
 
 function alps_admin_notice__alps_update_complete()
 {
-    if ($_GET['action'] == 'alps_update_complete') {
+    if ( isset( $_GET['action'] ) == 'alps_update_complete') {
         ?>
         <div class="notice notice-warning is-dismissible"
              style="background:#fff;border:2px solid black; border-left:6px solid red">

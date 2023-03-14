@@ -47,6 +47,7 @@ if (! file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
 require $composer;
 
 require_once __DIR__ . '/vendor/htmlburger/carbon-fields/core/functions.php';
+require_once __DIR__ . '/app/carbon-fields/_init.php';
 
 /*
 |--------------------------------------------------------------------------
