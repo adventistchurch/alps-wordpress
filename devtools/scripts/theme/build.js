@@ -45,6 +45,7 @@ const themeBuild = async (opts) => {
     /^\/dist/u,
     /^\/vendor/u,
     /^\/resources/u,
+    /^\/assets/u,
   ];
   const pluginFiles = await dirTree('.', {
     whiteList,
