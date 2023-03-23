@@ -49,6 +49,17 @@ require $composer;
 require_once __DIR__ . '/vendor/htmlburger/carbon-fields/core/functions.php';
 require_once __DIR__ . '/app/carbon-fields/_init.php';
 
+define('THEME_VERSION', '2.1.8');
+define('THEME_NAME', 'alps-gutenberg-blocks');
+
+require_once __DIR__ . '/updater.php';
+$updater = new \ALPS\ThemeUpdater(
+    THEME_NAME,
+    THEME_VERSION,
+    'https://cdn.adventist.org/wordpress/plugins/' . THEME_NAME . '/' . THEME_NAME . '.json'
+);
+$updater->init();
+
 /*
 |--------------------------------------------------------------------------
 | Register The Bootloader
