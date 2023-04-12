@@ -26,7 +26,7 @@ const pluginRelease = async (opts) => {
     const metadataFileName = `alps-wordpress-v3.json`;
 
     // Extract git tag
-    const match = githubRef.match(/^refs\/tags\/(?<tag>v\d+\.\d+\.\d+)$/);
+    const match = githubRef.match(/^refs\/tags\/(?<tag>v\d+\.\d+\.\d+\.\d+)$/);
     if (!match) {
         throw new Error(`Invalid tag name for release: "${githubRef.replace('refs/tags/', '')}"`);
     }
