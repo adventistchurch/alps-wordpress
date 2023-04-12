@@ -1,6 +1,6 @@
 {
   "name": "alps-wordpress-v3",
-  "version": "3.14.1",
+  "version": "3.14.2.0",
   "private": true,
   "browserslist": [
     "extends @wordpress/browserslist-config"
