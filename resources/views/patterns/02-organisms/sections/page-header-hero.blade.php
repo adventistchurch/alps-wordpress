@@ -74,7 +74,7 @@
 @endphp
 
 @if ($hero)
-  <header class="c-hero c-page-header c-page-header__feature @if($hero_type == 'column'){{ 'c-page-header__3-col' }}@endif {{ $scroll_class }}">
+  <header class="c-hero c-page-header c-page-header__feature @if($hero_type == 'column'){{ 'c-page-header__3-col' }}@endif {{ isset($scroll_class) }}">
     <div class="c-page-header__content">
       @php
         $hero_data = array();

@@ -3,7 +3,7 @@
 @else
   @php $h_tag = 'h3' @endphp
 @endif
-@if ($title_div)
+@if (isset($title_div))
   @php $h_tag = 'div' @endphp
 @endif
 <div class="c-media-block c-block @if (isset($block_class)){{ $block_class }}@endif">

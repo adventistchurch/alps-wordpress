@@ -21,6 +21,7 @@
     $section_offset = 'u-shift--left--1-col--at-large';
     $article_offset = '';
   }
+
 @endphp
 @include('patterns.02-organisms.sections.page-header-hero')
 <section id="top" class="l-main__content l-grid l-grid--7-col {{ $section_offset }} l-grid-wrap--6-of-7 u-spacing--double--until-xxlarge u-padding--zero--sides">
