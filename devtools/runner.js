@@ -47,7 +47,7 @@ const scripts = {
 })().then(() => {
     process.exit(0);
 }).catch((err) => {
-    console.log("HERE!")
+    console.log("Runner is working!")
     logger.error(`\n❌ ${err}`);
     process.exit(1);
 });
