@@ -26,7 +26,7 @@ const themeBuild = async (opts) => {
 
   await exec('composer install --ignore-platform-reqs', logger);
 
-  logger.info(`💼 Copy plugin files to ${chalk.yellow(pluginDir)}`);
+  logger.info(`💼 Copy theme files to ${chalk.yellow(pluginDir)}`);
 
   const whiteList = [
     /^\/app\/.+\.php$/u,
@@ -66,6 +66,7 @@ const themeBuild = async (opts) => {
       const themeMeta = {
           ...await getThemeMeta(),
           version: pkg.version,
+          requires: '6.0',
           last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
       };
       themeMeta.download_url = themeMeta.download_url
