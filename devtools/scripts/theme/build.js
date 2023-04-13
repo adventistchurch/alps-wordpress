@@ -66,7 +66,7 @@ const themeBuild = async (opts) => {
       const themeMeta = {
           ...await getThemeMeta(),
           version: pkg.version,
-          requires: '6.0',
+          requires: '6.1',
           last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
       };
       themeMeta.download_url = themeMeta.download_url
