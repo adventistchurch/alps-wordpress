@@ -49,7 +49,7 @@ require $composer;
 require_once __DIR__ . '/vendor/htmlburger/carbon-fields/core/functions.php';
 require_once __DIR__ . '/app/carbon-fields/_init.php';
 
-define('ALPS_THEME_VERSION', '3.14.0');
+define('ALPS_THEME_VERSION', '3.14.2.4');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
 require_once __DIR__ . '/updater.php';
