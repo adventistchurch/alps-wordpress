@@ -140,6 +140,9 @@
               $thumb_size = 'thumbnail';
               $thumb_id = get_post_thumbnail_id($id);
               $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+              if (end(explode(".", $image)) === 'gif') {
+                  $image = wp_get_attachment_image_src($thumb_id, $thumb_size . 'full')[0];
+              }
               $block_group_class = "u-flex--justify-start";
               if (!is_active_sidebar('sidebar-page') || get_post_meta($post->ID, 'hide_sidebar', true) == 'true') {
                 $block_img_class = "l-grid-item l-grid-item--2-col l-grid-item--m--1-col u-padding--zero--sides";
