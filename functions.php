@@ -49,16 +49,16 @@ require $composer;
 require_once __DIR__ . '/vendor/htmlburger/carbon-fields/core/functions.php';
 require_once __DIR__ . '/app/carbon-fields/_init.php';
 
-define('ALPS_THEME_VERSION', '3.14.0');
+define('ALPS_THEME_VERSION', '3.14.2.4');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
-// require_once __DIR__ . '/updater.php';
-// $updater = new \ALPS\Theme\ThemeUpdater(
-//     ALPS_THEME_NAME,
-//     ALPS_THEME_VERSION,
-//     'https://alps.adventistcdn.org/wordpress/themes/alps/alps-wordpress-v3.json'
-// );
-// $updater->init();
+require_once __DIR__ . '/updater.php';
+$updater = new \ALPS\Theme\ThemeUpdater(
+    ALPS_THEME_NAME,
+    ALPS_THEME_VERSION,
+    'https://alps.adventistcdn.org/wordpress/themes/alps/alps-wordpress-v3.json'
+);
+$updater->init();
 
 /*
 |--------------------------------------------------------------------------
