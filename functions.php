@@ -48,6 +48,7 @@ require $composer;
 
 require_once __DIR__ . '/vendor/htmlburger/carbon-fields/core/functions.php';
 require_once __DIR__ . '/app/carbon-fields/_init.php';
+require_once __DIR__ . '/defaults-themes.php';
 
 define('ALPS_THEME_VERSION', '3.14.2.4');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');

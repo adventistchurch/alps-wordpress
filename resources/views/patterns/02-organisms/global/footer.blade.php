@@ -49,7 +49,11 @@
         @if ($footer_logo)
           <img class="style-svg" src="{{ wp_get_attachment_url($footer_logo) }}" alt="{{ get_post_meta($footer_logo, '_wp_attachment_image_alt', true) }}">
         @else
-          @include('patterns.00-atoms.icons.icon-logo-footer')
+          @if ($footer_logo_type == "square")
+            @include('patterns.00-atoms.icons.icon-logo-footer-square')
+          @else
+            @include('patterns.00-atoms.icons.icon-logo-footer')
+          @endif
         @endif
       </div> <!-- /.c-footer__logo -->
     @endif
