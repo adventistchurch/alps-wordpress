@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Do not edit anything in this file unless you know what you're doing
+ */
 
 use Roots\Sage\Config;
 use Roots\Sage\Container;
@@ -48,8 +51,11 @@ require $composer;
 
 require_once __DIR__ . '/vendor/htmlburger/carbon-fields/core/functions.php';
 require_once __DIR__ . '/app/carbon-fields/_init.php';
+require_once __DIR__ . '/defaults-themes.php';
+require_once __DIR__ . '/defaults.php';
 
-define('ALPS_THEME_VERSION', '3.14.2.4');
+
+define('ALPS_THEME_VERSION', '3.14.3.0');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
 require_once __DIR__ . '/updater.php';
@@ -176,6 +182,190 @@ function get_alps_option( $field ) {
 }
 
 /**
+ * Allow SVG's through WP media uploader
+ */
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+/**
+ * Provides automatic updates for the WordPress theme and plugins (http://wp-updates.com/)
+ */
+require_once __DIR__.'/app/plugin-activation.php';
+
+/**
+ * Adds excerpts to pages
+ */
+add_post_type_support( 'page', 'excerpt' );
+
+/**
+ * Require plugins on theme install
+ */
+add_action('tgmpa_register', 'adventist_register_required_plugins');
+function adventist_register_required_plugins() {
+    $plugins = array(
+      // Guidebook
+      array(
+        'name'               => 'SimpleTOC',
+        'slug'               => 'simpletoc',
+        'required'           => false,
+      ),
+      // WordPress SEO
+      array(
+        'name'              => 'WordPress SEO by Yoast',
+        'slug'              => 'wordpress-seo',
+        'required'          => false,
+      ),
+      // SVG Support
+      array(
+        'name'              => 'SVG Support',
+        'slug'              => 'svg-support',
+        'required'          => true,
+        'force_activation'  => true,
+      ),
+  );
+
+  if ( get_bloginfo( 'version' ) >= '5.0.0' ) {
+    // ADD IF WP IS V5 OR GREATER
+    array_push( $plugins,  array(
+      'name'               => 'ALPS Gutenberg Blocks',
+      'slug'               => 'alps-gutenberg-blocks',
+      'source'             => 'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/download',
+      'required'           => true,
+      'force_activation'   => true,
+      'force_deactivation' => false,
+    ) );
+  }
+  $config = array(
+    'id'           => 'adventist',             // Unique ID for hashing notices for multiple instances of TGMPA.
+    'default_path' => '',                      // Default absolute path to bundled plugins.
+    'menu'         => 'tgmpa-install-plugins', // Menu slug.
+    'parent_slug'  => 'themes.php',            // Parent menu slug.
+    'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+    'has_notices'  => true,                    // Show admin notices or not.
+    'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+    'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+    'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+    'message'      => '',                      // Message to output right before the plugins table.
+  );
+  tgmpa($plugins, $config);
+}
+
+/**
+ * Menu Autocreation
+ */
+
+// Primary Secondary Navigation
+function auto_nav_creation_primary() {
+  $name = 'Primary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['primary_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_primary');
+
+// Secondary Navigation
+function auto_nav_creation_secondary() {
+  $name = 'Secondary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['secondary_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+
+  update_option( 'menu_check', true );
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_secondary');
+
+/**
+ * ALPS Gutenberg Blocks
+ */
+
+// Remove colors and text styles from Gutenberg
+add_theme_support('disable-custom-colors');
+add_theme_support('editor-color-palette');
+add_theme_support('editor-text-styles');
+add_theme_support('wp-block-styles');
+
+// Only allow the following blocks in Gutenberg
+add_filter('allowed_block_types', function () {
+  return [
+    'core/heading',
+    'core/image',
+    'core/block',
+    'core/embed',
+    'core/spacer',
+    'core/button', // WP <=5.3
+    'core/buttons', // WP >= 5.4
+    'core/list',
+    'core/shortcode',
+    'core/video',
+    'core/html',
+    'core/embed',
+    'core/columns',
+    'core/table',
+    'core/paragraph',
+    'core/separator',
+    'alps-gutenberg-blocks/accordion',
+    'alps-gutenberg-blocks/blockquote',
+    'alps-gutenberg-blocks/content-block',
+    'alps-gutenberg-blocks/content-show-more',
+    'alps-gutenberg-blocks/content-expand',
+    'alps-gutenberg-blocks/gallery',
+    'alps-gutenberg-blocks/highlighted-paragraph',
+    'alps-gutenberg-blocks/image-2up',
+    'alps-gutenberg-blocks/image-breakout',
+    'alps-gutenberg-blocks/inline-sidebar',
+    'alps-gutenberg-blocks/latest-posts',
+    'alps-gutenberg-blocks/media-block',
+    'alps-gutenberg-blocks/media-testimonies',
+    'alps-gutenberg-blocks/media-testimony',
+    'alps-gutenberg-blocks/cta',
+    'alps-gutenberg-blocks/content-read-more',
+    'alps-gutenberg-blocks/highlight-blocks',
+    'alps-gutenberg-blocks/split-content',
+    'alps-gutenberg-blocks/content-step',
+    'sbb/guidepost',
+    'sortabrilliant/guidepost',
+    'simpletoc/toc',
+    'nextgenthemes/arve-block',
+    'gutentor/m4',
+    'gutentor/m4-col',
+    'gutentor/m3',
+    'gutentor/e1',
+    'kadence/infobox',
+    'kadence/accordion',
+    'kadence/advancedbtn',
+    'kioken/advancedbtn',
+    'kioken/imagebox',
+    'kioken/wrapper',
+    'uagb/content-timeline',
+    'uagb/table-of-contents',
+    'gt3-photo-video-gallery/gallery',
+    'gt3pg-pro/grid',
+    'epyt/youtube',
+  ];
+});
+
+/**
  * Pagination
  */
 function pagination_nav() {
@@ -248,3 +438,31 @@ function pagination_nav() {
 }
 
 add_theme_support('sage');
+
+function wpml_language_menu_items(){
+  $languages = icl_get_languages('skip_missing=0');
+  if (!empty($languages)) {
+    echo '<li class="c-secondary-nav__list-item has-subnav">';
+      echo '<a href="" class="c-secondary-nav__link u-font--secondary-nav u-color--gray u-theme--link-hover--base"><span class="u-icon u-icon--xs u-path-fill--gray"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>Language</title><path d="M10,4V2H6V0H4V2H0V4H5.9A9.16,9.16,0,0,1,4.51,5.56a8.84,8.84,0,0,1-1-1.08L1.9,5.74a12,12,0,0,0,1,1A26.55,26.55,0,0,1,.55,8.11l.9,1.78a22.2,22.2,0,0,0,3-1.8,23.58,23.58,0,0,0,3.06,1.8l.9-1.78A22.43,22.43,0,0,1,6.11,6.78,10.49,10.49,0,0,0,8.22,4Z" fill="#777"/></svg></span>Languages</a>';
+      echo '<span class="c-subnav__arrow o-arrow--down u-path-fill--gray"></span>';
+      echo '<ul class="c-secondary-nav__subnav c-subnav">';
+        foreach($languages as $language) {
+          echo '<li class="c-secondary-nav__subnav__list-item c-subnav__list-item u-background-color--gray--light">';
+            echo '<a href="'.icl_disp_language($language['url']).'" class="c-secondary-nav__subnav__link c-subnav__link u-color--gray--dark u-theme--link-hover--base">';
+              if ($language['country_flag_url']) {
+                echo '<img src="'.$language['country_flag_url'].'" height="12" alt="'.$language['language_code'].'" width="18" class="u-space--half--right" />';
+              }
+              echo icl_disp_language($language['native_name']);
+              echo icl_disp_language(' (' . $language['translated_name'] . ')');
+            echo '</a>';
+          echo '</li>';
+        }
+      echo '</ul>';
+    echo '</li>';
+  }
+}
+
+require_once('app/autoloader.php');
+(new \App\Core\ALPSVersions())->init();
+(new \App\CronScheduler())->init();
+(new \App\Integrations\CustomSidebars())->init();
