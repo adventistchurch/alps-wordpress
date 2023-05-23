@@ -3,6 +3,16 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.14.3.3]
+### Fix
+Request [#658](https://github.com/adventistchurch/alps-wordpress/issues/658)
+- Add prebuilding menus;
+- installing required plugins (Guthenberg, SVG);
+- WPML support;
+- settings for Carbon Fields plugin, if it not installed yet;
+- ALPS Gutenberg Blocks filter.
+- Add NAD logo functionality.
+
 ## [3.14.3.1]
 ### Fix
 - Fix html structure for SEO. - [#671](https://github.com/adventistchurch/alps-wordpress/issues/671).

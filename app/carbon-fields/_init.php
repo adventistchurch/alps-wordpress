@@ -29,7 +29,7 @@ add_filter('crb_media_buttons_html', function ($html, $field_name) {
 // ADD CF ADMIN STYLESHEET
 function cf_admin_style()
 {
-    wp_enqueue_style('cf-admin-styles', get_template_directory_uri() . '/carbon-fields/cf-admin.css');
+    wp_enqueue_style('cf-admin-styles', get_template_directory_uri() . '/app/carbon-fields/cf-admin.css');
 }
 
 add_action('admin_enqueue_scripts', 'cf_admin_style');
@@ -37,7 +37,7 @@ add_action('admin_enqueue_scripts', 'cf_admin_style');
 // ADD CF JAVASCRIPT
 function cf_admin_js($hook)
 {
-    wp_enqueue_script('cf-admin-js', get_template_directory_uri() . '/carbon-fields/cf-admin.js');
+    wp_enqueue_script('cf-admin-js', get_template_directory_uri() . '/app/carbon-fields/cf-admin.js');
 }
 
 add_action('admin_enqueue_scripts', 'cf_admin_js');
