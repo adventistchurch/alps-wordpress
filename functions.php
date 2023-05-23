@@ -55,7 +55,7 @@ require_once __DIR__ . '/defaults-themes.php';
 require_once __DIR__ . '/defaults.php';
 
 
-define('ALPS_THEME_VERSION', '3.14.3.0');
+define('ALPS_THEME_VERSION', '3.14.3.1');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
 require_once __DIR__ . '/updater.php';
