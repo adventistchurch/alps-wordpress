@@ -131,8 +131,12 @@ if (!$cf) {
                 foreach ($dirs as $dir) {
                     alps_remove_dir_recursively($dir);
                 }
-                // REMOVE THEME SUPPLIED PIKLST
-                unlink(get_template_directory() . '/lib/plugins/piklist.zip');
+
+                // Make sure piklist actually exists before trying to delete it.
+                if (file_exists(get_template_directory() . '/lib/plugins/piklist.zip')) {
+                    // REMOVE THEME SUPPLIED PIKLST
+                    unlink(get_template_directory() . '/lib/plugins/piklist.zip');
+                }
 
                 echo __('<p>Activated.</p> <p style="font-size:26px">The ALPS Fields Converter has run successfully.', 'alps') . '<a href="' . admin_url('plugins.php?action=alps_update_complete') . '">' . __('Click here to return to the plugin management page.', 'alps') . '</a></p>';
             }
