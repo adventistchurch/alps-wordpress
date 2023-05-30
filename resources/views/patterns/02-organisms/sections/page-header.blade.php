@@ -1,11 +1,7 @@
 @php
   use Roots\Sage\Titles;
 
-  $cf = get_option('alps_cf_converted');
-  $cf_ = '';
-  if ($cf) {
-    $cf_ = '_';
-  }
+  $cf_ = '_';
 
   // SET TO INITIALIZE / OVERRIDE
   $header_background_image = '';

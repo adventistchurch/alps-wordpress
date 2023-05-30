@@ -8,7 +8,7 @@
           $cta = $slide['slide_cta'];
           $url = ( isset($slide['slide_url']) ) ? $slide['slide_url'] : null;
           $picture = true;
-          $thumb_id = ( $cf ) ? $slide['slide_image'] : $slide['slide_image'][0];
+          $thumb_id = $slide['slide_image'];
           $thumb_size = 'horiz__16x9';
           $image_break_m = '500';
           $image_break_l = '800';

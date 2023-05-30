@@ -54,8 +54,9 @@ require_once __DIR__ . '/app/carbon-fields/_init.php';
 require_once __DIR__ . '/defaults-themes.php';
 require_once __DIR__ . '/defaults.php';
 
+add_editor_style('/resources/styles/editor.css');
 
-define('ALPS_THEME_VERSION', '3.14.3.1');
+define('ALPS_THEME_VERSION', '3.14.3.4');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
 require_once __DIR__ . '/updater.php';
@@ -131,43 +132,28 @@ function get_alps_field( $field, $id = NULL ) {
     if ( empty( $id ) ) {
         $id = get_queried_object_id();
     }
-    $cf = get_option( 'alps_cf_converted' );
-    if ( !empty( $cf ) ) {
-        $field_data = carbon_get_post_meta( $id, $field );
-        if ( !empty( $field_data ) ) {
-            if ( is_array( $field_data ) ) {
-                if ( count( $field_data ) === 1 ) {
-                    return $field_data[0];
-                } else {
-                    // RETURN COMPLETE ARRAY
-                    return $field_data;
-                }
+
+    $field_data = carbon_get_post_meta( $id, $field );
+    if ( !empty( $field_data ) ) {
+        if ( is_array( $field_data ) ) {
+            if ( count( $field_data ) === 1 ) {
+                return $field_data[0];
+            } else {
+                // RETURN COMPLETE ARRAY
+                return $field_data;
             }
         }
-        else {
-            return $field_data;
-        }
-    } else { // PIKLIST
-        return get_post_meta( $id, $field, true );
+    }
+    else {
+        return $field_data;
     }
 }
 
 function get_alps_option( $field ) {
     global $post;
     $option = '';
-    $cf = get_option( 'alps_cf_converted' );
-    if ( $cf ) {
-        $option = carbon_get_theme_option( $field );
-    } else {
-        if ( $options = get_option( 'alps_theme_settings' ) ) {
-            if ( isset( $options[ $field ] )  ) {
-                $option = $options[ $field ];
-            }
-            else {
-                $option = '';
-            }
-        }
-    }
+    $option = carbon_get_theme_option( $field );
+
     if ( is_array( $option ) ) {
         // RETURN SINGLE KEY/VAL ARRAY AS VAL (IMAGES)
         if ( count( $option ) == 1 ) {
@@ -195,10 +181,6 @@ add_filter('upload_mimes', 'cc_mime_types');
  */
 require_once __DIR__.'/app/plugin-activation.php';
 
-/**
- * Adds excerpts to pages
- */
-add_post_type_support( 'page', 'excerpt' );
 
 /**
  * Require plugins on theme install
@@ -254,46 +236,9 @@ function adventist_register_required_plugins() {
 }
 
 /**
- * Menu Autocreation
+ * Adds excerpts to pages
  */
-
-// Primary Secondary Navigation
-function auto_nav_creation_primary() {
-  $name = 'Primary Navigation';
-  $menu_exists = wp_get_nav_menu_object($name);
-
-  // If it doesn't exist, let's create it.
-  if (!$menu_exists) {
-    $menu_id = wp_create_nav_menu($name);
-    $menu = get_term_by('name', $name, 'nav_menu');
-
-    // Set menu location
-    $locations = get_theme_mod('nav_menu_locations');
-    $locations['primary_navigation'] = $menu->term_id;
-    set_theme_mod('nav_menu_locations', $locations);
-  }
-}
-add_action('load-nav-menus.php', 'auto_nav_creation_primary');
-
-// Secondary Navigation
-function auto_nav_creation_secondary() {
-  $name = 'Secondary Navigation';
-  $menu_exists = wp_get_nav_menu_object($name);
-
-  // If it doesn't exist, let's create it.
-  if (!$menu_exists) {
-    $menu_id = wp_create_nav_menu($name);
-    $menu = get_term_by('name', $name, 'nav_menu');
-
-    // Set menu location
-    $locations = get_theme_mod('nav_menu_locations');
-    $locations['secondary_navigation'] = $menu->term_id;
-    set_theme_mod('nav_menu_locations', $locations);
-  }
-
-  update_option( 'menu_check', true );
-}
-add_action('load-nav-menus.php', 'auto_nav_creation_secondary');
+add_post_type_support( 'page', 'excerpt' );
 
 /**
  * ALPS Gutenberg Blocks
