@@ -1,11 +1,7 @@
 @php
-  $cf = get_option('alps_cf_converted');
-  $cf_ = '';
-  if ($cf) {
-    $cf_ = '_';
-  }
+  $cf_ = '_';
   $hero_type = get_alps_field('hero_type');
-  if (empty($hero_type) && $cf) {
+  if (empty($hero_type)) {
     $hero_type = carbon_get_the_post_meta('hero_type');
   }
   if ($hero_type == 'false' || $hero_type == NULL)  {
@@ -99,11 +95,8 @@
         @foreach ($hero_data as $image)
         @php
           if ($hero_type == 'column') {
-            if ($cf) {
-              $thumb_id = $image['hero_image_column'];
-            } else {
-              $thumb_id = $image['hero_image_column'][0];
-            }
+
+            $thumb_id = $image['hero_image_column'];
             $eyebrow = $image['hero_kicker_column'];
             $title = $image['hero_title_column'];
             $link = NULL;

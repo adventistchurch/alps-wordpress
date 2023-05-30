@@ -1,10 +1,6 @@
 @php
   global $post;
-  $cf = get_option('alps_cf_converted');
-  $cf_ = '';
-  if ($cf) {
-    $cf_ = '_';
-  }
+  $cf_ = '_';
   // SIDEBAR CONFIGURATION OPTIONS
   $active_sidebar = is_active_sidebar('sidebar-page');
   $entry_hide_sidebar = get_post_meta($post->ID, $cf_.'hide_sidebar', true);

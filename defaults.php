@@ -3,7 +3,49 @@
  * Global default settings for this installation
  */
 
-// Logo (logo file is located /patterns/00-atoms/logos/alps-logo-custom.blade.php)
+// Logo (logo file is located /resources/views/patterns/00-atoms/logos/alps-logo-custom.blade.php)
+
+/**
+ * Menu Autocreation
+ */
+
+// Primary Secondary Navigation
+function auto_nav_creation_primary() {
+  $name = 'Primary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['primary_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_primary');
+
+// Secondary Navigation
+function auto_nav_creation_secondary() {
+  $name = 'Secondary Navigation';
+  $menu_exists = wp_get_nav_menu_object($name);
+
+  // If it doesn't exist, let's create it.
+  if (!$menu_exists) {
+    $menu_id = wp_create_nav_menu($name);
+    $menu = get_term_by('name', $name, 'nav_menu');
+
+    // Set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['secondary_navigation'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+
+  update_option( 'menu_check', true );
+}
+add_action('load-nav-menus.php', 'auto_nav_creation_secondary');
 
 // Footer Secondary Navigation
 function auto_nav_creation_footer() {
