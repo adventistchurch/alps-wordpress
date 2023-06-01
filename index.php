@@ -1,3 +1,1 @@
-<?php
-
-// this file is deliberately blank
+<?php echo view(app('sage.view'), app('sage.data'))->render(); ?>
