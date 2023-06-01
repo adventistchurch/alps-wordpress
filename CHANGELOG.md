@@ -5,8 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [3.14.3.1]
 ### Fix
-- Fix html structure
-
+- Fix html structure for SEO. - [#671](https://github.com/adventistchurch/alps-wordpress/issues/671).
 
 ## [3.14.3.0]
 ### Fix
