@@ -52,11 +52,10 @@ require $composer;
 require_once __DIR__ . '/vendor/htmlburger/carbon-fields/core/functions.php';
 require_once __DIR__ . '/app/carbon-fields/_init.php';
 require_once __DIR__ . '/defaults-themes.php';
-require_once __DIR__ . '/defaults.php';
 
 add_editor_style('/resources/styles/editor.css');
 
-define('ALPS_THEME_VERSION', '3.14.3.4');
+define('ALPS_THEME_VERSION', '3.14.3.6');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
 require_once __DIR__ . '/updater.php';
@@ -166,6 +165,43 @@ function get_alps_option( $field ) {
         return $option;
     }
 }
+
+/**
+ * Menu Autocreation
+ */
+
+
+/**
+ * On theme switch settings
+ */
+function alps_setup_options () {
+  $run_menu_maker_once = get_option('menu_check');
+
+  if ( !$run_menu_maker_once ) {
+    include 'defaults.php';
+
+    auto_nav_creation_primary();
+    auto_nav_creation_secondary();
+    auto_nav_creation_social();
+
+    auto_nav_creation_footer();
+    auto_nav_creation_learn_more();
+  }
+  add_action('admin_notices', 'my_update_notice');
+}
+add_action('after_switch_theme', 'alps_setup_options');
+
+/**
+ * Save settings notice
+ */
+function my_update_notice() {
+  ?>
+    <div class="notice-warning notice is-dismissible">
+      <p><?php _e( 'On theme activation, go to Appearance > Settings and save the settings to display the footer default information.', 'alps' ); ?></p>
+    </div>
+  <?php
+}
+
 
 /**
  * Allow SVG's through WP media uploader
