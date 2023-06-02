@@ -5,12 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [3.14.3.1]
 ### Fix
-Request [#658](https://github.com/adventistchurch/alps-wordpress/issues/658)
-- Add prebuilding menus;
-- installing required plugins (Guthenberg, SVG);
-- WPML support;
-- settings for Carbon Fields plugin, if it not installed yet;
-- ALPS Gutenberg Blocks filter.
+- Fix html structure for SEO. - [#671](https://github.com/adventistchurch/alps-wordpress/issues/671).
 
 ## [3.14.3.0]
 ### Fix
