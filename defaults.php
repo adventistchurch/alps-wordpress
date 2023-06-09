@@ -229,4 +229,3 @@ add_action('load-nav-menus.php', 'auto_nav_creation_learn_more');
 
 // Translate Description (Text)
 update_option( '_translate_description', '[Site URL/Name] is the official website of the Seventh-day Adventist World Church.' );
-
