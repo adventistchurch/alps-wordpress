@@ -1,21 +1,12 @@
 @php
   use Roots\Sage\Titles;
   global $post;
-  $cf = get_option('alps_cf_converted');
-  $cf_ = '';
-  if ($cf) {
-    $cf_ = '_';
-  }
+  $cf_ = '_';
 
   if (is_page_template('views/template-posts.blade.php')) {
     $hero_post = get_alps_field('hero_featured_post') ;
+    $id = $hero_post['id'];
 
-    if ($cf) {
-      $id = $hero_post['id'];
-    }
-    else {
-      $id = $hero_post;
-    }
     $link = get_the_permalink($id);
   }
   else {

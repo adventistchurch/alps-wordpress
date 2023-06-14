@@ -23,7 +23,9 @@
 3. In the sidebar, navigate to **Page Attributes**
 4. Select Template from the dropdown
 * **Default Template**: Default template for all pages
-* **Posts Template**: Landing page of posts in the category *news* (https://alps.adventist.io/v3/?p=pages-news)
+* **Posts Template**: Landing page of posts in the category *news* 
+  * (~~https://alps.adventist.io/v3/?p=pages-news~~) - _deprecated_
+  * (https://adventistchurch.github.io/alps/?path=/story/templates-news--no-aside) - new
 
 ### Add widgets to sidebar
 
@@ -74,37 +76,24 @@ See a working example at [roots-example-project.com](https://roots-example-proje
 
 Make sure all dependencies have been installed before moving on:
 
-* [WordPress](https://wordpress.org/) >= 5.x
-* [PHP](https://secure.php.net/manual/en/install.php) >= 7.2 (with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled)
+* [WordPress](https://wordpress.org/) >= 6.1^
+* [PHP](https://secure.php.net/manual/en/install.php) >= 8.1 (with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled)
 * [Composer](https://getcomposer.org/download/)
-* [Node.js](http://nodejs.org/) >= 12.x
-
-### Theme installation
-
-Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
-
-```shell
-# @ app/themes/ or wp-content/themes/
-$ composer create-project roots/sage your-theme-name
-```
-
-To install the latest development version of Sage, add `dev-master` to the end of the command:
-
-```shell
-$ composer create-project roots/sage your-theme-name dev-master
-```
-
-During theme installation you will have options to update `style.css` theme headers, select a CSS framework, and configure Browsersync.
+* [Node.js](http://nodejs.org/) >= 18.x
 
 ### Theme structure
 
 ```shell
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
+│   ├── carbon-fields     # → Carbon fields plugin for Theme Settings
+│   ├── Core              # → Utils functionality for theme support
+│   ├── local             # → folder for storing styles on your local env
 │   ├── Providers/        # → Service providers
 │   ├── View/             # → View models
 │   ├── filters.php       # → Theme filters
 │   └── setup.php         # → Theme setup
+├── devtools/             # → Build, release scripts for release theme 
 ├── composer.json         # → Autoloading for `app/` files
 ├── public/               # → Built theme assets (never edit)
 ├── functions.php         # → Theme bootloader
@@ -167,12 +156,6 @@ The translation in `ALPS for Wordpress` was done thanks to the following individ
 ### Contributing
 
 Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
-
-### Gold sponsors
-
-Help support our open-source development efforts by [contributing to Sage on OpenCollective](https://opencollective.com/sage).
-
-<a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="200" height="150"></a> <a href="https://k-m.com/"><img src="https://roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a>
 
 ### Community
 

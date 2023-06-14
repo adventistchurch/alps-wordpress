@@ -107,6 +107,12 @@ add_action('after_setup_theme', function () {
     add_theme_support('customize-selective-refresh-widgets');
     load_theme_textdomain('alps', get_theme_file_path('/resources/lang'));
 
+    /**
+    * Use main stylesheet for visual editor
+    * @see assets/styles/layouts/_tinymce.scss
+    */
+    add_editor_style(asset_path('/styles/main.scss'));
+
 }, 20);
 
 /**

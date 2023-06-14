@@ -1,10 +1,6 @@
 @php
   global $post;
-  $cf = get_option('alps_cf_converted');
-  $cf_ = '';
-  if ($cf) {
-    $cf_ = '_';
-   }
+  $cf_ = '_';
 
   $has_sidebar = true;
   $section_offset = 'u-shift--left--1-col--at-large';

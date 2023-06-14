@@ -3,3 +3,4 @@
 @import 'tailwindcss/utilities';
 
 @import "main.scss";
+@import "editor.css";
