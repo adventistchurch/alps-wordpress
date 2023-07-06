@@ -3,6 +3,15 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.14.4.1]
+### Fix
+- Added option to remove content spacing (page builder support)
+- Added option to remove template and page header (page builder support)
+- Added full color theme palette support via manipulation of theme.json based on theme options (page builder support)
+- Editor css dynamically applied to add or remove margins based on selected template (theme builder support)
+- Added additional template header and page header options
+- Merged header settings/options for pages and posts so all options are available to both
+
 ## [3.14.3.6]
 ### Fix
 Request [#658](https://github.com/adventistchurch/alps-wordpress/issues/658)

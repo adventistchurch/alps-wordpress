@@ -6,6 +6,20 @@
   }
   if ($hero_type == 'false' || $hero_type == NULL)  {
     $hero = false;
+    $feature_image_hero = get_post_meta($post->ID, $cf_.'featured_image_hero_layout', true);
+    switch ($feature_image_hero){
+      case '':
+      case 'false':
+      case 'page-header':
+        $feature_image_hero = 'patterns.02-organisms.sections.page-header';
+        break;
+      case 'true':
+      case 'hero_layout_1_3':
+      case 'hero_layout_3_3':
+      case 'header-block-featured':
+        $feature_image_hero = 'patterns.01-molecules.blocks.header-block-featured';
+        break;
+    }
   }
   else {
     $hero = true;
@@ -148,5 +162,5 @@
     @endif
   </header> <!-- /.c-page-header -->
 @else
-  @include('patterns.02-organisms.sections.page-header')
+    @include($feature_image_hero)
 @endif

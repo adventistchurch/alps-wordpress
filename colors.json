@@ -1,0 +1,930 @@
+{
+  "treefrog": [{
+      "slug": "darker",
+      "color": "#1b2d00",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#355724",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#2b8500",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#7cd500",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#9fe180",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7f807e",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bebfbd",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f3f5f2",
+      "name": "Light Gray"
+    }
+  ],
+  "ming": [{
+      "slug": "darker",
+      "color": "#002938",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#255760",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#007f98",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#00d5fe",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#9ae1f0",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7e7f80",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bdbfbf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f2f4f5",
+      "name": "Light Gray"
+    }
+  ],
+  "bluejay": [{
+      "slug": "darker",
+      "color": "#052252",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#2f557f",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#2e6de7",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#84adfc",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#acc7fc",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7e7f80",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bdbebf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f2f3f5",
+      "name": "Light Gray"
+    }
+  ],
+  "iris": [{
+      "slug": "darker",
+      "color": "#37034c",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#4b207f",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#9013fe",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#b971f7",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#d6aafb",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7f7e80",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bebdbf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f4f2f5",
+      "name": "Light Gray"
+    }
+  ],
+  "lily": [{
+      "slug": "darker",
+      "color": "#4e053f",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#712551",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#d41583",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#ff61bc",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#fe9dd5",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#807e7f",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bfbdbe",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f2f4",
+      "name": "Light Gray"
+    }
+  ],
+  "scarlett": [{
+      "slug": "darker",
+      "color": "#440000",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#782832",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#d0021b",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#fd2641",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#e17077",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#807e7e",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bfbdbe",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f2f3",
+      "name": "Light Gray"
+    }
+  ],
+  "campfire": [{
+      "slug": "darker",
+      "color": "#361300",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#6f2727",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#cd4900",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#ffa06c",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#fabf9f",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#807f7e",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bfbebd",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f3f2",
+      "name": "Light Gray"
+    }
+  ],
+  "winter": [{
+      "slug": "darker",
+      "color": "#222222",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#4A4A4A",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#717171",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#9a9a9a",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#F9F9F9",
+      "name": "Lighter"
+    }
+  ],
+  "forest": [{
+      "slug": "darker",
+      "color": "#101a00",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#2b8500",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#355724",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#7cd500",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#9fe180",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7f807e",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bebfbd",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f3f5f2",
+      "name": "Light Gray"
+    }
+  ],
+  "cave": [{
+      "slug": "darker",
+      "color": "#01161e",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#007f98",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#255760",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#00d5fe",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#9ae1f0",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7e7f80",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bdbfbf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f2f4f5",
+      "name": "Light Gray"
+    }
+  ],
+  "denim": [{
+      "slug": "darker",
+      "color": "#04132b",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#04132b",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#2f557f",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#2e6de7",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#84adfc",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7e7f80",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bdbebf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f2f4f5",
+      "name": "Light Gray"
+    }
+  ],
+  "emperor": [{
+      "slug": "darker",
+      "color": "#240431",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#9013fe",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#4b207f",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#b971f7",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#dab3fb",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7f7e80",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bebdbf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f3f2f5",
+      "name": "Light Gray"
+    }
+  ],
+  "grapevine": [{
+      "slug": "darker",
+      "color": "#2a0d24",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#5d163f",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#712551",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#ff61bc",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#e596c3",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#807e7f",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bfbdbe",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f2f4",
+      "name": "Light Gray"
+    }
+  ],
+  "velvet": [{
+      "slug": "darker",
+      "color": "#2d0505",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#5d1821",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#782832",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#d0021b",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#e17077",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#807e7e",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bfbdbe",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f2f3",
+      "name": "Light Gray"
+    }
+  ],
+  "earth": [{
+      "slug": "darker",
+      "color": "#210b00",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#48291c",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#5e3929",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#974e02",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#eab57e",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#807f7e",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bfbebd",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f3f2",
+      "name": "Light Gray"
+    }
+  ],
+  "night": [{
+      "slug": "darker",
+      "color": "#000000",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#2f2f2f",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#4A4A4A",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#717171",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#F9F9F9",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#808080",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bfbfbf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f5f5",
+      "name": "Light Gray"
+    }
+  ],
+  "nad-amethyst": [{
+      "slug": "darker",
+      "color": "#1e0d2e",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#31174b",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#582c83",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#c189f8",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#dbc5f1",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7f7e80",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bebdbf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f4f2f5",
+      "name": "Light Gray"
+    }
+  ],
+  "nad-branch": [{
+      "slug": "darker",
+      "color": "#140802",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#2a170",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#4e3629",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#a08577",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#cec4c0",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#807f7e",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bfbebd",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f4f2",
+      "name": "Light Gray"
+    }
+  ],
+  "nad-denim": [{
+      "slug": "darker",
+      "color": "#001724",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#002d46",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#003b5c",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#51befb",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#86d4ff",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7e7f80",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bdbfbf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f2f4f5",
+      "name": "Light Gray"
+    }
+  ],
+  "nad-miracle": [{
+      "slug": "darker",
+      "color": "#330015",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#400c22",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#7d2248",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#f675ab",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#fcb5d3",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#807e7f",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#f2f4f5",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f2f3",
+      "name": "Light Gray"
+    }
+  ],
+  "nad-nile": [{
+      "slug": "darker",
+      "color": "#142c2e",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#1d5358",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#007682",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#76effa",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#baf5fa",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7e7f80",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bdbfbf",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f2f5f5",
+      "name": "Light Gray"
+    }
+  ],
+  "nad-spark": [{
+      "slug": "darker",
+      "color": "#2f1200",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#4a1c01",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#d86018",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#f39d69",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#ffe5d5",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#807f7e",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bfbebd",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f5f3f2",
+      "name": "Light Gray"
+    }
+  ],
+  "nad-vine": [{
+      "slug": "darker",
+      "color": "#1e2519",
+      "name": "Darker"
+    },
+    {
+      "slug": "dark",
+      "color": "#364d26",
+      "name": "Dark"
+    },
+    {
+      "slug": "primary",
+      "color": "#4a7729",
+      "name": "Primary"
+    },
+    {
+      "slug": "light",
+      "color": "#89df4b",
+      "name": "Light"
+    },
+    {
+      "slug": "lighter",
+      "color": "#baec97",
+      "name": "Lighter"
+    },
+    {
+      "slug": "dark-gray",
+      "color": "#7f807e",
+      "name": "Dark Gray"
+    },
+    {
+      "slug": "gray",
+      "color": "#bebfbd",
+      "name": "Gray"
+    },
+    {
+      "slug": "light-gray",
+      "color": "#f3f5f2",
+      "name": "Light Gray"
+    }
+  ]
+}

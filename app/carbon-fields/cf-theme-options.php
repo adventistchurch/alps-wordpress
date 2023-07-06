@@ -279,4 +279,23 @@ function crb_attach_theme_options()
                 ])
                 ->set_width(33),
         ]);
+
+        // Added to rewrite theme.json file with complete color palette based on selected color theme
+
+        $colors = json_decode(file_get_contents(get_template_directory().'/colors.json',false));
+        $color = carbon_get_theme_option('theme_color');
+        $themeJSON = get_template_directory().'/theme.json';
+        $file = fopen($themeJSON, "r+");
+        $json = json_decode(fread($file,filesize($themeJSON)));
+
+        if ($json && !empty($colors)){
+            if (!empty($colors->{$color})){
+                $json->settings->color->palette = $colors->{$color};
+                rewind($file);
+                ftruncate($file,0);
+                fwrite($file, json_encode($json,JSON_PRETTY_PRINT));
+            }
+        }
+
+        fclose($file);
 }

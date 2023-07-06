@@ -2,8 +2,7 @@
 require_once('cf-theme-options.php');
 require_once('cf-global.php');
 require_once('cf-front-page.php');
-require_once('cf-page.php');
-require_once('cf-post.php');
+require_once('cf-post-options.php');
 
 // LOAD CF FROM COMPOSER ADDED VENDOR DIR
 add_action('after_setup_theme', 'crb_load');
