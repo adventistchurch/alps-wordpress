@@ -14,9 +14,9 @@
 
   $remove_spacing = get_post_meta($post->ID, '_remove_spacing', true);
   if ($remove_spacing){
-    $main_classes = '11 l-main';
+    $main_classes = 'l-main';
   }else{
-    $main_classes = '11 l-main u-spacing--double u-padding--double--bottom';
+    $main_classes = 'l-main u-spacing--double u-padding--double--bottom';
   }
 
   $template = get_post_meta($post->ID, '_wp_page_template', true);

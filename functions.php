@@ -455,5 +455,5 @@ require_once('app/autoloader.php');
  * The following css URL needs to be confirmed/implemented before release.
  */
 add_action( 'enqueue_block_assets', function() {
-     wp_enqueue_style( 'alps_builder', 'https://cdn.adventist.org/alps/3/3.12.0/css/wp-editor.css', array(), '1.0', 'all' );
+     wp_enqueue_style( 'alps_builder', 'https://cdn.adventist.org/alps/3/3.12.1/css/wp-editor.css', array(), '1.0', 'all' );
  } );
