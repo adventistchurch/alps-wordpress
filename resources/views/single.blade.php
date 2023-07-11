@@ -9,7 +9,7 @@
         global $post;
         extract(\App\TemplateHelpers::getPostData($post->ID));
     @endphp
-    @include('patterns.02-organisms.sections.page-header-v2')
+    @include('patterns.02-organisms.sections.page-header-hero')
     @include('patterns.02-organisms.content.content-single')
   @endwhile
 @endsection

@@ -87,16 +87,31 @@ class TemplateHelpers {
     public static function getPostData($postId)
     {
         $isFeaturedImageHidden = get_post_meta($postId, '_hide_featured_image', true);
-        $thumbId = get_post_thumbnail_id($postId);
+        $customImage = get_post_meta($postId, '_header_background_image', true);
+
+        if (empty($customImage)){
+            $thumbId = get_post_thumbnail_id($postId);
+        }else{
+            $thumbId = $customImage;
+        }
 
         if ($isFeaturedImageHidden) {
             $headerType = \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
         } else {
-            $headerType = $thumbId ? \App\TemplateHelpers::POST_HEADER_TYPE_FEATURED  : \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
+            if (empty($customImage)){
+                $headerType = $thumbId ? \App\TemplateHelpers::POST_HEADER_TYPE_FEATURED  : \App\TemplateHelpers::POST_HEADER_TYPE_SIMPLE;
+            }else{
+                $headerType = \App\TemplateHelpers::POST_HEADER_TYPE_FEATURED;
+            }
+
         }
 
         $post = get_post($postId);
-        $headerTitle = $post->post_title;
+
+        $headerTitle = get_post_meta($postId, '_display_title', true);
+        if (empty($headerTitle)){
+            $headerTitle = $post->post_title;
+        }
         $headerDesc  = $post->post_excerpt;
         $headerDate  = get_the_date('', $post->ID);
 

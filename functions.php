@@ -55,7 +55,7 @@ require_once __DIR__ . '/defaults-themes.php';
 
 add_editor_style('/resources/styles/editor.css');
 
-define('ALPS_THEME_VERSION', '3.14.3.6');
+define('ALPS_THEME_VERSION', '3.14.4.1');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
 require_once __DIR__ . '/updater.php';
@@ -224,12 +224,12 @@ require_once __DIR__.'/app/plugin-activation.php';
 add_action('tgmpa_register', 'adventist_register_required_plugins');
 function adventist_register_required_plugins() {
     $plugins = array(
-      // Guidebook
-      array(
-        'name'               => 'SimpleTOC',
-        'slug'               => 'simpletoc',
-        'required'           => false,
-      ),
+      // Guidebook - Removed by request
+      // array(
+      //   'name'               => 'SimpleTOC',
+      //   'slug'               => 'simpletoc',
+      //   'required'           => false,
+      // ),
       // WordPress SEO
       array(
         'name'              => 'WordPress SEO by Yoast',
@@ -287,6 +287,8 @@ add_theme_support('editor-text-styles');
 add_theme_support('wp-block-styles');
 
 // Only allow the following blocks in Gutenberg
+// REMOVED TO ALLOW PAGE BUILDER FUNCTIONALITY. TO BE REVIEWED/EXPANDED IF NEEDED.
+/*
 add_filter('allowed_block_types', function () {
   return [
     'core/heading',
@@ -345,6 +347,7 @@ add_filter('allowed_block_types', function () {
     'epyt/youtube',
   ];
 });
+*/
 
 /**
  * Pagination
@@ -447,3 +450,10 @@ require_once('app/autoloader.php');
 (new \App\Core\ALPSVersions())->init();
 (new \App\CronScheduler())->init();
 (new \App\Integrations\CustomSidebars())->init();
+
+/**
+ * The following css URL needs to be confirmed/implemented before release.
+ */
+add_action( 'enqueue_block_assets', function() {
+     wp_enqueue_style( 'alps_builder', 'https://cdn.adventist.org/alps/3/3.12.1/css/wp-editor.css', array(), '1.0', 'all' );
+ } );

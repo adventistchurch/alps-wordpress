@@ -7,8 +7,7 @@ use Carbon_Fields\Field;
 require_once( 'carbon-fields/cf-theme-options.php' );
 require_once( 'carbon-fields/cf-global.php' );
 require_once( 'carbon-fields/cf-front-page.php' );
-require_once( 'carbon-fields/cf-page.php' );
-require_once( 'carbon-fields/cf-post.php' );
+require_once( 'carbon-fields/cf-post-options.php' );
 
 /**
  * Boot Carbon Fields
