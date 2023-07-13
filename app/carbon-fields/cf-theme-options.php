@@ -75,17 +75,12 @@ function crb_attach_theme_options()
         Field::make('separator', 'crb_logo', __('Logo', 'alps')),
     ];
     if (empty($languages)) {
-        $logoFields = [
-            Field
-                ::make('image', 'logo', __('Logo', 'alps')),
-        ];
+        $logoFields[] = Field::make('image', 'logo', __('Logo', 'alps'));
     } else {
         foreach ($languages as $lang) {
-            $logoFields = [
-                Field
-                    ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')', 'alps'))
-                    ->set_width(33)
-            ];
+            $logoFields[] = Field
+                ::make('image', 'logo_' . $lang['code'], __('Logo (' . $lang['translated_name'] . ')', 'alps'))
+                ->set_width(33);
         }
     }
 
