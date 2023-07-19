@@ -3,6 +3,27 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+function setDefaultHeader() {
+    $default = false;
+    if (!empty($_GET['post'])){
+        $id = $_GET['post'];
+        $value = get_post_meta($id,'_featured_image_hero_layout',true);
+        if ($value == 'hero_layout_1_3' || $value == 'hero_layout_3_3'){
+            update_post_meta( $id, '_featured_image_hero_layout', 'header-block-featured');
+            $default = 'header-block-featured';
+        }
+    }else{
+        $uri = $_SERVER['REQUEST_URI'];
+        if (strpos($uri, 'post-new.php')){
+            $default = 'header-block-featured';
+        }
+        if (strpos($uri, 'post_type=page')){
+            $default = 'page-header';
+        }
+    }
+    return $default;
+}
+
 add_action('carbon_fields_register_fields', 'crb_page_options');
 function crb_page_options()
 {
@@ -20,6 +41,7 @@ function crb_page_options()
 				Field
 				::make('radio', 'featured_image_hero_layout', __('Display larger banner', 'alps'))
                 ->set_help_text(__('Display feature image and text either a 50/50 hero or large image banner. Requires a feature image or custom image be set. This will override "Remove Page Header" setting.', 'alps'))
+                ->set_default_value(setDefaultHeader())
                 ->add_options([
                     'false' => __('Do not show larger banner.', 'alps'),
                     'header-block-featured' => __('Show larger banner as 50/50 hero with large image and text.', 'alps'),
