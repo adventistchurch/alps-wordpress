@@ -12,12 +12,13 @@
    * @var string $headerImages
    */
     $mediaBlockTitle = $headerTitle;
-    $mediaBlockTitleLink = $headerTitleLink;
+    $mediaBlockTitleLink = '';
     $mediaBlockDesc = $headerDesc;
     $mediaBlockDate = $headerDate;
     $mediaBlockCategory = $headerCategory;
     $mediaBlockImageCaption = $headerImageCaption;
     $mediaBlockImages = $headerImages;
+    $mediaBlockKicker = $headerKicker;
 @endphp
 <header class="c-page-header c-page-header__feature">
   <div class="c-page-header__content">

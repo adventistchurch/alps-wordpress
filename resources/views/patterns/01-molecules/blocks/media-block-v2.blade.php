@@ -20,7 +20,7 @@
         <picture class="picture">
           <!--[if IE 9]><video style="display: none;"><![endif]-->
           @foreach ($mediaBlockImages as $image)
-            @if ($image[4])
+            @if (!empty($image[4]))
               <source srcset="{{ $image[0] }}" media="(min-width: {{ $image[4] }}px)">
             @endif
           @endforeach
