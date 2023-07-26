@@ -5,11 +5,7 @@
    * @var string $postsRootPostId
    */
 
-  $cf = get_option('alps_cf_converted');
-  $cf_ = '';
-  if ($cf) {
-    $cf_ = '_';
-  }
+  $cf_ = '_';
 
   global $post;
 
@@ -102,11 +98,7 @@
       @foreach ($hero_data as $image)
         @php
           if ($hero_type == 'column') {
-            if ($cf) {
-              $thumb_id = $image['hero_image_column'];
-            } else {
-              $thumb_id = $image['hero_image_column'][0];
-            }
+            $thumb_id = $image['hero_image_column'];
             $eyebrow = $image['hero_kicker_column'];
             $title = $image['hero_title_column'];
             $link = NULL;

@@ -1,15 +1,25 @@
 @php
-  $cf = get_option('alps_cf_converted');
-  $cf_ = '';
-  if ($cf) {
-    $cf_ = '_';
-  }
+  $cf_ = '_';
   $hero_type = get_alps_field('hero_type');
-  if (empty($hero_type) && $cf) {
+  if (empty($hero_type)) {
     $hero_type = carbon_get_the_post_meta('hero_type');
   }
   if ($hero_type == 'false' || $hero_type == NULL)  {
     $hero = false;
+    $feature_image_hero = get_post_meta($post->ID, $cf_.'featured_image_hero_layout', true);
+    switch ($feature_image_hero){
+      case '':
+      case 'false':
+      case 'page-header':
+        $feature_image_hero = 'patterns.02-organisms.sections.page-header';
+        break;
+      case 'true':
+      case 'hero_layout_1_3':
+      case 'hero_layout_3_3':
+      case 'header-block-featured':
+        $feature_image_hero = 'patterns.01-molecules.blocks.header-block-featured';
+        break;
+    }
   }
   else {
     $hero = true;
@@ -99,11 +109,8 @@
         @foreach ($hero_data as $image)
         @php
           if ($hero_type == 'column') {
-            if ($cf) {
-              $thumb_id = $image['hero_image_column'];
-            } else {
-              $thumb_id = $image['hero_image_column'][0];
-            }
+
+            $thumb_id = $image['hero_image_column'];
             $eyebrow = $image['hero_kicker_column'];
             $title = $image['hero_title_column'];
             $link = NULL;
@@ -155,5 +162,5 @@
     @endif
   </header> <!-- /.c-page-header -->
 @else
-  @include('patterns.02-organisms.sections.page-header')
+    @include($feature_image_hero)
 @endif

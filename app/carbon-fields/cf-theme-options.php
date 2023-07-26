@@ -13,22 +13,29 @@ function crb_attach_theme_options()
         Field
             ::make('select', 'theme_color', __('Theme Color', 'alps'))
             ->add_options([
-                'treefrog' => __('Treefrog', 'alps'),
-                'ming' => __('Ming', 'alps'),
                 'bluejay' => __('Bluejay', 'alps'),
-                'iris' => __('Iris', 'alps'),
-                'lily' => __('Lily', 'alps'),
-                'scarlett' => __('Scarlett', 'alps'),
                 'campfire' => __('Campfire', 'alps'),
-                'winter' => __('Winter', 'alps'),
-                'forest' => __('Forest', 'alps'),
                 'cave' => __('Cave', 'alps'),
                 'denim' => __('Denim', 'alps'),
-                'emperor' => __('Emperor', 'alps'),
-                'grapevine' => __('Grapevine', 'alps'),
-                'velvet' => __('Velvet', 'alps'),
                 'earth' => __('Earth', 'alps'),
-                'night' => __('Night', 'alps')
+                'emperor' => __('Emperor', 'alps'),
+                'forest' => __('Forest', 'alps'),
+                'grapevine' => __('Grapevine', 'alps'),
+                'iris' => __('Iris', 'alps'),
+                'lily' => __('Lily', 'alps'),
+                'ming' => __('Ming', 'alps'),
+                'night' => __('Night', 'alps'),
+                'scarlett' => __('Scarlett', 'alps'),
+                'treefrog' => __('Treefrog', 'alps'),
+                'velvet' => __('Velvet', 'alps'),
+                'winter' => __('Winter', 'alps'),
+                'nad-amethyst' => __('NAD - Amethyst', 'alps'),
+                'nad-branch' => __('NAD - Branch', 'alps'),
+                'nad-denim' => __('NAD - Denim', 'alps'),
+                'nad-miracle' => __('NAD - Miracle', 'alps'),
+                'nad-nile' => __('NAD - Nile', 'alps'),
+                'nad-spark' => __('NAD - Spark', 'alps'),
+                'nad-vine' => __('NAD - Vine', 'alps')
             ])
             ->set_width(33),
         Field
@@ -40,6 +47,11 @@ function crb_attach_theme_options()
             ::make('checkbox', 'grid_lines', __('Grid Lines', 'alps'))
             ->set_option_value('true')
             ->set_help_text(__('Select if you would like show the grid lines.', 'alps'))
+            ->set_width(33),
+        Field
+            ::make('checkbox', 'square_buttons', __('Square Buttons', 'alps'))
+            ->set_option_value('true')
+            ->set_help_text(__('Select if you would like square buttons', 'alps'))
             ->set_width(33),
         Field
             ::make('html', 'crb_statements_exp')
@@ -223,9 +235,11 @@ function crb_attach_theme_options()
         ])
         ->add_tab(__('FOOTER CONTENT', 'alps'), [
             Field
-                ::make('rich_text', 'footer_description', __('Footer Description', 'alps')),
+                ::make('rich_text', 'footer_description', __('Footer Description', 'alps'))
+                ->set_default_value(__('[Site URL/Name] is the official website of the Seventh-day Adventist World church.', 'alps')),
             Field
-                ::make('text', 'footer_copyright', __('Footer Copyright', 'alps')),
+                ::make('text', 'footer_copyright', __('Footer Copyright', 'alps'))
+                ->set_default_value(__('General Conference of Seventh-day Adventists', 'alps')),
             Field
                 ::make('complex', 'footer_address', __('Footer Address', 'alps'))
                 ->add_fields([
@@ -252,5 +266,31 @@ function crb_attach_theme_options()
             Field
                 ::make('image', 'footer_logo_icon', __('Footer Logo Icon', 'alps'))
                 ->set_help_text(__('Upload a logo icon for the footer. * Will only display if the sabbath column is hidden.', 'alps')),
+            Field
+                ::make('radio', 'footer_logo_type', __('Fallback Footer Logo Icon', 'alps'))
+                ->add_options([
+                    'square' => __('Square', 'alps'),
+                    'circle' => __('Circle', 'alps'),
+                ])
+                ->set_width(33),
         ]);
+
+        // Added to rewrite theme.json file with complete color palette based on selected color theme
+
+        $colors = json_decode(file_get_contents(get_template_directory().'/colors.json',false));
+        $color = carbon_get_theme_option('theme_color');
+        $themeJSON = get_template_directory().'/theme.json';
+        $file = fopen($themeJSON, "r+");
+        $json = json_decode(fread($file,filesize($themeJSON)));
+
+        if ($json && !empty($colors)){
+            if (!empty($colors->{$color})){
+                $json->settings->color->palette = $colors->{$color};
+                rewind($file);
+                ftruncate($file,0);
+                fwrite($file, json_encode($json,JSON_PRETTY_PRINT));
+            }
+        }
+
+        fclose($file);
 }

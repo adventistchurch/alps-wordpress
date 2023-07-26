@@ -1,9 +1,5 @@
 @php
-  $cf_ = '';
-  $cf = get_option('alps_cf_converted');
-  if ($cf) {
-    $cf_ = '_';
-  }
+  $cf_ = '_';
 
   $related = get_post_meta($post->ID, $cf_.'related', true);
   $related_grid = get_post_meta($post->ID, $cf_.'related_grid', true);
@@ -34,20 +30,15 @@
     );
   }
   elseif ($related == 'related_custom') {
-    if ($cf) {
-      // CARBON FIELDS HAS COMPELTELY DIFFERENT FORMAT HERE
-      $assigned = carbon_get_post_meta(get_the_id(), 'related_custom_value');
-      $pages = [];
-      foreach ($assigned as $k => $entry) {
-        foreach ($entry as $key => $val) {
-          if (!empty($val)) {
-            if ($key == 'id') array_push($pages, $val);
-          }
+    // CARBON FIELDS HAS COMPELTELY DIFFERENT FORMAT HERE
+    $assigned = carbon_get_post_meta(get_the_id(), 'related_custom_value');
+    $pages = [];
+    foreach ($assigned as $k => $entry) {
+      foreach ($entry as $key => $val) {
+        if (!empty($val)) {
+          if ($key == 'id') array_push($pages, $val);
         }
       }
-    }
-    else {
-      $pages = get_post_meta($post->ID, 'related_custom_value');
     }
   }
   else {
