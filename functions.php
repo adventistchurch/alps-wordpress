@@ -55,7 +55,7 @@ require_once __DIR__ . '/defaults-themes.php';
 
 add_editor_style('/resources/styles/editor.css');
 
-define('ALPS_THEME_VERSION', '3.14.4.2');
+define('ALPS_THEME_VERSION', '3.14.4.3');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
 require_once __DIR__ . '/updater.php';
