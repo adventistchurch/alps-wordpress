@@ -3,6 +3,12 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.14.4.3]
+### Fix
+- Prevent space between city and comma in footer addresses [#676](https://github.com/adventistchurch/alps-wordpress/pull/676);
+- Webpack updates, bug report, assign examples [#696](https://github.com/adventistchurch/alps-wordpress/pull/696).
+- Fixes for undefined variable warnings and mods to post-options.php to provide default header settings for pages and posts. Was included a step to update old header format settings to the new values. [#695](https://github.com/adventistchurch/alps-wordpress/pull/695)
+
 ## [3.14.4.2]
 ### Fix
 - Fix WPML Logo [#688](https://github.com/adventistchurch/alps-wordpress/issues/688)
