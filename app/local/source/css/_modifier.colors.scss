@@ -1,0 +1,251 @@
+/*------------------------------------*\
+    $COLOR MODIFIERS
+\*------------------------------------*/
+
+
+/**
+ * Text Colors
+ */
+
+.u-color--black,
+.u-color--black a {
+  color: $c-black;
+}
+
+.u-color--black-transparent {
+  color: rgba($c-black, 0.7);
+}
+
+.u-color--gray--darker,
+.u-color--gray--darker a {
+  color: $c-gray--darker;
+}
+
+.u-color--gray--dark,
+.u-color--gray--dark a {
+  color: $c-gray--dark;
+}
+
+.u-color--gray,
+.u-color--gray a {
+  color: $c-gray;
+}
+
+.u-color--gray--light,
+.u-color--gray--light a {
+  color: $c-gray--light;
+}
+
+.u-color--white,
+.u-color--white a {
+  color: $c-white;
+}
+
+.u-color--white-transparent {
+  color: rgba($c-white, 0.7);
+}
+
+
+/**
+ * Link Colors
+ */
+
+.u-link--white {
+  color: $c-white;
+  &:hover {
+    color: $c-white;
+    opacity: 0.5;
+  }
+}
+
+
+/**
+ * Background Colors
+ */
+
+.u-background-color--none {
+  background: none;
+}
+
+.u-background-color--black {
+  background-color: $c-black;
+}
+
+.u-background-color--gray--darker {
+  background-color: $c-gray--darker;
+}
+
+.u-background-color--gray--dark {
+  background-color: $c-gray--dark;
+}
+
+.u-background-color--gray {
+  background-color: $c-gray;
+}
+
+.u-background-color--gray--light {
+  background-color: $c-gray--light;
+}
+
+.u-background-color--white {
+  background-color: $c-white;
+}
+
+
+/**
+ * States
+ */
+
+.u-color--valid {
+  color: $c-valid;
+}
+
+.u-color--error {
+  color: $c-error;
+}
+
+.u-color--warning {
+  color: $c-warning;
+}
+
+.u-color--information {
+  color: $c-information;
+}
+
+
+/**
+ * SVG Fill Colors
+ */
+
+.u-path-fill--black {
+  path {
+    fill: $c-black;
+  }
+}
+
+.u-path-fill--gray--darker {
+  path {
+    fill: $c-gray--darker;
+  }
+}
+
+.u-path-fill--gray--dark {
+  path {
+    fill: $c-gray--dark;
+  }
+}
+
+.u-path-fill--gray {
+  path {
+    fill: $c-gray;
+  }
+}
+
+.u-path-fill--gray--light {
+  path {
+    fill: $c-gray--light;
+  }
+}
+
+.u-path-fill--white {
+  path {
+    fill: $c-white;
+  }
+}
+
+
+/**
+ * Theme Colors
+ */
+
+.u-background-color--nad-denim {
+  background-color: $c-theme-nad-denim;
+}
+
+.u-background-color--nad-nile {
+  background-color: $c-theme-nad-nile;
+}
+
+.u-background-color--nad-amethyst {
+  background-color: $c-theme-nad-amethyst;
+}
+
+.u-background-color--nad-spark {
+  background-color: $c-theme-nad-spark;
+}
+
+.u-background-color--nad-miracle {
+  background-color: $c-theme-nad-miracle;
+}
+
+.u-background-color--nad-branch {
+  background-color: $c-theme-nad-branch;
+}
+
+.u-background-color--nad-vine {
+  background-color: $c-theme-nad-vine;
+}
+
+.u-background-color--treefrog {
+  background-color: $c-theme-treefrog;
+}
+
+.u-background-color--ming {
+  background-color: $c-theme-ming;
+}
+
+.u-background-color--bluejay {
+  background-color: $c-theme-bluejay;
+}
+
+.u-background-color--iris {
+  background-color: $c-theme-iris;
+}
+
+.u-background-color--lily {
+  background-color: $c-theme-lily;
+}
+
+.u-background-color--scarlett {
+  background-color: $c-theme-scarlett;
+}
+
+.u-background-color--campfire {
+  background-color: $c-theme-campfire;
+}
+
+.u-background-color--winter {
+  background-color: $c-theme-winter;
+}
+
+.u-background-color--forest {
+  background-color: $c-theme-forest;
+}
+
+.u-background-color--cave {
+  background-color: $c-theme-cave;
+}
+
+.u-background-color--denim {
+  background-color: $c-theme-denim;
+}
+
+.u-background-color--emperor {
+  background-color: $c-theme-emperor;
+}
+
+.u-background-color--grapevine {
+  background-color: $c-theme-grapevine;
+}
+
+.u-background-color--velvet {
+  background-color: $c-theme-velvet;
+}
+
+.u-background-color--earth {
+  background-color: $c-theme-earth;
+}
+
+.u-background-color--night {
+  background-color: $c-theme-night;
+}

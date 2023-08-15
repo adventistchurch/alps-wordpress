@@ -25,57 +25,41 @@ class ALPSVersions
         "background-pattern.png"
     ];
 
+    const THEME_KEYS = array(
+        'bluejay',
+        'campfire',
+        'cave',
+        'denim',
+        'earth',
+        'emperor',
+        'forest',
+        'grapevine',
+        'iris',
+        'lily',
+        'ming',
+        'night',
+        'scarlett',
+        'treefrog',
+        'velvet',
+        'winter',
+        'nad-amethyst',
+        'nad-branch',
+        'nad-denim',
+        'nad-miracle',
+        'nad-nile',
+        'nad-spark',
+        'nad-vine'
+    );
+
     public function init()
     {
-        add_action(\App\CronScheduler::ACTION, [$this, 'fetchVersions']);
-    }
-
-    public function fetchVersions()
-    {
-        $res = wp_remote_get('https://cdn.adventist.org/alps/3/versions.json');
-        $data = json_decode(wp_remote_retrieve_body($res), true);
-
-        if ($data) {
-            set_site_transient(self::STORAGE_KEY, $data);
-        }
-
-        return $data;
-    }
-
-    public static function getAll()
-    {
-        $versions = get_site_transient(self::STORAGE_KEY);
-        if (!$versions) {
-            $versions = (new ALPSVersions())->fetchVersions();
-        }
-        return $versions;
+            //Add some code here for initializing default action. See example bellow.
+            //add_action(\App\CronScheduler::ACTION, [$this, 'fetchVersions']);
     }
 
     public static function get()
     {
-        $version = get_option('_' . self::OPTION_KEY);
-
-        if (!$version) {
-            return self::getFallbackVersion();
-        }
-
-        $versions = self::usingLocalVersion() ?
-            self::getLocalVersion(get_site_transient(self::STORAGE_KEY)[0]) :
-            get_site_transient(self::STORAGE_KEY);
-
-        if ($versions) {
-            if ($version === 'latest') {
-                return $versions[0];
-            }
-
-            foreach ($versions as $v) {
-                if ($v['version'] === $version) {
-                    return $v;
-                }
-            }
-        }
-
-        return self::getFallbackVersion();
+        return self::getLocalVersion()[0];
     }
 
     public static function getLocalCachedVersion() {
@@ -87,67 +71,30 @@ class ALPSVersions
         return get_alps_option('project_alps_version') === 'alps-local';
     }
 
-    public static function getFallbackVersion()
-    {
-        return [
-            'version' => 'unknown',
-            'scripts' => [
-                'main' => 'https://cdn.adventist.org/alps/3/latest/js/script.min.js',
-                'head' => 'https://cdn.adventist.org/alps/3/latest/js/head-script.min.js',
-            ],
-            'styles' => [
-                'main' => 'https://cdn.adventist.org/alps/3/latest/css/main.css',
-            ],
-        ];
-    }
-
-    public static function getLocalVersion($latestVersion) {
-        $themes_keys = array_keys($latestVersion['styles']['themes']);
+    public static function getLocalVersion() {
+//     echo '123 test ::: '.implode(' ', $latestVersion).' ::::: TTT: '.implode('', $latestVersion['styles']['themes']);
+//         $themes_keys = array_keys($latestVersion['styles']['themes']);
         $result_themes = [];
 
-        $version = $latestVersion['version'];
-
-        $local_css_main = self::LOCAL_PATH.$version.'/css/'.$version.'-main.css';
-        $local_js_head  = self::LOCAL_PATH.$version.'/js/'.$version.'-head-script.min.js';
-        $local_js_main  = self::LOCAL_PATH.$version.'/js/'.$version.'-script.min.js';
+        $local_css_main = self::LOCAL_PATH.'/css/'.'main.css';
+        $local_js_head  = self::LOCAL_PATH.'js/'.'head-script.min.js';
+        $local_js_main  = self::LOCAL_PATH.'js/'.'script.min.js';
 
         $get_stylesheet_directory   = get_theme_root().'/'.self::PARENT_THEME;
         $get_template_directory_uri = get_theme_root_uri().'/'.self::PARENT_THEME;
 
-        if(!self::currentVersionIsLatest($version)) {
-            self::cleanLocalDirectory($get_stylesheet_directory.self::LOCAL_PATH);
+//         echo 'DIRECTORIES: '.$get_stylesheet_directory.' ::: '.$get_template_directory_uri;
 
-            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/css', 0777, true);
-            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/js', 0777, true);
-            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/images', 0777, true);
-            mkdir($get_stylesheet_directory.self::LOCAL_PATH.$version.'/images/icons', 0777, true);
-
-            self::uploadFile($latestVersion['styles']['main'], $get_stylesheet_directory.$local_css_main);
-            self::uploadFile($latestVersion['scripts']['head'], $get_stylesheet_directory.$local_js_head);
-            self::uploadFile($latestVersion['scripts']['main'], $get_stylesheet_directory.$local_js_main);
-
-            foreach(self::LOCAL_IMAGES as &$image) {
-                $local_image_path = self::LOCAL_PATH.$version.'/images/'.$image;
-                self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/'.$image, $get_stylesheet_directory.$local_image_path);
-            }
-
-            foreach(self::LOCAL_ICONS as &$icon) {
-                $local_icon_path = self::LOCAL_PATH.$version.'/images/icons/'.$icon;
-                self::uploadFile('https://cdn.adventist.org/alps/3/'.$version.'/images/icons/'.$icon, $get_stylesheet_directory.$local_icon_path);
-            }
-        }
-
-        //Cache themes styles
-        foreach ($themes_keys as &$key) {
-            $fileName = $latestVersion['version'].'-main-'.$key.'.css';
-            $filePath = self::LOCAL_PATH.$version.'/css/'.$fileName;
-            self::uploadFile($latestVersion['styles']['themes'][$key], $get_stylesheet_directory.$filePath);
+        //Store local themes styles
+        foreach (self::THEME_KEYS as &$key) {
+            $fileName = 'main-'.$key.'.css';
+            $filePath = self::LOCAL_PATH.'css/'.$fileName;
             $result_themes = array_merge(array($key => $get_template_directory_uri.$filePath), $result_themes);
         }
 
         return [
             [
-                'version' => $latestVersion['version'],
+                'version' => 'alps_local_styles_version',
                 'scripts' => [
                     'main' => $get_template_directory_uri.$local_js_main,
                     'head' => $get_template_directory_uri.$local_js_head,
@@ -158,41 +105,5 @@ class ALPSVersions
                 ],
             ]
         ];
-    }
-
-    public static function uploadFile($file, $newfile) {
-
-        if (!file_exists($newfile)) {
-            copy($file, $newfile);
-
-            //For debugging
-
-//            if ( copy($file, $newfile) ) {
-//                self::log('Caching of css/js files success!');
-//            }else{
-//                self::log('Caching of css/js files failed. - '.$file.' - '.$newfile);
-//            }
-        }
-    }
-
-    private static function currentVersionIsLatest($currentVersion) {
-        return file_exists(get_theme_root().'/'.self::PARENT_THEME.self::LOCAL_PATH.$currentVersion);
-    }
-
-    // delete all files and sub-folders from a folder
-    private static function cleanLocalDirectory($dir) {
-        foreach(glob($dir . '/*') as $file) {
-            if(is_dir($file))
-                self::cleanLocalDirectory($file);
-            else
-                unlink($file);
-        }
-        rmdir($dir);
-    }
-
-    private static function log($data ){
-        echo '<script>';
-        echo 'console.log('. json_encode( $data ) .')';
-        echo '</script>';
     }
 }

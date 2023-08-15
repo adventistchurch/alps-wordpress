@@ -1,0 +1,1376 @@
+/*------------------------------------*\
+    $THEMES
+\*------------------------------------*/
+
+// https://gist.github.com/jlong/8760275
+
+@each $theme, $shades in $themes {
+  $darker: map-get($shades, darker);
+  $dark: map-get($shades, dark);
+  $base: map-get($shades, base);
+  $light: map-get($shades, light);
+  $lighter: map-get($shades, lighter);
+
+
+  .#{$theme} {
+    @each $shade, $color in $shades {
+      // Text Color
+      .u-theme--color--#{$shade},
+      .u-theme--color--#{$shade} a,
+      a.u-theme--link-hover--#{$shade}:hover,
+      .u-theme--link-hover--#{$shade} a:hover {
+        color: $color;
+
+        @media print {
+          color: black;
+        }
+      }
+
+      // Background Color
+      .u-theme--background-color--#{$shade} {
+        background-color: $color;
+
+        @media print {
+          color: black;
+          background-color: $c-gray--light;
+        }
+      }
+
+      // Border Color
+      .u-theme--border-color--#{$shade} {
+        border-color: $color;
+
+        &--top {
+          border-top-color: $color;
+
+          @media print {
+            border-top-color: black;
+          }
+        }
+
+        &--bottom {
+          border-bottom-color: $color;
+
+          @media print {
+            border-bottom-color: black;
+          }
+        }
+
+        &--left {
+          border-left-color: $color;
+
+          @media print {
+            border-left-color: black;
+          }
+        }
+
+        &--right {
+          border-right-color: $color;
+
+          @media print {
+            border-right-color: black;
+          }
+        }
+
+        @media print {
+          border-color: black;
+        }
+      }
+
+      // SVG fill colors
+      .u-theme--path-fill--#{$shade} {
+        path {
+          fill: $color;
+
+          @media print {
+            fill: black;
+          }
+        }
+      }
+    }
+
+    // Background transparency
+    .u-theme--background-color-trans--darker {
+      background-color: rgba($darker, 0.8);
+    }
+
+    .u-theme--background-color-trans--dark {
+      background-color: rgba($dark, 0.8);
+    }
+
+    .u-theme--background-color-trans--base {
+      background-color: rgba($base, 0.8);
+    }
+
+    .u-theme--background-color-trans--light {
+      background-color: rgba($light, 0.8);
+    }
+
+    .u-theme--background-color-trans--lighter {
+      background-color: rgba($lighter, 0.8);
+    }
+
+    .l-sabbath.u-background-image--sabbath {
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      clip: rect(0, auto, auto, 0);
+      border-radius: 0.0001px;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: calc(100vw / 7 * 1);
+        pointer-events: none;
+        transform: translateZ(0);
+        top: 0;
+        right: 0;
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include media(">medium") {
+          position: fixed;
+          background-attachment: fixed;
+          background-size: auto 100vh;
+        }
+      }
+    }
+
+    // Gradient
+    .u-theme--gradient--bottom::after {
+      content: "";
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background-image: linear-gradient(to bottom, rgba($c-gray--light, 0), rgba($c-gray--light, 0.8) 50%);
+      pointer-events: none;
+    }
+
+    .u-theme--gradient--top::after {
+      content: "";
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to top, rgba($darker, 0), rgba($darker, 0.8) 100%);
+      pointer-events: none;
+    }
+
+    .u-theme--gradient--left::before {
+      content: "";
+      display: flex;
+      position: absolute;
+      width: 100px;
+      height: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to left, rgba($darker, 0), rgba($darker, 1) 100%);
+      pointer-events: none;
+    }
+
+    .u-theme--gradient--right::after {
+      content: "";
+      display: flex;
+      position: absolute;
+      width: 100px;
+      height: 100%;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      background-image: linear-gradient(to right, rgba($darker, 0), rgba($darker, 1) 100%);
+      pointer-events: none;
+    }
+
+    // Text
+    .text {
+      a:not(.o-button) {
+        border-color: $base;
+
+        &:hover {
+          border-color: $light;
+        }
+      }
+
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $darker;
+
+        @media print {
+          color: black;
+        }
+      }
+
+      ul, ol {
+        li::before {
+          color: $base;
+
+          @media print {
+            color: black;
+          }
+        }
+      }
+
+      .u-theme--background-color--darker {
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: $c-white;
+
+          @media print {
+            color: black;
+          }
+        }
+      }
+    }
+
+    /**
+     * Mark
+     */
+    mark {
+      background-color: inherit;
+      text-decoration: none;
+      border-bottom: 2px solid $base;
+      font-weight: bold;
+    }
+
+    // Buttons
+    .o-button,
+    button,
+    input[type=submit] {
+      background-color: $base;
+      color: $c-white;
+      border-color: $base;
+
+      svg path {
+        fill: $c-white;
+      }
+
+      &:hover {
+        background-color: $darker;
+        border-color: $darker;
+      }
+
+      &:active,
+      &.this-is-active {
+        background-color: $dark;
+        border-color: $dark;
+      }
+
+      &.disabled {
+        background-color: $c-gray;
+        border-color: $c-gray;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: $c-gray--dark;
+          border-color: $c-gray--dark;
+        }
+      }
+
+      &:focus::before {
+        border-color: $base;
+      }
+
+      @media print {
+        background-color: black;
+        border-color: black;
+        color: white;
+      }
+    }
+
+    .o-button--simple {
+      background-color: transparent;
+      border-color: transparent;
+      color: $base;
+
+      svg path {
+        fill: $base;
+      }
+
+      &::after,
+      font::before {
+        color: $base;
+      }
+
+      &:hover,
+      &:focus {
+        color: $darker;
+        background-color: transparent;
+        border-color: transparent;
+
+        svg path {
+          fill: $darker;
+        }
+
+        &::after,
+        font::before {
+          color: $darker;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &:active,
+      &.this-is-active {
+        color: $darker;
+        background-color: transparent;
+        border-color: transparent;
+
+        svg path {
+          fill: $darker;
+        }
+
+        &::after,
+        font::before {
+          color: $darker;
+        }
+      }
+
+      &.disabled {
+        background-color: transparent;
+        border-color: transparent;
+        color: $c-gray;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: transparent;
+          border-color: transparent;
+          color: $c-gray--dark;
+        }
+      }
+    }
+
+    .o-button--simple--gray {
+      background-color: transparent;
+      border-color: transparent;
+      color: $c-gray;
+
+      svg path {
+        fill: $c-gray;
+      }
+
+      &::after,
+      font::before {
+        color: $c-gray;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        border-color: transparent;
+        color: $darker;
+
+        svg path {
+          fill: $darker;
+        }
+
+        &::after,
+        font::before {
+          color: $darker;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+
+      @media print {
+        color: black;
+
+        svg path {
+          fill: black;
+        }
+      }
+    }
+
+    .o-button--outline {
+      background-color: transparent;
+      color: $base;
+      border-color: $base;
+
+      svg path {
+        fill: $base;
+      }
+
+      &:hover {
+        background-color: $dark;
+        color: $c-white;
+        border-color: $dark;
+
+        svg path {
+          fill: $c-white;
+        }
+      }
+
+      &:active,
+      &.this-is-active {
+        background-color: transparent;
+        color: $base;
+        border-color: $darker;
+
+        svg path {
+          fill: $base;
+        }
+      }
+
+      &.disabled {
+        color: $c-gray;
+        border-color: $c-gray;
+        background-color: inherit;
+        cursor: not-allowed;
+
+        &:hover {
+          color: $c-gray--dark;
+          border-color: $c-gray--dark;
+          background-color: inherit;
+        }
+      }
+
+      &:focus::after {
+        border-color: $base;
+      }
+
+      @media print {
+        border-color: black;
+        color: black;
+
+        svg path {
+          fill: black;
+        }
+      }
+    }
+
+    .o-button--outline--white {
+      background-color: transparent;
+      color: $c-white;
+      border-color: $c-white;
+
+      svg path {
+        fill: $c-white;
+      }
+
+      &:hover {
+        background-color: $lighter;
+        color: $darker;
+        border-color: $lighter;
+
+        svg path {
+          fill: $darker;
+        }
+      }
+    }
+
+    .o-button--lighter {
+      background-color: $lighter;
+      color: $darker;
+      border-color: $lighter;
+
+      svg path {
+        fill: $darker;
+      }
+
+      &:hover {
+        background-color: $light;
+        border-color: $light;
+        color: $dark;
+
+        svg path {
+          fill: $dark;
+        }
+      }
+
+      &:active,
+      &.this-is-active {
+        background-color: $base;
+        border-color: $base;
+        color: $c-white;
+
+        svg path {
+          fill: $c-white;
+        }
+      }
+
+      &.disabled {
+        color: $c-white;
+        border-color: $c-gray;
+        background-color: $c-gray;
+        cursor: not-allowed;
+
+        &:hover {
+          color: $c-white;
+          border-color: $c-gray--dark;
+          background-color: $c-gray--dark;
+        }
+      }
+
+      &:focus::after {
+        border-color: $light;
+      }
+
+      @media print {
+        border-color: black;
+        background-color: black;
+        color: white;
+      }
+    }
+
+    .o-button--white {
+      background-color: $c-white;
+      color: $darker;
+      border-color: $c-white;
+
+      svg path {
+        fill: $darker;
+      }
+
+      &:hover {
+        background-color: $lighter;
+        border-color: $lighter;
+        color: $darker;
+
+        svg path {
+          fill: $darker;
+        }
+      }
+
+      &:active,
+      &.this-is-active {
+        background-color: $light;
+        border-color: $light;
+        color: $darker;
+
+        svg path {
+          fill: $darker;
+        }
+      }
+
+      @media print {
+        color: black;
+      }
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+      color: $darker;
+      border-color: $darker;
+    }
+
+    input[type=radio]:checked,
+    input[type=checkbox]:checked {
+      background-color: $darker;
+    }
+
+    // Dots
+    .o-dots {
+      li {
+        width: rem(5);
+        height: rem(5);
+        background-color: $base;
+        border: 0;
+
+        @media print {
+          background-color: black;
+        }
+
+        &.slick-active {
+          background-color: $c-white;
+
+          @media print {
+            background-color: black;
+          }
+        }
+      }
+    }
+
+    .c-header {
+      .c-primary-nav__link {
+        color: $darker;
+
+        &.this-is-active,
+        &:active {
+          color: $base;
+        }
+      }
+
+      .c-secondary-nav__link {
+        &.this-is-active {
+          color: $c-gray--darker;
+        }
+      }
+    }
+
+    .c-drawer {
+      .c-filter,
+      .search-form {
+        input[type="search"] {
+          color: $c-white;
+          border-bottom-color: $c-white;
+
+          &::placeholder {
+            color: $c-white;
+          }
+        }
+      }
+    }
+
+    .c-filter,
+    .search-form {
+      input[type="search"] {
+        color: $darker;
+        border-bottom-color: $darker;
+
+        &::placeholder {
+          color: $darker;
+        }
+      }
+    }
+
+    .c-suggestions {
+      li a:hover, li a.active {
+        background-color: $darker;
+        color: $c-white;
+      }
+    }
+
+    .c-block--search u {
+      border-color: $base;
+    }
+
+    .u-theme--dark {
+      // Globals
+      input,
+      textarea,
+      select {
+        background-color: $c-gray--darker;
+        border-color: $c-gray;
+        color: white;
+
+        @media print {
+          background-color: white;
+          border-color: black;
+          color: black;
+        }
+      }
+
+      input[type=file] {
+        background-color: transparent;
+      }
+
+      .u-background-color--gray--light {
+        background-color: $darker;
+
+        @media print {
+          background-color: white;
+        }
+      }
+
+      // Colors
+      .u-theme--color--darker,
+      .u-theme--color--darker a,
+      a.u-theme--link-hover--darker:hover,
+      .u-theme--link-hover--darker a:hover {
+        color: $lighter;
+
+        @media print {
+          color: black;
+        }
+      }
+
+      .u-theme--color--dark,
+      .u-theme--color--dark a,
+      a.u-theme--link-hover--dark:hover,
+      .u-theme--link-hover--dark a:hover {
+        color: $light;
+
+        @media print {
+          color: black;
+        }
+      }
+
+      .u-theme--color--base,
+      .u-theme--color--base a,
+      a.u-theme--link-hover--base:hover,
+      .u-theme--link-hover--base a:hover {
+        color: $c-white;
+
+        @media print {
+          color: black;
+        }
+      }
+
+      .u-color--gray {
+        color: $c-white;
+
+        @media print {
+          color: black;
+        }
+      }
+
+      .u-color--gray--dark {
+        color: $c-gray--light;
+
+        @media print {
+          color: black;
+        }
+      }
+
+      // Gradient
+      .u-theme--background-gradient {
+        background-image: linear-gradient(to bottom, $darker, $dark, $c-gray--darker);
+      }
+
+      &.u-theme--gradient--bottom::after,
+      .u-theme--gradient--bottom::after {
+        background-image: linear-gradient(to bottom, rgba($darker, 0), rgba($darker, 0.8) 50%);
+      }
+
+      // SVG fill colors
+      .u-path-fill--gray path {
+        fill: $c-white;
+
+        @media print {
+          fill: black;
+        }
+      }
+
+      .u-path-fill--gray--dark path {
+        fill: $c-gray--light;
+
+        @media print {
+          fill: black;
+        }
+      }
+
+      .u-theme--path-fill--darker path {
+        fill: $darker;
+      }
+
+      .u-theme--path-fill--dark path {
+        fill: $dark;
+      }
+
+      .u-theme--path-fill--base path {
+        fill: $c-white;
+
+        @media print {
+          fill: black;
+        }
+      }
+
+      .o-arrow--down::after {
+        border-top-color: $c-white;
+
+        @media print {
+          border-top-color: black;
+        }
+      }
+
+      // Borders
+      .u-theme--border-color--darker {
+        border-color: $lighter;
+
+        &--left,
+        &--right,
+        &--top,
+        &--bottom {
+          border-color: $lighter;
+
+          @media print {
+            border-color: black;
+          }
+        }
+
+        @media print {
+          border-color: black;
+        }
+      }
+
+      .u-theme--border-color--dark {
+        border-color: $light;
+
+        &--left,
+        &--right,
+        &--top,
+        &--bottom {
+          border-color: $light;
+
+          @media print {
+            border-color: black;
+          }
+        }
+
+        @media print {
+          border-color: black;
+        }
+      }
+
+      .u-theme--border-color--base {
+        border-color: $c-white;
+
+        &--left,
+        &--right,
+        &--top,
+        &--bottom {
+          border-color: $c-white;
+
+          @media print {
+            border-color: black;
+          }
+        }
+
+        @media print {
+          border-color: black;
+        }
+      }
+
+      // Text
+      .text {
+        a:not(.o-button) {
+          color: $c-white;
+          border-color: $light;
+
+          &:hover {
+            border-color: $lighter;
+          }
+
+          @media print {
+            color: black;
+            border-color: black;
+          }
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: $lighter;
+
+          @media print {
+            color: black;
+          }
+        }
+
+        ul,
+        ol {
+          li::before {
+            color: $lighter;
+
+            @media print {
+              color: black;
+            }
+          }
+        }
+      }
+
+      &.c-form {
+        .c-form-group {
+          position: relative;
+
+          input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid $lighter;
+            outline: 0;
+            color: $lighter;
+            padding-left: 0;
+            padding-bottom: rem(10);
+
+            @media print {
+              color: black;
+              border-bottom-color: black;
+            }
+          }
+
+          input::placeholder {
+            color: $lighter;
+
+            @media print {
+              color: black;
+            }
+          }
+
+          label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: $lighter;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease;
+
+            @media print {
+              color: black;
+            }
+          }
+
+          input:focus + label {
+            top: rem(-15);
+            font-size: rem(10);
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      // Buttons
+      .o-button,
+      button,
+      input[type=submit] {
+        background-color: $lighter;
+        border-color: $lighter;
+        color: $darker;
+
+        svg path {
+          fill: $darker;
+        }
+
+        &:hover {
+          background-color: $light;
+          border-color: $light;
+        }
+
+        &:active,
+        &.this-is-active {
+          background-color: $light;
+          border-color: $light;
+          color: $dark;
+
+          svg path {
+            fill: $dark;
+          }
+        }
+
+        &.disabled {
+          background-color: $c-gray;
+          border-color: $c-gray;
+          cursor: not-allowed;
+          color: $c-gray--darker;
+
+          &:hover {
+            background-color: $c-gray--light;
+            border-color: $c-gray--light;
+          }
+        }
+
+        &:focus::after {
+          border-color: $lighter;
+        }
+
+        @media print {
+          border-color: black;
+          background-color: black;
+          color: white;
+        }
+      }
+
+      .o-button--simple {
+        background-color: transparent;
+        border-color: transparent;
+        color: $lighter;
+
+        svg path {
+          fill: $lighter;
+        }
+
+        &::after,
+        font::before {
+          color: $lighter;
+        }
+
+        &:hover,
+        &:focus {
+          color: $light;
+          background-color: transparent;
+          border-color: transparent;
+
+          svg path {
+            fill: $light;
+          }
+
+          &::after,
+          font::before {
+            color: $light;
+          }
+
+          &::before {
+            display: none;
+          }
+        }
+
+        &:active,
+        &.this-is-active {
+          color: $lighter;
+          background-color: transparent;
+          border-color: transparent;
+
+          svg path {
+            fill: $lighter;
+          }
+
+          &::after,
+          font::before {
+            color: $lighter;
+          }
+
+          &::before {
+            display: none;
+          }
+        }
+
+        &.disabled {
+          color: $c-gray;
+          border-color: transparent;
+          background-color: transparent;
+          cursor: not-allowed;
+
+          &:hover {
+            color: $c-gray--light;
+            border-color: transparent;
+            background-color: inherit;
+          }
+        }
+      }
+
+      .o-button--simple--gray {
+        background-color: transparent;
+        border-color: transparent;
+        color: $c-white;
+
+        svg path {
+          fill: $c-white;
+        }
+
+        &::after,
+        font::before {
+          color: $c-white;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: transparent;
+          border-color: transparent;
+          color: $light;
+
+          svg path {
+            fill: $light;
+          }
+
+          &::after,
+          font::before {
+            color: $light;
+          }
+
+          &::before {
+            display: none;
+          }
+        }
+
+        @media print {
+          color: black;
+
+          svg path {
+            fill: black;
+          }
+        }
+      }
+
+      .o-button--outline {
+        background-color: transparent;
+        color: $lighter;
+        border-color: $lighter;
+
+        svg path {
+          fill: $lighter;
+        }
+
+        &:hover {
+          background-color: $lighter;
+          border-color: $lighter;
+          color: $darker;
+
+          svg path {
+            fill: $darker;
+          }
+        }
+
+        &:active,
+        &.this-is-active {
+          background-color: transparent;
+          border-color: $light;
+          color: $lighter;
+
+          svg path {
+            fill: $lighter;
+          }
+        }
+
+        &.disabled {
+          background-color: transparent;
+          border-color: $c-gray;
+          color: $c-gray;
+          cursor: not-allowed;
+
+          svg path {
+            fill: $c-gray;
+          }
+
+          &:hover {
+            background-color: transparent;
+            border-color: $c-gray--dark;
+            color: $c-gray--dark;
+
+            svg path {
+              fill: $c-gray--dark;
+            }
+          }
+        }
+
+        &:focus::before {
+          border-color: $lighter;
+        }
+
+        @media print {
+          color: black;
+          border-color: black;
+
+          svg path {
+            fill: black;
+          }
+        }
+      }
+
+      // Custom
+      .can-be--dark-dark {
+        background-color: $darker;
+
+        @media print {
+          background-color: $c-gray--light;
+        }
+      }
+
+      .can-be--dark-light {
+        .u-theme--color--darker {
+          color: $darker;
+        }
+
+        .u-theme--color--dark {
+          color: $dark;
+        }
+
+        .u-color--gray {
+          color: $c-gray;
+        }
+      }
+
+      .can-be--white {
+        color: $c-white;
+      }
+
+      .can-be--light {
+        color: $light;
+      }
+
+      .can-be--lighter {
+        color: $lighter;
+      }
+
+      input[type=radio],
+      input[type=checkbox] {
+        color: $c-white;
+        border-color: $lighter;
+
+        @media print {
+          border-color: black;
+          color: black;
+        }
+      }
+
+      input[type=radio]:checked,
+      input[type=checkbox]:checked {
+        background-color: $lighter;
+
+        @media print {
+          background-color: black;
+        }
+      }
+
+      table {
+        a {
+          color: $c-white;
+        }
+      }
+
+      th {
+        border-bottom-color: $lighter;
+      }
+
+      tr {
+        &:nth-child(even) {
+          background-color: $c-gray--dark;
+        }
+      }
+
+      .c-header {
+        .c-priority-nav__dropdown-toggle {
+          background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Ctitle%3Eicon-plus%3C/title%3E%3Cpath d='M15,8.5H8.5V15h-2V8.5H0v-2H6.5V0h2V6.5H15Z' fill='%23ffffff'/%3E%3C/svg%3E") center center no-repeat;
+          background-size: 13px 13px;
+        }
+
+        .c-primary-nav__link {
+          &.this-is-active,
+          &:active {
+            color: $light;
+          }
+        }
+
+        .c-subnav__list-item {
+          background-color: $darker;
+          border-left-color: $lighter;
+        }
+
+        .c-secondary-nav__link {
+          color: $lighter;
+
+          &.this-is-active {
+            color: $c-white;
+          }
+
+          svg path {
+            fill: $lighter;
+          }
+        }
+      }
+
+      .l-sabbath {
+        background-color: $c-black;
+
+        @media print {
+          background-color: white;
+        }
+      }
+
+      .c-secondary-nav__list-item__language select {
+        color: $lighter;
+
+        &::before {
+          background: url("../images/icons/o-icon__language.svg") center center no-repeat;
+        }
+      }
+
+      .c-drawer .o-arrow--down::after {
+        border-top-color: transparent;
+      }
+
+      .c-filter,
+      .search-form {
+        input[type="search"] {
+          color: $c-white;
+          border-bottom-color: $c-white;
+
+          &::placeholder {
+            color: $c-white;
+          }
+        }
+      }
+
+      .c-suggestions {
+        li a:hover, li a.active {
+          background-color: $lighter;
+          color: $darker;
+        }
+      }
+
+      .c-block--search u {
+        border-color: $light;
+      }
+
+      .pagination {
+        &__prev,
+        &__next {
+          svg path {
+            fill: $lighter;
+          }
+        }
+
+        &__page--current {
+          color: $light;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme
+ */
+.u-theme--dark {
+  color: $c-white;
+  background-color: $c-gray--darker;
+
+  @media print {
+    color: black;
+    background-color: white;
+  }
+
+  hr {
+    background-color: rgba($c-white, 0.2);
+
+    @media print {
+      background-color: black;
+    }
+  }
+
+  .can-be--white {
+    color: $c-white;
+  }
+
+  .can-be--dark-light {
+    background-color: $c-gray--light !important;
+  }
+
+  .can-be--dark-dark {
+    background-color: $c-gray--darker;
+
+    @media print {
+      background-color: $c-gray--light;
+    }
+  }
+
+  // Custom
+  .l-grid-container--7-col::before {
+    opacity: 0.1;
+  }
+
+  .c-header:not(.c-header--overlay),
+  .c-header__nav-secondary .c-secondary-nav__list-item__search,
+  .c-header__nav-secondary .c-secondary-nav__list-item__menu {
+    background-color: $c-gray--darker;
+
+    @media print {
+      background-color: white;
+    }
+  }
+
+  .l-sabbath__logo--inner > div {
+    opacity: 1 !important;
+  }
+}
