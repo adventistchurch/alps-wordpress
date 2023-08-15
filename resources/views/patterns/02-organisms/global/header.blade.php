@@ -3,19 +3,26 @@
 
   if ($current_language) {
     $logo = get_alps_option('logo_' . $current_language);
+    $logo_inverted = get_alps_option('logo_inverted_' . $current_language);
   } else {
     $logo = get_alps_option('logo');
+    $logo_inverted = get_alps_option('logo_inverted' . $current_language);
   }
 
   if (!empty(get_alps_option('dark_theme'))) {
+    if (!empty($logo_inverted)){
+      $logo = $logo_inverted;
+    }
     $dark_theme = get_alps_option('dark_theme');
-    $header_logo_class = " u-theme--path-fill--base";
   } else {
     $header_logo_class = "";
   }
 
   $header_type = carbon_get_the_post_meta('head_type');
   if (carbon_get_the_post_meta('hero_type') == 'full_overlay' || $header_type == 'overlay' || $header_type == 'overlay_gradient') {
+    if (!empty($logo_inverted)){
+      $logo = $logo_inverted;
+    }
     if (carbon_get_the_post_meta('head_type') == 'overlay'){
       $header_class = " c-header--overlay";
     }else{
@@ -30,6 +37,10 @@
   $logoContainerClass = ['c-header__logo', 'c-logo'];
   if (get_alps_option('is_wide_logo')) {
       $logoContainerClass[] = 'c-header__logo--wide';
+  }
+
+  if (!empty(get_alps_option('logo_recolor')) && get_alps_option('logo_recolor')){
+    $header_logo_class = " u-theme--path-fill--base";
   }
 @endphp
 
