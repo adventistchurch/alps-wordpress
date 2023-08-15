@@ -1,0 +1,24 @@
+{% if search_filter %}
+  <div class="c-filter u-background-color--gray--light u-padding u-theme--border-color--darker u-border--left can-be--dark-dark">
+    <form action="{{ search_filter.url }}" role="search" method="{{ search_filter.method }}" class="c-filter__search">
+      <div class="l-field-container u-spacing">
+        <input type="search" name="{{ search_filter.name }}" placeholder="{{ search_filter.placeholder }}" class="u-font--secondary--s u-color--gray" />
+        <div class="u-flex">
+          <button class="c-filter__button o-button o-button--outline u-space--right">
+            <span class="u-icon u-icon--xs u-path-fill--base">{% include '@atoms/icons/icon-search.twig' %}</span>
+            Search
+          </button>
+          {% if search_filter.filter_form %}
+            <button class="c-filter__toggle js-toggle o-button o-button--simple" data-toggled="c-filter" data-prefix="c-filter">
+              <span class="u-icon u-icon--xs u-theme--path-fill--base">{% include '@atoms/icons/icon-settings.twig' %}</span>
+              <font>{{ search_filter.filter_form.toggle_text }}</font>
+            </button>
+          {% endif %}
+        </div>
+      </div>
+    </form>
+    {% if search_filter.filter_form %}
+      {% include '@molecules/forms/filter-form.twig' with search_filter %}
+    {% endif %}
+  </div>
+{% endif %}

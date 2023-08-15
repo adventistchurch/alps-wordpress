@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    $TABLES
+\*------------------------------------*/
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+  &.u-border {
+    border-width: 2px;
+  }
+}
+
+th {
+  text-align: left;
+  border: 1px solid transparent;
+  border-bottom: $c-gray solid 1px;
+  padding: 0.2em;
+  font-size: rem(14);
+  padding: $pad;
+}
+
+tr {
+  border: 1px solid transparent;
+
+  &:nth-child(even) {
+    background-color: $c-gray--light;
+  }
+}
+
+td {
+  border: 1px solid transparent;
+  padding: $pad;
+  font-size: rem(14);
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.o-table-slim {
+  td, th{
+    padding: .25rem;
+  }
+  th {
+    padding-top: $pad;
+  }
+}

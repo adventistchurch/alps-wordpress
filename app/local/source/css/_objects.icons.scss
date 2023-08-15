@@ -1,0 +1,124 @@
+/*------------------------------------*\
+    $ICONS
+\*------------------------------------*/
+
+/**
+ * Icon Sizing
+ */
+$icon-xsmall: rem(10);
+$icon-small: rem(15);
+$icon-medium: rem(20);
+$icon-large: rem(50);
+$icon-big: rem(65);
+
+.u-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: rem(5);
+}
+
+.u-icon--xs,
+.u-icon--xs svg {
+  width: $icon-xsmall;
+  height: $icon-xsmall;
+}
+
+.u-icon--s,
+.u-icon--s svg {
+  width: $icon-small;
+  height: $icon-small;
+}
+
+.u-icon--m,
+.u-icon--m svg {
+  width: $icon-medium;
+  height: $icon-medium;
+}
+
+.u-icon--l,
+.u-icon--l svg {
+  width: $icon-large;
+  height: $icon-large;
+}
+
+.u-icon--xl,
+.u-icon--xl svg {
+  width: $icon-big;
+  height: $icon-big;
+}
+
+/**
+ * Close icon
+ */
+
+.o-icon__close {
+  display: block;
+  width: rem(50);
+  height: rem(50);
+  cursor: pointer;
+
+  span {
+    height: rem(1.5);
+    width: rem(25);
+    display: block;
+    content: "";
+    background-color: $c-white;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    &:first-child {
+      transform: rotate(45deg);
+    }
+
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+/**
+ * Play icon overlay
+ */
+.is-video {
+  position: relative;
+  transition: all .3s ease-out;
+  border-bottom: 4px solid rgba($c-black, 0);
+  display: block;
+
+  &:hover {
+    border-bottom-color: rgba($c-black, 0.2);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: rem(40);
+    width: rem(40);
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(../images/icons/icon-play.svg);
+  }
+}
+
+body {
+  > svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.fixRightIcon {
+  margin-left: .3125rem;
+  margin-right: 0
+}

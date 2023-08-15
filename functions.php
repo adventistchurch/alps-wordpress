@@ -55,7 +55,7 @@ require_once __DIR__ . '/defaults-themes.php';
 
 add_editor_style('/resources/styles/editor.css');
 
-define('ALPS_THEME_VERSION', '3.14.4.3');
+define('ALPS_THEME_VERSION', '3.15.0.0');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
 require_once __DIR__ . '/updater.php';
@@ -224,24 +224,47 @@ require_once __DIR__.'/app/plugin-activation.php';
 add_action('tgmpa_register', 'adventist_register_required_plugins');
 function adventist_register_required_plugins() {
     $plugins = array(
-      // Guidebook - Removed by request
-      // array(
-      //   'name'               => 'SimpleTOC',
-      //   'slug'               => 'simpletoc',
-      //   'required'           => false,
-      // ),
-      // WordPress SEO
-      array(
-        'name'              => 'WordPress SEO by Yoast',
-        'slug'              => 'wordpress-seo',
-        'required'          => false,
-      ),
       // SVG Support
       array(
         'name'              => 'SVG Support',
         'slug'              => 'svg-support',
         'required'          => true,
         'force_activation'  => true,
+      ),
+
+// Guidebook - Removed by request
+    // array(
+    //   'name'               => 'SimpleTOC',
+    //   'slug'               => 'simpletoc',
+    //   'required'           => false,
+    // ),
+
+// This plugin provides some functionality in breadcrumbs.blade.php
+    //       array(
+    //         'name'              => 'WordPress SEO by Yoast',
+    //         'slug'              => 'wordpress-seo',
+    //         'required'          => false,
+    //       ),
+
+      // Stackable components (blocks for gutenberg editor) plugin
+      array(
+        'name'              => 'Stackable – Page Builder Gutenberg Blocks',
+        'slug'              => 'stackable-ultimate-gutenberg-blocks',
+        'required'          => false,
+      ),
+
+      // Spectra components (blocks for gutenberg editor) plugin
+      array(
+        'name'              => 'Spectra – WordPress Gutenberg Blocks',
+        'slug'              => 'ultimate-addons-for-gutenberg',
+        'required'          => false,
+      ),
+
+      // SEO plugin
+      array(
+        'name'              => 'Rank Math SEO',
+        'slug'              => 'seo-by-rank-math',
+        'required'          => false,
       ),
   );
 
@@ -455,5 +478,7 @@ require_once('app/autoloader.php');
  * The following css URL needs to be confirmed/implemented before release.
  */
 add_action( 'enqueue_block_assets', function() {
-     wp_enqueue_style( 'alps_builder', 'https://cdn.adventist.org/alps/3/3.12.1/css/wp-editor.css', array(), '1.0', 'all' );
+//      wp_enqueue_style( 'alps_builder', 'https://cdn.adventist.org/alps/3/3.12.1/css/wp-editor.css', array(), '1.0', 'all' );
+// TODO: to be test so deep
+     wp_enqueue_style( 'alps_builder', get_theme_root_uri().'/'.'alps-wordpress-v3/app/local/alps/css/wp-editor.css', array(), '1.0', 'all' );
  } );

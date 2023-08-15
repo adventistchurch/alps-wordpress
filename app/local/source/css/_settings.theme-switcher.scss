@@ -1,0 +1,88 @@
+// Theme switcher
+.hide-theme-switcher {
+  .c-theme-switcher {
+    display: none;
+  }
+}
+
+.c-theme-switcher {
+  position: fixed;
+  left: 0;
+  background-color: $c-white;
+  border-top: 1px solid rgba($c-black, 0.2);
+  border-right: 1px solid rgba($c-black, 0.2);
+  border-top-right-radius: rem(3);
+  z-index: 9999;
+  bottom: rem(-40);
+  height: rem(40);
+  display: flex;
+  justify-content: center;
+
+  &.this-is-active {
+    bottom: 0;
+
+    .u-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: rem(-30);
+    height: rem(30);
+    width: auto;
+    background: $c-white;
+    color: $c-black;
+    border-top: 1px solid rgba($c-black, 0.2);
+    border-right: 1px solid rgba($c-black, 0.2);
+    border-top-right-radius: rem(3);
+    font-size: rem(10);
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__swatches {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &--inner {
+    display: flex;
+  }
+}
+
+.c-swatches {
+  margin-right: $space/2;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__heading {
+    font-size: rem(10);
+    text-transform: uppercase;
+    color: $c-black;
+    margin-right: rem(5);
+  }
+
+  &__item {
+    height: 15px;
+    width: 15px;
+    margin-right: rem(2.5);
+    display: inline-block;
+    cursor: pointer;
+
+    &.active {
+      background-image: url('../images/icons/o-icon__check.svg');
+      background-size: 90%;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+}

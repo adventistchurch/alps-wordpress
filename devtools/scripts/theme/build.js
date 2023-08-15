@@ -32,7 +32,7 @@ const themeBuild = async (opts) => {
     /^\/app\/.+\.php$/u,
     /^\/app\/carbon-fields\/.+\.js$/u,
     /^\/app\/carbon-fields\/.+\.css$/u,
-    /^\/app\/local\/.+\.md$/u,
+    /^\/app\/local\/alps\/.+$/u,
     /^\/public\/.+$/u,
     /^\/[^\/]+\.php$/u,
     /^\/[^\/]+\.json$/u,

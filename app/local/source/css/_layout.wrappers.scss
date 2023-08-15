@@ -1,0 +1,53 @@
+/*------------------------------------*\
+    $WRAPPERS & CONTAINERS
+\*------------------------------------*/
+
+/**
+ * Layout containers - keep content centered and within a maximum width. Also
+ * adjusts left and right padding as the viewport widens.
+ */
+.l-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  position: relative;
+  padding-left: $pad-mobile;
+  padding-right: $pad-mobile;
+  width: 100%;
+
+  @include media('>large') {
+    padding-left: $pad;
+    padding-right: $pad;
+  }
+}
+
+.l-container--s {
+  max-width: rem(650);
+}
+
+.l-container--s-m {
+  max-width: rem(700);
+}
+
+.l-container--m {
+  max-width: rem(800);
+}
+
+.l-container--l {
+  max-width: rem(1000);
+}
+
+.l-container--xl {
+  max-width: rem(1250);
+}
+
+/**
+ * Reverse the column and row of any shift layout.
+ */
+.l-shift--reversed {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include media('>large') {
+    flex-direction: row-reverse;
+  }
+}
