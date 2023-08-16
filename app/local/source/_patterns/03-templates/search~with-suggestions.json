@@ -1,0 +1,210 @@
+{
+  "head": {
+    "title": "Search - The Official Site of the Seventh-day Adventist world church"
+  },
+  "page_header": {
+    "title": "Search"
+  },
+  "search_header": {
+    "placeholder": "Test",
+    "suggestions": {
+      "items": [
+        {
+          "text": "Finland: Church-Planting Project <strong>Test</strong>s Faith, Energy",
+          "url": "#"
+        },
+        {
+          "text": "Top Adventist leaders in Southern Africa <strong>test</strong>ed for HIV/AIDS",
+          "url": "#"
+        },
+        {
+          "text": "Brazilian House of Representatives Discusses Law of Guarantee <strong>Test</strong>-free Saturdays",
+          "url": "#"
+        }
+      ],
+      "other": {
+        "items": [
+          {
+            "text": "Power of a <strong>test</strong>imony",
+            "url": "#"
+          },
+          {
+            "text": "Study Strengthens Biblical Principle of Personal <strong>Test</strong>imony",
+            "url": "#"
+          },
+          {
+            "text": "Adventist <strong>Test</strong>ifies before United States Senate",
+            "url": "#"
+          }
+        ]
+      }
+    }
+  },
+  "search_results": [
+    {
+      "media_block_default": {
+        "block_class": "c-block__row c-block--search l-grid-wrap u-border-left--black--at-small",
+        "block_group_class": false,
+        "block_img_class": "l-grid-item l-grid-item--2-col l-grid-item--m--1-col",
+        "block_content_class": "l-grid-item l-grid-item--4-col l-grid-item--m--3-col u-color--gray u-font--secondary",
+        "block_title_class": "u-theme--color--darker u-font--primary--m",
+        "block_meta_class": "u-theme--color--dark",
+        "kicker": false,
+        "title": "Brazilian House of Representatives Discusses Law to Guarantee <mark>Test</mark>-free Saturdays",
+        "picture": {
+          "img_break_m": "500",
+          "img": {
+            "alt": "Alt Text",
+            "src_s": "//picsum.photos/600/330",
+            "src_m": "//picsum.photos/450/450"
+          },
+          "has_break_l": false,
+          "has_break_xl": false
+        },
+        "description": "...establishing that public <mark>test</mark>ing and college entrance examinations should be carried out from Sunday through Friday",
+        "category": false,
+        "meta": "This Site",
+        "url": "/"
+      }
+    },
+    {
+      "media_block_default": {
+        "block_class": "c-block__row c-block--search l-grid-wrap u-border-left--black--at-small",
+        "block_group_class": false,
+        "block_img_class": "l-grid-item l-grid-item--2-col l-grid-item--m--1-col",
+        "block_content_class": "l-grid-item l-grid-item--4-col l-grid-item--m--3-col u-color--gray u-font--secondary",
+        "block_title_class": "u-theme--color--darker u-font--primary--m",
+        "block_meta_class": "u-theme--color--dark",
+        "kicker": false,
+        "title": "World Church: Leaders Pray in Wake of Apparent North Korea Nuke <mark>Test</mark>",
+        "picture": {
+          "img_break_m": "500",
+          "img": {
+            "alt": "Alt Text",
+            "src_s": "//picsum.photos/600/330",
+            "src_m": "//picsum.photos/450/450"
+          },
+          "has_break_l": false,
+          "has_break_xl": false
+        },
+        "description": "Leaders of the Seventh-day Adventist world church united in prayer on Monday, October 9, in response to an apparent <mark>test</mark> of nuclear weapons by the Democratic People's Republic of Korea...",
+        "category": false,
+        "meta": "Adventistreview.org",
+        "url": "/"
+      }
+    },
+    {
+      "media_block_default": {
+        "block_class": "c-block__row c-block--search l-grid-wrap u-border-left--black--at-small",
+        "block_group_class": false,
+        "block_img_class": "l-grid-item l-grid-item--2-col l-grid-item--m--1-col",
+        "block_content_class": "l-grid-item l-grid-item--4-col l-grid-item--m--3-col u-color--gray u-font--secondary",
+        "block_title_class": "u-theme--color--darker u-font--primary--m",
+        "block_meta_class": "u-theme--color--dark",
+        "kicker": false,
+        "title": "Brazilian House of Representatives Discusses Law to Guarantee <mark>Test</mark>-free Saturdays",
+        "picture": {
+          "img_break_m": "500",
+          "img": {
+            "alt": "Alt Text",
+            "src_s": "//picsum.photos/600/330",
+            "src_m": "//picsum.photos/450/450"
+          },
+          "has_break_l": false,
+          "has_break_xl": false
+        },
+        "description": "...establishing that public <mark>test</mark>ing and college entrance examinations should be carried out from Sunday through Friday",
+        "category": false,
+        "meta": "This Site",
+        "url": "/"
+      }
+    },
+    {
+      "media_block_default": {
+        "block_class": "c-block__row c-block--search l-grid-wrap u-border-left--black--at-small",
+        "block_group_class": false,
+        "block_img_class": "l-grid-item l-grid-item--2-col l-grid-item--m--1-col",
+        "block_content_class": "l-grid-item l-grid-item--4-col l-grid-item--m--3-col u-color--gray u-font--secondary",
+        "block_title_class": "u-theme--color--darker u-font--primary--m",
+        "block_meta_class": "u-theme--color--dark",
+        "kicker": false,
+        "title": "World Church: Leaders Pray in Wake of Apparent North Korea Nuke <mark>Test</mark>",
+        "picture": {
+          "img_break_m": "500",
+          "img": {
+            "alt": "Alt Text",
+            "src_s": "//picsum.photos/600/330",
+            "src_m": "//picsum.photos/450/450"
+          },
+          "has_break_l": false,
+          "has_break_xl": false
+        },
+        "description": "Leaders of the Seventh-day Adventist world church united in prayer on Monday, October 9, in response to an apparent <mark>test</mark> of nuclear weapons by the Democratic People's Republic of Korea...",
+        "category": false,
+        "meta": "Adventistreview.org",
+        "url": "/"
+      }
+    },
+    {
+      "media_block_default": {
+        "block_class": "c-block__row c-block--search l-grid-wrap u-border-left--black--at-small",
+        "block_group_class": false,
+        "block_img_class": "l-grid-item l-grid-item--2-col l-grid-item--m--1-col",
+        "block_content_class": "l-grid-item l-grid-item--4-col l-grid-item--m--3-col u-color--gray u-font--secondary",
+        "block_title_class": "u-theme--color--darker u-font--primary--m",
+        "block_meta_class": "u-theme--color--dark",
+        "kicker": false,
+        "title": "Brazilian House of Representatives Discusses Law to Guarantee <mark>Test</mark>-free Saturdays",
+        "picture": {
+          "img_break_m": "500",
+          "img": {
+            "alt": "Alt Text",
+            "src_s": "//picsum.photos/600/330",
+            "src_m": "//picsum.photos/450/450"
+          },
+          "has_break_l": false,
+          "has_break_xl": false
+        },
+        "description": "...establishing that public <mark>test</mark>ing and college entrance examinations should be carried out from Sunday through Friday",
+        "category": false,
+        "meta": "This Site",
+        "url": "/"
+      }
+    },
+    {
+      "media_block_default": {
+        "block_class": "c-block__row c-block--search l-grid-wrap u-border-left--black--at-small",
+        "block_group_class": false,
+        "block_img_class": "l-grid-item l-grid-item--2-col l-grid-item--m--1-col",
+        "block_content_class": "l-grid-item l-grid-item--4-col l-grid-item--m--3-col u-color--gray u-font--secondary",
+        "block_title_class": "u-theme--color--darker u-font--primary--m",
+        "block_meta_class": "u-theme--color--dark",
+        "kicker": false,
+        "title": "World Church: Leaders Pray in Wake of Apparent North Korea Nuke <mark>Test</mark>",
+        "picture": {
+          "img_break_m": "500",
+          "img": {
+            "alt": "Alt Text",
+            "src_s": "//picsum.photos/600/330",
+            "src_m": "//picsum.photos/450/450"
+          },
+          "has_break_l": false,
+          "has_break_xl": false
+        },
+        "description": "Leaders of the Seventh-day Adventist world church united in prayer on Monday, October 9, in response to an apparent <mark>test</mark> of nuclear weapons by the Democratic People's Republic of Korea...",
+        "category": false,
+        "meta": "Adventistreview.org",
+        "url": "/"
+      }
+    }
+  ],
+  "pager": {
+    "link": "?page=",
+    "current": 2,
+    "surrounding": 3,
+    "totalpages": 6,
+    "ellipsis": "&hellip;",
+    "next": "Next &rarr;",
+    "prev": "&larr; Previous"
+  }
+}

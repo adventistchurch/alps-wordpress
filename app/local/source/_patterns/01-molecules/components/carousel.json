@@ -1,0 +1,11 @@
+{
+  "carousel": {
+    "carousel_class": "js-carousel__single-item",
+    "slides": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+}

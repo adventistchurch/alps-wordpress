@@ -1,0 +1,69 @@
+/*------------------------------------*\
+    $BORDERS
+\*------------------------------------*/
+
+/**
+ * Borders/Dividers
+ */
+.u-border {
+  border: $border-style;
+
+  &--top {
+    border-top: $border-style;
+  }
+
+  &--bottom {
+    border-bottom: $border-style;
+  }
+
+  &--left {
+    border-left: $border-style;
+  }
+
+  &--right {
+    border-right: $border-style;
+  }
+
+  &--red {
+    border: 1px solid red;
+  }
+
+  &--light {
+    border-color: $c-gray--light;
+  }
+}
+
+.o-divider {
+  display: inline-block;
+  border-right: $border-style;
+  margin-left: rem(2);
+  margin-right: rem(2);
+  color: transparent;
+  height: rem(16);
+  width: 1px;
+  overflow: hidden;
+  text-indent: -10px;
+  vertical-align: middle;
+}
+
+.u-border--none {
+  border: none !important;
+}
+
+.u-border-left--white--at-medium {
+  @include media(">medium") {
+    border-left: 1px solid $c-white !important;
+  }
+}
+
+.u-border-left--white--at-large {
+  @include media(">large") {
+    border-left: 1px solid $c-white !important;
+  }
+}
+
+.u-border-left--black--at-large {
+  @include media(">large") {
+    border-left: 1px solid $c-black;
+  }
+}

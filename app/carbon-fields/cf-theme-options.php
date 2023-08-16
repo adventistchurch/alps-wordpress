@@ -89,50 +89,6 @@ function crb_attach_theme_options()
         }
     }
 
-    $versionFields = [];
-    $versions = \App\Core\ALPSVersions::getAll();
-    if ($versions && count($versions) > 0) {
-        $versionOptions = [];
-        foreach ($versions as $idx => $v) {
-            if ($idx === 0) {
-                $versionOptions['latest'] = __('Latest', 'alps') . ' (' . $v['version'] . ')';
-            } else {
-                $versionOptions[$v['version']] = $v['version'];
-            }
-        }
-
-        $versionFields = [
-            Field
-                ::make('html', 'crb_alps_version')
-                ->set_html(__('<h3>ALPS CORE Version</h3><p style="font-size:16px">Stick to the selected version of ALPS core CSS and Javascript.</p>', 'alps')),
-            Field
-                ::make('radio', 'project_alps_version', __('ALPS Core files version', 'alps'))
-                ->add_options([
-                    'alps-remote' => __('REMOTE: This option pulls the ALPS CORE CSS and Javascript from the remote CDN.', 'alps'),
-                    'alps-local' => __('LOCAL: This option caches the most recent version of ALPS to your local site, reducing the connections to remote servers.', 'alps'),
-                ])
-                ->set_width(33),
-            Field
-                ::make('select', \App\Core\ALPSVersions::OPTION_KEY, __('Choose the REMOTE ALPS CDN Version', 'alps'))
-                ->add_options($versionOptions)
-                ->set_conditional_logic([[
-                    'field' => 'project_alps_version',
-                    'value' => 'alps-remote',
-                    'compare' => '='
-                ]])
-                ->set_width(33),
-            Field
-                ::make('html', 'cached_version')
-                ->set_html(__('<h3 style="font-size:13px; margin-top: 0;">Cached LOCAL style version</h3><p style="font-size:13px">ALPS Version '.\App\Core\ALPSVersions::getLocalCachedVersion().'</p>', 'alps'))
-                ->set_conditional_logic([[
-                    'field' => 'project_alps_version',
-                    'value' => 'alps-local',
-                    'compare' => '='
-                ]])
-                ->set_width(33),
-        ];
-    }
-
     $WPMLFields = [];
     if(\App\Core\ALPSLanguages::WPMLPluginIsActive()) {
         $WPMLHeader= Field
@@ -149,7 +105,7 @@ function crb_attach_theme_options()
         ::make('theme_options', __('ALPS Theme Settings', 'alps'))
         ->set_page_parent('themes.php')
         ->set_page_file('alps-theme-options')
-        ->add_tab(__('GLOBAL', 'alps'), array_merge($logoFields, $globalFields, $versionFields, $WPMLFields))
+        ->add_tab(__('GLOBAL', 'alps'), array_merge($logoFields, $globalFields, $WPMLFields))
         ->add_tab(__('POSTS OPTIONS', 'alps'), [
             Field
                 ::make('separator', 'crb_content_display', __('Home Page Content Display', 'alps')),

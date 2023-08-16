@@ -1,0 +1,60 @@
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+a {
+  text-decoration: none;
+  color: $c-black;
+  transition: all .3s ease-out;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+
+  p {
+    color: $c-gray--darker;
+  }
+
+  > .icon {
+    margin-right: 4px;
+  }
+}
+
+.u-link--underline {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.u-link--no-underline {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.u-link-hover--white,
+.u-link-hover--white a {
+  &:hover {
+    color: $c-white !important;
+  }
+}
+
+.o-link-wrapper--underline a {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.o-link-wrapper--no-underline a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

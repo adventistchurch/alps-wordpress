@@ -1,0 +1,88 @@
+{
+  "primary_nav": {
+    "items": [
+      {
+        "text": "Service",
+        "subnav": {
+          "items": [{
+              "text": "Life Hope Centers"
+            },
+            {
+              "text": "Global Mission"
+            },
+            {
+              "text": "Mission Spotlight"
+            },
+            {
+              "text": "Church Mission Offerings"
+            }
+          ]
+        }
+      },
+      {
+        "text": "Beliefs",
+        "is_active": true
+      },
+      {
+        "text": "World Church",
+        "subnav": {
+          "items": [
+            {
+              "text": "General Conference"
+            },
+            {
+              "text": "East-Central Africa"
+            },
+            {
+              "text": "North America",
+              "subnav": {
+                "items": [
+                  {
+                    "text": "Atlantic Union"
+                  },
+                  {
+                    "text": "Canadian Union"
+                  },
+                  {
+                    "text": "Columbia Union"
+                  },
+                  {
+                    "text": "Lake Union"
+                  }
+                ]
+              }
+            },
+            {
+              "text": "Middle East and North Africa"
+            }
+          ]
+        }
+      },
+      {
+        "text": "Information"
+      },
+      {
+        "text": "News",
+        "subnav": {
+          "items": [{
+              "text": "News Item 1"
+            },
+            {
+              "text": "News Item 2"
+            },
+            {
+              "text": "News Item 3"
+            },
+            {
+              "text": "News Item 4"
+            }
+          ]
+        }
+      },
+      {
+        "text": "Sign up now",
+        "link_class": "is-bold"
+      }
+    ]
+  }
+}

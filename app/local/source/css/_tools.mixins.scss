@@ -1,0 +1,87 @@
+/* ------------------------------------*\
+    $MIXINS
+\*------------------------------------ */
+
+/**
+ * Convert px to rem.
+ *
+ * @param int $size
+ *   Size in px unit.
+ * @return string
+ *   Returns px unit converted to rem.
+ */
+
+@function rem($size) {
+  $remSize: $size / $rembase;
+
+  @return #{$remSize}rem;
+}
+
+/**
+ * Center-align a block level element
+ */
+
+@mixin u-center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Transition
+ */
+
+@mixin u-transition {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+@mixin u-placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+  }
+}
+
+/**
+ * Standard paragraph
+ */
+
+@mixin p {
+  font-family: $ff-font--primary;
+  font-size: rem(14);
+  line-height: 1.6;
+
+  @include media(">large") {
+    font-size: rem(16);
+  }
+}
+
+/**
+ * Maintain aspect ratio
+ */
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: $height / $width * 100%;
+  }
+
+  > .ratio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "head": {
+    "title": "The Official Site of the Seventh-day Adventist world church",
+    "language": "en",
+    "charset": "UTF-8",
+    "html_class": "pl u-theme--ming",
+    "body_class": "body has-grid",
+    "description": "Seventh-day Adventist beliefs are meant to permeate your whole life. Growing out of scriptures that paint a compelling portrait of God, you are invited to explore, experience and know the One who desires to make us whole."
+  },
+
+  "heading": "Lorem Ipsum",
+  "primary_font": "Noto Serif",
+  "secondary_font": "Noto Sans",
+
+  "text": {
+    "heading": "Donec volutpat libero",
+    "intro": "Fusce interdum purus est, <a href=\"\">vel semper ex tristique</a> ut. Proin dapibus luctus pellentesque. Duis et sapien sit amet enim porttitor gravida at non orci. Proin dictum lobortis luctus. Sed sagittis massa id blandit aliquet."
+  },
+
+  "fig_large": {
+    "figure_class": "size--large",
+    "img": {
+      "src": "//picsum.photos/800/500?random=1",
+      "alt": "Image Alt"
+    },
+    "caption": "Large Image: Led do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+  },
+  "fig_med_right": {
+    "figure_class": "size--medium alignright",
+    "img": {
+      "src": "//picsum.photos/800/500?random=1",
+      "alt": "Image Alt"
+    },
+    "caption": "Right Aligned: Led do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+  },
+  "fig_med_left": {
+    "figure_class": "size--medium alignleft",
+    "img": {
+      "src": "//picsum.photos/800/500?random=1",
+      "alt": "Image Alt"
+    },
+    "caption": "Left Aligned: Led do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+  },
+
+
+  "button_default": {
+    "text": "Button Default",
+    "class": "u-theme--button"
+  },
+
+  "button_submit": {
+    "text": "Submit",
+    "class": "u-theme--button"
+  },
+
+  "page_header": {
+    "title": "Lorem Ipsum"
+  },
+
+  "no_lazy": false,
+
+  "img": {
+    "src": "//picsum.photos/600/375?random=1",
+    "alt": "Image Alt",
+    "caption": "Caption"
+  },
+
+  "picture": {
+    "img_break_m": "500",
+    "img": {
+      "alt": "Alt Text",
+      "src_s": "//picsum.photos/500/375?random=1",
+      "src_m": "//picsum.photos/700/525?random=1"
+    },
+    "has_break_l": {
+      "img_break_l": "700",
+      "img": {
+        "src_l": "//picsum.photos/900/675?random=1"
+      }
+    },
+    "has_break_xl": {
+      "img_break_xl": "900",
+      "img": {
+        "src_xl": "//picsum.photos/1200/900?random=1"
+      }
+    }
+  },
+
+  "media_block_default": {
+    "block_class": "c-block__row",
+    "picture": false,
+    "img": {
+      "src": "//picsum.photos/600/375?random=1",
+      "alt": "Image Alt"
+    }
+  },
+
+  "search": {
+    "url": "/search",
+    "method": "get",
+    "placeholder": "Search…",
+    "searchLabel": "Search",
+    "settingsLabel": "",
+    "name": "search",
+    "value": "Test"
+  },
+
+  "search_filter": {
+    "radio": [
+      {
+        "id": "1",
+        "label": "Option 1"
+      },
+      {
+        "id": "2",
+        "label": "Option 2"
+      }
+    ],
+    "checkbox": [
+      {
+        "id": "1",
+        "label": "Option 1"
+      },
+      {
+        "id": "2",
+        "label": "Option 2"
+      }
+    ]
+  },
+  "matchlist": [
+    {
+        "text": "Finland: Church-Planting Project <strong>Test</strong>s Faith, Energy",
+        "url": "#"
+    },
+    {
+        "text": "Top Adventist leaders in Southern Africa <strong>test</strong>ed for HIV/AIDS",
+        "url": "#"
+    },
+    {
+        "text": "Brazilian House of Representatives Discusses Law to Guarantee <strong>Test</strong>-free Saturdays",
+        "url": "#"
+    },
+    {
+        "text": "World Church: Leaders Pray in Wake of Apparent North Korea Nuke <strong>Test</strong>",
+        "url": "#"
+    },
+    {
+        "text": "Adventist University and Sanitarium team up to perform swabs and coronavirus <strong>test</strong>s",
+        "url": "#"
+    }
+  ]
+}

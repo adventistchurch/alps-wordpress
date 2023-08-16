@@ -12,4 +12,3 @@ bower_components
 .cache-loader
 .DS_Store
 .yarn.lock
-app/local/alps

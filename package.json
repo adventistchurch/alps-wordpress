@@ -20,13 +20,14 @@
     "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang",
     "wp:theme:build": "node devtools/runner.js theme:build",
     "wp:theme:release": "node devtools/runner.js theme:release",
-    "project:set-version": "node devtools/runner.js project:set-version"
+    "project:set-version": "node devtools/runner.js project:set-version",
+    "assets-compile": "node devtools/scripts/styles/compile.js"
   },
   "devDependencies": {
     "@octokit/rest": "^19.0.7",
-    "@roots/bud": "5.8.7",
-    "@roots/bud-tailwindcss": "5.8.7",
-    "@roots/sage": "5.8.7",
+    "@roots/bud": "6.15.0",
+    "@roots/bud-tailwindcss": "6.15.0",
+    "@roots/sage": "6.15.0",
     "archiver": "^5.3.1",
     "chalk": "^4.1.0",
     "date-fns": "^2.29.3",
@@ -34,7 +35,7 @@
     "fs-extra": "^11.1.0",
     "got": "11.8.6",
     "luxon": "^3.2.1",
-    "node-sass": "^8.0.0",
+    "node-sass": "^9.0.0",
     "ssh2-sftp-client": "^9.0.4",
     "webpack": "^5.76.0",
     "winston": "^3.8.2",
@@ -43,7 +44,6 @@
   "dependencies": {
     "@wordpress/browserslist-config": "^5.21.0",
     "aws-sdk": "^2.1397.0",
-    "caniuse-lite": "^1.0.30001517",
     "dotenv": "^16.0.3"
   }
 }

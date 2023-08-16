@@ -1,0 +1,12 @@
+{
+  "pagination_classes": "u-space--double--top",
+  "pager": {
+    "link": "?page=",
+    "current": 7,
+    "surrounding": 3,
+    "totalpages": 120,
+    "ellipsis": "&hellip;",
+    "next": "Next &rarr;",
+    "prev": "&larr; Previous"
+  }
+}

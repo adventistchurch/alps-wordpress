@@ -1,0 +1,183 @@
+@import "tools.mixins";
+
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+
+/**
+ * Grid & Baseline Setup
+ */
+
+$ff-fontpx: 16; // Font size (px) baseline applied to <body> and converted to %.
+$defaultpx: 16; // Browser default px used for media queries
+$rembase: 16; // 16px = 1.00rem
+$max-width-px: 1150;
+$max-width: rem($max-width-px) !default;
+
+/**
+ * Theme Colors
+ */
+
+$c-theme-nad-denim: #003b5c;
+$c-theme-nad-nile: #007682;
+$c-theme-nad-amethyst: #582c83;
+$c-theme-nad-spark: #d86018;
+$c-theme-nad-miracle: #7d2248;
+$c-theme-nad-branch: #4e3629;
+$c-theme-nad-vine: #4a7729;
+$c-theme-treefrog: #2b8500;
+$c-theme-ming: #007f98;
+$c-theme-bluejay: #2e6de7;
+$c-theme-iris: #9013fe;
+$c-theme-lily: #d41583;
+$c-theme-scarlett: #d0021b;
+$c-theme-campfire: #cd4900;
+$c-theme-winter: #717171;
+$c-theme-forest: #355724;
+$c-theme-cave: #255760;
+$c-theme-denim: #2f557f;
+$c-theme-emperor: #4b207f;
+$c-theme-grapevine: #712551;
+$c-theme-velvet: #782832;
+$c-theme-earth: #5e3929;
+$c-theme-night: #4A4A4A;
+
+$u-theme-nad-denim: (u-theme--nad-denim: (darker: #001724, dark: #002D46, base: $c-theme-nad-denim, light: #51BEFB, lighter: #86D4FF));
+$u-theme-nad-nile: (u-theme--nad-nile: (darker: #142C2E, dark: #1D5358, base: $c-theme-nad-nile, light: #76EFFA, lighter: #BAF5FA));;
+$u-theme-nad-amethyst: (u-theme--nad-amethyst: (darker: #1E0D2E, dark: #31174B, base: $c-theme-nad-amethyst, light: #C189F8, lighter: #DBC5F1));;
+$u-theme-nad-spark: (u-theme--nad-spark: (darker: #2F1200, dark: #4A1C01, base: $c-theme-nad-spark, light: #FFE5D5, lighter: #FFE5D5));;
+$u-theme-nad-miracle: (u-theme--nad-miracle: (darker: #330015, dark: #400C22, base: $c-theme-nad-miracle, light: #F675AB, lighter: #FCB5D3));;
+$u-theme-nad-branch: (u-theme--nad-branch: (darker: #140802, dark: #2A170D, base: $c-theme-nad-branch, light: #A08577, lighter: #CEC4C0));;
+$u-theme-nad-vine: (u-theme--nad-vine: (darker: #1E2519, dark: #364D26, base: $c-theme-nad-vine, light: #89DF4B, lighter: #BAEC97));;
+$u-theme-treefrog: (u-theme--treefrog: (darker: #1b2d00, dark: #355724, base: $c-theme-treefrog, light: #7cd500, lighter: #9fe180));
+$u-theme-ming: (u-theme--ming: (darker: #002938, dark: #255760, base: $c-theme-ming, light: #00d5fe, lighter: #9ae1f0));
+$u-theme-bluejay: (u-theme--bluejay: (darker: #052252, dark: #2f557f, base: $c-theme-bluejay, light: #84adfc, lighter: #84adfc));
+$u-theme-iris: (u-theme--iris: (darker: #37034c, dark: #4b207f, base: $c-theme-iris, light: #b971f7, lighter: #b971f7));
+$u-theme-lily: (u-theme--lily: (darker: #4e053f, dark: #712551, base: $c-theme-lily, light: #ff61bc, lighter: #ff61bc));
+$u-theme-scarlett: (u-theme--scarlett: (darker: #440000, dark: #782832, base: $c-theme-scarlett, light: #fd2641, lighter: #e17077));
+$u-theme-campfire: (u-theme--campfire: (darker: #361300, dark: #6f2727, base: $c-theme-campfire, light: #ffa06c, lighter: #ffa06c));
+$u-theme-winter: (u-theme--winter: (darker: #222222, dark: #4A4A4A, base: $c-theme-winter, light: #F9F9F9, lighter: #F9F9F9));
+$u-theme-forest: (u-theme--forest: (darker: #101a00, dark: #2b8500, base: $c-theme-forest, light: #7cd500, lighter: #9fe180));
+$u-theme-cave: (u-theme--cave: (darker: #01161e, dark: #007f98, base: $c-theme-cave, light: #00d5fe, lighter: #9ae1f0));
+$u-theme-denim: (u-theme--denim: (darker: #04132b, dark: #04132b, base: $c-theme-denim, light: #2e6de7, lighter: #84adfc));
+$u-theme-emperor: (u-theme--emperor: (darker: #240431, dark: #9013fe, base: $c-theme-emperor, light: #b971f7, lighter: #b971f7));
+$u-theme-grapevine: (u-theme--grapevine: (darker: #2a0d24, dark: #d41583, base: $c-theme-grapevine, light: #ff61bc, lighter: #ff61bc));
+$u-theme-velvet: (u-theme--velvet: (darker: #2d0505, dark: #d0021b, base: $c-theme-velvet, light: #fd2641, lighter: #e17077));
+$u-theme-earth: (u-theme--earth: (darker: #210b00, dark: #974e02, base: $c-theme-earth, light: #eab57e, lighter: #eab57e));
+$u-theme-night: (u-theme--night: (darker: #000000, dark: #717171, base: $c-theme-night, light: #F9F9F9, lighter: #F9F9F9));
+
+$alps_themes: map_merge((), $u-theme-nad-denim);
+$alps_themes: map_merge($alps_themes, $u-theme-nad-nile);
+$alps_themes: map_merge($alps_themes, $u-theme-nad-amethyst);
+$alps_themes: map_merge($alps_themes, $u-theme-nad-spark);
+$alps_themes: map_merge($alps_themes, $u-theme-nad-miracle);
+$alps_themes: map_merge($alps_themes, $u-theme-nad-branch);
+$alps_themes: map_merge($alps_themes, $u-theme-nad-vine);
+$alps_themes: map_merge($alps_themes, $u-theme-treefrog);
+$alps_themes: map_merge($alps_themes, $u-theme-ming);
+$alps_themes: map_merge($alps_themes, $u-theme-bluejay);
+$alps_themes: map_merge($alps_themes, $u-theme-iris);
+$alps_themes: map_merge($alps_themes, $u-theme-lily);
+$alps_themes: map_merge($alps_themes, $u-theme-scarlett);
+$alps_themes: map_merge($alps_themes, $u-theme-campfire);
+$alps_themes: map_merge($alps_themes, $u-theme-winter);
+$alps_themes: map_merge($alps_themes, $u-theme-forest);
+$alps_themes: map_merge($alps_themes, $u-theme-cave);
+$alps_themes: map_merge($alps_themes, $u-theme-denim);
+$alps_themes: map_merge($alps_themes, $u-theme-emperor);
+$alps_themes: map_merge($alps_themes, $u-theme-grapevine);
+$alps_themes: map_merge($alps_themes, $u-theme-velvet);
+$alps_themes: map_merge($alps_themes, $u-theme-earth);
+$alps_themes: map_merge($alps_themes, $u-theme-night);
+
+/**
+ * Neutral Colors
+ */
+
+$c-black: #000000;
+$c-gray--darker: #222222;
+$c-gray--dark: #4a4a4a;
+$c-gray: #717171;
+$c-gray--light: #f5f5f5;
+$c-white: #ffffff;
+
+/**
+ * Default Colors
+ */
+
+$c-error: #f00;
+$c-valid: #089e00;
+$c-warning: #fff664;
+$c-information: #000db5;
+$c-overlay: rgba($c-black, 0.8);
+
+/**
+ * Style Colors
+ */
+
+$c-body-color: $c-gray--dark;
+$c-link-color: $c-gray;
+$c-button-color: $c-gray;
+
+/**
+ * Typography
+ */
+
+$ff-font: 'Noto Sans',"Helvetica","Arial",sans-serif;
+$ff-font--primary: 'Noto Serif',Georgia,Times,"Times New Roman",serif;
+$ff-font--secondary: 'Noto Sans',"Helvetica","Arial",sans-serif;
+$ff-font--serif: $ff-font--primary;
+$ff-font--sans: $ff-font--secondary;
+$ff-font--monospace: Menlo,Monaco,"Courier New","Courier",monospace;
+
+/**
+ * Animation
+ */
+
+$cubic-bezier: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+
+/**
+ * Default Spacing/Padding
+ */
+
+$space: 1.25rem; // 20px
+$space-mobile: 0.9375rem; // 15px
+$pad: 1.25rem; // 20px
+$pad-mobile: 0.9375rem; // 15px
+
+/**
+ * Border Styles
+ */
+
+$border-med: 6px;
+$border-thick: 8px;
+$border-opacity: 1px solid rgba($c-white, .2);
+$border-style: 1px solid $c-gray;
+$border-style-blue: 1px solid $c-theme-ming;
+$border-style-thick: 3px solid $c-gray--light;
+$border-style-light: 1px solid $c-gray--light;
+$border-style-dark: 1px solid $c-black;
+
+/**
+ * Common Breakpoints
+ */
+
+$xsmall: 350px;
+$small: 500px;
+$medium: 700px;
+$large: 900px;
+$xlarge: 1100px;
+$xxlarge: 1300px;
+$xxxlarge: 1500px;
+$breakpoints: ( 'xsmall': $xsmall, 'small': $small, 'medium': $medium, 'large': $large, 'xlarge': $xlarge, 'xxlarge': $xxlarge, 'xxxlarge': $xxxlarge);
+
+/**
+ * Element Specific Dimensions
+ */
+
+$article-max: rem(950);
+$sidebar-width: 320;
+$small-header-height: 60;
+$wide-header-height: 80;
+

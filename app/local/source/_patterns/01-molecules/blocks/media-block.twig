@@ -1,0 +1,106 @@
+{% if media_block_default %}
+  <div class="c-media-block c-block {{ media_block_default.block_class }}">
+    {% if media_block_default.img or media_block_default.picture %}
+      <div class="c-block__image {{ media_block_default.block_img_class }}{% if media_block_default.block_type %} c-block__icon c-block__icon--{{ media_block_default.block_type }}{% endif %}{% if media_block_default.background_image %} o-background-image u-background--cover{% endif %}">
+        <div class="c-block__image-outer-wrap">
+          <div class="c-block__image-wrap {{ media_block_default.block_img_wrap_class }}">
+            {% if media_block_default.background_image %}
+              <style type="text/css">
+                .o-background-image {
+                  background-image: url({{ media_block_default.picture.img.src_s|raw }});
+                }
+                @media(min-width: {{ media_block_default.picture.img_break_m ~ 'px' }}) {
+                  .o-background-image {
+                    background-image: url({{ media_block_default.picture.img.src_m|raw }});
+                  }
+                }
+                @media(min-width: {{ media_block_default.picture.has_break_l.img_break_l ~ 'px' }}) {
+                  .o-background-image {
+                    background-image: url({{ media_block_default.picture.has_break_l.img.src_l|raw }});
+                  }
+                }
+                @media(min-width: {{ media_block_default.picture.has_break_xl.img_break_xl ~ 'px' }}) {
+                  .o-background-image {
+                    background-image: url({{ media_block_default.picture.has_break_xl.img.src_xl|raw }});
+                  }
+                }
+              </style>
+            {% elseif media_block_default.picture %}
+              <picture class="picture">
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                {% if media_block_default.picture.has_break_xl %}
+                  <source srcset="{{ media_block_default.picture.has_break_xl.img.src_xl }}" media="(min-width: {{ media_block_default.picture.has_break_xl.img_break_xl }}px)">
+                {% endif %}
+                {% if media_block_default.picture.has_break_l %}
+                  <source srcset="{{ media_block_default.picture.has_break_l.img.src_l }}" media="(min-width: {{ media_block_default.picture.has_break_l.img_break_l }}px)">
+                {% endif %}
+                <source srcset="{{ media_block_default.picture.img.src_m }}" media="(min-width: {{ media_block_default.picture.img_break_m }}px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img itemprop="image" srcset="{{ media_block_default.picture.img.src_s }}" alt="{{ media_block_default.picture.img.alt }}">
+              </picture>
+            {% elseif media_block_default.img %}
+              <img src="{{ media_block_default.img.src }}" itemprop="image" alt="{{ media_block_default.img.alt }}"/>
+            {% endif %}
+            {% if media_block_default.picture.video %}
+              <div class="c-block__image-video u-spacing--half u-padding u-color--white u-gradient--bottom">
+                <strong>{{ media_block_default.picture.video.title }}</strong>
+                <button href="{{ media_block_default.picture.video.link }}" class="o-button o-button--outline o-button--outline--white"><span class="u-icon u-icon--xs u-space--half--right">{% include '@atoms/icons/icon-play.twig' %}</span>Watch Video</button>
+              </div>
+            {% endif %}
+            {% if media_block_default.caption %}
+              <div class="c-block__caption u-padding--top u-padding--bottom u-color--white-transparent {% if media_block_default.block_type %}u-padding--right u-padding--quad--left{% else %}u-padding--sides{% endif %}">{{ media_block_default.caption }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <!-- image -->
+    {% endif %}
+    <div class="c-block__content u-spacing {{ media_block_default.block_content_class }}">
+      <div class="u-spacing c-block__group {{ media_block_default.block_group_class }}">
+        <div class="u-width--100p u-spacing">
+          {% if media_block_default.kicker %}
+            <h4 class="c-block__kicker u-space--quarter--bottom {{ media_block_default.block_kicker_class }}">{{ media_block_default.kicker }}</h4>
+          {% endif %}
+          {% if media_block_default.title %}
+            <{{ media_block_default.title_tag ? media_block_default.title_tag : 'h3' }} class="c-block__title {{ media_block_default.block_title_class }} {% if media_block_default.kicker %}{{ 'u-space--zero'}}{% endif %}">
+              {% if media_block_default.url %}
+                <a href="{{ media_block_default.url }}" class="c-block__title-link {% if media_block_default.block_title_link_class %}{{ media_block_default.block_title_link_class }}{% else %}{{ 'u-theme--link-hover--dark' }}{% endif %}">
+              {% endif %}
+                {{ media_block_default.title|raw }}
+              {% if media_block_default.url %}
+                </a>
+              {% endif %}
+            </{{ media_block_default.title_tag ? media_block_default.title_tag : 'h3' }}>
+          {% endif %}
+          {% if media_block_default.description %}
+            <p class="c-block__description">{{ media_block_default.description|raw }}</p>
+          {% endif %}
+        </div>
+        <div class="c-block__meta {{ media_block_default.block_meta_class }}">
+          {% if media_block_default.meta %}
+            <span class="c-block__meta u-font--secondary--xs">{{ media_block_default.meta }}</span>
+          {% endif %}
+          {% if media_block_default.category %}
+            <span class="c-block__category u-text-transform--upper">{{ media_block_default.category }}</span>
+          {% endif %}
+          {% if media_block_default.date %}
+            <time class="c-block__date u-text-transform--upper" datetime="{{ media_block_default.datetime }}">{{ media_block_default.date }}</time>
+          {% endif %}
+        </div>
+        {% if media_block_default.cta.url or media_block_default.cta.text %}
+          <a href="{{ media_block_default.cta.url }}" class="c-block__button o-button{% if media_block_default.cta.class %}{{ ' ' ~ media_block_default.cta.class }}{% else %}{{ ' o-button--outline' }}{% endif %}">
+            {% if media_block_default.cta.icon_before %}
+              <span class="u-icon u-icon--xs u-path-fill--base u-space--half--right">{% include '@atoms/icons/icon-' ~ media_block_default.cta.icon_before ~ '.twig' %}</span>
+            {% endif %}
+            {{ media_block_default.cta.text }}
+            {% if not media_block_default.cta.icon_before %}
+              <span class="u-icon u-icon--m u-path-fill--base u-space--half--left">{% include '@atoms/icons/icon-arrow-long-right.twig' %}</span>
+            {% endif %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+    <!-- content -->
+  </div>
+  <!-- c-media-block -->
+{% endif %}
