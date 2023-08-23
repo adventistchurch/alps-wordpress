@@ -3,12 +3,15 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.15.0.0]
+## [3.15.0.1]
 ### Update
 - Update theme BUD version from 5 to 6 [#697](https://github.com/adventistchurch/alps-wordpress/issues/697)
 - Move ALPS styles for storing inside theme (GDPR issue) [#682](https://github.com/adventistchurch/alps-wordpress/issues/682)
 - New required plugins were added in ALPS: Spectra, Stackable, RankMath. [#699](https://github.com/adventistchurch/alps-wordpress/issues/699)
 - Update global css styles file for button o-button-toggle class.
+- Changes to allow WP theme to control logo color [#702](https://github.com/adventistchurch/alps-wordpress/pull/702)
+- Changes to provide additional logo options in theme settings [#701](https://github.com/adventistchurch/alps-wordpress/pull/701)
+- Add docs folder for getting developers information about branching strategy.
 
 ## [3.14.4.3]
 ### Fix

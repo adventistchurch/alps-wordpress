@@ -89,6 +89,8 @@ themes/your-theme-name/   # → Root of your Sage based theme
 │   ├── carbon-fields     # → Carbon fields plugin for Theme Settings
 │   ├── Core              # → Utils functionality for theme support
 │   ├── local             # → folder for storing styles on your local env
+│   │   ├── alps          # → folder with generated css and js files 
+│   │   └── source        # → folder with source css and js files. After generation of this folder files will store in the /alps folder 
 │   ├── Providers/        # → Service providers
 │   ├── View/             # → View models
 │   ├── filters.php       # → Theme filters
