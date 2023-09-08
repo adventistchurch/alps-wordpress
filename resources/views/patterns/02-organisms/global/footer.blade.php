@@ -2,7 +2,14 @@
   $hide_sabbath = get_alps_option('sabbath_hide');
   $footer_logo = get_alps_option('footer_logo_icon');
   $footer_logo_type = get_alps_option('footer_logo_type');
-  $footer_text = get_alps_option('footer_description');
+  $footer_text = crb_get_i18n_theme_option( 'footer_description' );
+    if (empty($footer_text)) {
+      if ( empty( get_alps_option('footer_description')['footer_description_en']) ) {
+        $footer_text = 'An official website of the Seventh-day Adventist Church.';
+      } else {
+        $footer_text = get_alps_option('footer_description')['footer_description_en'];
+      }
+    }
   $footer_copyright = get_alps_option('footer_copyright');
 
   // CARBON FIELDS STORES COMPLEX FIELDS WITH A MULTIDIMENSIONAL FORMAT

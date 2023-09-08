@@ -58,7 +58,7 @@ function crb_attach_theme_options()
             ->set_html(__('<h3>Global Site Statements</h3><p style="font-size:16px">Both of these statements show up in the navigation drawer.</p>', 'alps')),
         Field
             ::make('textarea', 'site_branding_statement', __('Site Branding Statement', 'alps'))
-            ->set_default_value(__('[Site Name] is a website of the Seventh-day Adventist church in [Region Name].', 'alps'))
+            ->set_default_value(__('An official website of the Seventh-day Adventist Church.', 'alps'))
             ->set_help_text(__('Found in the navigation drawer', 'alps'))
             ->set_rows(2)
             ->set_width(50),
@@ -202,8 +202,34 @@ function crb_attach_theme_options()
         ])
         ->add_tab(__('FOOTER CONTENT', 'alps'), [
             Field
-                ::make('rich_text', 'footer_description', __('Footer Description', 'alps'))
-                ->set_default_value(__('[Site URL/Name] is the official website of the Seventh-day Adventist World church.', 'alps')),
+                ::make( 'complex', 'footer_description', __('Footer Description', 'alps'))
+                    ->add_fields( 'translatable_footer_description', [
+                            Field
+                                ::make('text', 'footer_description_en', __('Footer Description English', 'alps'))
+                                ->set_default_value(__('An official website of the Seventh-day Adventist Church.', 'alps')),
+                            Field
+                                ::make('text', 'footer_description_de', __('Fußzeilenbeschreibung Deutsch', 'alps'))
+                                ->set_default_value(__('Eine offizielle Website der Kirche der Siebenten-Tags-Adventisten.', 'alps')),
+                            Field
+                                ::make('text', 'footer_description_fr', __('Description du Pied de Page Français', 'alps'))
+                                ->set_default_value(__('Un site officiel de l\'Église adventiste du Septième jour.', 'alps')),
+                            Field
+                                ::make('text', 'footer_description_pt-pt', __('Rodapé Descrição Português', 'alps'))
+                                ->set_default_value(__('Um site oficial da Igreja Adventista do Sétimo Dia.', 'alps')),
+                            Field
+                                ::make('text', 'footer_description_es', __('Descripción del Pie de Página en Español', 'alps'))
+                                ->set_default_value(__('Sitio web oficial de la Iglesia Adventista del Séptimo Día.', 'alps')),
+                            Field
+                                ::make('text', 'footer_description_ko', __('바닥 글 설명 한국어', 'alps'))
+                                ->set_default_value(__('제칠 일 안식일 예수 재림 교회의 공식 웹 사이트.', 'alps')),
+                            Field
+                                ::make('text', 'footer_description_ru', __('Описание нижнего колонтитула (Русский)', 'alps'))
+                                ->set_default_value(__('Официальный веб-сайт Церкви адвентистов седьмого дня.', 'alps')),
+                            Field
+                                ::make('text', 'footer_description_zh-hant', __('页脚说明中文', 'alps'))
+                                ->set_default_value(__('基督复临安息日会的官方网站。', 'alps')),
+
+                        ]),
             Field
                 ::make('text', 'footer_copyright', __('Footer Copyright', 'alps'))
                 ->set_default_value(__('General Conference of Seventh-day Adventists', 'alps')),
