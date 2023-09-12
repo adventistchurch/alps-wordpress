@@ -232,7 +232,7 @@ function crb_attach_theme_options()
                         ]),
             Field
                 ::make('text', 'footer_copyright', __('Footer Copyright', 'alps'))
-                ->set_default_value(__('Copyright Seventh-day Adventist Church', 'alps')),
+                ->set_default_value(__('Seventh-day Adventist Church', 'alps')),
             Field
                 ::make('complex', 'footer_address', __('Footer Address', 'alps'))
                 ->add_fields([
