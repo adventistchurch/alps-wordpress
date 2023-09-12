@@ -3,6 +3,11 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.15.1.2]
+### Update
+- Update ALPS Theme settings design for supporting footer localizatinon [#627](https://github.com/adventistchurch/alps-wordpress/issues/627);
+- Supporting Wide logo functionality [#670](https://github.com/adventistchurch/alps-wordpress/issues/670).
+
 ## [3.15.0.1]
 ### Update
 - Update theme BUD version from 5 to 6 [#697](https://github.com/adventistchurch/alps-wordpress/issues/697)
