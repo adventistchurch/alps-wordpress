@@ -72,8 +72,14 @@ function crb_attach_theme_options()
 
     $languages = apply_filters('wpml_active_languages', NULL);
     $logoFields = [
-        Field::make('separator', 'crb_logo', __('Logo', 'alps'))->set_help_text(__('IMPORTANT NOTE: By default the theme will recolor your logo based on the selected color palette. On standard headers the logo will be shown in the theme’s primary color. On overlay headers, the logo will be shown in white. If you wish to preserve the colors of your logo, deselect the checkbox below and, optionally, upload an inverted version of your logo for use on overlay headers.', 'alps')),
-        Field::make('checkbox', 'logo_recolor', __('Allow theme to control logo color', 'alps'))->set_option_value('true')->set_default_value('true')
+        Field::make('separator', 'crb_logo', __('Logo', 'alps'))
+            ->set_help_text(__('IMPORTANT NOTE: By default the theme will recolor your logo based on the selected color palette. On standard headers the logo will be shown in the theme’s primary color. On overlay headers, the logo will be shown in white. If you wish to preserve the colors of your logo, deselect the checkbox below and, optionally, upload an inverted version of your logo for use on overlay headers.', 'alps')),
+        Field::make('checkbox', 'logo_recolor', __('Allow theme to control logo color', 'alps'))
+            ->set_option_value('true')->set_default_value('true'),
+        Field::make('checkbox', 'is_wide_logo', __('Wide Logo', 'alps'))
+            ->set_option_value('true')
+            ->set_help_text(__('Select if you would like to use a wider than normal logo.', 'alps'))
+            ->set_width(100),
     ];
     if (empty($languages)) {
         $logoFields[] = Field::make('image', 'logo', __('Logo', 'alps'))->set_width(55);
