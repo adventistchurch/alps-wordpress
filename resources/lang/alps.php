@@ -199,7 +199,7 @@ __('Grid Lines', 'alps');
 __('Select if you would like show the grid lines.', 'alps');
 __('<h3>Global Site Statements</h3><p style="font-size:16px">Both of these statements show up in the navigation drawer.</p>', 'alps');
 __('Site Branding Statement', 'alps');
-__('[Site Name] is a website of the Seventh-day Adventist church in [Region Name].', 'alps');
+__('An official website of the Seventh-day Adventist Church.', 'alps');
 __('Found in the navigation drawer', 'alps');
 __('Global Branding Statement', 'alps');
 __('Seventh-day Adventists are devoted to helping people understand the Bible to find freedom, healing, and hope in Jesus.', 'alps');

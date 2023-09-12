@@ -18,7 +18,7 @@ update_option( '_grid_lines', '' );
 update_option( '_square_buttons', '' );
 
 // Site Branding Statement (Text)
-update_option( '_site_branding_statement', '[Site Name] is a website of the Seventh-day Adventist church in [Region Name].' );
+update_option( '_site_branding_statement', 'An official website of the Seventh-day Adventist Church.' );
 
 // Global Branding Statement (Text)
 update_option( '_global_branding_statement', 'Seventh-day Adventists are devoted to helping people understand the Bible to find freedom, healing, and hope in Jesus.' );
@@ -76,7 +76,7 @@ update_option( '_sabbath_hide', 'false' );
  */
 
 // Footer Description (Text)
-update_option( '_footer_description', '[Site URL/Name] is the official website of the Seventh-day Adventist World Church.' );
+update_option( '_footer_description_en', 'An official website of the Seventh-day Adventist Church.' );
 
 // Footer Copyright (Text)
 update_option( '_footer_copyright', 'General Conference of Seventh-day Adventists' );
@@ -228,4 +228,4 @@ add_action('load-nav-menus.php', 'auto_nav_creation_learn_more');
  */
 
 // Translate Description (Text)
-update_option( '_translate_description', '[Site URL/Name] is the official website of the Seventh-day Adventist World Church.' );
+update_option( '_translate_description', 'An official website of the Seventh-day Adventist Church.' );
