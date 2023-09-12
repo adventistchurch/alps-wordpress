@@ -228,4 +228,4 @@ add_action('load-nav-menus.php', 'auto_nav_creation_learn_more');
  */
 
 // Translate Description (Text)
-update_option( '_translate_description', 'An official website of the Seventh-day Adventist World Church.' );
+update_option( '_translate_description', 'An official website of the Seventh-day Adventist Church.' );
