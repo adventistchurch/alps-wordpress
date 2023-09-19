@@ -62,6 +62,8 @@ class ThemeUpdater
                 $res->new_version = $remote->version;
                 $res->package = $remote->download_url;
                 $transient->response[$stylesheet] = $data;
+            } else {
+                $transient->no_update[$stylesheet] = $data;
             }
         }
 
