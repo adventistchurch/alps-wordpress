@@ -3,6 +3,10 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.15.1.3]
+### Fix
+- Add "Enable Auto-updates" [#693](https://github.com/adventistchurch/alps-wordpress/issues/693)
+
 ## [3.15.1.2]
 ### Update
 - Update ALPS Theme settings design for supporting footer localizatinon [#627](https://github.com/adventistchurch/alps-wordpress/issues/627);
