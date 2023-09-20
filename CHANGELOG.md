@@ -3,9 +3,13 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.15.1.3]
+## [3.15.1.4]
 ### Fix
 - Add "Enable Auto-updates" [#693](https://github.com/adventistchurch/alps-wordpress/issues/693)
+
+### Update
+- Update content-page-full-width.blade.php [#630](https://github.com/adventistchurch/alps-wordpress/pull/630)
+- Support new version WP and increase PHP version [#718](https://github.com/adventistchurch/alps-wordpress/issues/718)
 
 ## [3.15.1.2]
 ### Update
