@@ -1,5 +1,8 @@
 # ALPS WordPress Theme Setup
 
+![](https://img.shields.io/badge/Required_PHP_version-8.1.23-green) ![](https://img.shields.io/badge/Required_WP_version-6.1.1-blue)
+
+
 ## Theme installation via WordPress Admin Panel
 
 1. In your WordPress admin panel, navigate to `Appearance->Themes`

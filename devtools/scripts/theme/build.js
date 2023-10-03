@@ -66,11 +66,11 @@ const themeBuild = async (opts) => {
       const themeMeta = {
           ...await getThemeMeta(),
           version: pkg.version,
-          requires: '6.1',
+          requires: '6.1.1',
           last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
       };
       themeMeta.download_url = themeMeta.download_url
-          .replace('{file}', `alps-wordpress-v${pkg.version}.zip`);
+          .replace('{file}', `${pkg.name}.zip`);
 
       await fs.writeFile(`${buildDir}alps-wordpress-v3.json`, JSON.stringify(themeMeta, null, 2));
       logger.info(`💚 ALPS Theme metadata saved to ${chalk.yellow(`alps-wordpress-v3.json`)}`);

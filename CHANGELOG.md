@@ -3,6 +3,12 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.15.1.5]
+### Update
+- Make general link for getting latest version of theme [#723](https://github.com/adventistchurch/alps-wordpress/issues/723);
+- Add labels to the theme description.
+
+
 ## [3.15.1.4]
 ### Fix
 - Add "Enable Auto-updates" [#693](https://github.com/adventistchurch/alps-wordpress/issues/693)
