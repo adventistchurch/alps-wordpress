@@ -1,7 +1,7 @@
 {
-  "requires_php": "8.0",
+  "requires_php": "8.1",
   "sections" : {
-    "description" : "The ALPS v3 wordpress theme."
+    "description" : "The ALPS v3 WordPress Theme."
   },
   "download_url": "https://alps.adventistcdn.org/wordpress/themes/alps/{file}"
 }
