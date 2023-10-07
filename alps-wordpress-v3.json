@@ -3,5 +3,6 @@
   "sections" : {
     "description" : "The ALPS v3 WordPress Theme."
   },
-  "download_url": "https://alps.adventistcdn.org/wordpress/themes/alps/{file}"
+  "download_url": "https://alps.adventistcdn.org/wordpress/themes/alps/{file}",
+  "latest_download_url": "https://alps-r2.adventist.workers.dev/theme/v3/latest"
 }

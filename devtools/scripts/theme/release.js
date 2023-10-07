@@ -81,7 +81,7 @@ const pluginRelease = async (opts) => {
 
     const formDataZip = new FormData();
     formDataZip.append('bucket', R2_BUCKET_NAME);
-    formDataZip.append('path', `/wordpress/themes/alps/${pkg.name}.zip`);
+    formDataZip.append('path', `/wordpress/themes/alps/alps-wordpress-v${pkg.version}.zip`);
     formDataZip.append('data', fs.createReadStream(`${buildDir}${localFileName}`));
 
     await got('https://alps-r2.adventist.workers.dev/upload', {
