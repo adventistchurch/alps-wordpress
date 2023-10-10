@@ -70,7 +70,7 @@ const themeBuild = async (opts) => {
           last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
       };
       themeMeta.download_url = themeMeta.download_url
-          .replace('{file}', `${pkg.name}.zip`);
+          .replace('{file}', `alps-wordpress-v${pkg.version}.zip`);
 
       await fs.writeFile(`${buildDir}alps-wordpress-v3.json`, JSON.stringify(themeMeta, null, 2));
       logger.info(`💚 ALPS Theme metadata saved to ${chalk.yellow(`alps-wordpress-v3.json`)}`);
