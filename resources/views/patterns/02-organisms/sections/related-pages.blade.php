@@ -5,6 +5,7 @@
   $related_grid = get_post_meta($post->ID, $cf_.'related_grid', true);
   $related_image = get_post_meta($post->ID, $cf_.'related_image', true);
   $related_image_round = get_post_meta($post->ID, $cf_.'related_image_round', true);
+  $thumb_crop = get_post_meta($post->ID, '_related_image_crop', true);
 
   if ($related == 'related_top_level')  {
     // Loop of pages for top level pages
@@ -110,29 +111,61 @@
 
           if ($thumb_id) {
             $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+            if (!empty($thumb_crop)){
+              switch($thumb_crop){
+                case 'landscape':
+                  $thumb_size = 'horiz__16x9';
+                  break;
+                case 'portrait':
+                  $thumb_size = 'vert__3x4';
+                  break;
+                default:
+                  $thumb_size = 'thumbnail';
+              }
+            }else{
+              $thumb_size = 'thumbnail';
+            }
+            $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s');
+            $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--m');
+            if ($thumb_crop == 'landscape'){
+              if ($image_m[1] < 800 ) {
+                $image_m = $image_s;
+              }
+            }else{
+              if ($image_m[1] < 600 ) {
+                $image_m = $image_s;
+              }
+            }
+            $image_s = $image_s[0];
+            $image_m = $image_m[0];
+            $image_break_m = "400";
+            if ($related_image_round == "true" || $thumb_crop == 'circle') {
+              if ($related_grid == "true"){
+                $picture_class = "u-round";
+              }else{
+                $block_img_wrap_class = "u-round u-space--left";
+              }
+            }
+            else {
+              $block_img_wrap_class = "";
+            }
             if ($related_grid == "true") {
               $excerpt_length = 35;
-              $thumb_size = 'horiz__16x9';
               $block_class = "c-media-block__stacked c-block__stacked u-space--right u-space--double--bottom";
               $block_content_class = "u-border--left u-theme--border-color--darker--left";
               $picture = true;
-              $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size)[0];
-              $image_m = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
-              $image_break_m = "500";
+              if ($related_image_round == "true" || $thumb_crop == 'circle') {
+                $block_img_wrap_class = "u-padding--double--left u-padding--double--right";
+                $block_content_class = "";
+                $block_group_class = "u-flex--align-center";
+                $block_text_class = "u-text-align--center";
+              }
             }
             else {
-              if ($related_image_round == "true") {
-                $block_img_wrap_class = "u-round u-space--left";
-              }
-              else {
-                $block_img_wrap_class = "";
-              }
               $excerpt_length = 55;
-              $thumb_size = 'thumbnail';
-              $thumb_id = get_post_thumbnail_id($id);
-              $image = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s')[0];
+              $image = $image_s;
               if (end(explode(".", $image)) === 'gif') {
-                  $image = wp_get_attachment_image_src($thumb_id, $thumb_size . 'full')[0];
+                $image = wp_get_attachment_image_src($thumb_id, $thumb_size . 'full')[0];
               }
               $block_group_class = "u-flex--justify-start";
               if (!is_active_sidebar('sidebar-page') || get_post_meta($post->ID, 'hide_sidebar', true) == 'true') {

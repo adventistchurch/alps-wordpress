@@ -24,6 +24,22 @@ function setDefaultHeader() {
     return $default;
 }
 
+function setDefaultRelatedImageCrop() {
+    $default = 'square';
+    if (!empty($_GET['post'])){
+        $id = $_GET['post'];
+        $grid = get_post_meta($id,'_related_grid',true);
+        $oldCircle = get_post_meta($id,'_related_image_round',true);
+        if (!empty($oldCircle)){
+            $default = 'circle';
+        }
+        if (!empty($grid)){
+            $default = 'landscape';
+        }
+    }
+    return $default;
+}
+
 add_action('carbon_fields_register_fields', 'crb_page_options');
 function crb_page_options()
 {
@@ -361,22 +377,24 @@ function crb_attach_related_pages()
 			Field
 				::make('checkbox', 'related_image', __('Related Pages Image', 'alps'))
 				->set_option_value('true')
-				->set_help_text(__('Select to display the feature image for the related pages.', 'alps')),
-			Field
-				::make('checkbox', 'related_image_round', __('Related Pages Round Image', 'alps'))
-				->set_option_value('true')
-				->set_help_text(__('Select to make the featured image round.', 'alps'))
-				->set_conditional_logic([
-					'relation' => 'AND',
-					[
-						'field' => 'related_image',
-						'value' => true,
-					],
-					[
-						'field' => 'related_grid',
-						'value' => false,
-					]
-				]),
+				->set_help_text(__('Select to display the feature image for the related pages.', 'alps'))
+                ->set_width(50),
+            Field
+                ::make('radio', 'related_image_crop', __('Related Page Image Cropping', 'alps'))
+                ->add_options([
+                    'square' => __('Square', 'alps'),
+                    'landscape' => __('Landscape', 'alps'),
+                    'portrait' => __('Portrait', 'alps'),
+                    'circle' => __('Circle', 'alps'),
+                ])
+                ->set_default_value('landscape')
+                ->set_conditional_logic([
+                    [
+                        'field' => 'related_image',
+                        'value' => true,
+                    ]
+                ])
+            ->set_width(50),
 		]);
 }
 
