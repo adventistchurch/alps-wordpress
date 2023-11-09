@@ -111,7 +111,11 @@
 
           if ($thumb_id) {
             $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-            if (!empty($thumb_crop)){
+           $thumb_size = 'thumbnail';
+           if (!empty($thumb_crop)){
+             if ($thumb_crop == 'landscape') $thumb_size = 'horiz__16x9';
+             if ($thumb_crop == 'portrait') $thumb_size = 'vert__3x4';
+           }
               switch($thumb_crop){
                 case 'landscape':
                   $thumb_size = 'horiz__16x9';
