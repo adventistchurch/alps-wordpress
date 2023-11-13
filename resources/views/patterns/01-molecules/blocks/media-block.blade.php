@@ -37,7 +37,7 @@
           </style>
         @else
           @if (isset($picture))
-            <picture class="picture">
+            <picture class="picture @if (isset($picture_class)){{ $picture_class }}@endif">
               <!--[if IE 9]><video style="display: none;"><![endif]-->
               @if (isset($image_break_xl))
                 <source srcset="{{ $image_xl }}" media="(min-width: {{ $image_break_xl }}px)">
@@ -58,7 +58,7 @@
   @endif
   <div class="c-media-block__content c-block__content u-spacing @if (isset($block_content_class)){{ $block_content_class }}@endif">
     <div class="u-spacing c-block__group c-media-block__group @if (isset($block_group_class)){{ $block_group_class }}@endif">
-      <div class="u-spacing u-width--100p">
+      <div class="u-spacing u-width--100p @if (isset($block_text_class)){{ $block_text_class }}@endif">
         @if (isset($kicker))
           <h4 class="c-media-block__kicker c-block__kicker @if (isset($block_kicker_class)){{ $block_kicker_class }}@endif">{{ $kicker }}</h4>
         @endif
