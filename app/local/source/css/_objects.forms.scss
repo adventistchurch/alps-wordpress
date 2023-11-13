@@ -215,3 +215,10 @@ input[type=radio] {
     display: block;
   }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #84adfc;
+  -webkit-box-shadow: 0 0 0px 40rem #04132b inset;
+}
