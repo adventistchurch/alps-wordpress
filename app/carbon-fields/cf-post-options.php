@@ -387,7 +387,7 @@ function crb_attach_related_pages()
                     'portrait' => __('Portrait', 'alps'),
                     'circle' => __('Circle', 'alps'),
                 ])
-                ->set_default_value('landscape')
+                ->set_default_value(setDefaultRelatedImageCrop())
                 ->set_conditional_logic([
                     [
                         'field' => 'related_image',
