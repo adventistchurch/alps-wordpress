@@ -181,6 +181,10 @@ add_image_size('horiz__4x3--s', 500, 375, array('center', 'center'));
 add_image_size('horiz__4x3--m', 700, 600, array('center', 'center'));
 add_image_size('horiz__4x3--l', 900, 700, array('center', 'center'));
 
+// 3:4 crop for portraits.
+add_image_size('vert__3x4--s', 450, 600, array('center', 'center'));
+add_image_size('vert__3x4--m', 600, 800, array('center', 'center'));
+
 // Flexible height
 add_image_size('flex-height--s', 350, 9999);
 add_image_size('flex-height--m', 700, 9999);
@@ -188,7 +192,8 @@ add_image_size('flex-height--l', 900, 9999);
 add_image_size('flex-height--xl', 1100, 9999);
 
 // Square
-add_image_size('thumbnail--s', 200, 200, array('center', 'center'));
+add_image_size('thumbnail--s', 400, 400, array('center', 'center'));
+add_image_size('thumbnail--m', 800, 800, array('center', 'center'));
 
 // Makes image size available in dashboard for Gutenberg blocks.
 add_action('admin_init', function() {
