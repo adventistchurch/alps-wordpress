@@ -6,7 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [3.15.1.5]
 ### Update
 - Make general link for getting latest version of theme [#723](https://github.com/adventistchurch/alps-wordpress/issues/723);
-- Add labels to the theme description.
+- Add labels to the theme description;
+
+### Fix
+- Missing style for input with autofill.
 
 
 ## [3.15.1.4]
