@@ -6,6 +6,7 @@
   $related_image = get_post_meta($post->ID, $cf_.'related_image', true);
   $related_image_round = get_post_meta($post->ID, $cf_.'related_image_round', true);
   $thumb_crop = get_post_meta($post->ID, '_related_image_crop', true);
+  $title_h1 = false;
 
   if ($related == 'related_top_level')  {
     // Loop of pages for top level pages
@@ -115,18 +116,7 @@
            if (!empty($thumb_crop)){
              if ($thumb_crop == 'landscape') $thumb_size = 'horiz__16x9';
              if ($thumb_crop == 'portrait') $thumb_size = 'vert__3x4';
-           }
-              switch($thumb_crop){
-                case 'landscape':
-                  $thumb_size = 'horiz__16x9';
-                  break;
-                case 'portrait':
-                  $thumb_size = 'vert__3x4';
-                  break;
-                default:
-                  $thumb_size = 'thumbnail';
-              }
-            }else{
+            } else{
               $thumb_size = 'thumbnail';
             }
             $image_s = wp_get_attachment_image_src($thumb_id, $thumb_size . '--s');
