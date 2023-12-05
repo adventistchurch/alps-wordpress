@@ -39,6 +39,7 @@
     "ssh2-sftp-client": "^9.0.4",
     "webpack": "^5.76.0",
     "winston": "^3.8.2",
+    "wp": "^0.0.3",
     "yaml": "^2.2.1"
   },
   "dependencies": {

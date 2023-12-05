@@ -281,7 +281,7 @@ msgid "Header Kicker"
 msgstr ""
 
 #: app/carbon-fields/cf-page.php:21
-msgid "Header Subtitle"
+msgid "Page Caption"
 msgstr ""
 
 #: app/carbon-fields/cf-page.php:23

@@ -296,8 +296,8 @@ msgid "Header Kicker"
 msgstr "Pateador del encabezado"
 
 #: app/carbon-fields/cf-page.php:21
-msgid "Header Subtitle"
-msgstr "Subtítulo de encabezado"
+msgid "Page Caption"
+msgstr "Leyenda de la Página"
 
 #: app/carbon-fields/cf-page.php:23
 msgid "Header Image"

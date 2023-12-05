@@ -63,7 +63,7 @@ __('Banner', 'alps');
 __('IMPORTANT: Setting the Header Banner will override the display of the Featured Image.', 'alps');
 __('Header Title', 'alps');
 __('Header Kicker', 'alps');
-__('Header Subtitle', 'alps');
+__('Page Caption', 'alps');
 __('Header Image', 'alps');
 __('ALPS: Hero', 'alps');
 __('Hero Banner', 'alps');
