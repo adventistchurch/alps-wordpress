@@ -13,6 +13,8 @@
 
   $isPostsPage = is_archive() && !get_option( 'page_for_posts' );
 
+  $page_sub_title = get_post_meta( $post->ID, 'page_sub_title', true );
+
   if (is_home()) {
     if (get_alps_option('posts_page_title')) {
       $long_header_title = get_alps_option('posts_page_title');
@@ -80,13 +82,16 @@
 @if (empty($remove_header))
   <header class="c-page-header c-page-header__long u-theme--background-color--dark  u-space--zero--top {{ $page_header_class }}">
     <div class="c-page-header__long--inner l-grid l-grid--7-col {{ $page_header_inner_class }}">
-      <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 {{ $page_header_content_class }}">
+      <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 u-border--left {{ $page_header_content_class }}">
         @if ($long_header_kicker)
           <span class="o-kicker u-color--white">{{ $long_header_kicker }}</span>
         @endif
         <h1 class="u-font--primary--xl u-color--white u-font-weight--bold">
           {!! $long_header_title !!}
         </h1>
+        @if ($page_sub_title)
+          <span class="o-kicker u-color--white">{{ $page_sub_title }}</span>
+        @endif
       </div>
     </div>
   </header>
