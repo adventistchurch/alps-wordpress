@@ -55,7 +55,7 @@ require_once __DIR__ . '/defaults-themes.php';
 
 add_editor_style('/resources/styles/editor.css');
 
-define('ALPS_THEME_VERSION', '3.15.1.5');
+define('ALPS_THEME_VERSION', '3.15.1.4');
 define('ALPS_THEME_NAME', 'alps-gutenberg-blocks');
 
 require_once __DIR__ . '/updater.php';
@@ -501,59 +501,60 @@ function crb_get_i18n_theme_option( $option_name ) {
 }
 
 // Add new field to the Editor Page section 'Page SubTitle'
-add_action( 'admin_menu', 'page_sub_title_metabox' );
-
-function page_sub_title_metabox() {
-
-	add_meta_box(
-		'custom_sub_title_filed_in_page_section_id', // metabox ID
-		'Page SubTitle', // title
-		'page_sub_title_metabox_callback', // callback function
-		'page', // add meta box to custom post type (or post types in array)
-		'normal', // position (normal, side, advanced)
-		'default' // priority (default, low, high, core)
-	);
-}
-
-// it is a callback function which actually displays the content of the meta box
-function page_sub_title_metabox_callback( $post ) {
-    $page_sub_title = get_post_meta( $post->ID, 'page_sub_title', true );
-
-    echo '
-         <p>
-            <label for="page_sub_title">Add Page SubTitle</label>
-            <br />
-            <input class="widefat" type="text" name="page_sub_title" id="page_sub_title" value="' . esc_attr( $page_sub_title ) . '" size="30" />
-          </p>
-    ';
-}
-
-add_action( 'save_post', 'page_sub_title_metabox_save_meta', 10, 2 );
-
-function page_sub_title_metabox_save_meta( $post_id, $post ) {
-
-	// check current user permissions
-	$post_type = get_post_type_object( $post->post_type );
-
-	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
-		return $post_id;
-	}
-
-	// Do not save the data if autosave
-	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
-		return $post_id;
-	}
-
-	// define your own post type here
-	if( 'page' !== get_post_type() ) {
-		return $post_id;
-	}
-
-	if( isset( $_POST[ 'page_sub_title' ] ) ) {
-		update_post_meta( $post_id, 'page_sub_title', sanitize_text_field( $_POST[ 'page_sub_title' ] ) );
-	} else {
-		delete_post_meta( $post_id, 'page_sub_title' );
-	}
-
-	return $post_id;
-}
+// add_action( 'admin_menu', 'page_sub_title_metabox' );
+//
+// function page_sub_title_metabox() {
+//
+// 	add_meta_box(
+// 		'custom_sub_title_filed_in_page_section_id', // metabox ID
+// 		'Page SubTitle', // title
+// 		'page_sub_title_metabox_callback', // callback function
+// 		'page', // add meta box to custom post type (or post types in array)
+// 		'normal', // position (normal, side, advanced)
+// 		'default' // priority (default, low, high, core)
+// 	);
+//
+// }
+//
+// // it is a callback function which actually displays the content of the meta box
+// function page_sub_title_metabox_callback( $post ) {
+//     $page_sub_title = get_post_meta( $post->ID, 'page_sub_title', true );
+//
+//     echo '
+//          <p>
+//             <label for="page_sub_title">Add Page SubTitle</label>
+//             <br />
+//             <input class="widefat" type="text" name="page_sub_title" id="page_sub_title" value="' . esc_attr( $page_sub_title ) . '" size="30" />
+//           </p>
+//     ';
+// }
+//
+// add_action( 'save_post', 'page_sub_title_metabox_save_meta', 10, 2 );
+//
+// function page_sub_title_metabox_save_meta( $post_id, $post ) {
+//
+// 	// check current user permissions
+// 	$post_type = get_post_type_object( $post->post_type );
+//
+// 	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+// 		return $post_id;
+// 	}
+//
+// 	// Do not save the data if autosave
+// 	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+// 		return $post_id;
+// 	}
+//
+// 	// define your own post type here
+// 	if( 'page' !== get_post_type() ) {
+// 		return $post_id;
+// 	}
+//
+// 	if( isset( $_POST[ 'page_sub_title' ] ) ) {
+// 		update_post_meta( $post_id, 'page_sub_title', sanitize_text_field( $_POST[ 'page_sub_title' ] ) );
+// 	} else {
+// 		delete_post_meta( $post_id, 'page_sub_title' );
+// 	}
+//
+// 	return $post_id;
+// }

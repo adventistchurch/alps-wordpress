@@ -294,7 +294,7 @@ msgid "Header Kicker"
 msgstr "헤더 첫문장"
 
 #: app/carbon-fields/cf-page.php:21
-msgid "Page Caption"
+msgid "Header Subtitle"
 msgstr "헤더 자막"
 
 #: app/carbon-fields/cf-page.php:23

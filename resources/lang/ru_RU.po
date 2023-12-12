@@ -295,8 +295,8 @@ msgid "Header Kicker"
 msgstr "Кикер заголовка"
 
 #: app/carbon-fields/cf-page.php:21
-msgid "Page Caption"
-msgstr "Заголовок страницы"
+msgid "Header Subtitle"
+msgstr "Подзаголовок шапки"
 
 #: app/carbon-fields/cf-page.php:23
 msgid "Header Image"

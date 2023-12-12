@@ -303,8 +303,8 @@ msgid "Header Kicker"
 msgstr "Überschrift Kicker"
 
 #: app/carbon-fields/cf-page.php:21
-msgid "Page Caption"
-msgstr "Seitenbeschriftung"
+msgid "Header Subtitle"
+msgstr "Überschrift Untertitel"
 
 #: app/carbon-fields/cf-page.php:23
 msgid "Header Image"

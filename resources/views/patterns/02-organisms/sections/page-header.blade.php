@@ -6,14 +6,13 @@
   // SET TO INITIALIZE / OVERRIDE
   $header_background_image = '';
   $long_header_title = '';
+  $long_header_kicker = '';
   $long_header_subtitle = '';
   $page_header_class = '';
   $page_header_inner_class = '';
   $page_header_content_class = 'u-shift--left--1-col--at-xxlarge';
 
   $isPostsPage = is_archive() && !get_option( 'page_for_posts' );
-
-  $page_sub_title = get_post_meta( $post->ID, 'page_sub_title', true );
 
   if (is_home()) {
     if (get_alps_option('posts_page_title')) {
@@ -24,7 +23,7 @@
   }
   elseif ($isPostsPage) {
     if (get_alps_option('posts_label')) {
-      $page_sub_title = __('Category', 'alps');
+      $long_header_kicker = __('Category', 'alps');
     }
     if (get_alps_option('archive_page_title')) {
       $long_header_title = get_alps_option('archive_page_title');
@@ -38,6 +37,7 @@
     // PAGE FIELDS
     $remove_header = get_post_meta($post->ID, $cf_.'remove_header', true);
     $hide_featured_image = get_post_meta($post->ID, $cf_.'hide_featured_image', true);
+    $long_header_kicker = get_post_meta($post->ID, $cf_.'kicker', true);
     $long_header_title = get_post_meta($post->ID, $cf_.'display_title', true);
     $long_header_subtitle = carbon_get_the_post_meta('long_header_subtitle');
     $header_background_image = get_post_meta($post->ID, $cf_.'header_background_image', true);
@@ -87,13 +87,13 @@
 @if (empty($remove_header))
   <header class="{{ $page_header_classes }} {{ $page_header_class }}">
     <div class="c-page-header__long--inner l-grid l-grid--7-col {{ $page_header_inner_class }}">
-      <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 u-border--left {{ $page_header_content_class }}">
+      <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 {{ $page_header_content_class }}">
+        @if ($long_header_kicker)
+          <span class="o-kicker u-color--white">{{ $long_header_kicker }}</span>
+        @endif
         <h1 class="u-font--primary--xl u-color--white u-font-weight--bold">
           {!! $long_header_title !!}
         </h1>
-        @if ($page_sub_title)
-          <span class="o-kicker u-color--white">{{ $page_sub_title }}</span>
-        @endif
       </div>
     </div>
   </header>
