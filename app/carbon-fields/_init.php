@@ -36,7 +36,7 @@ add_action('admin_enqueue_scripts', 'cf_admin_style');
 // ADD CF JAVASCRIPT
 function cf_admin_js($hook)
 {
-    wp_enqueue_script('cf-admin-js', get_template_directory_uri() . '/app/carbon-fields/cf-admin.js');
+    wp_enqueue_script('cf-admin-js', get_template_directory_uri() . '/app/carbon-fields/cf-admin.js', array('lodash' ));
 }
 
 add_action('admin_enqueue_scripts', 'cf_admin_js');
