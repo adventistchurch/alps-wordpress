@@ -97,6 +97,8 @@ function crb_attach_header()
 				::make('text', 'kicker', __('Header Kicker', 'alps')),
 			Field
 				::make('text', 'long_header_subtitle', __('Header Subtitle', 'alps')),
+            Field
+                ::make('text', 'page_sub_title', __('Page Subtitle', 'alps')),
 			Field
 				::make('image', 'header_background_image', __('Custom Header Image (will override feature image)', 'alps'))
 				->set_width(50),
