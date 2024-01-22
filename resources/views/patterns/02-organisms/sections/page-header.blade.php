@@ -14,6 +14,8 @@
 
   $isPostsPage = is_archive() && !get_option( 'page_for_posts' );
 
+  $page_sub_title = get_post_meta($post->ID, $cf_.'page_sub_title', true);
+
   if (is_home()) {
     if (get_alps_option('posts_page_title')) {
       $long_header_title = get_alps_option('posts_page_title');
@@ -87,20 +89,23 @@
 @if (empty($remove_header))
   <header class="{{ $page_header_classes }} {{ $page_header_class }}">
     <div class="c-page-header__long--inner l-grid l-grid--7-col {{ $page_header_inner_class }}">
-      <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 {{ $page_header_content_class }}">
+      <div class="c-page-header__content c-page-header__long__content l-grid-wrap l-grid-wrap--5-of-7 u-border--left {{ $page_header_content_class }}">
         @if ($long_header_kicker)
           <span class="o-kicker u-color--white">{{ $long_header_kicker }}</span>
         @endif
         <h1 class="u-font--primary--xl u-color--white u-font-weight--bold">
           {!! $long_header_title !!}
         </h1>
+        @if ($long_header_subtitle)
+          <span class="o-kicker u-color--white">{{ $long_header_subtitle }}</span>
+        @endif
       </div>
     </div>
   </header>
-  @if ($long_header_subtitle)
+  @if ($page_sub_title)
     <div class="c-page-header__subtitle c-page-header__long__subtitle l-grid l-grid--7-col u-space--top--zero">
       <div class="l-grid-wrap l-grid-wrap--5-of-7 u-shift--left--1-col--at-medium u-border--left u-font--secondary--m">
-        {{ $long_header_subtitle }}
+        {{ $page_sub_title }}
       </div>
     </div>
   @endif

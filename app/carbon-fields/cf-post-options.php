@@ -92,11 +92,13 @@ function crb_attach_header()
 				::make('separator', 'crb_long_header', __('Banner', 'alps'))
 				->set_help_text(__('IMPORTANT: Setting an image and title below will override the post title and feature image .', 'alps')),
 			Field
-				::make('text', 'display_title', __('Header Title', 'alps')),
-			Field
 				::make('text', 'kicker', __('Header Kicker', 'alps')),
 			Field
+				::make('text', 'display_title', __('Header Title', 'alps')),
+			Field
 				::make('text', 'long_header_subtitle', __('Header Subtitle', 'alps')),
+            Field
+                ::make('text', 'page_sub_title', __('Page Subtitle', 'alps')),
 			Field
 				::make('image', 'header_background_image', __('Custom Header Image (will override feature image)', 'alps'))
 				->set_width(50),
