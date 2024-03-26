@@ -3,6 +3,10 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.15.1.8]
+### Update
+- Added Primary Navigation Menu supporting 3rd level.[#745](https://github.com/adventistchurch/alps-wordpress/pull/745);
+
 ## [3.15.1.7]
 ### Update
 - Added lodash.js dependency to carbon fields initialization (WP 6.4+)[#737](https://github.com/adventistchurch/alps-wordpress/pull/737);
