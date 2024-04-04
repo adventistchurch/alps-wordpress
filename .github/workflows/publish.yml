@@ -26,9 +26,9 @@ jobs:
       - id: build-theme
         name: Build Theme
         run: |
-          npm run build:theme
+          npm run wp:build:theme
 
       - id: publish
         name: Publish Theme
         run: |
-          npm run release:theme
+          npm run wp:release:theme
