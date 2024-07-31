@@ -26,9 +26,9 @@
   },
   "devDependencies": {
     "@octokit/rest": "^20.1.1",
-    "@roots/bud": "^6.21.0",
-    "@roots/bud-tailwindcss": "^6.21.0",
-    "@roots/sage": "^6.21.0",
+    "@roots/bud": "^6.23.1",
+    "@roots/bud-tailwindcss": "^6.23.1",
+    "@roots/sage": "^6.23.1",
     "archiver": "^7.0.1",
     "chalk": "^4.1.2",
     "date-fns": "^3.6.0",
