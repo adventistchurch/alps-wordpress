@@ -161,6 +161,14 @@
               }
             @endphp
 
+            @if (has_post_thumbnail($id))
+              <div class="sermon-featured-image">
+                <a href="{{ get_permalink($id) }}">
+                  {!! get_the_post_thumbnail($id, 'large', ['class' => 'u-image--shadow']) !!}
+                </a>
+              </div>
+            @endif
+
             @if ($postsLayoutType == POST_LAYOUT_GRID)<div class="l-grid-item {{ $grid_item_class }}">@endif
             @if ($thumb_id)
               @include('patterns.01-molecules.blocks.media-block')
