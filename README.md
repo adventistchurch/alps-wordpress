@@ -189,3 +189,9 @@ Cache Error `vendor/illuminate/view/Engines/PhpEngine.php on line 43`:
   - find-a-church
   - sitemap
 * IMPORTANT: You must use the title attributes above or you will get an error. They are case sensitive.
+
+## Setup Sermon Manager
+For integrate Sermon manager plugin to the theme:
+* Download [Sermon Manager Plugin](https://wordpress.org/plugins/sermon-manager-for-wordpress/);
+* In admin panel go to 'Sermons' -> 'Settings' -> 'Advanced' tab -> select 'Theme Compatibility' for
+allow use the theme styles.
