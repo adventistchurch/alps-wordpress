@@ -504,9 +504,8 @@
 
 
     &__list {
-      height: rem(35);
       display: flex;
-      flex-wrap: wrap-reverse;
+      //flex-wrap: wrap-reverse;
       width: 100%;
       align-items: flex-start;
 
@@ -516,10 +515,12 @@
 
       @include media(">medium") {
         padding-left: 0;
+        flex-wrap: wrap-reverse;
       }
 
 
       @include media(">large") {
+        flex-wrap: unset;
         //padding-right: rem(160);
       }
     }
