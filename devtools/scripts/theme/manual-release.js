@@ -132,7 +132,7 @@ const manualRelease = async (opts) => {
   const themeMeta = {
     ...await getThemeMeta(),
     version: pkg.version,
-    requires: '6.1.1',
+    requires: '6.4.1',
     last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
   };
   themeMeta.download_url = themeMeta.download_url
