@@ -7,7 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Update
 - Increase WP version support for the theme [#801](https://github.com/adventistchurch/alps-wordpress/pull/801);
 - Add Basic support for Sermon Manager plugin [#746](https://github.com/adventistchurch/alps-wordpress/issues/746);
-- Menu toggle missing on some breakpoints [#800](https://github.com/adventistchurch/alps-wordpress/issues/800)
+- Menu toggle missing on some breakpoints [#800](https://github.com/adventistchurch/alps-wordpress/issues/800);
+- Add ALPS video guide and update documentation [#803](https://github.com/adventistchurch/alps-wordpress/pull/803).
 
 ## [3.15.2.9]
 ### Fix

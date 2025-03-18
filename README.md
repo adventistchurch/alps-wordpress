@@ -1,6 +1,8 @@
 # ALPS WordPress Theme Setup
 
-![](https://img.shields.io/badge/Required_PHP_version-8.1.23-green) ![](https://img.shields.io/badge/Required_WP_version-6.1.1-blue)
+![](https://img.shields.io/badge/Required_PHP_version-8.4.1-green) ![](https://img.shields.io/badge/Required_WP_version-6.1.1-blue)
+
+[Basic Guide for ALPS Theme and Blocks](https://www.youtube.com/watch?v=EWm6h1PuUwc)
 
 
 ## Theme installation via WordPress Admin Panel
