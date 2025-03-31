@@ -90,7 +90,7 @@ function crb_attach_header()
 		->add_fields([
 			Field
 				::make('separator', 'crb_long_header', __('Banner', 'alps'))
-				->set_help_text(__('IMPORTANT: Setting an image and title below will override the post title and feature image .', 'alps')),
+				->set_help_text(__('IMPORTANT: Setting an image and title below will override the post title and feature image. <br><span style="color: red;">Banner image will look best if you crop the source image to an aspect ratio of 4:3 before uploading it.</span>', 'alps')),
 			Field
 				::make('text', 'kicker', __('Header Kicker', 'alps')),
 			Field
