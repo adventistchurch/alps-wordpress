@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [3.15.3.2]
 ### Fix
-- Fix broke Page Template Builder from 3.15.3.1 version. []()  
+- Fix broke Page Template Builder from 3.15.3.1 version. [#806](https://github.com/adventistchurch/alps-wordpress/pull/806)  
 
 ## [3.15.3.1]
 ### Fix
