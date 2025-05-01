@@ -251,6 +251,13 @@ body.admin-bar {
   padding: 0 !important;
 }
 
+.wp-block-embed__wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative
+}
+
 .wp-block-column:not(:first-child) {
   margin-left: 1.25em;
 }
