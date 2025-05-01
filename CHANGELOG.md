@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [3.15.3.3]
 ### Fix
-- Rollback changes from 3.15.3.1 and 3.15.3.2 versions and update styles for embed YouTube Player. []()
+- Rollback changes from 3.15.3.1 and 3.15.3.2 versions and update styles for embed YouTube Player. [#807](https://github.com/adventistchurch/alps-wordpress/pull/807)
 
 ## [3.15.3.2]
 ### Fix
