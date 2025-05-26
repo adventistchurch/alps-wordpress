@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [3.15.3.5]
 ### Fix
 - Fix security issues. [#809](https://github.com/adventistchurch/alps-wordpress/pull/809)
-- Fix security issues. []()
+- Fix low security issues. [#810](https://github.com/adventistchurch/alps-wordpress/pull/810)
 
 ## [3.15.3.4]
 ### Fix
