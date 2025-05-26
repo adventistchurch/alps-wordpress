@@ -3,6 +3,10 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.15.3.4]
+### Fix
+- Fix security issues. [#808](https://github.com/adventistchurch/alps-wordpress/pull/808)
+
 ## [3.15.3.3]
 ### Fix
 - Rollback changes from 3.15.3.1 and 3.15.3.2 versions and update styles for embed YouTube Player. [#807](https://github.com/adventistchurch/alps-wordpress/pull/807)
