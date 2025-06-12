@@ -130,10 +130,18 @@ class TemplateHelpers {
             'xl' => wp_get_attachment_image_src($thumbId, 'horiz__4x3--xl'),
         ];
 
-        $headerImages['s'][] = 0;
-        $headerImages['m'][] = 500;
-        $headerImages['l'][] = 800;
-        $headerImages['xl'][] = 1100;
+        $values = [
+            's' => 0,
+            'm' => 500,
+            'l' => 800,
+            'xl' => 1100
+        ];
+
+        $headerImages = [];
+
+        foreach ($values as $key => $value) {
+            $headerImages[$key] = [$value];
+        }
 
         return [
             'headerType'  => $headerType,
