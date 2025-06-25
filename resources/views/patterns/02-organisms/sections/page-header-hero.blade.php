@@ -27,9 +27,11 @@
     $extended = '';
     $extended = get_post_meta($post->ID, $cf_.'hero_image_extended', true);
     $scroll_hint = '';
+    $hero_overlay = carbon_get_the_post_meta('hero_overlay');
+    $overlay_class = ($hero_overlay === 'off') ? '' : 'u-overlay--dark';
     if ($hero_type == 'full_overlay') {
       array_push($hero_image,  get_post_meta($post->ID, $cf_.'hero_image', true));
-      $block_group_class = 'u-flex--justify-center u-overlay--dark';
+      $block_group_class = 'u-flex--justify-center ' . $overlay_class;
       $block_title_class = 'l-grid-item--5-col l-grid-item--m--2-col u-font--primary--xl u-flex--justify-center';
       $block_title_link_class = 'u-theme--link-hover--lighter';
       $block_content_class = 'l-grid--7-col l-grid-wrap l-grid-wrap--7-of-7 u-color--white';
@@ -37,7 +39,7 @@
     }
     elseif ($hero_type == 'full') {
       array_push($hero_image,  get_post_meta($post->ID, $cf_.'hero_image', true));
-      $block_group_class = 'u-flex--justify-center u-overlay--dark';
+      $block_group_class = 'u-flex--justify-center ' . $overlay_class;
       $block_title_class = 'l-grid-item--5-col l-grid-item--m--2-col u-font--primary--xl u-flex--justify-center';
       $block_title_link_class = 'u-theme--link-hover--lighter';
       $scroll_class = '';
@@ -76,7 +78,7 @@
     elseif ($hero_type == 'column') {
       $hero_image[] = get_alps_field('hero_column');
       $block_class = 'c-block__column c-media-block__column';
-      $block_group_class = 'u-flex--justify-center u-overlay--dark';
+      $block_group_class = 'u-flex--justify-center ' . $overlay_class;
       $block_content_class = 'u-color--white';
       $block_title_class = 'u-font--primary--xl u-flex--justify-center';
       $block_title_link_class = 'u-theme--link-hover--light';
