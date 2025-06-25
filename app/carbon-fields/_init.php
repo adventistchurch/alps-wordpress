@@ -15,6 +15,9 @@ function crb_load()
     require_once('cf-widget.php');
 }
 
+add_filter('use_widgets_block_editor', '__return_false');
+add_filter('gutenberg_use_widgets_block_editor', '__return_false');
+
 // REMOVE MEDIA BUTTON FROM CF RICH TEXT EDITOR
 add_filter('crb_media_buttons_html', function ($html, $field_name) {
     $fields = ['content_block_freeform_body', 'sb_body', 'content_body_1', 'footer_description'];
