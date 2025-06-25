@@ -129,6 +129,14 @@ function crb_attach_hero()
 					'carousel_without_text_overlay' => __('Half screen image gallery without text overlay (Max Images: 9)', 'alps'),
 				]),
 			Field
+                ::make('radio', 'hero_overlay', __('Hero Overlay', 'alps'))
+                ->set_help_text(__('Control the dark fade overlay on hero images.', 'alps'))
+                ->add_options([
+                   'on' => __('Hero fade overlay On', 'alps'),
+                   'off' => __('Hero fade overlay Off', 'alps'),
+                ])
+                ->set_default_value('on'),
+			Field
 				::make('image', 'hero_image', __('Hero Image', 'alps'))
 				->set_conditional_logic([
 					'relation' => 'OR', // Optional, defaults to "AND"
