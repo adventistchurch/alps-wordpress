@@ -121,16 +121,11 @@ class TemplateHelpers {
         if (count($cat) > 0) {
             $headerCategory = $cat[0]->name;
         }
+//
+//         echo 'thumbnail id: ' . $thumbId . ' ' . wp_get_attachment_image_src($thumbId, 'horiz__4x3--s')[0];
 
         $headerImageCaption = get_the_post_thumbnail_caption($post->ID);
-        $headerImages = [
-            's'  => wp_get_attachment_image_src($thumbId, 'horiz__4x3--s'),
-            'm'  => wp_get_attachment_image_src($thumbId, 'horiz__4x3--m'),
-            'l'  => wp_get_attachment_image_src($thumbId, 'horiz__4x3--l'),
-            'xl' => wp_get_attachment_image_src($thumbId, 'horiz__4x3--xl'),
-        ];
-
-        $values = [
+        $breakpoints = [
             's' => 0,
             'm' => 500,
             'l' => 800,
@@ -138,9 +133,17 @@ class TemplateHelpers {
         ];
 
         $headerImages = [];
-
-        foreach ($values as $key => $value) {
-            $headerImages[$key] = [$value];
+        foreach ($breakpoints as $size => $breakpoint) {
+            $imageData = wp_get_attachment_image_src($thumbId, 'horiz__4x3--' . $size);
+            if ($imageData) {
+                $headerImages[$size] = [
+                    $imageData[0], // URL
+                    $imageData[1], // width
+                    $imageData[2], // height
+                    false,         // is_intermediate
+                    $breakpoint    // breakpoint for media queries
+                ];
+            }
         }
 
         return [

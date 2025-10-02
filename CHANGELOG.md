@@ -3,6 +3,10 @@ A record of the changes made to `ALPS for Wordpress`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.15.3.8]
+### Fix
+- Show larger banner as 50/50 hero with large image and text. [#819](https://github.com/adventistchurch/alps-wordpress/issues/819)
+
 ## [3.15.3.7]
 ### Fix
 - Fix PHP Errors in client servers. [#811](https://github.com/adventistchurch/alps-wordpress/issues/811)
