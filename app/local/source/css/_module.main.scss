@@ -43,6 +43,13 @@ html {
       margin-left: 0;
     }
 
+    // The sabbath column is hidden, so the wrapper is already 100vw. Give the
+    // content the full 6-of-7 well instead of the 4-of-7 sized for the
+    // narrower wrapper, and let .c-sidebar wrap beneath it.
+    @include media(">medium", "<=large") {
+      width: calc(100vw / 7 * 6 - 0.01px);
+    }
+
     @include media(">large") {
       width: calc(100vw / 7 * 4 - 0.01px);
       margin-left: 0;
@@ -62,6 +69,12 @@ html {
     @include media(">medium") {
       width: calc(100vw / 7 * 3 - 0.01px);
       margin-left: 0;
+    }
+
+    // Two 6-of-7 items overflow the 100vw wrapper, so the sidebar wraps below
+    // the article (.l-main__content is still flex-wrap: wrap under `large`).
+    @include media(">medium", "<=large") {
+      width: calc(100vw / 7 * 6 - 0.01px);
     }
 
     @include media(">large") {
@@ -93,6 +106,12 @@ html {
     @include media(">medium") {
       width: calc((100vw / 7) * 4 - 0.01px);
     }
+
+    // Match the widened .c-article, otherwise breakout blocks end up
+    // narrower than the body text they are supposed to break out of.
+    @include media(">medium", "<=large") {
+      width: calc((100vw / 7) * 6 - 0.01px);
+    }
   }
 
   .l-large-break {
@@ -100,6 +119,10 @@ html {
 
     @include media(">medium") {
       width: calc((100vw / 7) * 4 - 0.01px);
+    }
+
+    @include media(">medium", "<=large") {
+      width: calc((100vw / 7) * 6 - 0.01px);
     }
   }
 
