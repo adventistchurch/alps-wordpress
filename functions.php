@@ -8,6 +8,21 @@ use Roots\Sage\Config;
 use Roots\Sage\Container;
 
 /**
+ * The bundled dependencies (Acorn, Symfony 6.4) need PHP 8.1. Stop with a clear
+ * message instead of a parse error deep inside vendor/.
+ */
+if (version_compare(PHP_VERSION, '8.1.0', '<')) {
+    wp_die(
+        sprintf(
+            /* translators: %s is the current PHP version */
+            __('The ALPS theme requires PHP 8.1 or newer. This site is running PHP %s.', 'alps'),
+            esc_html(PHP_VERSION)
+        ),
+        __('ALPS &rsaquo; Unsupported PHP version', 'alps')
+    );
+}
+
+/**
  * Helper function for prettying up errors
  * @param string $message
  * @param string $subtitle
@@ -78,17 +93,45 @@ $updater->init();
 |
 */
 
+/*
+| With WP_DEBUG_DISPLAY on, Acorn turns every PHP warning or notice - from the
+| theme or any plugin - into a fatal exception. Let WordPress handle them.
+*/
+add_filter('acorn/throw_error_exception', '__return_false');
+
 try {
     \Roots\bootloader()->boot();
 } catch (Throwable $e) {
-    wp_die(
-        __('You need to install Acorn to use this theme.', 'sage'),
-        '',
-        [
-            'link_url' => 'https://docs.roots.io/acorn/2.x/installation/',
-            'link_text' => __('Acorn Docs: Installation', 'sage'),
-        ]
-    );
+    // Acorn is bundled in vendor/, so a failure here is almost never a missing
+    // install: report the real exception instead of hiding it.
+    error_log(sprintf(
+        '[ALPS] Acorn failed to boot: %s: %s in %s:%d',
+        get_class($e),
+        $e->getMessage(),
+        $e->getFile(),
+        $e->getLine()
+    ));
+
+    $message = '<h1>' . __('The ALPS theme failed to start', 'alps') . '</h1>';
+
+    if ((defined('WP_DEBUG') && WP_DEBUG) || (defined('WP_CLI') && WP_CLI)) {
+        $message .= sprintf(
+            '<p><code>%s</code></p><p><code>%s:%d</code></p>',
+            esc_html(get_class($e) . ': ' . $e->getMessage()),
+            esc_html($e->getFile()),
+            $e->getLine()
+        );
+    } else {
+        $message .= '<p>' . __('The error was written to the PHP error log. Enable WP_DEBUG to show it here.', 'alps') . '</p>';
+    }
+
+    $message .= '<p>' . sprintf(
+        /* translators: %s is the Acorn cache directory */
+        __('Common fixes: delete the %s directory and make sure wp-content/cache is writable, and run PHP 8.1 or newer.', 'alps'),
+        '<code>wp-content/cache/acorn</code>'
+    ) . '</p>';
+
+    wp_die($message, __('ALPS &rsaquo; Theme failed to start', 'alps'));
 }
 
 /*
