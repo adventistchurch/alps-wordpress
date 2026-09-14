@@ -267,23 +267,44 @@ function crb_attach_theme_options()
                 ])
                 ->set_width(33),
         ]);
+}
 
-        // Added to rewrite theme.json file with complete color palette based on selected color theme
+/**
+ * Use the palette of the selected theme color in the block editor and global styles.
+ *
+ * The palette is applied in memory instead of rewriting theme.json on disk, which
+ * happened on every request and could leave the file empty under concurrent requests.
+ */
+add_filter('wp_theme_json_data_theme', 'alps_theme_json_color_palette');
 
-        $colors = json_decode(file_get_contents(get_template_directory().'/colors.json',false));
-        $color = carbon_get_theme_option('theme_color');
-        $themeJSON = get_template_directory().'/theme.json';
-        $file = fopen($themeJSON, "r+");
-        $json = json_decode(fread($file,filesize($themeJSON)));
+function alps_theme_json_color_palette($theme_json)
+{
+    static $palette = null;
 
-        if ($json && !empty($colors)){
-            if (!empty($colors->{$color})){
-                $json->settings->color->palette = $colors->{$color};
-                rewind($file);
-                ftruncate($file,0);
-                fwrite($file, json_encode($json,JSON_PRETTY_PRINT));
-            }
+    if ($palette === null) {
+        $palette = [];
+
+        // Read the stored Carbon Fields value directly: theme.json can be resolved
+        // before Carbon Fields has registered its containers.
+        $color = get_option('_theme_color');
+        $colorsFile = get_template_directory() . '/colors.json';
+        $colors = $color && is_readable($colorsFile) ? json_decode(file_get_contents($colorsFile), true) : null;
+
+        if (is_array($colors) && !empty($colors[$color]) && is_array($colors[$color])) {
+            $palette = $colors[$color];
         }
+    }
 
-        fclose($file);
+    if (empty($palette)) {
+        return $theme_json;
+    }
+
+    return $theme_json->update_with([
+        'version' => 2,
+        'settings' => [
+            'color' => [
+                'palette' => $palette,
+            ],
+        ],
+    ]);
 }
