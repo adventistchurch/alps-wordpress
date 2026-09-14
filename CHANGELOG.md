@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [3.15.3.9]
 ### Fix
-- Widen the content column on tablet screens when the sabbath column is hidden.
+- Widen the content column on tablet screens when the sabbath column is hidden. [#823](https://github.com/adventistchurch/alps-wordpress/issues/823)
 
 ## [3.15.3.8]
 ### Fix
