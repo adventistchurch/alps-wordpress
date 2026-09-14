@@ -114,7 +114,8 @@ try {
 
     $message = '<h1>' . __('The ALPS theme failed to start', 'alps') . '</h1>';
 
-    if ((defined('WP_DEBUG') && WP_DEBUG) || (defined('WP_CLI') && WP_CLI)) {
+    // Same rule WordPress uses for showing PHP errors (WP_DEBUG_DISPLAY defaults to true).
+    if ((WP_DEBUG && WP_DEBUG_DISPLAY) || (defined('WP_CLI') && WP_CLI)) {
         $message .= sprintf(
             '<p><code>%s</code></p><p><code>%s:%d</code></p>',
             esc_html(get_class($e) . ': ' . $e->getMessage()),
@@ -122,7 +123,7 @@ try {
             $e->getLine()
         );
     } else {
-        $message .= '<p>' . __('The error was written to the PHP error log. Enable WP_DEBUG to show it here.', 'alps') . '</p>';
+        $message .= '<p>' . __('The error was written to the PHP error log. Enable WP_DEBUG and WP_DEBUG_DISPLAY to show it here.', 'alps') . '</p>';
     }
 
     $message .= '<p>' . sprintf(
