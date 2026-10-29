@@ -265,15 +265,30 @@ require_once __DIR__.'/app/plugin-activation.php';
 /**
  * Require plugins on theme install
  */
+/**
+ * Whether the theme re-activates its required plugins on every admin request.
+ *
+ * Support can turn this off to disable a plugin temporarily while diagnosing a site:
+ * define('ALPS_DISABLE_PLUGIN_FORCE_ACTIVATION', true) in wp-config.php, or use the
+ * 'alps_plugin_force_activation' filter.
+ */
+function alps_plugin_force_activation() {
+    $force = !(defined('ALPS_DISABLE_PLUGIN_FORCE_ACTIVATION') && ALPS_DISABLE_PLUGIN_FORCE_ACTIVATION);
+
+    return (bool) apply_filters('alps_plugin_force_activation', $force);
+}
+
 add_action('tgmpa_register', 'adventist_register_required_plugins');
 function adventist_register_required_plugins() {
+    $force_activation = alps_plugin_force_activation();
+
     $plugins = array(
       // SVG Support
       array(
         'name'              => 'SVG Support',
         'slug'              => 'svg-support',
         'required'          => true,
-        'force_activation'  => true,
+        'force_activation'  => $force_activation,
       ),
 
 // Guidebook - Removed by request
@@ -319,7 +334,7 @@ function adventist_register_required_plugins() {
       'slug'               => 'alps-gutenberg-blocks',
       'source'             => 'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/download',
       'required'           => true,
-      'force_activation'   => true,
+      'force_activation'   => $force_activation,
       'force_deactivation' => false,
     ) );
   }
