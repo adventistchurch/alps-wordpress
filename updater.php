@@ -9,9 +9,11 @@ class ThemeUpdater
     // Own key: deriving it from $name collided with the ALPS Gutenberg Blocks plugin
     // updater, so the theme picked up the plugin's version and package.
     private $cacheKey = 'alps_theme_updater';
-    private $cacheTtl = 3600;
+    private $lockKey = 'alps_theme_updater_lock';
+    private $cacheTtl = 43200; // 12 hours, same as core's own update checks
     // Failed checks are cached too, so an unreachable CDN is not requested on every admin page.
-    private $errorCacheTtl = 900;
+    private $errorCacheTtl = 3600;
+    private $lockTtl = 30;
 
     public function __construct($name, $version, $metaUrl)
     {
@@ -22,13 +24,17 @@ class ThemeUpdater
 
     public function init()
     {
-        add_filter('site_transient_update_themes', [$this, 'checkUpdate']);
+        // Runs only while WordPress saves a fresh update check (wp-cron, the twice-daily
+        // admin check, "Check again"), not every time the update list is read. Reading
+        // happens several times on every admin page, which is what froze wp-admin when
+        // the CDN was unreachable.
+        add_filter('pre_set_site_transient_update_themes', [$this, 'checkUpdate']);
         add_action('upgrader_process_complete', [$this, 'afterUpdate'], 10, 2);
     }
 
     public function checkUpdate($transient)
     {
-        if (empty($transient->checked)) {
+        if (!is_object($transient) || empty($transient->checked)) {
             return $transient;
         }
 
@@ -54,8 +60,10 @@ class ThemeUpdater
             && version_compare(get_bloginfo('version'), $remote['requires'], '>=')
         ) {
             $transient->response[$stylesheet] = $data;
+            unset($transient->no_update[$stylesheet]);
         } else {
             $transient->no_update[$stylesheet] = $data;
+            unset($transient->response[$stylesheet]);
         }
 
         return $transient;
@@ -78,6 +86,13 @@ class ThemeUpdater
         if (is_array($cached)) {
             return empty($cached['error']) ? $cached : null;
         }
+
+        // Another request is already checking: don't stack a second request on top.
+        if (get_transient($this->lockKey)) {
+            return null;
+        }
+
+        set_transient($this->lockKey, 1, $this->lockTtl);
 
         $remote = null;
         $response = wp_remote_get($this->metaUrl, [
@@ -110,6 +125,8 @@ class ThemeUpdater
         } else {
             set_transient($this->cacheKey, ['error' => true], $this->errorCacheTtl);
         }
+
+        delete_transient($this->lockKey);
 
         return $remote;
     }
