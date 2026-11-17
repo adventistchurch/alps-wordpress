@@ -161,7 +161,7 @@
               }
             @endphp
 
-            @if (has_post_thumbnail($id))
+            @if (get_post_type($id) === 'wpfc_sermon' && has_post_thumbnail($id))
               <div class="sermon-featured-image">
                 <a href="{{ get_permalink($id) }}">
                   {!! get_the_post_thumbnail($id, 'large', ['class' => 'u-image--shadow']) !!}
